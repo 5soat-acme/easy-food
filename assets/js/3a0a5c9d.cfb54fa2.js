@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkeasy_food_docs=self.webpackChunkeasy_food_docs||[]).push([[9504],{4085:e=>{e.exports=JSON.parse('{"label":"hello","permalink":"/ease-food/blog/tags/hello","allTagsPath":"/ease-food/blog/tags","count":2,"unlisted":false}')}}]);

@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkeasy_food_docs=self.webpackChunkeasy_food_docs||[]).push([[8567],{5523:o=>{o.exports=JSON.parse('{"permalink":"/ease-food/blog/tags/facebook","page":1,"postsPerPage":10,"totalPages":1,"totalCount":1,"blogDescription":"Blog","blogTitle":"Blog"}')}}]);

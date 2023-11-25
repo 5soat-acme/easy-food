@@ -22,6 +22,8 @@ const config = {
   // If you aren't using GitHub pages, you don't need these.
   organizationName: '5soat-acme', // Usually your GitHub org/user name.
   projectName: 'Easy Food', // Usually your repo name.
+  deploymentBranch: 'docs',
+  trailingSlash: false,
 
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
@@ -30,8 +32,8 @@ const config = {
   // useful metadata like html lang. For example, if your site is Chinese, you
   // may want to replace "en" with "zh-Hans".
   i18n: {
-    defaultLocale: 'en',
-    locales: ['en'],
+    defaultLocale: 'pt-br',
+    locales: ['pt-br']
   },
 
   presets: [

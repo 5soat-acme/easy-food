@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkeasy_food_docs=self.webpackChunkeasy_food_docs||[]).push([[2649],{744:o=>{o.exports=JSON.parse('{"permalink":"/easy-food/blog/tags/docusaurus","page":1,"postsPerPage":10,"totalPages":1,"totalCount":4,"blogDescription":"Blog","blogTitle":"Blog"}')}}]);

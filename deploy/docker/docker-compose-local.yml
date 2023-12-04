@@ -1,0 +1,30 @@
+version: '3'
+
+services:
+  
+  easy-food-api:
+    image: acme/easy-food-api:latest
+    container_name: easy-food-api
+    build:
+      context: ../src
+      dockerfile: ./EF.WebApi/Dockerfile
+    restart: always
+    environment:
+      ASPNETCORE_ENVIRONMENT: Docker
+      ASPNETCORE_URLS: https://+:443;http://+:80
+    depends_on:
+      - easy-food-db
+  
+  easy-food-db:
+    image: postgres:latest
+    environment:
+      POSTGRES_USER: acme
+      POSTGRES_PASSWORD: acme
+      POSTGRES_DB: easy-food
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:

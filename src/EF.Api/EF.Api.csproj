@@ -1,0 +1,36 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <InvariantGlobalization>true</InvariantGlobalization>
+        <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="MediatR" Version="12.2.0"/>
+        <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="8.0.0"/>
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.0"/>
+        <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <Content Include="..\..\.dockerignore">
+            <Link>.dockerignore</Link>
+        </Content>
+    </ItemGroup>
+
+    <ItemGroup>
+        <None Remove="EF.Api.http"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\EF.Commons.Domain\EF.Commons.Domain.csproj"/>
+        <ProjectReference Include="..\EF.Infra.CrossCutting.WebApiCore\EF.Infra.CrossCutting.WebApiCore.csproj"/>
+        <ProjectReference Include="..\EF.Pedidos.Application\EF.Pedidos.Application.csproj"/>
+        <ProjectReference Include="..\EF.Pedidos.Domain\EF.Pedidos.Domain.csproj"/>
+        <ProjectReference Include="..\EF.Pedidos.Infra.Data\EF.Pedidos.Infra.Data.csproj"/>
+    </ItemGroup>
+
+</Project>

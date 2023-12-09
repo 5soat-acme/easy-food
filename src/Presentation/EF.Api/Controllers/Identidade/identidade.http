@@ -1,0 +1,31 @@
+POST {{baseUrl}}/api/identidade
+Content-Type: application/json
+
+{
+  "nome": "Renato",
+  "sobrenome": "Gabriel Danilo Castro",
+  "cpf": "160.779.510-80",
+  "email": "renato_gabriel_castro@deze7.com.br",
+  "senha": "C58t(QPxgQ",
+  "senhaConfirmacao": "C58t(QPxgQ"
+}
+
+###
+
+POST {{baseUrl}}/api/identidade/autenticar
+Content-Type: application/json
+
+{
+  "email": "renato_gabriel_castro@deze7.com.br",
+  "senha": "C58t(QPxgQ"
+}
+
+###
+
+POST {{baseUrl}}/api/identidade/acessar-sem-identificacao
+Content-Type: application/json
+
+###
+
+POST {{baseUrl}}/api/identidade/acessar-sem-identificacao?cpf=160.779.510-80
+Content-Type: application/json

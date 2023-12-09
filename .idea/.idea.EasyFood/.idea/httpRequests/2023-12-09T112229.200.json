@@ -1,0 +1,21 @@
+{
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiJmMjBjNmQ2YS1kMzM3LTQyZTItOTRkNy1kYzc4YTdhN2I4MzAiLCJ1c2VyX3R5cGUiOiJhbm9ueW1vdXMiLCJ1c2VyX2NwZiI6IjE2MC43NzkuNTEwLTgwIiwibmJmIjoxNzAyMTMxNzQ5LCJleHAiOjE3MDIxMzg5NDksImlhdCI6MTcwMjEzMTc0OSwiaXNzIjoiRWFzeUZvb2QifQ.8uWcV8tlOXWZcCsfuI-Mk8LNh8CoSOFuv3r-xqTCCrs",
+  "expiresIn": 7200,
+  "user": {
+    "id": null,
+    "claims": [
+      {
+        "value": "f20c6d6a-d337-42e2-94d7-dc78a7a7b830",
+        "type": "jti"
+      },
+      {
+        "value": "anonymous",
+        "type": "user_type"
+      },
+      {
+        "value": "160.779.510-80",
+        "type": "user_cpf"
+      }
+    ]
+  }
+}

@@ -15,7 +15,6 @@ public class Pedido : Entity, IAggregateRoot
         ClienteId = clienteId;
     }
 
-    // Necessário para o EF
     protected Pedido()
     {
     }

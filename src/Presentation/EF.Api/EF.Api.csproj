@@ -11,6 +11,8 @@
 
     <ItemGroup>
         <PackageReference Include="MediatR" Version="12.2.0"/>
+        <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="8.0.0"/>
+        <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="8.0.0"/>
         <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="8.0.0"/>
         <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.0"/>
         <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0"/>
@@ -20,14 +22,30 @@
         <Content Include="..\..\.dockerignore">
             <Link>.dockerignore</Link>
         </Content>
+        <Content Remove="Extensions\**"/>
     </ItemGroup>
 
     <ItemGroup>
+        <ProjectReference Include="..\..\Services\EF.Clientes.Infra\EF.Clientes.Infra.csproj"/>
+        <ProjectReference Include="..\..\Services\EF.Identidade.Application\EF.Identidade.Application.csproj"/>
+        <ProjectReference Include="..\..\Services\EF.Identidade.Infra\EF.Identidade.Infra.csproj"/>
         <ProjectReference Include="..\..\Services\EF.Pedidos.Application\EF.Pedidos.Application.csproj"/>
         <ProjectReference Include="..\..\Services\EF.Pedidos.Domain\EF.Pedidos.Domain.csproj"/>
         <ProjectReference Include="..\..\Services\EF.Pedidos.Infra\EF.Pedidos.Infra.csproj"/>
         <ProjectReference Include="..\..\Shared\EF.Domain.Commons\EF.Domain.Commons.csproj"/>
         <ProjectReference Include="..\..\Shared\EF.WebApi.Commons\EF.WebApi.Commons.csproj"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <Compile Remove="Extensions\**"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <EmbeddedResource Remove="Extensions\**"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <None Remove="Extensions\**"/>
     </ItemGroup>
 
 </Project>

@@ -8,6 +8,7 @@ public static class ApiConfig
         services.AddEndpointsApiExplorer();
         services.AddSwaggerGen();
         services.RegisterServices(configuration);
+        services.AddIdentityConfig(configuration);
 
         return services;
     }
@@ -21,7 +22,10 @@ public static class ApiConfig
         }
 
         app.UseHttpsRedirection();
+
         app.MapControllers();
+
+        app.UseIdentityConfig();
 
         return app;
     }

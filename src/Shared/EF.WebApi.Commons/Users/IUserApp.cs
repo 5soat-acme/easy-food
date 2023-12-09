@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Http;
 
 namespace EF.WebApi.Commons.Users;
 
-public interface IAppUser
+public interface IUserApp
 {
     string Name { get; }
     Guid GetUserId();
@@ -14,4 +14,5 @@ public interface IAppUser
     bool IsInRole(string role);
     IEnumerable<Claim> GetClaims();
     HttpContext GetHttpContext();
+    Guid GetTokenIdentifier();
 }

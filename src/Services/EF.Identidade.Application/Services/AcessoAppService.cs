@@ -4,7 +4,7 @@ using System.Text;
 using EF.Clientes.Application.Commands;
 using EF.Domain.Commons.Mediator;
 using EF.Identidade.Application.DTOs;
-using EF.Identidade.Infra.Extensions;
+using EF.WebApi.Commons.Identity;
 using FluentValidation.Results;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Options;

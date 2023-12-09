@@ -1,13 +1,14 @@
 using System.Security.Claims;
 using Microsoft.AspNetCore.Http;
+using Microsoft.IdentityModel.JsonWebTokens;
 
 namespace EF.WebApi.Commons.Users;
 
-public class AppUser : IAppUser
+public class UserApp : IUserApp
 {
     private readonly IHttpContextAccessor _accessor;
 
-    public AppUser(IHttpContextAccessor accessor)
+    public UserApp(IHttpContextAccessor accessor)
     {
         _accessor = accessor;
     }
@@ -52,5 +53,13 @@ public class AppUser : IAppUser
     public HttpContext GetHttpContext()
     {
         return _accessor.HttpContext;
+    }
+
+    public Guid GetTokenIdentifier()
+    {
+        if (!IsAuthenticated()) return Guid.Empty;
+
+        return Guid.Parse(_accessor.HttpContext.User.Claims.FirstOrDefault(c => c.Type == JwtRegisteredClaimNames.Jti)
+            ?.Value);
     }
 }

@@ -1,4 +1,4 @@
-namespace EF.Identidade.Infra.Extensions;
+namespace EF.WebApi.Commons.Identity;
 
 public class IdentitySettings
 {

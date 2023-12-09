@@ -6,7 +6,7 @@ public class Pedido : Entity, IAggregateRoot
 {
     private readonly List<Item> _itens;
 
-    public Pedido(Guid clienteId)
+    public Pedido(Guid? clienteId)
     {
         _itens = new List<Item>();
 
@@ -19,7 +19,7 @@ public class Pedido : Entity, IAggregateRoot
     {
     }
 
-    public Guid ClienteId { get; private set; }
+    public Guid? ClienteId { get; private set; }
 
     public IReadOnlyCollection<Item> Itens => _itens;
 

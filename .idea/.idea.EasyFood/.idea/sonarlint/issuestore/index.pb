@@ -149,3 +149,11 @@ k
 ;src/Services/EF.Identidade.Application/DTOs/UsuarioClaim.cs,c\d\cd65c36ca9aaf7076b2112e44a989bcb8ae94c8b
 r
 Bsrc/Services/EF.Identidade.Application/DTOs/RespostaTokenAcesso.cs,8\0\80a17878b5f7174d31706fededc3a1e9a07f8b14
+b
+2src/Shared/EF.WebApi.Commons/Identity/JwtConfig.cs,f\4\f4d34b8023ef997e476f80d4f0c726bc563620f2
+i
+9src/Shared/EF.WebApi.Commons/Identity/IdentitySettings.cs,5\5\55147006a42643c519a50be814d3c7e885e86783
+]
+-src/Shared/EF.WebApi.Commons/Users/UserApp.cs,7\9\7903884134c94eff26342628b3847e6aab409b13
+^
+.src/Shared/EF.WebApi.Commons/Users/IUserApp.cs,e\4\e417d322bf321f2b69b4006fbb1204338fbb75c3

@@ -1,0 +1,11 @@
+{
+  "type": "https://tools.ietf.org/html/rfc9110#section-15.5.1",
+  "title": "One or more validation errors occurred.",
+  "status": 400,
+  "errors": {
+    "Cpf": [
+      "CPF inválido"
+    ]
+  },
+  "traceId": "00-1033ad31eb43b2a4c39141d03b94b8df-d519f417946ec703-00"
+}

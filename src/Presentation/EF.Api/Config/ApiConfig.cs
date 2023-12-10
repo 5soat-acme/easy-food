@@ -1,3 +1,4 @@
+using EF.Api.Extensions;
 using Microsoft.OpenApi.Models;
 
 namespace EF.Api.Config;
@@ -52,6 +53,8 @@ public static class ApiConfig
         app.MapControllers();
 
         app.UseIdentityConfig();
+
+        app.UseMiddleware<ExceptionMiddleware>();
 
         return app;
     }

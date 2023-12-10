@@ -1,3 +1,0 @@
-
-|csharpsquid:S4487"XRemove this unread private field '_signInManager' or refactor the code to use its value.(–Û µ8„‡¼ïÄ1
-—csharpsquid:S6588¢"mUse "DateTimeOffset.UnixEpoch" instead of creating DateTimeOffset instances that point to the unix epoch time(ïØÛüûÿÿÿÿ8– ÑïÄ1

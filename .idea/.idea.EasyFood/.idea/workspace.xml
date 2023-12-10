@@ -19,22 +19,41 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="61e4a515-7fae-49b6-801b-ebc481bfb9f9" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/httpRequests/http-client.cookies" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/httpRequests/http-client.cookies" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/httpRequests/http-requests-log.http" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/httpRequests/http-requests-log.http" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/issuestore/1/e/1e7156ba42fa25d49163a00f22107f14a94da5f8" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/issuestore/2/0/200646d9409e0c33004db0c08f51cd712507863b" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/issuestore/4/4/44f7396b81884f779a796ef38f545ec1bbf7c037" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/issuestore/5/0/50b18fb1285b0a7034eca436351fb6e673ba0322" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/issuestore/5/2/52260065e1e71063407de9887764c9bb0849f008" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/issuestore/5/5/55c185e256e6d953f1677d86454d9d78babe8d29" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/issuestore/6/a/6a25f34a99e1102d07e25ed2a8194058b7d03273" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/issuestore/6/a/6a9ec9c04c18975bdf31116b0f4caa19959344cc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/issuestore/7/7/777988f2454daa5fd92ed6e7ee347fdf1583f697" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/issuestore/c/d/cd6bc2dcc9b42649b35e125a145b30291cb35be3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/issuestore/d/0/d0667290c4dd7384a20ad1ed029159cbd97ee462" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/issuestore/f/2/f2e345c3b77f518eefe5e1d6b56fc7d15b87f9b0" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/issuestore/f/a/fa5ce74e9bdf929b5cfa7c8af4bdefe7f2970227" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/securityhotspotstore/1/e/1e7156ba42fa25d49163a00f22107f14a94da5f8" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/securityhotspotstore/2/0/200646d9409e0c33004db0c08f51cd712507863b" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/securityhotspotstore/4/4/44f7396b81884f779a796ef38f545ec1bbf7c037" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/securityhotspotstore/5/0/50b18fb1285b0a7034eca436351fb6e673ba0322" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/securityhotspotstore/5/2/52260065e1e71063407de9887764c9bb0849f008" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/securityhotspotstore/5/5/55c185e256e6d953f1677d86454d9d78babe8d29" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/securityhotspotstore/6/a/6a25f34a99e1102d07e25ed2a8194058b7d03273" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/securityhotspotstore/6/a/6a9ec9c04c18975bdf31116b0f4caa19959344cc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/securityhotspotstore/7/7/777988f2454daa5fd92ed6e7ee347fdf1583f697" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/securityhotspotstore/c/d/cd6bc2dcc9b42649b35e125a145b30291cb35be3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/securityhotspotstore/d/0/d0667290c4dd7384a20ad1ed029159cbd97ee462" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/securityhotspotstore/f/2/f2e345c3b77f518eefe5e1d6b56fc7d15b87f9b0" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/securityhotspotstore/f/a/fa5ce74e9bdf929b5cfa7c8af4bdefe7f2970227" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/securityhotspotstore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/securityhotspotstore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EasyFood.sln" beforeDir="false" afterPath="$PROJECT_DIR$/EasyFood.sln" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Presentation/EF.Api/Config/ApiConfig.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Presentation/EF.Api/Config/ApiConfig.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Presentation/EF.Api/Config/IdentityConfig.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Presentation/EF.Api/Config/IdentityConfig.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Presentation/EF.Api/Controllers/Pedidos/PedidoController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Presentation/EF.Api/Controllers/Pedidos/PedidoController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Presentation/EF.Api/appsettings.Development.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/Presentation/EF.Api/appsettings.Development.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/EF.Identidade.Application/EF.Identidade.Application.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Identidade.Application/EF.Identidade.Application.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/EF.Identidade.Application/Services/AcessoAppService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Identidade.Application/Services/AcessoAppService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/EF.Identidade.Infra/Extensions/IdentitySettings.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/EF.Pedidos.Application/Commands/IncluirItemPedidoCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Pedidos.Application/Commands/IncluirItemPedidoCommand.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Shared/EF.WebApi.Commons/EF.WebApi.Commons.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/src/Shared/EF.WebApi.Commons/EF.WebApi.Commons.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Shared/EF.WebApi.Commons/Users/AppUser.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Shared/EF.WebApi.Commons/Users/UserApp.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Shared/EF.WebApi.Commons/Users/IAppUser.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Shared/EF.WebApi.Commons/Users/IUserApp.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Presentation/EF.Api/Controllers/Identidade/identidade.http" beforeDir="false" afterPath="$PROJECT_DIR$/src/Presentation/EF.Api/Controllers/Identidade/identidade.http" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Presentation/EF.Api/EF.Api.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/src/Presentation/EF.Api/EF.Api.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/EF.Identidade.Application/DTOs/NovoUsuario.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Identidade.Application/DTOs/NovoUsuario.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,23 +76,25 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/c4cfefac200a47ecbb5df8cbfb34e2139000/18/3c618ead/Abstractions.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/78c860a4a0696d27b2942ef6996b8ceec84aec6b56a4221bd8ce81cc42954d/RequestHandlerWrapper.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/b7208b3f72528d22781d25fde9a55271bdf2b5aade4f03b1324579a25493cd8/List.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/bd1d5c50194fea68ff3559c160230b0ab50f5acf4ce3061bffd6d62958e2182/ExceptionDispatchInfo.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/eb22bfe9370675412a9c49a5a43b32d5f5b39cae5bb7c888c156f9e2a24bb/ValidationProblemDetails.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/Services/EF.Clientes.Infra/Data/Migrations/20231208143534_BaseInicialClientes.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/Services/EF.Identidade.Application/Services/IIdentidadeAppService.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/Services/EF.Identidade.Application/Services/IdentidadeAppService.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/test/EF.Domain.Commons.Test/UnitTest1.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="HttpClientSelectedEnvironments">
     <file url="file://$PROJECT_DIR$/src/Presentation/EF.Api/Controllers/Identidade/identidade.http" environment="dev" />
     <file url="jar://$APPLICATION_HOME_DIR$/plugins/restClient/lib/restClient.jar!/com/intellij/ws/rest/client/requests/collection/get-requests.http" environment="test" />
     <file url="jar://$APPLICATION_HOME_DIR$/plugins/restClient/lib/restClient.jar!/com/intellij/ws/rest/client/requests/collection/post-requests.http" environment="test" />
+    <file url="jar://$APPLICATION_HOME_DIR$/plugins/restClient/lib/restClient.jar!/com/intellij/ws/rest/client/requests/collection/requests-with-authorization.http" environment="test" />
   </component>
-  <component name="KubernetesApiProvider"><![CDATA[{
-  "contexts": [
+  <component name="KubernetesApiProvider">{
+  &quot;contexts&quot;: [
     {
-      "name": "rancher-desktop"
+      &quot;name&quot;: &quot;rancher-desktop&quot;
     }
   ],
-  "isMigrated": true
-}]]></component>
+  &quot;isMigrated&quot;: true
+}</component>
   <component name="KubernetesSettings">
     <option name="contextName" value="rancher-desktop" />
   </component>
@@ -94,34 +115,34 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    ".NET Launch Settings Profile.EF.Api: https.executor": "Debug",
-    "HTTP Request.All in identidade.executor": "Run",
-    "HTTP Request.identidade | #1.executor": "Run",
-    "HTTP Request.identidade | #2.executor": "Run",
-    "HTTP Request.identidade | #3.executor": "Run",
-    "HTTP Request.identidade | #4.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "feat-identidade",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "rest.client.default.execution.environment": "dev",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;.NET Launch Settings Profile.EF.Api: https.executor&quot;: &quot;Debug&quot;,
+    &quot;HTTP Request.All in identidade.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.identidade | #1.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.identidade | #2.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.identidade | #3.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.identidade | #4.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;feat-identidade&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;rest.client.default.execution.environment&quot;: &quot;dev&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "rider.external.source.directories": [
-      "C:\\Users\\bmfpe\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\DecompilerCache",
-      "C:\\Users\\bmfpe\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\SourcesCache",
-      "C:\\Users\\bmfpe\\AppData\\Local\\Symbols\\src"
+  &quot;keyToStringList&quot;: {
+    &quot;rider.external.source.directories&quot;: [
+      &quot;C:\\Users\\bmfpe\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\DecompilerCache&quot;,
+      &quot;C:\\Users\\bmfpe\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\SourcesCache&quot;,
+      &quot;C:\\Users\\bmfpe\\AppData\\Local\\Symbols\\src&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected=".NET Launch Settings Profile.EF.Api: https">
     <configuration name="All in identidade" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" path="$PROJECT_DIR$/src/Presentation/EF.Api/Controllers/Identidade/identidade.http">
       <method v="2" />
@@ -186,11 +207,11 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="HTTP Request.identidade | #1" />
         <item itemvalue="HTTP Request.All in identidade" />
         <item itemvalue="HTTP Request.identidade | #4" />
         <item itemvalue="HTTP Request.identidade | #3" />
         <item itemvalue="HTTP Request.identidade | #2" />
-        <item itemvalue="HTTP Request.identidade | #1" />
       </list>
     </recent_temporary>
   </component>
@@ -212,6 +233,7 @@
       <workItem from="1702034259039" duration="14198000" />
       <workItem from="1702112615313" duration="4047000" />
       <workItem from="1702116785375" duration="15119000" />
+      <workItem from="1702208036370" duration="6014000" />
     </task>
     <servers />
   </component>
@@ -225,19 +247,6 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/src/Presentation/EF.Api/Controllers/Identidade/IdentidadeController.cs</url>
-          <line>12</line>
-          <properties documentPath="D:\fiap\easy-food\src\Presentation\EF.Api\Controllers\Identidade\IdentidadeController.cs" initialLine="12" containingFunctionPresentation="Method 'CriarUsuario'">
-            <startOffsets>
-              <option value="401" />
-            </startOffsets>
-            <endOffsets>
-              <option value="402" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="12" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/src/Presentation/EF.Api/Controllers/Pedidos/PedidoController.cs</url>
           <line>15</line>
           <properties documentPath="D:\fiap\easy-food\src\Presentation\EF.Api\Controllers\Pedidos\PedidoController.cs" initialLine="13" containingFunctionPresentation="Method 'CriarPedido'">
@@ -249,6 +258,19 @@
             </endOffsets>
           </properties>
           <option name="timeStamp" value="13" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/src/Services/EF.Identidade.Application/Services/AcessoAppService.cs</url>
+          <line>33</line>
+          <properties documentPath="D:\fiap\easy-food\src\Services\EF.Identidade.Application\Services\AcessoAppService.cs" initialLine="33" containingFunctionPresentation="Method 'CriarUsuario'">
+            <startOffsets>
+              <option value="1263" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1264" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="16" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

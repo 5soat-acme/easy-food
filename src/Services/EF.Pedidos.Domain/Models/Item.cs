@@ -13,7 +13,6 @@ public class Item : Entity
         Quantidade = quantidade;
     }
 
-    // Necessário para o EF
     protected Item()
     {
     }

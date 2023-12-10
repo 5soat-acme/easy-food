@@ -1,0 +1,29 @@
+{
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJlMTZlYzdhYi00MDBkLTQwNmYtYTA2ZS1mODQ3MmNkNDUxZWEiLCJlbWFpbCI6InJlbmF0b19nYWJyaWVsX2Nhc3Ryb0BkZXplNy5jb20uYnIiLCJqdGkiOiI4ZGFiOTZhZi02ZTM5LTQwOTctYjI1ZS1kYTdmYzFkYzMyZTQiLCJuYmYiOjE3MDIxMzE2NTgsImlhdCI6MTcwMjEzMTY1OCwiZXhwIjoxNzAyMTM4ODU4LCJpc3MiOiJFYXN5Rm9vZCJ9.tkW03k5FYRc0ur_Tv87LEvuVRsVIR1h72mzH3hJLuO8",
+  "expiresIn": 7200,
+  "user": {
+    "id": "e16ec7ab-400d-406f-a06e-f8472cd451ea",
+    "claims": [
+      {
+        "value": "e16ec7ab-400d-406f-a06e-f8472cd451ea",
+        "type": "sub"
+      },
+      {
+        "value": "renato_gabriel_castro@deze7.com.br",
+        "type": "email"
+      },
+      {
+        "value": "8dab96af-6e39-4097-b25e-da7fc1dc32e4",
+        "type": "jti"
+      },
+      {
+        "value": "1702131658",
+        "type": "nbf"
+      },
+      {
+        "value": "1702131658",
+        "type": "iat"
+      }
+    ]
+  }
+}

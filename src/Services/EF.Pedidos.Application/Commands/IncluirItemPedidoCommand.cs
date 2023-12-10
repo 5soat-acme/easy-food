@@ -4,7 +4,8 @@ namespace EF.Pedidos.Application.Commands;
 
 public class IncluirItemPedidoCommand : Command
 {
-    public Guid ClienteId { get; set; }
+    public Guid CarrinhoId { get; set; }
+    public Guid? ClienteId { get; set; }
     public Guid ProdutoId { get; set; }
     public int Quantidade { get; set; }
 }

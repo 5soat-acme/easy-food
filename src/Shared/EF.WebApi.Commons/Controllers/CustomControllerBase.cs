@@ -1,5 +1,6 @@
 using FluentValidation.Results;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.ModelBinding;
 
 namespace EF.WebApi.Commons.Controllers;
 
@@ -16,6 +17,14 @@ public abstract class CustomControllerBase : ControllerBase
         {
             { "Messages", Errors.ToArray() }
         }));
+    }
+
+    protected IActionResult Respond(ModelStateDictionary modelState)
+    {
+        var errors = modelState.Values.SelectMany(e => e.Errors);
+        foreach (var error in errors) AddError(error.ErrorMessage);
+
+        return Respond();
     }
 
     protected IActionResult Respond(ValidationResult validationResult)

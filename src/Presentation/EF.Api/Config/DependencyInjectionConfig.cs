@@ -1,3 +1,5 @@
+using EF.Carrinho.Application.Services;
+using EF.Carrinho.Application.Services.Interfaces;
 using EF.Clientes.Application.Commands;
 using EF.Clientes.Domain.Repository;
 using EF.Clientes.Infra.Data;
@@ -25,6 +27,7 @@ public static class DependencyInjectionConfig
         RegisterServicesPedidos(services, configuration);
         RegisterServicesClientes(services, configuration);
         RegisterServicesIdentidade(services, configuration);
+        RegisterServicesCarrinho(services, configuration);
 
         return services;
     }
@@ -55,7 +58,13 @@ public static class DependencyInjectionConfig
 
     private static void RegisterServicesIdentidade(IServiceCollection services, IConfiguration configuration)
     {
-        // Application - Commands
+        // Application - Services
         services.AddScoped<IAcessoAppService, AcessoAppService>();
+    }
+    
+    private static void RegisterServicesCarrinho(IServiceCollection services, IConfiguration configuration)
+    {
+        // Application - Services
+        services.AddScoped<ICarrinhoAppService, CarrinhoAppService>();
     }
 }

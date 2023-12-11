@@ -145,3 +145,17 @@ f
 6src/Shared/EF.Domain.Commons/Messages/CommandResult.cs,e\0\e0c50c32a66a22da70ca9a05d1068e9b5fc65be8
 i
 9src/Shared/EF.Domain.Commons/Mediator/IMediatorHandler.cs,3\9\394125eaf116fdcb3da768a7803376d8b859042b
+s
+Csrc/Services/EF.Carrinho.Application/Services/CarrinhoAppService.cs,0\0\0035830cba06917eb1467f344ee47e1f6bc32391
+
+Osrc/Services/EF.Carrinho.Application/Services/Interfaces/ICarrinhoAppService.cs,3\1\31e7ca3edf4e0cea2c56a4b670f3c37b1df4749c
+r
+Bsrc/Presentation/EF.Api/Controllers/Carrinho/CarrinhoController.cs,2\e\2ef927fb3904ee02034aab49a3b37bed18bef581
+i
+9src/Services/EF.Carrinho.Domain/Models/CarrinhoCliente.cs,d\c\dc4b2fa6ba7f3f6728a557f69e6f6e00d9009b24
+^
+.src/Services/EF.Carrinho.Domain/Models/Item.cs,8\9\89c922f23a8b92ad0a14f60398ccf81c6448238c
+_
+/src/Services/EF.Carrinho.Domain/Models/Cupom.cs,4\d\4deb8b9c111193ffc26bab25c5224fe000f4d652
+d
+4src/Shared/EF.Domain.Commons/DomainObjects/Entity.cs,e\a\ea2245ff79edfcaaa31bab9bdcc46fc5c5e6c081

@@ -2,14 +2,15 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
 using EF.Clientes.Application.Commands;
+using EF.Domain.Commons.Communication;
 using EF.Domain.Commons.Mediator;
 using EF.Identidade.Application.DTOs;
+using EF.Identidade.Application.Services.Interfaces;
 using EF.WebApi.Commons.Identity;
 using FluentValidation.Results;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
-using ValidationFailure = FluentValidation.Results.ValidationFailure;
 
 namespace EF.Identidade.Application.Services;
 
@@ -29,7 +30,7 @@ public class AcessoAppService : IAcessoAppService
         _identitySettings = settings.Value;
     }
 
-    public async Task<(ValidationResult ValidationResult, RespostaTokenAcesso? Token)> CriarUsuario(
+    public async Task<Result<RespostaTokenAcesso>> CriarUsuario(
         NovoUsuario novoUsuario)
     {
         var identityUser = new IdentityUser
@@ -41,16 +42,19 @@ public class AcessoAppService : IAcessoAppService
 
         var identityResult = await _userManager.CreateAsync(identityUser, novoUsuario.Senha);
 
-        var result = new ValidationResult();
-        RespostaTokenAcesso? jwt = null;
-
         if (identityResult.Succeeded)
         {
-            result = await RegistrarCliente(novoUsuario);
-            jwt = await GerarToken(novoUsuario.Email);
+            var result = await RegistrarCliente(novoUsuario);
+            if (!result.IsValid) return Result<RespostaTokenAcesso>.Failure(result);
+
+            return Result<RespostaTokenAcesso>.Success(await GerarToken(novoUsuario.Email));
         }
 
-        return (result, jwt);
+        var errors = new List<string>();
+        foreach (var error in identityResult.Errors)
+            errors.Add(error.Description);
+
+        return Result<RespostaTokenAcesso>.Failure(errors);
     }
 
     public RespostaTokenAcesso GerarTokenAcessoNaoIdentificado(string? cpf = null)
@@ -70,22 +74,14 @@ public class AcessoAppService : IAcessoAppService
         return ObterRespostaToken(encodedToken, claims);
     }
 
-    public async Task<(ValidationResult ValidationResult, RespostaTokenAcesso? Token)> Autenticar(UsuarioLogin usuario)
+    public async Task<Result<RespostaTokenAcesso>> Autenticar(UsuarioLogin usuario)
     {
         var result = await _signInManager.PasswordSignInAsync(usuario.Email, usuario.Senha,
             false, true);
 
-        RespostaTokenAcesso? jwt = null;
-        ValidationResult validationResult = new();
+        if (result.Succeeded) return Result<RespostaTokenAcesso>.Success(await GerarToken(usuario.Email));
 
-        if (!result.Succeeded)
-        {
-            validationResult.Errors.Add(new ValidationFailure("Usuario", "Usuário ou senha incorretos"));
-            return (validationResult, jwt);
-        }
-
-        jwt = await GerarToken(usuario.Email);
-        return (validationResult, jwt);
+        return Result<RespostaTokenAcesso>.Failure("Usuário ou senha incorretos");
     }
 
     private async Task<ValidationResult> RegistrarCliente(NovoUsuario novoUsuario)
@@ -102,9 +98,9 @@ public class AcessoAppService : IAcessoAppService
                 Sobrenome = novoUsuario.Sobrenome
             });
 
-            if (!result.IsValid) await _userManager.DeleteAsync(identityUser);
+            if (!result.IsValid()) await _userManager.DeleteAsync(identityUser);
 
-            return result;
+            return result.ValidationResult;
         }
         catch (Exception)
         {

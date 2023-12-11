@@ -1,5 +1,5 @@
 using EF.Identidade.Application.DTOs;
-using EF.Identidade.Application.Services;
+using EF.Identidade.Application.Services.Interfaces;
 using EF.WebApi.Commons.Controllers;
 using Microsoft.AspNetCore.Mvc;
 
@@ -15,10 +15,13 @@ public class IdentidadeController(IAcessoAppService appService) : CustomControll
 
         var result = await appService.CriarUsuario(novoUsuario);
 
-        if (!result.ValidationResult.IsValid)
-            return Respond(result.ValidationResult);
+        if (!result.IsValid)
+        {
+            result.Errors.ForEach(AddError);
+            return Respond(ModelState);
+        }
 
-        return Respond(result.Token);
+        return Respond(result.Data);
     }
 
     [HttpPost("autenticar")]
@@ -28,10 +31,13 @@ public class IdentidadeController(IAcessoAppService appService) : CustomControll
 
         var result = await appService.Autenticar(usuario);
 
-        if (!result.ValidationResult.IsValid)
-            return Respond(result.ValidationResult);
+        if (!result.IsValid)
+        {
+            result.Errors.ForEach(AddError);
+            return Respond(ModelState);
+        }
 
-        return Respond(result.Token);
+        return Respond(result.Data);
     }
 
     [HttpPost("acessar-sem-identificacao")]

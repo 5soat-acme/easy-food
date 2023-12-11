@@ -14,7 +14,7 @@ public static class JwtConfig
     {
         services.AddMemoryCache()
             .AddDataProtection();
-        
+
         var settingsSection = configuration.GetSection("IdentidadeSettings");
         services.Configure<IdentitySettings>(settingsSection);
         var identitySettings = settingsSection.Get<IdentitySettings>();

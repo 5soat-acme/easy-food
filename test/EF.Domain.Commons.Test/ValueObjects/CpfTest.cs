@@ -31,11 +31,11 @@ public class CpfTest
     {
         // Arrange & Act
         var result = Cpf.Validar(numero);
-        
+
         // Assert
         result.Should().BeTrue("o CPF é válido");
     }
-    
+
     [Theory(DisplayName = "CPF válido sem máscara")]
     [Trait("Category", "Value Objects - CPF")]
     [InlineData("90733994407")]
@@ -62,11 +62,11 @@ public class CpfTest
     {
         // Arrange & Act
         var result = Cpf.Validar(numero);
-        
+
         // Assert
         result.Should().BeTrue("o CPF é válido");
     }
-    
+
     [Theory(DisplayName = "CPF inválido com máscara")]
     [Trait("Category", "Value Objects - CPF")]
     [InlineData("617.942.889-54")]
@@ -93,11 +93,11 @@ public class CpfTest
     {
         // Arrange & Act
         var result = Cpf.Validar(numero);
-        
+
         // Assert
         result.Should().BeFalse("o CPF é inválido");
     }
-    
+
     [Theory(DisplayName = "CPF inválido com máscara")]
     [Trait("Category", "Value Objects - CPF")]
     [InlineData("61794288954")]
@@ -124,7 +124,7 @@ public class CpfTest
     {
         // Arrange & Act
         var result = Cpf.Validar(numero);
-        
+
         // Assert
         result.Should().BeFalse("o CPF é inválido");
     }

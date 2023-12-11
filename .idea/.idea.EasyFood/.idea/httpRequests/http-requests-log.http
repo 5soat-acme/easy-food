@@ -9,6 +9,69 @@ Accept-Encoding: br,deflate,gzip,x-gzip
 {
   "nome": "José",
   "sobrenome": "Castilho",
+  "cpf": "143.101.300-54",
+  "email": "jose198rr@mail.com.br",
+  "senha": "C58t(QPxgQ",
+  "senhaConfirmacao": "C58t(QPxgQ"
+}
+
+<> 2023-12-11T063601.200.json
+
+###
+
+POST https://localhost:5002/api/identidade
+Content-Type: application/json
+Content-Length: 172
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
+Cookie: .AspNetCore.Identity.Application=CfDJ8CgP4ZNcuf5MnDDqmpaWJXyKk7NMrWm9zNJcMXFx1FPd4rbczNsEqZ2rABF4NWdK0gBF3H0b4yUiNWVa1BoWYcnrvWdrxnNApGJlb2DN5pXyBjYyQyYJCvy-D6KSTwgffDvGzyXwhLOPtgqawK3LT2ma3t_8TGT2lGFrnVUr0lksiAWxoOLU8Ys9GW20IxYtiPAULIhSF3jZ9W8maXVMis_JoL_J9MhnN5B-txjjccKRkyjzgHdG5jRVqCXqdD8eR6ShEhTC9l1xFhCewx6Nb4cW2JNk5SHX6ZMGSAo9JVJdlJubtExK3gUi2SmUkC7-f9ZLP_gNwTl5PALUV8Aja_v5FYi_bn-N71Zx4Oxq8O5OY2R9Bqx0ifzOueFgbW2OP924rvIVtEwhcADyC_EBLNIZrtogYXFyK7Ro4FpzRMyhC2b1OHoqByKpNQpBs3ULtWYcn4kG2ynhTzEl1tIqw22ZCm2h6J-EoR7Nu4yOUDHh_xD8IN4JNRoOxJc-IXLdkD9StXJTBCKfvOPGVxr6QqbGVu04Hp4-DwwCcCMHJ0PqmiJhHWUfRdE4_idKVnOsyI05ANoV6zOmp1YkLmND6DcuKr7RobHW8iwu_-cMJR09eM7hw21OHAf80a1RgCusKnTxwIL0Ka4pGEJUTRifI3bUcJnFsZn-y1Z3Z9kqsy51xqW4fjKEe0yxN_w5fE1UsAssg2OGjFHB32b3Xvp0E1i3VW-bWqQLcAMxeWY0WhqQMHsAFaOOVGEpITpstqWpk7dIv_XDxlP1BCBFMZL0c2s
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "nome": "José",
+  "sobrenome": "Castilho",
+  "cpf": "143.101.300-54",
+  "email": "jose198rr@mail.com.br",
+  "senha": "C58t(QPxgQ",
+  "senhaConfirmacao": "C58t(QPxgQ"
+}
+
+<> 2023-12-11T063554.500.txt
+
+###
+
+POST https://localhost:5002/api/identidade
+Content-Type: application/json
+Content-Length: 172
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
+Cookie: .AspNetCore.Identity.Application=CfDJ8CgP4ZNcuf5MnDDqmpaWJXyKk7NMrWm9zNJcMXFx1FPd4rbczNsEqZ2rABF4NWdK0gBF3H0b4yUiNWVa1BoWYcnrvWdrxnNApGJlb2DN5pXyBjYyQyYJCvy-D6KSTwgffDvGzyXwhLOPtgqawK3LT2ma3t_8TGT2lGFrnVUr0lksiAWxoOLU8Ys9GW20IxYtiPAULIhSF3jZ9W8maXVMis_JoL_J9MhnN5B-txjjccKRkyjzgHdG5jRVqCXqdD8eR6ShEhTC9l1xFhCewx6Nb4cW2JNk5SHX6ZMGSAo9JVJdlJubtExK3gUi2SmUkC7-f9ZLP_gNwTl5PALUV8Aja_v5FYi_bn-N71Zx4Oxq8O5OY2R9Bqx0ifzOueFgbW2OP924rvIVtEwhcADyC_EBLNIZrtogYXFyK7Ro4FpzRMyhC2b1OHoqByKpNQpBs3ULtWYcn4kG2ynhTzEl1tIqw22ZCm2h6J-EoR7Nu4yOUDHh_xD8IN4JNRoOxJc-IXLdkD9StXJTBCKfvOPGVxr6QqbGVu04Hp4-DwwCcCMHJ0PqmiJhHWUfRdE4_idKVnOsyI05ANoV6zOmp1YkLmND6DcuKr7RobHW8iwu_-cMJR09eM7hw21OHAf80a1RgCusKnTxwIL0Ka4pGEJUTRifI3bUcJnFsZn-y1Z3Z9kqsy51xqW4fjKEe0yxN_w5fE1UsAssg2OGjFHB32b3Xvp0E1i3VW-bWqQLcAMxeWY0WhqQMHsAFaOOVGEpITpstqWpk7dIv_XDxlP1BCBFMZL0c2s
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "nome": "José",
+  "sobrenome": "Castilho",
+  "cpf": "020.356.151-49",
+  "email": "jose198rr@mail.com.br",
+  "senha": "C58t(QPxgQ",
+  "senhaConfirmacao": "C58t(QPxgQ"
+}
+
+<> 2023-12-11T063437.400.json
+
+###
+
+POST https://localhost:5002/api/identidade
+Content-Type: application/json
+Content-Length: 172
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
+Cookie: .AspNetCore.Identity.Application=CfDJ8CgP4ZNcuf5MnDDqmpaWJXyKk7NMrWm9zNJcMXFx1FPd4rbczNsEqZ2rABF4NWdK0gBF3H0b4yUiNWVa1BoWYcnrvWdrxnNApGJlb2DN5pXyBjYyQyYJCvy-D6KSTwgffDvGzyXwhLOPtgqawK3LT2ma3t_8TGT2lGFrnVUr0lksiAWxoOLU8Ys9GW20IxYtiPAULIhSF3jZ9W8maXVMis_JoL_J9MhnN5B-txjjccKRkyjzgHdG5jRVqCXqdD8eR6ShEhTC9l1xFhCewx6Nb4cW2JNk5SHX6ZMGSAo9JVJdlJubtExK3gUi2SmUkC7-f9ZLP_gNwTl5PALUV8Aja_v5FYi_bn-N71Zx4Oxq8O5OY2R9Bqx0ifzOueFgbW2OP924rvIVtEwhcADyC_EBLNIZrtogYXFyK7Ro4FpzRMyhC2b1OHoqByKpNQpBs3ULtWYcn4kG2ynhTzEl1tIqw22ZCm2h6J-EoR7Nu4yOUDHh_xD8IN4JNRoOxJc-IXLdkD9StXJTBCKfvOPGVxr6QqbGVu04Hp4-DwwCcCMHJ0PqmiJhHWUfRdE4_idKVnOsyI05ANoV6zOmp1YkLmND6DcuKr7RobHW8iwu_-cMJR09eM7hw21OHAf80a1RgCusKnTxwIL0Ka4pGEJUTRifI3bUcJnFsZn-y1Z3Z9kqsy51xqW4fjKEe0yxN_w5fE1UsAssg2OGjFHB32b3Xvp0E1i3VW-bWqQLcAMxeWY0WhqQMHsAFaOOVGEpITpstqWpk7dIv_XDxlP1BCBFMZL0c2s
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "nome": "José",
+  "sobrenome": "Castilho",
   "cpf": "020.356.151-49",
   "email": "jose1984r@mail.com.br",
   "senha": "C58t(QPxgQ",

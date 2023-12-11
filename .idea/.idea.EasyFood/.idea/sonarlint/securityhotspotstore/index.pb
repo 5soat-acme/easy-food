@@ -115,8 +115,6 @@ k
 Msrc/Services/EF.Pedidos.Infra/Data/Migrations/PedidoDbContextModelSnapshot.cs,e\0\e0e7b416867fc514cc26c75d84062f5b4617ccc2
 ‚
 Rsrc/Services/EF.Pedidos.Infra/Data/Migrations/20231208115053_BaseInicialPedidos.cs,3\a\3a944f0ff1d35aed4eecdf3e68588a26e526288a
-t
-Dsrc/Services/EF.Identidade.Application/Services/IAcessoAppService.cs,c\8\c85024f5c14403cb1e7ecdb447bed878c669c06a
 s
 Csrc/Services/EF.Identidade.Application/Services/AcessoAppService.cs,e\f\efddbd09deb417fb1f2eeea260c40479b1db92dd
 k
@@ -135,3 +133,15 @@ c
 3test/EF.Domain.Commons.Test/ValueObjects/CpfTest.cs,5\1\51b837257f684497a4daba8bf48c891534d894b6
 i
 9src/Presentation/EF.Api/Extensions/ExceptionMiddleware.cs,b\f\bf3553481149308b1410b84e534e466d10f569cc
+
+Osrc/Services/EF.Identidade.Application/Services/Interfaces/IAcessoAppService.cs,f\4\f4de0c2b224069c7570add69d603fc2c2f380c06
+`
+0src/Shared/EF.Domain.Commons/Messages/Message.cs,2\e\2eed64c5c70feac2dfd4e463c5a9b77ce6b7558f
+`
+0src/Shared/EF.Domain.Commons/Messages/Command.cs,b\9\b978db055829bfda07b0c1363851a10b8acb36af
+d
+4src/Shared/EF.Domain.Commons/Communication/Result.cs,6\9\690185dbb1f8651a87eff84168072c105d8fba37
+f
+6src/Shared/EF.Domain.Commons/Messages/CommandResult.cs,e\0\e0c50c32a66a22da70ca9a05d1068e9b5fc65be8
+i
+9src/Shared/EF.Domain.Commons/Mediator/IMediatorHandler.cs,3\9\394125eaf116fdcb3da768a7803376d8b859042b

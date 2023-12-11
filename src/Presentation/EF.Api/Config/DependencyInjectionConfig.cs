@@ -3,12 +3,13 @@ using EF.Clientes.Domain.Repository;
 using EF.Clientes.Infra.Data;
 using EF.Clientes.Infra.Data.Repository;
 using EF.Domain.Commons.Mediator;
+using EF.Domain.Commons.Messages;
 using EF.Identidade.Application.Services;
+using EF.Identidade.Application.Services.Interfaces;
 using EF.Pedidos.Application.Commands;
 using EF.Pedidos.Domain.Repository;
 using EF.Pedidos.Infra.Data;
 using EF.Pedidos.Infra.Data.Repository;
-using FluentValidation.Results;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 
@@ -32,7 +33,7 @@ public static class DependencyInjectionConfig
     {
         // Application - Commands
         services
-            .AddScoped<IRequestHandler<IncluirItemPedidoCommand, ValidationResult>, IncluirItemPedidoCommandHandler>();
+            .AddScoped<IRequestHandler<IncluirItemPedidoCommand, CommandResult>, IncluirItemPedidoCommandHandler>();
 
         // Infra - Data
         services.AddScoped<IPedidoRepository, PedidoRepository>();
@@ -44,7 +45,7 @@ public static class DependencyInjectionConfig
     {
         // Application - Commands
         services
-            .AddScoped<IRequestHandler<CriarClienteCommand, ValidationResult>, CriarClienteCommandHandler>();
+            .AddScoped<IRequestHandler<CriarClienteCommand, CommandResult>, CriarClienteCommandHandler>();
 
         // Infra - Data
         services.AddScoped<IClienteRepository, ClienteRepository>();

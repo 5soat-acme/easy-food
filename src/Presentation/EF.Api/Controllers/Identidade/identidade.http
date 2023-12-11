@@ -4,8 +4,8 @@ Content-Type: application/json
 {
   "nome": "José",
   "sobrenome": "Castilho",
-  "cpf": "020.356.151-49",
-  "email": "jose1984r@mail.com.br",
+  "cpf": "143.101.300-54",
+  "email": "jose198rr@mail.com.br",
   "senha": "C58t(QPxgQ",
   "senhaConfirmacao": "C58t(QPxgQ"
 }

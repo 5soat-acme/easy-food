@@ -1,10 +1,17 @@
 using EF.Carrinho.Application.Services.Interfaces;
 using EF.Carrinho.Domain.Models;
+using EF.Carrinho.Domain.Repository;
 
 namespace EF.Carrinho.Application.Services;
 
 public class CarrinhoAppService : ICarrinhoAppService
 {
+    private readonly ICarrinhoRepository _carrinhoRepository;
+    public CarrinhoAppService(ICarrinhoRepository carrinhoRepository)
+    {
+        _carrinhoRepository = carrinhoRepository;
+    }
+    
     public Task<CarrinhoCliente> ObterCarrinhoPorCliente(Guid clienteId)
     {
         throw new NotImplementedException();

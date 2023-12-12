@@ -165,3 +165,9 @@ x
 Htest/Services/EF.Carrinho.Domain.Test/Fixtures/CarrinhoClienteFixture.cs,b\e\be8e84842af4bbb28308ecacb6ac01c30ebb77e3
 s
 Ctest/Services/EF.Carrinho.Domain.Test/Models/CarrinhoClienteTest.cs,7\3\73df4809bcc3ad5878baf273e5662ab6685367f9
+q
+Asrc/Services/EF.Carrinho.Domain/Repository/ICarrinhoRepository.cs,2\0\2015e15ce4ec36ef07f62f397a4b5055401a9326
+t
+Dsrc/Services/EF.Carrinho.Infra/Data/Repository/CarrinhoRepository.cs,d\e\de119cba1ecebc48288ac73e3c4762bdfce99f96
+h
+8src/Services/EF.Carrinho.Infra/Data/CarrinhoDbContext.cs,3\2\32def67e372487a5fded5db9e6275c86ea15d9c3

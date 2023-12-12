@@ -12,7 +12,7 @@ public class MediatorHandler : IMediatorHandler
         _mediator = mediator;
     }
 
-    public async Task<CommandResult> Send<T>(T command) where T : Command
+    public async Task<CommandResult> Send<T>(T command, CancellationToken cancellationToken = default) where T : Command
     {
         return await _mediator.Send(command);
     }

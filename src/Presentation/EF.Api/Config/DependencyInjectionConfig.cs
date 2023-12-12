@@ -4,6 +4,11 @@ using EF.Clientes.Infra.Data;
 using EF.Clientes.Infra.Data.Repository;
 using EF.Domain.Commons.Mediator;
 using EF.Domain.Commons.Messages;
+using EF.Estoques.Application.Commands;
+using EF.Estoques.Application.Queries;
+using EF.Estoques.Domain.Repository;
+using EF.Estoques.Infra;
+using EF.Estoques.Infra.Data.Repository;
 using EF.Identidade.Application.Services;
 using EF.Identidade.Application.Services.Interfaces;
 using EF.Pedidos.Application.Commands;
@@ -25,6 +30,7 @@ public static class DependencyInjectionConfig
         RegisterServicesPedidos(services, configuration);
         RegisterServicesClientes(services, configuration);
         RegisterServicesIdentidade(services, configuration);
+        RegisterServicesEstoques(services, configuration);
 
         return services;
     }
@@ -57,5 +63,20 @@ public static class DependencyInjectionConfig
     {
         // Application - Commands
         services.AddScoped<IAcessoAppService, AcessoAppService>();
+    }
+
+    private static void RegisterServicesEstoques(IServiceCollection services, IConfiguration configuration)
+    {
+        // Application - Commands
+        services
+            .AddScoped<IRequestHandler<AtualizarEstoqueCommand, CommandResult>, AtualizarEstoqueCommandHandler>();
+
+        // Application - Queries
+        services.AddScoped<IEstoqueQuery, EstoqueQuery>();
+
+        // Infra - Data 
+        services.AddScoped<IEstoqueRepository, EstoqueRepository>();
+        services.AddDbContext<EstoqueDbContext>(options =>
+             options.UseNpgsql(configuration.GetConnectionString("DefaultConnection")));
     }
 }

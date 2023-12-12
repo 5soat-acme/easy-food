@@ -155,7 +155,13 @@ i
 9src/Services/EF.Carrinho.Domain/Models/CarrinhoCliente.cs,d\c\dc4b2fa6ba7f3f6728a557f69e6f6e00d9009b24
 ^
 .src/Services/EF.Carrinho.Domain/Models/Item.cs,8\9\89c922f23a8b92ad0a14f60398ccf81c6448238c
-_
-/src/Services/EF.Carrinho.Domain/Models/Cupom.cs,4\d\4deb8b9c111193ffc26bab25c5224fe000f4d652
 d
 4src/Shared/EF.Domain.Commons/DomainObjects/Entity.cs,e\a\ea2245ff79edfcaaa31bab9bdcc46fc5c5e6c081
+b
+2test/Services/EF.Carrinho.Domain.Test/UnitTest1.cs,2\e\2e8b102f907a3ed8e644e67545121ca84dda3167
+l
+<test/Services/EF.Carrinho.Domain.Test/Models/CarrinhoTest.cs,f\9\f91d627aeafd4ddb163c1c9e2d9cf38d4828fc8e
+x
+Htest/Services/EF.Carrinho.Domain.Test/Fixtures/CarrinhoClienteFixture.cs,b\e\be8e84842af4bbb28308ecacb6ac01c30ebb77e3
+s
+Ctest/Services/EF.Carrinho.Domain.Test/Models/CarrinhoClienteTest.cs,7\3\73df4809bcc3ad5878baf273e5662ab6685367f9

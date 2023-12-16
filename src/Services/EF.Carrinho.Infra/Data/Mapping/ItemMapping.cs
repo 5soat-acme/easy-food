@@ -1,14 +1,14 @@
-using EF.Pedidos.Domain.Models;
+using EF.Carrinho.Domain.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace EF.Pedidos.Infra.Data.Mapping;
+namespace EF.Carrinho.Infra.Data.Mapping;
 
-public class ItemMapping : IEntityTypeConfiguration<Item>
+public class ItemMapping: IEntityTypeConfiguration<Item>
 {
     public void Configure(EntityTypeBuilder<Item> builder)
     {
-        builder.ToTable("ItensPedido");
+        builder.ToTable("ItensCarrinho");
         
         builder.HasKey(c => c.Id);
 
@@ -19,7 +19,7 @@ public class ItemMapping : IEntityTypeConfiguration<Item>
         builder.Property(c => c.ProdutoId)
             .IsRequired();
 
-        builder.HasOne(c => c.Pedido)
+        builder.HasOne(c => c.Carrinho)
             .WithMany(c => c.Itens);
     }
 }

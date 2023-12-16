@@ -14,7 +14,7 @@ public sealed class CarrinhoDbContext : DbContext, IUnitOfWork
         ChangeTracker.AutoDetectChangesEnabled = false;
     }
 
-    public DbSet<CarrinhoCliente?> Carrinhos { get; set; }
+    public DbSet<CarrinhoCliente>? Carrinhos { get; set; }
 
     public async Task<bool> Commit()
     {

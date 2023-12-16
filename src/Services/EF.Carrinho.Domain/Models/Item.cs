@@ -23,6 +23,14 @@ public class Item : Entity
     public decimal ValorUnitario { get; private set; }
     public int Quantidade { get; private set; }
     public Guid ProdutoId { get; private set; }
+    public Guid CarrinhoId { get; private set; }
+    public CarrinhoCliente Carrinho { get; private set; }
+    
+    public void AtualizarQuantidade(int quantidade)
+    {
+        if (!ValidarQuantidade(quantidade)) throw new DomainException("Quantidade inválida");
+        Quantidade = quantidade;
+    }
     
     public bool ValidarProduto(Guid produtoId)
     {

@@ -1,5 +1,6 @@
 using EF.Carrinho.Application.Services.Interfaces;
 using EF.Carrinho.Domain.Models;
+using EF.WebApi.Commons.Controllers;
 using EF.WebApi.Commons.Users;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -7,19 +8,34 @@ using Microsoft.AspNetCore.Mvc;
 namespace EF.Api.Controllers.Carrinho;
 
 [Authorize]
-[Microsoft.AspNetCore.Components.Route("api/carrinho")]
-public class CarrinhoController(ICarrinhoAppService carrinhoAppService, IUserApp user)
+[Route("api/carrinho")]
+public class CarrinhoController(ICarrinhoAppService carrinhoAppService, IUserApp user) : CustomControllerBase
 {
-    private readonly ICarrinhoAppService _carrinhoAppService = carrinhoAppService;
-
+    private readonly Guid _carrinhoId = user.ObterCarrinhoId();
+    
     [HttpGet]
-    public async Task<ActionResult<CarrinhoCliente>> ObterCarrinho()
+    public async Task<CarrinhoCliente> ObterCarrinho()
     {
-        if (user.GetUserId() != Guid.Empty)
+        return await carrinhoAppService.ObterCarrinhoCliente() ?? new CarrinhoCliente(_carrinhoId);
+    }
+    
+    [HttpPost]
+    public async Task<IActionResult> AdicionarItem(Item item)
+    {
+        await carrinhoAppService.AdicionarItemCarrinho(item);
+        return Respond();
+    }
+    
+    [HttpPut("{itemId}")]
+    public async Task<IActionResult> AtualizarItem(Guid itemId, Item item)
+    {
+        if(itemId != item.Id)
         {
-            return await _carrinhoAppService.ObterCarrinhoPorCliente(user.GetUserId());
+            AddError("O item não corresponde ao informado");
+            return Respond();
         }
-
-        return await _carrinhoAppService.ObterCarrinhoPorId(user.GetTokenIdentifier());
+        
+        await carrinhoAppService.AtualizarItem(item);
+        return Respond();
     }
 }

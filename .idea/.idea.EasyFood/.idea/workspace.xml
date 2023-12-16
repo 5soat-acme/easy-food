@@ -19,15 +19,33 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="61e4a515-7fae-49b6-801b-ebc481bfb9f9" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/issuestore/4/d/4deb8b9c111193ffc26bab25c5224fe000f4d652" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/issuestore/0/0/0035830cba06917eb1467f344ee47e1f6bc32391" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/issuestore/0/0/0035830cba06917eb1467f344ee47e1f6bc32391" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/issuestore/2/e/2e8b102f907a3ed8e644e67545121ca84dda3167" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/issuestore/4/7/477583946404a29d413f9bbe4c3e70e95140f3a3" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/issuestore/4/7/477583946404a29d413f9bbe4c3e70e95140f3a3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/issuestore/b/1/b187c9095ce00eab0d0d4d41c66a909ab663251a" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/issuestore/b/a/bac3b61e0da9179495f366b98643588a9436efac" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/issuestore/f/9/f91d627aeafd4ddb163c1c9e2d9cf38d4828fc8e" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/securityhotspotstore/4/d/4deb8b9c111193ffc26bab25c5224fe000f4d652" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/securityhotspotstore/2/e/2e8b102f907a3ed8e644e67545121ca84dda3167" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/securityhotspotstore/b/1/b187c9095ce00eab0d0d4d41c66a909ab663251a" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/securityhotspotstore/b/a/bac3b61e0da9179495f366b98643588a9436efac" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/securityhotspotstore/f/9/f91d627aeafd4ddb163c1c9e2d9cf38d4828fc8e" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/securityhotspotstore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/securityhotspotstore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/Services/EF.Carrinho.Domain.Test/EF.Carrinho.Domain.Test.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/test/Services/EF.Carrinho.Domain.Test/EF.Carrinho.Domain.Test.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/Services/EF.Carrinho.Domain.Test/UnitTest1.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/Services/EF.Pedidos.Application.Test/UnitTest1.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/Services/EF.Pedidos.Domain.Test/UnitTest1.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy/migrations.ps1" beforeDir="false" afterPath="$PROJECT_DIR$/deploy/migrations.ps1" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Presentation/EF.Api/Config/DependencyInjectionConfig.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Presentation/EF.Api/Config/DependencyInjectionConfig.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Presentation/EF.Api/Controllers/Carrinho/CarrinhoController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Presentation/EF.Api/Controllers/Carrinho/CarrinhoController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Presentation/EF.Api/EF.Api.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/src/Presentation/EF.Api/EF.Api.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/EF.Carrinho.Application/Services/CarrinhoAppService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Carrinho.Application/Services/CarrinhoAppService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/EF.Carrinho.Application/Services/Interfaces/ICarrinhoAppService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Carrinho.Application/Services/Interfaces/ICarrinhoAppService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/EF.Carrinho.Domain/Models/CarrinhoCliente.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Carrinho.Domain/Models/CarrinhoCliente.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/EF.Carrinho.Domain/Models/Item.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Carrinho.Domain/Models/Item.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/EF.Carrinho.Domain/Repository/ICarrinhoRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Carrinho.Domain/Repository/ICarrinhoRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/EF.Carrinho.Infra/Data/CarrinhoDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Carrinho.Infra/Data/CarrinhoDbContext.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/EF.Carrinho.Infra/Data/Repository/CarrinhoRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Carrinho.Infra/Data/Repository/CarrinhoRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/EF.Carrinho.Infra/EF.Carrinho.Infra.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Carrinho.Infra/EF.Carrinho.Infra.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/EF.Pedidos.Infra/Data/Mapping/ItemMapping.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Pedidos.Infra/Data/Mapping/ItemMapping.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/EF.Pedidos.Infra/Data/PedidoDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Pedidos.Infra/Data/PedidoDbContext.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,13 +71,12 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/5535e31a712343a63f5d7d796cd874e563e5ac14/src/libraries/System.Linq/src/System/Linq/ThrowHelper.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/c4cfefac200a47ecbb5df8cbfb34e2139000/18/3c618ead/Abstractions.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/487764c4dc815ef1e9090514895a23ed9e2d8eda1f7fd6958ac0fb25e8437/Guid.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/78c860a4a0696d27b2942ef6996b8ceec84aec6b56a4221bd8ce81cc42954d/RequestHandlerWrapper.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/b7208b3f72528d22781d25fde9a55271bdf2b5aade4f03b1324579a25493cd8/List.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/bd1d5c50194fea68ff3559c160230b0ab50f5acf4ce3061bffd6d62958e2182/ExceptionDispatchInfo.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/eb22bfe9370675412a9c49a5a43b32d5f5b39cae5bb7c888c156f9e2a24bb/ValidationProblemDetails.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://D:/fiap/easy-food/src/Presentation/EF.Api/Config/DependencyInjectionConfig.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/Services/EF.Clientes.Infra/Data/Migrations/20231208143534_BaseInicialClientes.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://D:/fiap/easy-food/src/Services/EF.Identidade.Application/Services/AcessoAppService.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/test/EF.Domain.Commons.Test/UnitTest1.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="HttpClientSelectedEnvironments">
@@ -97,35 +114,35 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    ".NET Launch Settings Profile.EF.Api: https.executor": "Debug",
-    "358cc20c-bbd2-4173-b107-79bbfcbf32c4.executor": "Debug",
-    "HTTP Request.All in identidade.executor": "Run",
-    "HTTP Request.identidade | #1.executor": "Run",
-    "HTTP Request.identidade | #2.executor": "Run",
-    "HTTP Request.identidade | #3.executor": "Run",
-    "HTTP Request.identidade | #4.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "feat-carrinho",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "rest.client.default.execution.environment": "dev",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;.NET Launch Settings Profile.EF.Api: https.executor&quot;: &quot;Debug&quot;,
+    &quot;358cc20c-bbd2-4173-b107-79bbfcbf32c4.executor&quot;: &quot;Debug&quot;,
+    &quot;HTTP Request.All in identidade.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.identidade | #1.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.identidade | #2.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.identidade | #3.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.identidade | #4.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;feat-carrinho&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;rest.client.default.execution.environment&quot;: &quot;dev&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "rider.external.source.directories": [
-      "C:\\Users\\bmfpe\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\DecompilerCache",
-      "C:\\Users\\bmfpe\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\SourcesCache",
-      "C:\\Users\\bmfpe\\AppData\\Local\\Symbols\\src"
+  &quot;keyToStringList&quot;: {
+    &quot;rider.external.source.directories&quot;: [
+      &quot;C:\\Users\\bmfpe\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\DecompilerCache&quot;,
+      &quot;C:\\Users\\bmfpe\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\SourcesCache&quot;,
+      &quot;C:\\Users\\bmfpe\\AppData\\Local\\Symbols\\src&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected=".NET Launch Settings Profile.EF.Api: https">
     <configuration name="All in identidade" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" path="$PROJECT_DIR$/src/Presentation/EF.Api/Controllers/Identidade/identidade.http">
       <method v="2" />
@@ -220,6 +237,7 @@
       <workItem from="1702252063240" duration="4477000" />
       <workItem from="1702287205301" duration="6643000" />
       <workItem from="1702375944363" duration="1595000" />
+      <workItem from="1702464071216" duration="4897000" />
     </task>
     <servers />
   </component>
@@ -249,14 +267,7 @@
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/test/Services/EF.Carrinho.Domain.Test/Models/CarrinhoTest.cs</url>
           <line>19</line>
-          <properties documentPath="D:\fiap\easy-food\test\Services\EF.Carrinho.Domain.Test\Models\CarrinhoTest.cs" initialLine="18" containingFunctionPresentation="Method 'CarrinhoCliente_CriarCarrinhoAssociadoCliente_DeveCriarOCarrinhoAssociadoAoCliente'">
-            <startOffsets>
-              <option value="658" />
-            </startOffsets>
-            <endOffsets>
-              <option value="659" />
-            </endOffsets>
-          </properties>
+          <properties documentPath="D:\fiap\easy-food\test\Services\EF.Carrinho.Domain.Test\Models\CarrinhoTest.cs" initialLine="18" containingFunctionPresentation="Method 'CarrinhoCliente_CriarCarrinhoAssociadoCliente_DeveCriarOCarrinhoAssociadoAoCliente'" />
           <option name="timeStamp" value="14" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">

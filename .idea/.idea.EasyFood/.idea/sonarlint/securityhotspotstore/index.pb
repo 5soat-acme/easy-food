@@ -3,10 +3,6 @@ V
 &deploy/docker/docker-compose-local.yml,1\2\121b02fb309ac44c3e157c609c6e3d5811654611
 <
 EasyFood.sln,f\9\f9b6716a432bb5515e419e8b2e1f6697e95f820f
-a
-1test/Services/EF.Pedidos.Domain.Test/UnitTest1.cs,b\a\bac3b61e0da9179495f366b98643588a9436efac
-f
-6test/Services/EF.Pedidos.Application.Test/UnitTest1.cs,b\1\b187c9095ce00eab0d0d4d41c66a909ab663251a
 x
 Hsrc/Services/EF.Pedidos.Application/Commands/IncluirItemPedidoCommand.cs,d\8\d8b2c457cff0fc8c83eb452b03c7701aaf61b2b0
 
@@ -157,10 +153,6 @@ i
 .src/Services/EF.Carrinho.Domain/Models/Item.cs,8\9\89c922f23a8b92ad0a14f60398ccf81c6448238c
 d
 4src/Shared/EF.Domain.Commons/DomainObjects/Entity.cs,e\a\ea2245ff79edfcaaa31bab9bdcc46fc5c5e6c081
-b
-2test/Services/EF.Carrinho.Domain.Test/UnitTest1.cs,2\e\2e8b102f907a3ed8e644e67545121ca84dda3167
-l
-<test/Services/EF.Carrinho.Domain.Test/Models/CarrinhoTest.cs,f\9\f91d627aeafd4ddb163c1c9e2d9cf38d4828fc8e
 x
 Htest/Services/EF.Carrinho.Domain.Test/Fixtures/CarrinhoClienteFixture.cs,b\e\be8e84842af4bbb28308ecacb6ac01c30ebb77e3
 s
@@ -171,3 +163,11 @@ t
 Dsrc/Services/EF.Carrinho.Infra/Data/Repository/CarrinhoRepository.cs,d\e\de119cba1ecebc48288ac73e3c4762bdfce99f96
 h
 8src/Services/EF.Carrinho.Infra/Data/CarrinhoDbContext.cs,3\2\32def67e372487a5fded5db9e6275c86ea15d9c3
+u
+Esrc/Services/EF.Carrinho.Infra/Data/Mapping/CarrinhoClienteMapping.cs,4\7\4729333619c306feb398afe9a66ae97fcea7c094
+j
+:src/Services/EF.Carrinho.Infra/Data/Mapping/ItemMapping.cs,5\f\5f0d430e2737243b7fe70ebc2243f7ade5e685e3
+f
+6src/Shared/EF.Domain.Commons/Repository/IUnitOfWork.cs,0\6\06fa795b0eafa20ff1c32292a17156530ee61ced
+m
+=src/Shared/EF.Domain.Commons/Communication/OperationResult.cs,4\8\48dd4cd3cdcd2194c9dda0bae41e7d67fc4562de

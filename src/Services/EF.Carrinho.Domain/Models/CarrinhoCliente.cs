@@ -4,22 +4,18 @@ namespace EF.Carrinho.Domain.Models;
 
 public class CarrinhoCliente : Entity, IAggregateRoot
 {
-    public CarrinhoCliente()
+    // Necessário para o EF
+    protected CarrinhoCliente()
     {
-        _itens = new List<Item>();
     }
 
-    public CarrinhoCliente(Guid clienteId)
+    public CarrinhoCliente(Guid id)
     {
-        if (!ValidarCliente(clienteId)) throw new DomainException("Cliente inválido");
-        
         _itens = new List<Item>();
-        ClienteId = clienteId;
+        Id = id;
     }
     
     public Guid? ClienteId { get; private set; }
-    
-    public string Nome { get; private set; }
     public decimal ValorTotal { get; private set; }
     private readonly List<Item> _itens;
     public IReadOnlyCollection<Item> Itens => _itens;
@@ -46,6 +42,12 @@ public class CarrinhoCliente : Entity, IAggregateRoot
     public void RemoverItem(Item item)
     {
         _itens.Remove(item);
+        AtualizarValorTotal();
+    }
+    
+    public void LimparCarrinho()
+    {
+        _itens.Clear();
         AtualizarValorTotal();
     }
 

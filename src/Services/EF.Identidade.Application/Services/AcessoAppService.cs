@@ -30,7 +30,7 @@ public class AcessoAppService : IAcessoAppService
         _identitySettings = settings.Value;
     }
 
-    public async Task<Result<RespostaTokenAcesso>> CriarUsuario(
+    public async Task<OperationResult<RespostaTokenAcesso>> CriarUsuario(
         NovoUsuario novoUsuario)
     {
         var identityUser = new IdentityUser
@@ -62,9 +62,10 @@ public class AcessoAppService : IAcessoAppService
         var claims = new List<Claim>
         {
             new(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
-            new("user_type", "anonymous")
+            new("user_type", "anonymous"),
+            new("carrinho_id", Guid.NewGuid().ToString())
         };
-
+        
         if (!string.IsNullOrEmpty(cpf)) claims.Add(new Claim("user_cpf", cpf));
 
         var identityClaims = new ClaimsIdentity();
@@ -133,6 +134,8 @@ public class AcessoAppService : IAcessoAppService
         claims.Add(new Claim(JwtRegisteredClaimNames.Iat,
             ToUnixEpochDate(DateTime.UtcNow).ToString(),
             ClaimValueTypes.Integer64));
+        claims.Add(new Claim("carrinho_id", Guid.NewGuid().ToString()));
+        
         foreach (var userRole in userRoles) claims.Add(new Claim("role", userRole));
 
         var identityClaims = new ClaimsIdentity();

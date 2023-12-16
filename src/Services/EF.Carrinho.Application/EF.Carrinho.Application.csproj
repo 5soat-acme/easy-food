@@ -7,6 +7,7 @@
     </PropertyGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\..\Shared\EF.WebApi.Commons\EF.WebApi.Commons.csproj" />
       <ProjectReference Include="..\EF.Carrinho.Domain\EF.Carrinho.Domain.csproj" />
     </ItemGroup>
 

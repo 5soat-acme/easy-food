@@ -26,6 +26,7 @@
 
     <ItemGroup>
         <ProjectReference Include="..\..\Services\EF.Carrinho.Application\EF.Carrinho.Application.csproj" />
+        <ProjectReference Include="..\..\Services\EF.Carrinho.Infra\EF.Carrinho.Infra.csproj" />
         <ProjectReference Include="..\..\Services\EF.Clientes.Infra\EF.Clientes.Infra.csproj"/>
         <ProjectReference Include="..\..\Services\EF.Identidade.Application\EF.Identidade.Application.csproj"/>
         <ProjectReference Include="..\..\Services\EF.Identidade.Infra\EF.Identidade.Infra.csproj"/>

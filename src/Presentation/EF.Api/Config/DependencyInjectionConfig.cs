@@ -1,5 +1,8 @@
 using EF.Carrinho.Application.Services;
 using EF.Carrinho.Application.Services.Interfaces;
+using EF.Carrinho.Domain.Repository;
+using EF.Carrinho.Infra.Data;
+using EF.Carrinho.Infra.Data.Repository;
 using EF.Clientes.Application.Commands;
 using EF.Clientes.Domain.Repository;
 using EF.Clientes.Infra.Data;
@@ -66,5 +69,10 @@ public static class DependencyInjectionConfig
     {
         // Application - Services
         services.AddScoped<ICarrinhoAppService, CarrinhoAppService>();
+        
+        // Infra - Data
+        services.AddScoped<ICarrinhoRepository, CarrinhoRepository>();
+        services.AddDbContext<CarrinhoDbContext>(options =>
+            options.UseNpgsql(configuration.GetConnectionString("DefaultConnection")));
     }
 }

@@ -22,6 +22,30 @@ public sealed class CarrinhoRepository : ICarrinhoRepository
             .FirstOrDefaultAsync(c => c.ClienteId == clienteId);
     }
 
+    public async Task<CarrinhoCliente?> ObterPorId(Guid id)
+    {
+        return await _context.Carrinhos
+            .Include(c => c.Itens)
+            .FirstOrDefaultAsync(c => c.Id == id);
+    }
+
+    public CarrinhoCliente Criar(CarrinhoCliente carrinho)
+    {
+        var result =  _context.Carrinhos.Add(carrinho);
+        return result.Entity;
+    }
+
+    public CarrinhoCliente Atualizar(CarrinhoCliente carrinho)
+    {
+        var result = _context.Carrinhos.Update(carrinho);
+        return result.Entity;
+    }
+
+    public void Remover(CarrinhoCliente carrinho)
+    {
+        _context.Carrinhos.Remove(carrinho);
+    }
+
     public void Dispose()
     {
         _context?.Dispose();

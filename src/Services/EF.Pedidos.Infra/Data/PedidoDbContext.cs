@@ -14,7 +14,7 @@ public sealed class PedidoDbContext : DbContext, IUnitOfWork
         ChangeTracker.AutoDetectChangesEnabled = false;
     }
 
-    public DbSet<Pedido> Pedidos { get; set; }
+    public DbSet<Pedido>? Pedidos { get; set; }
 
     public async Task<bool> Commit()
     {

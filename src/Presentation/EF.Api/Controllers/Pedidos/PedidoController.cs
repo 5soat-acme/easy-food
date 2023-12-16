@@ -14,7 +14,7 @@ public class PedidoController(IMediatorHandler mediator, IUserApp user) : Custom
     [HttpPost]
     public async Task<IActionResult> CriarPedido(IncluirItemPedidoCommand command)
     {
-        command.CarrinhoId = user.GetTokenIdentifier();
+        command.CarrinhoId = user.ObterCarrinhoId();
         return Respond(await mediator.Send(command));
     }
 }

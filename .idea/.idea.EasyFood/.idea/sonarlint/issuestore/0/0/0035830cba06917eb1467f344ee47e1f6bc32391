@@ -1,2 +1,4 @@
 
-†csharpsquid:S4487	"]Remove this unread private field '_carrinhoRepository' or refactor the code to use its value.(¯àÜÿúÿÿÿÿ8ËèîÅ1
+_csharpsquid:S2259>"6'itemCarrinho' is null on at least one execution path.(¬ÍÒ’üÿÿÿÿ8ÜåêÆ1
+csharpsquid:S25839"fChange this condition so that it does not always evaluate to 'False'. Some code paths are unreachable.(şà·‘ÿÿÿÿÿ8ÜåêÆ1
+Scsharpsquid:S1144"*Remove the unused private field '_errors'.(°øß‘ùÿÿÿÿ8Ï³êÆ1

@@ -19,21 +19,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="61e4a515-7fae-49b6-801b-ebc481bfb9f9" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/issuestore/0/0/0035830cba06917eb1467f344ee47e1f6bc32391" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/issuestore/0/0/0035830cba06917eb1467f344ee47e1f6bc32391" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/issuestore/4/8/48dd4cd3cdcd2194c9dda0bae41e7d67fc4562de" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/httpRequests/http-client.cookies" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/httpRequests/http-client.cookies" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/httpRequests/http-requests-log.http" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/httpRequests/http-requests-log.http" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/securityhotspotstore/4/8/48dd4cd3cdcd2194c9dda0bae41e7d67fc4562de" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/securityhotspotstore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/securityhotspotstore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deploy/migrations.ps1" beforeDir="false" afterPath="$PROJECT_DIR$/deploy/migrations.ps1" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Presentation/EF.Api/Controllers/Carrinho/CarrinhoController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Presentation/EF.Api/Controllers/Carrinho/CarrinhoController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Presentation/EF.Api/appsettings.Development.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/Presentation/EF.Api/appsettings.Development.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/EF.Carrinho.Application/Services/CarrinhoAppService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Carrinho.Application/Services/CarrinhoAppService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/EF.Carrinho.Application/Services/Interfaces/ICarrinhoAppService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Carrinho.Application/Services/Interfaces/ICarrinhoAppService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/EF.Identidade.Application/Services/AcessoAppService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Identidade.Application/Services/AcessoAppService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/EF.Identidade.Application/Services/Interfaces/IAcessoAppService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Identidade.Application/Services/Interfaces/IAcessoAppService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/Services/EF.Carrinho.Domain.Test/Fixtures/CarrinhoClienteFixture.cs" beforeDir="false" afterPath="$PROJECT_DIR$/test/Services/EF.Carrinho.Domain.Test/Fixtures/CarrinhoClienteFixture.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/Services/EF.Carrinho.Domain.Test/Models/CarrinhoClienteTest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/test/Services/EF.Carrinho.Domain.Test/Models/CarrinhoClienteTest.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Presentation/EF.Api/Controllers/Identidade/IdentidadeController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Presentation/EF.Api/Controllers/Identidade/IdentidadeController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Presentation/EF.Api/Controllers/Identidade/http-client.private.env.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Presentation/EF.Api/Controllers/Identidade/identidade.http" beforeDir="false" afterPath="$PROJECT_DIR$/src/Presentation/EF.Api/api-requests.http" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,6 +39,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="HTTP Request" />
+        <option value="HTTP Public Environment File" />
         <option value="HTTP Private Environment File" />
       </list>
     </option>
@@ -68,10 +64,11 @@
     <setting file="file://$PROJECT_DIR$/test/EF.Domain.Commons.Test/UnitTest1.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="HttpClientSelectedEnvironments">
-    <file url="file://$PROJECT_DIR$/src/Presentation/EF.Api/Controllers/Identidade/identidade.http" environment="dev" />
+    <file url="file://$PROJECT_DIR$/src/Presentation/EF.Api/api-requests.http" environment="dev-private" />
     <file url="jar://$APPLICATION_HOME_DIR$/plugins/restClient/lib/restClient.jar!/com/intellij/ws/rest/client/requests/collection/get-requests.http" environment="test" />
     <file url="jar://$APPLICATION_HOME_DIR$/plugins/restClient/lib/restClient.jar!/com/intellij/ws/rest/client/requests/collection/post-requests.http" environment="test" />
     <file url="jar://$APPLICATION_HOME_DIR$/plugins/restClient/lib/restClient.jar!/com/intellij/ws/rest/client/requests/collection/requests-with-authorization.http" environment="test" />
+    <file url="jar://$APPLICATION_HOME_DIR$/plugins/restClient/lib/restClient.jar!/com/intellij/ws/rest/client/requests/collection/requests-with-tests.http" environment="test" />
   </component>
   <component name="KubernetesApiProvider">{
   &quot;contexts&quot;: [
@@ -107,6 +104,8 @@
     ".NET Launch Settings Profile.EF.Api: https.executor": "Debug",
     "358cc20c-bbd2-4173-b107-79bbfcbf32c4.executor": "Debug",
     "HTTP Request.All in identidade.executor": "Run",
+    "HTTP Request.api-requests | #2.executor": "Run",
+    "HTTP Request.api-requests | Carrinho API:.executor": "Run",
     "HTTP Request.identidade | #1.executor": "Run",
     "HTTP Request.identidade | #2.executor": "Run",
     "HTTP Request.identidade | #3.executor": "Run",
@@ -120,7 +119,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "rest.client.default.execution.environment": "dev",
+    "rest.client.default.execution.environment": "dev-private",
     "settings.editor.selected.configurable": "terminal",
     "vue.rearranger.settings.migration": "true"
   },
@@ -136,13 +135,13 @@
     <configuration name="All in identidade" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" path="$PROJECT_DIR$/src/Presentation/EF.Api/Controllers/Identidade/identidade.http">
       <method v="2" />
     </configuration>
+    <configuration name="api-requests | Carrinho API:" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/src/Presentation/EF.Api/api-requests.http" index="5" requestIdentifier="Carrinho API:" runType="Run single request">
+      <method v="2" />
+    </configuration>
+    <configuration name="api-requests | #2" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/src/Presentation/EF.Api/api-requests.http" index="2" requestIdentifier="#2" runType="Run single request">
+      <method v="2" />
+    </configuration>
     <configuration name="identidade | #1" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/src/Presentation/EF.Api/Controllers/Identidade/identidade.http" requestIdentifier="#1" runType="Run single request">
-      <method v="2" />
-    </configuration>
-    <configuration name="identidade | #2" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/src/Presentation/EF.Api/Controllers/Identidade/identidade.http" index="2" requestIdentifier="#2" runType="Run single request">
-      <method v="2" />
-    </configuration>
-    <configuration name="identidade | #3" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/src/Presentation/EF.Api/Controllers/Identidade/identidade.http" index="3" requestIdentifier="#3" runType="Run single request">
       <method v="2" />
     </configuration>
     <configuration name="identidade | #4" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/src/Presentation/EF.Api/Controllers/Identidade/identidade.http" index="4" requestIdentifier="#4" runType="Run single request">
@@ -188,19 +187,19 @@
     <list>
       <item itemvalue=".NET Launch Settings Profile.EF.Api: http" />
       <item itemvalue=".NET Launch Settings Profile.EF.Api: https" />
+      <item itemvalue="HTTP Request.api-requests | #2" />
+      <item itemvalue="HTTP Request.api-requests | Carrinho API:" />
       <item itemvalue="HTTP Request.All in identidade" />
       <item itemvalue="HTTP Request.identidade | #1" />
-      <item itemvalue="HTTP Request.identidade | #2" />
-      <item itemvalue="HTTP Request.identidade | #3" />
       <item itemvalue="HTTP Request.identidade | #4" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="HTTP Request.api-requests | Carrinho API:" />
+        <item itemvalue="HTTP Request.api-requests | #2" />
         <item itemvalue="HTTP Request.identidade | #1" />
         <item itemvalue="HTTP Request.All in identidade" />
         <item itemvalue="HTTP Request.identidade | #4" />
-        <item itemvalue="HTTP Request.identidade | #3" />
-        <item itemvalue="HTTP Request.identidade | #2" />
       </list>
     </recent_temporary>
   </component>
@@ -230,7 +229,7 @@
       <workItem from="1702721843863" duration="315000" />
       <workItem from="1702722959622" duration="327000" />
       <workItem from="1702723650533" duration="653000" />
-      <workItem from="1702724412537" duration="2631000" />
+      <workItem from="1702724412537" duration="7126000" />
     </task>
     <servers />
   </component>

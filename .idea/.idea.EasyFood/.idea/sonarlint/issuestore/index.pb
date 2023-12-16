@@ -169,3 +169,9 @@ j
 :src/Services/EF.Carrinho.Infra/Data/Mapping/ItemMapping.cs,5\f\5f0d430e2737243b7fe70ebc2243f7ade5e685e3
 f
 6src/Shared/EF.Domain.Commons/Repository/IUnitOfWork.cs,0\6\06fa795b0eafa20ff1c32292a17156530ee61ced
+\
+,src/Presentation/EF.Api/http-client.env.json,0\f\0f5587fb06bb297a4d4673fbcefe92a8f269ee31
+Y
+)src/Presentation/EF.Api/api-requests.http,d\8\d854954d9ff27ab39bd7b0d5b14853574f5d7408
+d
+4src/Presentation/EF.Api/http-client.private.env.json,2\6\26278109affe6c21c45ec9ff8ff960ae89677c21

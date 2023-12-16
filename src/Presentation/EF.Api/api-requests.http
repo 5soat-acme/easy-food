@@ -1,0 +1,69 @@
+### Identidade API:
+
+POST {{baseUrl}}/api/identidade
+Content-Type: application/json
+
+{
+  "nome": "José",
+  "sobrenome": "Castilho",
+  "cpf": "{{userCpf}}",
+  "email": "{{userEmail}}",
+  "senha": "{{userPassword}}",
+  "senhaConfirmacao": "{{userPassword}}"
+}
+
+> {%
+    client.global.set("authToken", response.body.token);
+%}
+
+###
+
+POST {{baseUrl}}/api/identidade/autenticar
+Content-Type: application/json
+
+{
+  "email": "{{userEmail}}",
+  "senha": "{{userPassword}}"
+}
+
+> {%
+    client.global.set("authToken", response.body.token);
+%}
+
+###
+
+POST {{baseUrl}}/api/identidade/acessar-sem-identificacao
+Content-Type: application/json
+
+> {%
+    client.global.set("authToken", response.body.token);
+%}
+
+###
+
+POST {{baseUrl}}/api/identidade/acessar-sem-identificacao?cpf={{userCpf}}
+Content-Type: application/json
+
+> {%
+    client.global.set("authToken", response.body.token);
+%}
+
+### Carrinho API:
+
+GET {{baseUrl}}/api/carrinho
+Authorization: Bearer {{authToken}}
+
+###
+
+POST {{baseUrl}}/api/carrinho/3fa85f64-5717-4562-b3fc-2c963f66afa6
+Content-Type: application/json
+
+{
+  "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+  "valorUnitario": 1,
+  "quantidade": 2,
+  "produtoId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+  "carrinho": {
+    "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6"
+  }
+}

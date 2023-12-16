@@ -11,12 +11,19 @@ namespace EF.Api.Controllers.Carrinho;
 [Route("api/carrinho")]
 public class CarrinhoController(ICarrinhoAppService carrinhoAppService, IUserApp user) : CustomControllerBase
 {
-    private readonly Guid _carrinhoId = user.ObterCarrinhoId();
-    
     [HttpGet]
-    public async Task<CarrinhoCliente> ObterCarrinho()
+    [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(CarrinhoCliente))]
+    public async Task<IActionResult> ObterCarrinho()
     {
-        return await carrinhoAppService.ObterCarrinhoCliente() ?? new CarrinhoCliente(_carrinhoId);
+        var carrinho = await carrinhoAppService.ObterCarrinhoCliente();
+
+        if (carrinho is null)
+        {
+            carrinho = new CarrinhoCliente(user.ObterCarrinhoId());
+            carrinho.AssociarCliente(user.GetUserId());
+        }
+
+        return Respond(carrinho);
     }
     
     [HttpPost]

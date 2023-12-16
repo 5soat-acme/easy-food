@@ -9,6 +9,8 @@ namespace EF.Api.Controllers.Identidade;
 public class IdentidadeController(IAcessoAppService appService) : CustomControllerBase
 {
     [HttpPost]
+    [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(RespostaTokenAcesso))]
+    [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(ValidationProblemDetails))]
     public async Task<IActionResult> CriarUsuario(NovoUsuario novoUsuario)
     {
         if (!ModelState.IsValid) return Respond(ModelState);
@@ -25,6 +27,8 @@ public class IdentidadeController(IAcessoAppService appService) : CustomControll
     }
 
     [HttpPost("autenticar")]
+    [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(RespostaTokenAcesso))]
+    [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(ValidationProblemDetails))]
     public async Task<IActionResult> Login(UsuarioLogin usuario)
     {
         if (!ModelState.IsValid) return Respond(ModelState);
@@ -41,6 +45,8 @@ public class IdentidadeController(IAcessoAppService appService) : CustomControll
     }
 
     [HttpPost("acessar-sem-identificacao")]
+    [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(RespostaTokenAcesso))]
+    [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(ValidationProblemDetails))]
     public async Task<IActionResult> AcessarSemIdentificacao(string? cpf = null)
     {
         if (!ModelState.IsValid) return Respond(ModelState);

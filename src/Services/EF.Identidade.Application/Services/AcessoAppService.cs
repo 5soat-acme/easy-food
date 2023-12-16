@@ -30,7 +30,7 @@ public class AcessoAppService : IAcessoAppService
         _identitySettings = settings.Value;
     }
 
-    public async Task<OperationResult<RespostaTokenAcesso>> CriarUsuario(
+    public async Task<Result<RespostaTokenAcesso>> CriarUsuario(
         NovoUsuario novoUsuario)
     {
         var identityUser = new IdentityUser

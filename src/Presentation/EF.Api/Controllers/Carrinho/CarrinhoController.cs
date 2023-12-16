@@ -38,4 +38,17 @@ public class CarrinhoController(ICarrinhoAppService carrinhoAppService, IUserApp
         await carrinhoAppService.AtualizarItem(item);
         return Respond();
     }
+    
+    [HttpDelete("{itemId}")]
+    public async Task<IActionResult> RemoverItem(Guid itemId, Item item)
+    {
+        if(itemId != item.Id)
+        {
+            AddError("O item não corresponde ao informado");
+            return Respond();
+        }
+        
+        await carrinhoAppService.RemoverItemCarrinho(item);
+        return Respond();
+    }
 }

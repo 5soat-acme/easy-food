@@ -10,10 +10,11 @@ public class CarrinhoClienteCollection : ICollectionFixture<CarrinhoClienteFixtu
 
 public class CarrinhoClienteFixture : IDisposable
 {
-    public void Dispose()
+    public CarrinhoCliente ObterCarrinhoNovo()
     {
+        return new CarrinhoCliente(Guid.NewGuid());
     }
-
+    
     public Item GerarItemValido()
     {
         return GerarItensValidos(1).FirstOrDefault()!;
@@ -23,5 +24,9 @@ public class CarrinhoClienteFixture : IDisposable
     {
         return new Faker<Item>("pt_BR")
             .CustomInstantiator(f => new Item(f.Random.Guid(), f.Random.Decimal(20, 50), f.Random.Int(1, 5))).Generate(quantidade);
+    }
+    
+    public void Dispose()
+    {
     }
 }

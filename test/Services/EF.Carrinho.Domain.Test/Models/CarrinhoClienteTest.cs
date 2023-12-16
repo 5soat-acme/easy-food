@@ -39,7 +39,7 @@ public class CarrinhoClienteTest
     public void CarrinhoCliente_AssociarClienteInvalido_RetornaDomainException()
     {
         // Arrange
-        var carrinhoCliente = new CarrinhoCliente();
+        var carrinhoCliente = _carrinhoClienteFixture.ObterCarrinhoNovo();
 
         // Act & Assert 
         Assert.Throws<DomainException>(() => carrinhoCliente.AssociarCliente(Guid.Empty));
@@ -50,7 +50,7 @@ public class CarrinhoClienteTest
     public void CarrinhoCliente_AssociarCarrinhoExistenteInvalido_RetornaDomainException()
     {
         // Arrange
-        var carrinhoCliente = new CarrinhoCliente();
+        var carrinhoCliente = _carrinhoClienteFixture.ObterCarrinhoNovo();
 
         // Act & Assert 
         Assert.Throws<DomainException>(() => carrinhoCliente.AssociarCarrinho(Guid.Empty));
@@ -61,7 +61,7 @@ public class CarrinhoClienteTest
     public void CarrinhoCliente_AdicionarItem_DeveAdicionarItemCarrinho()
     {
         // Arrange
-        var carrinhoCliente = new CarrinhoCliente();
+        var carrinhoCliente = _carrinhoClienteFixture.ObterCarrinhoNovo();
         var item = _carrinhoClienteFixture.GerarItemValido();
 
         // Act
@@ -78,7 +78,7 @@ public class CarrinhoClienteTest
     public void CarrinhoCliente_RemoverItem_DeveRemoverItemCarrinho()
     {
         // Arrange
-        var carrinhoCliente = new CarrinhoCliente();
+        var carrinhoCliente = _carrinhoClienteFixture.ObterCarrinhoNovo();
         var item = _carrinhoClienteFixture.GerarItemValido();
         carrinhoCliente.AdicionarItem(item);
 
@@ -95,7 +95,7 @@ public class CarrinhoClienteTest
     public void CarrinhoCliente_AtualizarValorTotal_DeveRetornarValorTotal()
     {
         // Arrange
-        var carrinhoCliente = new CarrinhoCliente();
+        var carrinhoCliente = _carrinhoClienteFixture.ObterCarrinhoNovo();
         var itens = _carrinhoClienteFixture.GerarItensValidos(10);
         decimal valorTotal = 0;
         foreach (var item in itens)

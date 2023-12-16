@@ -5,7 +5,7 @@ namespace EF.Identidade.Application.Services.Interfaces;
 
 public interface IAcessoAppService
 {
-    Task<OperationResult<RespostaTokenAcesso>> CriarUsuario(NovoUsuario novoUsuario);
+    Task<Result<RespostaTokenAcesso>> CriarUsuario(NovoUsuario novoUsuario);
     RespostaTokenAcesso GerarTokenAcessoNaoIdentificado(string? cpf = null);
-    Task<OperationResult<RespostaTokenAcesso>> Autenticar(UsuarioLogin usuario);
+    Task<Result<RespostaTokenAcesso>> Autenticar(UsuarioLogin usuario);
 }

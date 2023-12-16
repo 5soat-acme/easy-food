@@ -169,5 +169,3 @@ j
 :src/Services/EF.Carrinho.Infra/Data/Mapping/ItemMapping.cs,5\f\5f0d430e2737243b7fe70ebc2243f7ade5e685e3
 f
 6src/Shared/EF.Domain.Commons/Repository/IUnitOfWork.cs,0\6\06fa795b0eafa20ff1c32292a17156530ee61ced
-m
-=src/Shared/EF.Domain.Commons/Communication/OperationResult.cs,4\8\48dd4cd3cdcd2194c9dda0bae41e7d67fc4562de

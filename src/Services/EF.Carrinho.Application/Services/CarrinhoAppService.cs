@@ -43,20 +43,20 @@ public class CarrinhoAppService(ICarrinhoRepository carrinhoRepository, IUserApp
         PersistirDados();
     }
     
-    public async Task<Result> AtualizarItem(Item item)
+    public async Task<Result<Item>> AtualizarItem(Item item)
     {
         var carrinho = await ObterCarrinhoCliente();
         
         if (carrinho is null)
         {
-            return Result.Failure("Carrinho não encontrado");
+            return Result<Item>.Failure("Carrinho não encontrado");
         }
         
         var itemCarrinho = carrinho.Itens.FirstOrDefault(f => f.Id == item.Id);
         
-        if (carrinho is null)
+        if (itemCarrinho is null)
         {
-            return Result.Failure("Item não encontrado");
+            return Result<Item>.Failure("Item não encontrado");
         }
         
         itemCarrinho.AtualizarQuantidade(item.Quantidade);
@@ -67,7 +67,7 @@ public class CarrinhoAppService(ICarrinhoRepository carrinhoRepository, IUserApp
         return Result<Item>.Success();
     }
 
-    public async Task RemoverItemCarrinho(Guid itemId)
+    public Task RemoverItemCarrinho(Item item)
     {
         throw new NotImplementedException();
     }

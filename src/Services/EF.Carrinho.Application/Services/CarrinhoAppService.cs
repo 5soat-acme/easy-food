@@ -1,9 +1,9 @@
+using EF.Carrinho.Application.DTOs;
 using EF.Carrinho.Application.Services.Interfaces;
 using EF.Carrinho.Domain.Models;
 using EF.Carrinho.Domain.Repository;
 using EF.Domain.Commons.Communication;
 using EF.WebApi.Commons.Users;
-using FluentValidation.Results;
 
 namespace EF.Carrinho.Application.Services;
 
@@ -11,7 +11,6 @@ public class CarrinhoAppService(ICarrinhoRepository carrinhoRepository, IUserApp
 {
     private readonly Guid _clienteId = user.GetUserId();
     private readonly Guid _carrinhoId = user.ObterCarrinhoId();
-    private readonly List<string> _errors = new();
 
     public async Task<CarrinhoCliente?> ObterCarrinhoCliente()
     {
@@ -31,16 +30,27 @@ public class CarrinhoAppService(ICarrinhoRepository carrinhoRepository, IUserApp
         {
             carrinho.LimparCarrinho();
             carrinhoRepository.Atualizar(carrinho);
-            PersistirDados();
+            await PersistirDados();
         }
     }
 
-    public async Task AdicionarItemCarrinho(Item item)
+    public async Task AdicionarItemCarrinho(AdicionarItemDto itemDto)
     {
-        var carrinho = await ObterCarrinhoCliente() ?? CriarCarrinhoCliente();
-        carrinho.AdicionarItem(item);
-        carrinhoRepository.Atualizar(carrinho);
-        PersistirDados();
+        // TODO: Obter produto da API de produtos. (Catálogo?) e validar estoque
+        var carrinho = await ObterCarrinhoCliente();
+
+        if (carrinho is null)
+        {
+            carrinho = AdicionarItemCarrinhoNovo(itemDto);
+            carrinhoRepository.Criar(carrinho);
+        }
+        else
+        {
+            AdicionarItemCarrinhoExistente(carrinho, itemDto);
+            carrinhoRepository.Atualizar(carrinho);
+        }
+        
+        await PersistirDados();
     }
     
     public async Task<Result<Item>> AtualizarItem(Item item)
@@ -62,7 +72,7 @@ public class CarrinhoAppService(ICarrinhoRepository carrinhoRepository, IUserApp
         itemCarrinho.AtualizarQuantidade(item.Quantidade);
         
         carrinhoRepository.Atualizar(carrinho);
-        PersistirDados();
+        await PersistirDados();
         
         return Result<Item>.Success();
     }
@@ -81,13 +91,24 @@ public class CarrinhoAppService(ICarrinhoRepository carrinhoRepository, IUserApp
             carrinho.AssociarCliente(_clienteId);
         }
         
-        carrinhoRepository.Criar(carrinho);
-
+        return carrinho;
+    }
+    
+    private CarrinhoCliente AdicionarItemCarrinhoNovo(AdicionarItemDto itemDto)
+    {
+        var carrinho = CriarCarrinhoCliente();
+        carrinho.AdicionarItem(new Item(itemDto.ProdutoId, 35.90m, itemDto.Quantidade));
         return carrinho;
     }
 
-    private void PersistirDados()
+    private CarrinhoCliente AdicionarItemCarrinhoExistente(CarrinhoCliente carrinho, AdicionarItemDto itemDto)
     {
-        carrinhoRepository.UnitOfWork.Commit();
+        carrinho.AdicionarItem(new Item(itemDto.ProdutoId, 35.90m, itemDto.Quantidade));
+        return carrinho;
+    }
+    
+    private async Task PersistirDados()
+    {
+        await carrinhoRepository.UnitOfWork.Commit();
     }
 }

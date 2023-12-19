@@ -1,3 +1,4 @@
+using EF.Carrinho.Application.DTOs;
 using EF.Carrinho.Application.Services.Interfaces;
 using EF.Carrinho.Domain.Models;
 using EF.WebApi.Commons.Controllers;
@@ -27,9 +28,11 @@ public class CarrinhoController(ICarrinhoAppService carrinhoAppService, IUserApp
     }
     
     [HttpPost]
-    public async Task<IActionResult> AdicionarItem(Item item)
+    public async Task<IActionResult> AdicionarItem(AdicionarItemDto itemDto)
     {
-        await carrinhoAppService.AdicionarItemCarrinho(item);
+        if (!ModelState.IsValid) return Respond(ModelState);
+        
+        await carrinhoAppService.AdicionarItemCarrinho(itemDto);
         return Respond();
     }
     

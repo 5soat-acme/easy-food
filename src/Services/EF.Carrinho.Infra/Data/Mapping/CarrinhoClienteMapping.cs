@@ -12,9 +12,6 @@ public class CarrinhoClienteMapping : IEntityTypeConfiguration<CarrinhoCliente>
 
         builder.HasKey(c => c.Id);
 
-        builder.Property(c => c.ClienteId)
-            .IsRequired();
-
         builder.HasMany(c => c.Itens)
             .WithOne(c => c.Carrinho)
             .HasForeignKey(c => c.CarrinhoId);

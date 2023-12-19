@@ -1,0 +1,49 @@
+### Identidade API:
+
+POST {{baseUrl}}/api/identidade
+Content-Type: application/json
+
+{
+  "nome": "José",
+  "sobrenome": "Castilho",
+  "cpf": "{{userCpf}}",
+  "email": "{{userEmail}}",
+  "senha": "{{userPassword}}",
+  "senhaConfirmacao": "{{userPassword}}"
+}
+
+> {%
+    client.global.set("authToken", response.body.token);
+%}
+
+###
+
+POST {{baseUrl}}/api/identidade/autenticar
+Content-Type: application/json
+
+{
+  "email": "{{userEmail}}",
+  "senha": "{{userPassword}}"
+}
+
+> {%
+    client.global.set("authToken", response.body.token);
+%}
+
+###
+
+POST {{baseUrl}}/api/identidade/acessar-sem-identificacao
+Content-Type: application/json
+
+> {%
+    client.global.set("authToken", response.body.token);
+%}
+
+###
+
+POST {{baseUrl}}/api/identidade/acessar-sem-identificacao?cpf={{userCpf}}
+Content-Type: application/json
+
+> {%
+    client.global.set("authToken", response.body.token);
+%}

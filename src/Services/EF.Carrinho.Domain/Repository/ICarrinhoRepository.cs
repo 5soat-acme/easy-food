@@ -7,7 +7,7 @@ public interface ICarrinhoRepository : IRepository<CarrinhoCliente>
 {
     Task<CarrinhoCliente?> ObterPorCliente(Guid clienteId);
     Task<CarrinhoCliente?> ObterPorId(Guid id);
-    CarrinhoCliente Criar(CarrinhoCliente carrinho);
-    CarrinhoCliente Atualizar(CarrinhoCliente carrinho);
+    void Criar(CarrinhoCliente carrinho);
+    void Atualizar(CarrinhoCliente carrinho);
     void Remover(CarrinhoCliente carrinho);
 }

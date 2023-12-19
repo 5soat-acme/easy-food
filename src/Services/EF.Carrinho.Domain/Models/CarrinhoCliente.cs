@@ -35,7 +35,18 @@ public class CarrinhoCliente : Entity, IAggregateRoot
     
     public void AdicionarItem(Item item)
     {
-        _itens.Add(item);
+        var itemExistente = _itens.FirstOrDefault(p => p.ProdutoId == item.ProdutoId);
+        
+        if (itemExistente is not null)
+        {
+            itemExistente.AtualizarQuantidade(itemExistente.Quantidade + item.Quantidade);
+        }
+        else
+        {
+            item.AssociarCarrinho(Id);
+            _itens.Add(item);
+        }
+        
         AtualizarValorTotal();
     }
     

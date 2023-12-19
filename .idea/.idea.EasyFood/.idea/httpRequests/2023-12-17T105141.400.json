@@ -1,0 +1,11 @@
+{
+  "type": "https://tools.ietf.org/html/rfc9110#section-15.5.1",
+  "title": "One or more validation errors occurred.",
+  "status": 400,
+  "errors": {
+    "ProdutoId": [
+      "O campo ProdutoId não é válido"
+    ]
+  },
+  "traceId": "00-e7d04c6b20d74e37bfd226cf987def0d-7477620b14cce96b-00"
+}

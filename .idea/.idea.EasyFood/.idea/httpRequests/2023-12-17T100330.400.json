@@ -1,0 +1,11 @@
+{
+  "type": "https://tools.ietf.org/html/rfc9110#section-15.5.1",
+  "title": "One or more validation errors occurred.",
+  "status": 400,
+  "errors": {
+    "Carrinho": [
+      "The Carrinho field is required."
+    ]
+  },
+  "traceId": "00-eac8f7c188c2cf5d7e2f8899ec7d3dbb-6065a9d178fbba08-00"
+}

@@ -15,6 +15,7 @@ public sealed class CarrinhoDbContext : DbContext, IUnitOfWork
     }
 
     public DbSet<CarrinhoCliente>? Carrinhos { get; set; }
+    public DbSet<Item>? Itens { get; set; }
 
     public async Task<bool> Commit()
     {
@@ -23,13 +24,13 @@ public sealed class CarrinhoDbContext : DbContext, IUnitOfWork
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        foreach (var relationship in modelBuilder.Model.GetEntityTypes()
-                     .SelectMany(e => e.GetForeignKeys()))
-            relationship.DeleteBehavior = DeleteBehavior.ClientSetNull;
-
         modelBuilder.ApplyConfigurationsFromAssembly(typeof(CarrinhoDbContext).Assembly);
         modelBuilder.Ignore<Event>();
         modelBuilder.Ignore<ValidationResult>();
+        
+        foreach (var relationship in modelBuilder.Model.GetEntityTypes()
+                     .SelectMany(e => e.GetForeignKeys()))
+            relationship.DeleteBehavior = DeleteBehavior.Cascade;
 
         base.OnModelCreating(modelBuilder);
     }

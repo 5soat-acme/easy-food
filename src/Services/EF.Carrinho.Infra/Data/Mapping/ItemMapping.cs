@@ -11,14 +11,7 @@ public class ItemMapping: IEntityTypeConfiguration<Item>
         builder.ToTable("ItensCarrinho");
         
         builder.HasKey(c => c.Id);
-
-        builder.Property(c => c.Quantidade)
-            .IsRequired()
-            .HasColumnType("integer");
-
-        builder.Property(c => c.ProdutoId)
-            .IsRequired();
-
+        
         builder.HasOne(c => c.Carrinho)
             .WithMany(c => c.Itens);
     }

@@ -29,16 +29,14 @@ public sealed class CarrinhoRepository : ICarrinhoRepository
             .FirstOrDefaultAsync(c => c.Id == id);
     }
 
-    public CarrinhoCliente Criar(CarrinhoCliente carrinho)
+    public void Criar(CarrinhoCliente carrinho)
     {
-        var result =  _context.Carrinhos.Add(carrinho);
-        return result.Entity;
+        _context.Carrinhos.Add(carrinho);
     }
 
-    public CarrinhoCliente Atualizar(CarrinhoCliente carrinho)
+    public void Atualizar(CarrinhoCliente carrinho)
     {
-        var result = _context.Carrinhos.Update(carrinho);
-        return result.Entity;
+        _context.Carrinhos.Update(carrinho);
     }
 
     public void Remover(CarrinhoCliente carrinho)

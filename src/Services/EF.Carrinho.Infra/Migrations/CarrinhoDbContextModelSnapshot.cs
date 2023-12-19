@@ -29,12 +29,7 @@ namespace EF.Carrinho.Infra.Migrations
                         .HasColumnType("uuid");
 
                     b.Property<Guid?>("ClienteId")
-                        .IsRequired()
                         .HasColumnType("uuid");
-
-                    b.Property<string>("Nome")
-                        .IsRequired()
-                        .HasColumnType("text");
 
                     b.Property<decimal>("ValorTotal")
                         .HasColumnType("numeric");
@@ -74,6 +69,7 @@ namespace EF.Carrinho.Infra.Migrations
                     b.HasOne("EF.Carrinho.Domain.Models.CarrinhoCliente", "Carrinho")
                         .WithMany("Itens")
                         .HasForeignKey("CarrinhoId")
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Carrinho");

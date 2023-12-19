@@ -1,3 +1,4 @@
+using EF.Carrinho.Application.DTOs;
 using EF.Carrinho.Domain.Models;
 using EF.Domain.Commons.Communication;
 
@@ -7,7 +8,7 @@ public interface ICarrinhoAppService
 {
     Task<CarrinhoCliente?> ObterCarrinhoCliente();
     Task LimparCarrinho();
-    Task AdicionarItemCarrinho(Item item);
+    Task AdicionarItemCarrinho(AdicionarItemDto itemDto);
     Task<Result<Item>> AtualizarItem(Item item);
     Task RemoverItemCarrinho(Item item);
     

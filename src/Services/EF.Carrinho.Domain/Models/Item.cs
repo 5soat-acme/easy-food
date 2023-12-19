@@ -52,4 +52,10 @@ public class Item : Entity
 
         return true;
     }
+
+    public void AssociarCarrinho(Guid carrinhoId)
+    {
+        if (carrinhoId == Guid.Empty) throw new DomainException("Id do carrinho inválido");
+        CarrinhoId = carrinhoId;
+    }
 }

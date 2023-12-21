@@ -5,64 +5,36 @@ using MediatR;
 
 namespace EF.Cupons.Application.Commands
 {
-    public class InserirProdutosCommandHandler : CommandHandler,
+    public class InserirProdutosCommandHandler : CupomCommandBase,
         IRequestHandler<InserirProdutosCommand, CommandResult>
     {
-        private readonly ICupomRepository _cupomRepository;
 
-        public InserirProdutosCommandHandler(ICupomRepository cupomRepository)
-        {
-            _cupomRepository = cupomRepository;
-        }
+        public InserirProdutosCommandHandler(ICupomRepository cupomRepository) : base(cupomRepository) { }
 
         public async Task<CommandResult> Handle(InserirProdutosCommand request, CancellationToken cancellationToken)
         {
-            var produtos = GetProdutos(request);
-            if (!await ValidarProdutos(request.CupomId, produtos, cancellationToken)) return CommandResult.Create(ValidationResult);
-            await _cupomRepository.InserirProdutos(produtos, cancellationToken);
-            var result = await PersistData(_cupomRepository.UnitOfWork);
-            return CommandResult.Create(result);
+            if (!await ValidarCupom(request.CupomId, cancellationToken)) return CommandResult.Create(ValidationResult);
+
+            var produtos = await GetProdutos(request, cancellationToken);
+            if (produtos.Count > 0)
+            {
+                await _cupomRepository.InserirProdutos(produtos, cancellationToken);
+                await PersistData(_cupomRepository.UnitOfWork);
+            }
+
+            return CommandResult.Create(ValidationResult);
         }
 
-        private IList<CupomProduto> GetProdutos(InserirProdutosCommand command)
+        private async Task<IList<CupomProduto>> GetProdutos(InserirProdutosCommand command, CancellationToken cancellationToken)
         {
             var produtos = new List<CupomProduto>();
-            foreach(var p in command.Produtos)
+            foreach (var p in command.Produtos)
             {
-                produtos.Add(new CupomProduto(command.CupomId, p));
+                var prodExiste = (await _cupomRepository.BuscarCupomProduto(command.CupomId, p, cancellationToken)) is not null;
+                if (!prodExiste)
+                    produtos.Add(new CupomProduto(command.CupomId, p));
             }
             return produtos;
-        }
-
-        private async Task<bool> ValidarProdutos(Guid cupomId, IList<CupomProduto> produtos, CancellationToken cancellationToken)
-        {
-            if (produtos.Count == 0)
-            {
-                AddError("Nenhum produto informado para inserção");
-                return false;
-            }
-
-            var cupom = await _cupomRepository.Buscar(cupomId, cancellationToken);
-            if (cupom is null)
-            {
-                AddError("Cupom não encontrado");
-                return false;
-            }
-
-            var produtosValidos = true;
-            foreach (var p in produtos)
-            {
-                
-                var cupomExistente = await _cupomRepository.BuscarCupomProduto(cupomId, p.ProdutoId, cancellationToken);
-                if (cupomExistente is not null)
-                {
-                    AddError($"Produto {p.ProdutoId} já está inserido no cupom");
-                    produtosValidos = false;
-                }
-            }
-            if (!produtosValidos) return false;
-
-            return true;
         }
     }
 }

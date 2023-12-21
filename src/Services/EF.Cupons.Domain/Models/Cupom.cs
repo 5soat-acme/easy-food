@@ -1,5 +1,4 @@
 ﻿using EF.Domain.Commons.DomainObjects;
-using System.Data;
 
 namespace EF.Cupons.Domain.Models
 {
@@ -57,7 +56,6 @@ namespace EF.Cupons.Domain.Models
 
         public void AlterarDatas(DateTime dataInicio, DateTime dataFim)
         {
-            ValidarVigencia();
             ValidarDatas(dataInicio, dataFim);
             DataInicio = dataInicio;
             DataFim = dataFim;
@@ -65,14 +63,12 @@ namespace EF.Cupons.Domain.Models
 
         public void AlterarCodigoCupom(string codigoCupom)
         {
-            ValidarVigencia();
             ValidarCodigoCupom(codigoCupom);
             CodigoCupom = codigoCupom;
         }
 
         public void AlterarPorcentagemDesconto(decimal porcentagemDesconto)
         {
-            ValidarVigencia();
             ValidarPorcentagemDesconto(porcentagemDesconto);
             PorcentagemDesconto = porcentagemDesconto;
         }
@@ -91,11 +87,6 @@ namespace EF.Cupons.Domain.Models
         private void ValidarPorcentagemDesconto(decimal porcentagemDesconto)
         {
             if (porcentagemDesconto <= 0) throw new DomainException("PorcentagemDesconto inválida");
-        }
-
-        private void ValidarVigencia()
-        {
-            if (DataInicio < DateTime.Now.Date) throw new DomainException("Não é possível alterar um cupom em vigência"); ;
         }
 
         private void ValidarCupomStatus(CupomStatus status)

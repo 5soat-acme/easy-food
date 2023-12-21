@@ -42,11 +42,10 @@ namespace EF.Cupons.Infra.Data.Repository
                 .FirstOrDefaultAsync(cancellationToken);
         }
 
-        public async Task<IList<Cupom>> BuscarCupomVigenteEmPeriodo(Guid cupomId, string codigoCupom, DateTime dataInicio, DateTime dataFim, CancellationToken cancellationToken)
+        public async Task<IList<Cupom>> BuscarCupomVigenteEmPeriodo(string codigoCupom, DateTime dataInicio, DateTime dataFim, CancellationToken cancellationToken)
         {
             return await _dbContext.Cupons
-                .Where(x => x.Id != cupomId
-                       && x.CodigoCupom == codigoCupom
+                .Where(x => x.CodigoCupom == codigoCupom
                        && x.Status == CupomStatus.Ativo
                        && x.DataInicio <= dataFim
                        && x.DataFim >= dataInicio)
@@ -59,10 +58,10 @@ namespace EF.Cupons.Infra.Data.Repository
             return cupom;
         }
 
-        public Cupom Atualizar(Cupom estoque, CancellationToken cancellationToken)
+        public Cupom Atualizar(Cupom cupom, CancellationToken cancellationToken)
         {
-            _dbContext.Update(estoque);
-            return estoque;
+            _dbContext.Cupons.Update(cupom);
+            return cupom;
         }
 
         public async Task InserirProdutos(IList<CupomProduto> produtos, CancellationToken cancellationToken)

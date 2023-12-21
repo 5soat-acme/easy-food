@@ -5,20 +5,18 @@ using MediatR;
 
 namespace EF.Cupons.Application.Commands
 {
-    public class AtualizarCupomCommandHandler : CommandHandler,
+    public class AtualizarCupomCommandHandler : CupomCommandBase,
         IRequestHandler<AtualizarCupomCommand, CommandResult>
     {
-        private readonly ICupomRepository _cupomRepository;
-
-        public AtualizarCupomCommandHandler(ICupomRepository cupomRepository)
-        {
-            _cupomRepository = cupomRepository;
-        }
+        public AtualizarCupomCommandHandler(ICupomRepository cupomRepository) : base(cupomRepository) { }
 
         public async Task<CommandResult> Handle(AtualizarCupomCommand request, CancellationToken cancellationToken)
         {
+            if (!await ValidarCupom(request.CupomId, cancellationToken)) return CommandResult.Create(ValidationResult);            
+
             var cupom = await GetCupom(request, cancellationToken);
-            if (!await ValidarCupom(cupom, cancellationToken)) return CommandResult.Create(ValidationResult);
+            if (!await ValidarOutroCupomVigente(cupom!, cancellationToken)) return CommandResult.Create(ValidationResult);
+
             _cupomRepository.Atualizar(cupom!, cancellationToken);
             var result = await PersistData(_cupomRepository.UnitOfWork);
             return CommandResult.Create(result);
@@ -26,34 +24,11 @@ namespace EF.Cupons.Application.Commands
 
         private async Task<Cupom?> GetCupom(AtualizarCupomCommand command, CancellationToken cancellationToken)
         {
-            var cupomExistente = await _cupomRepository.Buscar(command.CupomId, cancellationToken);
-            if (cupomExistente is not null)
-            {
-                cupomExistente.AlterarDatas(command.DataInicio, command.DataFim);
-                cupomExistente.AlterarCodigoCupom(command.CodigoCupom);
-                cupomExistente.AlterarPorcentagemDesconto(command.PorcentagemDesconto);
-                return cupomExistente;
-            }
-            return null;
-        }
-
-        private async Task<bool> ValidarCupom(Cupom? cupom, CancellationToken cancellationToken)
-        {
-            if (cupom is null)
-            {
-                AddError("Cupom não encontrado");
-                return false;
-            }
-            else
-            {
-                var cupomExistente = await _cupomRepository.BuscarCupomVigenteEmPeriodo(cupom.Id, cupom.CodigoCupom, cupom.DataInicio, cupom.DataFim, cancellationToken);
-                if (cupomExistente.Count > 0)
-                {
-                    AddError("Já existe cupom com este código em vigência para o mesmo período");
-                    return false;
-                }
-            }
-            return true;
+            var cupomExistente = await _cupomRepository.Buscar(command.CupomId, cancellationToken);            
+            cupomExistente!.AlterarCodigoCupom(command.CodigoCupom);
+            cupomExistente.AlterarPorcentagemDesconto(command.PorcentagemDesconto);
+            cupomExistente.AlterarDatas(command.DataInicio, command.DataFim);
+            return cupomExistente;
         }
     }
 }

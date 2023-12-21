@@ -5,23 +5,24 @@ using MediatR;
 
 namespace EF.Cupons.Application.Commands
 {
-    public class RemoverProdutosCommandHandler : CommandHandler,
+    public class RemoverProdutosCommandHandler : CupomCommandBase,
         IRequestHandler<RemoverProdutosCommand, CommandResult>
     {
-        private readonly ICupomRepository _cupomRepository;
 
-        public RemoverProdutosCommandHandler(ICupomRepository cupomRepository)
-        {
-            _cupomRepository = cupomRepository;
-        }
+        public RemoverProdutosCommandHandler(ICupomRepository cupomRepository) : base(cupomRepository) { }
 
         public async Task<CommandResult> Handle(RemoverProdutosCommand request, CancellationToken cancellationToken)
         {
+            if (!await ValidarCupom(request.CupomId, cancellationToken)) return CommandResult.Create(ValidationResult);
+
             var produtos = await GetProdutos(request, cancellationToken);
-            if (!ValidarProdutos(produtos)) return CommandResult.Create(ValidationResult);
-            _cupomRepository.RemoverProdutos(produtos, cancellationToken);
-            var result = await PersistData(_cupomRepository.UnitOfWork);
-            return CommandResult.Create(result);
+            if (produtos.Count > 0)
+            {
+                _cupomRepository.RemoverProdutos(produtos, cancellationToken);
+                await PersistData(_cupomRepository.UnitOfWork);
+            }
+
+            return CommandResult.Create(ValidationResult);
         }
 
         private async Task<IList<CupomProduto>> GetProdutos(RemoverProdutosCommand command, CancellationToken cancellationToken)
@@ -30,21 +31,10 @@ namespace EF.Cupons.Application.Commands
             foreach (var p in command.Produtos)
             {
                 var cupomProd = await _cupomRepository.BuscarCupomProduto(command.CupomId, p, cancellationToken);
-                if(cupomProd is not null)
+                if (cupomProd is not null)
                     produtos.Add(cupomProd);
             }
             return produtos;
-        }
-
-        private bool ValidarProdutos(IList<CupomProduto> produtos)
-        {
-            if (produtos.Count == 0)
-            {
-                AddError("Nenhum produto informado para ser removido");
-                return false;
-            }
-
-            return true;
         }
     }
 }

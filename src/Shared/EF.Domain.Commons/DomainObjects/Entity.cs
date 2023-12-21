@@ -1,3 +1,5 @@
+using EF.Domain.Commons.Messages;
+
 namespace EF.Domain.Commons.DomainObjects;
 
 public abstract class Entity
@@ -8,6 +10,27 @@ public abstract class Entity
     }
 
     public Guid Id { get; set; }
+    public DateTime CreatedAt { get; set; }
+    public DateTime? UpdatedAt { get; set; }
+    
+    private List<Event> _notifications;
+    public IReadOnlyCollection<Event> Notifications => _notifications?.AsReadOnly();
+
+    public void AddEvent(Event @event)
+    {
+        _notifications = _notifications ?? [];
+        _notifications.Add(@event);
+    }
+
+    public void RemoveEvent(Event @event)
+    {
+        _notifications?.Remove(@event);
+    }
+
+    public void ClearEvents()
+    {
+        _notifications?.Clear();
+    }
 
     public override bool Equals(object? obj)
     {

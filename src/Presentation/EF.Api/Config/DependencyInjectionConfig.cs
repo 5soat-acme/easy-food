@@ -40,7 +40,7 @@ public static class DependencyInjectionConfig
     {
         // Application - Commands
         services
-            .AddScoped<IRequestHandler<IncluirItemPedidoCommand, CommandResult>, IncluirItemPedidoCommandHandler>();
+            .AddScoped<IRequestHandler<GerarPedidoCommand, CommandResult>, GerarPedidoCommandHandler>();
 
         // Infra - Data
         services.AddScoped<IPedidoRepository, PedidoRepository>();

@@ -12,7 +12,7 @@ namespace EF.Api.Controllers.Pedidos;
 public class PedidoController(IMediatorHandler mediator, IUserApp user) : CustomControllerBase
 {
     [HttpPost]
-    public async Task<IActionResult> CriarPedido(IncluirItemPedidoCommand command)
+    public async Task<IActionResult> CriarPedido(GerarPedidoCommand command)
     {
         command.CarrinhoId = user.ObterCarrinhoId();
         return Respond(await mediator.Send(command));

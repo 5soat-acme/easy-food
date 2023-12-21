@@ -2,13 +2,14 @@ namespace EF.Domain.Commons.Messages;
 
 public abstract class Message
 {
-    protected Message()
+    public Message()
     {
         MessageType = GetType().Name;
         Timestamp = DateTime.Now;
     }
 
-    public DateTime Timestamp { get; private set; }
+    public DateTime Timestamp { get; protected set; }
     public string MessageType { get; protected set; }
-    public Guid AggregateId { get; protected set; }
+    public Guid AggregateId { get; set; }
+    public Guid TransactionId { get; set; }
 }

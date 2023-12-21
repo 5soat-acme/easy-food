@@ -11,5 +11,6 @@ public interface ICarrinhoAppService
     Task<OperationResult> AdicionarItemCarrinho(AdicionarItemDto itemDto);
     Task<OperationResult> AtualizarItem(AtualizarItemDto itemDto);
     Task<OperationResult> RemoverItemCarrinho(Guid itemId);
-    Task GerarPedido();
+    Task<ResumoCarrinhoDto> ObterResumo();
+    Task<OperationResult<CarrinhoFechadoDto>> FecharPedido();
 }

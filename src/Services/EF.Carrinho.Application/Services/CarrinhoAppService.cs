@@ -4,6 +4,7 @@ using EF.Carrinho.Application.Services.Interfaces;
 using EF.Carrinho.Domain.Models;
 using EF.Carrinho.Domain.Repository;
 using EF.Domain.Commons.Communication;
+using EF.Domain.Commons.Messages.Integrations.CarrinhoIntegracao;
 using EF.WebApi.Commons.Users;
 
 namespace EF.Carrinho.Application.Services;
@@ -17,7 +18,7 @@ public class CarrinhoAppService(ICarrinhoRepository carrinhoRepository, IUserApp
     public async Task<CarrinhoClienteDto?> ObterCarrinhoCliente()
     {
         var carrinho = await ObterCarrinho();
-        
+
         if (carrinho is null)
         {
             carrinho = new CarrinhoCliente(user.ObterCarrinhoId());
@@ -92,7 +93,7 @@ public class CarrinhoAppService(ICarrinhoRepository carrinhoRepository, IUserApp
 
         carrinho.RemoverItem(item);
         carrinhoRepository.RemoverItem(item);
-        
+
         if (!carrinho.Itens.Any())
         {
             carrinhoRepository.Remover(carrinho);
@@ -108,7 +109,8 @@ public class CarrinhoAppService(ICarrinhoRepository carrinhoRepository, IUserApp
     }
 
     public async Task<OperationResult> LimparCarrinho()
-    {var carrinho = await ObterCarrinho();
+    {
+        var carrinho = await ObterCarrinho();
 
         if (carrinho is null)
         {
@@ -125,12 +127,57 @@ public class CarrinhoAppService(ICarrinhoRepository carrinhoRepository, IUserApp
         return OperationResult.Success();
     }
 
-    public async Task GerarPedido()
+    public async Task<ResumoCarrinhoDto> ObterResumo()
     {
         var carrinho = await ObterCarrinho();
-        
+
+        // TODO: Obter cupons
+        // TODO: Obter Estimativa de preparo
+        // TODO: Obter valor dos produtos
+
+        return mapper.Map<ResumoCarrinhoDto>(carrinho);
     }
-    
+
+    public async Task<OperationResult<CarrinhoFechadoDto>> FecharPedido()
+    {
+        // TODO: Obter cupons
+        // TODO: Obter Estimativa de preparo
+        // TODO: Obter valor dos produtos
+
+        var carrinho = await ObterCarrinho();
+
+        if (carrinho is null)
+        {
+            return OperationResult<CarrinhoFechadoDto>.Failure("Carriho não encontrado");
+        }
+
+        var transacaoId = Guid.NewGuid();
+
+        carrinhoRepository.Remover(carrinho);
+        carrinho.AddEvent(new CarrinhoFechadoEvent
+        {
+            AggregateId = carrinho.Id,
+            TransactionId = transacaoId,
+            ValorTotal = carrinho.ValorTotal,
+            ClienteId = carrinho.ClienteId ?? Guid.Empty,
+            Desconto = 0m,
+            ValorFinal = 0m,
+            Itens = carrinho.Itens.Select(i => new CarrinhoFechadoEvent.ItemCarrinhoFechado
+            {
+                ProdutoId = i.ProdutoId,
+                Quantidade = i.Quantidade,
+                ValorUnitario = i.ValorUnitario
+            }).ToList()
+        });
+
+        await PersistirDados();
+
+        return OperationResult<CarrinhoFechadoDto>.Success(new CarrinhoFechadoDto
+        {
+            TransacaoId = transacaoId
+        });
+    }
+
     private async Task<CarrinhoCliente?> ObterCarrinho()
     {
         if (_clienteId != Guid.Empty)

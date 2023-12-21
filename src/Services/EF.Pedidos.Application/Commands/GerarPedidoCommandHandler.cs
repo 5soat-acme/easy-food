@@ -5,17 +5,17 @@ using MediatR;
 
 namespace EF.Pedidos.Application.Commands;
 
-public class IncluirItemPedidoCommandHandler : CommandHandler,
-    IRequestHandler<IncluirItemPedidoCommand, CommandResult>
+public class GerarPedidoCommandHandler : CommandHandler,
+    IRequestHandler<GerarPedidoCommand, CommandResult>
 {
     private readonly IPedidoRepository _pedidoRepository;
 
-    public IncluirItemPedidoCommandHandler(IPedidoRepository pedidoRepository)
+    public GerarPedidoCommandHandler(IPedidoRepository pedidoRepository)
     {
         _pedidoRepository = pedidoRepository;
     }
 
-    public async Task<CommandResult> Handle(IncluirItemPedidoCommand command, CancellationToken cancellationToken)
+    public async Task<CommandResult> Handle(GerarPedidoCommand command, CancellationToken cancellationToken)
     {
         var pedido = new Pedido(command.ClienteId);
         pedido.AdicionarItem(new Item(pedido.Id, command.ProdutoId, command.Quantidade));

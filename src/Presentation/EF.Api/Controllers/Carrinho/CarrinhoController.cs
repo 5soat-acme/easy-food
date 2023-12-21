@@ -1,6 +1,5 @@
 using EF.Carrinho.Application.DTOs;
 using EF.Carrinho.Application.Services.Interfaces;
-using EF.Carrinho.Domain.Models;
 using EF.WebApi.Commons.Controllers;
 using EF.WebApi.Commons.Users;
 using Microsoft.AspNetCore.Authorization;
@@ -16,13 +15,26 @@ public class CarrinhoController(ICarrinhoAppService carrinhoAppService, IUserApp
     /// Obtém o carrinho do cliente, caso esteja logado, ou o carrinho anônimo.
     /// </summary>
     /// <returns>
-    ///   <see cref="CarrinhoCliente"/>
+    ///   <see cref="CarrinhoClienteDto"/>
     /// </returns>
-    [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(CarrinhoCliente))]
+    [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(CarrinhoClienteDto))]
     [HttpGet]
     public async Task<IActionResult> ObterCarrinho()
     {
         return Respond(await carrinhoAppService.ObterCarrinhoCliente());
+    }
+    
+    /// <summary>
+    /// Obtém resumo do pedido que será gerado.
+    /// </summary>
+    /// <returns>
+    ///   <see cref="ResumoCarrinhoDto"/>
+    /// </returns>
+    [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(ResumoCarrinhoDto))]
+    [HttpGet("resumo")]
+    public async Task<IActionResult> Resumo()
+    {
+        return Respond(await carrinhoAppService.ObterResumo());
     }
 
     /// <summary>
@@ -42,6 +54,18 @@ public class CarrinhoController(ICarrinhoAppService carrinhoAppService, IUserApp
             AddErrors(result.Errors);
         }
 
+        return Respond();
+    }
+    
+    /// <summary>
+    /// Finaliza a montagem do carrinho e gera um novo pedido.
+    /// </summary>
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(ValidationProblemDetails))]
+    [HttpPost("gerar-pedido")]
+    public async Task<IActionResult> FecharPedido()
+    {
+        await carrinhoAppService.FecharPedido();
         return Respond();
     }
 
@@ -82,18 +106,6 @@ public class CarrinhoController(ICarrinhoAppService carrinhoAppService, IUserApp
         if (!ModelState.IsValid) return Respond(ModelState);
 
         await carrinhoAppService.RemoverItemCarrinho(itemId);
-        return Respond();
-    }
-
-    /// <summary>
-    /// Finaliza a montagem do carrinho e gera um novo pedido.
-    /// </summary>
-    [ProducesResponseType(StatusCodes.Status200OK)]
-    [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(ValidationProblemDetails))]
-    [HttpPost("finalizar")]
-    public async Task<IActionResult> GerarPedido()
-    {
-        await carrinhoAppService.GerarPedido();
         return Respond();
     }
 }

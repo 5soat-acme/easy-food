@@ -10,5 +10,7 @@ public class DomainToDtoProfile : Profile
     {
         CreateMap<CarrinhoCliente, CarrinhoClienteDto>();
         CreateMap<Item, ItemDto>();
+        CreateMap<CarrinhoCliente, ResumoCarrinhoDto>();
+        CreateMap<Item, ResumoItemDto>();
     }
 }

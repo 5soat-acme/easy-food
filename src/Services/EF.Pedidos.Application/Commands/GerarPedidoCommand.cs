@@ -2,7 +2,7 @@ using EF.Domain.Commons.Messages;
 
 namespace EF.Pedidos.Application.Commands;
 
-public class IncluirItemPedidoCommand : Command
+public class GerarPedidoCommand : Command
 {
     public Guid CarrinhoId { get; set; }
     public Guid? ClienteId { get; set; }

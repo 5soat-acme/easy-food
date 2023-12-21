@@ -43,6 +43,11 @@ public sealed class CarrinhoRepository : ICarrinhoRepository
     {
         _context.Carrinhos.Remove(carrinho);
     }
+    
+    public void RemoverItem(Item item)
+    {
+        _context.Itens.Remove(item);
+    }
 
     public void Dispose()
     {

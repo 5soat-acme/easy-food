@@ -1,3 +1,4 @@
+using System.Collections.ObjectModel;
 using FluentValidation.Results;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
@@ -42,5 +43,13 @@ public abstract class CustomControllerBase : ControllerBase
     protected void AddError(string error)
     {
         Errors.Add(error);
+    }
+    
+    protected void AddErrors(ReadOnlyCollection<string> errors)
+    {
+        foreach (var error in errors)
+        {
+            Errors.Add(error);
+        }
     }
 }

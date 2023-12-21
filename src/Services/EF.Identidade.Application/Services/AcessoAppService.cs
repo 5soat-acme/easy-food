@@ -30,7 +30,7 @@ public class AcessoAppService : IAcessoAppService
         _identitySettings = settings.Value;
     }
 
-    public async Task<Result<RespostaTokenAcesso>> CriarUsuario(
+    public async Task<OperationResult<RespostaTokenAcesso>> CriarUsuario(
         NovoUsuario novoUsuario)
     {
         var identityUser = new IdentityUser
@@ -45,16 +45,16 @@ public class AcessoAppService : IAcessoAppService
         if (identityResult.Succeeded)
         {
             var result = await RegistrarCliente(novoUsuario);
-            if (!result.IsValid) return Result<RespostaTokenAcesso>.Failure(result);
+            if (!result.IsValid) return OperationResult<RespostaTokenAcesso>.Failure(result);
 
-            return Result<RespostaTokenAcesso>.Success(await GerarToken(novoUsuario.Email));
+            return OperationResult<RespostaTokenAcesso>.Success(await GerarToken(novoUsuario.Email));
         }
 
         var errors = new List<string>();
         foreach (var error in identityResult.Errors)
             errors.Add(error.Description);
 
-        return Result<RespostaTokenAcesso>.Failure(errors);
+        return OperationResult<RespostaTokenAcesso>.Failure(errors);
     }
 
     public RespostaTokenAcesso GerarTokenAcessoNaoIdentificado(string? cpf = null)
@@ -75,14 +75,14 @@ public class AcessoAppService : IAcessoAppService
         return ObterRespostaToken(encodedToken, claims);
     }
 
-    public async Task<Result<RespostaTokenAcesso>> Autenticar(UsuarioLogin usuario)
+    public async Task<OperationResult<RespostaTokenAcesso>> Autenticar(UsuarioLogin usuario)
     {
         var result = await _signInManager.PasswordSignInAsync(usuario.Email, usuario.Senha,
             false, true);
 
-        if (result.Succeeded) return Result<RespostaTokenAcesso>.Success(await GerarToken(usuario.Email));
+        if (result.Succeeded) return OperationResult<RespostaTokenAcesso>.Success(await GerarToken(usuario.Email));
 
-        return Result<RespostaTokenAcesso>.Failure("Usuário ou senha incorretos");
+        return OperationResult<RespostaTokenAcesso>.Failure("Usuário ou senha incorretos");
     }
 
     private async Task<ValidationResult> RegistrarCliente(NovoUsuario novoUsuario)

@@ -19,8 +19,7 @@ public class IdentidadeController(IAcessoAppService appService) : CustomControll
 
         if (!result.IsValid)
         {
-            result.Errors.ForEach(AddError);
-            return Respond(ModelState);
+            AddErrors(result.Errors);
         }
 
         return Respond(result.Data);
@@ -34,11 +33,10 @@ public class IdentidadeController(IAcessoAppService appService) : CustomControll
         if (!ModelState.IsValid) return Respond(ModelState);
 
         var result = await appService.Autenticar(usuario);
-
+        
         if (!result.IsValid)
         {
-            result.Errors.ForEach(AddError);
-            return Respond(ModelState);
+            AddErrors(result.Errors);
         }
 
         return Respond(result.Data);

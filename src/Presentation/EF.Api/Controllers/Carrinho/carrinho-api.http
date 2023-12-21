@@ -11,5 +11,20 @@ Authorization: Bearer {{authToken}}
 
 {
   "produtoId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
-  "quantidade": 2
+  "quantidade": 4
 }
+
+###
+PUT {{baseUrl}}/api/carrinho/ec012d79-82fb-429f-b8fc-0df7f779bf6c
+Content-Type: application/json
+Authorization: Bearer {{authToken}}
+
+{
+  "itemId": "ec012d79-82fb-429f-b8fc-0df7f779bf6c",
+  "quantidade": 1
+}
+
+###
+DELETE {{baseUrl}}/api/carrinho/ec012d79-82fb-429f-b8fc-0df7f779bf6c
+Content-Type: application/json
+Authorization: Bearer {{authToken}}

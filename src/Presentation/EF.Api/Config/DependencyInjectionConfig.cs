@@ -1,3 +1,4 @@
+using EF.Carrinho.Application.Mapping;
 using EF.Carrinho.Application.Services;
 using EF.Carrinho.Application.Services.Interfaces;
 using EF.Carrinho.Domain.Repository;
@@ -69,6 +70,9 @@ public static class DependencyInjectionConfig
     {
         // Application - Services
         services.AddScoped<ICarrinhoAppService, CarrinhoAppService>();
+        
+        // Application - Mapping
+        services.AddAutoMapper(typeof(DomainToDtoProfile));
         
         // Infra - Data
         services.AddScoped<ICarrinhoRepository, CarrinhoRepository>();

@@ -74,4 +74,18 @@ public class CarrinhoCliente : Entity, IAggregateRoot
 
         return true;
     }
+
+    public void AtualizarQuantidadeItem(Guid itemId, int quantidade)
+    {
+        var item = _itens.FirstOrDefault(f => f.Id == itemId);
+
+        if (item is null)
+        {
+            throw new DomainException("Item não econtrado");
+        }
+
+        item.AtualizarQuantidade(quantidade);
+
+        AtualizarValorTotal();
+    }
 }

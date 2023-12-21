@@ -1,0 +1,13 @@
+{
+  "id": "adfc72dc-0211-4d46-ac45-f73c66240842",
+  "clienteId": "b30fde1f-d109-4c5f-b865-7bbde9c556fe",
+  "valorTotal": 35.90,
+  "itens": [
+    {
+      "valorUnitario": 35.90,
+      "quantidade": 1,
+      "produtoId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+      "nomeProduto": "Produto Teste"
+    }
+  ]
+}

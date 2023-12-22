@@ -18,7 +18,7 @@ public class GerarPedidoCommandHandler : CommandHandler,
     public async Task<CommandResult> Handle(GerarPedidoCommand command, CancellationToken cancellationToken)
     {
         var pedido = new Pedido(command.ClienteId);
-        pedido.AdicionarItem(new Item(pedido.Id, command.ProdutoId, command.Quantidade));
+        //pedido.AdicionarItem();
         await _pedidoRepository.Criar(pedido);
         var result = await PersistData(_pedidoRepository.UnitOfWork);
         return CommandResult.Create(result, pedido.Id);

@@ -62,11 +62,11 @@ public class CarrinhoController(ICarrinhoAppService carrinhoAppService, IUserApp
     /// </summary>
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(ValidationProblemDetails))]
-    [HttpPost("gerar-pedido")]
+    [HttpPost("fechar-pedido")]
     public async Task<IActionResult> FecharPedido()
     {
-        await carrinhoAppService.FecharPedido();
-        return Respond();
+        var result = await carrinhoAppService.FecharPedido();
+        return Respond(result.Data);
     }
 
     /// <summary>

@@ -3,6 +3,7 @@ using EF.Domain.Commons.DomainObjects;
 using EF.Domain.Commons.Mediator;
 using EF.Domain.Commons.Messages;
 using EF.Domain.Commons.Repository;
+using EF.Infra.Commons.Mediator;
 using FluentValidation.Results;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
@@ -12,6 +13,7 @@ namespace EF.Carrinho.Infra.Data;
 public sealed class CarrinhoDbContext : DbContext, IUnitOfWork
 {
     private readonly IMediatorHandler _mediator;
+    
     public CarrinhoDbContext(DbContextOptions<CarrinhoDbContext> options, IMediatorHandler mediator) : base(options)
     {
         _mediator = mediator;
@@ -24,9 +26,8 @@ public sealed class CarrinhoDbContext : DbContext, IUnitOfWork
 
     public async Task<bool> Commit()
     {
-        var result = await SaveChangesAsync() > 0;
         await _mediator.PublishEvents(this);
-        return result;
+        return await SaveChangesAsync() > 0;
     }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -40,29 +41,5 @@ public sealed class CarrinhoDbContext : DbContext, IUnitOfWork
             relationship.DeleteBehavior = DeleteBehavior.Cascade;
 
         base.OnModelCreating(modelBuilder);
-    }
-}
-
-public static class MediatorExtension
-{
-    public static async Task PublishEvents<T>(this IMediatorHandler mediator, T ctx) where T : DbContext
-    {
-        var domainEntities = ctx.ChangeTracker
-            .Entries<Entity>()
-            .Where(x => x.Entity.Notifications.Any());
-
-        var domainEvents = domainEntities
-            .SelectMany(x => x.Entity.Notifications)
-            .ToList();
-
-        domainEntities.ToList()
-            .ForEach(entity => entity.Entity.ClearEvents());
-
-        var tasks = domainEvents
-            .Select(async (domainEvent) => {
-                await mediator.Publish(domainEvent);
-            });
-
-        await Task.WhenAll(tasks);
     }
 }

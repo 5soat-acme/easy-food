@@ -10,9 +10,11 @@ using EF.Clientes.Infra.Data;
 using EF.Clientes.Infra.Data.Repository;
 using EF.Domain.Commons.Mediator;
 using EF.Domain.Commons.Messages;
+using EF.Domain.Commons.Messages.Integrations.CarrinhoIntegracao;
 using EF.Identidade.Application.Services;
 using EF.Identidade.Application.Services.Interfaces;
 using EF.Pedidos.Application.Commands;
+using EF.Pedidos.Application.Services;
 using EF.Pedidos.Domain.Repository;
 using EF.Pedidos.Infra.Data;
 using EF.Pedidos.Infra.Data.Repository;
@@ -70,6 +72,7 @@ public static class DependencyInjectionConfig
     {
         // Application - Services
         services.AddScoped<ICarrinhoAppService, CarrinhoAppService>();
+        services.AddScoped<INotificationHandler<CarrinhoFechadoEvent>, IntegraPedidoService>();
         
         // Application - Mapping
         services.AddAutoMapper(typeof(DomainToDtoProfile));

@@ -1,0 +1,45 @@
+Microsoft.EntityFrameworkCore.DbUpdateConcurrencyException: The database operation was expected to affect 1 row(s), but actually affected 0 row(s); data may have been modified or deleted since entities were loaded. See https://go.microsoft.com/fwlink/?LinkId=527962 for information on understanding and handling optimistic concurrency exceptions.
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Update.Internal.NpgsqlModificationCommandBatch.ThrowAggregateUpdateConcurrencyExceptionAsync(RelationalDataReader reader, Int32 commandIndex, Int32 expectedRowsAffected, Int32 rowsAffected, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Update.Internal.NpgsqlModificationCommandBatch.Consume(RelationalDataReader reader, Boolean async, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at EF.Carrinho.Infra.Data.CarrinhoDbContext.Commit() in C:\dev\fiap\easy-food\src\Services\EF.Carrinho.Infra\Data\CarrinhoDbContext.cs:line 28
+   at EF.Carrinho.Application.Services.CarrinhoAppService.PersistirDados() in C:\dev\fiap\easy-food\src\Services\EF.Carrinho.Application\Services\CarrinhoAppService.cs:line 218
+   at EF.Carrinho.Application.Services.CarrinhoAppService.AdicionarItemCarrinho(AdicionarItemDto itemDto) in C:\dev\fiap\easy-food\src\Services\EF.Carrinho.Application\Services\CarrinhoAppService.cs:line 47
+   at EF.Api.Controllers.Carrinho.CarrinhoController.AdicionarItem(AdicionarItemDto itemDto) in C:\dev\fiap\easy-food\src\Presentation\EF.Api\Controllers\Carrinho\CarrinhoController.cs:line 50
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at EF.Api.Extensions.ExceptionMiddleware.InvokeAsync(HttpContext context) in C:\dev\fiap\easy-food\src\Presentation\EF.Api\Extensions\ExceptionMiddleware.cs:line 20
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+
+HEADERS
+=======
+Connection: keep-alive
+Host: localhost:5002
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
+Accept-Encoding: br,deflate,gzip,x-gzip
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJiMzBmZGUxZi1kMTA5LTRjNWYtYjg2NS03YmJkZTljNTU2ZmUiLCJlbWFpbCI6InBlZHJvLmJhcmFvLmRldkBnbWFpbC5jb20iLCJqdGkiOiJhMDU0ODcxNC0wYjAxLTRkMzYtOWMxOC02YjY4MDgwNjg3MDQiLCJuYmYiOjE3MDMyNDk0ODgsImlhdCI6MTcwMzI0OTQ4OCwiY2FycmluaG9faWQiOiJiMDhmODc4Ni00NGQ2LTQxNGYtYWUwYS02MTUwODJmMDQ4NTkiLCJleHAiOjE3MDMyNTY2ODgsImlzcyI6IkVhc3lGb29kIiwiYXVkIjoibG9jYWxob3N0OjUwMDIifQ.ATpAn2GZKDixfik-KqM4ykQVBEpbBg8FYHVY6tkW1nE
+Content-Type: application/json
+Cookie: .AspNetCore.Identity.Application=CfDJ8OiLkACF4FpJpmrePH9sWkg2Zz6awByuIC9xw0v-j5SLwuxho_8uj5oPuyWx6uND6L0t8tSVYuc1MVTSmLqN1submqqqAcwis78s5l1qhfYvmBeox9DkEC67LZxeRzSuKcp6Z40n5GCjD8sQ6MPk-iHVxm97Foo143ijf_BpzPeuHpLmnsols35RR9abq8oEUHKXlEEe1c69NL7UGYbe2f_XYhRkoE6150Dw7tqoSWMiiAvQtMY9dWqLS9V8hLWVUw7bVbdPi-OjRuBdl73CQ8CmUq6njGSuyO64wWFu1WgxYlkbsVUhZIebQVJov5EcyObUMiUZPyk6vHsmL3g4OnAYChgi_0qp-8MPOilEwDXdP3GSVktH55KOk0gP_pYCnjQTwGWub0lnbilsfQaqDMwPF-c2nkeTCaouCoaATjoac0Gw-tJzRExb-GqoctXuURsQ6s8Nq5x3drhkXgkP_AU3dUm5qgMXKxBc37nlxXpUmph7_bpLWvHToNp1qIsJAOWihzl0d_jFoBkwHg0_Mopls35s_Ln62QfQ5BsuwzrbURIeLzSfJ5KrZe2ySXR6nPGxpEuunViKnmIeYmiPc__t2TLE69BdrpswrG1bApynzioPaqebNWa6qZOfvjSttjZFclzKxV3G-2k-4NT7hL6CcZbrHdujV4LzGXFpLB1a448M9rMArUaXKxndJHU7pxdKu5mynDV2jl_lKfK92zoX_qzQvvFyNPOdnQR62kveLJ8EecjqUi0UbhCCWOjwMQ
+Content-Length: 76

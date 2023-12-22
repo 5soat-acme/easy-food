@@ -8,9 +8,15 @@ namespace EF.Api.Controllers.Identidade;
 [Route("api/identidade")]
 public class IdentidadeController(IAcessoAppService appService) : CustomControllerBase
 {
-    [HttpPost]
+    /// <summary>
+    /// Cria um novo usuário e associao ao cliente.
+    /// </summary>
+    /// <returns>
+    ///   <see cref="RespostaTokenAcesso"/>
+    /// </returns>
     [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(RespostaTokenAcesso))]
     [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(ValidationProblemDetails))]
+    [HttpPost]
     public async Task<IActionResult> CriarUsuario(NovoUsuario novoUsuario)
     {
         if (!ModelState.IsValid) return Respond(ModelState);
@@ -25,9 +31,15 @@ public class IdentidadeController(IAcessoAppService appService) : CustomControll
         return Respond(result.Data);
     }
 
-    [HttpPost("autenticar")]
+    /// <summary>
+    /// Autentica o usuário no sistema e retorna um token de acesso.
+    /// </summary>
+    /// <returns>
+    ///   <see cref="RespostaTokenAcesso"/>
+    /// </returns>
     [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(RespostaTokenAcesso))]
     [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(ValidationProblemDetails))]
+    [HttpPost("autenticar")]
     public async Task<IActionResult> Login(UsuarioLogin usuario)
     {
         if (!ModelState.IsValid) return Respond(ModelState);
@@ -42,10 +54,17 @@ public class IdentidadeController(IAcessoAppService appService) : CustomControll
         return Respond(result.Data);
     }
 
-    [HttpPost("acessar-sem-identificacao")]
+    /// <summary>
+    /// Gera um token de acesso para o usuário sem identificação.
+    /// </summary>
+    /// <param name="cpf">CPF do usuário (opicional)</param>
+    /// <returns>
+    ///   <see cref="RespostaTokenAcesso"/>
+    /// </returns>
     [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(RespostaTokenAcesso))]
     [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(ValidationProblemDetails))]
-    public async Task<IActionResult> AcessarSemIdentificacao(string? cpf = null)
+    [HttpPost("acessar-sem-identificacao")]
+    public  IActionResult AcessarSemIdentificacao(string? cpf = null)
     {
         if (!ModelState.IsValid) return Respond(ModelState);
 

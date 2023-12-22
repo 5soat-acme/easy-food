@@ -23,7 +23,7 @@ public class CarrinhoClienteFixture : IDisposable
     public List<Item> GerarItensValidos(int quantidade)
     {
         return new Faker<Item>("pt_BR")
-            .CustomInstantiator(f => new Item(f.Random.Guid(), f.Random.Decimal(20, 50), f.Random.Int(1, 5))).Generate(quantidade);
+            .CustomInstantiator(f => new Item(f.Random.Guid(), f.Commerce.ProductName(), f.Random.Decimal(20, 50), f.Random.Int(1, 5))).Generate(quantidade);
     }
     
     public void Dispose()

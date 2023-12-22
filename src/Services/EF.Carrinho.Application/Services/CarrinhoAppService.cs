@@ -1,5 +1,6 @@
 using AutoMapper;
 using EF.Carrinho.Application.DTOs;
+using EF.Carrinho.Application.Mapping;
 using EF.Carrinho.Application.Services.Interfaces;
 using EF.Carrinho.Domain.Models;
 using EF.Carrinho.Domain.Repository;
@@ -154,6 +155,7 @@ public class CarrinhoAppService(ICarrinhoRepository carrinhoRepository, IUserApp
         var transacaoId = Guid.NewGuid();
 
         carrinhoRepository.Remover(carrinho);
+        
         carrinho.AddEvent(new CarrinhoFechadoEvent
         {
             AggregateId = carrinho.Id,
@@ -209,7 +211,22 @@ public class CarrinhoAppService(ICarrinhoRepository carrinhoRepository, IUserApp
 
     private CarrinhoCliente AdicionarItemCarrinhoExistente(CarrinhoCliente carrinho, AdicionarItemDto itemDto)
     {
-        carrinho.AdicionarItem(new Item(itemDto.ProdutoId, "Produto Teste", 35.90m, itemDto.Quantidade));
+        var produtoExiste = carrinho.ProdutoExiste(itemDto.ProdutoId);
+
+        // TODO:
+        var itemAdicionar = new Item(itemDto.ProdutoId, "Produto Teste", 35.90m, itemDto.Quantidade);
+
+        carrinho.AdicionarItem(itemAdicionar);
+
+        if (produtoExiste)
+        {
+            carrinhoRepository.AtualizarItem(carrinho.ObterItemPorProdutoId(itemDto.ProdutoId)!);
+        }
+        else
+        {
+            carrinhoRepository.AdicionarItem(itemAdicionar);
+        }
+
         return carrinho;
     }
 

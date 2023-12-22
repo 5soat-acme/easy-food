@@ -84,6 +84,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Carrinho", "Carrinho", "{E7
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EF.Carrinho.Domain.Test", "test\Services\EF.Carrinho.Domain.Test\EF.Carrinho.Domain.Test.csproj", "{85CC504C-17A6-47DA-8E82-C3F4ADDCB3B9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EF.Infra.Commons", "src\Shared\EF.Infra.Commons\EF.Infra.Commons.csproj", "{807825CE-FDF9-4BA6-8D4B-5BC22648D672}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -126,6 +128,7 @@ Global
 		{955A5C59-C7C7-4D20-B62D-5271E8EAE9DA} = {E9DEF209-F4AD-4105-9DC8-A8F2DCD952F4}
 		{E7870389-FFBE-4ACB-8F96-D73395F05326} = {2BEE0DE4-139E-4CC6-9BE3-7AF71DB42AA5}
 		{85CC504C-17A6-47DA-8E82-C3F4ADDCB3B9} = {E7870389-FFBE-4ACB-8F96-D73395F05326}
+		{807825CE-FDF9-4BA6-8D4B-5BC22648D672} = {ADA9D63D-AF53-4AAD-9A3C-49C95B373A36}
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{C8DAFDA7-E706-4534-BEC1-9A21439CB6D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -200,5 +203,9 @@ Global
 		{85CC504C-17A6-47DA-8E82-C3F4ADDCB3B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{85CC504C-17A6-47DA-8E82-C3F4ADDCB3B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{85CC504C-17A6-47DA-8E82-C3F4ADDCB3B9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{807825CE-FDF9-4BA6-8D4B-5BC22648D672}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{807825CE-FDF9-4BA6-8D4B-5BC22648D672}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{807825CE-FDF9-4BA6-8D4B-5BC22648D672}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{807825CE-FDF9-4BA6-8D4B-5BC22648D672}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

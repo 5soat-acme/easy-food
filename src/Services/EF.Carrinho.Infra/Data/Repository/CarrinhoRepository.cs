@@ -44,6 +44,16 @@ public sealed class CarrinhoRepository : ICarrinhoRepository
         _context.Carrinhos.Remove(carrinho);
     }
     
+    public void AdicionarItem(Item item)
+    {
+        _context.Itens.Add(item);
+    }
+    
+    public void AtualizarItem(Item item)
+    {
+        _context.Itens.Update(item);
+    }
+    
     public void RemoverItem(Item item)
     {
         _context.Itens.Remove(item);

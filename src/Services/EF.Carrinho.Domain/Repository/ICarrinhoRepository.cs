@@ -10,5 +10,7 @@ public interface ICarrinhoRepository : IRepository<CarrinhoCliente>
     void Criar(CarrinhoCliente carrinho);
     void Atualizar(CarrinhoCliente carrinho);
     void Remover(CarrinhoCliente carrinho);
+    void AdicionarItem(Item item);
+    void AtualizarItem(Item item);
     void RemoverItem(Item item);
 }

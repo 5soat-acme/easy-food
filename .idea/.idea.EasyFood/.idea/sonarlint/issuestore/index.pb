@@ -3,10 +3,6 @@ V
 &deploy/docker/docker-compose-local.yml,1\2\121b02fb309ac44c3e157c609c6e3d5811654611
 <
 EasyFood.sln,f\9\f9b6716a432bb5515e419e8b2e1f6697e95f820f
-x
-Hsrc/Services/EF.Pedidos.Application/Commands/IncluirItemPedidoCommand.cs,d\8\d8b2c457cff0fc8c83eb452b03c7701aaf61b2b0
-
-Osrc/Services/EF.Pedidos.Application/Commands/IncluirItemPedidoCommandHandler.cs,e\7\e7766f9cda77c70ff0851165dc8852d5d70406fa
 k
 ;src/Presentation/EF.Api/Config/DependencyInjectionConfig.cs,4\7\477583946404a29d413f9bbe4c3e70e95140f3a3
 ]
@@ -131,8 +127,6 @@ Osrc/Services/EF.Identidade.Application/Services/Interfaces/IAcessoAppService.cs
 0src/Shared/EF.Domain.Commons/Messages/Message.cs,2\e\2eed64c5c70feac2dfd4e463c5a9b77ce6b7558f
 `
 0src/Shared/EF.Domain.Commons/Messages/Command.cs,b\9\b978db055829bfda07b0c1363851a10b8acb36af
-d
-4src/Shared/EF.Domain.Commons/Communication/Result.cs,6\9\690185dbb1f8651a87eff84168072c105d8fba37
 f
 6src/Shared/EF.Domain.Commons/Messages/CommandResult.cs,e\0\e0c50c32a66a22da70ca9a05d1068e9b5fc65be8
 i
@@ -189,8 +183,6 @@ x
 Hsrc/Shared/EF.Domain.Commons/Communication/ValidationResultExtensions.cs,2\3\23374ca11d9064bf2ecf426f32e91a797f98d268
 u
 Esrc/Shared/EF.Domain.Commons/Communication/OperationResultWithData.cs,3\c\3ca95607cd950dbe226d94c556e4805d1edf0623
-p
-@src/Services/EF.Carrinho.Application/DTOs/CarrinhoConsultaDto.cs,d\0\d0db650c61a2cdb4642f490a02859259d75faab0
 o
 ?src/Services/EF.Carrinho.Application/DTOs/CarrinhoClienteDto.cs,3\a\3a5d10622bdb6fe6722ebd18162f15b5adbcfbd7
 d
@@ -205,15 +197,19 @@ s
 Csrc/Services/EF.Carrinho.Application/EF.Carrinho.Application.csproj,4\5\45f272a935890e431aefe2088d631a29bcfc002d
 ^
 .src/Shared/EF.Domain.Commons/Messages/Event.cs,f\c\fcca4ae7a6bd212cfb5a34bce75cef0264354fee
-b
-2src/Presentation/EF.Api/Config/MensageBusConfig.cs,7\2\7282993be5a152566c9291e8971ae05360f76d68
 f
 6src/Shared/EF.Domain.Commons/Repository/IRepository.cs,1\2\12c54fda9d2af55eff0ebd65a7c2d3bbc56904e5
-u
-Esrc/Shared/EF.Domain.Commons/Messages/Integrations/CarrinhoFechado.cs,b\4\b480b3d3b163ea4f5f03274f66aea6b32fad26e9
-ˆ
-Xsrc/Shared/EF.Domain.Commons/Messages/Integrations/CarrinhoIntegracao/CarrinhoFechado.cs,5\1\51ef55b6257310f6b21ab6e382a0063d1c584984
 z
 Jsrc/Shared/EF.Domain.Commons/Messages/Integrations/CarrinhoFechadoEvent.cs,c\f\cfddf203eaddecea4767c8d0e63a9ade2d7c436f
-l
-<src/Services/EF.Carrinho.Application/DTOs/CarrinhoFechado.cs,6\8\6894bae85c30cf25481459b976793fc9afe20809
+r
+Bsrc/Services/EF.Pedidos.Application/Commands/GerarPedidoCommand.cs,e\2\e21d72fec4d29c363139b75d3e1fbff99063b5ed
+a
+1src/Shared/EF.Domain.Commons/Utils/StringUtils.cs,0\b\0b474fb8dd38febddda2636c7cff22c1950f2334
+p
+@src/Shared/EF.Infra.Commons/Mediator/MediatorHandlerExtension.cs,c\c\cc7a5a5da11d745e1e0d3458949775756ceda317
+t
+Dsrc/Services/EF.Pedidos.Application/Services/IntegraPedidoService.cs,4\c\4c48419d807ffedfac3502b961f58de1662ccd13
+b
+2src/Presentation/EF.Api/Config/MessageBusConfig.cs,a\4\a4f0a027c2911a2bd7cca40e26ae50451c27c682
+y
+Isrc/Services/EF.Pedidos.Application/Commands/GerarPedidoCommandHandler.cs,0\4\042d928e2b0e590f2f56aa840c37b81140553804

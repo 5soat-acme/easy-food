@@ -2,6 +2,11 @@ using EF.Clientes.Application.Commands;
 using EF.Clientes.Domain.Repository;
 using EF.Clientes.Infra.Data;
 using EF.Clientes.Infra.Data.Repository;
+using EF.Cupons.Application.Commands;
+using EF.Cupons.Application.Queries;
+using EF.Cupons.Domain.Repository;
+using EF.Cupons.Infra;
+using EF.Cupons.Infra.Data.Repository;
 using EF.Domain.Commons.Mediator;
 using EF.Domain.Commons.Messages;
 using EF.Identidade.Application.Services;
@@ -25,6 +30,7 @@ public static class DependencyInjectionConfig
         RegisterServicesPedidos(services, configuration);
         RegisterServicesClientes(services, configuration);
         RegisterServicesIdentidade(services, configuration);
+        RegisterServicesCupons(services, configuration);
 
         return services;
     }
@@ -57,5 +63,28 @@ public static class DependencyInjectionConfig
     {
         // Application - Commands
         services.AddScoped<IAcessoAppService, AcessoAppService>();
+    }
+
+    private static void RegisterServicesCupons(IServiceCollection services, IConfiguration configuration)
+    {
+        // Application - Commands
+        services
+            .AddScoped<IRequestHandler<CriarCupomCommand, CommandResult>, CriarCupomCommandHandler>();
+        services
+            .AddScoped<IRequestHandler<AtualizarCupomCommand, CommandResult>, AtualizarCupomCommandHandler>();
+        services
+            .AddScoped<IRequestHandler<InativarCupomCommand, CommandResult>, InativarCupomCommandHandler>();
+        services
+            .AddScoped<IRequestHandler<RemoverProdutosCommand, CommandResult>, RemoverProdutosCommandHandler>();
+        services
+            .AddScoped<IRequestHandler<InserirProdutosCommand, CommandResult>, InserirProdutosCommandHandler>();
+
+        // Application - Queries
+        services.AddScoped<ICupomQuery, CupomQuery>();
+
+        // Infra - Data 
+        services.AddScoped<ICupomRepository, CupomRepository>();
+        services.AddDbContext<CupomDbContext>(options =>
+             options.UseNpgsql(configuration.GetConnectionString("DefaultConnection")));
     }
 }

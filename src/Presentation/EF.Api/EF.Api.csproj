@@ -38,6 +38,10 @@
         <ProjectReference Include="..\..\Services\EF.Pedidos.Infra\EF.Pedidos.Infra.csproj"/>
         <ProjectReference Include="..\..\Shared\EF.Domain.Commons\EF.Domain.Commons.csproj"/>
         <ProjectReference Include="..\..\Shared\EF.WebApi.Commons\EF.WebApi.Commons.csproj"/>
+        <ProjectReference Include="..\..\Services\EF.Estoques.Application\EF.Estoques.Application.csproj" />
+        <ProjectReference Include="..\..\Services\EF.Estoques.Infra\EF.Estoques.Infra.csproj" />
+        <ProjectReference Include="..\..\Services\EF.Cupons.Application\EF.Cupons.Application.csproj" />
+        <ProjectReference Include="..\..\Services\EF.Cupons.Infra\EF.Cupons.Infra.csproj" />
     </ItemGroup>
 
 </Project>

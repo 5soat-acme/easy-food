@@ -7,9 +7,19 @@ using EF.Clientes.Application.Commands;
 using EF.Clientes.Domain.Repository;
 using EF.Clientes.Infra.Data;
 using EF.Clientes.Infra.Data.Repository;
+using EF.Cupons.Application.Commands;
+using EF.Cupons.Application.Queries;
+using EF.Cupons.Domain.Repository;
+using EF.Cupons.Infra;
+using EF.Cupons.Infra.Data.Repository;
 using EF.Domain.Commons.Mediator;
 using EF.Domain.Commons.Messages;
 using EF.Domain.Commons.Messages.Integrations.CarrinhoIntegracao;
+using EF.Estoques.Application.Commands;
+using EF.Estoques.Application.Queries;
+using EF.Estoques.Domain.Repository;
+using EF.Estoques.Infra;
+using EF.Estoques.Infra.Data.Repository;
 using EF.Identidade.Application.Services;
 using EF.Identidade.Application.Services.Interfaces;
 using EF.Pedidos.Application.Commands;
@@ -34,6 +44,8 @@ public static class DependencyInjectionConfig
         RegisterServicesClientes(services, configuration);
         RegisterServicesIdentidade(services, configuration);
         RegisterServicesCarrinho(services, configuration);
+        RegisterServicesEstoques(services, configuration);
+        RegisterServicesCupons(services, configuration);
 
         return services;
     }
@@ -84,5 +96,42 @@ public static class DependencyInjectionConfig
         services.AddScoped<ICarrinhoRepository, CarrinhoRepository>();
         services.AddDbContext<CarrinhoDbContext>(options =>
             options.UseNpgsql(configuration.GetConnectionString("DefaultConnection")));
+    }
+    private static void RegisterServicesEstoques(IServiceCollection services, IConfiguration configuration)
+    {
+        // Application - Commands
+        services
+            .AddScoped<IRequestHandler<AtualizarEstoqueCommand, CommandResult>, AtualizarEstoqueCommandHandler>();
+
+        // Application - Queries
+        services.AddScoped<IEstoqueQuery, EstoqueQuery>();
+
+        // Infra - Data 
+        services.AddScoped<IEstoqueRepository, EstoqueRepository>();
+        services.AddDbContext<EstoqueDbContext>(options =>
+            options.UseNpgsql(configuration.GetConnectionString("DefaultConnection")));
+    }
+
+    private static void RegisterServicesCupons(IServiceCollection services, IConfiguration configuration)
+    {
+        // Application - Commands
+        services
+            .AddScoped<IRequestHandler<CriarCupomCommand, CommandResult>, CriarCupomCommandHandler>();
+        services
+            .AddScoped<IRequestHandler<AtualizarCupomCommand, CommandResult>, AtualizarCupomCommandHandler>();
+        services
+            .AddScoped<IRequestHandler<InativarCupomCommand, CommandResult>, InativarCupomCommandHandler>();
+        services
+            .AddScoped<IRequestHandler<RemoverProdutosCommand, CommandResult>, RemoverProdutosCommandHandler>();
+        services
+            .AddScoped<IRequestHandler<InserirProdutosCommand, CommandResult>, InserirProdutosCommandHandler>();
+
+        // Application - Queries
+        services.AddScoped<ICupomQuery, CupomQuery>();
+
+        // Infra - Data 
+        services.AddScoped<ICupomRepository, CupomRepository>();
+        services.AddDbContext<CupomDbContext>(options =>
+             options.UseNpgsql(configuration.GetConnectionString("DefaultConnection")));
     }
 }

@@ -5,11 +5,15 @@ $commands = @(
     "dotnet ef database update -p ../src/Services/EF.Carrinho.Infra -s ../src/Presentation/EF.Api -c CarrinhoDbContext"
 )
 
-foreach ($cmd in $commands) {
-    try {
+foreach ($cmd in $commands)
+{
+    try
+    {
         Write-Host "Executing: $cmd"
         Invoke-Expression $cmd
-    } catch {
+    }
+    catch
+    {
         Write-Host "Error when executing: $cmd"
         Write-Host "Error: $_"
     }

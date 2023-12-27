@@ -1,4 +1,4 @@
 
-rcsharpsquid:S6602;"N"Find" method should be used instead of the "FirstOrDefault" extension method.(´ã ®8‚Â¼ŽÉ1
-wcsharpsquid:S6602Y"N"Find" method should be used instead of the "FirstOrDefault" extension method.(¼ðŽãûÿÿÿÿ8‚Â¼ŽÉ1
-vcsharpsquid:S66056"RCollection-specific "Exists" method should be used instead of the "Any" extension.(Î¤³§8‚Â¼ŽÉ1
+rcsharpsquid:S6602<"N"Find" method should be used instead of the "FirstOrDefault" extension method.(´ã ®8‚Â¼ŽÉ1
+wcsharpsquid:S6602Z"N"Find" method should be used instead of the "FirstOrDefault" extension method.(¼ðŽãûÿÿÿÿ8‚Â¼ŽÉ1
+vcsharpsquid:S66057"RCollection-specific "Exists" method should be used instead of the "Any" extension.(Î¤³§8‚Â¼ŽÉ1

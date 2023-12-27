@@ -13,7 +13,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\EF.Domain.Commons\EF.Domain.Commons.csproj" />
+        <ProjectReference Include="..\EF.Domain.Commons\EF.Domain.Commons.csproj"/>
     </ItemGroup>
 
 </Project>

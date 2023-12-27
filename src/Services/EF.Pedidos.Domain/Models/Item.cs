@@ -4,21 +4,48 @@ namespace EF.Pedidos.Domain.Models;
 
 public class Item : Entity
 {
-    public Item(Guid pedidoId, Guid produtoId, int quantidade)
-    {
-        if (pedidoId == Guid.Empty) throw new DomainException("Um item deve estar associado a um pedido");
-
-        PedidoId = pedidoId;
-        ProdutoId = produtoId;
-        Quantidade = quantidade;
-    }
-
+    // EF
     protected Item()
     {
     }
 
-    public Guid ProdutoId { get; private set; }
+    public Item(Guid produtoId, string nomeProduto, decimal valorUnitario, int quantidade)
+    {
+        if (!ValidarProduto(produtoId)) throw new DomainException("Produto inválido");
+        if (!ValidarValorUnitario(valorUnitario)) throw new DomainException("Valor unitário inválido");
+        if (!ValidarQuantidade(quantidade)) throw new DomainException("Quantidade inválida");
+
+        ProdutoId = produtoId;
+        NomeProduto = nomeProduto;
+        ValorUnitario = valorUnitario;
+        Quantidade = quantidade;
+    }
+
+    public Guid PedidoId { get; set; }
+    public decimal ValorUnitario { get; private set; }
     public int Quantidade { get; private set; }
-    public Guid PedidoId { get; private set; }
-    public Pedido Pedido { get; private set; }
+    public Guid ProdutoId { get; private set; }
+    public string NomeProduto { get; private set; }
+    public Pedido Pedido { get; }
+
+    public bool ValidarProduto(Guid produtoId)
+    {
+        if (produtoId == Guid.Empty) return false;
+
+        return true;
+    }
+
+    public bool ValidarValorUnitario(decimal valorUnitario)
+    {
+        if (valorUnitario <= 0) return false;
+
+        return true;
+    }
+
+    public bool ValidarQuantidade(int quantidade)
+    {
+        if (quantidade <= 0) return false;
+
+        return true;
+    }
 }

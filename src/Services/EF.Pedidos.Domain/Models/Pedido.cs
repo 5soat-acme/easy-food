@@ -6,25 +6,41 @@ public class Pedido : Entity, IAggregateRoot
 {
     private readonly List<Item> _itens;
 
-    public Pedido(Guid? clienteId)
-    {
-        _itens = new List<Item>();
-
-        if (clienteId == Guid.Empty) throw new DomainException("Cliente não informado");
-
-        ClienteId = clienteId;
-    }
-
+    //EF
     protected Pedido()
     {
     }
 
-    public Guid? ClienteId { get; private set; }
+    public Pedido(Guid clienteId, decimal valorTotal, decimal desconto)
+    {
+        Status = Status.Recebido;
+        _itens = new List<Item>();
+        ClienteId = clienteId;
+        ValorTotal = ValidarValorTotal(valorTotal) ? ValorTotal : throw new DomainException("O valor total inválido");
+        Desconto = desconto;
+    }
 
+    public Guid CorrelacaoId { get; private set; }
+    public Status Status { get; private set; }
+    public Guid? ClienteId { get; private set; }
+    public decimal ValorTotal { get; private set; }
+    public decimal Desconto { get; private set; }
     public IReadOnlyCollection<Item> Itens => _itens;
 
     public void AdicionarItem(Item item)
     {
         _itens.Add(item);
+    }
+
+    public bool ValidarValorTotal(decimal valorTotal)
+    {
+        if (valorTotal <= 0) return false;
+
+        return true;
+    }
+
+    public void AssociarCorrelacao(Guid correlacaoId)
+    {
+        CorrelacaoId = correlacaoId;
     }
 }

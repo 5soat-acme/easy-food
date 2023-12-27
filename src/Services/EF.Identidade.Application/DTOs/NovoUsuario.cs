@@ -1,5 +1,4 @@
 using System.ComponentModel.DataAnnotations;
-using EF.Domain.Commons.ValueObjects;
 using EF.WebApi.Commons.ModelStateValidations;
 
 namespace EF.Identidade.Application.DTOs;

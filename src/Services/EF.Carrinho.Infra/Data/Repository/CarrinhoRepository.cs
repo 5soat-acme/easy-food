@@ -8,12 +8,13 @@ namespace EF.Carrinho.Infra.Data.Repository;
 public sealed class CarrinhoRepository : ICarrinhoRepository
 {
     private readonly CarrinhoDbContext _context;
-    public IUnitOfWork UnitOfWork => _context;
 
     public CarrinhoRepository(CarrinhoDbContext context)
     {
         _context = context;
     }
+
+    public IUnitOfWork UnitOfWork => _context;
 
     public async Task<CarrinhoCliente?> ObterPorCliente(Guid clienteId)
     {
@@ -43,17 +44,17 @@ public sealed class CarrinhoRepository : ICarrinhoRepository
     {
         _context.Carrinhos.Remove(carrinho);
     }
-    
+
     public void AdicionarItem(Item item)
     {
         _context.Itens.Add(item);
     }
-    
+
     public void AtualizarItem(Item item)
     {
         _context.Itens.Update(item);
     }
-    
+
     public void RemoverItem(Item item)
     {
         _context.Itens.Remove(item);

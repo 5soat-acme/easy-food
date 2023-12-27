@@ -1,14 +1,16 @@
-namespace EF.Domain.Commons.Communication;
-
-using FluentValidation.Results;
 using System.Collections.ObjectModel;
+using FluentValidation.Results;
+
+namespace EF.Domain.Commons.Communication;
 
 public class OperationResult
 {
+    protected OperationResult()
+    {
+    }
+
     public bool IsValid { get; protected set; }
     public ReadOnlyCollection<string> Errors { get; protected set; }
-
-    protected OperationResult() { }
 
     public static OperationResult Success()
     {

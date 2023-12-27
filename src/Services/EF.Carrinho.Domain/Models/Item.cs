@@ -14,7 +14,7 @@ public class Item : Entity
         if (!ValidarProduto(produtoId)) throw new DomainException("Produto inválido");
         if (!ValidarValorUnitario(valorUnitario)) throw new DomainException("Valor unitário inválido");
         if (!ValidarQuantidade(quantidade)) throw new DomainException("Quantidade inválida");
-        
+
         ProdutoId = produtoId;
         NomeProduto = nomeProduto;
         ValorUnitario = valorUnitario;
@@ -26,31 +26,31 @@ public class Item : Entity
     public Guid ProdutoId { get; private set; }
     public string NomeProduto { get; private set; }
     public Guid CarrinhoId { get; private set; }
-    public CarrinhoCliente Carrinho { get; private set; }
-    
+    public CarrinhoCliente Carrinho { get; }
+
     public void AtualizarQuantidade(int quantidade)
     {
         if (!ValidarQuantidade(quantidade)) throw new DomainException("Quantidade inválida");
         Quantidade = quantidade;
     }
-    
+
     public bool ValidarProduto(Guid produtoId)
     {
-        if(produtoId == Guid.Empty) return false;
+        if (produtoId == Guid.Empty) return false;
 
         return true;
     }
-    
+
     public bool ValidarValorUnitario(decimal valorUnitario)
     {
-        if(valorUnitario <= 0) return false;
+        if (valorUnitario <= 0) return false;
 
         return true;
     }
-    
+
     public bool ValidarQuantidade(int quantidade)
     {
-        if(quantidade <= 0) return false;
+        if (quantidade <= 0) return false;
 
         return true;
     }

@@ -65,7 +65,7 @@ public class AcessoAppService : IAcessoAppService
             new("user_type", "anonymous"),
             new("carrinho_id", Guid.NewGuid().ToString())
         };
-        
+
         if (!string.IsNullOrEmpty(cpf)) claims.Add(new Claim("user_cpf", cpf));
 
         var identityClaims = new ClaimsIdentity();
@@ -135,7 +135,7 @@ public class AcessoAppService : IAcessoAppService
             ToUnixEpochDate(DateTime.UtcNow).ToString(),
             ClaimValueTypes.Integer64));
         claims.Add(new Claim("carrinho_id", Guid.NewGuid().ToString()));
-        
+
         foreach (var userRole in userRoles) claims.Add(new Claim("role", userRole));
 
         var identityClaims = new ClaimsIdentity();

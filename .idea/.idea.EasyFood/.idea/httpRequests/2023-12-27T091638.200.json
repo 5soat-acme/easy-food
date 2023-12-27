@@ -1,0 +1,17 @@
+{
+  "id": "ee7b723b-52b5-4010-91e1-beb84539845b",
+  "valorTotal": 143.60,
+  "desconto": 0,
+  "valorFinal": 0,
+  "estimativaTempoPreparoMin": 0,
+  "itens": [
+    {
+      "id": "5263a3aa-66ec-4a0a-b53c-e007d3383981",
+      "quantidade": 4,
+      "valorUnitario": 35.90,
+      "valorDesconto": 0,
+      "produtoId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+      "nomeProduto": "Produto Teste"
+    }
+  ]
+}

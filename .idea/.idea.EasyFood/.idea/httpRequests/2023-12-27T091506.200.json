@@ -1,0 +1,33 @@
+{
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIyOTIzMDMxMi1hMzg1LTQwYTAtYWRkNS1iMDk5OTMyMzAzYjUiLCJlbWFpbCI6InBlZHJvLmJhcmFvLmRldkBnbWFpbC5jb20iLCJqdGkiOiI5YmE4OTU2MS04NzMxLTQ0NjAtODY3YS03Njg0MWQ0Zjc4NTUiLCJuYmYiOjE3MDM2NzkzMDYsImlhdCI6MTcwMzY3OTMwNiwiY2FycmluaG9faWQiOiJlZTdiNzIzYi01MmI1LTQwMTAtOTFlMS1iZWI4NDUzOTg0NWIiLCJleHAiOjE3MDM2ODY1MDYsImlzcyI6IkVhc3lGb29kIiwiYXVkIjoibG9jYWxob3N0OjUwMDIifQ.tJyBCRGZhWAUIYP8zBWG3LPHQvAIv_ADm-Zcq-pLFRw",
+  "expiresIn": 7200,
+  "user": {
+    "id": "29230312-a385-40a0-add5-b099932303b5",
+    "claims": [
+      {
+        "value": "29230312-a385-40a0-add5-b099932303b5",
+        "type": "sub"
+      },
+      {
+        "value": "pedro.barao.dev@gmail.com",
+        "type": "email"
+      },
+      {
+        "value": "9ba89561-8731-4460-867a-76841d4f7855",
+        "type": "jti"
+      },
+      {
+        "value": "1703679306",
+        "type": "nbf"
+      },
+      {
+        "value": "1703679306",
+        "type": "iat"
+      },
+      {
+        "value": "ee7b723b-52b5-4010-91e1-beb84539845b",
+        "type": "carrinho_id"
+      }
+    ]
+  }
+}

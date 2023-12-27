@@ -44,12 +44,9 @@ public abstract class CustomControllerBase : ControllerBase
     {
         Errors.Add(error);
     }
-    
+
     protected void AddErrors(ReadOnlyCollection<string> errors)
     {
-        foreach (var error in errors)
-        {
-            Errors.Add(error);
-        }
+        foreach (var error in errors) Errors.Add(error);
     }
 }

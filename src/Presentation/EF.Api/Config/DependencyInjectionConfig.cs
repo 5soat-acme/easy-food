@@ -1,4 +1,3 @@
-using EF.Carrinho.Application.Mapping;
 using EF.Carrinho.Application.Services;
 using EF.Carrinho.Application.Services.Interfaces;
 using EF.Carrinho.Domain.Repository;
@@ -14,6 +13,7 @@ using EF.Domain.Commons.Messages.Integrations.CarrinhoIntegracao;
 using EF.Identidade.Application.Services;
 using EF.Identidade.Application.Services.Interfaces;
 using EF.Pedidos.Application.Commands;
+using EF.Pedidos.Application.Mappings;
 using EF.Pedidos.Application.Services;
 using EF.Pedidos.Domain.Repository;
 using EF.Pedidos.Infra.Data;
@@ -42,7 +42,10 @@ public static class DependencyInjectionConfig
     {
         // Application - Commands
         services
-            .AddScoped<IRequestHandler<GerarPedidoCommand, CommandResult>, GerarPedidoCommandHandler>();
+            .AddScoped<IRequestHandler<CriarPedidoCommand, CommandResult>, CriarPedidoCommandHandler>();
+
+        // Application - Mapping
+        services.AddAutoMapper(typeof(DomainToDtoProfile));
 
         // Infra - Data
         services.AddScoped<IPedidoRepository, PedidoRepository>();
@@ -67,16 +70,16 @@ public static class DependencyInjectionConfig
         // Application - Services
         services.AddScoped<IAcessoAppService, AcessoAppService>();
     }
-    
+
     private static void RegisterServicesCarrinho(IServiceCollection services, IConfiguration configuration)
     {
         // Application - Services
         services.AddScoped<ICarrinhoAppService, CarrinhoAppService>();
         services.AddScoped<INotificationHandler<CarrinhoFechadoEvent>, IntegraPedidoService>();
-        
+
         // Application - Mapping
-        services.AddAutoMapper(typeof(DomainToDtoProfile));
-        
+        services.AddAutoMapper(typeof(Carrinho.Application.Mappings.DomainToDtoProfile));
+
         // Infra - Data
         services.AddScoped<ICarrinhoRepository, CarrinhoRepository>();
         services.AddDbContext<CarrinhoDbContext>(options =>

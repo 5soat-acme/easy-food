@@ -7,11 +7,11 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\EF.Domain.Commons\EF.Domain.Commons.csproj" />
+        <ProjectReference Include="..\EF.Domain.Commons\EF.Domain.Commons.csproj"/>
     </ItemGroup>
 
     <ItemGroup>
-      <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.0" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.0"/>
     </ItemGroup>
 
 </Project>

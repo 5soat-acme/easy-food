@@ -11,5 +11,4 @@ public abstract class Message
     public DateTime Timestamp { get; protected set; }
     public string MessageType { get; protected set; }
     public Guid AggregateId { get; set; }
-    public Guid TransactionId { get; set; }
 }

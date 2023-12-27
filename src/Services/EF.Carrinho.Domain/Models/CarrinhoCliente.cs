@@ -4,6 +4,8 @@ namespace EF.Carrinho.Domain.Models;
 
 public class CarrinhoCliente : Entity, IAggregateRoot
 {
+    private readonly List<Item> _itens;
+
     // Necessário para o EF
     protected CarrinhoCliente()
     {
@@ -17,7 +19,6 @@ public class CarrinhoCliente : Entity, IAggregateRoot
 
     public Guid? ClienteId { get; private set; }
     public decimal ValorTotal { get; private set; }
-    private readonly List<Item> _itens;
     public IReadOnlyCollection<Item> Itens => _itens;
 
     public void AssociarCliente(Guid clienteId)
@@ -44,7 +45,7 @@ public class CarrinhoCliente : Entity, IAggregateRoot
             item = itemExistente;
             _itens.Remove(itemExistente);
         }
-        
+
         _itens.Add(item);
         AtualizarValorTotal();
     }
@@ -53,7 +54,7 @@ public class CarrinhoCliente : Entity, IAggregateRoot
     {
         return _itens.Any(p => p.ProdutoId == produtoId);
     }
-    
+
     public Item? ObterItemPorProdutoId(Guid produtoId)
     {
         return _itens.FirstOrDefault(p => p.ProdutoId == produtoId);
@@ -88,10 +89,7 @@ public class CarrinhoCliente : Entity, IAggregateRoot
     {
         var item = _itens.FirstOrDefault(f => f.Id == itemId);
 
-        if (item is null)
-        {
-            throw new DomainException("Item não econtrado");
-        }
+        if (item is null) throw new DomainException("Item não econtrado");
 
         item.AtualizarQuantidade(quantidade);
 

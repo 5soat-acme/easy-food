@@ -1,28 +1,42 @@
 using EF.Domain.Commons.Repository;
 using EF.Pedidos.Domain.Models;
 using EF.Pedidos.Domain.Repository;
+using Microsoft.EntityFrameworkCore;
 
 namespace EF.Pedidos.Infra.Data.Repository;
 
 public sealed class PedidoRepository : IPedidoRepository
 {
-    private readonly PedidoDbContext _dbContext;
+    private readonly PedidoDbContext _context;
 
-    public PedidoRepository(PedidoDbContext dbContext)
+    public PedidoRepository(PedidoDbContext context)
     {
-        _dbContext = dbContext;
+        _context = context;
     }
 
-    public IUnitOfWork UnitOfWork => _dbContext;
+    public IUnitOfWork UnitOfWork => _context;
 
-    public async Task<Pedido> Criar(Pedido pedido)
+    public async Task<Pedido> ObterPorId(Guid id)
     {
-        var result = await _dbContext.Pedidos.AddAsync(pedido);
-        return result.Entity;
+        return await _context.Pedidos
+            .Include(c => c.Itens)
+            .FirstOrDefaultAsync(c => c.Id == id);
+    }
+
+    public async Task<Pedido> ObterPorCorrelacaoId(Guid correlacaoId)
+    {
+        return await _context.Pedidos
+            .Include(c => c.Itens)
+            .FirstOrDefaultAsync(c => c.CorrelacaoId == correlacaoId);
+    }
+
+    public void Criar(Pedido pedido)
+    {
+        _context.Pedidos.Add(pedido);
     }
 
     public void Dispose()
     {
-        _dbContext.Dispose();
+        _context.Dispose();
     }
 }

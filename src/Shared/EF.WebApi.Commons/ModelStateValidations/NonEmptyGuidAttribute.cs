@@ -14,7 +14,7 @@ public class NonEmptyGuidAttribute : ValidationAttribute
         if (value == null) return true;
         if (!(value is Guid)) return false;
 
-        Guid guidValue = (Guid)value;
+        var guidValue = (Guid)value;
         return guidValue != Guid.Empty;
     }
 }

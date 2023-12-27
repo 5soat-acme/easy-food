@@ -4,16 +4,17 @@ namespace EF.Domain.Commons.DomainObjects;
 
 public abstract class Entity
 {
+    // public DateTime CreatedAt { get; set; }
+    // public DateTime? UpdatedAt { get; set; }
+
+    private List<Event> _notifications;
+
     protected Entity()
     {
         Id = Guid.NewGuid();
     }
 
     public Guid Id { get; set; }
-    // public DateTime CreatedAt { get; set; }
-    // public DateTime? UpdatedAt { get; set; }
-    
-    private List<Event> _notifications;
     public IReadOnlyCollection<Event> Notifications => _notifications?.AsReadOnly();
 
     public void AddEvent(Event @event)

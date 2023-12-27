@@ -1,7 +1,6 @@
 using EF.Carrinho.Application.DTOs;
 using EF.Carrinho.Application.Services.Interfaces;
 using EF.WebApi.Commons.Controllers;
-using EF.WebApi.Commons.Users;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -9,39 +8,39 @@ namespace EF.Api.Controllers.Carrinho;
 
 [Authorize]
 [Route("api/carrinho")]
-public class CarrinhoController(ICarrinhoAppService carrinhoAppService, IUserApp user) : CustomControllerBase
+public class CarrinhoController(ICarrinhoAppService carrinhoAppService) : CustomControllerBase
 {
     /// <summary>
-    /// Obtém o carrinho do cliente, caso esteja logado, ou o carrinho anônimo.
+    ///     Obtém o carrinho do cliente.
     /// </summary>
-    /// <returns>
-    ///   <see cref="CarrinhoClienteDto"/>
-    /// </returns>
+    /// <remarks>
+    ///     Obtém o carrinho do cliente. Caso o cliente tenha se identificado no sistema, é verificado se o mesmo possui um carrinho em aberto.
+    /// </remarks>
+    /// <param name="resumo">
+    ///     Se 'true', inclui algumas informações a mais no retorno, como Desconto, Valor Final (Valor Total - Desconto) e Estimativa de Tempo de Preparo
+    /// </param>
+    /// <response code="200">Retorna dados do carrinho.</response>
     [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(CarrinhoClienteDto))]
+    [Produces("application/json")]
     [HttpGet]
-    public async Task<IActionResult> ObterCarrinho()
+    public async Task<IActionResult> ObterCarrinho([FromQuery] bool resumo = false)
     {
+        if (resumo) return Respond(await carrinhoAppService.ObterResumo());
+
         return Respond(await carrinhoAppService.ObterCarrinhoCliente());
     }
     
     /// <summary>
-    /// Obtém resumo do pedido que será gerado.
+    ///     Adiciona um item ao carrinho.
     /// </summary>
-    /// <returns>
-    ///   <see cref="ResumoCarrinhoDto"/>
-    /// </returns>
-    [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(ResumoCarrinhoDto))]
-    [HttpGet("resumo")]
-    public async Task<IActionResult> Resumo()
-    {
-        return Respond(await carrinhoAppService.ObterResumo());
-    }
-
-    /// <summary>
-    /// Adiciona um item ao carrinho. Caso o item já exista no carrinho, a quantidade é incrementada.
-    /// </summary>
-    [ProducesResponseType(StatusCodes.Status200OK)]
+    /// <remarks>
+    ///     Adiciona um item ao carrinho. Caso o item já exista no carrinho, a quantidade é incrementada.
+    /// </remarks>
+    /// <response code="204">Indica que o item foi adicionado no carrinho com sucesso.</response>
+    /// <response code="400">A solicitação está malformada e não pode ser processada.</response>
+    [ProducesResponseType(StatusCodes.Status204NoContent)]
     [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(ValidationProblemDetails))]
+    [Produces("application/json")]
     [HttpPost]
     public async Task<IActionResult> AdicionarItem(AdicionarItemDto itemDto)
     {
@@ -49,19 +48,22 @@ public class CarrinhoController(ICarrinhoAppService carrinhoAppService, IUserApp
 
         var result = await carrinhoAppService.AdicionarItemCarrinho(itemDto);
 
-        if (!result.IsValid)
-        {
-            AddErrors(result.Errors);
-        }
+        if (!result.IsValid) AddErrors(result.Errors);
 
         return Respond();
     }
     
     /// <summary>
-    /// Finaliza a montagem do carrinho e gera um novo pedido.
+    ///     Finaliza a montagem do carrinho e gera um novo pedido.
     /// </summary>
-    [ProducesResponseType(StatusCodes.Status200OK)]
+    /// <remarks>
+    ///     Finaliza a montagem do carrinho e gera um novo pedido. O carrinho é esvaziado após a criação do pedido e um identificador de correlação é retornado para que o pedido possa ser recuperado posteriormente.
+    /// </remarks>
+    /// <response code="200">Indica que o pedido foi criado com sucesso e retorna o ID de Correlação.</response>
+    /// <response code="400">A solicitação está malformada e não pode ser processada.</response>
+    [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(CarrinhoFechadoRespostaDto))]
     [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(ValidationProblemDetails))]
+    [Produces("application/json")]
     [HttpPost("fechar-pedido")]
     public async Task<IActionResult> FecharPedido()
     {
@@ -70,10 +72,13 @@ public class CarrinhoController(ICarrinhoAppService carrinhoAppService, IUserApp
     }
 
     /// <summary>
-    /// Atualiza a quantidade de intes no carrinho.
+    ///     Atualiza a quantidade de um item no carrinho.
     /// </summary>
-    [ProducesResponseType(StatusCodes.Status200OK)]
+    /// <response code="204">Indica que a quantidade do item foi atualizada com sucesso.</response>
+    /// <response code="400">A solicitação está malformada e não pode ser processada.</response>
+    [ProducesResponseType(StatusCodes.Status204NoContent)]
     [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(ValidationProblemDetails))]
+    [Produces("application/json")]
     [HttpPut("{itemId}")]
     public async Task<IActionResult> AtualizarItem(Guid itemId, AtualizarItemDto item)
     {
@@ -87,19 +92,19 @@ public class CarrinhoController(ICarrinhoAppService carrinhoAppService, IUserApp
 
         var result = await carrinhoAppService.AtualizarItem(item);
 
-        if (!result.IsValid)
-        {
-            AddErrors(result.Errors);
-        }
+        if (!result.IsValid) AddErrors(result.Errors);
 
         return Respond();
     }
 
     /// <summary>
-    /// Remove um item do carrinho.
+    ///     Remove um item do carrinho.
     /// </summary>
-    [ProducesResponseType(StatusCodes.Status200OK)]
+    /// <response code="204">Indica que o item foi removido com sucesso.</response>
+    /// <response code="400">A solicitação está malformada e não pode ser processada.</response>
+    [ProducesResponseType(StatusCodes.Status204NoContent)]
     [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(ValidationProblemDetails))]
+    [Produces("application/json")]
     [HttpDelete("{itemId}")]
     public async Task<IActionResult> RemoverItem(Guid itemId)
     {

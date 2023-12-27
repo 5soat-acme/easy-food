@@ -12,6 +12,9 @@ public class CarrinhoClienteMapping : IEntityTypeConfiguration<CarrinhoCliente>
 
         builder.HasKey(c => c.Id);
 
+        builder.HasIndex(c => c.ClienteId)
+            .HasName("IDX_Cliente");
+
         builder.HasMany(c => c.Itens)
             .WithOne(c => c.Carrinho)
             .HasForeignKey(c => c.CarrinhoId);

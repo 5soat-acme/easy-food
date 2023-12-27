@@ -11,15 +11,16 @@ public class IntegraPedidoService(IMediatorHandler mediator) : INotificationHand
     {
         try
         {
-            await mediator.Send(new GerarPedidoCommand
+            await mediator.Send(new CriarPedidoCommand
             {
                 ClienteId = notification.ClienteId,
                 ValorTotal = notification.ValorTotal,
                 Desconto = notification.Desconto,
                 ValorFinal = notification.ValorFinal,
-                Itens = notification.Itens.Select(x => new GerarPedidoCommand.ItemPedido
+                Itens = notification.Itens.Select(x => new CriarPedidoCommand.ItemPedido
                 {
                     ProdutoId = x.ProdutoId,
+                    NomeProduto = x.NomeProduto,
                     Quantidade = x.Quantidade,
                     ValorUnitario = x.ValorUnitario
                 }).ToList()

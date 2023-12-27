@@ -1,6 +1,5 @@
 using AutoMapper;
 using EF.Carrinho.Application.DTOs;
-using EF.Carrinho.Application.Mapping;
 using EF.Carrinho.Application.Services.Interfaces;
 using EF.Carrinho.Domain.Models;
 using EF.Carrinho.Domain.Repository;
@@ -13,8 +12,8 @@ namespace EF.Carrinho.Application.Services;
 public class CarrinhoAppService(ICarrinhoRepository carrinhoRepository, IUserApp user, IMapper mapper)
     : ICarrinhoAppService
 {
-    private readonly Guid _clienteId = user.GetUserId();
     private readonly Guid _carrinhoId = user.ObterCarrinhoId();
+    private readonly Guid _clienteId = user.GetUserId();
 
     public async Task<CarrinhoClienteDto?> ObterCarrinhoCliente()
     {
@@ -55,17 +54,11 @@ public class CarrinhoAppService(ICarrinhoRepository carrinhoRepository, IUserApp
         // TODO: Obter produto da API de produtos. (Catálogo?) e validar estoque
         var carrinho = await ObterCarrinho();
 
-        if (carrinho is null)
-        {
-            return OperationResult.Failure("Carrinho não encontrado");
-        }
+        if (carrinho is null) return OperationResult.Failure("Carrinho não encontrado");
 
         var item = carrinho.Itens.FirstOrDefault(f => f.Id == itemDto.ItemId);
 
-        if (item is null)
-        {
-            return OperationResult.Failure("Item não encontrado");
-        }
+        if (item is null) return OperationResult.Failure("Item não encontrado");
 
         carrinho.AtualizarQuantidadeItem(itemDto.ItemId, itemDto.Quantidade);
 
@@ -80,29 +73,19 @@ public class CarrinhoAppService(ICarrinhoRepository carrinhoRepository, IUserApp
     {
         var carrinho = await ObterCarrinho();
 
-        if (carrinho is null)
-        {
-            return OperationResult.Failure("Carrinho não encontrado");
-        }
+        if (carrinho is null) return OperationResult.Failure("Carrinho não encontrado");
 
         var item = carrinho.Itens.FirstOrDefault(f => f.Id == itemId);
 
-        if (item is null)
-        {
-            return OperationResult.Success();
-        }
+        if (item is null) return OperationResult.Success();
 
         carrinho.RemoverItem(item);
         carrinhoRepository.RemoverItem(item);
 
         if (!carrinho.Itens.Any())
-        {
             carrinhoRepository.Remover(carrinho);
-        }
         else
-        {
             carrinhoRepository.Atualizar(carrinho);
-        }
 
         await PersistirDados();
 
@@ -113,10 +96,7 @@ public class CarrinhoAppService(ICarrinhoRepository carrinhoRepository, IUserApp
     {
         var carrinho = await ObterCarrinho();
 
-        if (carrinho is null)
-        {
-            return OperationResult.Failure("Carrinho não encontrado");
-        }
+        if (carrinho is null) return OperationResult.Failure("Carrinho não encontrado");
 
         carrinho.LimparCarrinho();
 
@@ -139,7 +119,7 @@ public class CarrinhoAppService(ICarrinhoRepository carrinhoRepository, IUserApp
         return mapper.Map<ResumoCarrinhoDto>(carrinho);
     }
 
-    public async Task<OperationResult<CarrinhoFechadoDto>> FecharPedido()
+    public async Task<OperationResult<CarrinhoFechadoRespostaDto>> FecharPedido()
     {
         // TODO: Obter cupons
         // TODO: Obter Estimativa de preparo
@@ -147,19 +127,14 @@ public class CarrinhoAppService(ICarrinhoRepository carrinhoRepository, IUserApp
 
         var carrinho = await ObterCarrinho();
 
-        if (carrinho is null)
-        {
-            return OperationResult<CarrinhoFechadoDto>.Failure("Carriho não encontrado");
-        }
-
-        var transacaoId = Guid.NewGuid();
+        if (carrinho is null) return OperationResult<CarrinhoFechadoRespostaDto>.Failure("Carriho não encontrado");
 
         carrinhoRepository.Remover(carrinho);
-        
+
+        // TODO: Confirmar com o time se adiamos essa decisão de trabalhar com eventos de domínio
         carrinho.AddEvent(new CarrinhoFechadoEvent
         {
             AggregateId = carrinho.Id,
-            TransactionId = transacaoId,
             ValorTotal = carrinho.ValorTotal,
             ClienteId = carrinho.ClienteId ?? Guid.Empty,
             Desconto = 0m,
@@ -167,6 +142,7 @@ public class CarrinhoAppService(ICarrinhoRepository carrinhoRepository, IUserApp
             Itens = carrinho.Itens.Select(i => new CarrinhoFechadoEvent.ItemCarrinhoFechado
             {
                 ProdutoId = i.ProdutoId,
+                NomeProduto = i.NomeProduto,
                 Quantidade = i.Quantidade,
                 ValorUnitario = i.ValorUnitario
             }).ToList()
@@ -174,18 +150,15 @@ public class CarrinhoAppService(ICarrinhoRepository carrinhoRepository, IUserApp
 
         await PersistirDados();
 
-        return OperationResult<CarrinhoFechadoDto>.Success(new CarrinhoFechadoDto
+        return OperationResult<CarrinhoFechadoRespostaDto>.Success(new CarrinhoFechadoRespostaDto
         {
-            TransacaoId = transacaoId
+            CorrelacaoId = carrinho.Id
         });
     }
 
     private async Task<CarrinhoCliente?> ObterCarrinho()
     {
-        if (_clienteId != Guid.Empty)
-        {
-            return await carrinhoRepository.ObterPorCliente(_clienteId);
-        }
+        if (_clienteId != Guid.Empty) return await carrinhoRepository.ObterPorCliente(_clienteId);
 
         return await carrinhoRepository.ObterPorId(_carrinhoId);
     }
@@ -194,10 +167,7 @@ public class CarrinhoAppService(ICarrinhoRepository carrinhoRepository, IUserApp
     {
         var carrinho = new CarrinhoCliente(_carrinhoId);
 
-        if (_clienteId != Guid.Empty)
-        {
-            carrinho.AssociarCliente(_clienteId);
-        }
+        if (_clienteId != Guid.Empty) carrinho.AssociarCliente(_clienteId);
 
         return carrinho;
     }
@@ -219,13 +189,9 @@ public class CarrinhoAppService(ICarrinhoRepository carrinhoRepository, IUserApp
         carrinho.AdicionarItem(itemAdicionar);
 
         if (produtoExiste)
-        {
             carrinhoRepository.AtualizarItem(carrinho.ObterItemPorProdutoId(itemDto.ProdutoId)!);
-        }
         else
-        {
             carrinhoRepository.AdicionarItem(itemAdicionar);
-        }
 
         return carrinho;
     }

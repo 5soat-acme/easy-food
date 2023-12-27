@@ -1,8 +1,0 @@
-{
-  "title": "One or more validation errors occurred.",
-  "errors": {
-    "Message": [
-      "CPF inválido"
-    ]
-  }
-}

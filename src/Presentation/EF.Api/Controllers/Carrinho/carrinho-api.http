@@ -1,0 +1,37 @@
+### Obter carrinho do cliente
+GET {{baseUrl}}/api/carrinho
+Authorization: Bearer {{authToken}}
+
+### Obter resumo do carrinho do cliente
+GET {{baseUrl}}/api/carrinho/resumo
+Authorization: Bearer {{authToken}}
+
+### Adicionar item no carrinho
+POST {{baseUrl}}/api/carrinho
+Content-Type: application/json
+Authorization: Bearer {{authToken}}
+
+{
+  "produtoId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+  "quantidade": 4
+}
+
+### Fechar pedido a partir do carrinho do cliente
+POST {{baseUrl}}/api/carrinho/fechar-pedido
+Content-Type: application/json
+Authorization: Bearer {{authToken}}
+
+### Alterar quantidade de um item no carrinho
+PUT {{baseUrl}}/api/carrinho/ec012d79-82fb-429f-b8fc-0df7f779bf6c
+Content-Type: application/json
+Authorization: Bearer {{authToken}}
+
+{
+  "itemId": "ec012d79-82fb-429f-b8fc-0df7f779bf6c",
+  "quantidade": 1
+}
+
+### Rever item do carrinho
+DELETE {{baseUrl}}/api/carrinho/ec012d79-82fb-429f-b8fc-0df7f779bf6c
+Content-Type: application/json
+Authorization: Bearer {{authToken}}

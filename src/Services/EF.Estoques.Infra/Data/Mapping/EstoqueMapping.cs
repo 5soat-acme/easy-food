@@ -2,28 +2,27 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace EF.Estoques.Infra.Data.Mapping
+namespace EF.Estoques.Infra.Data.Mapping;
+
+public class EstoqueMapping : IEntityTypeConfiguration<Estoque>
 {
-    public class EstoqueMapping : IEntityTypeConfiguration<Estoque>
+    public void Configure(EntityTypeBuilder<Estoque> builder)
     {
-        public void Configure(EntityTypeBuilder<Estoque> builder)
-        {
-            builder.ToTable("Estoques");
+        builder.ToTable("Estoques");
 
-            builder.HasKey(c => c.Id);
+        builder.HasKey(c => c.Id);
 
-            builder.Property(c => c.ProdutoId)
-                .IsRequired();
+        builder.Property(c => c.ProdutoId)
+            .IsRequired();
 
-            builder.Property(c => c.Quantidade)
-               .IsRequired();
+        builder.Property(c => c.Quantidade)
+            .IsRequired();
 
-            builder.HasIndex(c => c.ProdutoId)
-                .IsUnique();
+        builder.HasIndex(c => c.ProdutoId)
+            .IsUnique();
 
-            builder.HasMany(c => c.Movimentacoes)
-                .WithOne(c => c.Estoque)
-                .HasForeignKey(c => c.EstoqueId);
-        }
+        builder.HasMany(c => c.Movimentacoes)
+            .WithOne(c => c.Estoque)
+            .HasForeignKey(c => c.EstoqueId);
     }
 }

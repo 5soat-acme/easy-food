@@ -1,3 +1,8 @@
+using EF.Carrinho.Application.Services;
+using EF.Carrinho.Application.Services.Interfaces;
+using EF.Carrinho.Domain.Repository;
+using EF.Carrinho.Infra.Data;
+using EF.Carrinho.Infra.Data.Repository;
 using EF.Clientes.Application.Commands;
 using EF.Clientes.Domain.Repository;
 using EF.Clientes.Infra.Data;
@@ -9,6 +14,7 @@ using EF.Cupons.Infra;
 using EF.Cupons.Infra.Data.Repository;
 using EF.Domain.Commons.Mediator;
 using EF.Domain.Commons.Messages;
+using EF.Domain.Commons.Messages.Integrations.CarrinhoIntegracao;
 using EF.Estoques.Application.Commands;
 using EF.Estoques.Application.Queries;
 using EF.Estoques.Domain.Repository;
@@ -17,6 +23,8 @@ using EF.Estoques.Infra.Data.Repository;
 using EF.Identidade.Application.Services;
 using EF.Identidade.Application.Services.Interfaces;
 using EF.Pedidos.Application.Commands;
+using EF.Pedidos.Application.Mappings;
+using EF.Pedidos.Application.Services;
 using EF.Pedidos.Domain.Repository;
 using EF.Pedidos.Infra.Data;
 using EF.Pedidos.Infra.Data.Repository;
@@ -35,6 +43,7 @@ public static class DependencyInjectionConfig
         RegisterServicesPedidos(services, configuration);
         RegisterServicesClientes(services, configuration);
         RegisterServicesIdentidade(services, configuration);
+        RegisterServicesCarrinho(services, configuration);
         RegisterServicesEstoques(services, configuration);
         RegisterServicesCupons(services, configuration);
 
@@ -45,7 +54,10 @@ public static class DependencyInjectionConfig
     {
         // Application - Commands
         services
-            .AddScoped<IRequestHandler<IncluirItemPedidoCommand, CommandResult>, IncluirItemPedidoCommandHandler>();
+            .AddScoped<IRequestHandler<CriarPedidoCommand, CommandResult>, CriarPedidoCommandHandler>();
+
+        // Application - Mapping
+        services.AddAutoMapper(typeof(DomainToDtoProfile));
 
         // Infra - Data
         services.AddScoped<IPedidoRepository, PedidoRepository>();
@@ -67,8 +79,23 @@ public static class DependencyInjectionConfig
 
     private static void RegisterServicesIdentidade(IServiceCollection services, IConfiguration configuration)
     {
-        // Application - Commands
+        // Application - Services
         services.AddScoped<IAcessoAppService, AcessoAppService>();
+    }
+
+    private static void RegisterServicesCarrinho(IServiceCollection services, IConfiguration configuration)
+    {
+        // Application - Services
+        services.AddScoped<ICarrinhoAppService, CarrinhoAppService>();
+        services.AddScoped<INotificationHandler<CarrinhoFechadoEvent>, IntegraPedidoService>();
+
+        // Application - Mapping
+        services.AddAutoMapper(typeof(Carrinho.Application.Mappings.DomainToDtoProfile));
+
+        // Infra - Data
+        services.AddScoped<ICarrinhoRepository, CarrinhoRepository>();
+        services.AddDbContext<CarrinhoDbContext>(options =>
+            options.UseNpgsql(configuration.GetConnectionString("DefaultConnection")));
     }
 
     private static void RegisterServicesEstoques(IServiceCollection services, IConfiguration configuration)
@@ -106,6 +133,6 @@ public static class DependencyInjectionConfig
         // Infra - Data 
         services.AddScoped<ICupomRepository, CupomRepository>();
         services.AddDbContext<CupomDbContext>(options =>
-             options.UseNpgsql(configuration.GetConnectionString("DefaultConnection")));
+            options.UseNpgsql(configuration.GetConnectionString("DefaultConnection")));
     }
 }

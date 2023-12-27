@@ -1,13 +1,37 @@
+using EF.Domain.Commons.Messages;
+
 namespace EF.Domain.Commons.DomainObjects;
 
 public abstract class Entity
 {
+    // public DateTime CreatedAt { get; set; }
+    // public DateTime? UpdatedAt { get; set; }
+
+    private List<Event> _notifications;
+
     protected Entity()
     {
         Id = Guid.NewGuid();
     }
 
     public Guid Id { get; set; }
+    public IReadOnlyCollection<Event> Notifications => _notifications?.AsReadOnly();
+
+    public void AddEvent(Event @event)
+    {
+        _notifications = _notifications ?? [];
+        _notifications.Add(@event);
+    }
+
+    public void RemoveEvent(Event @event)
+    {
+        _notifications?.Remove(@event);
+    }
+
+    public void ClearEvents()
+    {
+        _notifications?.Clear();
+    }
 
     public override bool Equals(object? obj)
     {

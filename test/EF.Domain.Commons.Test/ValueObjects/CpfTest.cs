@@ -6,7 +6,7 @@ namespace EF.Domain.Commons.Test.ValueObjects;
 public class CpfTest
 {
     [Theory(DisplayName = "CPF válido com máscara")]
-    [Trait("Category", "Value Objects - CPF")]
+    [Trait("Category", "Domain.Commons.ValueObjects.Cpf")]
     [InlineData("907.339.944-07")]
     [InlineData("327.556.178-29")]
     [InlineData("331.318.157-01")]
@@ -37,7 +37,7 @@ public class CpfTest
     }
 
     [Theory(DisplayName = "CPF válido sem máscara")]
-    [Trait("Category", "Value Objects - CPF")]
+    [Trait("Category", "Domain.Commons.ValueObjects.Cpf")]
     [InlineData("90733994407")]
     [InlineData("32755617829")]
     [InlineData("33131815701")]
@@ -68,7 +68,7 @@ public class CpfTest
     }
 
     [Theory(DisplayName = "CPF inválido com máscara")]
-    [Trait("Category", "Value Objects - CPF")]
+    [Trait("Category", "Domain.Commons.ValueObjects.Cpf")]
     [InlineData("617.942.889-54")]
     [InlineData("593.766.398-82")]
     [InlineData("168.560.388-19")]
@@ -98,8 +98,8 @@ public class CpfTest
         result.Should().BeFalse("o CPF é inválido");
     }
 
-    [Theory(DisplayName = "CPF inválido com máscara")]
-    [Trait("Category", "Value Objects - CPF")]
+    [Theory(DisplayName = "CPF inválido sem máscara")]
+    [Trait("Category", "Domain.Commons.ValueObjects.Cpf")]
     [InlineData("61794288954")]
     [InlineData("59376639882")]
     [InlineData("16856038819")]

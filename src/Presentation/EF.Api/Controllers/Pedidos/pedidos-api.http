@@ -1,0 +1,3 @@
+### Obter o pedido por id ou ide de correlação
+GET {{baseUrl}}/api/pedidos
+Authorization: Bearer {{authToken}}

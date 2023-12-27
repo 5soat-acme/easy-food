@@ -1,5 +1,5 @@
 using System.ComponentModel.DataAnnotations;
-using EF.Domain.Commons.ValueObjects;
+using EF.WebApi.Commons.ModelStateValidations;
 
 namespace EF.Identidade.Application.DTOs;
 
@@ -25,16 +25,4 @@ public class NovoUsuario
 
     [Compare("Senha", ErrorMessage = "As senhas não conferem.")]
     public string SenhaConfirmacao { get; set; }
-}
-
-public class CpfValidationAttribute : ValidationAttribute
-{
-    protected override ValidationResult IsValid(object value, ValidationContext validationContext)
-    {
-        if (value is not string cpf) throw new ArgumentException("CPF deve ser uma string");
-
-        if (!Cpf.Validar(cpf)) return new ValidationResult("CPF inválido");
-
-        return ValidationResult.Success!;
-    }
 }

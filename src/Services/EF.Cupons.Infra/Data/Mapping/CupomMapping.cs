@@ -2,40 +2,39 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace EF.Cupons.Infra.Data.Mapping
+namespace EF.Cupons.Infra.Data.Mapping;
+
+public class CupomMapping : IEntityTypeConfiguration<Cupom>
 {
-    public class CupomMapping : IEntityTypeConfiguration<Cupom>
+    public void Configure(EntityTypeBuilder<Cupom> builder)
     {
-        public void Configure(EntityTypeBuilder<Cupom> builder)
-        {
-            builder.ToTable("Cupons");
+        builder.ToTable("Cupons");
 
-            builder.HasKey(c => c.Id);
+        builder.HasKey(c => c.Id);
 
-            builder.Property(c => c.DataInicio)
-                .IsRequired()
-                .HasColumnType("timestamp without time zone");
+        builder.Property(c => c.DataInicio)
+            .IsRequired()
+            .HasColumnType("timestamp without time zone");
 
-            builder.Property(c => c.DataFim)
-                .IsRequired()
-                .HasColumnType("timestamp without time zone");
+        builder.Property(c => c.DataFim)
+            .IsRequired()
+            .HasColumnType("timestamp without time zone");
 
-            builder.Property(c => c.CodigoCupom)
-                .HasMaxLength(10)
-                .IsRequired();
+        builder.Property(c => c.CodigoCupom)
+            .HasMaxLength(10)
+            .IsRequired();
 
-            builder.Property(c => c.PorcentagemDesconto)
-               .IsRequired();
+        builder.Property(c => c.PorcentagemDesconto)
+            .IsRequired();
 
-            builder.Property(c => c.Status)
-                .IsRequired()
-                .HasConversion<int>();
+        builder.Property(c => c.Status)
+            .IsRequired()
+            .HasConversion<int>();
 
-            builder.HasIndex(c => c.CodigoCupom);
+        builder.HasIndex(c => c.CodigoCupom);
 
-            builder.HasMany(c => c.CupomProdutos)
-                .WithOne(c => c.Cupom)
-                .HasForeignKey(c => c.CupomId);
-        }
+        builder.HasMany(c => c.CupomProdutos)
+            .WithOne(c => c.Cupom)
+            .HasForeignKey(c => c.CupomId);
     }
 }

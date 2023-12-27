@@ -1,6 +1,5 @@
 using System.Security.Claims;
 using Microsoft.AspNetCore.Http;
-using Microsoft.IdentityModel.JsonWebTokens;
 
 namespace EF.WebApi.Commons.Users;
 
@@ -55,11 +54,11 @@ public class UserApp : IUserApp
         return _accessor.HttpContext;
     }
 
-    public Guid GetTokenIdentifier()
+    public Guid ObterCarrinhoId()
     {
         if (!IsAuthenticated()) return Guid.Empty;
 
-        return Guid.Parse(_accessor.HttpContext.User.Claims.FirstOrDefault(c => c.Type == JwtRegisteredClaimNames.Jti)
+        return Guid.Parse(_accessor.HttpContext.User.Claims.FirstOrDefault(c => c.Type.Equals("carrinho_id"))
             ?.Value);
     }
 }

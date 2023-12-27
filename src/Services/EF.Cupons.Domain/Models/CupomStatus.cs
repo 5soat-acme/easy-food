@@ -1,8 +1,7 @@
-﻿namespace EF.Cupons.Domain.Models
+﻿namespace EF.Cupons.Domain.Models;
+
+public enum CupomStatus
 {
-    public enum CupomStatus
-    {
-        Inativo = 0,
-        Ativo = 1
-    }
+    Inativo = 0,
+    Ativo = 1
 }

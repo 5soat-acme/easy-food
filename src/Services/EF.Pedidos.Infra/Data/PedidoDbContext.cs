@@ -1,5 +1,7 @@
+using EF.Domain.Commons.Mediator;
 using EF.Domain.Commons.Messages;
 using EF.Domain.Commons.Repository;
+using EF.Infra.Commons.Mediator;
 using EF.Pedidos.Domain.Models;
 using FluentValidation.Results;
 using Microsoft.EntityFrameworkCore;
@@ -8,17 +10,20 @@ namespace EF.Pedidos.Infra.Data;
 
 public sealed class PedidoDbContext : DbContext, IUnitOfWork
 {
-    public PedidoDbContext(DbContextOptions<PedidoDbContext> options) : base(options)
+    private readonly IMediatorHandler _mediator;
+
+    public PedidoDbContext(DbContextOptions<PedidoDbContext> options, IMediatorHandler mediator) : base(options)
     {
+        _mediator = mediator;
         ChangeTracker.QueryTrackingBehavior = QueryTrackingBehavior.NoTracking;
         ChangeTracker.AutoDetectChangesEnabled = false;
     }
 
-    public DbSet<Pedido> Pedidos { get; set; }
+    public DbSet<Pedido>? Pedidos { get; set; }
 
     public async Task<bool> Commit()
     {
-        // TODO: Aqui você pode percorrer os eventos de dominio e processa-los
+        await _mediator.PublishEvents(this);
         return await SaveChangesAsync() > 0;
     }
 

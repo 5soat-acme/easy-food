@@ -3,51 +3,48 @@ using EF.Estoques.Domain.Models;
 using EF.Estoques.Domain.Repository;
 using Microsoft.EntityFrameworkCore;
 
-namespace EF.Estoques.Infra.Data.Repository
+namespace EF.Estoques.Infra.Data.Repository;
+
+public sealed class EstoqueRepository : IEstoqueRepository
 {
-    public sealed class EstoqueRepository : IEstoqueRepository
+    private readonly EstoqueDbContext _dbContext;
+
+    public EstoqueRepository(EstoqueDbContext dbContext)
     {
-        private readonly EstoqueDbContext _dbContext;
+        _dbContext = dbContext;
+    }
 
-        public EstoqueRepository(EstoqueDbContext dbContext)
+    public IUnitOfWork UnitOfWork => _dbContext;
+
+    public async Task<Estoque?> Buscar(Guid produtoId, CancellationToken cancellationToken)
+    {
+        return await _dbContext.Estoques.FirstOrDefaultAsync(x => x.ProdutoId == produtoId, cancellationToken);
+    }
+
+    public async Task<Estoque> Salvar(Estoque estoque, CancellationToken cancellationToken)
+    {
+        var estoqueExistente = _dbContext.Estoques
+            .Where(p => p.Id == estoque.Id)
+            .AsNoTracking()
+            .SingleOrDefault();
+
+        if (estoqueExistente is null)
         {
-            _dbContext = dbContext;
+            // Inserir
+            await _dbContext.Estoques.AddAsync(estoque, cancellationToken);
         }
-        public IUnitOfWork UnitOfWork => _dbContext;
-
-        public async Task<Estoque?> Buscar(Guid produtoId, CancellationToken cancellationToken)
+        else
         {
-            return await _dbContext.Estoques.FirstOrDefaultAsync(x => x.ProdutoId == produtoId, cancellationToken);
-        }
-
-        public async Task<Estoque> Salvar(Estoque estoque, CancellationToken cancellationToken)
-        {
-            var estoqueExistente = _dbContext.Estoques
-                .Where(p => p.Id == estoque.Id)
-                .AsNoTracking()
-                .SingleOrDefault();
-
-            if (estoqueExistente is null)
-            {
-                // Inserir
-                await _dbContext.Estoques.AddAsync(estoque, cancellationToken);
-            }
-            else
-            {
-                // Atualizar
-                foreach (var mov in estoque.Movimentacoes)
-                {
-                    _dbContext.Entry(mov).State = EntityState.Added;
-                }
-                _dbContext.Update(estoque);
-            }
-
-            return estoque;            
+            // Atualizar
+            foreach (var mov in estoque.Movimentacoes) _dbContext.Entry(mov).State = EntityState.Added;
+            _dbContext.Update(estoque);
         }
 
-        public void Dispose()
-        {
-            _dbContext.Dispose();
-        }
+        return estoque;
+    }
+
+    public void Dispose()
+    {
+        _dbContext.Dispose();
     }
 }

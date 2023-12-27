@@ -1,9 +1,8 @@
 ﻿using EF.Cupons.Application.DTOs;
 
-namespace EF.Cupons.Application.Queries
+namespace EF.Cupons.Application.Queries;
+
+public interface ICupomQuery
 {
-    public interface ICupomQuery
-    {
-        public Task<CupomDto?> ObterCupom(string codigoCupom, CancellationToken cancellationToken);
-    }
+    public Task<CupomDto?> ObterCupom(string codigoCupom, CancellationToken cancellationToken);
 }

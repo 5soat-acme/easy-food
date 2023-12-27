@@ -2,6 +2,11 @@ using EF.Clientes.Application.Commands;
 using EF.Clientes.Domain.Repository;
 using EF.Clientes.Infra.Data;
 using EF.Clientes.Infra.Data.Repository;
+using EF.Cupons.Application.Commands;
+using EF.Cupons.Application.Queries;
+using EF.Cupons.Domain.Repository;
+using EF.Cupons.Infra;
+using EF.Cupons.Infra.Data.Repository;
 using EF.Domain.Commons.Mediator;
 using EF.Domain.Commons.Messages;
 using EF.Estoques.Application.Commands;
@@ -31,6 +36,7 @@ public static class DependencyInjectionConfig
         RegisterServicesClientes(services, configuration);
         RegisterServicesIdentidade(services, configuration);
         RegisterServicesEstoques(services, configuration);
+        RegisterServicesCupons(services, configuration);
 
         return services;
     }
@@ -77,6 +83,29 @@ public static class DependencyInjectionConfig
         // Infra - Data 
         services.AddScoped<IEstoqueRepository, EstoqueRepository>();
         services.AddDbContext<EstoqueDbContext>(options =>
+            options.UseNpgsql(configuration.GetConnectionString("DefaultConnection")));
+    }
+
+    private static void RegisterServicesCupons(IServiceCollection services, IConfiguration configuration)
+    {
+        // Application - Commands
+        services
+            .AddScoped<IRequestHandler<CriarCupomCommand, CommandResult>, CriarCupomCommandHandler>();
+        services
+            .AddScoped<IRequestHandler<AtualizarCupomCommand, CommandResult>, AtualizarCupomCommandHandler>();
+        services
+            .AddScoped<IRequestHandler<InativarCupomCommand, CommandResult>, InativarCupomCommandHandler>();
+        services
+            .AddScoped<IRequestHandler<RemoverProdutosCommand, CommandResult>, RemoverProdutosCommandHandler>();
+        services
+            .AddScoped<IRequestHandler<InserirProdutosCommand, CommandResult>, InserirProdutosCommandHandler>();
+
+        // Application - Queries
+        services.AddScoped<ICupomQuery, CupomQuery>();
+
+        // Infra - Data 
+        services.AddScoped<ICupomRepository, CupomRepository>();
+        services.AddDbContext<CupomDbContext>(options =>
              options.UseNpgsql(configuration.GetConnectionString("DefaultConnection")));
     }
 }

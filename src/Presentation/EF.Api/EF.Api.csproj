@@ -28,6 +28,8 @@
         <ProjectReference Include="..\..\Services\EF.Clientes.Infra\EF.Clientes.Infra.csproj" />
         <ProjectReference Include="..\..\Services\EF.Estoques.Application\EF.Estoques.Application.csproj" />
         <ProjectReference Include="..\..\Services\EF.Estoques.Infra\EF.Estoques.Infra.csproj" />
+        <ProjectReference Include="..\..\Services\EF.Cupons.Application\EF.Cupons.Application.csproj" />
+        <ProjectReference Include="..\..\Services\EF.Cupons.Infra\EF.Cupons.Infra.csproj" />
         <ProjectReference Include="..\..\Services\EF.Identidade.Application\EF.Identidade.Application.csproj" />
         <ProjectReference Include="..\..\Services\EF.Identidade.Infra\EF.Identidade.Infra.csproj" />
         <ProjectReference Include="..\..\Services\EF.Pedidos.Application\EF.Pedidos.Application.csproj" />

@@ -1,9 +1,8 @@
-﻿namespace EF.Estoques.Domain.Models
+﻿namespace EF.Estoques.Domain.Models;
+
+public enum OrigemMovimentacaoEstoque
 {
-    public enum OrigemMovimentacaoEstoque
-    {
-        Compra = 0,
-        Venda = 1,
-        CancelamentoVenda = 2
-    }
+    Compra = 0,
+    Venda = 1,
+    CancelamentoVenda = 2
 }

@@ -97,6 +97,7 @@ public static class DependencyInjectionConfig
         services.AddDbContext<CarrinhoDbContext>(options =>
             options.UseNpgsql(configuration.GetConnectionString("DefaultConnection")));
     }
+
     private static void RegisterServicesEstoques(IServiceCollection services, IConfiguration configuration)
     {
         // Application - Commands
@@ -132,6 +133,6 @@ public static class DependencyInjectionConfig
         // Infra - Data 
         services.AddScoped<ICupomRepository, CupomRepository>();
         services.AddDbContext<CupomDbContext>(options =>
-             options.UseNpgsql(configuration.GetConnectionString("DefaultConnection")));
+            options.UseNpgsql(configuration.GetConnectionString("DefaultConnection")));
     }
 }

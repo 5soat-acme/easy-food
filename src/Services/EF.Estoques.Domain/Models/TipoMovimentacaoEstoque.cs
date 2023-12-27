@@ -1,8 +1,7 @@
-﻿namespace EF.Estoques.Domain.Models
+﻿namespace EF.Estoques.Domain.Models;
+
+public enum TipoMovimentacaoEstoque
 {
-    public enum TipoMovimentacaoEstoque
-    {
-        Entrada = 0,
-        Saida = 1
-    }
+    Entrada = 0,
+    Saida = 1
 }

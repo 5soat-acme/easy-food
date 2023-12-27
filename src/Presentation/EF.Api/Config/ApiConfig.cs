@@ -1,7 +1,7 @@
 using System.Reflection;
+using System.Text.Json.Serialization;
 using EF.Api.Extensions;
 using Microsoft.OpenApi.Models;
-using System.Text.Json.Serialization;
 
 namespace EF.Api.Config;
 
@@ -10,7 +10,8 @@ public static class ApiConfig
     public static IServiceCollection AddApiConfig(this IServiceCollection services, IConfiguration configuration)
     {
         services.AddControllers()
-            .AddJsonOptions(options => options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter())); ;
+            .AddJsonOptions(options => options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter()));
+        ;
         services.AddEndpointsApiExplorer();
         services.AddSwaggerGen(c =>
         {

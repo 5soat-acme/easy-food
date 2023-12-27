@@ -5,81 +5,84 @@ using EF.Domain.Commons.Mediator;
 using EF.WebApi.Commons.Controllers;
 using Microsoft.AspNetCore.Mvc;
 
-namespace EF.Api.Controllers.Cupons
+namespace EF.Api.Controllers.Cupons;
+
+[Route("api/cupons")]
+public class CupomController : CustomControllerBase
 {
-    [Route("api/cupons")]
-    public class CupomController : CustomControllerBase
+    private readonly ICupomQuery _cupomQuery;
+    private readonly IMediatorHandler _mediator;
+
+    public CupomController(IMediatorHandler mediator,
+        ICupomQuery cupomQuery)
     {
-        private readonly IMediatorHandler _mediator;
-        private readonly ICupomQuery _cupomQuery;
+        _mediator = mediator;
+        _cupomQuery = cupomQuery;
+    }
 
-        public CupomController(IMediatorHandler mediator,
-                ICupomQuery cupomQuery)
+    [HttpGet("{codigoCupom}")]
+    public async Task<IActionResult> InserirCupomProduto(string codigoCupom, CancellationToken cancellationToken)
+    {
+        return Respond(await _cupomQuery.ObterCupom(codigoCupom, cancellationToken));
+    }
+
+    [HttpPost]
+    public async Task<IActionResult> CriarCupom([FromBody] CriarCupomCommand command,
+        CancellationToken cancellationToken)
+    {
+        return Respond(await _mediator.Send(command, cancellationToken));
+    }
+
+    [HttpPut("{cupomId}")]
+    public async Task<IActionResult> AtualizarCupom(Guid cupomId, [FromBody] AtualizarCupomDto dto,
+        CancellationToken cancellationToken)
+    {
+        var command = new AtualizarCupomCommand
         {
-            _mediator = mediator;
-            _cupomQuery = cupomQuery;
-        }
+            CupomId = cupomId,
+            DataInicio = dto.DataInicio,
+            DataFim = dto.DataFim,
+            CodigoCupom = dto.CodigoCupom,
+            PorcentagemDesconto = dto.PorcentagemDesconto
+        };
 
-        [HttpGet("{codigoCupom}")]
-        public async Task<IActionResult> InserirCupomProduto(string codigoCupom, CancellationToken cancellationToken)
+        return Respond(await _mediator.Send(command, cancellationToken));
+    }
+
+    [HttpPut("inativar/{cupomId}")]
+    public async Task<IActionResult> InativarCupom(Guid cupomId, CancellationToken cancellationToken)
+    {
+        var command = new InativarCupomCommand
         {
-            return Respond(await _cupomQuery.ObterCupom(codigoCupom, cancellationToken));
-        }
+            CupomId = cupomId
+        };
 
-        [HttpPost]
-        public async Task<IActionResult> CriarCupom([FromBody] CriarCupomCommand command, CancellationToken cancellationToken)
+        return Respond(await _mediator.Send(command, cancellationToken));
+    }
+
+    [HttpDelete("{cupomId}/remover-produtos")]
+    public async Task<IActionResult> RemvoverCupomProduto(Guid cupomId, [FromBody] IList<CupomProdutoDto> produtos,
+        CancellationToken cancellationToken)
+    {
+        var command = new RemoverProdutosCommand
         {
-            return Respond(await _mediator.Send(command, cancellationToken));
-        }
+            CupomId = cupomId,
+            Produtos = produtos.Select(x => x.ProdutoId).ToList()
+        };
 
-        [HttpPut("{cupomId}")]
-        public async Task<IActionResult> AtualizarCupom(Guid cupomId, [FromBody] AtualizarCupomDto dto, CancellationToken cancellationToken)
+        return Respond(await _mediator.Send(command, cancellationToken));
+    }
+
+    [HttpPut("{cupomId}/inserir-produtos")]
+    public async Task<IActionResult> InserirCupomProduto(Guid cupomId, [FromBody] IList<CupomProdutoDto> produtos,
+        CancellationToken cancellationToken)
+    {
+        var command = new InserirProdutosCommand
         {
-            var command = new AtualizarCupomCommand
-            {
-                CupomId = cupomId,
-                DataInicio = dto.DataInicio,
-                DataFim = dto.DataFim,
-                CodigoCupom = dto.CodigoCupom,
-                PorcentagemDesconto = dto.PorcentagemDesconto
-            };
+            CupomId = cupomId,
+            Produtos = produtos.Select(x => x.ProdutoId).ToList()
+        };
 
-            return Respond(await _mediator.Send(command, cancellationToken));
-        }
-
-        [HttpPut("inativar/{cupomId}")]
-        public async Task<IActionResult> InativarCupom(Guid cupomId, CancellationToken cancellationToken)
-        {
-            var command = new InativarCupomCommand
-            {
-                CupomId = cupomId
-            };
-
-            return Respond(await _mediator.Send(command, cancellationToken));
-        }
-
-        [HttpDelete("{cupomId}/remover-produtos")]
-        public async Task<IActionResult> RemvoverCupomProduto(Guid cupomId, [FromBody] IList<CupomProdutoDto> produtos, CancellationToken cancellationToken)
-        {
-            var command = new RemoverProdutosCommand
-            {
-                CupomId = cupomId,
-                Produtos = produtos.Select(x => x.ProdutoId).ToList(),
-            };
-
-            return Respond(await _mediator.Send(command, cancellationToken));
-        }
-
-        [HttpPut("{cupomId}/inserir-produtos")]
-        public async Task<IActionResult> InserirCupomProduto(Guid cupomId, [FromBody] IList<CupomProdutoDto> produtos, CancellationToken cancellationToken)
-        {
-            var command = new InserirProdutosCommand
-            {
-                CupomId = cupomId,
-                Produtos = produtos.Select(x => x.ProdutoId).ToList()
-            };
-
-            return Respond(await _mediator.Send(command, cancellationToken));
-        }
+        return Respond(await _mediator.Send(command, cancellationToken));
     }
 }

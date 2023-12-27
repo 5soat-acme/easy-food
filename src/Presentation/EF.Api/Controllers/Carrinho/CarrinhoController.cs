@@ -14,10 +14,12 @@ public class CarrinhoController(ICarrinhoAppService carrinhoAppService) : Custom
     ///     Obtém o carrinho do cliente.
     /// </summary>
     /// <remarks>
-    ///     Obtém o carrinho do cliente. Caso o cliente tenha se identificado no sistema, é verificado se o mesmo possui um carrinho em aberto.
+    ///     Obtém o carrinho do cliente. Caso o cliente tenha se identificado no sistema, é verificado se o mesmo possui um
+    ///     carrinho em aberto.
     /// </remarks>
     /// <param name="resumo">
-    ///     Se 'true', inclui algumas informações a mais no retorno, como Desconto, Valor Final (Valor Total - Desconto) e Estimativa de Tempo de Preparo
+    ///     Se 'true', inclui algumas informações a mais no retorno, como Desconto, Valor Final (Valor Total - Desconto) e
+    ///     Estimativa de Tempo de Preparo
     /// </param>
     /// <response code="200">Retorna dados do carrinho.</response>
     [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(CarrinhoClienteDto))]
@@ -29,7 +31,7 @@ public class CarrinhoController(ICarrinhoAppService carrinhoAppService) : Custom
 
         return Respond(await carrinhoAppService.ObterCarrinhoCliente());
     }
-    
+
     /// <summary>
     ///     Adiciona um item ao carrinho.
     /// </summary>
@@ -52,12 +54,13 @@ public class CarrinhoController(ICarrinhoAppService carrinhoAppService) : Custom
 
         return Respond();
     }
-    
+
     /// <summary>
     ///     Finaliza a montagem do carrinho e gera um novo pedido.
     /// </summary>
     /// <remarks>
-    ///     Finaliza a montagem do carrinho e gera um novo pedido. O carrinho é esvaziado após a criação do pedido e um identificador de correlação é retornado para que o pedido possa ser recuperado posteriormente.
+    ///     Finaliza a montagem do carrinho e gera um novo pedido. O carrinho é esvaziado após a criação do pedido e um
+    ///     identificador de correlação é retornado para que o pedido possa ser recuperado posteriormente.
     /// </remarks>
     /// <response code="200">Indica que o pedido foi criado com sucesso e retorna o ID de Correlação.</response>
     /// <response code="400">A solicitação está malformada e não pode ser processada.</response>

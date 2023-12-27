@@ -1,22 +1,21 @@
-﻿using Microsoft.EntityFrameworkCore.Metadata.Builders;
+﻿using EF.Cupons.Domain.Models;
 using Microsoft.EntityFrameworkCore;
-using EF.Cupons.Domain.Models;
+using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace EF.Cupons.Infra.Data.Mapping
+namespace EF.Cupons.Infra.Data.Mapping;
+
+public class CupomProdutoMapping : IEntityTypeConfiguration<CupomProduto>
 {
-    public class CupomProdutoMapping : IEntityTypeConfiguration<CupomProduto>
+    public void Configure(EntityTypeBuilder<CupomProduto> builder)
     {
-        public void Configure(EntityTypeBuilder<CupomProduto> builder)
-        {
-            builder.ToTable("CupomProdutos");
+        builder.ToTable("CupomProdutos");
 
-            builder.HasKey(c => c.Id);
+        builder.HasKey(c => c.Id);
 
-            builder.Property(c => c.ProdutoId)
-                .IsRequired();
+        builder.Property(c => c.ProdutoId)
+            .IsRequired();
 
-            builder.HasOne(c => c.Cupom)
-                .WithMany(c => c.CupomProdutos);
-        }
+        builder.HasOne(c => c.Cupom)
+            .WithMany(c => c.CupomProdutos);
     }
 }

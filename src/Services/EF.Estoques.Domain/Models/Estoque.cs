@@ -1,59 +1,58 @@
 ﻿using EF.Domain.Commons.DomainObjects;
 
-namespace EF.Estoques.Domain.Models
+namespace EF.Estoques.Domain.Models;
+
+public class Estoque : Entity, IAggregateRoot
 {
-    public class Estoque : Entity, IAggregateRoot
+    private readonly List<MovimentacaoEstoque> _movimentacoes;
+
+    // Necessário para o EF
+    private Estoque()
     {
-        public Guid ProdutoId { get; private set; }
-        public int Quantidade { get; private set; }
+        _movimentacoes = new List<MovimentacaoEstoque>();
+    }
 
-        private readonly List<MovimentacaoEstoque> _movimentacoes;
-        public IReadOnlyCollection<MovimentacaoEstoque> Movimentacoes => _movimentacoes;
+    public Estoque(Guid produtoId, int quantidade)
+    {
+        _movimentacoes = new List<MovimentacaoEstoque>();
 
-        // Necessário para o EF
-        private Estoque()
-        {
-            _movimentacoes = new List<MovimentacaoEstoque>();
-        }
+        if (!ValidarProduto(produtoId)) throw new DomainException("Produto inválido");
+        if (!ValidarQuantidade(quantidade)) throw new DomainException("Quantidade inválida");
 
-        public Estoque(Guid produtoId, int quantidade)
-        {
-            _movimentacoes = new List<MovimentacaoEstoque>();
+        ProdutoId = produtoId;
+        Quantidade = quantidade;
+    }
 
-            if (!ValidarProduto(produtoId)) throw new DomainException("Produto inválido");
-            if (!ValidarQuantidade(quantidade)) throw new DomainException("Quantidade inválida");
+    public Guid ProdutoId { get; private set; }
+    public int Quantidade { get; private set; }
+    public IReadOnlyCollection<MovimentacaoEstoque> Movimentacoes => _movimentacoes;
 
-            ProdutoId = produtoId;
-            Quantidade = quantidade;
-        }
+    public void AdicionarMovimentacao(MovimentacaoEstoque movimentacao)
+    {
+        _movimentacoes.Add(movimentacao);
+    }
 
-        public void AdicionarMovimentacao(MovimentacaoEstoque movimentacao)
-        {
-            _movimentacoes.Add(movimentacao);
-        }
+    public void AtualizarQuantidade(int quantidade, TipoMovimentacaoEstoque tipoMovimentacaoEstoque)
+    {
+        if (tipoMovimentacaoEstoque == TipoMovimentacaoEstoque.Entrada)
+            Quantidade += quantidade;
+        else if (tipoMovimentacaoEstoque == TipoMovimentacaoEstoque.Saida)
+            Quantidade -= quantidade;
 
-        public void AtualizarQuantidade(int quantidade, TipoMovimentacaoEstoque tipoMovimentacaoEstoque)
-        {
-            if (tipoMovimentacaoEstoque == TipoMovimentacaoEstoque.Entrada)
-                Quantidade += quantidade;
-            else if (tipoMovimentacaoEstoque == TipoMovimentacaoEstoque.Saida)
-                Quantidade -= quantidade;
+        if (!ValidarQuantidade(Quantidade)) throw new DomainException("Produto não possui estoque suficiente");
+    }
 
-            if (!ValidarQuantidade(Quantidade)) throw new DomainException("Produto não possui estoque suficiente");
-        }
+    private bool ValidarProduto(Guid produtoId)
+    {
+        if (produtoId == Guid.Empty) return false;
 
-        private bool ValidarProduto(Guid produtoId)
-        {
-            if (produtoId == Guid.Empty) return false;
+        return true;
+    }
 
-            return true;
-        }
+    private bool ValidarQuantidade(int quantidade)
+    {
+        if (quantidade < 0) return false;
 
-        private bool ValidarQuantidade(int quantidade)
-        {
-            if (quantidade < 0) return false;
-
-            return true;
-        }
+        return true;
     }
 }

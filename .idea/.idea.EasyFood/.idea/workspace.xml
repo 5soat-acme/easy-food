@@ -18,93 +18,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="61e4a515-7fae-49b6-801b-ebc481bfb9f9" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/httpRequests/2023-12-21T114052.500.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/httpRequests/2023-12-21T124319.200.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/httpRequests/2023-12-21T124332.500.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/httpRequests/2023-12-21T124910.500.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/httpRequests/http-client.cookies" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/httpRequests/http-client.cookies" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/httpRequests/http-requests-log.http" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/httpRequests/http-requests-log.http" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/issuestore/0/0/0035830cba06917eb1467f344ee47e1f6bc32391" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/issuestore/0/0/0035830cba06917eb1467f344ee47e1f6bc32391" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/issuestore/0/4/042d928e2b0e590f2f56aa840c37b81140553804" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/issuestore/2/0/20d24ab17ddfdf9b7e0e66f06aa33b96690a1f2f" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/issuestore/2/e/2eed64c5c70feac2dfd4e463c5a9b77ce6b7558f" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/issuestore/2/e/2eed64c5c70feac2dfd4e463c5a9b77ce6b7558f" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/issuestore/3/8/3863952251de855cdd9ec4750cadc55d40121ebc" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/issuestore/3/8/3863952251de855cdd9ec4750cadc55d40121ebc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/issuestore/4/7/477583946404a29d413f9bbe4c3e70e95140f3a3" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/issuestore/4/7/477583946404a29d413f9bbe4c3e70e95140f3a3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/issuestore/4/7/47e390c700e382cae90993515438acd497dca704" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/issuestore/4/7/47e390c700e382cae90993515438acd497dca704" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/issuestore/4/b/4b3f0190e333c812a23d5885cd56d4f889ea68d4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/issuestore/4/c/4c48419d807ffedfac3502b961f58de1662ccd13" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/issuestore/4/c/4c48419d807ffedfac3502b961f58de1662ccd13" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/issuestore/a/4/a4f0a027c2911a2bd7cca40e26ae50451c27c682" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/issuestore/d/c/dc4b2fa6ba7f3f6728a557f69e6f6e00d9009b24" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/issuestore/d/c/dc4b2fa6ba7f3f6728a557f69e6f6e00d9009b24" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/issuestore/e/2/e21d72fec4d29c363139b75d3e1fbff99063b5ed" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/securityhotspotstore/0/4/042d928e2b0e590f2f56aa840c37b81140553804" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/securityhotspotstore/2/0/20d24ab17ddfdf9b7e0e66f06aa33b96690a1f2f" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/securityhotspotstore/4/b/4b3f0190e333c812a23d5885cd56d4f889ea68d4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/securityhotspotstore/a/4/a4f0a027c2911a2bd7cca40e26ae50451c27c682" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/securityhotspotstore/e/2/e21d72fec4d29c363139b75d3e1fbff99063b5ed" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/securityhotspotstore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/securityhotspotstore/index.pb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deploy/migrations.ps1" beforeDir="false" afterPath="$PROJECT_DIR$/deploy/migrations.ps1" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Presentation/EF.Api/Config/ApiConfig.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Presentation/EF.Api/Config/ApiConfig.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Presentation/EF.Api/Config/DependencyInjectionConfig.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Presentation/EF.Api/Config/DependencyInjectionConfig.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Presentation/EF.Api/Controllers/Carrinho/CarrinhoController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Presentation/EF.Api/Controllers/Carrinho/CarrinhoController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Presentation/EF.Api/Controllers/Identidade/IdentidadeController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Presentation/EF.Api/Controllers/Identidade/IdentidadeController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Presentation/EF.Api/Controllers/Pedidos/PedidoController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Presentation/EF.Api/Controllers/Pedidos/PedidoController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Presentation/EF.Api/EF.Api.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/src/Presentation/EF.Api/EF.Api.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/EF.Carrinho.Application/DTOs/AdicionarItemDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Carrinho.Application/DTOs/AdicionarItemDto.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/EF.Carrinho.Application/DTOs/AtualizarItemDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Carrinho.Application/DTOs/AtualizarItemDto.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/EF.Carrinho.Application/DTOs/CarrinhoClienteDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Carrinho.Application/DTOs/CarrinhoClienteDto.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/EF.Carrinho.Application/DTOs/CarrinhoFechadoDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Carrinho.Application/DTOs/CarrinhoFechadoRespostaDto.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/EF.Carrinho.Application/DTOs/ItemDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Carrinho.Application/DTOs/ItemCarrinhoDto.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/EF.Carrinho.Application/DTOs/ResumoCarrinhoDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Carrinho.Application/DTOs/ResumoCarrinhoDto.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/EF.Carrinho.Application/EF.Carrinho.Application.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Carrinho.Application/EF.Carrinho.Application.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/EF.Carrinho.Application/Mapping/DomainToDtoProfile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Carrinho.Application/Mappings/DomainToDtoProfile.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/EF.Carrinho.Application/Services/CarrinhoAppService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Carrinho.Application/Services/CarrinhoAppService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/EF.Carrinho.Application/Services/Interfaces/ICarrinhoAppService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Carrinho.Application/Services/Interfaces/ICarrinhoAppService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/EF.Carrinho.Domain/EF.Carrinho.Domain.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Carrinho.Domain/EF.Carrinho.Domain.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/EF.Carrinho.Domain/Models/CarrinhoCliente.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Carrinho.Domain/Models/CarrinhoCliente.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/EF.Carrinho.Domain/Models/Item.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Carrinho.Domain/Models/Item.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/EF.Carrinho.Infra/Data/CarrinhoDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Carrinho.Infra/Data/CarrinhoDbContext.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/EF.Carrinho.Infra/Data/Mapping/CarrinhoClienteMapping.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Carrinho.Infra/Data/Mapping/CarrinhoClienteMapping.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/EF.Carrinho.Infra/Data/Mapping/ItemMapping.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Carrinho.Infra/Data/Mapping/ItemMapping.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/EF.Carrinho.Infra/Data/Repository/CarrinhoRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Carrinho.Infra/Data/Repository/CarrinhoRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/EF.Carrinho.Infra/EF.Carrinho.Infra.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Carrinho.Infra/EF.Carrinho.Infra.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/EF.Carrinho.Infra/Migrations/20231221155419_BaseInicialCarrinho.Designer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/EF.Carrinho.Infra/Migrations/20231221155419_BaseInicialCarrinho.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/EF.Carrinho.Infra/Migrations/CarrinhoDbContextModelSnapshot.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/EF.Identidade.Application/DTOs/NovoUsuario.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Identidade.Application/DTOs/NovoUsuario.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/EF.Identidade.Application/Services/AcessoAppService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Identidade.Application/Services/AcessoAppService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/EF.Pedidos.Application/Commands/GerarPedidoCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Pedidos.Application/Commands/CriarPedidoCommand.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/EF.Pedidos.Application/Commands/GerarPedidoCommandHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Pedidos.Application/Commands/CriarPedidoCommandHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/EF.Pedidos.Application/EF.Pedidos.Application.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Pedidos.Application/EF.Pedidos.Application.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/EF.Pedidos.Application/Services/IntegraPedidoService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Pedidos.Application/Services/IntegraPedidoService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/EF.Pedidos.Domain/Models/Item.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Pedidos.Domain/Models/Item.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/EF.Pedidos.Domain/Models/Pedido.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Pedidos.Domain/Models/Pedido.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/EF.Pedidos.Domain/Repository/IPedidoRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Pedidos.Domain/Repository/IPedidoRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/EF.Pedidos.Infra/Data/Mapping/ItemMapping.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Pedidos.Infra/Data/Mapping/ItemMapping.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/EF.Pedidos.Infra/Data/Mapping/PedidoMapping.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Pedidos.Infra/Data/Mapping/PedidoMapping.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/EF.Pedidos.Infra/Data/Migrations/20231208115053_BaseInicialPedidos.Designer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/EF.Pedidos.Infra/Data/Migrations/20231208115053_BaseInicialPedidos.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/EF.Pedidos.Infra/Data/Migrations/PedidoDbContextModelSnapshot.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/EF.Pedidos.Infra/Data/PedidoDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Pedidos.Infra/Data/PedidoDbContext.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/EF.Pedidos.Infra/Data/Repository/PedidoRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Pedidos.Infra/Data/Repository/PedidoRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/EF.Pedidos.Infra/EF.Pedidos.Infra.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Pedidos.Infra/EF.Pedidos.Infra.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Shared/EF.Domain.Commons/Communication/OperationResult.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Shared/EF.Domain.Commons/Communication/OperationResult.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Shared/EF.Domain.Commons/Communication/OperationResultWithData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Shared/EF.Domain.Commons/Communication/OperationResultWithData.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Shared/EF.Domain.Commons/Communication/ValidationResultExtensions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Shared/EF.Domain.Commons/Communication/ValidationResultExtensions.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Shared/EF.Domain.Commons/DomainObjects/Entity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Shared/EF.Domain.Commons/DomainObjects/Entity.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Shared/EF.Domain.Commons/Messages/Integrations/CarrinhoFechadoEvent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Shared/EF.Domain.Commons/Messages/Integrations/CarrinhoFechadoEvent.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Shared/EF.Domain.Commons/Messages/Message.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Shared/EF.Domain.Commons/Messages/Message.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Shared/EF.Infra.Commons/EF.Infra.Commons.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/src/Shared/EF.Infra.Commons/EF.Infra.Commons.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Shared/EF.Infra.Commons/Mediator/MediatorHandlerExtension.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Shared/EF.Infra.Commons/Mediator/MediatorHandlerExtension.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Shared/EF.WebApi.Commons/Controllers/CustomControllerBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Shared/EF.WebApi.Commons/Controllers/CustomControllerBase.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Shared/EF.WebApi.Commons/EF.WebApi.Commons.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/src/Shared/EF.WebApi.Commons/EF.WebApi.Commons.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Shared/EF.WebApi.Commons/ModelStateValidations/NonEmptyGuidAttribute.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Shared/EF.WebApi.Commons/ModelStateValidations/NonEmptyGuidAttribute.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Shared/EF.WebApi.Commons/Users/UserApp.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Shared/EF.WebApi.Commons/Users/UserApp.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/Services/EF.Carrinho.Domain.Test/EF.Carrinho.Domain.Test.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/test/Services/EF.Carrinho.Domain.Test/EF.Carrinho.Domain.Test.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/Services/EF.Carrinho.Domain.Test/Fixtures/CarrinhoClienteFixture.cs" beforeDir="false" afterPath="$PROJECT_DIR$/test/Services/EF.Carrinho.Domain.Test/Fixtures/CarrinhoClienteFixture.cs" afterDir="false" />
-    </list>
+    <list default="true" id="61e4a515-7fae-49b6-801b-ebc481bfb9f9" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -175,55 +89,55 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    ".NET Launch Settings Profile.EF.Api: https.executor": "Debug",
-    "358cc20c-bbd2-4173-b107-79bbfcbf32c4.executor": "Debug",
-    "HTTP Request.All in identidade.executor": "Run",
-    "HTTP Request.api-requests | #2.executor": "Run",
-    "HTTP Request.api-requests | Carrinho API:.executor": "Run",
-    "HTTP Request.carrinho-api | #1.executor": "Run",
-    "HTTP Request.carrinho-api | #2.executor": "Run",
-    "HTTP Request.carrinho-api | #3.executor": "Run",
-    "HTTP Request.carrinho-api | #4.executor": "Run",
-    "HTTP Request.carrinho-api | Adicionar item no carrinho.executor": "Run",
-    "HTTP Request.carrinho-api | Carrinho API:.executor": "Run",
-    "HTTP Request.carrinho-api | Fechar pedido a partir do carrinho do cliente.executor": "Run",
-    "HTTP Request.carrinho-api | Incluir item no carrinho.executor": "Run",
-    "HTTP Request.carrinho-api | Obter carrinho do cliente.executor": "Run",
-    "HTTP Request.carrinho-api | Obter resumo do carrinho do cliente.executor": "Run",
-    "HTTP Request.identidade | #1.executor": "Run",
-    "HTTP Request.identidade | #2.executor": "Run",
-    "HTTP Request.identidade | #3.executor": "Run",
-    "HTTP Request.identidade | #4.executor": "Run",
-    "HTTP Request.identidade-api | #2.executor": "Run",
-    "HTTP Request.identidade-api | Autenticar usuário.executor": "Run",
-    "HTTP Request.identidade-api | Cadastrar usuário.executor": "Run",
-    "HTTP Request.identidade-api | Identidade API:.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "feat-carrinho",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "rest.client.default.execution.environment": "local",
-    "settings.editor.selected.configurable": "CodeCleanupOptionsPage",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;.NET Launch Settings Profile.EF.Api: https.executor&quot;: &quot;Debug&quot;,
+    &quot;358cc20c-bbd2-4173-b107-79bbfcbf32c4.executor&quot;: &quot;Debug&quot;,
+    &quot;HTTP Request.All in identidade.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.api-requests | #2.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.api-requests | Carrinho API:.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.carrinho-api | #1.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.carrinho-api | #2.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.carrinho-api | #3.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.carrinho-api | #4.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.carrinho-api | Adicionar item no carrinho.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.carrinho-api | Carrinho API:.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.carrinho-api | Fechar pedido a partir do carrinho do cliente.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.carrinho-api | Incluir item no carrinho.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.carrinho-api | Obter carrinho do cliente.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.carrinho-api | Obter resumo do carrinho do cliente.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.identidade | #1.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.identidade | #2.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.identidade | #3.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.identidade | #4.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.identidade-api | #2.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.identidade-api | Autenticar usuário.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.identidade-api | Cadastrar usuário.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.identidade-api | Identidade API:.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;feat-carrinho&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;rest.client.default.execution.environment&quot;: &quot;local&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;CodeCleanupOptionsPage&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "postgresql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;postgresql&quot;
     ],
-    "rider.external.source.directories": [
-      "C:\\Users\\bmfpe\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\DecompilerCache",
-      "C:\\Users\\bmfpe\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\SourcesCache",
-      "C:\\Users\\bmfpe\\AppData\\Local\\Symbols\\src"
+    &quot;rider.external.source.directories&quot;: [
+      &quot;C:\\Users\\bmfpe\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\DecompilerCache&quot;,
+      &quot;C:\\Users\\bmfpe\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\SourcesCache&quot;,
+      &quot;C:\\Users\\bmfpe\\AppData\\Local\\Symbols\\src&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected=".NET Launch Settings Profile.EF.Api: https">
     <configuration name="carrinho-api | Adicionar item no carrinho" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/src/Presentation/EF.Api/Controllers/Carrinho/carrinho-api.http" index="3" requestIdentifier="Adicionar item no carrinho" runType="Run single request">
       <method v="2" />
@@ -332,7 +246,7 @@
       <workItem from="1703265028199" duration="3875000" />
       <workItem from="1703325193544" duration="4581000" />
       <workItem from="1703418834937" duration="3782000" />
-      <workItem from="1703674464054" duration="10126000" />
+      <workItem from="1703674464054" duration="10865000" />
     </task>
     <servers />
   </component>

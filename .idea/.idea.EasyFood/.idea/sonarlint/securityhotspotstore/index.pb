@@ -233,3 +233,5 @@ l
 <src/Services/EF.Carrinho.Application/DTOs/ItemCarrinhoDto.cs,6\2\62f3eed589f202db2958cf6e2cbe9cc84dac68e5
 x
 Hsrc/Services/EF.Pedidos.Infra/Migrations/PedidoDbContextModelSnapshot.cs,2\e\2e4bf67446ba86c677667bf7aba227e546ba3216
+w
+Gsrc/Services/EF.Carrinho.Application/DTOs/CarrinhoFechadoRespostaDto.cs,5\1\51bb96eadb7c54d380a9c7bf97e9530a2091198f

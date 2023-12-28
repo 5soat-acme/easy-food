@@ -1,5 +1,6 @@
 using EF.Domain.Commons.Mediator;
 using EF.Pedidos.Application.DTOs;
+using EF.Pedidos.Application.DTOs.Responses;
 using EF.Pedidos.Application.Queries.Interfaces;
 using EF.WebApi.Commons.Controllers;
 using Microsoft.AspNetCore.Authorization;

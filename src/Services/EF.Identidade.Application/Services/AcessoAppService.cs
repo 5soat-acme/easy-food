@@ -5,6 +5,8 @@ using EF.Clientes.Application.Commands;
 using EF.Domain.Commons.Communication;
 using EF.Domain.Commons.Mediator;
 using EF.Identidade.Application.DTOs;
+using EF.Identidade.Application.DTOs.Requests;
+using EF.Identidade.Application.DTOs.Responses;
 using EF.Identidade.Application.Services.Interfaces;
 using EF.WebApi.Commons.Identity;
 using FluentValidation.Results;

@@ -1,4 +1,6 @@
 using EF.Carrinho.Application.DTOs;
+using EF.Carrinho.Application.DTOs.Requests;
+using EF.Carrinho.Application.DTOs.Responses;
 using EF.Carrinho.Application.Services.Interfaces;
 using EF.WebApi.Commons.Controllers;
 using Microsoft.AspNetCore.Authorization;
@@ -8,7 +10,7 @@ namespace EF.Api.Controllers.Carrinho;
 
 [Authorize]
 [Route("api/carrinho")]
-public class CarrinhoController(ICarrinhoAppService carrinhoAppService) : CustomControllerBase
+public class CarrinhoController(ICarrinhoService carrinhoService) : CustomControllerBase
 {
     /// <summary>
     ///     Obtém o carrinho do cliente.
@@ -29,9 +31,9 @@ public class CarrinhoController(ICarrinhoAppService carrinhoAppService) : Custom
     [HttpGet]
     public async Task<IActionResult> ObterCarrinho([FromQuery] bool resumo = false)
     {
-        if (resumo) return Respond(await carrinhoAppService.ObterResumo());
+        if (resumo) return Respond(await carrinhoService.ObterResumo());
 
-        return Respond(await carrinhoAppService.ObterCarrinhoCliente());
+        return Respond(await carrinhoService.ObterCarrinhoCliente());
     }
 
     /// <summary>
@@ -52,9 +54,11 @@ public class CarrinhoController(ICarrinhoAppService carrinhoAppService) : Custom
     {
         if (!ModelState.IsValid) return Respond(ModelState);
 
-        var result = await carrinhoAppService.AdicionarItemCarrinho(itemDto);
+        var result = await carrinhoService.AdicionarItemCarrinho(itemDto);
 
         if (!result.IsValid) AddErrors(result.Errors);
+        
+        if(result.Data is null) return NotFound("O produto não possui estoque");
 
         return Respond();
     }
@@ -76,7 +80,7 @@ public class CarrinhoController(ICarrinhoAppService carrinhoAppService) : Custom
     [HttpPost("fechar-pedido")]
     public async Task<IActionResult> FecharPedido()
     {
-        var result = await carrinhoAppService.FecharPedido();
+        var result = await carrinhoService.FecharPedido();
         
         if (!result.IsValid)
         {
@@ -108,7 +112,7 @@ public class CarrinhoController(ICarrinhoAppService carrinhoAppService) : Custom
 
         if (!ModelState.IsValid) return Respond(ModelState);
 
-        var result = await carrinhoAppService.AtualizarItem(item);
+        var result = await carrinhoService.AtualizarItem(item);
 
         if (!result.IsValid) AddErrors(result.Errors);
 
@@ -130,7 +134,7 @@ public class CarrinhoController(ICarrinhoAppService carrinhoAppService) : Custom
     {
         if (!ModelState.IsValid) return Respond(ModelState);
 
-        await carrinhoAppService.RemoverItemCarrinho(itemId);
+        await carrinhoService.RemoverItemCarrinho(itemId);
         return Respond();
     }
 }

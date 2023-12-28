@@ -91,7 +91,7 @@ public static class DependencyInjectionConfig
     private static void RegisterServicesCarrinho(IServiceCollection services, IConfiguration configuration)
     {
         // Application - Services
-        services.AddScoped<ICarrinhoAppService, CarrinhoAppService>();
+        services.AddScoped<ICarrinhoService, CarrinhoService>();
         services.AddScoped<INotificationHandler<CarrinhoFechadoEvent>, IntegraPedidoService>();
 
         // Application - Mapping

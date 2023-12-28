@@ -1,5 +1,6 @@
 using AutoMapper;
 using EF.Carrinho.Application.DTOs;
+using EF.Carrinho.Application.DTOs.Responses;
 using EF.Carrinho.Domain.Models;
 
 namespace EF.Carrinho.Application.Mappings;

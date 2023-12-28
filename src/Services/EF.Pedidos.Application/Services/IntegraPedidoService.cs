@@ -14,6 +14,7 @@ public class IntegraPedidoService(IMediatorHandler mediator) : INotificationHand
             await mediator.Send(new CriarPedidoCommand
             {
                 ClienteId = notification.ClienteId,
+                CorrelacaoId = notification.AggregateId,
                 ValorTotal = notification.ValorTotal,
                 Desconto = notification.Desconto,
                 ValorFinal = notification.ValorFinal,

@@ -24,6 +24,8 @@ using EF.Identidade.Application.Services;
 using EF.Identidade.Application.Services.Interfaces;
 using EF.Pedidos.Application.Commands;
 using EF.Pedidos.Application.Mappings;
+using EF.Pedidos.Application.Queries;
+using EF.Pedidos.Application.Queries.Interfaces;
 using EF.Pedidos.Application.Services;
 using EF.Pedidos.Domain.Repository;
 using EF.Pedidos.Infra.Data;
@@ -56,6 +58,9 @@ public static class DependencyInjectionConfig
         services
             .AddScoped<IRequestHandler<CriarPedidoCommand, CommandResult>, CriarPedidoCommandHandler>();
 
+        // Application - Queries
+        services.AddScoped<IPedidoQuery, PedidoQuery>();
+        
         // Application - Mapping
         services.AddAutoMapper(typeof(DomainToDtoProfile));
 

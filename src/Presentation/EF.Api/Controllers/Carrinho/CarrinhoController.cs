@@ -22,7 +22,9 @@ public class CarrinhoController(ICarrinhoAppService carrinhoAppService) : Custom
     ///     Estimativa de Tempo de Preparo
     /// </param>
     /// <response code="200">Retorna dados do carrinho.</response>
+    /// <response code="401">Não autorizado.</response>
     [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(CarrinhoClienteDto))]
+    [ProducesResponseType(StatusCodes.Status401Unauthorized)]
     [Produces("application/json")]
     [HttpGet]
     public async Task<IActionResult> ObterCarrinho([FromQuery] bool resumo = false)
@@ -40,8 +42,10 @@ public class CarrinhoController(ICarrinhoAppService carrinhoAppService) : Custom
     /// </remarks>
     /// <response code="204">Indica que o item foi adicionado no carrinho com sucesso.</response>
     /// <response code="400">A solicitação está malformada e não pode ser processada.</response>
+    /// <response code="401">Não autorizado.</response>
     [ProducesResponseType(StatusCodes.Status204NoContent)]
     [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(ValidationProblemDetails))]
+    [ProducesResponseType(StatusCodes.Status401Unauthorized)]
     [Produces("application/json")]
     [HttpPost]
     public async Task<IActionResult> AdicionarItem(AdicionarItemDto itemDto)
@@ -64,13 +68,22 @@ public class CarrinhoController(ICarrinhoAppService carrinhoAppService) : Custom
     /// </remarks>
     /// <response code="200">Indica que o pedido foi criado com sucesso e retorna o ID de Correlação.</response>
     /// <response code="400">A solicitação está malformada e não pode ser processada.</response>
+    /// <response code="401">Não autorizado.</response>
     [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(CarrinhoFechadoRespostaDto))]
     [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(ValidationProblemDetails))]
+    [ProducesResponseType(StatusCodes.Status401Unauthorized)]
     [Produces("application/json")]
     [HttpPost("fechar-pedido")]
     public async Task<IActionResult> FecharPedido()
     {
         var result = await carrinhoAppService.FecharPedido();
+        
+        if (!result.IsValid)
+        {
+            AddErrors(result.Errors);
+            return Respond();
+        }
+
         return Respond(result.Data);
     }
 
@@ -79,8 +92,10 @@ public class CarrinhoController(ICarrinhoAppService carrinhoAppService) : Custom
     /// </summary>
     /// <response code="204">Indica que a quantidade do item foi atualizada com sucesso.</response>
     /// <response code="400">A solicitação está malformada e não pode ser processada.</response>
+    /// <response code="401">Não autorizado.</response>
     [ProducesResponseType(StatusCodes.Status204NoContent)]
     [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(ValidationProblemDetails))]
+    [ProducesResponseType(StatusCodes.Status401Unauthorized)]
     [Produces("application/json")]
     [HttpPut("{itemId}")]
     public async Task<IActionResult> AtualizarItem(Guid itemId, AtualizarItemDto item)
@@ -105,8 +120,10 @@ public class CarrinhoController(ICarrinhoAppService carrinhoAppService) : Custom
     /// </summary>
     /// <response code="204">Indica que o item foi removido com sucesso.</response>
     /// <response code="400">A solicitação está malformada e não pode ser processada.</response>
+    /// <response code="401">Não autorizado.</response>
     [ProducesResponseType(StatusCodes.Status204NoContent)]
     [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(ValidationProblemDetails))]
+    [ProducesResponseType(StatusCodes.Status401Unauthorized)]
     [Produces("application/json")]
     [HttpDelete("{itemId}")]
     public async Task<IActionResult> RemoverItem(Guid itemId)

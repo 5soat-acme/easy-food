@@ -54,7 +54,7 @@ public class CarrinhoAppService(ICarrinhoRepository carrinhoRepository, IUserApp
         // TODO: Obter produto da API de produtos. (Catálogo?) e validar estoque
         var carrinho = await ObterCarrinho();
 
-        if (carrinho is null) return OperationResult.Failure("Carrinho não encontrado");
+        if (carrinho is null) return OperationResult.Failure("O carrinho está vazio");
 
         var item = carrinho.Itens.FirstOrDefault(f => f.Id == itemDto.ItemId);
 

@@ -7,7 +7,6 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace EF.Api.Controllers.Pedidos;
 
-[Authorize]
 [Route("api/pedidos")]
 public class PedidoController(IMediatorHandler mediator, IPedidoQuery pedidoQuery) : CustomControllerBase
 {
@@ -21,7 +20,7 @@ public class PedidoController(IMediatorHandler mediator, IPedidoQuery pedidoQuer
     /// </returns>
     [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(PedidoDto))]
     [HttpGet]
-    public async Task<IActionResult> CriarPedido([FromQuery] Guid pedidoId, [FromQuery] Guid correlacaoId)
+    public async Task<IActionResult> ObterPedido([FromQuery] Guid pedidoId, [FromQuery] Guid correlacaoId)
     {
         if (pedidoId == Guid.Empty && correlacaoId == Guid.Empty)
         {
@@ -29,8 +28,17 @@ public class PedidoController(IMediatorHandler mediator, IPedidoQuery pedidoQuer
             return Respond();
         }
 
-        if (correlacaoId != Guid.Empty) return Respond(await pedidoQuery.ObterPedidoPorCorrelacaoId(correlacaoId));
+        PedidoDto? pedido;
+        
+        if (correlacaoId != Guid.Empty)
+        {
+            pedido = await pedidoQuery.ObterPedidoPorCorrelacaoId(correlacaoId);
+        }
+        else
+        {
+            pedido = await pedidoQuery.ObterPedidoPorId(pedidoId);
+        }
 
-        return Respond(await pedidoQuery.ObterPedidoPorId(pedidoId));
+        return pedido is not null ? Respond(pedido) : NotFound();
     }
 }

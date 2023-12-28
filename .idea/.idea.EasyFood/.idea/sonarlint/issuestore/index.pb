@@ -99,8 +99,6 @@ k
 ;src/Services/EF.Identidade.Application/DTOs/UsuarioLogin.cs,9\1\91b56b8847f2f4fa29bd3bcff7d66c8427d7a52c
 }
 Msrc/Services/EF.Pedidos.Infra/Data/Migrations/PedidoDbContextModelSnapshot.cs,e\0\e0e7b416867fc514cc26c75d84062f5b4617ccc2
-‚
-Rsrc/Services/EF.Pedidos.Infra/Data/Migrations/20231208115053_BaseInicialPedidos.cs,3\a\3a944f0ff1d35aed4eecdf3e68588a26e526288a
 s
 Csrc/Services/EF.Identidade.Application/Services/AcessoAppService.cs,e\f\efddbd09deb417fb1f2eeea260c40479b1db92dd
 k
@@ -159,8 +157,6 @@ f
 6src/Shared/EF.Domain.Commons/Repository/IUnitOfWork.cs,0\6\06fa795b0eafa20ff1c32292a17156530ee61ced
 \
 ,src/Presentation/EF.Api/http-client.env.json,0\f\0f5587fb06bb297a4d4673fbcefe92a8f269ee31
-d
-4src/Presentation/EF.Api/http-client.private.env.json,2\6\26278109affe6c21c45ec9ff8ff960ae89677c21
 n
 >src/Presentation/EF.Api/Controllers/Carrinho/carrinho-api.http,7\1\71fc6cdb990714f5abf7d8d473e59bbba5ebe90c
 r
@@ -183,8 +179,6 @@ u
 Esrc/Shared/EF.Domain.Commons/Communication/OperationResultWithData.cs,3\c\3ca95607cd950dbe226d94c556e4805d1edf0623
 o
 ?src/Services/EF.Carrinho.Application/DTOs/CarrinhoClienteDto.cs,3\a\3a5d10622bdb6fe6722ebd18162f15b5adbcfbd7
-d
-4src/Services/EF.Carrinho.Application/DTOs/ItemDto.cs,7\d\7d6cbf92f89df66fb52ba1a77b3e833b1852c556
 n
 >src/Services/EF.Carrinho.Application/DTOs/ResumoCarrinhoDto.cs,7\9\79f266280943baff8d2ec6eef777b778d513fadc
 j
@@ -203,8 +197,6 @@ p
 @src/Shared/EF.Infra.Commons/Mediator/MediatorHandlerExtension.cs,c\c\cc7a5a5da11d745e1e0d3458949775756ceda317
 t
 Dsrc/Services/EF.Pedidos.Application/Services/IntegraPedidoService.cs,4\c\4c48419d807ffedfac3502b961f58de1662ccd13
-o
-?src/Services/EF.Carrinho.Application/DTOs/CarrinhoFechadoDto.cs,9\c\9c24f119bf1868c043798b834b5007cee2c76eed
 r
 Bsrc/Services/EF.Pedidos.Application/Commands/CriarPedidoCommand.cs,2\7\272d90b8631e15935cb3c4780484839ec3b53121
 y
@@ -225,13 +217,13 @@ e
 5src/Services/EF.Pedidos.Application/DTOs/PedidoDto.cs,3\d\3d8ceaa1f3d9653be7e8f918567dd4965f81ebce
 l
 <src/Presentation/EF.Api/Controllers/Pedidos/pedidos-api.http,a\5\a5aed1125e42480345f8824634d93f636e11c1f7
-c
-3src/Services/EF.Pedidos.Application/DTOs/ItemDto.cs,0\7\0792ac8125c396243c91dd78f8e1043e579b0bc3
 i
 9src/Services/EF.Pedidos.Application/DTOs/ItemPedidoDto.cs,3\6\360558949d54adfb6d3fd5ca01d022c47adfe5e5
 l
 <src/Services/EF.Carrinho.Application/DTOs/ItemCarrinhoDto.cs,6\2\62f3eed589f202db2958cf6e2cbe9cc84dac68e5
-x
-Hsrc/Services/EF.Pedidos.Infra/Migrations/PedidoDbContextModelSnapshot.cs,2\e\2e4bf67446ba86c677667bf7aba227e546ba3216
 w
 Gsrc/Services/EF.Carrinho.Application/DTOs/CarrinhoFechadoRespostaDto.cs,5\1\51bb96eadb7c54d380a9c7bf97e9530a2091198f
+m
+=src/Presentation/EF.Api/Controllers/Cupons/CupomController.cs,e\f\ef78948fe0c0010953f70f3e1b4bafdcc990784e
+_
+/src/Presentation/EF.Api/Config/SwaggerConfig.cs,2\9\29cc34975f23ee429339da181b1108232e6d466d

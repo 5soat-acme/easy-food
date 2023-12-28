@@ -1,0 +1,33 @@
+{
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI5YTgxYjhmYi0wYjkxLTRkOGUtYjYxZS0xMTRkM2RlZTc2MjciLCJlbWFpbCI6IjVzb2F0YWNtZUBnbWFpbC5jb20iLCJqdGkiOiI4ZTFkZGE3Mi1mNmQyLTQxZWUtYWZjOC0wMDY3MWE0OGY2YzUiLCJuYmYiOjE3MDM3NjA0MzQsImlhdCI6MTcwMzc2MDQzNCwiY2FycmluaG9faWQiOiJjODhkMzlkZi1iMDY4LTQ5NjAtYjhlYy00MTM0ZGFiMTc2NWMiLCJleHAiOjE3MDM3Njc2MzQsImlzcyI6IkVhc3lGb29kIiwiYXVkIjoibG9jYWxob3N0OjUwMDIifQ.t_RhiitS2PJRb7uTdfVB1CPFlEKUYzqahxCTS0lzjao",
+  "expiresIn": 7200,
+  "user": {
+    "id": "9a81b8fb-0b91-4d8e-b61e-114d3dee7627",
+    "claims": [
+      {
+        "value": "9a81b8fb-0b91-4d8e-b61e-114d3dee7627",
+        "type": "sub"
+      },
+      {
+        "value": "5soatacme@gmail.com",
+        "type": "email"
+      },
+      {
+        "value": "8e1dda72-f6d2-41ee-afc8-00671a48f6c5",
+        "type": "jti"
+      },
+      {
+        "value": "1703760434",
+        "type": "nbf"
+      },
+      {
+        "value": "1703760434",
+        "type": "iat"
+      },
+      {
+        "value": "c88d39df-b068-4960-b8ec-4134dab1765c",
+        "type": "carrinho_id"
+      }
+    ]
+  }
+}

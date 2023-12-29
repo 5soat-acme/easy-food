@@ -1,5 +1,4 @@
 using EF.Domain.Commons.Communication;
-using EF.Identidade.Application.DTOs;
 using EF.Identidade.Application.DTOs.Requests;
 using EF.Identidade.Application.DTOs.Responses;
 

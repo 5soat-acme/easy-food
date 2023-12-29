@@ -11,20 +11,19 @@ public class Pedido : Entity, IAggregateRoot
     {
     }
 
-    public Pedido(Guid clienteId, decimal valorTotal, decimal desconto)
+    public Pedido(Guid? clienteId, decimal valorTotal)
     {
         Status = Status.Recebido;
         _itens = new List<Item>();
         ClienteId = clienteId;
         ValorTotal = ValidarValorTotal(valorTotal) ? ValorTotal : throw new DomainException("O valor total inválido");
-        Desconto = desconto;
     }
 
     public Guid CorrelacaoId { get; private set; }
     public Status Status { get; private set; }
     public Guid? ClienteId { get; private set; }
     public decimal ValorTotal { get; private set; }
-    public decimal Desconto { get; private set; }
+
     public IReadOnlyCollection<Item> Itens => _itens;
 
     public void AdicionarItem(Item item)

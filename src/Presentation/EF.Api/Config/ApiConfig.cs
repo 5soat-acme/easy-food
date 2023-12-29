@@ -1,7 +1,5 @@
-using System.Reflection;
 using System.Text.Json.Serialization;
 using EF.Api.Extensions;
-using Microsoft.OpenApi.Models;
 
 namespace EF.Api.Config;
 
@@ -21,10 +19,7 @@ public static class ApiConfig
 
     public static WebApplication UseApiConfig(this WebApplication app)
     {
-        if (app.Environment.IsDevelopment())
-        {
-            app.UseSwaggerConfig();
-        }
+        if (app.Environment.IsDevelopment()) app.UseSwaggerConfig();
 
         app.UseHttpsRedirection();
 

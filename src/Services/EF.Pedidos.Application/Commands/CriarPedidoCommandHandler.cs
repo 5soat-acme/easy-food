@@ -18,10 +18,11 @@ public class CriarPedidoCommandHandler : CommandHandler,
 
     public async Task<CommandResult> Handle(CriarPedidoCommand command, CancellationToken cancellationToken)
     {
-        var pedido = new Pedido(command.ClienteId, command.ValorTotal, command.Desconto);
+        var pedido = new Pedido(command.ClienteId, command.ValorTotal);
 
         foreach (var item in command.Itens)
-            pedido.AdicionarItem(new Item(item.ProdutoId, item.NomeProduto, item.ValorUnitario, item.Quantidade));
+            pedido.AdicionarItem(new Item(item.ProdutoId, item.NomeProduto, item.ValorUnitario, item.Quantidade,
+                item.Desconto));
 
         pedido.AssociarCorrelacao(command.CorrelacaoId);
 

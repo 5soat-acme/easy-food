@@ -1,5 +1,4 @@
 using AutoMapper;
-using EF.Pedidos.Application.DTOs;
 using EF.Pedidos.Application.DTOs.Responses;
 using EF.Pedidos.Domain.Models;
 

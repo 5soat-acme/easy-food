@@ -1,9 +1,7 @@
 using EF.Domain.Commons.Mediator;
-using EF.Pedidos.Application.DTOs;
 using EF.Pedidos.Application.DTOs.Responses;
 using EF.Pedidos.Application.Queries.Interfaces;
 using EF.WebApi.Commons.Controllers;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace EF.Api.Controllers.Pedidos;
@@ -30,15 +28,11 @@ public class PedidoController(IMediatorHandler mediator, IPedidoQuery pedidoQuer
         }
 
         PedidoDto? pedido;
-        
+
         if (correlacaoId != Guid.Empty)
-        {
             pedido = await pedidoQuery.ObterPedidoPorCorrelacaoId(correlacaoId);
-        }
         else
-        {
             pedido = await pedidoQuery.ObterPedidoPorId(pedidoId);
-        }
 
         return pedido is not null ? Respond(pedido) : NotFound();
     }

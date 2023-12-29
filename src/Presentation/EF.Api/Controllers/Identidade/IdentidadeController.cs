@@ -1,4 +1,3 @@
-using EF.Identidade.Application.DTOs;
 using EF.Identidade.Application.DTOs.Requests;
 using EF.Identidade.Application.DTOs.Responses;
 using EF.Identidade.Application.Services.Interfaces;

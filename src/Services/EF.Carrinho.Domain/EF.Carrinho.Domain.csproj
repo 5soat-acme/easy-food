@@ -10,4 +10,8 @@
         <ProjectReference Include="..\..\Shared\EF.Domain.Commons\EF.Domain.Commons.csproj"/>
     </ItemGroup>
 
+    <ItemGroup>
+        <Compile Remove="Models\Cupom.cs"/>
+    </ItemGroup>
+
 </Project>

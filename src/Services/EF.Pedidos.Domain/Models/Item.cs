@@ -9,7 +9,7 @@ public class Item : Entity
     {
     }
 
-    public Item(Guid produtoId, string nomeProduto, decimal valorUnitario, int quantidade)
+    public Item(Guid produtoId, string nomeProduto, decimal valorUnitario, int quantidade, decimal? desconto)
     {
         if (!ValidarProduto(produtoId)) throw new DomainException("Produto inválido");
         if (!ValidarValorUnitario(valorUnitario)) throw new DomainException("Valor unitário inválido");
@@ -19,10 +19,12 @@ public class Item : Entity
         NomeProduto = nomeProduto;
         ValorUnitario = valorUnitario;
         Quantidade = quantidade;
+        Desconto = desconto;
     }
 
     public Guid PedidoId { get; set; }
     public decimal ValorUnitario { get; private set; }
+    public decimal? Desconto { get; private set; }
     public int Quantidade { get; private set; }
     public Guid ProdutoId { get; private set; }
     public string NomeProduto { get; private set; }

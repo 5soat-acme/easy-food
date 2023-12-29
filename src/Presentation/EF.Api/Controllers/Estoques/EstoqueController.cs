@@ -4,7 +4,7 @@ using EF.Estoques.Application.Queries;
 using EF.WebApi.Commons.Controllers;
 using Microsoft.AspNetCore.Mvc;
 
-namespace EF.Api.Estoques.Controllers;
+namespace EF.Api.Controllers.Estoques;
 
 [Route("api/estoques")]
 public class EstoqueController : CustomControllerBase

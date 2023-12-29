@@ -18,13 +18,13 @@ public static class SwaggerConfig
                 Url = "https://localhost:5002",
                 Description = "Localhost"
             });
-            
+
             c.AddServer(new OpenApiServer
             {
                 Url = "http://localhost:5003",
                 Description = "Localhost"
             });
-            
+
             c.SwaggerDoc("v1", new OpenApiInfo { Title = "Easy Food", Version = "v1" });
 
             c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
@@ -51,15 +51,15 @@ public static class SwaggerConfig
                 }
             });
         });
-        
+
         return services;
     }
-    
+
     public static WebApplication UseSwaggerConfig(this WebApplication app)
     {
         app.UseSwagger();
         app.UseSwaggerUI();
-        
+
         return app;
     }
 }

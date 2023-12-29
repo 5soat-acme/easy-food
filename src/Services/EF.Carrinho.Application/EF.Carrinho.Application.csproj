@@ -9,10 +9,16 @@
     <ItemGroup>
         <ProjectReference Include="..\..\Shared\EF.WebApi.Commons\EF.WebApi.Commons.csproj"/>
         <ProjectReference Include="..\EF.Carrinho.Domain\EF.Carrinho.Domain.csproj"/>
+        <ProjectReference Include="..\EF.Cupons.Application\EF.Cupons.Application.csproj"/>
+        <ProjectReference Include="..\EF.Estoques.Application\EF.Estoques.Application.csproj"/>
     </ItemGroup>
 
     <ItemGroup>
         <PackageReference Include="AutoMapper" Version="12.0.1"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <Compile Remove="DTOs\Integrations\ProdutoCupomDto.cs"/>
     </ItemGroup>
 
 </Project>

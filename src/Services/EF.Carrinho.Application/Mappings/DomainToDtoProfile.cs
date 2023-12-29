@@ -1,5 +1,4 @@
 using AutoMapper;
-using EF.Carrinho.Application.DTOs;
 using EF.Carrinho.Application.DTOs.Responses;
 using EF.Carrinho.Domain.Models;
 
@@ -11,7 +10,5 @@ public class DomainToDtoProfile : Profile
     {
         CreateMap<CarrinhoCliente, CarrinhoClienteDto>();
         CreateMap<Item, ItemCarrinhoDto>();
-        CreateMap<CarrinhoCliente, ResumoCarrinhoDto>();
-        CreateMap<Item, ResumoItemDto>();
     }
 }

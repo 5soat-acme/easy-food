@@ -1,5 +1,5 @@
 using EF.Domain.Commons.Mediator;
-using EF.Domain.Commons.Messages.Integrations.CarrinhoIntegracao;
+using EF.Domain.Commons.Messages.Integrations;
 using EF.Pedidos.Application.Commands;
 using MediatR;
 
@@ -16,14 +16,16 @@ public class IntegraPedidoService(IMediatorHandler mediator) : INotificationHand
                 ClienteId = notification.ClienteId,
                 CorrelacaoId = notification.AggregateId,
                 ValorTotal = notification.ValorTotal,
-                Desconto = notification.Desconto,
                 ValorFinal = notification.ValorFinal,
-                Itens = notification.Itens.Select(x => new CriarPedidoCommand.ItemPedido
+                Itens = notification.Itens.Select(i => new CriarPedidoCommand.ItemPedido
                 {
-                    ProdutoId = x.ProdutoId,
-                    NomeProduto = x.NomeProduto,
-                    Quantidade = x.Quantidade,
-                    ValorUnitario = x.ValorUnitario
+                    ProdutoId = i.ProdutoId,
+                    NomeProduto = i.NomeProduto,
+                    ValorUnitario = i.ValorUnitario,
+                    Desconto = i.Desconto,
+                    ValorFinal = i.ValorFinal,
+                    Quantidade = i.Quantidade,
+                    TempoPreparoEstimado = i.TempoPreparoEstimado
                 }).ToList()
             });
         }

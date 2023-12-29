@@ -1,23 +1,23 @@
 using EF.Domain.Commons.Mediator;
 using EF.Domain.Commons.Messages.Integrations;
-using EF.Pedidos.Application.Commands;
+using EF.Pedidos.Application.Commands.Recebimento;
 using MediatR;
 
 namespace EF.Pedidos.Application.Services;
 
-public class IntegraPedidoService(IMediatorHandler mediator) : INotificationHandler<CarrinhoFechadoEvent>
+public class IntegrarPedidoService(IMediatorHandler mediator) : INotificationHandler<PedidoRecebidoEvent>
 {
-    public async Task Handle(CarrinhoFechadoEvent notification, CancellationToken cancellationToken)
+    public async Task Handle(PedidoRecebidoEvent notification, CancellationToken cancellationToken)
     {
         try
         {
-            await mediator.Send(new CriarPedidoCommand
+            await mediator.Send(new ReceberPedidoCommand
             {
                 ClienteId = notification.ClienteId,
                 CorrelacaoId = notification.AggregateId,
                 ValorTotal = notification.ValorTotal,
                 ValorFinal = notification.ValorFinal,
-                Itens = notification.Itens.Select(i => new CriarPedidoCommand.ItemPedido
+                Itens = notification.Itens.Select(i => new ReceberPedidoCommand.ItemPedido
                 {
                     ProdutoId = i.ProdutoId,
                     NomeProduto = i.NomeProduto,

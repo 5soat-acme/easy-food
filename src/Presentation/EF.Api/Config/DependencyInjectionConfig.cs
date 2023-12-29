@@ -36,7 +36,7 @@ using EF.Pagamentos.Application.Queries.Interfaces;
 using EF.Pagamentos.Domain.Repository;
 using EF.Pagamentos.Infra;
 using EF.Pagamentos.Infra.Data.Repository;
-using EF.Pedidos.Application.Commands;
+using EF.Pedidos.Application.Commands.Recebimento;
 using EF.Pedidos.Application.Queries;
 using EF.Pedidos.Application.Queries.Interfaces;
 using EF.Pedidos.Application.Services;
@@ -71,7 +71,7 @@ public static class DependencyInjectionConfig
     {
         // Application - Commands
         services
-            .AddScoped<IRequestHandler<CriarPedidoCommand, CommandResult>, CriarPedidoCommandHandler>();
+            .AddScoped<IRequestHandler<ReceberPedidoCommand, CommandResult>, ReceberPedidoCommandHandler>();
 
         // Application - Queries
         services.AddScoped<IPedidoQuery, PedidoQuery>();
@@ -109,7 +109,7 @@ public static class DependencyInjectionConfig
         services.AddScoped<ICarrinhoConsultaService, CarrinhoConsultaService>();
         services.AddScoped<ICarrinhoManipulacaoService, CarrinhoManipulacaoService>();
         services.AddScoped<ICarrinhoCheckoutService, CarrinhoCheckoutService>();
-        services.AddScoped<INotificationHandler<CarrinhoFechadoEvent>, IntegraPedidoService>();
+        services.AddScoped<INotificationHandler<PedidoRecebidoEvent>, IntegrarPedidoService>();
 
         // Application - Ports
         services.AddScoped<IProdutoService, ProdutoService>();

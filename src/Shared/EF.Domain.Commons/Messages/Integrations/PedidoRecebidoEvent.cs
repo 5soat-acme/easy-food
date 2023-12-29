@@ -1,16 +1,13 @@
-using EF.Domain.Commons.Messages;
+namespace EF.Domain.Commons.Messages.Integrations;
 
-namespace EF.Pedidos.Application.Commands;
-
-public class CriarPedidoCommand : Command
+public class PedidoRecebidoEvent : IntegrationEvent
 {
-    public Guid CorrelacaoId { get; set; }
-    public Guid? ClienteId { get; set; }
+    public Guid ClienteId { get; set; }
     public decimal ValorTotal { get; set; }
     public decimal ValorFinal { get; set; }
-    public List<ItemPedido> Itens { get; set; }
+    public List<ItemCarrinhoFechado> Itens { get; set; }
 
-    public class ItemPedido
+    public class ItemCarrinhoFechado
     {
         public decimal ValorUnitario { get; set; }
         public decimal? Desconto { get; set; }

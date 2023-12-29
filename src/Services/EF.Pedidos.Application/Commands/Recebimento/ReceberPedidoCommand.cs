@@ -1,13 +1,18 @@
-namespace EF.Domain.Commons.Messages.Integrations;
+using EF.Domain.Commons.Messages;
+using EF.Domain.Commons.ValueObjects;
 
-public class CarrinhoFechadoEvent : IntegrationEvent
+namespace EF.Pedidos.Application.Commands.Recebimento;
+
+public class ReceberPedidoCommand : Command
 {
-    public Guid ClienteId { get; set; }
+    public Guid CorrelacaoId { get; set; }
+    public Guid? ClienteId { get; set; }
+    public Cpf? Cpf { get; set; }
     public decimal ValorTotal { get; set; }
     public decimal ValorFinal { get; set; }
-    public List<ItemCarrinhoFechado> Itens { get; set; }
+    public List<ItemPedido> Itens { get; set; }
 
-    public class ItemCarrinhoFechado
+    public class ItemPedido
     {
         public decimal ValorUnitario { get; set; }
         public decimal? Desconto { get; set; }

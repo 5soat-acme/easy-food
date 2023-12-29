@@ -71,10 +71,10 @@ public class Item : Entity
 
         Desconto = desconto;
 
-        AtualizarValorFinal();
+        CalcularValorFinal();
     }
 
-    public void AtualizarValorFinal()
+    public void CalcularValorFinal()
     {
         if (Desconto is not null)
             ValorFinal = ValorUnitario - ValorUnitario * Desconto.Value;

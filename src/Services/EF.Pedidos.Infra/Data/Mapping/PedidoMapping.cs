@@ -15,6 +15,9 @@ public class PedidoMapping : IEntityTypeConfiguration<Pedido>
         builder.HasIndex(c => c.CorrelacaoId)
             .HasName("IDX_CorrelacaoId");
 
+        builder.Property(c => c.Codigo)
+            .HasDefaultValueSql("NEXT VALUE FOR PedidoSequence");
+
         builder.HasMany(c => c.Itens)
             .WithOne(c => c.Pedido)
             .HasForeignKey(c => c.PedidoId);

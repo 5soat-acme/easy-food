@@ -4,9 +4,6 @@ namespace EF.Domain.Commons.DomainObjects;
 
 public abstract class Entity
 {
-    // public DateTime CreatedAt { get; set; }
-    // public DateTime? UpdatedAt { get; set; }
-
     private List<Event> _notifications;
 
     protected Entity()

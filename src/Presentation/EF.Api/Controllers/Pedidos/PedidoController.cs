@@ -1,4 +1,5 @@
 using EF.Domain.Commons.Mediator;
+using EF.Pedidos.Application.Commands.Preparo;
 using EF.Pedidos.Application.DTOs.Responses;
 using EF.Pedidos.Application.Queries.Interfaces;
 using EF.WebApi.Commons.Controllers;
@@ -35,5 +36,25 @@ public class PedidoController(IMediatorHandler mediator, IPedidoQuery pedidoQuer
             pedido = await pedidoQuery.ObterPedidoPorId(pedidoId);
 
         return pedido is not null ? Respond(pedido) : NotFound();
+    }
+
+    /// <summary>
+    ///     Altera o status do pedido para "Em Preparação".
+    /// </summary>
+    /// <response code="204">Indica que o status foi alterado com sucesso.</response>
+    /// <response code="400">A solicitação está malformada e não pode ser processada.</response>
+    /// <response code="401">Não autorizado.</response>
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [HttpPut("{pedidoId}/iniciar-preparo")]
+    public async Task<IActionResult> IniciarPreparo([FromRoute] Guid pedidoId)
+    {
+        var result = await mediator.Send(new IniciarPreparoCommand
+        {
+            PedidoId = pedidoId
+        });
+
+        if (!result.IsValid()) Respond(result.ValidationResult);
+
+        return Respond();
     }
 }

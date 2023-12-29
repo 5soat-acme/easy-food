@@ -105,7 +105,7 @@ public class CarrinhoClienteTest
         }
 
         // Act
-        carrinhoCliente.AtualizarValorTotal();
+        carrinhoCliente.CalcularValorTotal();
 
         // Assert
         carrinhoCliente.ValorTotal.Should().Be(valorTotal, "valor total deve ser calculado corretamente");

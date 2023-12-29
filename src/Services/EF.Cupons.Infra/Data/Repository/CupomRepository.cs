@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace EF.Cupons.Infra.Data.Repository;
 
-public class CupomRepository : ICupomRepository
+public sealed class CupomRepository : ICupomRepository
 {
     private readonly CupomDbContext _dbContext;
 

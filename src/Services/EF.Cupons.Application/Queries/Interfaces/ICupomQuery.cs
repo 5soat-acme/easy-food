@@ -1,6 +1,6 @@
-﻿using EF.Cupons.Application.DTOs;
+﻿using EF.Cupons.Application.DTOs.Responses;
 
-namespace EF.Cupons.Application.Queries;
+namespace EF.Cupons.Application.Queries.Interfaces;
 
 public interface ICupomQuery
 {

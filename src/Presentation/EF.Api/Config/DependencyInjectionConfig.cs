@@ -8,7 +8,9 @@ using EF.Clientes.Domain.Repository;
 using EF.Clientes.Infra.Data;
 using EF.Clientes.Infra.Data.Repository;
 using EF.Cupons.Application.Commands;
+using EF.Cupons.Application.Mappings;
 using EF.Cupons.Application.Queries;
+using EF.Cupons.Application.Queries.Interfaces;
 using EF.Cupons.Domain.Repository;
 using EF.Cupons.Infra;
 using EF.Cupons.Infra.Data.Repository;
@@ -16,12 +18,21 @@ using EF.Domain.Commons.Mediator;
 using EF.Domain.Commons.Messages;
 using EF.Domain.Commons.Messages.Integrations.CarrinhoIntegracao;
 using EF.Estoques.Application.Commands;
+using EF.Estoques.Application.Mappings;
 using EF.Estoques.Application.Queries;
+using EF.Estoques.Application.Queries.Interfaces;
 using EF.Estoques.Domain.Repository;
 using EF.Estoques.Infra;
 using EF.Estoques.Infra.Data.Repository;
 using EF.Identidade.Application.Services;
 using EF.Identidade.Application.Services.Interfaces;
+using EF.Pagamentos.Application.Commands;
+using EF.Pagamentos.Application.Mappings;
+using EF.Pagamentos.Application.Queries;
+using EF.Pagamentos.Application.Queries.Interfaces;
+using EF.Pagamentos.Domain.Repository;
+using EF.Pagamentos.Infra;
+using EF.Pagamentos.Infra.Data.Repository;
 using EF.Pedidos.Application.Commands;
 using EF.Pedidos.Application.Mappings;
 using EF.Pedidos.Application.Services;
@@ -46,6 +57,7 @@ public static class DependencyInjectionConfig
         RegisterServicesCarrinho(services, configuration);
         RegisterServicesEstoques(services, configuration);
         RegisterServicesCupons(services, configuration);
+        RegisterServicesPagamentos(services, configuration);
 
         return services;
     }
@@ -104,6 +116,9 @@ public static class DependencyInjectionConfig
         services
             .AddScoped<IRequestHandler<AtualizarEstoqueCommand, CommandResult>, AtualizarEstoqueCommandHandler>();
 
+        // Application - Mapping
+        services.AddAutoMapper(typeof(EstoqueDomainToDtoProfile));
+
         // Application - Queries
         services.AddScoped<IEstoqueQuery, EstoqueQuery>();
 
@@ -127,12 +142,34 @@ public static class DependencyInjectionConfig
         services
             .AddScoped<IRequestHandler<InserirProdutosCommand, CommandResult>, InserirProdutosCommandHandler>();
 
+        // Application - Mapping
+        services.AddAutoMapper(typeof(CupomDomainToDtoProfile));
+
         // Application - Queries
         services.AddScoped<ICupomQuery, CupomQuery>();
 
         // Infra - Data 
         services.AddScoped<ICupomRepository, CupomRepository>();
         services.AddDbContext<CupomDbContext>(options =>
+            options.UseNpgsql(configuration.GetConnectionString("DefaultConnection")));
+    }
+
+    private static void RegisterServicesPagamentos(IServiceCollection services, IConfiguration configuration)
+    {
+        // Application - Commands
+        services
+            .AddScoped<IRequestHandler<CriarPagamentoCommand, CommandResult>, CriarPagamentoCommandHandler>();
+
+        // Application - Mapping
+        services.AddAutoMapper(typeof(PagamentoDomainToDtoProfile));
+
+        // Application - Queries
+        services.AddScoped<IFormaPagamentoQuery, FormaPagamentoQuery>();
+
+        // Infra - Data 
+        services.AddScoped<IFormaPagamentoRepository, FormaPagamentoRepository>();
+        services.AddScoped<IPagamentoRepository, PagamentoRepository>();
+        services.AddDbContext<PagamentoDbContext>(options =>
             options.UseNpgsql(configuration.GetConnectionString("DefaultConnection")));
     }
 }

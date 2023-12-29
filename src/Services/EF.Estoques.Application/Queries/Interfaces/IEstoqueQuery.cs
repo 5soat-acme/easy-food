@@ -1,6 +1,6 @@
-﻿using EF.Estoques.Application.DTOs;
+﻿using EF.Estoques.Application.DTOs.Responses;
 
-namespace EF.Estoques.Application.Queries;
+namespace EF.Estoques.Application.Queries.Interfaces;
 
 public interface IEstoqueQuery
 {

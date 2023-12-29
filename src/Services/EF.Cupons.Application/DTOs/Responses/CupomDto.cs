@@ -1,4 +1,4 @@
-﻿namespace EF.Cupons.Application.DTOs;
+﻿namespace EF.Cupons.Application.DTOs.Responses;
 
 public record CupomDto
 {

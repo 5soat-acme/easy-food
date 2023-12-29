@@ -32,13 +32,13 @@ public class CarrinhoCheckoutService : BaseCarrinhoService, ICarrinhoCheckoutSer
         _carrinhoRepository.Remover(carrinho);
 
         // TODO: Confirmar com o time se adiamos essa decisão de trabalhar com eventos de domínio
-        carrinho.AddEvent(new PedidoRecebidoEvent
+        carrinho.AddEvent(new CheckoutIniciadoEvent
         {
             AggregateId = carrinho.Id,
             ValorTotal = carrinho.ValorTotal,
             ClienteId = carrinho.ClienteId ?? Guid.Empty,
             ValorFinal = carrinho.ValorFinal,
-            Itens = carrinho.Itens.Select(i => new PedidoRecebidoEvent.ItemCarrinhoFechado
+            Itens = carrinho.Itens.Select(i => new CheckoutIniciadoEvent.ItemCarrinhoFechado
             {
                 ProdutoId = i.ProdutoId,
                 NomeProduto = i.NomeProduto,

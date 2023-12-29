@@ -22,6 +22,9 @@ namespace EF.Pedidos.Infra.Data.Migrations
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
+            modelBuilder.HasSequence<int>("PedidoSequence")
+                .StartsAt(1000L);
+
             modelBuilder.Entity("EF.Pedidos.Domain.Models.Item", b =>
                 {
                     b.Property<Guid>("Id")
@@ -44,6 +47,9 @@ namespace EF.Pedidos.Infra.Data.Migrations
                     b.Property<int>("Quantidade")
                         .HasColumnType("integer");
 
+                    b.Property<decimal>("ValorFinal")
+                        .HasColumnType("numeric");
+
                     b.Property<decimal>("ValorUnitario")
                         .HasColumnType("numeric");
 
@@ -63,8 +69,20 @@ namespace EF.Pedidos.Infra.Data.Migrations
                     b.Property<Guid?>("ClienteId")
                         .HasColumnType("uuid");
 
+                    b.Property<string>("Codigo")
+                        .IsRequired()
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("text")
+                        .HasDefaultValueSql("nextval(\"PedidoSequence\")");
+
                     b.Property<Guid>("CorrelacaoId")
                         .HasColumnType("uuid");
+
+                    b.Property<DateTime>("DataCriacao")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<DateTime?>("DataUltimaAtualizacao")
+                        .HasColumnType("timestamp with time zone");
 
                     b.Property<int>("Status")
                         .HasColumnType("integer");
@@ -88,6 +106,30 @@ namespace EF.Pedidos.Infra.Data.Migrations
                         .IsRequired();
 
                     b.Navigation("Pedido");
+                });
+
+            modelBuilder.Entity("EF.Pedidos.Domain.Models.Pedido", b =>
+                {
+                    b.OwnsOne("EF.Domain.Commons.ValueObjects.Cpf", "Cpf", b1 =>
+                        {
+                            b1.Property<Guid>("PedidoId")
+                                .HasColumnType("uuid");
+
+                            b1.Property<string>("Numero")
+                                .IsRequired()
+                                .HasMaxLength(11)
+                                .HasColumnType("varchar(11)")
+                                .HasColumnName("Cpf");
+
+                            b1.HasKey("PedidoId");
+
+                            b1.ToTable("Pedidos");
+
+                            b1.WithOwner()
+                                .HasForeignKey("PedidoId");
+                        });
+
+                    b.Navigation("Cpf");
                 });
 
             modelBuilder.Entity("EF.Pedidos.Domain.Models.Pedido", b =>

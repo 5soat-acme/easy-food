@@ -109,7 +109,7 @@ public static class DependencyInjectionConfig
         services.AddScoped<ICarrinhoConsultaService, CarrinhoConsultaService>();
         services.AddScoped<ICarrinhoManipulacaoService, CarrinhoManipulacaoService>();
         services.AddScoped<ICarrinhoCheckoutService, CarrinhoCheckoutService>();
-        services.AddScoped<INotificationHandler<PedidoRecebidoEvent>, IntegrarPedidoService>();
+        services.AddScoped<INotificationHandler<CheckoutIniciadoEvent>, IntegrarPedidoService>();
 
         // Application - Ports
         services.AddScoped<IProdutoService, ProdutoService>();

@@ -21,7 +21,6 @@ public class Pedido : Entity, IAggregateRoot
     }
 
     public Guid CorrelacaoId { get; private set; }
-    public string Codigo { get; private set; }
     public Guid? ClienteId { get; private set; }
     public Cpf? Cpf { get; private set; }
     public Status Status { get; private set; }
@@ -34,13 +33,6 @@ public class Pedido : Entity, IAggregateRoot
     public void AdicionarItem(Item item)
     {
         _itens.Add(item);
-    }
-
-    public bool ValidarValorTotal(decimal valorTotal)
-    {
-        if (valorTotal <= 0) return false;
-
-        return true;
     }
 
     public void AssociarCorrelacao(Guid correlacaoId)

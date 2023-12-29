@@ -25,4 +25,8 @@
         <Folder Include="Data\Migrations\"/>
     </ItemGroup>
 
+    <ItemGroup>
+      <Compile Remove="Data\Migrations\PedidoDbContextModelSnapshot.cs" />
+    </ItemGroup>
+
 </Project>

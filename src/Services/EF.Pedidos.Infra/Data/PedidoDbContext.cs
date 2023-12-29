@@ -40,8 +40,6 @@ public sealed class PedidoDbContext : DbContext, IUnitOfWork
         modelBuilder.Ignore<Event>();
         modelBuilder.Ignore<ValidationResult>();
 
-        modelBuilder.HasSequence<int>("PedidoSequence").StartsAt(1000).IncrementsBy(1);
-
         base.OnModelCreating(modelBuilder);
     }
 

@@ -5,9 +5,9 @@ using MediatR;
 
 namespace EF.Pedidos.Application.Services;
 
-public class IntegrarPedidoService(IMediatorHandler mediator) : INotificationHandler<PedidoRecebidoEvent>
+public class IntegrarPedidoService(IMediatorHandler mediator) : INotificationHandler<CheckoutIniciadoEvent>
 {
-    public async Task Handle(PedidoRecebidoEvent notification, CancellationToken cancellationToken)
+    public async Task Handle(CheckoutIniciadoEvent notification, CancellationToken cancellationToken)
     {
         try
         {

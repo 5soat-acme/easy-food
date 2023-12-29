@@ -1,3 +1,4 @@
+using EF.Domain.Commons.ValueObjects;
 using EF.Pedidos.Domain.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
@@ -14,9 +15,15 @@ public class PedidoMapping : IEntityTypeConfiguration<Pedido>
 
         builder.HasIndex(c => c.CorrelacaoId)
             .HasName("IDX_CorrelacaoId");
-
-        builder.Property(c => c.Codigo)
-            .HasDefaultValueSql("NEXT VALUE FOR PedidoSequence");
+        
+        builder.OwnsOne(c => c.Cpf, tf =>
+        {
+            tf.Property(c => c.Numero)
+                .IsRequired()
+                .HasMaxLength(Cpf.CpfMaxLength)
+                .HasColumnName("Cpf")
+                .HasColumnType($"varchar({Cpf.CpfMaxLength})");
+        });
 
         builder.HasMany(c => c.Itens)
             .WithOne(c => c.Pedido)

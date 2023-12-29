@@ -45,11 +45,15 @@
     <setting file="file://$USER_HOME$/.nuget/packages/microsoft.net.test.sdk/17.6.0/build/netcoreapp3.1/Microsoft.NET.Test.Sdk.Program.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/aspnetcore/3f1acb59718cadf111a0a796681e3d3509bb3381/src/Mvc/Mvc.Core/src/Infrastructure/ActionMethodExecutor.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5abecb93434c4299acd01d522fdf8da2c9a910/10/7d89f307/List`1.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/3182ebe051d9b4bed148730ecd591e6f2d28d705821e6fbb3c16b51b51f15c7/Profile.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/3520bf5c151bbc5aed94ba6abea697eaaee2b96fe96341613fef02be1cc54/ValidationFailure.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/81ba5eacb2b39f2c24777638daf2a6bc0c319dbb19205eb344ee2419fa57b5/ForeachAwaitPublisher.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/b4cc99d93dd77df4bd96956b50aed7b8e18d994130e2d8a85c9cddb01391ef/NotificationHandlerWrapper.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/c8e8b4221b3e6285b11533e6eac1d3942d51ec9f40f23250156a7f4d51e6d62c/SwaggerGenOptionsExtensions.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/f4bc324a395d24ed12db75b0a81536b642509aa14825bf114d9b7c934e2b/Mediator.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/Services/EF.Carrinho.Application/DTOs/Integrations/ProdutoCupomDto.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/Services/EF.Carrinho.Domain/Models/Cupom.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/Services/EF.Clientes.Infra/Data/Migrations/20231208143534_BaseInicialClientes.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/dev/fiap/easy-food/src/Shared/EF.WebApi.Commons/Users/IUserApp.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/test/EF.Domain.Commons.Test/UnitTest1.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="HttpClientSelectedEnvironments">
@@ -57,8 +61,9 @@
     <file url="jar://$APPLICATION_HOME_DIR$/plugins/restClient/lib/restClient.jar!/com/intellij/ws/rest/client/requests/collection/post-requests.http" environment="test" />
     <file url="jar://$APPLICATION_HOME_DIR$/plugins/restClient/lib/restClient.jar!/com/intellij/ws/rest/client/requests/collection/requests-with-authorization.http" environment="test" />
     <file url="jar://$APPLICATION_HOME_DIR$/plugins/restClient/lib/restClient.jar!/com/intellij/ws/rest/client/requests/collection/requests-with-tests.http" environment="test" />
-    <file url="file://$PROJECT_DIR$/src/Presentation/EF.Api/Controllers/Identidade/identidade-api.http" environment="local" />
-    <file url="file://$PROJECT_DIR$/src/Presentation/EF.Api/Controllers/Carrinho/carrinho-api.http" environment="local" />
+    <file url="file://$PROJECT_DIR$/src/Presentation/EF.Api/Controllers/Identidade/identidade-api.http" environment="dev" />
+    <file url="file://$PROJECT_DIR$/src/Presentation/EF.Api/Controllers/Carrinho/carrinho-api.http" environment="dev" />
+    <file url="file://$PROJECT_DIR$/src/Presentation/EF.Api/Controllers/Pedidos/pedidos-api.http" environment="dev" />
   </component>
   <component name="KubernetesApiProvider">{
   &quot;contexts&quot;: [
@@ -114,16 +119,17 @@
     &quot;HTTP Request.identidade-api | Autenticar usuário.executor&quot;: &quot;Run&quot;,
     &quot;HTTP Request.identidade-api | Cadastrar usuário.executor&quot;: &quot;Run&quot;,
     &quot;HTTP Request.identidade-api | Identidade API:.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.pedidos-api | Obter o pedido por id ou ide de correlação.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;feat-carrinho&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;feat-contexto-pedidos&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;rest.client.default.execution.environment&quot;: &quot;local&quot;,
+    &quot;rest.client.default.execution.environment&quot;: &quot;dev&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;CodeCleanupOptionsPage&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
@@ -142,16 +148,16 @@
     <configuration name="carrinho-api | Adicionar item no carrinho" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/src/Presentation/EF.Api/Controllers/Carrinho/carrinho-api.http" index="3" requestIdentifier="Adicionar item no carrinho" runType="Run single request">
       <method v="2" />
     </configuration>
-    <configuration name="carrinho-api | Obter carrinho do cliente" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/src/Presentation/EF.Api/Controllers/Carrinho/carrinho-api.http" requestIdentifier="Obter carrinho do cliente" runType="Run single request">
+    <configuration name="carrinho-api | Fechar pedido a partir do carrinho do cliente" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/src/Presentation/EF.Api/Controllers/Carrinho/carrinho-api.http" index="3" requestIdentifier="Fechar pedido a partir do carrinho do cliente" runType="Run single request">
       <method v="2" />
     </configuration>
-    <configuration name="carrinho-api | Obter resumo do carrinho do cliente" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/src/Presentation/EF.Api/Controllers/Carrinho/carrinho-api.http" index="2" requestIdentifier="Obter resumo do carrinho do cliente" runType="Run single request">
+    <configuration name="carrinho-api | Obter carrinho do cliente" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/src/Presentation/EF.Api/Controllers/Carrinho/carrinho-api.http" requestIdentifier="Obter carrinho do cliente" runType="Run single request">
       <method v="2" />
     </configuration>
     <configuration name="identidade-api | Autenticar usuário" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/src/Presentation/EF.Api/Controllers/Identidade/identidade-api.http" index="2" requestIdentifier="Autenticar usuário" runType="Run single request">
       <method v="2" />
     </configuration>
-    <configuration name="identidade-api | Cadastrar usuário" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/src/Presentation/EF.Api/Controllers/Identidade/identidade-api.http" requestIdentifier="Cadastrar usuário" runType="Run single request">
+    <configuration name="pedidos-api | Obter o pedido por id ou ide de correlação" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/src/Presentation/EF.Api/Controllers/Pedidos/pedidos-api.http" requestIdentifier="Obter o pedido por id ou ide de correlação" runType="Run single request">
       <method v="2" />
     </configuration>
     <configuration name="EF.Api: http" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
@@ -195,18 +201,18 @@
       <item itemvalue=".NET Launch Settings Profile.EF.Api: http" />
       <item itemvalue=".NET Launch Settings Profile.EF.Api: https" />
       <item itemvalue="HTTP Request.identidade-api | Autenticar usuário" />
-      <item itemvalue="HTTP Request.identidade-api | Cadastrar usuário" />
+      <item itemvalue="HTTP Request.carrinho-api | Fechar pedido a partir do carrinho do cliente" />
+      <item itemvalue="HTTP Request.pedidos-api | Obter o pedido por id ou ide de correlação" />
       <item itemvalue="HTTP Request.carrinho-api | Adicionar item no carrinho" />
       <item itemvalue="HTTP Request.carrinho-api | Obter carrinho do cliente" />
-      <item itemvalue="HTTP Request.carrinho-api | Obter resumo do carrinho do cliente" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="HTTP Request.carrinho-api | Obter resumo do carrinho do cliente" />
         <item itemvalue="HTTP Request.carrinho-api | Adicionar item no carrinho" />
         <item itemvalue="HTTP Request.carrinho-api | Obter carrinho do cliente" />
         <item itemvalue="HTTP Request.identidade-api | Autenticar usuário" />
-        <item itemvalue="HTTP Request.identidade-api | Cadastrar usuário" />
+        <item itemvalue="HTTP Request.pedidos-api | Obter o pedido por id ou ide de correlação" />
+        <item itemvalue="HTTP Request.carrinho-api | Fechar pedido a partir do carrinho do cliente" />
       </list>
     </recent_temporary>
   </component>
@@ -246,7 +252,11 @@
       <workItem from="1703265028199" duration="3875000" />
       <workItem from="1703325193544" duration="4581000" />
       <workItem from="1703418834937" duration="3782000" />
-      <workItem from="1703674464054" duration="10865000" />
+      <workItem from="1703674464054" duration="11928000" />
+      <workItem from="1703716056705" duration="5094000" />
+      <workItem from="1703756574969" duration="14103000" />
+      <workItem from="1703781228260" duration="15576000" />
+      <workItem from="1703849261926" duration="1831000" />
     </task>
     <servers />
   </component>

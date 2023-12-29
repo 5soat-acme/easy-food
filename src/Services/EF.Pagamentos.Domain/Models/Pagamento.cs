@@ -4,7 +4,9 @@ namespace EF.Pagamentos.Domain.Models;
 
 public class Pagamento : Entity, IAggregateRoot
 {
-    private Pagamento() { }
+    private Pagamento()
+    {
+    }
 
     public Pagamento(Guid pedidoId, Guid formaPagamentoId, DateTime dataLancamento, decimal valor)
     {

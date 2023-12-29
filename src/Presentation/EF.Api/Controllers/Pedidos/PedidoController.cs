@@ -1,13 +1,12 @@
 using EF.Domain.Commons.Mediator;
-using EF.Pedidos.Application.DTOs;
+using EF.Pedidos.Application.Commands.Preparo;
+using EF.Pedidos.Application.DTOs.Responses;
 using EF.Pedidos.Application.Queries.Interfaces;
 using EF.WebApi.Commons.Controllers;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace EF.Api.Controllers.Pedidos;
 
-[Authorize]
 [Route("api/pedidos")]
 public class PedidoController(IMediatorHandler mediator, IPedidoQuery pedidoQuery) : CustomControllerBase
 {
@@ -21,7 +20,7 @@ public class PedidoController(IMediatorHandler mediator, IPedidoQuery pedidoQuer
     /// </returns>
     [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(PedidoDto))]
     [HttpGet]
-    public async Task<IActionResult> CriarPedido([FromQuery] Guid pedidoId, [FromQuery] Guid correlacaoId)
+    public async Task<IActionResult> ObterPedido([FromQuery] Guid pedidoId, [FromQuery] Guid correlacaoId)
     {
         if (pedidoId == Guid.Empty && correlacaoId == Guid.Empty)
         {
@@ -29,8 +28,33 @@ public class PedidoController(IMediatorHandler mediator, IPedidoQuery pedidoQuer
             return Respond();
         }
 
-        if (correlacaoId != Guid.Empty) return Respond(await pedidoQuery.ObterPedidoPorCorrelacaoId(correlacaoId));
+        PedidoDto? pedido;
 
-        return Respond(await pedidoQuery.ObterPedidoPorId(pedidoId));
+        if (correlacaoId != Guid.Empty)
+            pedido = await pedidoQuery.ObterPedidoPorCorrelacaoId(correlacaoId);
+        else
+            pedido = await pedidoQuery.ObterPedidoPorId(pedidoId);
+
+        return pedido is not null ? Respond(pedido) : NotFound();
+    }
+
+    /// <summary>
+    ///     Altera o status do pedido para "Em Preparação".
+    /// </summary>
+    /// <response code="204">Indica que o status foi alterado com sucesso.</response>
+    /// <response code="400">A solicitação está malformada e não pode ser processada.</response>
+    /// <response code="401">Não autorizado.</response>
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [HttpPut("{pedidoId}/iniciar-preparo")]
+    public async Task<IActionResult> IniciarPreparo([FromRoute] Guid pedidoId)
+    {
+        var result = await mediator.Send(new IniciarPreparoCommand
+        {
+            PedidoId = pedidoId
+        });
+
+        if (!result.IsValid()) Respond(result.ValidationResult);
+
+        return Respond();
     }
 }

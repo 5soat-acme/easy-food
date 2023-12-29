@@ -21,8 +21,4 @@
         <ProjectReference Include="..\EF.Identidade.Infra\EF.Identidade.Infra.csproj"/>
     </ItemGroup>
 
-    <ItemGroup>
-        <Folder Include="DTOs\"/>
-    </ItemGroup>
-
 </Project>

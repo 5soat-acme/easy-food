@@ -9,22 +9,25 @@ public class Item : Entity
     {
     }
 
-    public Item(Guid produtoId, string nomeProduto, decimal valorUnitario, int quantidade)
+    public Item(Guid produtoId, string nomeProduto, decimal valorUnitario, int tempoPreparoEstimado)
     {
         if (!ValidarProduto(produtoId)) throw new DomainException("Produto inválido");
         if (!ValidarValorUnitario(valorUnitario)) throw new DomainException("Valor unitário inválido");
-        if (!ValidarQuantidade(quantidade)) throw new DomainException("Quantidade inválida");
 
         ProdutoId = produtoId;
         NomeProduto = nomeProduto;
         ValorUnitario = valorUnitario;
-        Quantidade = quantidade;
+        ValorFinal = valorUnitario;
+        TempoPreparoEstimado = tempoPreparoEstimado;
     }
 
     public decimal ValorUnitario { get; private set; }
+    public decimal? Desconto { get; private set; }
+    public decimal ValorFinal { get; private set; }
     public int Quantidade { get; private set; }
     public Guid ProdutoId { get; private set; }
     public string NomeProduto { get; private set; }
+    public int TempoPreparoEstimado { get; private set; }
     public Guid CarrinhoId { get; private set; }
     public CarrinhoCliente Carrinho { get; }
 
@@ -59,5 +62,23 @@ public class Item : Entity
     {
         if (carrinhoId == Guid.Empty) throw new DomainException("Id do carrinho inválido");
         CarrinhoId = carrinhoId;
+    }
+
+    public void AplicarDesconto(decimal desconto)
+    {
+        if (desconto < 0 || desconto > 100)
+            throw new DomainException("Porcentagem de desconto deve estar entre 0 e 100.");
+
+        Desconto = desconto;
+
+        CalcularValorFinal();
+    }
+
+    public void CalcularValorFinal()
+    {
+        if (Desconto is not null)
+            ValorFinal = ValorUnitario - ValorUnitario * Desconto.Value;
+        else
+            ValorFinal = ValorUnitario;
     }
 }

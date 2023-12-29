@@ -1,4 +1,5 @@
 using EF.Domain.Commons.DomainObjects;
+using EF.Domain.Commons.ValueObjects;
 
 namespace EF.Carrinho.Domain.Models;
 
@@ -18,7 +19,9 @@ public class CarrinhoCliente : Entity, IAggregateRoot
     }
 
     public Guid? ClienteId { get; private set; }
+    public Cpf ClienteCpf { get; private set; }
     public decimal ValorTotal { get; private set; }
+    public decimal ValorFinal { get; private set; }
     public IReadOnlyCollection<Item> Itens => _itens;
 
     public void AssociarCliente(Guid clienteId)
@@ -47,7 +50,7 @@ public class CarrinhoCliente : Entity, IAggregateRoot
         }
 
         _itens.Add(item);
-        AtualizarValorTotal();
+        CalcularValorTotal();
     }
 
     public bool ProdutoExiste(Guid produtoId)
@@ -60,22 +63,21 @@ public class CarrinhoCliente : Entity, IAggregateRoot
         return _itens.FirstOrDefault(p => p.ProdutoId == produtoId);
     }
 
+    public Item? ObterItemPorId(Guid id)
+    {
+        return _itens.FirstOrDefault(f => f.Id == id);
+    }
+
     public void RemoverItem(Item item)
     {
         _itens.Remove(item);
-        AtualizarValorTotal();
+        CalcularValorTotal();
     }
 
-    public void LimparCarrinho()
-    {
-        _itens.Clear();
-        AtualizarValorTotal();
-    }
-
-    public decimal AtualizarValorTotal()
+    public void CalcularValorTotal()
     {
         ValorTotal = Itens.Sum(i => i.ValorUnitario * i.Quantidade);
-        return ValorTotal;
+        ValorFinal = Itens.Sum(i => i.ValorFinal * i.Quantidade);
     }
 
     public bool ValidarCliente(Guid clienteId)
@@ -93,6 +95,17 @@ public class CarrinhoCliente : Entity, IAggregateRoot
 
         item.AtualizarQuantidade(quantidade);
 
-        AtualizarValorTotal();
+        CalcularValorTotal();
+    }
+
+    public void AplicarDescontoItem(Guid produtoId, decimal desconto)
+    {
+        var item = _itens.FirstOrDefault(f => f.ProdutoId == produtoId);
+
+        if (item is null) return;
+
+        item.AplicarDesconto(desconto);
+
+        CalcularValorTotal();
     }
 }

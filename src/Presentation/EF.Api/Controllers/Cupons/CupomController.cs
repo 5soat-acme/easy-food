@@ -1,6 +1,6 @@
 ﻿using EF.Cupons.Application.Commands;
-using EF.Cupons.Application.DTOs.Responses;
 using EF.Cupons.Application.DTOs.Requests;
+using EF.Cupons.Application.DTOs.Responses;
 using EF.Cupons.Application.Queries.Interfaces;
 using EF.Domain.Commons.Mediator;
 using EF.Domain.Commons.Messages;
@@ -113,7 +113,8 @@ public class CupomController : CustomControllerBase
     [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(ValidationProblemDetails))]
     [Produces("application/json")]
     [HttpDelete("{cupomId}/remover-produtos")]
-    public async Task<IActionResult> RemoverCupomProduto(Guid cupomId, [FromBody] IList<AdicionarRemoverCupomProdutoDto> produtos,
+    public async Task<IActionResult> RemoverCupomProduto(Guid cupomId,
+        [FromBody] IList<AdicionarRemoverCupomProdutoDto> produtos,
         CancellationToken cancellationToken)
     {
         var command = new RemoverProdutosCommand
@@ -134,7 +135,8 @@ public class CupomController : CustomControllerBase
     [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(ValidationProblemDetails))]
     [Produces("application/json")]
     [HttpPut("{cupomId}/inserir-produtos")]
-    public async Task<IActionResult> InserirCupomProduto(Guid cupomId, [FromBody] IList<AdicionarRemoverCupomProdutoDto> produtos,
+    public async Task<IActionResult> InserirCupomProduto(Guid cupomId,
+        [FromBody] IList<AdicionarRemoverCupomProdutoDto> produtos,
         CancellationToken cancellationToken)
     {
         var command = new InserirProdutosCommand

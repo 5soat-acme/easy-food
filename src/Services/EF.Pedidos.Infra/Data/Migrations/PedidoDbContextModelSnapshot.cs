@@ -28,6 +28,9 @@ namespace EF.Pedidos.Infra.Data.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uuid");
 
+                    b.Property<decimal?>("Desconto")
+                        .HasColumnType("numeric");
+
                     b.Property<string>("NomeProduto")
                         .IsRequired()
                         .HasColumnType("text");
@@ -62,9 +65,6 @@ namespace EF.Pedidos.Infra.Data.Migrations
 
                     b.Property<Guid>("CorrelacaoId")
                         .HasColumnType("uuid");
-
-                    b.Property<decimal>("Desconto")
-                        .HasColumnType("numeric");
 
                     b.Property<int>("Status")
                         .HasColumnType("integer");

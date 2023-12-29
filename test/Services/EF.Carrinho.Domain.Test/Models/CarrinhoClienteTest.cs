@@ -105,10 +105,11 @@ public class CarrinhoClienteTest
         }
 
         // Act
-        var result = carrinhoCliente.AtualizarValorTotal();
+        carrinhoCliente.CalcularValorTotal();
 
         // Assert
-        result.Should().Be(valorTotal, "valor total deve ser calculado corretamente");
-        carrinhoCliente.ValorTotal.Should().Be(result, "propriedade deve ser atualizada corretamente");
+        carrinhoCliente.ValorTotal.Should().Be(valorTotal, "valor total deve ser calculado corretamente");
+        carrinhoCliente.ValorTotal.Should()
+            .Be(carrinhoCliente.ValorTotal, "propriedade deve ser atualizada corretamente");
     }
 }

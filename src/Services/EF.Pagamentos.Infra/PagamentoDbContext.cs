@@ -1,9 +1,8 @@
 ﻿using EF.Domain.Commons.Messages;
 using EF.Domain.Commons.Repository;
-using Microsoft.EntityFrameworkCore.ChangeTracking;
-using Microsoft.EntityFrameworkCore;
 using EF.Pagamentos.Domain.Models;
 using FluentValidation.Results;
+using Microsoft.EntityFrameworkCore;
 
 namespace EF.Pagamentos.Infra;
 

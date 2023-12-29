@@ -35,6 +35,11 @@ public sealed class PedidoRepository : IPedidoRepository
         _context.Pedidos.Add(pedido);
     }
 
+    public void Atualizar(Pedido pedido)
+    {
+        _context.Pedidos.Update(pedido);
+    }
+
     public void Dispose()
     {
         _context.Dispose();

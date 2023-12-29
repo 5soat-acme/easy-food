@@ -22,7 +22,8 @@ public sealed class FormaPagamentoRepository : IFormaPagamentoRepository
             .ToListAsync(cancellationToken);
     }
 
-    public async Task<FormaPagamento?> BuscarPorTipo(TipoFormaPagamento tipoFormaPagamento, CancellationToken cancellationToken)
+    public async Task<FormaPagamento?> BuscarPorTipo(TipoFormaPagamento tipoFormaPagamento,
+        CancellationToken cancellationToken)
     {
         return await _dbContext.FormasPagamento
             .Where(x => x.TipoFormaPagamento == tipoFormaPagamento)

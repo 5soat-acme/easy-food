@@ -1,4 +1,4 @@
-﻿namespace EF.Estoques.Application.DTOs;
+﻿namespace EF.Estoques.Application.DTOs.Responses;
 
 public record EstoqueDto
 {

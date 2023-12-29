@@ -1,7 +1,7 @@
 using AutoMapper;
 using EF.Carrinho.Application.DTOs.Integrations;
-using EF.Cupons.Application.DTOs;
-using EF.Estoques.Application.DTOs;
+using EF.Cupons.Application.DTOs.Responses;
+using EF.Estoques.Application.DTOs.Responses;
 
 namespace EF.Carrinho.Application.Mappings;
 

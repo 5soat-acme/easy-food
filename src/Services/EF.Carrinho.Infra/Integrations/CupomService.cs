@@ -1,7 +1,7 @@
 using AutoMapper;
 using EF.Carrinho.Application.DTOs.Integrations;
 using EF.Carrinho.Application.Ports;
-using EF.Cupons.Application.Queries;
+using EF.Cupons.Application.Queries.Interfaces;
 
 namespace EF.Carrinho.Infra.Integrations;
 

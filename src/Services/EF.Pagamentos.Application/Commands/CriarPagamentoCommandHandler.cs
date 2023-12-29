@@ -8,8 +8,8 @@ namespace EF.Pagamentos.Application.Commands;
 public class CriarPagamentoCommandHandler : CommandHandler,
     IRequestHandler<CriarPagamentoCommand, CommandResult>
 {
-    private readonly IPagamentoRepository _pagamentoRepository;
     private readonly IFormaPagamentoRepository _formaPagamentoRepository;
+    private readonly IPagamentoRepository _pagamentoRepository;
 
     public CriarPagamentoCommandHandler(IPagamentoRepository pagamentoRepository,
         IFormaPagamentoRepository formaPagamentoRepository)
@@ -34,7 +34,8 @@ public class CriarPagamentoCommandHandler : CommandHandler,
         return CommandResult.Create(result, pagamento.Id);
     }
 
-    private async Task<FormaPagamento?> GetFormaPagamento(TipoFormaPagamento tipoFormaPagamento, CancellationToken cancellationToken)
+    private async Task<FormaPagamento?> GetFormaPagamento(TipoFormaPagamento tipoFormaPagamento,
+        CancellationToken cancellationToken)
     {
         return await _formaPagamentoRepository.BuscarPorTipo(tipoFormaPagamento, cancellationToken);
     }

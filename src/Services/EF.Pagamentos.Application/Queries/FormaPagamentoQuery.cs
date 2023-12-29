@@ -9,6 +9,7 @@ public class FormaPagamentoQuery : IFormaPagamentoQuery
 {
     private readonly IFormaPagamentoRepository _formaPagamentoRepository;
     private readonly IMapper _mapper;
+
     public FormaPagamentoQuery(IFormaPagamentoRepository formaPagamentoRepository,
         IMapper mapper)
     {

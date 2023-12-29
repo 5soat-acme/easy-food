@@ -1,6 +1,6 @@
 ﻿using EF.Pagamentos.Domain.Models;
-using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace EF.Pagamentos.Infra.Data.Mapping;
 

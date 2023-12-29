@@ -4,7 +4,9 @@ namespace EF.Pagamentos.Domain.Models;
 
 public class FormaPagamento : Entity, IAggregateRoot
 {
-    private FormaPagamento() { }
+    private FormaPagamento()
+    {
+    }
 
     public FormaPagamento(TipoFormaPagamento tipoFormaPagamento, string descricao)
     {

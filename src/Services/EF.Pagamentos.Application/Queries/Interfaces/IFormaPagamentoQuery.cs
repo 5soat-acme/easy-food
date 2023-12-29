@@ -2,7 +2,7 @@
 
 namespace EF.Pagamentos.Application.Queries.Interfaces;
 
-public  interface IFormaPagamentoQuery
+public interface IFormaPagamentoQuery
 {
     Task<IList<FormaPagamentoDto>> ObterFormasPagamento(CancellationToken cancellationToken);
 }

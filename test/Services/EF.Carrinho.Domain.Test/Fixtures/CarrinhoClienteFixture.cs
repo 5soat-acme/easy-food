@@ -16,7 +16,7 @@ public class CarrinhoClienteFixture : IDisposable
 
     public CarrinhoCliente ObterCarrinhoNovo()
     {
-        return new CarrinhoCliente(Guid.NewGuid());
+        return new CarrinhoCliente();
     }
 
     public Item GerarItemValido()

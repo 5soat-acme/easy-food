@@ -31,9 +31,6 @@ namespace EF.Carrinho.Infra.Data.Migrations
                     b.Property<Guid?>("ClienteId")
                         .HasColumnType("uuid");
 
-                    b.Property<decimal>("ValorFinal")
-                        .HasColumnType("numeric");
-
                     b.Property<decimal>("ValorTotal")
                         .HasColumnType("numeric");
 
@@ -57,7 +54,7 @@ namespace EF.Carrinho.Infra.Data.Migrations
                     b.Property<decimal?>("Desconto")
                         .HasColumnType("numeric");
 
-                    b.Property<string>("NomeProduto")
+                    b.Property<string>("Nome")
                         .IsRequired()
                         .HasColumnType("text");
 
@@ -67,7 +64,7 @@ namespace EF.Carrinho.Infra.Data.Migrations
                     b.Property<int>("Quantidade")
                         .HasColumnType("integer");
 
-                    b.Property<int>("TempoPreparoEstimado")
+                    b.Property<int>("TempoEstimadoPreparo")
                         .HasColumnType("integer");
 
                     b.Property<decimal>("ValorFinal")
@@ -81,31 +78,6 @@ namespace EF.Carrinho.Infra.Data.Migrations
                     b.HasIndex("CarrinhoId");
 
                     b.ToTable("ItensCarrinho", (string)null);
-                });
-
-            modelBuilder.Entity("EF.Carrinho.Domain.Models.CarrinhoCliente", b =>
-                {
-                    b.OwnsOne("EF.Domain.Commons.ValueObjects.Cpf", "ClienteCpf", b1 =>
-                        {
-                            b1.Property<Guid>("CarrinhoClienteId")
-                                .HasColumnType("uuid");
-
-                            b1.Property<string>("Numero")
-                                .IsRequired()
-                                .HasMaxLength(11)
-                                .HasColumnType("varchar(11)")
-                                .HasColumnName("Cpf");
-
-                            b1.HasKey("CarrinhoClienteId");
-
-                            b1.ToTable("Carrinho");
-
-                            b1.WithOwner()
-                                .HasForeignKey("CarrinhoClienteId");
-                        });
-
-                    b.Navigation("ClienteCpf")
-                        .IsRequired();
                 });
 
             modelBuilder.Entity("EF.Carrinho.Domain.Models.Item", b =>

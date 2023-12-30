@@ -11,7 +11,7 @@ public class Item : Entity
         NomeProduto = nomeProduto;
         TempoPreparoEstimado = tempoPreparoEstimado;
     }
-    
+
     public int Quantidade { get; private set; }
     public Guid ProdutoId { get; private set; }
     public string NomeProduto { get; private set; }

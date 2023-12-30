@@ -64,7 +64,7 @@ public class AcessoAppService : IAcessoAppService
         {
             new(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
             new("user_type", "anonymous"),
-            new("carrinho_id", Guid.NewGuid().ToString())
+            new("session_id", Guid.NewGuid().ToString())
         };
 
         if (!string.IsNullOrEmpty(cpf)) claims.Add(new Claim("user_cpf", cpf));
@@ -135,7 +135,8 @@ public class AcessoAppService : IAcessoAppService
         claims.Add(new Claim(JwtRegisteredClaimNames.Iat,
             ToUnixEpochDate(DateTime.UtcNow).ToString(),
             ClaimValueTypes.Integer64));
-        claims.Add(new Claim("carrinho_id", Guid.NewGuid().ToString()));
+        claims.Add(new Claim("session_id", Guid.NewGuid().ToString()));
+        claims.Add(new Claim("user_type", "authenticated"));
 
         foreach (var userRole in userRoles) claims.Add(new Claim("role", userRole));
 

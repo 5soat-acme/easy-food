@@ -1,60 +1,44 @@
 using EF.Domain.Commons.Mediator;
-using EF.Pedidos.Application.Commands.Preparo;
+using EF.Pedidos.Application.Commands.CriarPedido;
 using EF.Pedidos.Application.DTOs.Responses;
 using EF.Pedidos.Application.Queries.Interfaces;
 using EF.WebApi.Commons.Controllers;
+using EF.WebApi.Commons.Users;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace EF.Api.Controllers.Pedidos;
 
+[Authorize]
 [Route("api/pedidos")]
-public class PedidoController(IMediatorHandler mediator, IPedidoQuery pedidoQuery) : CustomControllerBase
+public class PedidoController(IMediatorHandler mediator, IPedidoQuery pedidoQuery, IUserApp userApp)
+    : CustomControllerBase
 {
     /// <summary>
     ///     Obtém um pedido através do Id ou Id de correlação (informado no fechamento do carrinho).
     /// </summary>
     /// <param name="pedidoId">Id do pedido</param>
-    /// <param name="correlacaoId">Id de correlação (iformado no fechamento do carrinho)</param>
     /// <returns>
     ///     <see cref="PedidoDto" />
     /// </returns>
     [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(PedidoDto))]
-    [HttpGet]
-    public async Task<IActionResult> ObterPedido([FromQuery] Guid pedidoId, [FromQuery] Guid correlacaoId)
+    [HttpGet("{pedidoId}")]
+    public async Task<IActionResult> ObterPedido([FromRoute] Guid pedidoId)
     {
-        if (pedidoId == Guid.Empty && correlacaoId == Guid.Empty)
-        {
-            AddError("Informe o pedidoId ou correlacaoId");
-            return Respond();
-        }
-
-        PedidoDto? pedido;
-
-        if (correlacaoId != Guid.Empty)
-            pedido = await pedidoQuery.ObterPedidoPorCorrelacaoId(correlacaoId);
-        else
-            pedido = await pedidoQuery.ObterPedidoPorId(pedidoId);
-
+        var pedido = await pedidoQuery.ObterPedidoPorId(pedidoId);
         return pedido is not null ? Respond(pedido) : NotFound();
     }
 
-    /// <summary>
-    ///     Altera o status do pedido para "Em Preparação".
-    /// </summary>
-    /// <response code="204">Indica que o status foi alterado com sucesso.</response>
-    /// <response code="400">A solicitação está malformada e não pode ser processada.</response>
-    /// <response code="401">Não autorizado.</response>
-    [ProducesResponseType(StatusCodes.Status200OK)]
-    [HttpPut("{pedidoId}/iniciar-preparo")]
-    public async Task<IActionResult> IniciarPreparo([FromRoute] Guid pedidoId)
+    [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(PedidoDto))]
+    [HttpPost]
+    public async Task<IActionResult> Checkout(CriarPedidoCommand command)
     {
-        var result = await mediator.Send(new IniciarPreparoCommand
-        {
-            PedidoId = pedidoId
-        });
+        command.ClienteId = userApp.GetSessionId();
+        
+        var result = await mediator.Send(command);
 
-        if (!result.IsValid()) Respond(result.ValidationResult);
+        if (!result.IsValid()) return Respond(result.ValidationResult);
 
-        return Respond();
+        return Respond(result.AggregateId);
     }
 }

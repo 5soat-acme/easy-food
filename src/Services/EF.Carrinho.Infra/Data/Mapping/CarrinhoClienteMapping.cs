@@ -15,15 +15,6 @@ public class CarrinhoClienteMapping : IEntityTypeConfiguration<CarrinhoCliente>
 
         builder.HasIndex(c => c.ClienteId)
             .HasName("IDX_Cliente");
-        
-        builder.OwnsOne(c => c.ClienteCpf, tf =>
-        {
-            tf.Property(c => c.Numero)
-                .IsRequired()
-                .HasMaxLength(Cpf.CpfMaxLength)
-                .HasColumnName("Cpf")
-                .HasColumnType($"varchar({Cpf.CpfMaxLength})");
-        });
 
         builder.HasMany(c => c.Itens)
             .WithOne(c => c.Carrinho)

@@ -7,9 +7,9 @@ namespace EF.Carrinho.Infra.Integrations;
 
 public class EstoqueService(IEstoqueQuery estoqueQuery, IMapper mapper) : IEstoqueService
 {
-    public async Task<ProdutoEstoqueDto?> ObterEstoquePorProdutoId(Guid produtoId)
+    public async Task<EstoqueProdutoDto?> ObterEstoquePorProdutoId(Guid produtoId)
     {
         var estoque = await estoqueQuery.ObterEstoqueProduto(produtoId, CancellationToken.None);
-        return mapper.Map<ProdutoEstoqueDto>(estoque);
+        return mapper.Map<EstoqueProdutoDto>(estoque);
     }
 }

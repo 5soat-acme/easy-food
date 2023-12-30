@@ -9,12 +9,12 @@ public class ExternalDtoToDtoProfile : Profile
 {
     public ExternalDtoToDtoProfile()
     {
-        CreateMap<EstoqueDto, ProdutoEstoqueDto>();
-        CreateMap<CupomDto, ProdutoDescontoDto?>().ConstructUsing((source, context) =>
+        CreateMap<EstoqueDto, EstoqueProdutoDto>();
+        CreateMap<CupomDto, CupomDescontoDto?>().ConstructUsing((source, context) =>
         {
             if (source is null) return null;
 
-            var destination = new ProdutoDescontoDto
+            var destination = new CupomDescontoDto
             {
                 Desconto = source.PorcentagemDesconto
             };

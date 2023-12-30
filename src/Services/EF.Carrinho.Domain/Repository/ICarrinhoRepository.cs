@@ -5,7 +5,7 @@ namespace EF.Carrinho.Domain.Repository;
 
 public interface ICarrinhoRepository : IRepository<CarrinhoCliente>
 {
-    Task<CarrinhoCliente?> ObterPorCliente(Guid clienteId);
+    Task<CarrinhoCliente?> ObterPorClienteId(Guid clienteId);
     Task<CarrinhoCliente?> ObterPorId(Guid id);
     void Criar(CarrinhoCliente carrinho);
     void Atualizar(CarrinhoCliente carrinho);

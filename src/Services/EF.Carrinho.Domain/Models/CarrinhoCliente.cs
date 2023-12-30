@@ -1,5 +1,4 @@
 using EF.Domain.Commons.DomainObjects;
-using EF.Domain.Commons.ValueObjects;
 
 namespace EF.Carrinho.Domain.Models;
 
@@ -7,21 +6,13 @@ public class CarrinhoCliente : Entity, IAggregateRoot
 {
     private readonly List<Item> _itens;
 
-    // Necessário para o EF
-    protected CarrinhoCliente()
-    {
-    }
-
-    public CarrinhoCliente(Guid id)
+    public CarrinhoCliente()
     {
         _itens = new List<Item>();
-        Id = id;
     }
 
     public Guid? ClienteId { get; private set; }
-    public Cpf ClienteCpf { get; private set; }
     public decimal ValorTotal { get; private set; }
-    public decimal ValorFinal { get; private set; }
     public IReadOnlyCollection<Item> Itens => _itens;
 
     public void AssociarCliente(Guid clienteId)
@@ -77,7 +68,6 @@ public class CarrinhoCliente : Entity, IAggregateRoot
     public void CalcularValorTotal()
     {
         ValorTotal = Itens.Sum(i => i.ValorUnitario * i.Quantidade);
-        ValorFinal = Itens.Sum(i => i.ValorFinal * i.Quantidade);
     }
 
     public bool ValidarCliente(Guid clienteId)
@@ -94,17 +84,6 @@ public class CarrinhoCliente : Entity, IAggregateRoot
         if (item is null) throw new DomainException("Item não econtrado");
 
         item.AtualizarQuantidade(quantidade);
-
-        CalcularValorTotal();
-    }
-
-    public void AplicarDescontoItem(Guid produtoId, decimal desconto)
-    {
-        var item = _itens.FirstOrDefault(f => f.ProdutoId == produtoId);
-
-        if (item is null) return;
-
-        item.AplicarDesconto(desconto);
 
         CalcularValorTotal();
     }

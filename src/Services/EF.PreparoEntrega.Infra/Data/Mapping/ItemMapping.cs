@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace EF.PreparoEntrega.Infra.Data.Mapping;
 
-public class ItemMapping: IEntityTypeConfiguration<Item>
+public class ItemMapping : IEntityTypeConfiguration<Item>
 {
     public void Configure(EntityTypeBuilder<Item> builder)
     {

@@ -4,6 +4,7 @@ public class ProdutoDto
 {
     public Guid ProdutoId { get; set; }
     public string Nome { get; set; }
+    public string Descricao { get; set; }
     public decimal ValorUnitario { get; set; }
     public int TempoEstimadoPreparo { get; set; }
 }

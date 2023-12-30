@@ -4,33 +4,35 @@ using EF.Carrinho.Application.Services.Interfaces;
 using EF.Carrinho.Domain.Models;
 using EF.Carrinho.Domain.Repository;
 using EF.Domain.Commons.Communication;
-using EF.WebApi.Commons.Users;
 
 namespace EF.Carrinho.Application.Services;
 
 public class CarrinhoManipulacaoService : BaseCarrinhoService, ICarrinhoManipulacaoService
 {
+    private readonly ICarrinhoRepository _carrinhoRepository;
     private readonly ICupomService _cupomService;
+    private readonly IEstoqueService _estoqueService;
     private readonly IProdutoService _produtoService;
 
     public CarrinhoManipulacaoService(
-        IUserApp user,
         ICarrinhoRepository carrinhoRepository,
         IProdutoService produtoService,
         IEstoqueService estoqueService,
-        ICupomService cupomService) : base(user, carrinhoRepository, estoqueService)
+        ICupomService cupomService) : base(carrinhoRepository)
     {
+        _carrinhoRepository = carrinhoRepository;
         _produtoService = produtoService;
+        _estoqueService = estoqueService;
         _cupomService = cupomService;
     }
 
-    public async Task<OperationResult> AdicionarItemCarrinho(AdicionarItemDto itemDto)
+    public async Task<OperationResult> AdicionarItemCarrinho(AdicionarItemDto itemDto, CarrinhoSessaoDto carrinhoSessao)
     {
-        var carrinho = await ObterCarrinho();
+        var carrinho = await ObterCarrinho(carrinhoSessao);
 
         if (carrinho is null)
         {
-            carrinho = await AdicionarItemCarrinhoNovo(itemDto);
+            carrinho = await AdicionarItemCarrinhoNovo(itemDto, carrinhoSessao);
             _carrinhoRepository.Criar(carrinho);
         }
         else
@@ -48,9 +50,9 @@ public class CarrinhoManipulacaoService : BaseCarrinhoService, ICarrinhoManipula
         return OperationResult.Success();
     }
 
-    public async Task<OperationResult> AtualizarItem(AtualizarItemDto itemDto)
+    public async Task<OperationResult> AtualizarItem(AtualizarItemDto itemDto, CarrinhoSessaoDto carrinhoSessao)
     {
-        var carrinho = await ObterCarrinho();
+        var carrinho = await ObterCarrinho(carrinhoSessao);
 
         if (carrinho is null) return OperationResult.Failure("O carrinho está vazio");
 
@@ -66,9 +68,9 @@ public class CarrinhoManipulacaoService : BaseCarrinhoService, ICarrinhoManipula
         return OperationResult.Success();
     }
 
-    public async Task<OperationResult> RemoverItemCarrinho(Guid itemId)
+    public async Task<OperationResult> RemoverItemCarrinho(Guid itemId, CarrinhoSessaoDto carrinhoSessao)
     {
-        var carrinho = await ObterCarrinho();
+        var carrinho = await ObterCarrinho(carrinhoSessao);
 
         if (carrinho is null) return OperationResult.Failure("Carrinho não encontrado");
 
@@ -89,32 +91,30 @@ public class CarrinhoManipulacaoService : BaseCarrinhoService, ICarrinhoManipula
         return OperationResult.Success();
     }
 
-    public async Task<OperationResult> AplicarCupom(string codigo)
+    public async Task RemoverCarrinho(Guid carrinhoId)
     {
-        var produtoDesconto = await _cupomService.ObterDescontoCupom(codigo);
-        var carrinho = await ObterCarrinho();
-
-        if (carrinho is null) return OperationResult.Failure("Carrinho não encontrado");
-
-        foreach (var produtoId in produtoDesconto.Ids)
-            carrinho.AplicarDescontoItem(produtoId, produtoDesconto.Desconto);
-
-        return OperationResult.Success();
+        var carrinho = await _carrinhoRepository.ObterPorId(carrinhoId);
+        _carrinhoRepository.Remover(carrinho);
+        await PersistirDados();
     }
 
-    private CarrinhoCliente CriarCarrinhoCliente()
+    private CarrinhoCliente CriarCarrinhoCliente(CarrinhoSessaoDto carrinhoSessao)
     {
-        var carrinho = new CarrinhoCliente(_carrinhoId);
+        var carrinho = new CarrinhoCliente();
 
-        if (_clienteId != Guid.Empty) carrinho.AssociarCliente(_clienteId);
+        if (carrinhoSessao.ClienteId.HasValue) carrinho.AssociarCliente(carrinhoSessao.ClienteId.Value);
+
+        carrinho.AssociarCarrinho(carrinhoSessao.CarrinhoId);
 
         return carrinho;
     }
 
-    private async Task<CarrinhoCliente> AdicionarItemCarrinhoNovo(AdicionarItemDto itemDto)
+    private async Task<CarrinhoCliente> AdicionarItemCarrinhoNovo(AdicionarItemDto itemDto,
+        CarrinhoSessaoDto carrinhoSessao)
     {
         var item = await _produtoService.ObterItemPorProdutoId(itemDto.ProdutoId);
-        var carrinho = CriarCarrinhoCliente();
+        item.AtualizarQuantidade(itemDto.Quantidade);
+        var carrinho = CriarCarrinhoCliente(carrinhoSessao);
         carrinho.AdicionarItem(item);
         return carrinho;
     }
@@ -123,16 +123,38 @@ public class CarrinhoManipulacaoService : BaseCarrinhoService, ICarrinhoManipula
         AdicionarItemDto itemDto)
     {
         var produtoExiste = carrinho.ProdutoExiste(itemDto.ProdutoId);
-
-        var item = await _produtoService.ObterItemPorProdutoId(itemDto.ProdutoId);
-
-        carrinho.AdicionarItem(item);
-
+        
         if (produtoExiste)
-            _carrinhoRepository.AtualizarItem(carrinho.ObterItemPorProdutoId(itemDto.ProdutoId)!);
+        {
+            var itemExistente = carrinho.ObterItemPorProdutoId(itemDto.ProdutoId);
+            itemExistente.AtualizarQuantidade(itemDto.Quantidade);
+            carrinho.AdicionarItem(itemExistente);
+            _carrinhoRepository.AtualizarItem(itemExistente);
+        }
         else
-            _carrinhoRepository.AdicionarItem(item);
+        {
+            var itemNovo = await _produtoService.ObterItemPorProdutoId(itemDto.ProdutoId);
+            carrinho.AdicionarItem(itemNovo);
+            _carrinhoRepository.AdicionarItem(itemNovo);
+        }
 
         return carrinho;
+    }
+
+    protected async Task<bool> ValidarEstoque(Item item)
+    {
+        // TODO: Testar quando o estoque possuir dados
+        // if (item is null) throw new ArgumentNullException(nameof(item));
+        //
+        // var estoque = await _estoqueService.ObterEstoquePorProdutoId(item.ProdutoId);
+        //
+        // if (estoque is null || estoque.Quantidade < item.Quantidade) return false;
+
+        return true;
+    }
+
+    protected async Task PersistirDados()
+    {
+        await _carrinhoRepository.UnitOfWork.Commit();
     }
 }

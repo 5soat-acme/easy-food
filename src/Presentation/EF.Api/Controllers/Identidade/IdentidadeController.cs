@@ -67,7 +67,7 @@ public class IdentidadeController(IAcessoAppService appService) : CustomControll
     /// <response code="400">A solicitação está malformada e não pode ser processada.</response>
     [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(RespostaTokenAcesso))]
     [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(ValidationProblemDetails))]
-    [HttpPost("acessar-sem-identificacao")]
+    [HttpPost("acessar-anonimo")]
     public IActionResult AcessarSemIdentificacao(string? cpf = null)
     {
         if (!ModelState.IsValid) return Respond(ModelState);

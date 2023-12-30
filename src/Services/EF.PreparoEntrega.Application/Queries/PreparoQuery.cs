@@ -7,8 +7,8 @@ namespace EF.PreparoEntrega.Application.Queries;
 
 public class PreparoQuery : IPreparoQuery
 {
-    private readonly IPedidoRepository _pedidoRepository;
     private readonly IMapper _mapper;
+    private readonly IPedidoRepository _pedidoRepository;
 
     public PreparoQuery(IPedidoRepository pedidoRepository, IMapper mapper)
     {

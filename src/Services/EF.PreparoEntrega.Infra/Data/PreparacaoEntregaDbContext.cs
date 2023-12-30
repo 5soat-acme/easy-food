@@ -13,7 +13,8 @@ public sealed class PreparacaoEntregaDbContext : DbContext, IUnitOfWork
 {
     private readonly IMediatorHandler _mediator;
 
-    public PreparacaoEntregaDbContext(DbContextOptions<PreparacaoEntregaDbContext> options, IMediatorHandler mediator) : base(options)
+    public PreparacaoEntregaDbContext(DbContextOptions<PreparacaoEntregaDbContext> options, IMediatorHandler mediator) :
+        base(options)
     {
         _mediator = mediator;
         ChangeTracker.QueryTrackingBehavior = QueryTrackingBehavior.NoTracking;

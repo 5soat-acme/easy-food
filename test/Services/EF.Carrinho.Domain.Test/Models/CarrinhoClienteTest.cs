@@ -20,7 +20,7 @@ public class CarrinhoClienteTest
     public void CarrinhoCliente_CriarCarrinhoAssociadoCliente_DeveCriarOCarrinhoAssociadoAoCliente()
     {
         // Arrange
-        var carrinhoCliente = new CarrinhoCliente(Guid.NewGuid());
+        var carrinhoCliente = new CarrinhoCliente();
 
         // Act & Assert 
         carrinhoCliente.ClienteId.Should().NotBeEmpty("o cliente deve estar associado ao carrinho");
@@ -31,7 +31,7 @@ public class CarrinhoClienteTest
     public void CarrinhoCliente_CriarCarrinhoAssociadoClienteInvalido_DeveRetornarDomainException()
     {
         // Arrange & Act & Assert 
-        Assert.Throws<DomainException>(() => new CarrinhoCliente(Guid.Empty));
+        Assert.Throws<DomainException>(() => new CarrinhoCliente());
     }
 
     [Fact(DisplayName = "Associar cliente inválido ao carrinho")]

@@ -1,0 +1,9 @@
+using EF.Pedidos.Application.DTOs.Integrations;
+using EF.Pedidos.Domain.Models;
+
+namespace EF.Pedidos.Application.Ports;
+
+public interface IProdutoService
+{
+    Task<ProdutoDto?> ObterProdutoPorId(Guid produtoId);
+}

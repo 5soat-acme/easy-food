@@ -5,8 +5,8 @@ namespace EF.Carrinho.Application.Services.Interfaces;
 
 public interface ICarrinhoManipulacaoService
 {
-    Task<OperationResult> AdicionarItemCarrinho(AdicionarItemDto itemDto);
-    Task<OperationResult> AtualizarItem(AtualizarItemDto itemDto);
-    Task<OperationResult> RemoverItemCarrinho(Guid itemId);
-    Task<OperationResult> AplicarCupom(string codigo);
+    Task<OperationResult> AdicionarItemCarrinho(AdicionarItemDto itemDto, CarrinhoSessaoDto carrinhoSessao);
+    Task<OperationResult> AtualizarItem(AtualizarItemDto itemDto, CarrinhoSessaoDto carrinhoSessao);
+    Task<OperationResult> RemoverItemCarrinho(Guid itemId, CarrinhoSessaoDto carrinhoSessao);
+    Task RemoverCarrinho(Guid carrinhoId);
 }

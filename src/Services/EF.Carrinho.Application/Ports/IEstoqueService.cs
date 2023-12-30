@@ -4,5 +4,5 @@ namespace EF.Carrinho.Application.Ports;
 
 public interface IEstoqueService
 {
-    Task<ProdutoEstoqueDto?> ObterEstoquePorProdutoId(Guid produtoId);
+    Task<EstoqueProdutoDto?> ObterEstoquePorProdutoId(Guid produtoId);
 }

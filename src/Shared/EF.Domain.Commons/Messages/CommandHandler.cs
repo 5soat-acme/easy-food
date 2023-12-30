@@ -7,9 +7,9 @@ public abstract class CommandHandler
 {
     protected ValidationResult ValidationResult = new();
 
-    protected void AddError(string message)
+    protected void AddError(string message, string propertyName = "")
     {
-        ValidationResult.Errors.Add(new ValidationFailure(string.Empty, message));
+        ValidationResult.Errors.Add(new ValidationFailure(propertyName, message));
     }
 
     protected async Task<ValidationResult> PersistData(IUnitOfWork unitOfWork)

@@ -5,8 +5,7 @@ namespace EF.Pedidos.Application.DTOs.Responses;
 
 public class PedidoDto
 {
-    public Guid CorrelacaoId { get; set; }
-    public string Codigo { get; set; }
+    public Guid Id { get; set; }
     public Guid? ClienteId { get; set; }
     public Cpf? Cpf { get; set; }
     public Status Status { get; set; }

@@ -4,5 +4,5 @@ namespace EF.Carrinho.Application.Ports;
 
 public interface ICupomService
 {
-    Task<ProdutoDescontoDto?> ObterDescontoCupom(string codigo);
+    Task<CupomDescontoDto?> ObterDescontoCupom(string codigo);
 }

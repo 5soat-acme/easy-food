@@ -2,6 +2,7 @@ using EF.Carrinho.Application.DTOs.Requests;
 using EF.Carrinho.Application.DTOs.Responses;
 using EF.Carrinho.Application.Services.Interfaces;
 using EF.WebApi.Commons.Controllers;
+using EF.WebApi.Commons.Users;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -9,12 +10,25 @@ namespace EF.Api.Controllers.Carrinho;
 
 [Authorize]
 [Route("api/carrinho")]
-public class CarrinhoController(
-    ICarrinhoConsultaService carrinhoConsultaService,
-    ICarrinhoManipulacaoService carrinhoManipulacaoService,
-    ICarrinhoCheckoutService carrinhoCheckoutService
-) : CustomControllerBase
+public class CarrinhoController : CustomControllerBase
 {
+    private readonly ICarrinhoConsultaService _carrinhoConsultaService;
+    private readonly ICarrinhoManipulacaoService _carrinhoManipulacaoService;
+    private readonly CarrinhoSessaoDto _carrinhoSessao;
+
+    public CarrinhoController(ICarrinhoConsultaService carrinhoConsultaService,
+        ICarrinhoManipulacaoService carrinhoManipulacaoService,
+        IUserApp userApp)
+    {
+        _carrinhoConsultaService = carrinhoConsultaService;
+        _carrinhoManipulacaoService = carrinhoManipulacaoService;
+        _carrinhoSessao = new CarrinhoSessaoDto
+        {
+            CarrinhoId = userApp.GetSessionId(),
+            ClienteId = userApp.GetUserId()
+        };
+    }
+
     /// <summary>
     ///     Obtém o carrinho do cliente.
     /// </summary>
@@ -31,7 +45,7 @@ public class CarrinhoController(
     [HttpGet]
     public async Task<IActionResult> ObterCarrinho()
     {
-        return Respond(await carrinhoConsultaService.ObterCarrinhoCliente());
+        return Respond(await _carrinhoConsultaService.ConsultarCarrinho(_carrinhoSessao));
     }
 
     /// <summary>
@@ -52,66 +66,13 @@ public class CarrinhoController(
     {
         if (!ModelState.IsValid) return Respond(ModelState);
 
-        var result = await carrinhoManipulacaoService.AdicionarItemCarrinho(itemDto);
+        var result = await _carrinhoManipulacaoService.AdicionarItemCarrinho(itemDto, _carrinhoSessao);
 
         if (!result.IsValid) AddErrors(result.Errors);
 
         return Respond();
     }
-
-    /// <summary>
-    ///     Finaliza a montagem do carrinho e gera um novo pedido.
-    /// </summary>
-    /// <remarks>
-    ///     Finaliza a montagem do carrinho e gera um novo pedido. O carrinho é esvaziado após a criação do pedido e um
-    ///     identificador de correlação é retornado para que o pedido possa ser recuperado posteriormente.
-    /// </remarks>
-    /// <response code="200">Indica que o pedido foi criado com sucesso e retorna o ID de Correlação.</response>
-    /// <response code="400">A solicitação está malformada e não pode ser processada.</response>
-    /// <response code="401">Não autorizado.</response>
-    [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(CheckoutRespostaDto))]
-    [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(ValidationProblemDetails))]
-    [ProducesResponseType(StatusCodes.Status401Unauthorized)]
-    [Produces("application/json")]
-    [HttpPost("checkout")]
-    public async Task<IActionResult> IniciarCheckout()
-    {
-        var result = await carrinhoCheckoutService.IniciarCheckout();
-
-        if (!result.IsValid)
-        {
-            AddErrors(result.Errors);
-            return Respond();
-        }
-
-        return Respond(result.Data);
-    }
-
-    /// <summary>
-    ///     Aplicar cupom de desconto
-    /// </summary>
-    /// <param name="codigo">
-    ///     Código do cupom de desconto
-    /// </param>
-    /// <response code="204">Indica que cupom foi aplicado com sucesso.</response>
-    /// <response code="400">A solicitação está malformada e não pode ser processada.</response>
-    /// <response code="401">Não autorizado.</response>
-    [ProducesResponseType(StatusCodes.Status204NoContent)]
-    [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(ValidationProblemDetails))]
-    [ProducesResponseType(StatusCodes.Status401Unauthorized)]
-    [Produces("application/json")]
-    [HttpPost("cupom/{codigo}")]
-    public async Task<IActionResult> AplicarCupom(string codigo)
-    {
-        if (!ModelState.IsValid) return Respond(ModelState);
-
-        var result = await carrinhoManipulacaoService.AplicarCupom(codigo);
-
-        if (!result.IsValid) AddErrors(result.Errors);
-
-        return Respond();
-    }
-
+    
     /// <summary>
     ///     Atualiza a quantidade de um item no carrinho.
     /// </summary>
@@ -133,7 +94,7 @@ public class CarrinhoController(
 
         if (!ModelState.IsValid) return Respond(ModelState);
 
-        var result = await carrinhoManipulacaoService.AtualizarItem(item);
+        var result = await _carrinhoManipulacaoService.AtualizarItem(item, _carrinhoSessao);
 
         if (!result.IsValid) AddErrors(result.Errors);
 
@@ -155,7 +116,7 @@ public class CarrinhoController(
     {
         if (!ModelState.IsValid) return Respond(ModelState);
 
-        await carrinhoManipulacaoService.RemoverItemCarrinho(itemId);
+        await _carrinhoManipulacaoService.RemoverItemCarrinho(itemId, _carrinhoSessao);
         return Respond();
     }
 }

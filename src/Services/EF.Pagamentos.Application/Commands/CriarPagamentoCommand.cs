@@ -7,5 +7,6 @@ public class CriarPagamentoCommand : Command
 {
     public Guid PedidoId { get; set; }
     public TipoFormaPagamento TipoFormaPagamento { get; set; }
+    public string MetodoPagamento { get; set; }
     public decimal Valor { get; set; }
 }

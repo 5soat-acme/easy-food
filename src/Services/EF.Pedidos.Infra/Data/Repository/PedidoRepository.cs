@@ -23,13 +23,6 @@ public sealed class PedidoRepository : IPedidoRepository
             .FirstOrDefaultAsync(c => c.Id == id);
     }
 
-    public async Task<Pedido> ObterPorCorrelacaoId(Guid correlacaoId)
-    {
-        return await _context.Pedidos
-            .Include(c => c.Itens)
-            .FirstOrDefaultAsync(c => c.CorrelacaoId == correlacaoId);
-    }
-
     public void Criar(Pedido pedido)
     {
         _context.Pedidos.Add(pedido);

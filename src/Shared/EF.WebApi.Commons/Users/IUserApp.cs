@@ -14,5 +14,5 @@ public interface IUserApp
     bool IsInRole(string role);
     IEnumerable<Claim> GetClaims();
     HttpContext GetHttpContext();
-    Guid ObterCarrinhoId();
+    Guid GetSessionId();
 }

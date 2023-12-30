@@ -12,10 +12,4 @@ public class PedidoQuery(IPedidoRepository respository, IMapper mapper) : IPedid
         var pedido = await respository.ObterPorId(pedidoId);
         return mapper.Map<PedidoDto>(pedido);
     }
-
-    public async Task<PedidoDto?> ObterPedidoPorCorrelacaoId(Guid correlacaoId)
-    {
-        var pedido = await respository.ObterPorCorrelacaoId(correlacaoId);
-        return mapper.Map<PedidoDto>(pedido);
-    }
 }

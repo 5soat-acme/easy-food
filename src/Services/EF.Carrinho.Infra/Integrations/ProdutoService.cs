@@ -14,6 +14,7 @@ public class ProdutoService(IMapper mapper) : IProdutoService
         {
             ProdutoId = produtoId,
             Nome = "Produto Teste",
+            Descricao = "Descricao do Produto Teste",
             ValorUnitario = 35.90m,
             TempoEstimadoPreparo = 15
         };

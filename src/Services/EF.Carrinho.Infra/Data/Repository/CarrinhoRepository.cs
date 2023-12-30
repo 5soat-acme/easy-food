@@ -16,7 +16,7 @@ public sealed class CarrinhoRepository : ICarrinhoRepository
 
     public IUnitOfWork UnitOfWork => _context;
 
-    public async Task<CarrinhoCliente?> ObterPorCliente(Guid clienteId)
+    public async Task<CarrinhoCliente?> ObterPorClienteId(Guid clienteId)
     {
         return await _context.Carrinhos
             .Include(c => c.Itens)

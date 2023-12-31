@@ -8,7 +8,7 @@ public class DomainToDtoProfile : Profile
 {
     public DomainToDtoProfile()
     {
-        CreateMap<Pedido, PedidoAcompanhamentoDto>();
+        CreateMap<Pedido, PedidoMonitorDto>();
         CreateMap<Pedido, PedidoPreparoDto>();
         CreateMap<Item, ItemPreparoDto>();
     }

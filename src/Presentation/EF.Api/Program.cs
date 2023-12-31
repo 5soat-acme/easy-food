@@ -1,4 +1,4 @@
-using EF.Api.Config;
+using EF.Api.Commons.Config;
 
 var builder = WebApplication.CreateBuilder(args);
 

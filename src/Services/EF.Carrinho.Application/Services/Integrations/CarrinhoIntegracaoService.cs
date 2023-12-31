@@ -15,6 +15,7 @@ public class CarrinhoIntegracaoService : INotificationHandler<PedidoCriadoEvent>
 
     public async Task Handle(PedidoCriadoEvent notification, CancellationToken cancellationToken)
     {
-        await _service.RemoverCarrinho(notification.CorrelacaoId);
+        // TODO: Tratamento de erros com transaçõs de compensação
+        await _service.RemoverCarrinho(notification.SessionId);
     }
 }

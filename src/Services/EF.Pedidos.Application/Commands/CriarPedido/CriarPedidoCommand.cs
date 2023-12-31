@@ -5,7 +5,7 @@ namespace EF.Pedidos.Application.Commands.CriarPedido;
 
 public class CriarPedidoCommand : Command
 {
-    [JsonIgnore] public Guid CorrelacaoId { get; set; }
+    [JsonIgnore] public Guid SessionId { get; set; }
     [JsonIgnore] public Guid? ClienteId { get; set; }
     [JsonIgnore] public string ClienteCpf { get; set; }
     public string MetodoPagamento { get; set; }

@@ -13,10 +13,10 @@ namespace EF.Pedidos.Application.Commands.CriarPedido;
 public class CriarPedidoCommandHandler : CommandHandler,
     IRequestHandler<CriarPedidoCommand, CommandResult>
 {
+    private readonly ICupomService _cupomService;
+    private readonly IEstoqueService _estoqueService;
     private readonly IMediatorHandler _mediator;
     private readonly IPedidoRepository _pedidoRepository;
-    private readonly IEstoqueService _estoqueService;
-    private readonly ICupomService _cupomService;
     private readonly IProdutoService _produtoService;
 
 
@@ -35,10 +35,7 @@ public class CriarPedidoCommandHandler : CommandHandler,
     {
         var pedido = MapearPedido(request);
 
-        if (!string.IsNullOrEmpty(request.CodigoCupom))
-        {
-            pedido = await AplicarCupom(request.CodigoCupom, pedido);
-        }
+        if (!string.IsNullOrEmpty(request.CodigoCupom)) pedido = await AplicarCupom(request.CodigoCupom, pedido);
 
         pedido.CalcularValorTotal();
 
@@ -46,10 +43,7 @@ public class CriarPedidoCommandHandler : CommandHandler,
 
         if (!await ProcessarPagamento(pedido, request.MetodoPagamento)) return CommandResult.Create(ValidationResult);
 
-        pedido.AddEvent(new PedidoCriadoEvent
-        {
-            AggregateId = pedido.Id
-        });
+        pedido.AddEvent(CriarEvento(pedido, request));
 
         _pedidoRepository.Criar(pedido);
 
@@ -101,10 +95,7 @@ public class CriarPedidoCommandHandler : CommandHandler,
         var cupom = await _cupomService.ObterCupomDesconto(codigoCupom);
         pedido.AssociarCupom(cupom.Id);
 
-        foreach (var item in pedido.Itens)
-        {
-            pedido.AplicarDescontoItem(item.Id, cupom.Desconto);
-        }
+        foreach (var item in pedido.Itens) pedido.AplicarDescontoItem(item.Id, cupom.Desconto);
 
         return pedido;
     }
@@ -117,10 +108,10 @@ public class CriarPedidoCommandHandler : CommandHandler,
         foreach (var item in pedido.Itens)
         {
             if (!await ValidarEstoque(item))
-                AddError($"Estoque insuficiente", item.Id.ToString());
+                AddError("Estoque insuficiente", item.Id.ToString());
 
             if (!await ValidarProduto(item))
-                AddError($"O valor do item não confere com o valor informado", item.Id.ToString());
+                AddError("O valor do item não confere com o valor informado", item.Id.ToString());
         }
 
         return ValidationResult.IsValid;
@@ -142,5 +133,25 @@ public class CriarPedidoCommandHandler : CommandHandler,
         if (produto is null || produto.ValorUnitario != item.ValorUnitario) return false;
 
         return true;
+    }
+
+    private PedidoCriadoEvent CriarEvento(Pedido pedido, CriarPedidoCommand request)
+    {
+        List<PedidoCriadoEvent.ItemPedido> itens = new();
+
+        foreach (var item in pedido.Itens)
+            itens.Add(new PedidoCriadoEvent.ItemPedido
+            {
+                ProdutoId = item.ProdutoId,
+                Quantidade = item.Quantidade
+            });
+
+        return new PedidoCriadoEvent
+        {
+            AggregateId = pedido.Id,
+            ClientId = pedido.ClienteId,
+            SessionId = request.SessionId,
+            Itens = itens
+        };
     }
 }

@@ -7,9 +7,9 @@ namespace EF.PreparoEntrega.Infra.Data.Repository;
 
 public sealed class PedidoRepository : IPedidoRepository
 {
-    private readonly PreparacaoEntregaDbContext _context;
+    private readonly PreparoEntregaDbContext _context;
 
-    public PedidoRepository(PreparacaoEntregaDbContext context)
+    public PedidoRepository(PreparoEntregaDbContext context)
     {
         _context = context;
     }

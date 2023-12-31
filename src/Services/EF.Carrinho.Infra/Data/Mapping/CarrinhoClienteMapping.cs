@@ -1,5 +1,4 @@
 using EF.Carrinho.Domain.Models;
-using EF.Domain.Commons.ValueObjects;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 

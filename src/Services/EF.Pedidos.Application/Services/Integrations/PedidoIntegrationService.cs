@@ -11,11 +11,12 @@ public class PedidoIntegrationService : INotificationHandler<PreparoPedidoInicia
     INotificationHandler<EntregaRealizadaEvent>
 {
     private readonly IMediatorHandler _mediator;
+
     public PedidoIntegrationService(IMediatorHandler mediator)
     {
         _mediator = mediator;
     }
-    
+
     public async Task Handle(EntregaRealizadaEvent notification, CancellationToken cancellationToken)
     {
         await _mediator.Send(new AtualizarPedidoCommand
@@ -26,7 +27,7 @@ public class PedidoIntegrationService : INotificationHandler<PreparoPedidoInicia
         });
     }
 
-    public async  Task Handle(PreparoPedidoFinalizadoEvent notification, CancellationToken cancellationToken)
+    public async Task Handle(PreparoPedidoFinalizadoEvent notification, CancellationToken cancellationToken)
     {
         await _mediator.Send(new AtualizarPedidoCommand
         {

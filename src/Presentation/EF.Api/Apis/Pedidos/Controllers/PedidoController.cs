@@ -15,13 +15,14 @@ public class PedidoController(IMediatorHandler mediator, IPedidoQuery pedidoQuer
     : CustomControllerBase
 {
     /// <summary>
-    ///     Obtém um pedido através do Id ou Id de correlação (informado no fechamento do carrinho).
+    ///     Obtém um pedido.
     /// </summary>
     /// <param name="pedidoId">Id do pedido</param>
-    /// <returns>
-    ///     <see cref="PedidoDto" />
-    /// </returns>
+    /// <response code="200">Dados do pedido.</response>
+    /// <response code="401">Não autorizado.</response>
     [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(PedidoDto))]
+    [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+    [Produces("application/json")]
     [HttpGet("{pedidoId}")]
     public async Task<IActionResult> ObterPedido([FromRoute] Guid pedidoId)
     {
@@ -29,7 +30,14 @@ public class PedidoController(IMediatorHandler mediator, IPedidoQuery pedidoQuer
         return pedido is not null ? Respond(pedido) : NotFound();
     }
 
+    /// <summary>
+    ///     Faz o checkout do pedido.
+    /// </summary>
+    /// <response code="200">Checkout realizado com sucesso.</response>
+    /// <response code="401">Não autorizado.</response>
     [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(PedidoDto))]
+    [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+    [Produces("application/json")]
     [HttpPost]
     public async Task<IActionResult> Checkout(CriarPedidoCommand command)
     {

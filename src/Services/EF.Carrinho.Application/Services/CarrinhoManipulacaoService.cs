@@ -10,20 +10,17 @@ namespace EF.Carrinho.Application.Services;
 public class CarrinhoManipulacaoService : BaseCarrinhoService, ICarrinhoManipulacaoService
 {
     private readonly ICarrinhoRepository _carrinhoRepository;
-    private readonly ICupomService _cupomService;
     private readonly IEstoqueService _estoqueService;
     private readonly IProdutoService _produtoService;
 
     public CarrinhoManipulacaoService(
         ICarrinhoRepository carrinhoRepository,
         IProdutoService produtoService,
-        IEstoqueService estoqueService,
-        ICupomService cupomService) : base(carrinhoRepository)
+        IEstoqueService estoqueService) : base(carrinhoRepository)
     {
         _carrinhoRepository = carrinhoRepository;
         _produtoService = produtoService;
         _estoqueService = estoqueService;
-        _cupomService = cupomService;
     }
 
     public async Task<OperationResult> AdicionarItemCarrinho(AdicionarItemDto itemDto, CarrinhoSessaoDto carrinhoSessao)
@@ -143,12 +140,11 @@ public class CarrinhoManipulacaoService : BaseCarrinhoService, ICarrinhoManipula
 
     protected async Task<bool> ValidarEstoque(Item item)
     {
-        // TODO: Testar quando o estoque possuir dados
-        // if (item is null) throw new ArgumentNullException(nameof(item));
-        //
-        // var estoque = await _estoqueService.ObterEstoquePorProdutoId(item.ProdutoId);
-        //
-        // if (estoque is null || estoque.Quantidade < item.Quantidade) return false;
+        if (item is null) throw new ArgumentNullException(nameof(item));
+        
+        var estoque = await _estoqueService.ObterEstoquePorProdutoId(item.ProdutoId);
+        
+        if (estoque is null || estoque.Quantidade < item.Quantidade) return false;
 
         return true;
     }

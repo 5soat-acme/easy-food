@@ -1,5 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34330.188
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{1F253C40-620E-47A6-A85E-0F7EC1D33D3B}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{CC5B1F12-DC56-452B-95A9-E7927B011388}"
@@ -82,7 +85,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EF.Cupons.Infra", "src\Serv
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Cupons", "Cupons", "{F8C1209D-25FE-4DC1-9F3B-A851360C5B04}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EF.Cupons.Domain.Test", "test\Services\EF.Cupons.Domain.Test\EF.Cupons.Domain.Test.csproj", "{2C692636-E8A0-4406-8142-24775AE2C021}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EF.Cupons.Domain.Test", "test\Services\EF.Cupons.Domain.Test\EF.Cupons.Domain.Test.csproj", "{2C692636-E8A0-4406-8142-24775AE2C021}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EF.Produtos.Domain", "src\Services\EF.Produto.Domain\EF.Produtos.Domain.csproj", "{09E1B1A6-5879-4C12-8D0E-AFA5BA13036B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -162,6 +167,10 @@ Global
 		{2C692636-E8A0-4406-8142-24775AE2C021}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2C692636-E8A0-4406-8142-24775AE2C021}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2C692636-E8A0-4406-8142-24775AE2C021}.Release|Any CPU.Build.0 = Release|Any CPU
+		{09E1B1A6-5879-4C12-8D0E-AFA5BA13036B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{09E1B1A6-5879-4C12-8D0E-AFA5BA13036B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{09E1B1A6-5879-4C12-8D0E-AFA5BA13036B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{09E1B1A6-5879-4C12-8D0E-AFA5BA13036B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -203,6 +212,7 @@ Global
 		{5ABE941A-20EA-4F79-96A3-8B5DBFFF59DE} = {4226AE14-0C8B-4373-959E-A29E292A1107}
 		{F8C1209D-25FE-4DC1-9F3B-A851360C5B04} = {2BEE0DE4-139E-4CC6-9BE3-7AF71DB42AA5}
 		{2C692636-E8A0-4406-8142-24775AE2C021} = {F8C1209D-25FE-4DC1-9F3B-A851360C5B04}
+		{09E1B1A6-5879-4C12-8D0E-AFA5BA13036B} = {B362D413-4175-4F96-BFA0-E4B072965787}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {3F766FF2-5624-40A8-80E9-C8F8A9092866}

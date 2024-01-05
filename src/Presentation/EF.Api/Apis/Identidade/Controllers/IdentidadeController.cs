@@ -68,11 +68,11 @@ public class IdentidadeController(IAcessoAppService appService) : CustomControll
     [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(RespostaTokenAcesso))]
     [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(ValidationProblemDetails))]
     [HttpPost("acessar-anonimo")]
-    public IActionResult AcessarSemIdentificacao(string? cpf = null)
+    public IActionResult AcessarSemIdentificacao(AcessoAnonimo? acessoAnonimo)
     {
         if (!ModelState.IsValid) return Respond(ModelState);
 
-        var result = appService.GerarTokenAcessoNaoIdentificado(cpf);
+        var result = appService.GerarTokenAcessoNaoIdentificado(acessoAnonimo?.Cpf);
 
         return Respond(result);
     }

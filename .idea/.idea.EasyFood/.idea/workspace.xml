@@ -19,67 +19,28 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="61e4a515-7fae-49b6-801b-ebc481bfb9f9" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/issuestore/0/3/03685228521397bd1533b420c89fc21526777bc1" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/issuestore/0/4/0460f9638f596caa63e2821e2c39b6ed77bbf933" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/issuestore/1/f/1fbb50304f413034476324d7cd666548e893a5d7" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/issuestore/2/9/2955914d031007607d9572f762820879130d0f62" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/issuestore/2/9/29cc34975f23ee429339da181b1108232e6d466d" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/issuestore/2/e/2ef927fb3904ee02034aab49a3b37bed18bef581" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/issuestore/3/8/3863952251de855cdd9ec4750cadc55d40121ebc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/issuestore/3/a/3a1af6b3a969fef4292fec6a084ff4706e2f0014" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/issuestore/3/f/3f826f4e23d54ad0cd13ce9773a4a34fc10c147e" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/issuestore/4/0/401bf0de6f4b190fa76f5d611d17ffae3d3dcbb3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/issuestore/4/0/407194e495240c0a461fdf41f81e0ba379f700f0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/issuestore/5/8/58c2e786ee327e4c227362f626338787a52fd990" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/issuestore/5/a/5a2e480e48ff92cc7dcd85e1f65e160ba8a5caf9" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/issuestore/6/7/67cc6d23f4d8852197bc8513cc0d6239b073029a" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/issuestore/7/1/715ce8f162e6b730e27c17a20332bfee4c10a3c1" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/issuestore/7/b/7b65bc01fac51ba7e3e808bbc93452ae1b2f190f" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/issuestore/8/6/8605c739fc1e85a24294b20adc3dcbcb6ae88d88" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/issuestore/8/c/8c8a31bde80790a81d2f122a4bb3fd960f686285" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/issuestore/9/8/984d6a569333d340033bb0c92cdafacf90362b9c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/issuestore/9/c/9c4537c434f968cc0c9b119b1f8e10d9665ec198" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/issuestore/9/f/9fb8428f5ef82e6111590a1d2dae673dbb83eac6" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/issuestore/b/8/b80f24f20f2058d2e94790d8385e03801ea28153" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/issuestore/b/f/bf3553481149308b1410b84e534e466d10f569cc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/issuestore/b/f/bf66d0ce1a54e2665fed41607e7e056188464019" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/issuestore/e/6/e6916b3356d58502e318e3f8fb3e9956ab32bb70" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/issuestore/e/f/ef78948fe0c0010953f70f3e1b4bafdcc990784e" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/issuestore/f/4/f4f3f52de5e958f6b8a286c7b2ee12583f9a8c4a" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/issuestore/f/9/f9c11167efe258f8c72e5eee2164574af95921b9" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/issuestore/3/0/30644d75e5d1e76ca29f21e0a6e4ecbcd5614540" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/issuestore/3/0/30644d75e5d1e76ca29f21e0a6e4ecbcd5614540" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/issuestore/8/f/8f8f750b075f18aeeb7c542071821866de4c00a3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/issuestore/b/e/be8e84842af4bbb28308ecacb6ac01c30ebb77e3" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/securityhotspotstore/0/3/03685228521397bd1533b420c89fc21526777bc1" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/securityhotspotstore/0/4/0460f9638f596caa63e2821e2c39b6ed77bbf933" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/securityhotspotstore/1/f/1fbb50304f413034476324d7cd666548e893a5d7" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/securityhotspotstore/2/9/2955914d031007607d9572f762820879130d0f62" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/securityhotspotstore/2/9/29cc34975f23ee429339da181b1108232e6d466d" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/securityhotspotstore/2/e/2ef927fb3904ee02034aab49a3b37bed18bef581" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/securityhotspotstore/3/8/3863952251de855cdd9ec4750cadc55d40121ebc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/securityhotspotstore/3/a/3a1af6b3a969fef4292fec6a084ff4706e2f0014" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/securityhotspotstore/3/f/3f826f4e23d54ad0cd13ce9773a4a34fc10c147e" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/securityhotspotstore/4/0/401bf0de6f4b190fa76f5d611d17ffae3d3dcbb3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/securityhotspotstore/4/0/407194e495240c0a461fdf41f81e0ba379f700f0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/securityhotspotstore/5/8/58c2e786ee327e4c227362f626338787a52fd990" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/securityhotspotstore/5/a/5a2e480e48ff92cc7dcd85e1f65e160ba8a5caf9" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/securityhotspotstore/6/7/67cc6d23f4d8852197bc8513cc0d6239b073029a" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/securityhotspotstore/7/1/715ce8f162e6b730e27c17a20332bfee4c10a3c1" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/securityhotspotstore/7/b/7b65bc01fac51ba7e3e808bbc93452ae1b2f190f" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/securityhotspotstore/8/6/8605c739fc1e85a24294b20adc3dcbcb6ae88d88" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/securityhotspotstore/8/c/8c8a31bde80790a81d2f122a4bb3fd960f686285" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/securityhotspotstore/9/8/984d6a569333d340033bb0c92cdafacf90362b9c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/securityhotspotstore/9/c/9c4537c434f968cc0c9b119b1f8e10d9665ec198" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/securityhotspotstore/9/f/9fb8428f5ef82e6111590a1d2dae673dbb83eac6" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/securityhotspotstore/b/8/b80f24f20f2058d2e94790d8385e03801ea28153" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/securityhotspotstore/b/f/bf3553481149308b1410b84e534e466d10f569cc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/securityhotspotstore/b/f/bf66d0ce1a54e2665fed41607e7e056188464019" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/securityhotspotstore/e/6/e6916b3356d58502e318e3f8fb3e9956ab32bb70" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/securityhotspotstore/e/f/ef78948fe0c0010953f70f3e1b4bafdcc990784e" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/securityhotspotstore/f/4/f4f3f52de5e958f6b8a286c7b2ee12583f9a8c4a" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/securityhotspotstore/f/9/f9c11167efe258f8c72e5eee2164574af95921b9" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/securityhotspotstore/8/f/8f8f750b075f18aeeb7c542071821866de4c00a3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/securityhotspotstore/b/e/be8e84842af4bbb28308ecacb6ac01c30ebb77e3" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/securityhotspotstore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/securityhotspotstore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/EF.Pedidos.Application/Services/Integrations/PedidoIntegrationService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Pedidos.Application/Services/Integrations/PedidoIntegrationService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/EF.PreparoEntrega.Application/Commands/ConfirmarEntrega/ConfirmarEntregaCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.PreparoEntrega.Application/Commands/ConfirmarEntrega/ConfirmarEntregaCommand.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EasyFood.sln" beforeDir="false" afterPath="$PROJECT_DIR$/EasyFood.sln" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Presentation/EF.Api/Apis/Identidade/Controllers/IdentidadeController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Presentation/EF.Api/Apis/Identidade/Controllers/IdentidadeController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Presentation/EF.Api/EF.Api.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/src/Presentation/EF.Api/EF.Api.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Presentation/EF.Api/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Presentation/EF.Api/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/EF.Identidade.Application/DTOs/Requests/UsuarioLogin.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Identidade.Application/DTOs/Requests/UsuarioLogin.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/EF.Domain.Commons.Test/EF.Domain.Commons.Test.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/test/EF.Domain.Commons.Test/EF.Domain.Commons.Test.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/Services/EF.Carrinho.Domain.Test/EF.Carrinho.Domain.Test.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/test/Services/EF.Carrinho.Domain.Test/EF.Carrinho.Domain.Test.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/Services/EF.Carrinho.Domain.Test/Fixtures/CarrinhoClienteFixture.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/Services/EF.Carrinho.Domain.Test/Models/CarrinhoClienteTest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/test/Services/EF.Carrinho.Domain.Test/Models/CarrinhoClienteTest.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/Services/EF.Cupons.Domain.Test/EF.Cupons.Domain.Test.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/test/Services/EF.Cupons.Domain.Test/EF.Cupons.Domain.Test.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/Services/EF.Estoques.Domain.Test/EF.Estoques.Domain.Test.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/test/Services/EF.Estoques.Domain.Test/EF.Estoques.Domain.Test.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/Services/EF.Pedidos.Application.Test/EF.Pedidos.Application.Test.csproj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/Services/EF.Pedidos.Application.Test/GlobalUsings.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/Services/EF.Pedidos.Domain.Test/EF.Pedidos.Domain.Test.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/test/Services/EF.Pedidos.Domain.Test/EF.Pedidos.Domain.Test.csproj" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -105,19 +66,26 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$USER_HOME$/.nuget/packages/microsoft.net.test.sdk/17.6.0/build/netcoreapp3.1/Microsoft.NET.Test.Sdk.Program.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/aspnetcore/3f1acb59718cadf111a0a796681e3d3509bb3381/src/Identity/Extensions.Stores/src/IdentityUser.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/aspnetcore/3f1acb59718cadf111a0a796681e3d3509bb3381/src/Mvc/Mvc.Core/src/Infrastructure/ActionMethodExecutor.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/aspnetcore/3f1acb59718cadf111a0a796681e3d3509bb3381/src/Mvc/Mvc.Testing/src/WebApplicationFactory.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/0c53ee5c91f047f387400d094b3581c4267420/ab/1f533040/EntityEntry.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5abecb93434c4299acd01d522fdf8da2c9a910/10/7d89f307/List`1.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/d56bc9264e79412392b55aa7d1fcd10c1f918/2e/cc7eb0f7/HttpClientJsonExtensions.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/2532c812356b7d5448418be580b9c7afbc61d9f577df866acfb87950ef277b/TestInvoker.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/3182ebe051d9b4bed148730ecd591e6f2d28d705821e6fbb3c16b51b51f15c7/Profile.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/33b74679e986749f1b285ec1155b90979e7aab172462ceef513f4b9257d174/Internet.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/3520bf5c151bbc5aed94ba6abea697eaaee2b96fe96341613fef02be1cc54/ValidationFailure.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/81ba5eacb2b39f2c24777638daf2a6bc0c319dbb19205eb344ee2419fa57b5/ForeachAwaitPublisher.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/b4cc99d93dd77df4bd96956b50aed7b8e18d994130e2d8a85c9cddb01391ef/NotificationHandlerWrapper.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/c8e8b4221b3e6285b11533e6eac1d3942d51ec9f40f23250156a7f4d51e6d62c/SwaggerGenOptionsExtensions.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/d4fd9eaa33d964b75f812ccbe33f4bf158a5dcbc2c08c95e5e8deec18bec4ee/Program.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/e7268004cea411c815a7ab3cb4144fbb696c52cfe11670e8ab0d8b26fa24/ServiceCollectionExtensions.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/f4bc324a395d24ed12db75b0a81536b642509aa14825bf114d9b7c934e2b/Mediator.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/Services/EF.Carrinho.Application/DTOs/Integrations/ProdutoCupomDto.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/Services/EF.Carrinho.Application/DTOs/Requests/AdicionarItemDto.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/Services/EF.Clientes.Infra/Data/Migrations/20231208143534_BaseInicialClientes.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/test/EF.Api.Test/UnitTest1.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/test/EF.Domain.Commons.Test/UnitTest1.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="HttpClientSelectedEnvironments">
@@ -158,6 +126,7 @@
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;.NET Launch Settings Profile.EF.Api: https.executor&quot;: &quot;Debug&quot;,
+    &quot;1bea6dd9-6f9b-4afc-9f56-c255980b80ea.executor&quot;: &quot;Debug&quot;,
     &quot;358cc20c-bbd2-4173-b107-79bbfcbf32c4.executor&quot;: &quot;Debug&quot;,
     &quot;HTTP Request.All in identidade.executor&quot;: &quot;Run&quot;,
     &quot;HTTP Request.api-requests | #2.executor&quot;: &quot;Run&quot;,
@@ -184,7 +153,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;feat-pedidos&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -324,6 +293,11 @@
       <workItem from="1703971026590" duration="1809000" />
       <workItem from="1704018902265" duration="7904000" />
       <workItem from="1704196986582" duration="361000" />
+      <workItem from="1704203806658" duration="9391000" />
+      <workItem from="1704225305178" duration="1962000" />
+      <workItem from="1704233546900" duration="4431000" />
+      <workItem from="1704279893947" duration="2508000" />
+      <workItem from="1704452999815" duration="1490000" />
     </task>
     <servers />
   </component>
@@ -349,6 +323,36 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>
   <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/test/EF.Api.Test/Identidade/IdentidadeControllerTest.cs</url>
+          <line>26</line>
+          <properties documentPath="C:\dev\fiap\easy-food\test\EF.Api.Test\Identidade\IdentidadeControllerTest.cs" initialLine="26" containingFunctionPresentation="Method 'IdentidadeController_CriarUsuario_DeveRegistrarUsuarioComSucesso'">
+            <startOffsets>
+              <option value="899" />
+            </startOffsets>
+            <endOffsets>
+              <option value="982" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="18" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/test/EF.Api.Test/Identidade/IdentidadeControllerTest.cs</url>
+          <line>56</line>
+          <properties documentPath="C:\dev\fiap\easy-food\test\EF.Api.Test\Identidade\IdentidadeControllerTest.cs" initialLine="56" containingFunctionPresentation="Method 'IdentidadeController_AcessarSemIdentificacao_DeveGerarTokenAcesso'">
+            <startOffsets>
+              <option value="2621" />
+            </startOffsets>
+            <endOffsets>
+              <option value="2622" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="19" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
     <pin-to-top-manager>
       <pinned-members>
         <PinnedItemInfo parentTag="Type#EF.Carrinho.Domain.Models.CarrinhoCliente" memberName="Itens" />

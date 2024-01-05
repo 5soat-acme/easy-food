@@ -137,6 +137,8 @@ public class AcessoAppService : IAcessoAppService
             ClaimValueTypes.Integer64));
         claims.Add(new Claim("session_id", Guid.NewGuid().ToString()));
         claims.Add(new Claim("user_type", "authenticated"));
+        
+        // TODO: Incluir claim para CPF
 
         foreach (var userRole in userRoles) claims.Add(new Claim("role", userRole));
 

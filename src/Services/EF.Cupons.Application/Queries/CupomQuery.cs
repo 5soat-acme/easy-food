@@ -1,32 +1,24 @@
-﻿using EF.Cupons.Application.DTOs;
+﻿using AutoMapper;
+using EF.Cupons.Application.DTOs.Responses;
+using EF.Cupons.Application.Queries.Interfaces;
 using EF.Cupons.Domain.Repository;
 
-namespace EF.Cupons.Application.Queries
+namespace EF.Cupons.Application.Queries;
+
+public class CupomQuery : ICupomQuery
 {
-    public class CupomQuery : ICupomQuery
+    private readonly ICupomRepository _cupomRepository;
+    private readonly IMapper _mapper;
+
+    public CupomQuery(ICupomRepository cupomRepository, IMapper mapper)
     {
-        private readonly ICupomRepository _cupomRepository;
+        _cupomRepository = cupomRepository;
+        _mapper = mapper;
+    }
 
-        public CupomQuery(ICupomRepository cupomRepository)
-        {
-            _cupomRepository = cupomRepository;
-        }
-
-        public async Task<CupomDto?> ObterCupom(string codigoCupom, CancellationToken cancellationToken)
-        {
-            var cupom = await _cupomRepository.BuscarCupomVigente(codigoCupom, cancellationToken);
-            var dto = cupom is null
-                ? null
-                : new CupomDto
-                {
-                    Id = cupom.Id,
-                    DataInicio = cupom.DataInicio,
-                    DataFim = cupom.DataFim,
-                    PorcentagemDesconto = cupom.PorcentagemDesconto,
-                    Produtos = cupom.CupomProdutos.Select(x => new CupomProdutoDto { ProdutoId = x.ProdutoId }).ToList()
-                };
-
-            return dto;
-        }
+    public async Task<CupomDto?> ObterCupom(string codigoCupom, CancellationToken cancellationToken)
+    {
+        var cupom = await _cupomRepository.BuscarCupomVigente(codigoCupom, cancellationToken);
+        return _mapper.Map<CupomDto>(cupom);
     }
 }

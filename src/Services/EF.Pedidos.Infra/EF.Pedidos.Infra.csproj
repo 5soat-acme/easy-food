@@ -8,6 +8,10 @@
 
     <ItemGroup>
         <ProjectReference Include="..\..\Shared\EF.Domain.Commons\EF.Domain.Commons.csproj"/>
+        <ProjectReference Include="..\..\Shared\EF.Infra.Commons\EF.Infra.Commons.csproj"/>
+        <ProjectReference Include="..\EF.Cupons.Application\EF.Cupons.Application.csproj"/>
+        <ProjectReference Include="..\EF.Estoques.Application\EF.Estoques.Application.csproj"/>
+        <ProjectReference Include="..\EF.Pedidos.Application\EF.Pedidos.Application.csproj"/>
         <ProjectReference Include="..\EF.Pedidos.Domain\EF.Pedidos.Domain.csproj"/>
     </ItemGroup>
 
@@ -18,6 +22,14 @@
             <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
         </PackageReference>
         <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="8.0.0"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <Folder Include="Data\Migrations\"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <Compile Remove="Data\Migrations\PedidoDbContextModelSnapshot.cs"/>
     </ItemGroup>
 
 </Project>

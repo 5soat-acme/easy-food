@@ -4,7 +4,8 @@ using System.Text;
 using EF.Clientes.Application.Commands;
 using EF.Domain.Commons.Communication;
 using EF.Domain.Commons.Mediator;
-using EF.Identidade.Application.DTOs;
+using EF.Identidade.Application.DTOs.Requests;
+using EF.Identidade.Application.DTOs.Responses;
 using EF.Identidade.Application.Services.Interfaces;
 using EF.WebApi.Commons.Identity;
 using FluentValidation.Results;
@@ -30,7 +31,7 @@ public class AcessoAppService : IAcessoAppService
         _identitySettings = settings.Value;
     }
 
-    public async Task<Result<RespostaTokenAcesso>> CriarUsuario(
+    public async Task<OperationResult<RespostaTokenAcesso>> CriarUsuario(
         NovoUsuario novoUsuario)
     {
         var identityUser = new IdentityUser
@@ -45,16 +46,16 @@ public class AcessoAppService : IAcessoAppService
         if (identityResult.Succeeded)
         {
             var result = await RegistrarCliente(novoUsuario);
-            if (!result.IsValid) return Result<RespostaTokenAcesso>.Failure(result);
+            if (!result.IsValid) return OperationResult<RespostaTokenAcesso>.Failure(result);
 
-            return Result<RespostaTokenAcesso>.Success(await GerarToken(novoUsuario.Email));
+            return OperationResult<RespostaTokenAcesso>.Success(await GerarToken(novoUsuario.Email));
         }
 
         var errors = new List<string>();
         foreach (var error in identityResult.Errors)
             errors.Add(error.Description);
 
-        return Result<RespostaTokenAcesso>.Failure(errors);
+        return OperationResult<RespostaTokenAcesso>.Failure(errors);
     }
 
     public RespostaTokenAcesso GerarTokenAcessoNaoIdentificado(string? cpf = null)
@@ -62,7 +63,8 @@ public class AcessoAppService : IAcessoAppService
         var claims = new List<Claim>
         {
             new(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
-            new("user_type", "anonymous")
+            new("user_type", "anonymous"),
+            new("session_id", Guid.NewGuid().ToString())
         };
 
         if (!string.IsNullOrEmpty(cpf)) claims.Add(new Claim("user_cpf", cpf));
@@ -74,14 +76,14 @@ public class AcessoAppService : IAcessoAppService
         return ObterRespostaToken(encodedToken, claims);
     }
 
-    public async Task<Result<RespostaTokenAcesso>> Autenticar(UsuarioLogin usuario)
+    public async Task<OperationResult<RespostaTokenAcesso>> Autenticar(UsuarioLogin usuario)
     {
         var result = await _signInManager.PasswordSignInAsync(usuario.Email, usuario.Senha,
             false, true);
 
-        if (result.Succeeded) return Result<RespostaTokenAcesso>.Success(await GerarToken(usuario.Email));
+        if (result.Succeeded) return OperationResult<RespostaTokenAcesso>.Success(await GerarToken(usuario.Email));
 
-        return Result<RespostaTokenAcesso>.Failure("Usuário ou senha incorretos");
+        return OperationResult<RespostaTokenAcesso>.Failure("Usuário ou senha incorretos");
     }
 
     private async Task<ValidationResult> RegistrarCliente(NovoUsuario novoUsuario)
@@ -133,6 +135,9 @@ public class AcessoAppService : IAcessoAppService
         claims.Add(new Claim(JwtRegisteredClaimNames.Iat,
             ToUnixEpochDate(DateTime.UtcNow).ToString(),
             ClaimValueTypes.Integer64));
+        claims.Add(new Claim("session_id", Guid.NewGuid().ToString()));
+        claims.Add(new Claim("user_type", "authenticated"));
+
         foreach (var userRole in userRoles) claims.Add(new Claim("role", userRole));
 
         var identityClaims = new ClaimsIdentity();

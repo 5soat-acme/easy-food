@@ -1,0 +1,20 @@
+{
+  "type": "https://tools.ietf.org/html/rfc9110#section-15.5.1",
+  "title": "One or more validation errors occurred.",
+  "status": 400,
+  "errors": {
+    "Cpf": [
+      "O campo Cpf é obrigatório",
+      "CPF inválido"
+    ],
+    "Email": [
+      "O campo Email é obrigatório",
+      "O campo Email está em formato inválido"
+    ],
+    "Senha": [
+      "O campo Senha é obrigatório",
+      "O campo Senha precisa ter entre 6 e 100 caracteres"
+    ]
+  },
+  "traceId": "00-1601b8e533bd091eab297e0c9166ef1b-a4b06844a98cfa41-00"
+}

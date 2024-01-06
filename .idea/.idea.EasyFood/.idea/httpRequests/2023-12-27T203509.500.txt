@@ -1,0 +1,30 @@
+System.InvalidOperationException: Unable to resolve service for type 'EF.Pedidos.Application.Queries.Interfaces.IPedidoQuery' while attempting to activate 'EF.Api.Controllers.Pedidos.PedidoController'.
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.ThrowHelperUnableToResolveService(Type type, Type requiredBy)
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.GetService(IServiceProvider sp, Type type, Type requiredBy, Boolean hasDefaultValue, Object key)
+   at lambda_method577(Closure, IServiceProvider, Object[])
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.<>c__DisplayClass6_0.<CreateControllerFactory>g__CreateController|0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at EF.Api.Extensions.ExceptionMiddleware.InvokeAsync(HttpContext context) in C:\dev\fiap\easy-food\src\Presentation\EF.Api\Extensions\ExceptionMiddleware.cs:line 20
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+
+HEADERS
+=======
+Connection: keep-alive
+Host: localhost:5002
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
+Accept-Encoding: br,deflate,gzip,x-gzip
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI5YTgxYjhmYi0wYjkxLTRkOGUtYjYxZS0xMTRkM2RlZTc2MjciLCJlbWFpbCI6IjVzb2F0YWNtZUBnbWFpbC5jb20iLCJqdGkiOiIyZTUyMzc5NC1lNWUxLTQ4YTItYjk0ZC05YWZlMmU1YWNmNjMiLCJuYmYiOjE3MDM3MTkyOTMsImlhdCI6MTcwMzcxOTI5MywiY2FycmluaG9faWQiOiJhNmQ0ZTI1ZS0yZjgxLTQwZjgtOTVkZC02ZmI5YTY2ZmEwZjQiLCJleHAiOjE3MDM3MjY0OTMsImlzcyI6IkVhc3lGb29kIiwiYXVkIjoibG9jYWxob3N0OjUwMDIifQ.YaoV7GAfN-phzrv3h3owOai5pCBEG8_dOv_Ub2QEypg
+Cookie: .AspNetCore.Identity.Application=CfDJ8OiLkACF4FpJpmrePH9sWkgA7LGF0g9BsSw5xhoAa_qcNAiBvcbakZknOnbKiPG50FUssRVe67_CB71-Di9qmZQH4WLMFbiahYd525b2jDoD76Ixso5HK38GixnvGcEXkY8te_Frl81YVh_ihauxpBdeVN0AXKofEUya5RTU7HcU3Ua9xcXDIYp2WI96lLiWtwlBBAqK9qKG27GZxmUrwKo-lw90kkeih9JJwF5c2WLZoPJBBpJfIifiO_NdKhBjPkK3WwjuEDduBYfVoJqTakBOTyf2xIEivPxi4Sg7Bv3-ZUr7uJNF8r1BdSstnZZPBXWfcgKuzQQwatAxRYTHzs_ABvSygIPHS_Mb8Vqf9l6jmx8Abr3f7QPSKoDmjKx46dsg9I_6GSdhLWK6ik-CW2WX-VBlK2NzQOfRyiJLWk7Y0UHmiw1kagwaueGbyvr1ZrGlct3doT2TTIDnFwHqhp7E4ZMOIZ4buo2ASeggzm8PYrru5GAm6cCgFgWcY9okLPaL9d_KKaac2t9L9Six0GbD-ktiwGXTQgDGtIAQ4dURP3X0NEDmVDbUq8u_uSLMIyTPW8l6fwXAXP4hsnz0Un7F8jmCbtrSsPNPwQnKA9pQ-7L55kMqijwp9wfpNPkYdMMJQQ9zZruNo09FRMF3HM7cEJwUoD4MqyKkMghHflf65a__-Uwim2kkOa8cl0DeroRbT7PbPvIHYo8Lwtc7hARCRZuXGioNYmhAzYBWNO1JsToMaK3GzG9jf9-SDporOw

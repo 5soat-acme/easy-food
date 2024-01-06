@@ -5,5 +5,7 @@ namespace EF.Pedidos.Domain.Repository;
 
 public interface IPedidoRepository : IRepository<Pedido>
 {
-    Task<Pedido> Criar(Pedido pedido);
+    Task<Pedido> ObterPorId(Guid id);
+    void Criar(Pedido pedido);
+    void Atualizar(Pedido pedido);
 }

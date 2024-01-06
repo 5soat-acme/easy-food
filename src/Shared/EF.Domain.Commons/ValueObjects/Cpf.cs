@@ -1,4 +1,5 @@
 using EF.Domain.Commons.DomainObjects;
+using EF.Domain.Commons.Utils;
 
 namespace EF.Domain.Commons.ValueObjects;
 

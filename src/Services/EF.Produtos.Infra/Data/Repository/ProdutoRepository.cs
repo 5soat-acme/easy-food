@@ -2,11 +2,6 @@
 using EF.Produtos.Domain.Models;
 using EF.Produtos.Domain.Repository;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace EF.Produtos.Infra.Data.Repository;
 
@@ -23,7 +18,7 @@ public sealed class ProdutoRepository : IProdutoRepository
 
     public async Task<Produto> Criar(Produto produto, CancellationToken cancellationToken)
     {
-        var result = await _dbContext.Produtos.AddAsync(produto);
+        var result = await _dbContext.Produtos.AddAsync(produto, cancellationToken);
         return result.Entity;
     }
 
@@ -33,16 +28,16 @@ public sealed class ProdutoRepository : IProdutoRepository
         return result.Entity;
     }
 
-    public async Task<IList<Produto>> Buscar(ProdutoCategoria? categoria)
+    public async Task<IList<Produto>> Buscar(ProdutoCategoria? categoria, CancellationToken cancellationToken)
     {
        return await _dbContext.Produtos
             .Where(produto => produto.Ativo && (categoria == null || produto.Categoria == categoria))
-            .ToListAsync();
+            .ToListAsync(cancellationToken);
     }
 
     public async Task<Produto?> BuscarPorId(Guid produtoId, CancellationToken cancellationToken)
     {
-        return await _dbContext.Produtos.SingleAsync(produto => produto.Id == produtoId);
+        return await _dbContext.Produtos.SingleAsync(produto => produto.Id == produtoId, cancellationToken);
     }
 
     public void Dispose()

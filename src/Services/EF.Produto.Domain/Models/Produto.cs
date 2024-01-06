@@ -13,9 +13,7 @@ public class Produto : Entity, IAggregateRoot
 {
     public Produto(string nome, decimal valorUnitario, ProdutoCategoria categoria, bool ativo = true)
     {
-        if (!ValidarNome(nome)) throw new DomainException("Nome inválido");
-        if (!ValidarValorUnitario(valorUnitario)) throw new DomainException("Valor unitário inválido");
-        if (!ValidarCategoria(categoria)) throw new DomainException("Categoria inválida");
+        ValidarProduto(nome, valorUnitario, categoria);
 
         Nome = nome;
         ValorUnitario = valorUnitario;
@@ -28,18 +26,71 @@ public class Produto : Entity, IAggregateRoot
     public bool Ativo { get; private set; }
     public ProdutoCategoria Categoria { get; private set; }
 
-    public bool ValidarNome(string nome)
+    public void ValidarProduto(string nome, decimal valorUnitario, ProdutoCategoria categoria)
     {
-        return !string.IsNullOrEmpty(nome);
+        ValidarNome(nome);
+        ValidarValorUnitario(valorUnitario);
+        ValidarCategoria(categoria);
     }
 
-    public bool ValidarValorUnitario(decimal valorUnitario)
+    public void AlterarProduto(string nome, decimal valorUnitario, ProdutoCategoria categoria, bool ativo)
     {
-        return valorUnitario > 0;
+        AlterarNome(nome);
+        AlterarValorUnitario(valorUnitario);
+        AlterarCategoria(categoria);
+
+        if (ativo)
+        {
+            Ativar();
+        }
+        else
+        {
+            Desativar();
+        }
     }
 
-    public bool ValidarCategoria(ProdutoCategoria categoria)
+    public void AlterarNome(string nome)
     {
-        return Enum.IsDefined(typeof(ProdutoCategoria), categoria);
+        ValidarNome(nome);
+        Nome = nome;
     }
+
+    public void ValidarNome(string nome)
+    {
+        if (string.IsNullOrEmpty(nome)) throw new DomainException("Nome inválido");
+    }
+
+    public void AlterarValorUnitario(decimal valorUnitario)
+    {
+        ValidarValorUnitario(valorUnitario);
+        ValorUnitario = valorUnitario;
+    }
+
+    public void ValidarValorUnitario(decimal valorUnitario)
+    {
+        if (valorUnitario <= 0) throw new DomainException("Valor unitário inválido");
+    }
+
+    public void AlterarCategoria(ProdutoCategoria categoria)
+    {
+        ValidarCategoria(categoria);
+        Categoria = categoria;
+    }
+
+    public void ValidarCategoria(ProdutoCategoria categoria)
+    {
+        if (!Enum.IsDefined(typeof(ProdutoCategoria), categoria)) throw new DomainException("Categoria inválida");
+    }
+
+    public void Ativar()
+    {
+        Ativo = true;
+    }
+
+    public void Desativar()
+    {
+        Ativo = false;
+    }
+
+
 }

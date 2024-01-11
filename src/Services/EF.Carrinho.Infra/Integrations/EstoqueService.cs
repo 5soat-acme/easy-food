@@ -14,9 +14,9 @@ public class EstoqueService(IEstoqueQuery estoqueQuery, IMapper mapper) : IEstoq
 
         //TODO: Retirar mock
         return mapper.Map<EstoqueProdutoDto>(new EstoqueDto
-        {   
+        {
             ProdutoId = produtoId,
-            Quantidade = 10
+            Quantidade = 1000
         });
     }
 }

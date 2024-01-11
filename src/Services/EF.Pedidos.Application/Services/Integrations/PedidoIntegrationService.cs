@@ -22,7 +22,7 @@ public class PedidoIntegrationService : INotificationHandler<PreparoPedidoInicia
         await _mediator.Send(new AtualizarPedidoCommand
         {
             AggregateId = notification.AggregateId,
-            PedidoId = notification.CorrelacaoId,
+            PedidoId = notification.PedidoCorrelacaoId,
             Status = Status.Finalizado
         });
     }
@@ -32,7 +32,7 @@ public class PedidoIntegrationService : INotificationHandler<PreparoPedidoInicia
         await _mediator.Send(new AtualizarPedidoCommand
         {
             AggregateId = notification.AggregateId,
-            PedidoId = notification.CorrelacaoId,
+            PedidoId = notification.PedidoCorrelacaoId,
             Status = Status.Pronto
         });
     }
@@ -42,7 +42,7 @@ public class PedidoIntegrationService : INotificationHandler<PreparoPedidoInicia
         await _mediator.Send(new AtualizarPedidoCommand
         {
             AggregateId = notification.AggregateId,
-            PedidoId = notification.CorrelacaoId,
+            PedidoId = notification.PedidoCorrelacaoId,
             Status = Status.EmPreparacao
         });
     }

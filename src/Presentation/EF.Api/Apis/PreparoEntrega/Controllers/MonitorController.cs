@@ -16,7 +16,7 @@ public class MonitorController : CustomControllerBase
     }
 
     /// <summary>
-    /// Obtém os dados de acompanhamento utilizados para exibir o status do pedido na tela de acompanhamento.
+    ///     Obtém os dados de acompanhamento utilizados para exibir o status do pedido na tela de acompanhamento.
     /// </summary>
     /// <response code="200">Status dos pedidos.</response>
     [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(IEnumerable<PedidoMonitorDto>))]

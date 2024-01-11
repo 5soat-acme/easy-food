@@ -1,9 +1,11 @@
+using System.Net.Http.Headers;
+using System.Net.Http.Json;
 using EF.Api.Test.Config;
 using EF.Identidade.Application.DTOs.Requests;
+using EF.Identidade.Application.DTOs.Responses;
 using EF.Test.Utils.Builders.Identidade;
 using Microsoft.AspNetCore.Mvc.Testing;
 using Microsoft.Extensions.Caching.Memory;
-using Microsoft.Extensions.DependencyInjection;
 
 namespace EF.Api.Test.Fixtures;
 
@@ -12,11 +14,13 @@ public class IntegrationTestCollection : ICollectionFixture<IntegrationTestFixtu
 {
 }
 
-public class IntegrationTestFixture : IDisposable
+public class IntegrationTestFixture : IAsyncLifetime
 {
+    private const string TokenUserTest = "TokenUserTest";
+    private const string UserTest = "UserTest";
+    private readonly IMemoryCache _memoryCache;
     public readonly IntegrationTestAppFactory AppFactory;
     public readonly HttpClient Client;
-    private readonly IMemoryCache _memoryCache;
 
     public IntegrationTestFixture()
     {
@@ -33,25 +37,42 @@ public class IntegrationTestFixture : IDisposable
         _memoryCache = AppFactory.MemoryCache;
     }
 
-    public NovoUsuario GerarNovoUsuario()
+    public async Task InitializeAsync()
     {
-        var novoUsuario = new NovoUsuarioBuilder().Generate();
-
-        if (GetCacheItem("UsuarioLogin") is null)
-        {
-            SetCacheItem("UsuarioLogin", new UsuarioLogin
-            {
-                Email = novoUsuario.Email,
-                Senha = novoUsuario.Senha
-            });
-        }
-
-        return novoUsuario;
+        await GerarUsuarioTestes();
     }
 
-    public UsuarioLogin? ObterUsuarioLogin()
+    public async Task DisposeAsync()
     {
-        var cache = GetCacheItem("UsuarioLogin");
+        Client.Dispose();
+        _memoryCache.Dispose();
+    }
+
+    public RespostaTokenAcesso? ObterTokenTestes()
+    {
+        var cache = GetCacheItem(TokenUserTest);
+        return cache as RespostaTokenAcesso;
+    }
+
+    public void AdicionarTokenRequest(string? token = null)
+    {
+        if (string.IsNullOrEmpty(token))
+        {
+            var tokenResposta = ObterTokenTestes();
+            token = tokenResposta.Token;
+        }
+
+        Client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+    }
+
+    public void RemoverTokenRequest()
+    {
+        Client.DefaultRequestHeaders.Authorization = null;
+    }
+
+    public UsuarioLogin? ObterUsuarioTestes()
+    {
+        var cache = GetCacheItem(UserTest);
         return cache as UsuarioLogin;
     }
 
@@ -68,16 +89,27 @@ public class IntegrationTestFixture : IDisposable
 
     public object? GetCacheItem(string key)
     {
-        if (_memoryCache.TryGetValue(key, out object? value))
-        {
-            return value;
-        }
+        if (_memoryCache.TryGetValue(key, out var value)) return value;
 
         return null;
     }
 
-    public void Dispose()
+    private async Task GerarUsuarioTestes()
     {
-        Client.Dispose();
+        var novoUsuario = new NovoUsuarioBuilder().Generate();
+
+        SetCacheItem(UserTest, new UsuarioLogin
+        {
+            Email = novoUsuario.Email,
+            Senha = novoUsuario.Senha
+        });
+
+        var response = await Client.PostAsJsonAsync("api/identidade", novoUsuario);
+
+        response.EnsureSuccessStatusCode();
+
+        var responseBody = await response.Content.ReadFromJsonAsync<RespostaTokenAcesso>();
+
+        SetCacheItem(TokenUserTest, responseBody!);
     }
 }

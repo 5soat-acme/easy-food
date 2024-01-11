@@ -3,23 +3,20 @@ using Bogus;
 using Bogus.Extensions.Brazil;
 using EF.Api.Test.Fixtures;
 using EF.Identidade.Application.DTOs.Responses;
-using EF.Test.Utils.Orderers;
+using EF.Test.Utils.Builders.Identidade;
 using FluentAssertions;
 
 namespace EF.Api.Test.Identidade;
 
-[TestCaseOrderer(
-    ordererTypeName: "EF.Test.Utils.Orderers.PriorityOrderer",
-    ordererAssemblyName: "EF.Test.Utils")]
 [Collection(nameof(IntegrationTestCollection))]
 public class IdentidadeControllerTest(IntegrationTestFixture fixture)
 {
-    [Fact(DisplayName = "Criar usuário com sucesso"), TestPriority(-1)]
+    [Fact(DisplayName = "Criar usuário com sucesso")]
     [Trait("Category", "EF.Identidade.Api")]
     public async Task IdentidadeController_CriarUsuario_DeveRegistrarUsuarioComSucesso()
     {
         // Arrange
-        var novoUsuario = fixture.GerarNovoUsuario();
+        var novoUsuario = new NovoUsuarioBuilder().Generate();
 
         // Act
         var response = await fixture.Client.PostAsJsonAsync("api/identidade", novoUsuario);
@@ -33,12 +30,12 @@ public class IdentidadeControllerTest(IntegrationTestFixture fixture)
         //responseBody?.User.Claims.FirstOrDefault(f => f.Type == "cpf")?.Value.Should().Be(novoUsuario.Cpf);
     }
 
-    [Fact(DisplayName = "Gera token de acesso para usuário cadastrado"), TestPriority(0)]
+    [Fact(DisplayName = "Gera token de acesso para usuário cadastrado")]
     [Trait("Category", "EF.Identidade.Api")]
     public async Task IdentidadeController_Login_DeveGerarTokenAcesso()
     {
         // Arrange
-        var usuarioLogin = fixture.ObterUsuarioLogin();
+        var usuarioLogin = fixture.ObterUsuarioTestes();
 
         // Act
         var response = await fixture.Client.PostAsJsonAsync("api/identidade/autenticar", usuarioLogin);
@@ -52,7 +49,7 @@ public class IdentidadeControllerTest(IntegrationTestFixture fixture)
         //responseBody?.User.Claims.FirstOrDefault(f => f.Type == "cpf")?.Value.Should().Be(novoUsuario.Cpf);
     }
 
-    [Fact(DisplayName = "Gerar token de acesso anônimo"), TestPriority(0)]
+    [Fact(DisplayName = "Gerar token de acesso anônimo")]
     [Trait("Category", "EF.Identidade.Api")]
     public async Task IdentidadeController_AcessarSemIdentificacao_DeveGerarTokenAcesso()
     {
@@ -67,7 +64,7 @@ public class IdentidadeControllerTest(IntegrationTestFixture fixture)
         responseBody?.User.Claims.FirstOrDefault(f => f.Type == "cpf")?.Value.Should().BeNullOrEmpty();
     }
 
-    [Fact(DisplayName = "Gerar token de acesso anônimo com CPF"), TestPriority(0)]
+    [Fact(DisplayName = "Gerar token de acesso anônimo com CPF")]
     [Trait("Category", "EF.Identidade.Api")]
     public async Task IdentidadeController_AcessarSemIdentificacaoComCpf_DeveGerarTokenAcesso()
     {
@@ -82,6 +79,36 @@ public class IdentidadeControllerTest(IntegrationTestFixture fixture)
         response.IsSuccessStatusCode.Should().BeTrue("deve ser true");
         responseBody.Should().NotBeNull("deve ser diferente de null");
         responseBody?.Token.Should().NotBeNullOrEmpty("deve ser diferente de null ou vazio");
-        responseBody?.User.Claims.FirstOrDefault(f => f.Type == "cpf")?.Value.Should().BeNullOrEmpty();
+        responseBody?.User.Claims.FirstOrDefault(f => f.Type == "cpf")?.Value.Should().NotBeNullOrEmpty();
+    }
+
+    [Fact(DisplayName = "Senha incorreta para usuário cadastrado")]
+    [Trait("Category", "EF.Identidade.Api")]
+    public async Task IdentidadeController_LoginSenhaIncorreta_DeveRetornarErro()
+    {
+        // Arrange
+        var usuarioLogin = fixture.ObterUsuarioTestes();
+        usuarioLogin.Senha = "123456";
+
+        // Act
+        var response = await fixture.Client.PostAsJsonAsync("api/identidade/autenticar", usuarioLogin);
+
+        // Assert
+        response.IsSuccessStatusCode.Should().BeFalse("deve ser false");
+    }
+
+    [Fact(DisplayName = "Tentativa de login com email inválido")]
+    [Trait("Category", "EF.Identidade.Api")]
+    public async Task IdentidadeController_LoginEmailInvalido_DeveRetornarErro()
+    {
+        // Arrange
+        var usuarioLogin = fixture.ObterUsuarioTestes();
+        usuarioLogin.Email = "email@errado.com";
+
+        // Act
+        var response = await fixture.Client.PostAsJsonAsync("api/identidade/autenticar", usuarioLogin);
+
+        // Assert
+        response.IsSuccessStatusCode.Should().BeFalse("deve ser false");
     }
 }

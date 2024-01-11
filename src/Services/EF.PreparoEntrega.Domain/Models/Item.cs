@@ -13,5 +13,5 @@ public class Item : Entity
     public int Quantidade { get; private set; }
     public Guid ProdutoId { get; private set; }
     public Guid PedidoId { get; private set; }
-    public Pedido Pedido { get; }
+    public Pedido Pedido { get; private set; }
 }

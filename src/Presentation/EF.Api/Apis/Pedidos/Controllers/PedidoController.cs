@@ -9,7 +9,6 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace EF.Api.Apis.Pedidos.Controllers;
 
-[Authorize]
 [Route("api/pedidos")]
 public class PedidoController(IMediatorHandler mediator, IPedidoQuery pedidoQuery, IUserApp userApp)
     : CustomControllerBase
@@ -38,6 +37,7 @@ public class PedidoController(IMediatorHandler mediator, IPedidoQuery pedidoQuer
     [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(PedidoDto))]
     [ProducesResponseType(StatusCodes.Status401Unauthorized)]
     [Produces("application/json")]
+    [Authorize]
     [HttpPost]
     public async Task<IActionResult> Checkout(CriarPedidoCommand command)
     {

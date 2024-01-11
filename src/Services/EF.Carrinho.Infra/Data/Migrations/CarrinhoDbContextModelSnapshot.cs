@@ -31,6 +31,12 @@ namespace EF.Carrinho.Infra.Data.Migrations
                     b.Property<Guid?>("ClienteId")
                         .HasColumnType("uuid");
 
+                    b.Property<DateTime?>("DataAtualizacao")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<DateTime>("DataCriacao")
+                        .HasColumnType("timestamp with time zone");
+
                     b.Property<decimal>("ValorTotal")
                         .HasColumnType("numeric");
 
@@ -51,9 +57,6 @@ namespace EF.Carrinho.Infra.Data.Migrations
                     b.Property<Guid>("CarrinhoId")
                         .HasColumnType("uuid");
 
-                    b.Property<decimal?>("Desconto")
-                        .HasColumnType("numeric");
-
                     b.Property<string>("Nome")
                         .IsRequired()
                         .HasColumnType("text");
@@ -66,9 +69,6 @@ namespace EF.Carrinho.Infra.Data.Migrations
 
                     b.Property<int>("TempoEstimadoPreparo")
                         .HasColumnType("integer");
-
-                    b.Property<decimal>("ValorFinal")
-                        .HasColumnType("numeric");
 
                     b.Property<decimal>("ValorUnitario")
                         .HasColumnType("numeric");

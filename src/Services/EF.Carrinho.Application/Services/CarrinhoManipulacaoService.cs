@@ -91,8 +91,23 @@ public class CarrinhoManipulacaoService : BaseCarrinhoService, ICarrinhoManipula
     public async Task RemoverCarrinho(Guid carrinhoId)
     {
         var carrinho = await _carrinhoRepository.ObterPorId(carrinhoId);
-        _carrinhoRepository.Remover(carrinho);
-        await PersistirDados();
+
+        if (carrinho is not null)
+        {
+            _carrinhoRepository.Remover(carrinho);
+            await PersistirDados();
+        }
+    }
+
+    public async Task RemoverCarrinhoPorClienteId(Guid clienteId)
+    {
+        var carrinho = await _carrinhoRepository.ObterPorClienteId(clienteId);
+
+        if (carrinho is not null)
+        {
+            _carrinhoRepository.Remover(carrinho);
+            await PersistirDados();
+        }
     }
 
     private CarrinhoCliente CriarCarrinhoCliente(CarrinhoSessaoDto carrinhoSessao)
@@ -131,6 +146,7 @@ public class CarrinhoManipulacaoService : BaseCarrinhoService, ICarrinhoManipula
         else
         {
             var itemNovo = await _produtoService.ObterItemPorProdutoId(itemDto.ProdutoId);
+            itemNovo.AtualizarQuantidade(itemDto.Quantidade);
             carrinho.AdicionarItem(itemNovo);
             _carrinhoRepository.AdicionarItem(itemNovo);
         }
@@ -141,9 +157,9 @@ public class CarrinhoManipulacaoService : BaseCarrinhoService, ICarrinhoManipula
     protected async Task<bool> ValidarEstoque(Item item)
     {
         if (item is null) throw new ArgumentNullException(nameof(item));
-        
+
         var estoque = await _estoqueService.ObterEstoquePorProdutoId(item.ProdutoId);
-        
+
         if (estoque is null || estoque.Quantidade < item.Quantidade) return false;
 
         return true;

@@ -22,20 +22,20 @@ public class PreparoController : CustomControllerBase
     }
 
     /// <summary>
-    /// Obtém os dados de pedidos para serem preparados.
+    ///     Obtém os dados de pedidos para serem preparados.
     /// </summary>
     /// <response code="200">Pedidos a serem preparados.</response>
     [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(IEnumerable<PedidoMonitorDto>))]
     [Produces("application/json")]
     [HttpGet]
-    public async Task<IActionResult> ObterPedidos()
+    public async Task<IActionResult> ObterPedidosPreparo()
     {
         var pedidos = await _preparoEntregaQuery.ObterPedidos();
         return pedidos is null ? NotFound() : Respond(pedidos);
     }
 
     /// <summary>
-    /// Sinaliza o início do preparo de um pedido (Status = Em Preparacao).
+    ///     Sinaliza o início do preparo de um pedido (Status = Em Preparacao).
     /// </summary>
     /// <response code="200">Status do pedido alterado com sucesso.</response>
     [ProducesResponseType(StatusCodes.Status200OK)]
@@ -51,7 +51,7 @@ public class PreparoController : CustomControllerBase
     }
 
     /// <summary>
-    /// Sinaliza que o pedido está pronto para ser entregue (Status = Pronto)
+    ///     Sinaliza que o pedido está pronto para ser entregue (Status = Pronto)
     /// </summary>
     /// <response code="200">Status do pedido alterado com sucesso.</response>
     [ProducesResponseType(StatusCodes.Status200OK)]
@@ -65,9 +65,9 @@ public class PreparoController : CustomControllerBase
 
         return Respond();
     }
-    
+
     /// <summary>
-    /// Sinaliza que o pedido está pronto para ser entregue (Status = Finalizado)
+    ///     Sinaliza que o pedido está pronto para ser entregue (Status = Finalizado)
     /// </summary>
     /// <response code="200">Status do pedido alterado com sucesso.</response>
     [ProducesResponseType(StatusCodes.Status200OK)]

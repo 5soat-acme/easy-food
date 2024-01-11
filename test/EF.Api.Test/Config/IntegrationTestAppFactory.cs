@@ -3,7 +3,6 @@ using Microsoft.AspNetCore.Mvc.Testing;
 using Microsoft.Extensions.Caching.Memory;
 using Microsoft.Extensions.DependencyInjection;
 
-
 namespace EF.Api.Test.Config;
 
 public class IntegrationTestAppFactory : WebApplicationFactory<Program>

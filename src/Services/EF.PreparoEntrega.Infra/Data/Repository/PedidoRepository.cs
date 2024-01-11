@@ -32,7 +32,7 @@ public sealed class PedidoRepository : IPedidoRepository
     {
         return await _context.Pedidos
             .Include(c => c.Itens)
-            .Where(c => c.Status != Status.Finalizado)
+            .Where(c => c.StatusPreparo != StatusPreparo.Finalizado)
             .ToListAsync();
     }
 
@@ -49,5 +49,21 @@ public sealed class PedidoRepository : IPedidoRepository
     public void Remover(Pedido pedido)
     {
         _context.Pedidos.Remove(pedido);
+    }
+
+    public async Task<int> ObterProximoCodigo()
+    {
+        try
+        {
+            using var command = _context.Database.GetDbConnection().CreateCommand();
+            command.CommandText = "SELECT nextval('\"CodigoPedidoSequence\"')";
+            _context.Database.OpenConnection();
+            var result = await command.ExecuteScalarAsync();
+            return Convert.ToInt32(result);
+        }
+        finally
+        {
+            _context.Database.CloseConnection();
+        }
     }
 }

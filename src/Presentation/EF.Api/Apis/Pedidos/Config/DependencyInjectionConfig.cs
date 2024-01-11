@@ -28,6 +28,7 @@ public static class DependencyInjectionConfig
 
         // Application - Mapping
         services.AddAutoMapper(typeof(DomainToDtoProfile));
+        services.AddAutoMapper(typeof(ExternalDtoToDtoProfile));
 
         // Infra - Data
         services.AddScoped<IPedidoRepository, PedidoRepository>();

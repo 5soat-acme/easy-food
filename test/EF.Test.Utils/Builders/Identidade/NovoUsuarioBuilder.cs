@@ -1,5 +1,4 @@
 using Bogus;
-using Bogus.DataSets;
 using Bogus.Extensions.Brazil;
 using EF.Identidade.Application.DTOs.Requests;
 

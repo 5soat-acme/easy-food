@@ -1,3 +1,4 @@
+using EF.Domain.Commons.DomainObjects;
 using EF.Domain.Commons.Mediator;
 using EF.Domain.Commons.Messages;
 using EF.Domain.Commons.Messages.Integrations;
@@ -33,7 +34,7 @@ public class CriarPedidoCommandHandler : CommandHandler,
 
     public async Task<CommandResult> Handle(CriarPedidoCommand request, CancellationToken cancellationToken)
     {
-        var pedido = MapearPedido(request);
+        var pedido = await MapearPedido(request);
 
         if (!string.IsNullOrEmpty(request.CodigoCupom)) pedido = await AplicarCupom(request.CodigoCupom, pedido);
 
@@ -49,7 +50,7 @@ public class CriarPedidoCommandHandler : CommandHandler,
 
         var result = await PersistData(_pedidoRepository.UnitOfWork);
 
-        return CommandResult.Create(result);
+        return CommandResult.Create(result, pedido.Id);
     }
 
     private async Task<bool> ProcessarPagamento(Pedido pedido, string metodoPagamento)
@@ -71,11 +72,13 @@ public class CriarPedidoCommandHandler : CommandHandler,
         return true;
     }
 
-    private Pedido MapearPedido(CriarPedidoCommand request)
+    private async Task<Pedido> MapearPedido(CriarPedidoCommand request)
     {
         var pedido = new Pedido();
 
-        if (string.IsNullOrEmpty(request.ClienteCpf))
+        if (request.ClienteId.HasValue) pedido.AssociarCliente(request.ClienteId.Value);
+
+        if (!string.IsNullOrEmpty(request.ClienteCpf))
         {
             var cpf = new Cpf(request.ClienteCpf);
             pedido.AssociarCpf(cpf);
@@ -83,9 +86,15 @@ public class CriarPedidoCommandHandler : CommandHandler,
 
         foreach (var itemAdd in request.Itens)
         {
-            var item = new Item(itemAdd.ProdutoId, itemAdd.Nome, itemAdd.ValorUnitario, itemAdd.Quantidade);
+            var produto = await _produtoService.ObterProdutoPorId(itemAdd.ProdutoId);
+
+            if (produto is null) throw new DomainException("Produto inválido");
+
+            var item = new Item(produto.ProdutoId, produto.Nome, produto.ValorUnitario, itemAdd.Quantidade);
             pedido.AdicionarItem(item);
         }
+
+        pedido.DefinirDataCriacao(DateTime.Now);
 
         return pedido;
     }
@@ -106,13 +115,8 @@ public class CriarPedidoCommandHandler : CommandHandler,
             AddError("O valor total do pedido não confere com o valor informado");
 
         foreach (var item in pedido.Itens)
-        {
             if (!await ValidarEstoque(item))
                 AddError("Estoque insuficiente", item.Id.ToString());
-
-            if (!await ValidarProduto(item))
-                AddError("O valor do item não confere com o valor informado", item.Id.ToString());
-        }
 
         return ValidationResult.IsValid;
     }
@@ -122,15 +126,6 @@ public class CriarPedidoCommandHandler : CommandHandler,
         var estoque = await _estoqueService.ObterEstoquePorProdutoId(item.ProdutoId);
 
         if (estoque is null || estoque.Quantidade < item.Quantidade) return false;
-
-        return true;
-    }
-
-    private async Task<bool> ValidarProduto(Item item)
-    {
-        var produto = await _produtoService.ObterProdutoPorId(item.ProdutoId);
-
-        if (produto is null || produto.ValorUnitario != item.ValorUnitario) return false;
 
         return true;
     }

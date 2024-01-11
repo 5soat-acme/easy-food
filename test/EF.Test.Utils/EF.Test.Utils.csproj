@@ -14,8 +14,9 @@
     </ItemGroup>
 
     <ItemGroup>
+        <ProjectReference Include="..\..\src\Services\EF.Carrinho.Application\EF.Carrinho.Application.csproj"/>
         <ProjectReference Include="..\..\src\Services\EF.Carrinho.Domain\EF.Carrinho.Domain.csproj"/>
-        <ProjectReference Include="..\..\src\Services\EF.Identidade.Application\EF.Identidade.Application.csproj" />
+        <ProjectReference Include="..\..\src\Services\EF.Identidade.Application\EF.Identidade.Application.csproj"/>
     </ItemGroup>
 
 </Project>

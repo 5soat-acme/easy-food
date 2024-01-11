@@ -13,16 +13,4 @@ public class UsuarioLoginBuilder : Faker<UsuarioLogin>
         RuleFor(a => a.Email, f => f.Person.Email);
         RuleFor(a => a.Senha, f => "Teste@1234");
     }
-
-    public UsuarioLoginBuilder Email(string? email)
-    {
-        RuleFor(a => a.Email, () => email);
-        return this;
-    }
-
-    public UsuarioLoginBuilder Senha(string? senha)
-    {
-        RuleFor(a => a.Email, () => senha);
-        return this;
-    }
 }

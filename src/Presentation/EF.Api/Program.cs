@@ -10,6 +10,9 @@ app.UseApiConfig();
 
 app.Run();
 
-public partial class Program
+namespace EF.Api
 {
+    public class Program
+    {
+    }
 }

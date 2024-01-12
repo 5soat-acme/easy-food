@@ -56,14 +56,15 @@ public class CriarPedidoCommandHandler : CommandHandler,
         return CommandResult.Create(result, pedido.Id);
     }
 
-    private async Task<bool> ProcessarPagamento(Pedido pedido, string metodoPagamento)
+    private async Task<bool> ProcessarPagamento(Pedido pedido, string tipoPagamento)
     {
-        var result = await _mediator.Send(new CriarPagamentoCommand
+        var result = await _mediator.Send(new AutorizarPagamentoCommand
         {
             PedidoId = pedido.Id,
             AggregateId = pedido.Id,
-            MetodoPagamento = metodoPagamento,
-            Valor = pedido.ValorTotal
+            TipoPagamento = tipoPagamento,
+            Valor = pedido.ValorTotal,
+            Cpf = pedido.Cpf?.Numero
         });
 
         if (!result.IsValid())

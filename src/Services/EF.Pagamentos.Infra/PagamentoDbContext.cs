@@ -1,5 +1,6 @@
 ﻿using EF.Domain.Commons.Messages;
 using EF.Domain.Commons.Repository;
+using EF.Infra.Commons.Data;
 using EF.Pagamentos.Domain.Models;
 using FluentValidation.Results;
 using Microsoft.EntityFrameworkCore;
@@ -14,11 +15,11 @@ public sealed class PagamentoDbContext : DbContext, IUnitOfWork
         ChangeTracker.AutoDetectChangesEnabled = false;
     }
 
-    public DbSet<FormaPagamento> FormasPagamento { get; set; }
     public DbSet<Pagamento> Pagamentos { get; set; }
 
     public async Task<bool> Commit()
     {
+        DbContextExtension.SetDates(ChangeTracker.Entries());
         return await SaveChangesAsync() > 0;
     }
 

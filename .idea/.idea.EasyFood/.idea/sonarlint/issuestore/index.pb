@@ -439,3 +439,5 @@ k
 ;src/Services/EF.Identidade.Domain/Models/ApplicationUser.cs,a\8\a8372d91a8240d21c0d44668ce4d667af1af6fa9
 n
 >src/Services/EF.Identidade.Infra/Extensions/ApplicationUser.cs,9\0\9030f33aadf299d198c9c707359c186d13cb43d1
+k
+;src/Shared/EF.Infra.Commons/Extensions/DateTimeExtension.cs,1\f\1fbd780fcd6b165772de55a548e2db44aac169e8

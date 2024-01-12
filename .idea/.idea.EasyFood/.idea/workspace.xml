@@ -19,16 +19,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="61e4a515-7fae-49b6-801b-ebc481bfb9f9" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/issuestore/2/b/2bce0ca0445aadc81d87b8ee739931e673f5d84a" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/issuestore/2/b/2bce0ca0445aadc81d87b8ee739931e673f5d84a" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/issuestore/e/f/efddbd09deb417fb1f2eeea260c40479b1db92dd" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/issuestore/e/f/efddbd09deb417fb1f2eeea260c40479b1db92dd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/securityhotspotstore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/securityhotspotstore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Presentation/EF.Api/Apis/Identidade/Config/IdentityConfig.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Presentation/EF.Api/Apis/Identidade/Config/IdentityConfig.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/EF.Identidade.Application/EF.Identidade.Application.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Identidade.Application/EF.Identidade.Application.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Services/EF.Identidade.Application/Services/AcessoAppService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Identidade.Application/Services/AcessoAppService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/EF.Identidade.Infra/Data/IdentidadeDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Identidade.Infra/Data/IdentidadeDbContext.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/EF.Identidade.Infra/Data/Migrations/IdentidadeDbContextModelSnapshot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Identidade.Infra/Data/Migrations/IdentidadeDbContextModelSnapshot.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/EF.Identidade.Infra/EF.Identidade.Infra.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Identidade.Infra/EF.Identidade.Infra.csproj" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -196,6 +189,21 @@
       <method v="2">
         <option name="Build" />
       </method>
+    </configuration>
+    <configuration default="true" type="ShConfigurationType">
+      <option name="SCRIPT_TEXT" value="" />
+      <option name="INDEPENDENT_SCRIPT_PATH" value="true" />
+      <option name="SCRIPT_PATH" value="" />
+      <option name="SCRIPT_OPTIONS" value="" />
+      <option name="INDEPENDENT_SCRIPT_WORKING_DIRECTORY" value="true" />
+      <option name="SCRIPT_WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="INDEPENDENT_INTERPRETER_PATH" value="false" />
+      <option name="INTERPRETER_PATH" value="$PROJECT_DIR$/../../../Windows/System32/WindowsPowerShell/v1.0/powershell.exe" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="EXECUTE_IN_TERMINAL" value="true" />
+      <option name="EXECUTE_SCRIPT_FILE" value="true" />
+      <envs />
+      <method v="2" />
     </configuration>
     <configuration default="true" type="docker-deploy" factoryName="dockerfile" temporary="true">
       <deployment type="dockerfile">

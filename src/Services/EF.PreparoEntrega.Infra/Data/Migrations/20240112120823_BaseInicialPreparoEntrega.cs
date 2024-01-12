@@ -22,7 +22,7 @@ namespace EF.PreparoEntrega.Infra.Data.Migrations
                     Id = table.Column<Guid>(type: "uuid", nullable: false),
                     PedidoCorrelacaoId = table.Column<Guid>(type: "uuid", nullable: false),
                     Codigo = table.Column<int>(type: "integer", nullable: false),
-                    StatusPreparo = table.Column<int>(type: "integer", nullable: false),
+                    Status = table.Column<int>(type: "integer", nullable: false),
                     DataCriacao = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
                     DataAtualizacao = table.Column<DateTime>(type: "timestamp with time zone", nullable: true)
                 },
@@ -38,6 +38,8 @@ namespace EF.PreparoEntrega.Infra.Data.Migrations
                     Id = table.Column<Guid>(type: "uuid", nullable: false),
                     Quantidade = table.Column<int>(type: "integer", nullable: false),
                     ProdutoId = table.Column<Guid>(type: "uuid", nullable: false),
+                    NomeProduto = table.Column<string>(type: "text", nullable: false),
+                    TempoPreparoEstimado = table.Column<int>(type: "integer", nullable: false),
                     PedidoId = table.Column<Guid>(type: "uuid", nullable: false)
                 },
                 constraints: table =>

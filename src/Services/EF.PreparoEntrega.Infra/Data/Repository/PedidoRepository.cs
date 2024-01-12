@@ -32,7 +32,7 @@ public sealed class PedidoRepository : IPedidoRepository
     {
         return await _context.Pedidos
             .Include(c => c.Itens)
-            .Where(c => c.StatusPreparo != StatusPreparo.Finalizado)
+            .Where(c => c.Status != StatusPreparo.Finalizado)
             .ToListAsync();
     }
 

@@ -22,7 +22,9 @@ public class PedidoIntegrationService : INotificationHandler<PedidoCriadoEvent>
             Itens = notification.Itens.Select(x => new CriarPedidoPreparoCommand.ItemPedido
             {
                 ProdutoId = x.ProdutoId,
-                Quantidade = x.Quantidade
+                Quantidade = x.Quantidade,
+                NomeProduto = x.NomeProduto,
+                TempoPreparoEstimado = x.TempoPreparoEstimado
             }).ToList()
         });
     }

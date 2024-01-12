@@ -413,14 +413,10 @@ s
 Csrc/Services/EF.Estoques.Infra/Data/Repository/EstoqueRepository.cs,4\e\4e6162b6c3437fdba75822a838e54369bfb7d95b
 w
 Gsrc/Services/EF.Pedidos.Application/Mappings/ExternalDtoToDtoProfile.cs,8\e\8ef5f0349231b25a7d679ee0a15366151c230ee6
-‚
-Rsrc/Services/EF.Pedidos.Infra/Data/Migrations/20231229165340_BaseInicialPedidos.cs,4\3\43acb48bc39a2a40e76f40629e040b8b7611c04f
 q
 Asrc/Services/EF.Pagamentos.Infra/Data/Mapping/PagamentoMapping.cs,2\4\24fd2fd741a4fa2cff08e027fece65f5cb20843c
 v
 Fsrc/Services/EF.Pagamentos.Infra/Data/Mapping/FormaPagamentoMapping.cs,f\8\f834fc7194b429b65d08c5bfb52e9c43cdef9dfc
-l
-<src/Services/EF.PreparoEntrega.Domain/Models/StatusPedido.cs,e\f\ef50604b9dc50eb98552e7beebbc2514a50acef3
 m
 =src/Services/EF.PreparoEntrega.Domain/Models/StatusPreparo.cs,3\2\32fa26160c4a0748a1d762c5cf57996df586ebd8
 f
@@ -431,3 +427,5 @@ t
 Dsrc/Services/EF.PreparoEntrega.Infra/Data/PreparoEntregaDbContext.cs,7\f\7f7218f8594925ea3f1251d59d792cf868cc768e
 }
 Msrc/Services/EF.PreparoEntrega.Application/DTOs/Responses/PedidoMonitorDto.cs,2\c\2cb89a4bfd0b3c7745874d5b42f855925f927eeb
+Œ
+\src/Services/EF.PreparoEntrega.Application/Commands/CriarPedido/CriarPedidoPreparoCommand.cs,d\1\d126b58be486fae210751a843b3229c840e1e074

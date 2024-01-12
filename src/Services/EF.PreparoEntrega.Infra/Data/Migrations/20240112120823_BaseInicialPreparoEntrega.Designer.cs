@@ -12,7 +12,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace EF.PreparoEntrega.Infra.Data.Migrations
 {
     [DbContext(typeof(PreparoEntregaDbContext))]
-    [Migration("20240111202143_BaseInicialPreparoEntrega")]
+    [Migration("20240112120823_BaseInicialPreparoEntrega")]
     partial class BaseInicialPreparoEntrega
     {
         /// <inheritdoc />
@@ -34,6 +34,10 @@ namespace EF.PreparoEntrega.Infra.Data.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uuid");
 
+                    b.Property<string>("NomeProduto")
+                        .IsRequired()
+                        .HasColumnType("text");
+
                     b.Property<Guid>("PedidoId")
                         .HasColumnType("uuid");
 
@@ -41,6 +45,9 @@ namespace EF.PreparoEntrega.Infra.Data.Migrations
                         .HasColumnType("uuid");
 
                     b.Property<int>("Quantidade")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("TempoPreparoEstimado")
                         .HasColumnType("integer");
 
                     b.HasKey("Id");
@@ -68,7 +75,7 @@ namespace EF.PreparoEntrega.Infra.Data.Migrations
                     b.Property<Guid>("PedidoCorrelacaoId")
                         .HasColumnType("uuid");
 
-                    b.Property<int>("StatusPreparo")
+                    b.Property<int>("Status")
                         .HasColumnType("integer");
 
                     b.HasKey("Id");

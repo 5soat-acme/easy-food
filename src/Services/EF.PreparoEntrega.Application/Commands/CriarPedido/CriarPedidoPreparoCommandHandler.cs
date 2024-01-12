@@ -31,7 +31,8 @@ public class CriarPedidoPreparoCommandHandler : CommandHandler,
         var pedido = new Pedido(request.CorrelacaoId);
 
         foreach (var item in request.Itens)
-            pedido.AdicionarItem(new Item(item.Quantidade, item.ProdutoId));
+            pedido.AdicionarItem(new Item(item.Quantidade, item.ProdutoId, item.NomeProduto,
+                item.TempoPreparoEstimado));
 
         return pedido;
     }

@@ -4,6 +4,7 @@ using EF.Domain.Commons.Messages;
 using EF.Domain.Commons.Messages.Integrations;
 using EF.Domain.Commons.ValueObjects;
 using EF.Pagamentos.Application.Commands;
+using EF.Pedidos.Application.DTOs.Integrations;
 using EF.Pedidos.Application.Ports;
 using EF.Pedidos.Domain.Models;
 using EF.Pedidos.Domain.Repository;
@@ -34,7 +35,9 @@ public class CriarPedidoCommandHandler : CommandHandler,
 
     public async Task<CommandResult> Handle(CriarPedidoCommand request, CancellationToken cancellationToken)
     {
-        var pedido = await MapearPedido(request);
+        var produtos = await ObterProdutosPedido(request);
+
+        var pedido = await MapearPedido(request, produtos);
 
         if (!string.IsNullOrEmpty(request.CodigoCupom)) pedido = await AplicarCupom(request.CodigoCupom, pedido);
 
@@ -44,7 +47,7 @@ public class CriarPedidoCommandHandler : CommandHandler,
 
         if (!await ProcessarPagamento(pedido, request.MetodoPagamento)) return CommandResult.Create(ValidationResult);
 
-        pedido.AddEvent(CriarEvento(pedido, request));
+        pedido.AddEvent(CriarEvento(pedido, request, produtos));
 
         _pedidoRepository.Criar(pedido);
 
@@ -72,7 +75,7 @@ public class CriarPedidoCommandHandler : CommandHandler,
         return true;
     }
 
-    private async Task<Pedido> MapearPedido(CriarPedidoCommand request)
+    private async Task<Pedido> MapearPedido(CriarPedidoCommand request, List<ProdutoDto> produtos)
     {
         var pedido = new Pedido();
 
@@ -86,15 +89,11 @@ public class CriarPedidoCommandHandler : CommandHandler,
 
         foreach (var itemAdd in request.Itens)
         {
-            var produto = await _produtoService.ObterProdutoPorId(itemAdd.ProdutoId);
+            var produto = produtos.FirstOrDefault(p => p.ProdutoId == itemAdd.ProdutoId);
 
-            if (produto is null) throw new DomainException("Produto inválido");
-
-            var item = new Item(produto.ProdutoId, produto.Nome, produto.ValorUnitario, itemAdd.Quantidade);
+            var item = new Item(produto!.ProdutoId, produto.Nome, produto.ValorUnitario, itemAdd.Quantidade);
             pedido.AdicionarItem(item);
         }
-
-        pedido.DefinirDataCriacao(DateTime.Now);
 
         return pedido;
     }
@@ -130,16 +129,21 @@ public class CriarPedidoCommandHandler : CommandHandler,
         return true;
     }
 
-    private PedidoCriadoEvent CriarEvento(Pedido pedido, CriarPedidoCommand request)
+    private PedidoCriadoEvent CriarEvento(Pedido pedido, CriarPedidoCommand request, List<ProdutoDto> produtos)
     {
         List<PedidoCriadoEvent.ItemPedido> itens = new();
 
         foreach (var item in pedido.Itens)
+        {
+            var produto = produtos.FirstOrDefault(p => p.ProdutoId == item.ProdutoId);
             itens.Add(new PedidoCriadoEvent.ItemPedido
             {
+                Quantidade = item.Quantidade,
                 ProdutoId = item.ProdutoId,
-                Quantidade = item.Quantidade
+                NomeProduto = produto!.Nome,
+                TempoPreparoEstimado = produto.TempoEstimadoPreparo
             });
+        }
 
         return new PedidoCriadoEvent
         {
@@ -148,5 +152,18 @@ public class CriarPedidoCommandHandler : CommandHandler,
             SessionId = request.SessionId,
             Itens = itens
         };
+    }
+
+    private async Task<List<ProdutoDto>> ObterProdutosPedido(CriarPedidoCommand request)
+    {
+        List<ProdutoDto> produtos = new();
+        foreach (var item in request.Itens)
+        {
+            var produto = await _produtoService.ObterProdutoPorId(item.ProdutoId);
+            if (produto is null) throw new DomainException("Produto inválido");
+            produtos.Add(produto);
+        }
+
+        return produtos;
     }
 }

@@ -9,30 +9,30 @@ public class Pedido : Entity, IAggregateRoot
     public Pedido(Guid pedidoCorrelacaoId)
     {
         PedidoCorrelacaoId = pedidoCorrelacaoId;
-        StatusPreparo = StatusPreparo.Recebido;
+        Status = StatusPreparo.Recebido;
         _itens = new List<Item>();
     }
 
     public Guid PedidoCorrelacaoId { get; private set; }
     public int Codigo { get; private set; }
-    public StatusPreparo StatusPreparo { get; private set; }
+    public StatusPreparo Status { get; private set; }
     public DateTime DataCriacao { get; private set; }
     public DateTime? DataAtualizacao { get; private set; }
     public IReadOnlyCollection<Item> Itens => _itens;
 
     public void IniciarPreparo()
     {
-        StatusPreparo = StatusPreparo.EmPreparacao;
+        Status = StatusPreparo.EmPreparacao;
     }
 
     public void FinalizarPreparo()
     {
-        StatusPreparo = StatusPreparo.Pronto;
+        Status = StatusPreparo.Pronto;
     }
 
     public void ConfirmarEntrega()
     {
-        StatusPreparo = StatusPreparo.Finalizado;
+        Status = StatusPreparo.Finalizado;
     }
 
     public void AdicionarItem(Item item)

@@ -8,7 +8,6 @@
 
     <ItemGroup>
         <ProjectReference Include="..\..\Shared\EF.Infra.Commons\EF.Infra.Commons.csproj"/>
-        <ProjectReference Include="..\EF.Carrinho.Application\EF.Carrinho.Application.csproj"/>
         <ProjectReference Include="..\EF.Carrinho.Domain\EF.Carrinho.Domain.csproj"/>
         <ProjectReference Include="..\EF.Cupons.Application\EF.Cupons.Application.csproj"/>
     </ItemGroup>

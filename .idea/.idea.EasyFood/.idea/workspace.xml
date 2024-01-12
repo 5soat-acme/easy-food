@@ -19,33 +19,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="61e4a515-7fae-49b6-801b-ebc481bfb9f9" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/issuestore/8/4/8454e7cfd9d5d61248b1c22b76ee33aebf79d213" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/issuestore/8/4/8454e7cfd9d5d61248b1c22b76ee33aebf79d213" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/issuestore/a/6/a69c4202c3e08e4c20be96a7b6e9a723246f6c2c" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/issuestore/a/6/a69c4202c3e08e4c20be96a7b6e9a723246f6c2c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/issuestore/f/6/f67cb3598b7b1d98308475aac2ec3e38cb007b45" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/issuestore/f/6/f67cb3598b7b1d98308475aac2ec3e38cb007b45" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/securityhotspotstore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/securityhotspotstore/index.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/issuestore/e/f/eff1c72015f5830c4d7e09be35d09f61958d6b0d" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/issuestore/e/f/eff1c72015f5830c4d7e09be35d09f61958d6b0d" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Presentation/EF.Api/Apis/Pagamentos/Config/DependencyInjectionConfig.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Presentation/EF.Api/Apis/Pagamentos/Config/DependencyInjectionConfig.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Presentation/EF.Api/Apis/Pagamentos/Controllers/PagamentoController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Presentation/EF.Api/Apis/Pagamentos/Controllers/PagamentoController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/EF.Pagamentos.Application/Commands/CriarPagamentoCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Pagamentos.Application/Commands/AutorizarPagamentoCommand.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/EF.Pagamentos.Application/Commands/CriarPagamentoCommandHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Pagamentos.Application/Commands/AutorizarPagamentoCommandHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/EF.Pagamentos.Application/DTOs/Responses/FormaPagamentoDto.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/EF.Pagamentos.Application/EF.Pagamentos.Application.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Pagamentos.Application/EF.Pagamentos.Application.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/EF.Pagamentos.Application/Mappings/PagamentoDomainToDtoProfile.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/EF.Pagamentos.Application/Queries/FormaPagamentoQuery.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/EF.Pagamentos.Application/Queries/Interfaces/IFormaPagamentoQuery.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/EF.Pagamentos.Domain/Models/FormaPagamento.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/EF.Pagamentos.Domain/Models/Pagamento.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Pagamentos.Domain/Models/Pagamento.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/EF.Pagamentos.Domain/Models/TipoFormaPagamento.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/EF.Pagamentos.Domain/Repository/IFormaPagamentoRepository.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/EF.Pagamentos.Infra/Data/Mapping/PagamentoMapping.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Pagamentos.Infra/Data/Mapping/PagamentoMapping.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/EF.Pagamentos.Infra/Data/Repository/FormaPagamentoRepository.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/EF.Pagamentos.Infra/EF.Pagamentos.Infra.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Pagamentos.Infra/EF.Pagamentos.Infra.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/EF.Pagamentos.Infra/Migrations/20231228224453_BaseInicialPagamentos.Designer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/EF.Pagamentos.Infra/Migrations/20231228224453_BaseInicialPagamentos.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/EF.Pagamentos.Infra/Migrations/PagamentoDbContextModelSnapshot.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/EF.Pagamentos.Infra/PagamentoDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Pagamentos.Infra/PagamentoDbContext.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/EF.Pedidos.Application/Commands/CriarPedido/CriarPedidoCommandHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Pedidos.Application/Commands/CriarPedido/CriarPedidoCommandHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Presentation/EF.Api/Apis/Carrinho/Config/DependencyInjectionConfig.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Presentation/EF.Api/Apis/Carrinho/Config/DependencyInjectionConfig.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/EF.Carrinho.Application/DTOs/Integrations/CupomDescontoDto.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/EF.Carrinho.Application/DTOs/Integrations/EstoqueProdutoDto.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/EF.Carrinho.Application/DTOs/Integrations/ProdutoCupomDto.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/EF.Carrinho.Application/DTOs/Integrations/ProdutoDto.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/EF.Carrinho.Application/Mappings/DtoToDomainProfile.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/EF.Carrinho.Application/Mappings/ExternalDtoToDtoProfile.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/EF.Carrinho.Application/Ports/IEstoqueService.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/EF.Carrinho.Application/Ports/IProdutoService.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/EF.Carrinho.Application/Services/CarrinhoManipulacaoService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Carrinho.Application/Services/CarrinhoManipulacaoService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/EF.Carrinho.Infra/EF.Carrinho.Infra.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Carrinho.Infra/EF.Carrinho.Infra.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/EF.Carrinho.Infra/Integrations/EstoqueService.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/EF.Carrinho.Infra/Integrations/ProdutoService.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/EF.Estoques.Application/Queries/Interfaces/IEstoqueQuery.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Estoques.Application/Queries/Interfaces/IEstoqueQuery.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/EF.Test.Utils/Builders/Carrinho/EstoqueProdutoDtoBuilder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/test/EF.Test.Utils/Builders/Carrinho/EstoqueProdutoDtoBuilder.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/EF.Test.Utils/EF.Test.Utils.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/test/EF.Test.Utils/EF.Test.Utils.csproj" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

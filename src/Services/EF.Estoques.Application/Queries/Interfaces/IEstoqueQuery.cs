@@ -4,5 +4,5 @@ namespace EF.Estoques.Application.Queries.Interfaces;
 
 public interface IEstoqueQuery
 {
-    public Task<EstoqueDto?> ObterEstoqueProduto(Guid produtoId, CancellationToken cancellationToken);
+    public Task<EstoqueDto?> ObterEstoqueProduto(Guid produtoId, CancellationToken cancellationToken = default);
 }

@@ -12,8 +12,8 @@ public class PedidoMapping : IEntityTypeConfiguration<Pedido>
 
         builder.HasKey(c => c.Id);
 
-        builder.HasIndex(c => c.CorrelacaoId)
-            .HasName("IDX_PreparoEntrega_CorrelacaoId");
+        builder.HasIndex(c => c.PedidoCorrelacaoId)
+            .HasName("IDX_PreparoEntrega_PedidoCorrelacaoId");
 
         builder.HasMany(c => c.Itens)
             .WithOne(c => c.Pedido)

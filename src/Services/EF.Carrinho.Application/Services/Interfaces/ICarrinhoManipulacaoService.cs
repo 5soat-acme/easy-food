@@ -9,4 +9,5 @@ public interface ICarrinhoManipulacaoService
     Task<OperationResult> AtualizarItem(AtualizarItemDto itemDto, CarrinhoSessaoDto carrinhoSessao);
     Task<OperationResult> RemoverItemCarrinho(Guid itemId, CarrinhoSessaoDto carrinhoSessao);
     Task RemoverCarrinho(Guid carrinhoId);
+    Task RemoverCarrinhoPorClienteId(Guid clienteId);
 }

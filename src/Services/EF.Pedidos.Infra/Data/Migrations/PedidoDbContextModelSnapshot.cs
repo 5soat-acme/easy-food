@@ -22,9 +22,6 @@ namespace EF.Pedidos.Infra.Data.Migrations
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
-            modelBuilder.HasSequence<int>("PedidoSequence")
-                .StartsAt(1000L);
-
             modelBuilder.Entity("EF.Pedidos.Domain.Models.Item", b =>
                 {
                     b.Property<Guid>("Id")
@@ -33,10 +30,6 @@ namespace EF.Pedidos.Infra.Data.Migrations
 
                     b.Property<decimal?>("Desconto")
                         .HasColumnType("numeric");
-
-                    b.Property<string>("NomeProduto")
-                        .IsRequired()
-                        .HasColumnType("text");
 
                     b.Property<Guid>("PedidoId")
                         .HasColumnType("uuid");
@@ -69,19 +62,13 @@ namespace EF.Pedidos.Infra.Data.Migrations
                     b.Property<Guid?>("ClienteId")
                         .HasColumnType("uuid");
 
-                    b.Property<string>("Codigo")
-                        .IsRequired()
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("text")
-                        .HasDefaultValueSql("nextval(\"PedidoSequence\")");
-
-                    b.Property<Guid>("CorrelacaoId")
+                    b.Property<Guid?>("CupomId")
                         .HasColumnType("uuid");
 
-                    b.Property<DateTime>("DataCriacao")
+                    b.Property<DateTime?>("DataAtualizacao")
                         .HasColumnType("timestamp with time zone");
 
-                    b.Property<DateTime?>("DataUltimaAtualizacao")
+                    b.Property<DateTime>("DataCriacao")
                         .HasColumnType("timestamp with time zone");
 
                     b.Property<int>("Status")
@@ -91,9 +78,6 @@ namespace EF.Pedidos.Infra.Data.Migrations
                         .HasColumnType("numeric");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("CorrelacaoId")
-                        .HasDatabaseName("IDX_CorrelacaoId");
 
                     b.ToTable("Pedidos", (string)null);
                 });

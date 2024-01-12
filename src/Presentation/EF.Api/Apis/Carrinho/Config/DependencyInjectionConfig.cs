@@ -26,7 +26,6 @@ public static class DependencyInjectionConfig
         // Application - Ports
         services.AddScoped<IProdutoService, ProdutoService>();
         services.AddScoped<IEstoqueService, EstoqueService>();
-        services.AddScoped<ICupomService, CupomService>();
 
         // Application - Mapping
         services.AddAutoMapper(typeof(DomainToDtoProfile));

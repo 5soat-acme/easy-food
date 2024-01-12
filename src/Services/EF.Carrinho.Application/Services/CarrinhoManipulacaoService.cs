@@ -10,20 +10,17 @@ namespace EF.Carrinho.Application.Services;
 public class CarrinhoManipulacaoService : BaseCarrinhoService, ICarrinhoManipulacaoService
 {
     private readonly ICarrinhoRepository _carrinhoRepository;
-    private readonly ICupomService _cupomService;
     private readonly IEstoqueService _estoqueService;
     private readonly IProdutoService _produtoService;
 
     public CarrinhoManipulacaoService(
         ICarrinhoRepository carrinhoRepository,
         IProdutoService produtoService,
-        IEstoqueService estoqueService,
-        ICupomService cupomService) : base(carrinhoRepository)
+        IEstoqueService estoqueService) : base(carrinhoRepository)
     {
         _carrinhoRepository = carrinhoRepository;
         _produtoService = produtoService;
         _estoqueService = estoqueService;
-        _cupomService = cupomService;
     }
 
     public async Task<OperationResult> AdicionarItemCarrinho(AdicionarItemDto itemDto, CarrinhoSessaoDto carrinhoSessao)
@@ -94,8 +91,23 @@ public class CarrinhoManipulacaoService : BaseCarrinhoService, ICarrinhoManipula
     public async Task RemoverCarrinho(Guid carrinhoId)
     {
         var carrinho = await _carrinhoRepository.ObterPorId(carrinhoId);
-        _carrinhoRepository.Remover(carrinho);
-        await PersistirDados();
+
+        if (carrinho is not null)
+        {
+            _carrinhoRepository.Remover(carrinho);
+            await PersistirDados();
+        }
+    }
+
+    public async Task RemoverCarrinhoPorClienteId(Guid clienteId)
+    {
+        var carrinho = await _carrinhoRepository.ObterPorClienteId(clienteId);
+
+        if (carrinho is not null)
+        {
+            _carrinhoRepository.Remover(carrinho);
+            await PersistirDados();
+        }
     }
 
     private CarrinhoCliente CriarCarrinhoCliente(CarrinhoSessaoDto carrinhoSessao)
@@ -134,6 +146,7 @@ public class CarrinhoManipulacaoService : BaseCarrinhoService, ICarrinhoManipula
         else
         {
             var itemNovo = await _produtoService.ObterItemPorProdutoId(itemDto.ProdutoId);
+            itemNovo.AtualizarQuantidade(itemDto.Quantidade);
             carrinho.AdicionarItem(itemNovo);
             _carrinhoRepository.AdicionarItem(itemNovo);
         }
@@ -143,12 +156,11 @@ public class CarrinhoManipulacaoService : BaseCarrinhoService, ICarrinhoManipula
 
     protected async Task<bool> ValidarEstoque(Item item)
     {
-        // TODO: Testar quando o estoque possuir dados
-        // if (item is null) throw new ArgumentNullException(nameof(item));
-        //
-        // var estoque = await _estoqueService.ObterEstoquePorProdutoId(item.ProdutoId);
-        //
-        // if (estoque is null || estoque.Quantidade < item.Quantidade) return false;
+        if (item is null) throw new ArgumentNullException(nameof(item));
+
+        var estoque = await _estoqueService.ObterEstoquePorProdutoId(item.ProdutoId);
+
+        if (estoque is null || estoque.Quantidade < item.Quantidade) return false;
 
         return true;
     }

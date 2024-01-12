@@ -9,3 +9,10 @@ var app = builder.Build();
 app.UseApiConfig();
 
 app.Run();
+
+namespace EF.Api
+{
+    public class Program
+    {
+    }
+}

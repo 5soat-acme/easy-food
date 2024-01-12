@@ -2,6 +2,7 @@ using EF.Carrinho.Domain.Models;
 using EF.Domain.Commons.Mediator;
 using EF.Domain.Commons.Messages;
 using EF.Domain.Commons.Repository;
+using EF.Infra.Commons.Data;
 using FluentValidation.Results;
 using Microsoft.EntityFrameworkCore;
 
@@ -20,6 +21,7 @@ public sealed class CarrinhoDbContext : DbContext, IUnitOfWork
 
     public async Task<bool> Commit()
     {
+        DbContextExtension.SetDates(ChangeTracker.Entries());
         return await SaveChangesAsync() > 0;
     }
 

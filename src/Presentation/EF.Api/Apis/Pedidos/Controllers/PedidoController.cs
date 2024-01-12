@@ -43,11 +43,12 @@ public class PedidoController(IMediatorHandler mediator, IPedidoQuery pedidoQuer
     {
         command.SessionId = userApp.GetSessionId();
         command.ClienteId = userApp.GetUserId();
+        command.ClienteCpf = userApp.GetUserCpf();
 
         var result = await mediator.Send(command);
 
         if (!result.IsValid()) return Respond(result.ValidationResult);
 
-        return Respond(result.AggregateId);
+        return Respond(new { pedidoId = result.AggregateId });
     }
 }

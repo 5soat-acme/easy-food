@@ -15,4 +15,5 @@ public interface IUserApp
     IEnumerable<Claim> GetClaims();
     HttpContext GetHttpContext();
     Guid GetSessionId();
+    string GetUserCpf();
 }

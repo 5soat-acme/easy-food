@@ -8,5 +8,4 @@ public class ItemPedidoDto
     public decimal ValorFinal { get; set; }
     public int Quantidade { get; set; }
     public Guid ProdutoId { get; set; }
-    public string NomeProduto { get; set; }
 }

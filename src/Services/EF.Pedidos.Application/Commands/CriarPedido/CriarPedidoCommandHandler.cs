@@ -1,36 +1,51 @@
+using EF.Cupons.Application.Queries.Interfaces;
 using EF.Domain.Commons.DomainObjects;
 using EF.Domain.Commons.Mediator;
 using EF.Domain.Commons.Messages;
 using EF.Domain.Commons.Messages.Integrations;
 using EF.Domain.Commons.ValueObjects;
+using EF.Estoques.Application.Queries.Interfaces;
 using EF.Pagamentos.Application.Commands;
-using EF.Pedidos.Application.DTOs.Integrations;
-using EF.Pedidos.Application.Ports;
 using EF.Pedidos.Domain.Models;
 using EF.Pedidos.Domain.Repository;
 using MediatR;
 
 namespace EF.Pedidos.Application.Commands.CriarPedido;
 
+// TODO: Remover
+public interface IProdutoQuery
+{
+    Task<ProdutoDto> ObterProdutoPorId(Guid id);
+}
+
+public class ProdutoDto
+{
+    public Guid ProdutoId { get; set; }
+    public string Nome { get; set; }
+    public string Descricao { get; set; }
+    public decimal ValorUnitario { get; set; }
+    public int TempoEstimadoPreparo { get; set; }
+}
+
 public class CriarPedidoCommandHandler : CommandHandler,
     IRequestHandler<CriarPedidoCommand, CommandResult>
 {
-    private readonly ICupomService _cupomService;
-    private readonly IEstoqueService _estoqueService;
+    private readonly ICupomQuery _cupomQuery;
+    private readonly IEstoqueQuery _estoqueQuery;
     private readonly IMediatorHandler _mediator;
     private readonly IPedidoRepository _pedidoRepository;
-    private readonly IProdutoService _produtoService;
+    private readonly IProdutoQuery _produtoQuery;
 
 
     public CriarPedidoCommandHandler(IMediatorHandler mediator, IPedidoRepository pedidoRepository,
-        IEstoqueService estoqueService,
-        ICupomService cupomService, IProdutoService produtoService)
+        IEstoqueQuery estoqueQuery,
+        ICupomQuery cupomQuery, IProdutoQuery produtoQuery)
     {
         _mediator = mediator;
         _pedidoRepository = pedidoRepository;
-        _estoqueService = estoqueService;
-        _cupomService = cupomService;
-        _produtoService = produtoService;
+        _estoqueQuery = estoqueQuery;
+        _cupomQuery = cupomQuery;
+        _produtoQuery = produtoQuery;
     }
 
     public async Task<CommandResult> Handle(CriarPedidoCommand request, CancellationToken cancellationToken)
@@ -56,14 +71,15 @@ public class CriarPedidoCommandHandler : CommandHandler,
         return CommandResult.Create(result, pedido.Id);
     }
 
-    private async Task<bool> ProcessarPagamento(Pedido pedido, string metodoPagamento)
+    private async Task<bool> ProcessarPagamento(Pedido pedido, string tipoPagamento)
     {
-        var result = await _mediator.Send(new CriarPagamentoCommand
+        var result = await _mediator.Send(new AutorizarPagamentoCommand
         {
             PedidoId = pedido.Id,
             AggregateId = pedido.Id,
-            MetodoPagamento = metodoPagamento,
-            Valor = pedido.ValorTotal
+            TipoPagamento = tipoPagamento,
+            Valor = pedido.ValorTotal,
+            Cpf = pedido.Cpf?.Numero
         });
 
         if (!result.IsValid())
@@ -100,10 +116,10 @@ public class CriarPedidoCommandHandler : CommandHandler,
 
     private async Task<Pedido> AplicarCupom(string codigoCupom, Pedido pedido)
     {
-        var cupom = await _cupomService.ObterCupomDesconto(codigoCupom);
+        var cupom = await _cupomQuery.ObterCupom(codigoCupom);
         pedido.AssociarCupom(cupom.Id);
 
-        foreach (var item in pedido.Itens) pedido.AplicarDescontoItem(item.Id, cupom.Desconto);
+        foreach (var item in pedido.Itens) pedido.AplicarDescontoItem(item.Id, cupom.PorcentagemDesconto);
 
         return pedido;
     }
@@ -122,7 +138,7 @@ public class CriarPedidoCommandHandler : CommandHandler,
 
     private async Task<bool> ValidarEstoque(Item item)
     {
-        var estoque = await _estoqueService.ObterEstoquePorProdutoId(item.ProdutoId);
+        var estoque = await _estoqueQuery.ObterEstoqueProduto(item.ProdutoId);
 
         if (estoque is null || estoque.Quantidade < item.Quantidade) return false;
 
@@ -159,7 +175,7 @@ public class CriarPedidoCommandHandler : CommandHandler,
         List<ProdutoDto> produtos = new();
         foreach (var item in request.Itens)
         {
-            var produto = await _produtoService.ObterProdutoPorId(item.ProdutoId);
+            var produto = await _produtoQuery.ObterProdutoPorId(item.ProdutoId);
             if (produto is null) throw new DomainException("Produto inválido");
             produtos.Add(produto);
         }

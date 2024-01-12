@@ -66,9 +66,9 @@ public class AcessoAppService : IAcessoAppService
         var claims = new List<Claim>
         {
             new(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
-            new Claim(JwtRegisteredClaimNames.Nbf,
+            new(JwtRegisteredClaimNames.Nbf,
                 DateTime.UtcNow.ToUnixEpochDate().ToString()),
-            new Claim(JwtRegisteredClaimNames.Iat,
+            new(JwtRegisteredClaimNames.Iat,
                 DateTime.UtcNow.ToUnixEpochDate().ToString()),
             new("user_type", "anonymous"),
             new("session_id", Guid.NewGuid().ToString())

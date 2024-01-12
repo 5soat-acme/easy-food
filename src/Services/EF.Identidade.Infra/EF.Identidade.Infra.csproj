@@ -21,9 +21,9 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Compile Remove="Data\Migrations\20231209095545_BaseInicialIdentidade.cs" />
-      <Compile Remove="Data\Migrations\20231209095545_BaseInicialIdentidade.Designer.cs" />
-      <Compile Remove="Data\Migrations\IdentidadeDbContextModelSnapshot.cs" />
+        <Compile Remove="Data\Migrations\20231209095545_BaseInicialIdentidade.cs"/>
+        <Compile Remove="Data\Migrations\20231209095545_BaseInicialIdentidade.Designer.cs"/>
+        <Compile Remove="Data\Migrations\IdentidadeDbContextModelSnapshot.cs"/>
     </ItemGroup>
 
 </Project>

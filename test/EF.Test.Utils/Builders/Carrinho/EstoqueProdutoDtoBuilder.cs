@@ -1,14 +1,14 @@
 using Bogus;
-using EF.Carrinho.Application.DTOs.Integrations;
+using EF.Estoques.Application.DTOs.Responses;
 
 namespace EF.Test.Utils.Builders.Carrinho;
 
-public class EstoqueProdutoDtoBuilder : Faker<EstoqueProdutoDto>
+public class EstoqueProdutoDtoBuilder : Faker<EstoqueDto>
 {
     public EstoqueProdutoDtoBuilder()
     {
         CustomInstantiator(f =>
-            new EstoqueProdutoDto
+            new EstoqueDto
             {
                 ProdutoId = Guid.NewGuid(),
                 Quantidade = int.MaxValue

@@ -1,6 +1,6 @@
 namespace EF.Infra.Commons.Extensions;
 
-public static  class DateTimeExtension
+public static class DateTimeExtension
 {
     public static long ToUnixEpochDate(this DateTime date)
     {

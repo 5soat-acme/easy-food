@@ -1,12 +1,10 @@
 using EF.Carrinho.Application.Mappings;
-using EF.Carrinho.Application.Ports;
 using EF.Carrinho.Application.Services;
 using EF.Carrinho.Application.Services.Integrations;
 using EF.Carrinho.Application.Services.Interfaces;
 using EF.Carrinho.Domain.Repository;
 using EF.Carrinho.Infra.Data;
 using EF.Carrinho.Infra.Data.Repository;
-using EF.Carrinho.Infra.Integrations;
 using EF.Domain.Commons.Messages.Integrations;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
@@ -23,14 +21,8 @@ public static class DependencyInjectionConfig
         services.AddScoped<ICarrinhoManipulacaoService, CarrinhoManipulacaoService>();
         services.AddScoped<INotificationHandler<PedidoCriadoEvent>, CarrinhoIntegracaoService>();
 
-        // Application - Ports
-        services.AddScoped<IProdutoService, ProdutoService>();
-        services.AddScoped<IEstoqueService, EstoqueService>();
-
         // Application - Mapping
         services.AddAutoMapper(typeof(DomainToDtoProfile));
-        services.AddAutoMapper(typeof(DtoToDomainProfile));
-        services.AddAutoMapper(typeof(ExternalDtoToDtoProfile));
 
         // Infra - Data
         services.AddScoped<ICarrinhoRepository, CarrinhoRepository>();

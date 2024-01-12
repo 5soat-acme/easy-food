@@ -479,3 +479,5 @@ y
 Isrc/Services/EF.Pagamentos.Application/Config/PagamentoServiceResolver.cs,d\7\d721fb53822486556ca3718207991ad522308778
 `
 0src/Services/EF.Pagamentos.Domain/Models/Tipo.cs,a\8\a81f46c8ddcddd915b3c48ac711893238f73bb10
+t
+Dsrc/Services/EF.Cupons.Application/Queries/Interfaces/ICupomQuery.cs,4\9\498f238449bcf08bf43f23e7a597b2681511cde7

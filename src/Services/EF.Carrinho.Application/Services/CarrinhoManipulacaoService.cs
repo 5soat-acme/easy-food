@@ -7,6 +7,7 @@ using EF.Estoques.Application.Queries.Interfaces;
 
 namespace EF.Carrinho.Application.Services;
 
+// TODO: Remover
 public interface IProdutoQuery
 {
     Task<Item> ObterItemPorProdutoId(Guid id);

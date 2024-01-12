@@ -4,6 +4,8 @@ namespace EF.Pagamentos.Domain.Models;
 
 public class Pagamento : Entity, IAggregateRoot
 {
+    private readonly List<Transacao> _transacoes;
+
     private Pagamento()
     {
     }
@@ -24,7 +26,6 @@ public class Pagamento : Entity, IAggregateRoot
     public DateTime DataCriacao { get; private set; }
     public DateTime DataAtualizacao { get; private set; }
     public decimal Valor { get; private set; }
-    private readonly List<Transacao> _transacoes;
     public IReadOnlyCollection<Transacao> Transacoes => _transacoes;
 
     private bool ValidarPedido(Guid pedidoId)
@@ -40,7 +41,7 @@ public class Pagamento : Entity, IAggregateRoot
 
         return true;
     }
-    
+
     public void AdicionarTransacao(Transacao transacao)
     {
         _transacoes.Add(transacao);

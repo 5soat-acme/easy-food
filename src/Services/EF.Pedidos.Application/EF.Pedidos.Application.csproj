@@ -20,4 +20,16 @@
         <PackageReference Include="MediatR" Version="12.2.0"/>
     </ItemGroup>
 
+    <ItemGroup>
+        <Compile Remove="Ports\**"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <EmbeddedResource Remove="Ports\**"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <None Remove="Ports\**"/>
+    </ItemGroup>
+
 </Project>

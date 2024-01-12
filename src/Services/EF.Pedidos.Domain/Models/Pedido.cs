@@ -62,14 +62,4 @@ public class Pedido : Entity, IAggregateRoot
     {
         ClienteId = clienteId;
     }
-
-    public void DefinirDataCriacao(DateTime data)
-    {
-        DataCriacao = data;
-    }
-
-    public void DefinirDataAtualizacao(DateTime data)
-    {
-        DataAtualizacao = data;
-    }
 }

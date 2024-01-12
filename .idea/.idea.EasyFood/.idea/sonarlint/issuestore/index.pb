@@ -429,3 +429,13 @@ Dsrc/Services/EF.PreparoEntrega.Infra/Data/PreparoEntregaDbContext.cs,7\f\7f721
 Msrc/Services/EF.PreparoEntrega.Application/DTOs/Responses/PedidoMonitorDto.cs,2\c\2cb89a4bfd0b3c7745874d5b42f855925f927eeb
 Œ
 \src/Services/EF.PreparoEntrega.Application/Commands/CriarPedido/CriarPedidoPreparoCommand.cs,d\1\d126b58be486fae210751a843b3229c840e1e074
+m
+=src/Services/EF.Clientes.Application/Queries/IClienteQuery.cs,a\5\a51a4ff4b124914f557f6c1e6bbda9fa2a0a5fe9
+l
+<src/Services/EF.Clientes.Application/Queries/ClienteQuery.cs,5\8\5816b72e46ad3219888848e0f7bb4022828797b3
+p
+@src/Presentation/EF.Api/Apis/Identidade/Config/IdentityConfig.cs,c\e\ce859f99079a8efdea71eeeeaf4f345f46e072f0
+k
+;src/Services/EF.Identidade.Domain/Models/ApplicationUser.cs,a\8\a8372d91a8240d21c0d44668ce4d667af1af6fa9
+n
+>src/Services/EF.Identidade.Infra/Extensions/ApplicationUser.cs,9\0\9030f33aadf299d198c9c707359c186d13cb43d1

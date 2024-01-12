@@ -17,7 +17,7 @@ public static class IdentityConfig
         services.AddDbContext<IdentidadeDbContext>(options =>
             options.UseNpgsql(configuration.GetConnectionString("DefaultConnection")));
 
-        services.AddDefaultIdentity<IdentityUser>()
+        services.AddDefaultIdentity<ApplicationUser>()
             .AddRoles<IdentityRole>()
             .AddErrorDescriber<TraducaoPortugues>()
             .AddEntityFrameworkStores<IdentidadeDbContext>()

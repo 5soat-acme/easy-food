@@ -32,9 +32,9 @@ public class PedidoController(IMediatorHandler mediator, IPedidoQuery pedidoQuer
     /// <summary>
     ///     Faz o checkout do pedido.
     /// </summary>
-    /// <response code="200">Checkout realizado com sucesso.</response>
+    /// <response code="200">Retorna o Id do pedido.</response>
     /// <response code="401">Não autorizado.</response>
-    [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(PedidoDto))]
+    [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status401Unauthorized)]
     [Produces("application/json")]
     [Authorize]

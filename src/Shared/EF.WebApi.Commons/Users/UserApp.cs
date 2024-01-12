@@ -61,4 +61,9 @@ public class UserApp : IUserApp
         return Guid.Parse(_accessor.HttpContext.User.Claims.FirstOrDefault(c => c.Type.Equals("session_id"))
             ?.Value);
     }
+
+    public string GetUserCpf()
+    {
+        return _accessor.HttpContext?.User.GetUserEmail();
+    }
 }

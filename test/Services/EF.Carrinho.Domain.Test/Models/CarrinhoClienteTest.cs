@@ -1,26 +1,18 @@
 using EF.Carrinho.Domain.Models;
-using EF.Carrinho.Domain.Test.Fixtures;
 using EF.Domain.Commons.DomainObjects;
+using EF.Test.Utils.Builders.Carrinho;
 using FluentAssertions;
 
 namespace EF.Carrinho.Domain.Test.Models;
 
-[Collection(nameof(CarrinhoClienteCollection))]
 public class CarrinhoClienteTest
 {
-    private readonly CarrinhoClienteFixture _carrinhoClienteFixture;
-
-    public CarrinhoClienteTest(CarrinhoClienteFixture carrinhoClienteFixture)
-    {
-        _carrinhoClienteFixture = carrinhoClienteFixture;
-    }
-
     [Fact(DisplayName = "Criar carrinho associado ao cliente")]
     [Trait("Category", "Carrinho.Domain.CarrinhoCliente")]
     public void CarrinhoCliente_CriarCarrinhoAssociadoCliente_DeveCriarOCarrinhoAssociadoAoCliente()
     {
         // Arrange
-        var carrinhoCliente = new CarrinhoCliente();
+        var carrinhoCliente = new CarrinhoClienteBuilder().Generate();
 
         // Act & Assert 
         carrinhoCliente.ClienteId.Should().NotBeEmpty("o cliente deve estar associado ao carrinho");
@@ -39,7 +31,7 @@ public class CarrinhoClienteTest
     public void CarrinhoCliente_AssociarClienteInvalido_RetornaDomainException()
     {
         // Arrange
-        var carrinhoCliente = _carrinhoClienteFixture.ObterCarrinhoNovo();
+        var carrinhoCliente = new CarrinhoClienteBuilder().Generate();
 
         // Act & Assert 
         Assert.Throws<DomainException>(() => carrinhoCliente.AssociarCliente(Guid.Empty));
@@ -50,7 +42,7 @@ public class CarrinhoClienteTest
     public void CarrinhoCliente_AssociarCarrinhoExistenteInvalido_RetornaDomainException()
     {
         // Arrange
-        var carrinhoCliente = _carrinhoClienteFixture.ObterCarrinhoNovo();
+        var carrinhoCliente = new CarrinhoClienteBuilder().Generate();
 
         // Act & Assert 
         Assert.Throws<DomainException>(() => carrinhoCliente.AssociarCarrinho(Guid.Empty));
@@ -61,8 +53,8 @@ public class CarrinhoClienteTest
     public void CarrinhoCliente_AdicionarItem_DeveAdicionarItemCarrinho()
     {
         // Arrange
-        var carrinhoCliente = _carrinhoClienteFixture.ObterCarrinhoNovo();
-        var item = _carrinhoClienteFixture.GerarItemValido();
+        var carrinhoCliente = new CarrinhoClienteBuilder().Generate();
+        var item = new ItemBuilder().Generate();
 
         // Act
         carrinhoCliente.AdicionarItem(item);
@@ -78,8 +70,8 @@ public class CarrinhoClienteTest
     public void CarrinhoCliente_RemoverItem_DeveRemoverItemCarrinho()
     {
         // Arrange
-        var carrinhoCliente = _carrinhoClienteFixture.ObterCarrinhoNovo();
-        var item = _carrinhoClienteFixture.GerarItemValido();
+        var carrinhoCliente = new CarrinhoClienteBuilder().Generate();
+        var item = new ItemBuilder().Generate();
         carrinhoCliente.AdicionarItem(item);
 
         // Act
@@ -95,8 +87,8 @@ public class CarrinhoClienteTest
     public void CarrinhoCliente_AtualizarValorTotal_DeveRetornarValorTotal()
     {
         // Arrange
-        var carrinhoCliente = _carrinhoClienteFixture.ObterCarrinhoNovo();
-        var itens = _carrinhoClienteFixture.GerarItensValidos(10);
+        var carrinhoCliente = new CarrinhoClienteBuilder().Generate();
+        var itens = new ItemBuilder().Generate(10);
         decimal valorTotal = 0;
         foreach (var item in itens)
         {

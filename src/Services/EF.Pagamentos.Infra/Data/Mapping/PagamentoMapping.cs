@@ -15,15 +15,7 @@ public class PagamentoMapping : IEntityTypeConfiguration<Pagamento>
         builder.Property(c => c.PedidoId)
             .IsRequired();
 
-        builder.Property(c => c.DataLancamento)
-            .IsRequired()
-            .HasColumnType("timestamp without time zone");
-
         builder.Property(c => c.Valor)
             .IsRequired();
-
-        builder.HasOne(c => c.FormaPagamento)
-            .WithMany()
-            .HasForeignKey(f => f.FormaPagamentoId);
     }
 }

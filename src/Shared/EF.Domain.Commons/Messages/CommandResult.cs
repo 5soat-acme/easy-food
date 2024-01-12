@@ -4,8 +4,8 @@ namespace EF.Domain.Commons.Messages;
 
 public class CommandResult
 {
-    public ValidationResult ValidationResult { get; init; }
-    public Guid AggregateId { get; init; }
+    public ValidationResult ValidationResult { get; private set; }
+    public Guid AggregateId { get; private set; }
 
     public bool IsValid()
     {

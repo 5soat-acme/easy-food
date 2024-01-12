@@ -19,6 +19,8 @@ public class CriarPedidoPreparoCommandHandler : CommandHandler,
         CancellationToken cancellationToken)
     {
         var pedido = MapearPedido(request);
+        var proximoCodigo = await _pedidoRepository.ObterProximoCodigo();
+        pedido.GerarCodigo(proximoCodigo);
         _pedidoRepository.Criar(pedido);
         var result = await PersistData(_pedidoRepository.UnitOfWork);
         return CommandResult.Create(result);
@@ -29,7 +31,8 @@ public class CriarPedidoPreparoCommandHandler : CommandHandler,
         var pedido = new Pedido(request.CorrelacaoId);
 
         foreach (var item in request.Itens)
-            pedido.AdicionarItem(new Item(item.Quantidade, item.ProdutoId));
+            pedido.AdicionarItem(new Item(item.Quantidade, item.ProdutoId, item.NomeProduto,
+                item.TempoPreparoEstimado));
 
         return pedido;
     }

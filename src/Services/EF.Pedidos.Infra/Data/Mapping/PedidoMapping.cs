@@ -16,7 +16,6 @@ public class PedidoMapping : IEntityTypeConfiguration<Pedido>
         builder.OwnsOne(c => c.Cpf, tf =>
         {
             tf.Property(c => c.Numero)
-                .IsRequired()
                 .HasMaxLength(Cpf.CpfMaxLength)
                 .HasColumnName("Cpf")
                 .HasColumnType($"varchar({Cpf.CpfMaxLength})");

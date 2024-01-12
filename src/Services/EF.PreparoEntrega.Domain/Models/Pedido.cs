@@ -6,36 +6,42 @@ public class Pedido : Entity, IAggregateRoot
 {
     private readonly List<Item> _itens;
 
-    public Pedido(Guid correlacaoId)
+    public Pedido(Guid pedidoCorrelacaoId)
     {
-        CorrelacaoId = correlacaoId;
-        Status = Status.Recebido;
+        PedidoCorrelacaoId = pedidoCorrelacaoId;
+        Status = StatusPreparo.Recebido;
+        _itens = new List<Item>();
     }
 
-    public Guid CorrelacaoId { get; private set; }
-    public string Codigo { get; private set; }
-    public Status Status { get; private set; }
+    public Guid PedidoCorrelacaoId { get; private set; }
+    public int Codigo { get; private set; }
+    public StatusPreparo Status { get; private set; }
     public DateTime DataCriacao { get; private set; }
-    public DateTime? DataUltimaAtualizacao { get; private set; }
+    public DateTime? DataAtualizacao { get; private set; }
     public IReadOnlyCollection<Item> Itens => _itens;
 
     public void IniciarPreparo()
     {
-        Status = Status.EmPreparacao;
+        Status = StatusPreparo.EmPreparacao;
     }
 
     public void FinalizarPreparo()
     {
-        Status = Status.Pronto;
+        Status = StatusPreparo.Pronto;
     }
 
     public void ConfirmarEntrega()
     {
-        Status = Status.Finalizado;
+        Status = StatusPreparo.Finalizado;
     }
 
     public void AdicionarItem(Item item)
     {
-        throw new NotImplementedException();
+        _itens.Add(item);
+    }
+
+    public void GerarCodigo(int codigo)
+    {
+        Codigo = codigo;
     }
 }

@@ -12,6 +12,11 @@
 
     <ItemGroup>
         <ProjectReference Include="..\EF.Pagamentos.Domain\EF.Pagamentos.Domain.csproj"/>
+        <ProjectReference Include="..\EF.Pagamentos.Infra\EF.Pagamentos.Infra.csproj"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <Folder Include="Config\"/>
     </ItemGroup>
 
 </Project>

@@ -16,7 +16,16 @@
     </ItemGroup>
 
     <ItemGroup>
+        <ProjectReference Include="..\..\Shared\EF.Infra.Commons\EF.Infra.Commons.csproj"/>
         <ProjectReference Include="..\EF.Pagamentos.Domain\EF.Pagamentos.Domain.csproj"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <Folder Include="Migrations\"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <Compile Remove="Data\Mapping\FormaPagamentoMapping.cs"/>
     </ItemGroup>
 
 </Project>

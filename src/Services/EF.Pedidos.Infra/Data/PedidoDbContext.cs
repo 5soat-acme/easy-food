@@ -1,11 +1,11 @@
 using EF.Domain.Commons.Mediator;
 using EF.Domain.Commons.Messages;
 using EF.Domain.Commons.Repository;
+using EF.Infra.Commons.Data;
 using EF.Infra.Commons.Mediator;
 using EF.Pedidos.Domain.Models;
 using FluentValidation.Results;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.ChangeTracking;
 
 namespace EF.Pedidos.Infra.Data;
 
@@ -25,7 +25,7 @@ public sealed class PedidoDbContext : DbContext, IUnitOfWork
 
     public async Task<bool> Commit()
     {
-        AtualizarDatas();
+        DbContextExtension.SetDates(ChangeTracker.Entries());
         await _mediator.PublishEvents(this);
         return await SaveChangesAsync() > 0;
     }
@@ -41,40 +41,5 @@ public sealed class PedidoDbContext : DbContext, IUnitOfWork
         modelBuilder.Ignore<ValidationResult>();
 
         base.OnModelCreating(modelBuilder);
-    }
-
-    private void AtualizarDatas()
-    {
-        var entries = ChangeTracker.Entries()
-            .Where(entry => entry.Entity.GetType().GetProperty("DataCriacao") != null
-                            || entry.Entity.GetType().GetProperty("DataUltimaAtualizacao") != null);
-
-        foreach (var entry in entries)
-        {
-            if (entry.State == EntityState.Added)
-            {
-                DefinirPropriedadeSeExistir(entry, "DataCriacao", DateTime.Now);
-                DefinirPropriedadeSeExistir(entry, "DataUltimaAtualizacao", DateTime.Now, false);
-            }
-
-            if (entry.State == EntityState.Modified)
-            {
-                DefinirPropriedadeSeExistir(entry, "DataCriacao", entry.Property("DataCriacao").CurrentValue, false);
-                DefinirPropriedadeSeExistir(entry, "DataUltimaAtualizacao", DateTime.Now);
-            }
-        }
-    }
-
-    private void DefinirPropriedadeSeExistir(EntityEntry entry, string nomePropriedade, object valor,
-        bool modificar = true)
-    {
-        var propriedade = entry.Property(nomePropriedade);
-        if (propriedade != null)
-        {
-            if (modificar)
-                propriedade.CurrentValue = valor;
-            else
-                propriedade.IsModified = false;
-        }
     }
 }

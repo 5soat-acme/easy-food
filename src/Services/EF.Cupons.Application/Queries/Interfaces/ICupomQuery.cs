@@ -4,5 +4,5 @@ namespace EF.Cupons.Application.Queries.Interfaces;
 
 public interface ICupomQuery
 {
-    public Task<CupomDto?> ObterCupom(string codigoCupom, CancellationToken cancellationToken);
+    public Task<CupomDto?> ObterCupom(string codigoCupom, CancellationToken cancellationToken = default);
 }

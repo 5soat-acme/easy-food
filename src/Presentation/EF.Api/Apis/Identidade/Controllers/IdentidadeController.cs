@@ -12,7 +12,7 @@ public class IdentidadeController(IAcessoAppService appService) : CustomControll
     /// <summary>
     ///     Cria um novo usuário e associao ao cliente.
     /// </summary>
-    /// <response code="200">Indica que o usuário foi criado com sucesso e retorna um token de acesso.</response>
+    /// <response code="200">Usuário criado com sucesso e token de acesso</response>
     /// <response code="400">A solicitação está malformada e não pode ser processada.</response>
     [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(RespostaTokenAcesso))]
     [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(ValidationProblemDetails))]
@@ -32,7 +32,7 @@ public class IdentidadeController(IAcessoAppService appService) : CustomControll
     /// <summary>
     ///     Faz a autenticação do usuário e retorna um token de acesso.
     /// </summary>
-    /// <response code="200">Indica que o usuário foi autenticado com sucesso e retorna um token de acesso.</response>
+    /// <response code="200">Usuário autenticado com sucesso e token de acesso.</response>
     /// <response code="400">A solicitação está malformada e não pode ser processada.</response>
     [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(RespostaTokenAcesso))]
     [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(ValidationProblemDetails))]
@@ -50,7 +50,7 @@ public class IdentidadeController(IAcessoAppService appService) : CustomControll
     }
 
     /// <summary>
-    ///     Gera um token de acesso para o usuário sem identificação.
+    ///     Gera um token de acesso para o usuário sem identificação (acesso anônimo).
     /// </summary>
     /// <remarks>
     ///     <para>
@@ -68,11 +68,11 @@ public class IdentidadeController(IAcessoAppService appService) : CustomControll
     [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(RespostaTokenAcesso))]
     [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(ValidationProblemDetails))]
     [HttpPost("acessar-anonimo")]
-    public IActionResult AcessarSemIdentificacao(string? cpf = null)
+    public IActionResult AcessarSemIdentificacao(AcessoAnonimo? acessoAnonimo)
     {
         if (!ModelState.IsValid) return Respond(ModelState);
 
-        var result = appService.GerarTokenAcessoNaoIdentificado(cpf);
+        var result = appService.GerarTokenAcessoNaoIdentificado(acessoAnonimo?.Cpf);
 
         return Respond(result);
     }

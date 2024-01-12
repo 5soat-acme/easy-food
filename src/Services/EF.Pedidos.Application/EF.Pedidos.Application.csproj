@@ -8,6 +8,8 @@
 
     <ItemGroup>
         <ProjectReference Include="..\..\Shared\EF.Domain.Commons\EF.Domain.Commons.csproj"/>
+        <ProjectReference Include="..\EF.Cupons.Application\EF.Cupons.Application.csproj"/>
+        <ProjectReference Include="..\EF.Estoques.Application\EF.Estoques.Application.csproj"/>
         <ProjectReference Include="..\EF.Pagamentos.Application\EF.Pagamentos.Application.csproj"/>
         <ProjectReference Include="..\EF.Pedidos.Domain\EF.Pedidos.Domain.csproj"/>
     </ItemGroup>
@@ -16,6 +18,18 @@
         <PackageReference Include="AutoMapper" Version="12.0.1"/>
         <PackageReference Include="FluentValidation" Version="11.9.0"/>
         <PackageReference Include="MediatR" Version="12.2.0"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <Compile Remove="Ports\**"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <EmbeddedResource Remove="Ports\**"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <None Remove="Ports\**"/>
     </ItemGroup>
 
 </Project>

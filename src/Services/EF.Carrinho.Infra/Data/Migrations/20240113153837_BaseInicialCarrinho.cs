@@ -18,6 +18,7 @@ namespace EF.Carrinho.Infra.Data.Migrations
                     Id = table.Column<Guid>(type: "uuid", nullable: false),
                     ClienteId = table.Column<Guid>(type: "uuid", nullable: true),
                     ValorTotal = table.Column<decimal>(type: "numeric", nullable: false),
+                    TempoMedioPreparo = table.Column<int>(type: "integer", nullable: false),
                     DataCriacao = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
                     DataAtualizacao = table.Column<DateTime>(type: "timestamp with time zone", nullable: true)
                 },

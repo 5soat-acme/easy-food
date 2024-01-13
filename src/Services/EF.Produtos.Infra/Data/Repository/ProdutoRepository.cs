@@ -35,7 +35,7 @@ public sealed class ProdutoRepository : IProdutoRepository
             .ToListAsync(cancellationToken);
     }
 
-    public async Task<Produto?> BuscarPorId(Guid produtoId, CancellationToken cancellationToken)
+    public async Task<Produto?> BuscarPorId(Guid produtoId, CancellationToken cancellationToken = default)
     {
         return await _dbContext.Produtos.SingleAsync(produto => produto.Id == produtoId, cancellationToken);
     }

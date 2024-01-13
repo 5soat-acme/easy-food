@@ -1,4 +1,5 @@
 using EF.Produtos.Application.Commands;
+using EF.Produtos.Application.Mappings;
 using EF.Produtos.Application.Queries;
 using EF.Produtos.Application.Queries.Interfaces;
 using EF.Produtos.Domain.Repository;
@@ -17,6 +18,9 @@ public static class DependencyInjectionConfig
 
         // Application - Queries
         services.AddScoped<IProdutoQuery, ProdutoQuery>();
+
+        // Application - Mappings
+        services.AddAutoMapper(typeof(DomainToDtoProfile));
 
         // Infra - Data
         services.AddScoped<IProdutoRepository, ProdutoRepository>();

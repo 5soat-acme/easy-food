@@ -11,20 +11,24 @@ public enum ProdutoCategoria
 
 public class Produto : Entity, IAggregateRoot
 {
-    public Produto(string nome, decimal valorUnitario, ProdutoCategoria categoria, bool ativo = true)
+    public Produto(string nome, decimal valorUnitario, ProdutoCategoria categoria, int tempoPreparoEstimado, string descricao)
     {
         ValidarProduto(nome, valorUnitario, categoria);
 
         Nome = nome;
         ValorUnitario = valorUnitario;
-        Ativo = ativo;
+        Ativo = true;
         Categoria = categoria;
+        TempoPreparoEstimado = tempoPreparoEstimado;
+        Descricao = descricao;
     }
 
     public string Nome { get; private set; }
     public decimal ValorUnitario { get; private set; }
     public bool Ativo { get; private set; }
     public ProdutoCategoria Categoria { get; private set; }
+    public int TempoPreparoEstimado { get; private set; }
+    public string Descricao { get; private set; }
 
     public void ValidarProduto(string nome, decimal valorUnitario, ProdutoCategoria categoria)
     {
@@ -91,6 +95,4 @@ public class Produto : Entity, IAggregateRoot
     {
         Ativo = false;
     }
-
-
 }

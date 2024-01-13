@@ -13,7 +13,6 @@ namespace EF.Produtos.Application.Commands;
 internal class CriarProdutoCommandHandler : CommandHandler,
     IRequestHandler<CriarProdutoCommand, CommandResult>
 {
-
     private readonly IProdutoRepository _produtoRepository;
 
     public CriarProdutoCommandHandler(IProdutoRepository produtoRepository)
@@ -23,7 +22,8 @@ internal class CriarProdutoCommandHandler : CommandHandler,
 
     public async Task<CommandResult> Handle(CriarProdutoCommand request, CancellationToken cancellationToken)
     {
-        var produto = new Produto(request.Nome, request.ValorUnitario, request.Categoria);
+        var produto = new Produto(request.Nome, request.ValorUnitario, request.Categoria, request.TempoPreparoEstimado,
+            request.Descricao);
         await _produtoRepository.Criar(produto, cancellationToken);
         var result = await PersistData(_produtoRepository.UnitOfWork);
         return CommandResult.Create(result, produto.Id);

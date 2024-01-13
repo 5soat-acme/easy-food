@@ -12,7 +12,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace EF.Carrinho.Infra.Data.Migrations
 {
     [DbContext(typeof(CarrinhoDbContext))]
-    [Migration("20240113134130_BaseInicialCarrinho")]
+    [Migration("20240113153837_BaseInicialCarrinho")]
     partial class BaseInicialCarrinho
     {
         /// <inheritdoc />
@@ -39,6 +39,9 @@ namespace EF.Carrinho.Infra.Data.Migrations
 
                     b.Property<DateTime>("DataCriacao")
                         .HasColumnType("timestamp with time zone");
+
+                    b.Property<int>("TempoMedioPreparo")
+                        .HasColumnType("integer");
 
                     b.Property<decimal>("ValorTotal")
                         .HasColumnType("numeric");

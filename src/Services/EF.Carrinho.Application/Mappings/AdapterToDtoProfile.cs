@@ -10,6 +10,6 @@ public class AdapterToDtoProfile : Profile
         CreateMap<EF.Produtos.Application.DTOs.Responses.ProdutoDto, Item?>().ConstructUsing((source, context) =>
             source is null
                 ? null
-                : new Item(source.ProdutoId, source.Nome, source.ValorUnitario, source.TempoPreparoEstimado));
+                : new Item(source.Id, source.Nome, source.ValorUnitario, source.TempoPreparoEstimado));
     }
 }

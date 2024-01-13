@@ -451,3 +451,11 @@ t
 Dsrc/Services/EF.Produtos.Application/Commands/CriarProdutoCommand.cs,2\3\2376d7d36cdacdcac4c65deef13ccd8de49e08fc
 q
 Asrc/Services/EF.Pagamentos.Infra/Data/Mapping/TransacaoMapping.cs,9\a\9ad8adba4d4a7812ea2403089605d50ab409aeb8
+g
+7src/Services/EF.Produtos.Infra/Data/ProdutoDbContext.cs,e\2\e242f23ec738fd60e93a21f9ecfb38333a1b55ae
+m
+=src/Services/EF.Produtos.Infra/Data/Mapping/ProdutoMapping.cs,9\d\9d44b38686fd803f0ad9da68b61fa8867a366f58
+s
+Csrc/Services/EF.Produtos.Infra/Data/Repository/ProdutoRepository.cs,6\2\627b1c2930c9edd31ae0bccfebf0ba3fd9a514aa
+s
+Csrc/Services/EF.Produtos.Application/Mappings/DomainToDtoProfile.cs,d\6\d6ca4581bbb3287706db66a18f7a25beb3a3d90e

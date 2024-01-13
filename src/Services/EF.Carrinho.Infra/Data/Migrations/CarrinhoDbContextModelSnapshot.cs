@@ -37,6 +37,9 @@ namespace EF.Carrinho.Infra.Data.Migrations
                     b.Property<DateTime>("DataCriacao")
                         .HasColumnType("timestamp with time zone");
 
+                    b.Property<int>("TempoMedioPreparo")
+                        .HasColumnType("integer");
+
                     b.Property<decimal>("ValorTotal")
                         .HasColumnType("numeric");
 

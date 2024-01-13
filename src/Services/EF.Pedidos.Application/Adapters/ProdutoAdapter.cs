@@ -18,7 +18,7 @@ public class ProdutoAdapter : IProdutoService
         // TODO: Retirar este código e incluir chamada no contexto de produtos
         var source = new EF.Produtos.Application.DTOs.Responses.ProdutoDto
         {
-            ProdutoId = id,
+            Id = id,
             Descricao = "Descrição do produto",
             Nome = "Nome do produto",
             ValorUnitario = 35.53m,

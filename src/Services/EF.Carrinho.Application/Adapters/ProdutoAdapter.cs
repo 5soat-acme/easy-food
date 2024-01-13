@@ -18,10 +18,7 @@ public class ProdutoAdapter : IProdutoService
 
     public async Task<Item> ObterItemPorProdutoId(Guid id)
     {
-        // TODO: Retirar
-        // var produto = _produtoQuery.ObterProdutoPorId(id);
-        // return _mapper.Map<Item>(produto);
-
-        return new Item(id, "Produto Teste", 35.50m, 15);
+        var produto = await _produtoQuery.ObterPorId(id);
+        return _mapper.Map<Item>(produto);
     }
 }

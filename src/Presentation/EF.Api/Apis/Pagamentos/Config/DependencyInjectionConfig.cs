@@ -19,7 +19,7 @@ public static class DependencyInjectionConfig
         services.AddScoped<PagamentoServiceResolver>();
         
         // Domain
-        services.AddScoped<IPagamentoService, PagamentoPayPalService>();
+        services.AddScoped<PagamentoPayPalService>();
         
         // Infra - Data 
         services.AddScoped<IPagamentoRepository, PagamentoRepository>();

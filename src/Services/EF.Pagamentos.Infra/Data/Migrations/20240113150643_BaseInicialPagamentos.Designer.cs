@@ -12,7 +12,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace EF.Pagamentos.Infra.Data.Migrations
 {
     [DbContext(typeof(PagamentoDbContext))]
-    [Migration("20240113135112_BaseInicialPagamentos")]
+    [Migration("20240113150643_BaseInicialPagamentos")]
     partial class BaseInicialPagamentos
     {
         /// <inheritdoc />
@@ -31,7 +31,7 @@ namespace EF.Pagamentos.Infra.Data.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uuid");
 
-                    b.Property<DateTime>("DataAtualizacao")
+                    b.Property<DateTime?>("DataAtualizacao")
                         .HasColumnType("timestamp with time zone");
 
                     b.Property<DateTime>("DataCriacao")

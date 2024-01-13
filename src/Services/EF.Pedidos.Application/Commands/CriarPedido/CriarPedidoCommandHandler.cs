@@ -43,7 +43,7 @@ public class CriarPedidoCommandHandler : CommandHandler,
 
         if (!await ValidarPedido(pedido, request)) return CommandResult.Create(ValidationResult);
 
-        if (!await ProcessarPagamento(pedido, request.MetodoPagamento)) return CommandResult.Create(ValidationResult);
+        if (!await ProcessarPagamento(pedido, request.TipoPagamento)) return CommandResult.Create(ValidationResult);
 
         pedido.AddEvent(CriarEvento(pedido, request, produtos));
 

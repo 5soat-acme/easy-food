@@ -19,7 +19,7 @@ namespace EF.Pagamentos.Infra.Data.Migrations
                     PedidoId = table.Column<Guid>(type: "uuid", nullable: false),
                     Tipo = table.Column<int>(type: "integer", nullable: false),
                     DataCriacao = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
-                    DataAtualizacao = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
+                    DataAtualizacao = table.Column<DateTime>(type: "timestamp with time zone", nullable: true),
                     Valor = table.Column<decimal>(type: "numeric", nullable: false)
                 },
                 constraints: table =>

@@ -8,6 +8,7 @@ namespace EF.Pagamentos.Application.Config;
 
 public class PagamentoServiceResolver
 {
+    // implement resolver
     private readonly IServiceProvider _provider;
 
     public PagamentoServiceResolver(IServiceProvider provider)
@@ -20,7 +21,7 @@ public class PagamentoServiceResolver
         switch (tipo)
         {
             case Tipo.PayPal:
-                return _provider.GetService<PagamentoPayPalService>()!;
+                return _provider.GetRequiredService<PagamentoPayPalService>();
             // TODO: Incluir demais tipos que vamos usar
             default:
                 throw new DomainException("Tipo de pagamento inválido");

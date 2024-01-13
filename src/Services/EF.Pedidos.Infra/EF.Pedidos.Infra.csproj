@@ -30,6 +30,8 @@
 
     <ItemGroup>
         <Compile Remove="Data\Migrations\PedidoDbContextModelSnapshot.cs"/>
+        <Compile Remove="Data\Migrations\20240111193846_BaseInicialPedidos.cs" />
+        <Compile Remove="Data\Migrations\20240111193846_BaseInicialPedidos.Designer.cs" />
     </ItemGroup>
 
 </Project>

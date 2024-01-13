@@ -12,7 +12,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace EF.Carrinho.Infra.Data.Migrations
 {
     [DbContext(typeof(CarrinhoDbContext))]
-    [Migration("20240111193556_BaseInicialCarrinho")]
+    [Migration("20240113134130_BaseInicialCarrinho")]
     partial class BaseInicialCarrinho
     {
         /// <inheritdoc />

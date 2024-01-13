@@ -449,3 +449,5 @@ o
 Ksrc/Services/EF.Produtos.Application/Commands/CriarProdutoCommandHandler.cs,3\b\3b4cf23e4c51bea0d8e16dcbd8bca24d39f97607
 t
 Dsrc/Services/EF.Produtos.Application/Commands/CriarProdutoCommand.cs,2\3\2376d7d36cdacdcac4c65deef13ccd8de49e08fc
+q
+Asrc/Services/EF.Pagamentos.Infra/Data/Mapping/TransacaoMapping.cs,9\a\9ad8adba4d4a7812ea2403089605d50ab409aeb8

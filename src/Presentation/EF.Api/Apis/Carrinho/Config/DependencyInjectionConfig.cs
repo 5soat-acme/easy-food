@@ -1,4 +1,6 @@
+using EF.Carrinho.Application.Adapters;
 using EF.Carrinho.Application.Mappings;
+using EF.Carrinho.Application.Ports;
 using EF.Carrinho.Application.Services;
 using EF.Carrinho.Application.Services.Integrations;
 using EF.Carrinho.Application.Services.Interfaces;
@@ -23,6 +25,11 @@ public static class DependencyInjectionConfig
 
         // Application - Mapping
         services.AddAutoMapper(typeof(DomainToDtoProfile));
+        services.AddAutoMapper(typeof(AdapterToDtoProfile));
+
+        // Application - Ports & Adapters
+        services.AddScoped<IEstoqueService, EstoqueAdapter>();
+        services.AddScoped<IProdutoService, ProdutoAdapter>();
 
         // Infra - Data
         services.AddScoped<ICarrinhoRepository, CarrinhoRepository>();

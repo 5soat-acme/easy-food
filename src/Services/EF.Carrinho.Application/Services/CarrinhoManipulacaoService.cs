@@ -1,32 +1,25 @@
 using EF.Carrinho.Application.DTOs.Requests;
+using EF.Carrinho.Application.Ports;
 using EF.Carrinho.Application.Services.Interfaces;
 using EF.Carrinho.Domain.Models;
 using EF.Carrinho.Domain.Repository;
 using EF.Domain.Commons.Communication;
-using EF.Estoques.Application.Queries.Interfaces;
 
 namespace EF.Carrinho.Application.Services;
-
-// TODO: Remover
-public interface IProdutoQuery
-{
-    Task<Item> ObterItemPorProdutoId(Guid id);
-}
 
 public class CarrinhoManipulacaoService : BaseCarrinhoService, ICarrinhoManipulacaoService
 {
     private readonly ICarrinhoRepository _carrinhoRepository;
-    private readonly IEstoqueQuery _estoqueQuery;
-    private readonly IProdutoQuery _produtoQuery;
+    private readonly IEstoqueService _estoqueService;
+    private readonly IProdutoService _produtoService;
 
     public CarrinhoManipulacaoService(
-        ICarrinhoRepository carrinhoRepository,
-        IEstoqueQuery estoqueQuery,
-        IProdutoQuery produtoQuery) : base(carrinhoRepository)
+        ICarrinhoRepository carrinhoRepository, IEstoqueService estoqueService,
+        IProdutoService produtoService) : base(carrinhoRepository)
     {
         _carrinhoRepository = carrinhoRepository;
-        _produtoQuery = produtoQuery;
-        _estoqueQuery = estoqueQuery;
+        _estoqueService = estoqueService;
+        _produtoService = produtoService;
     }
 
     public async Task<OperationResult> AdicionarItemCarrinho(AdicionarItemDto itemDto, CarrinhoSessaoDto carrinhoSessao)
@@ -130,7 +123,7 @@ public class CarrinhoManipulacaoService : BaseCarrinhoService, ICarrinhoManipula
     private async Task<CarrinhoCliente> AdicionarItemCarrinhoNovo(AdicionarItemDto itemDto,
         CarrinhoSessaoDto carrinhoSessao)
     {
-        var item = await _produtoQuery.ObterItemPorProdutoId(itemDto.ProdutoId);
+        var item = await _produtoService.ObterItemPorProdutoId(itemDto.ProdutoId);
         item.AtualizarQuantidade(itemDto.Quantidade);
         var carrinho = CriarCarrinhoCliente(carrinhoSessao);
         carrinho.AdicionarItem(item);
@@ -151,7 +144,7 @@ public class CarrinhoManipulacaoService : BaseCarrinhoService, ICarrinhoManipula
         }
         else
         {
-            var itemNovo = await _produtoQuery.ObterItemPorProdutoId(itemDto.ProdutoId);
+            var itemNovo = await _produtoService.ObterItemPorProdutoId(itemDto.ProdutoId);
             itemNovo.AtualizarQuantidade(itemDto.Quantidade);
             carrinho.AdicionarItem(itemNovo);
             _carrinhoRepository.AdicionarItem(itemNovo);
@@ -160,18 +153,13 @@ public class CarrinhoManipulacaoService : BaseCarrinhoService, ICarrinhoManipula
         return carrinho;
     }
 
-    protected async Task<bool> ValidarEstoque(Item item)
+    private async Task<bool> ValidarEstoque(Item item)
     {
         if (item is null) throw new ArgumentNullException(nameof(item));
-
-        var estoque = await _estoqueQuery.ObterEstoqueProduto(item.ProdutoId, CancellationToken.None);
-
-        if (estoque is null || estoque.Quantidade < item.Quantidade) return false;
-
-        return true;
+        return await _estoqueService.VerificarEstoque(item.ProdutoId, item.Quantidade);
     }
 
-    protected async Task PersistirDados()
+    private async Task PersistirDados()
     {
         await _carrinhoRepository.UnitOfWork.Commit();
     }

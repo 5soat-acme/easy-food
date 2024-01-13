@@ -12,6 +12,7 @@
         <ProjectReference Include="..\EF.Estoques.Application\EF.Estoques.Application.csproj"/>
         <ProjectReference Include="..\EF.Pagamentos.Application\EF.Pagamentos.Application.csproj"/>
         <ProjectReference Include="..\EF.Pedidos.Domain\EF.Pedidos.Domain.csproj"/>
+        <ProjectReference Include="..\EF.Produtos.Application\EF.Produtos.Application.csproj" />
     </ItemGroup>
 
     <ItemGroup>
@@ -22,6 +23,9 @@
 
     <ItemGroup>
         <Compile Remove="Ports\**"/>
+        <Compile Include="Ports\ICupomService.cs" />
+        <Compile Include="Ports\IEstoqueService.cs" />
+        <Compile Include="Ports\IProdutoService.cs" />
     </ItemGroup>
 
     <ItemGroup>

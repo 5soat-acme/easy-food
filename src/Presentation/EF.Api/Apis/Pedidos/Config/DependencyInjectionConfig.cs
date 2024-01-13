@@ -1,4 +1,6 @@
+using EF.Pedidos.Application.Adapters;
 using EF.Pedidos.Application.Mappings;
+using EF.Pedidos.Application.Ports;
 using EF.Pedidos.Application.Queries;
 using EF.Pedidos.Application.Queries.Interfaces;
 using EF.Pedidos.Application.Services.Integrations;
@@ -21,6 +23,12 @@ public static class DependencyInjectionConfig
 
         // Application - Mapping
         services.AddAutoMapper(typeof(DomainToDtoProfile));
+        services.AddAutoMapper(typeof(AdapterToDtoProfile));
+        
+        // Application - Ports & Adapters
+        services.AddScoped<IEstoqueService, EstoqueAdapter>();
+        services.AddScoped<ICupomService, CupomAdapter>();
+        services.AddScoped<IProdutoService, ProdutoAdapter>();
 
         // Infra - Data
         services.AddScoped<IPedidoRepository, PedidoRepository>();

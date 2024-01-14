@@ -16,9 +16,9 @@ public class CupomAdapter : ICupomService
         _cupomQuery = cupomQuery;
     }
     
-    public async Task<CupomDto> OpterCupomPorCodigo(string codigo)
+    public async Task<CupomDto?> OpterCupomPorCodigo(string codigo)
     {
-        var cupom = _cupomQuery.ObterCupom(codigo);
+        var cupom = await _cupomQuery.ObterCupom(codigo);
         return _mapper.Map<CupomDto>(cupom);
     }
 }

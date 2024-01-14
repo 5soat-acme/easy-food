@@ -4,5 +4,5 @@ namespace EF.Pedidos.Application.Ports;
 
 public interface ICupomService
 {
-    Task<CupomDto> OpterCupomPorCodigo(string codigo);
+    Task<CupomDto?> OpterCupomPorCodigo(string codigo);
 }

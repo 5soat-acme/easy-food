@@ -100,12 +100,15 @@ public class CriarPedidoCommandHandler : CommandHandler,
     private async Task<Pedido> AplicarCupom(string codigoCupom, Pedido pedido)
     {
         var cupom = await _cupomService.OpterCupomPorCodigo(codigoCupom);
-        pedido.AssociarCupom(cupom.Id);
-
-        foreach (var item in pedido.Itens)
+        if (cupom is not null)
         {
-            if (cupom.Produtos.Exists(produtoId => produtoId == item.ProdutoId))
-                pedido.AplicarDescontoItem(item.Id, cupom.Desconto);
+            pedido.AssociarCupom(cupom.Id);
+
+            foreach (var item in pedido.Itens)
+            {
+                if (cupom.Produtos.Exists(produtoId => produtoId == item.ProdutoId))
+                    pedido.AplicarDescontoItem(item.Id, cupom.Desconto);
+            }
         }
 
         return pedido;

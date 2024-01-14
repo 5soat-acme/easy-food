@@ -7,7 +7,9 @@ public class AdapterToDtoProfile: Profile
 {
     public AdapterToDtoProfile()
     {
-        CreateMap<EF.Cupons.Application.DTOs.Responses.CupomDto, CupomDto?>().ConstructUsing((source, context) =>
+        CreateMap<EF.Cupons.Application.DTOs.Responses.CupomDto, CupomDto?>()
+            .ForMember(x => x.Produtos, opt => opt.Ignore())
+            .ConstructUsing((source, context) =>
         {
             if (source is null) return null;
 
@@ -23,6 +25,7 @@ public class AdapterToDtoProfile: Profile
             return destination;
         });
 
-        CreateMap<EF.Produtos.Application.DTOs.Responses.ProdutoDto, ProdutoDto?>();
+        CreateMap<EF.Produtos.Application.DTOs.Responses.ProdutoDto, ProdutoDto?>()
+            .ForMember(dest => dest!.ProdutoId, opt => opt.MapFrom(src => src.Id));
     }
 }

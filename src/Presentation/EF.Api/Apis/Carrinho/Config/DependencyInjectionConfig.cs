@@ -1,10 +1,11 @@
-using EF.Carrinho.Application.Adapters;
 using EF.Carrinho.Application.Mappings;
 using EF.Carrinho.Application.Ports;
 using EF.Carrinho.Application.Services;
 using EF.Carrinho.Application.Services.Integrations;
 using EF.Carrinho.Application.Services.Interfaces;
 using EF.Carrinho.Domain.Repository;
+using EF.Carrinho.Infra.Adapters.Estoque;
+using EF.Carrinho.Infra.Adapters.Produtos;
 using EF.Carrinho.Infra.Data;
 using EF.Carrinho.Infra.Data.Repository;
 using EF.Domain.Commons.Messages.Integrations;
@@ -25,7 +26,7 @@ public static class DependencyInjectionConfig
 
         // Application - Mapping
         services.AddAutoMapper(typeof(DomainToDtoProfile));
-        services.AddAutoMapper(typeof(AdapterToDtoProfile));
+        services.AddAutoMapper(typeof(ProdutoToDomainProfile));
 
         // Application - Ports & Adapters
         services.AddScoped<IEstoqueService, EstoqueAdapter>();

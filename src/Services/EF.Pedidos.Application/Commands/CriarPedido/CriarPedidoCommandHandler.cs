@@ -1,9 +1,7 @@
 using EF.Domain.Commons.DomainObjects;
-using EF.Domain.Commons.Mediator;
 using EF.Domain.Commons.Messages;
 using EF.Domain.Commons.Messages.Integrations;
 using EF.Domain.Commons.ValueObjects;
-using EF.Pagamentos.Application.Commands;
 using EF.Pedidos.Application.DTOs.Adapters;
 using EF.Pedidos.Application.Ports;
 using EF.Pedidos.Domain.Models;
@@ -15,27 +13,28 @@ namespace EF.Pedidos.Application.Commands.CriarPedido;
 public class CriarPedidoCommandHandler : CommandHandler,
     IRequestHandler<CriarPedidoCommand, CommandResult>
 {
-    private readonly IMediatorHandler _mediator;
     private readonly IPedidoRepository _pedidoRepository;
     private readonly ICupomService _cupomService;
     private readonly IEstoqueService _estoqueService;
     private readonly IProdutoService _produtoService;
+    private readonly IPagamentoService _pagamentoService;
 
-    public CriarPedidoCommandHandler(IMediatorHandler mediator, IPedidoRepository pedidoRepository,
-        IEstoqueService estoqueService, ICupomService cupomService, IProdutoService produtoService)
+    public CriarPedidoCommandHandler(IPedidoRepository pedidoRepository,
+        IEstoqueService estoqueService, ICupomService cupomService, IProdutoService produtoService,
+        IPagamentoService pagamentoService)
     {
-        _mediator = mediator;
         _pedidoRepository = pedidoRepository;
         _estoqueService = estoqueService;
         _cupomService = cupomService;
         _produtoService = produtoService;
+        _pagamentoService = pagamentoService;
     }
 
     public async Task<CommandResult> Handle(CriarPedidoCommand request, CancellationToken cancellationToken)
     {
         var produtos = await ObterProdutosPedido(request);
 
-        var pedido = await MapearPedido(request, produtos);
+        var pedido = MapearPedido(request, produtos);
 
         if (!string.IsNullOrEmpty(request.CodigoCupom)) pedido = await AplicarCupom(request.CodigoCupom, pedido);
 
@@ -56,16 +55,17 @@ public class CriarPedidoCommandHandler : CommandHandler,
 
     private async Task<bool> ProcessarPagamento(Pedido pedido, string tipoPagamento)
     {
-        var result = await _mediator.Send(new AutorizarPagamentoCommand
+        var pagamento = new PagamentoDto
         {
             PedidoId = pedido.Id,
-            AggregateId = pedido.Id,
             TipoPagamento = tipoPagamento,
             Valor = pedido.ValorTotal,
             Cpf = pedido.Cpf?.Numero
-        });
+        };
 
-        if (!result.IsValid())
+        var result = await _pagamentoService.ProcessarPagamento(pagamento);
+
+        if (!result)
         {
             AddError("Erro ao processar pagamento");
             return false;
@@ -74,7 +74,7 @@ public class CriarPedidoCommandHandler : CommandHandler,
         return true;
     }
 
-    private async Task<Pedido> MapearPedido(CriarPedidoCommand request, List<ProdutoDto> produtos)
+    private Pedido MapearPedido(CriarPedidoCommand request, List<ProdutoDto> produtos)
     {
         var pedido = new Pedido();
 
@@ -88,9 +88,9 @@ public class CriarPedidoCommandHandler : CommandHandler,
 
         foreach (var itemAdd in request.Itens)
         {
-            var produto = produtos.FirstOrDefault(p => p.ProdutoId == itemAdd.ProdutoId);
+            var produto = produtos.FirstOrDefault(p => p.Id == itemAdd.ProdutoId);
 
-            var item = new Item(produto!.ProdutoId, produto.Nome, produto.ValorUnitario, itemAdd.Quantidade);
+            var item = new Item(produto!.Id, produto.Nome, produto.ValorUnitario, itemAdd.Quantidade);
             pedido.AdicionarItem(item);
         }
 
@@ -99,16 +99,16 @@ public class CriarPedidoCommandHandler : CommandHandler,
 
     private async Task<Pedido> AplicarCupom(string codigoCupom, Pedido pedido)
     {
-        var cupom = await _cupomService.OpterCupomPorCodigo(codigoCupom);
-        if (cupom is not null)
-        {
-            pedido.AssociarCupom(cupom.Id);
+        var cupom = await _cupomService.ObterCupomPorCodigo(codigoCupom);
 
-            foreach (var item in pedido.Itens)
-            {
-                if (cupom.Produtos.Exists(produtoId => produtoId == item.ProdutoId))
-                    pedido.AplicarDescontoItem(item.Id, cupom.Desconto);
-            }
+        if (cupom is null) return pedido;
+
+        pedido.AssociarCupom(cupom.Id);
+
+        foreach (var item in pedido.Itens)
+        {
+            if (cupom.Produtos.Exists(produto => produto.ProdutoId == item.ProdutoId))
+                pedido.AplicarDescontoItem(item.Id, cupom.Desconto);
         }
 
         return pedido;
@@ -137,7 +137,7 @@ public class CriarPedidoCommandHandler : CommandHandler,
 
         foreach (var item in pedido.Itens)
         {
-            var produto = produtos.FirstOrDefault(p => p.ProdutoId == item.ProdutoId);
+            var produto = produtos.FirstOrDefault(p => p.Id == item.ProdutoId);
             itens.Add(new PedidoCriadoEvent.ItemPedido
             {
                 Quantidade = item.Quantidade,

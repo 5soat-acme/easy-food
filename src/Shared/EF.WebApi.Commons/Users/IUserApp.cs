@@ -6,7 +6,7 @@ namespace EF.WebApi.Commons.Users;
 public interface IUserApp
 {
     string Name { get; }
-    Guid GetUserId();
+    Guid? GetUserId();
     string GetUserEmail();
     string GetUserToken();
     string GetUserRefreshToken();

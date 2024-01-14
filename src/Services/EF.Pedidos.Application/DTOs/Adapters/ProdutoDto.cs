@@ -2,7 +2,7 @@ namespace EF.Pedidos.Application.DTOs.Adapters;
 
 public class ProdutoDto
 {
-    public Guid ProdutoId { get; set; }
+    public Guid Id { get; set; }
     public string Nome { get; set; }
     public string Descricao { get; set; }
     public decimal ValorUnitario { get; set; }

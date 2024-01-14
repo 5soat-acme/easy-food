@@ -19,24 +19,69 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="61e4a515-7fae-49b6-801b-ebc481bfb9f9" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/issuestore/0/1/01f082c768afaf123555823ff946ab323d0fb05c" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/issuestore/0/1/01f082c768afaf123555823ff946ab323d0fb05c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/issuestore/d/c/dc4b2fa6ba7f3f6728a557f69e6f6e00d9009b24" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/issuestore/d/c/dc4b2fa6ba7f3f6728a557f69e6f6e00d9009b24" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/issuestore/0/2/020c886eeec69d2fb2088f067a761f33d0a0a728" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/issuestore/0/2/020c886eeec69d2fb2088f067a761f33d0a0a728" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/issuestore/f/5/f586b397feafe48669c7be02cf54d837ad578987" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/issuestore/f/5/f586b397feafe48669c7be02cf54d837ad578987" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/issuestore/f/6/f67cb3598b7b1d98308475aac2ec3e38cb007b45" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/issuestore/f/6/f67cb3598b7b1d98308475aac2ec3e38cb007b45" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/securityhotspotstore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/securityhotspotstore/index.pb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Presentation/EF.Api/Apis/Produtos/Config/DependencyInjectionConfig.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Presentation/EF.Api/Apis/Produtos/Config/DependencyInjectionConfig.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/EF.Carrinho.Application/DTOs/Responses/CarrinhoClienteDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Carrinho.Application/DTOs/Responses/CarrinhoClienteDto.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/EF.Carrinho.Application/Mappings/AdapterToDtoProfile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Carrinho.Application/Mappings/AdapterToDtoProfile.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/EF.Carrinho.Domain/Models/CarrinhoCliente.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Carrinho.Domain/Models/CarrinhoCliente.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/EF.Pedidos.Application/Adapters/ProdutoAdapter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Pedidos.Application/Adapters/ProdutoAdapter.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/EF.Produto.Domain/Models/Produto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Produto.Domain/Models/Produto.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/EF.Produto.Domain/Repository/IProdutoRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Produto.Domain/Repository/IProdutoRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/EF.Produtos.Application/Commands/CriarProdutoCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Produtos.Application/Commands/CriarProdutoCommand.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/EF.Produtos.Application/Commands/CriarProdutoCommandHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Produtos.Application/Commands/CriarProdutoCommandHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/EF.Produtos.Application/DTOs/Responses/ProdutoDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Produtos.Application/DTOs/Responses/ProdutoDto.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/EF.Produtos.Application/EF.Produtos.Application.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Produtos.Application/EF.Produtos.Application.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/EF.Produtos.Application/Queries/ProdutoQuery.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Produtos.Application/Queries/ProdutoQuery.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/EF.Produtos.Infra/Data/Mapping/ProdutoMapping.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Produtos.Infra/Data/Mapping/ProdutoMapping.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/EF.Produtos.Infra/Data/Repository/ProdutoRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Produtos.Infra/Data/Repository/ProdutoRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EasyFood.sln" beforeDir="false" afterPath="$PROJECT_DIR$/EasyFood.sln" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Presentation/EF.Api/Apis/Carrinho/Config/DependencyInjectionConfig.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Presentation/EF.Api/Apis/Carrinho/Config/DependencyInjectionConfig.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Presentation/EF.Api/Apis/Pedidos/Config/DependencyInjectionConfig.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Presentation/EF.Api/Apis/Pedidos/Config/DependencyInjectionConfig.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/EF.Carrinho.Application/Adapters/EstoqueAdapter.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/EF.Carrinho.Application/Adapters/ProdutoAdapter.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/EF.Carrinho.Application/EF.Carrinho.Application.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Carrinho.Application/EF.Carrinho.Application.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/EF.Carrinho.Application/Mappings/AdapterToDtoProfile.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/EF.Carrinho.Infra/EF.Carrinho.Infra.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Carrinho.Infra/EF.Carrinho.Infra.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/EF.Estoques.Application/Queries/EstoqueQuery.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Estoques.Application/Queries/EstoqueQuery.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/EF.Estoques.Application/Queries/Interfaces/IEstoqueQuery.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Estoques.Application/Queries/Interfaces/IEstoqueQuery.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/EF.Pedidos.Application/Adapters/CupomAdapter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Pedidos.Infra/Adapters/Cupons/CupomAdapter.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/EF.Pedidos.Application/Adapters/EstoqueAdapter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Pedidos.Infra/Adapters/Estoque/EstoqueAdapter.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/EF.Pedidos.Application/Adapters/ProdutoAdapter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Pedidos.Infra/Adapters/Produtos/ProdutoAdapter.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/EF.Pedidos.Application/Commands/CriarPedido/CriarPedidoCommandHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Pedidos.Application/Commands/CriarPedido/CriarPedidoCommandHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/EF.Pedidos.Application/DTOs/Adapters/CupomDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Pedidos.Application/DTOs/Adapters/CupomDto.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/EF.Pedidos.Application/DTOs/Adapters/ProdutoDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Pedidos.Application/DTOs/Adapters/ProdutoDto.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/EF.Pedidos.Application/EF.Pedidos.Application.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Pedidos.Application/EF.Pedidos.Application.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/EF.Pedidos.Application/Mappings/AdapterToDtoProfile.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/EF.Pedidos.Application/Ports/ICupomService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Pedidos.Application/Ports/ICupomService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/EF.Pedidos.Domain/Models/Item.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Pedidos.Domain/Models/Item.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/EF.Pedidos.Infra/EF.Pedidos.Infra.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Pedidos.Infra/EF.Pedidos.Infra.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Shared/EF.WebApi.Commons/Users/IUserApp.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Shared/EF.WebApi.Commons/Users/IUserApp.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Shared/EF.WebApi.Commons/Users/UserApp.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Shared/EF.WebApi.Commons/Users/UserApp.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/EF.Api.Test/Carrinho/CarrinhoControllerTest.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/EF.Api.Test/Config/IntegrationTestAppFactory.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/EF.Api.Test/EF.Api.Test.csproj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/EF.Api.Test/Fixtures/IntegrationTestFixture.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/EF.Api.Test/GlobalUsings.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/EF.Api.Test/Identidade/IdentidadeControllerTest.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/EF.Api.Test/UnitTest1.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/EF.Domain.Commons.Test/EF.Domain.Commons.Test.csproj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/EF.Domain.Commons.Test/GlobalUsings.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/EF.Domain.Commons.Test/UnitTest1.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/EF.Domain.Commons.Test/ValueObjects/CpfTest.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/EF.Test.Utils/Builders/Carrinho/AdicionarItemDtoBuilder.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/EF.Test.Utils/Builders/Carrinho/AtualizarItemDtoBuilder.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/EF.Test.Utils/Builders/Carrinho/CarrinhoClienteBuilder.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/EF.Test.Utils/Builders/Carrinho/EstoqueProdutoDtoBuilder.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/EF.Test.Utils/Builders/Carrinho/ItemBuilder.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/EF.Test.Utils/Builders/Identidade/NovoUsuarioBuilder.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/EF.Test.Utils/Builders/Identidade/UsuarioLoginBuilder.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/EF.Test.Utils/EF.Test.Utils.csproj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/Services/EF.Carrinho.Domain.Test/EF.Carrinho.Domain.Test.csproj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/Services/EF.Carrinho.Domain.Test/GlobalUsings.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/Services/EF.Carrinho.Domain.Test/Models/CarrinhoClienteTest.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/Services/EF.Cupons.Domain.Test/EF.Cupons.Domain.Test.csproj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/Services/EF.Cupons.Domain.Test/Fixtures/CupomFixture.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/Services/EF.Cupons.Domain.Test/GlobalUsings.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/Services/EF.Cupons.Domain.Test/Models/CupomProdutoTest.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/Services/EF.Cupons.Domain.Test/Models/CupomTest.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/Services/EF.Estoques.Domain.Test/EF.Estoques.Domain.Test.csproj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/Services/EF.Estoques.Domain.Test/GlobalUsings.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/Services/EF.Estoques.Domain.Test/Model/EstoqueFixture.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/Services/EF.Estoques.Domain.Test/Model/EstoqueTest.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/Services/EF.Estoques.Domain.Test/Model/MovimentacaoEstoqueTest.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/Services/EF.Pedidos.Domain.Test/EF.Pedidos.Domain.Test.csproj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/Services/EF.Pedidos.Domain.Test/GlobalUsings.cs" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -277,6 +322,7 @@
       <workItem from="1705057760368" duration="6266000" />
       <workItem from="1705143182613" duration="12119000" />
       <workItem from="1705156892897" duration="3302000" />
+      <workItem from="1705259213672" duration="4960000" />
     </task>
     <servers />
   </component>
@@ -302,6 +348,23 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>
   <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/src/Services/EF.Carrinho.Application/Services/CarrinhoManipulacaoService.cs</url>
+          <line>25</line>
+          <properties documentPath="C:\dev\fiap\easy-food\src\Services\EF.Carrinho.Application\Services\CarrinhoManipulacaoService.cs" initialLine="25" containingFunctionPresentation="Method 'AdicionarItemCarrinho'">
+            <startOffsets>
+              <option value="1010" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1011" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
     <pin-to-top-manager>
       <pinned-members>
         <PinnedItemInfo parentTag="Type#EF.Carrinho.Domain.Models.CarrinhoCliente" memberName="Itens" />

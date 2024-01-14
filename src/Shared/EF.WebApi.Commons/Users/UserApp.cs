@@ -14,14 +14,22 @@ public class UserApp : IUserApp
 
     public string Name => _accessor.HttpContext.User.Identity.Name;
 
-    public Guid GetUserId()
+    public Guid? GetUserId()
     {
-        return IsAuthenticated() ? Guid.Parse(_accessor.HttpContext.User.GetUserId()) : Guid.Empty;
+        if (!IsAuthenticated()) return null;
+
+        var userId = _accessor.HttpContext.User.GetUserId();
+
+        if (string.IsNullOrEmpty(userId)) return null;
+
+        return Guid.Parse(userId);
     }
 
     public string GetUserEmail()
     {
-        return IsAuthenticated() ? _accessor.HttpContext.User.GetUserEmail() : "";
+        if (!IsAuthenticated()) return string.Empty;
+
+        return _accessor.HttpContext.User.GetUserEmail() ?? "";
     }
 
     public string GetUserToken()
@@ -64,6 +72,8 @@ public class UserApp : IUserApp
 
     public string GetUserCpf()
     {
+        if (!IsAuthenticated()) return string.Empty;
+
         return _accessor.HttpContext?.User.GetUserEmail();
     }
 }

@@ -9,8 +9,6 @@
     <ItemGroup>
         <ProjectReference Include="..\..\Shared\EF.WebApi.Commons\EF.WebApi.Commons.csproj"/>
         <ProjectReference Include="..\EF.Carrinho.Domain\EF.Carrinho.Domain.csproj"/>
-        <ProjectReference Include="..\EF.Estoques.Application\EF.Estoques.Application.csproj"/>
-        <ProjectReference Include="..\EF.Produtos.Application\EF.Produtos.Application.csproj" />
     </ItemGroup>
 
     <ItemGroup>

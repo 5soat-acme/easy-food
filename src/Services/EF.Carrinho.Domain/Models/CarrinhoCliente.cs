@@ -13,6 +13,8 @@ public class CarrinhoCliente : Entity, IAggregateRoot
 
     public Guid? ClienteId { get; private set; }
     public decimal ValorTotal { get; private set; }
+    public DateTime DataCriacao { get; private set; }
+    public DateTime? DataAtualizacao { get; private set; }
     public IReadOnlyCollection<Item> Itens => _itens;
 
     public void AssociarCliente(Guid clienteId)

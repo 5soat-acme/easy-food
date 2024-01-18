@@ -36,8 +36,9 @@ public class CarrinhoController : CustomControllerBase
     ///     Obtém o carrinho do cliente. Caso o cliente tenha se identificado no sistema, é verificado se o mesmo possui um
     ///     carrinho em aberto. Para clientes não identificados, é criado um carrinho temporário associado ao token gerado para
     ///     o usuário anônimo.
+    ///     Esse endpoint é utilizado para exibir os dados na tela de carrinho e o resumo do pedido antes da confirmação.
     /// </remarks>
-    /// <response code="200">Retorna dados do carrinho.</response>
+    /// <response code="200">Dados do carrinho.</response>
     /// <response code="401">Não autorizado.</response>
     [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(CarrinhoClienteDto))]
     [ProducesResponseType(StatusCodes.Status401Unauthorized)]
@@ -52,9 +53,9 @@ public class CarrinhoController : CustomControllerBase
     ///     Adiciona um item ao carrinho.
     /// </summary>
     /// <remarks>
-    ///     Adiciona um item ao carrinho. Caso o item já exista no carrinho, a quantidade é incrementada.
+    ///     Adiciona um item ao carrinho. Caso o item já exista, a quantidade é incrementada.
     /// </remarks>
-    /// <response code="204">Indica que o item foi adicionado no carrinho com sucesso.</response>
+    /// <response code="204">Item adicionado com sucesso</response>
     /// <response code="400">A solicitação está malformada e não pode ser processada.</response>
     /// <response code="401">Não autorizado.</response>
     [ProducesResponseType(StatusCodes.Status204NoContent)]
@@ -76,7 +77,7 @@ public class CarrinhoController : CustomControllerBase
     /// <summary>
     ///     Atualiza a quantidade de um item no carrinho.
     /// </summary>
-    /// <response code="204">Indica que a quantidade do item foi atualizada com sucesso.</response>
+    /// <response code="204">Carrinho atualizado com sucesso</response>
     /// <response code="400">A solicitação está malformada e não pode ser processada.</response>
     /// <response code="401">Não autorizado.</response>
     [ProducesResponseType(StatusCodes.Status204NoContent)]

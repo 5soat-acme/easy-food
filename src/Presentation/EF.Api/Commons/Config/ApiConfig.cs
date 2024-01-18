@@ -6,6 +6,7 @@ using EF.Api.Apis.Estoques.Config;
 using EF.Api.Apis.Identidade.Config;
 using EF.Api.Apis.Pagamentos.Config;
 using EF.Api.Apis.Pedidos.Config;
+using EF.Api.Apis.PreparoEntrega.Config;
 using EF.Api.Commons.Extensions;
 using EF.Domain.Commons.Mediator;
 
@@ -30,6 +31,7 @@ public static class ApiConfig
         services.RegisterServicesEstoques(configuration);
         services.RegisterServicesClientes(configuration);
         services.RegisterServicesPedidos(configuration);
+        services.RegisterServicesPreparoEntrega(configuration);
 
         services.AddIdentityConfig(configuration);
 

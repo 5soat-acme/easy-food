@@ -19,12 +19,12 @@ public class IniciarPreparoCommandHandler : CommandHandler,
     {
         var pedido = await _pedidoRepository.ObterPedidoPorId(request.PedidoId);
 
-        pedido.ConfirmarEntrega();
+        pedido.IniciarPreparo();
 
         pedido.AddEvent(new PreparoPedidoIniciadoEvent
         {
             AggregateId = pedido.Id,
-            CorrelacaoId = pedido.CorrelacaoId
+            PedidoCorrelacaoId = pedido.PedidoCorrelacaoId
         });
 
         _pedidoRepository.Atualizar(pedido);

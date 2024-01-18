@@ -24,7 +24,7 @@ public class ConfirmarEntregaCommandHandler : CommandHandler,
         pedido.AddEvent(new EntregaRealizadaEvent
         {
             AggregateId = pedido.Id,
-            CorrelacaoId = pedido.CorrelacaoId
+            PedidoCorrelacaoId = pedido.PedidoCorrelacaoId
         });
 
         _pedidoRepository.Atualizar(pedido);

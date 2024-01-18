@@ -11,27 +11,28 @@ public class PedidoIntegrationService : INotificationHandler<PreparoPedidoInicia
     INotificationHandler<EntregaRealizadaEvent>
 {
     private readonly IMediatorHandler _mediator;
+
     public PedidoIntegrationService(IMediatorHandler mediator)
     {
         _mediator = mediator;
     }
-    
+
     public async Task Handle(EntregaRealizadaEvent notification, CancellationToken cancellationToken)
     {
         await _mediator.Send(new AtualizarPedidoCommand
         {
             AggregateId = notification.AggregateId,
-            PedidoId = notification.CorrelacaoId,
+            PedidoId = notification.PedidoCorrelacaoId,
             Status = Status.Finalizado
         });
     }
 
-    public async  Task Handle(PreparoPedidoFinalizadoEvent notification, CancellationToken cancellationToken)
+    public async Task Handle(PreparoPedidoFinalizadoEvent notification, CancellationToken cancellationToken)
     {
         await _mediator.Send(new AtualizarPedidoCommand
         {
             AggregateId = notification.AggregateId,
-            PedidoId = notification.CorrelacaoId,
+            PedidoId = notification.PedidoCorrelacaoId,
             Status = Status.Pronto
         });
     }
@@ -41,7 +42,7 @@ public class PedidoIntegrationService : INotificationHandler<PreparoPedidoInicia
         await _mediator.Send(new AtualizarPedidoCommand
         {
             AggregateId = notification.AggregateId,
-            PedidoId = notification.CorrelacaoId,
+            PedidoId = notification.PedidoCorrelacaoId,
             Status = Status.EmPreparacao
         });
     }

@@ -4,38 +4,33 @@ namespace EF.Pagamentos.Domain.Models;
 
 public class Pagamento : Entity, IAggregateRoot
 {
+    private readonly List<Transacao> _transacoes;
+
     private Pagamento()
     {
     }
 
-    public Pagamento(Guid pedidoId, Guid formaPagamentoId, DateTime dataLancamento, decimal valor)
+    public Pagamento(Guid pedidoId, Tipo tipo, decimal valor)
     {
         if (!ValidarPedido(pedidoId)) throw new DomainException("Um pagamento deve estar associado a um pedido");
-        if (!ValidarFormaPagamento(formaPagamentoId)) throw new DomainException("FormaPagamento inválida");
         if (!ValidarValor(valor)) throw new DomainException("Valor inválido");
 
         PedidoId = pedidoId;
-        FormaPagamentoId = formaPagamentoId;
-        DataLancamento = dataLancamento;
+        Tipo = tipo;
         Valor = valor;
+        _transacoes = new List<Transacao>();
     }
 
     public Guid PedidoId { get; private set; }
-    public FormaPagamento FormaPagamento { get; private set; }
-    public Guid FormaPagamentoId { get; private set; }
-    public DateTime DataLancamento { get; private set; }
+    public Tipo Tipo { get; private set; }
+    public DateTime DataCriacao { get; private set; }
+    public DateTime DataAtualizacao { get; private set; }
     public decimal Valor { get; private set; }
+    public IReadOnlyCollection<Transacao> Transacoes => _transacoes;
 
     private bool ValidarPedido(Guid pedidoId)
     {
         if (pedidoId == Guid.Empty) return false;
-
-        return true;
-    }
-
-    private bool ValidarFormaPagamento(Guid formaPagamentoId)
-    {
-        if (formaPagamentoId == Guid.Empty) return false;
 
         return true;
     }
@@ -45,5 +40,10 @@ public class Pagamento : Entity, IAggregateRoot
         if (valor <= 0) return false;
 
         return true;
+    }
+
+    public void AdicionarTransacao(Transacao transacao)
+    {
+        _transacoes.Add(transacao);
     }
 }

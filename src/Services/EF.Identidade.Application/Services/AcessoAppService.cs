@@ -7,6 +7,8 @@ using EF.Domain.Commons.Mediator;
 using EF.Identidade.Application.DTOs.Requests;
 using EF.Identidade.Application.DTOs.Responses;
 using EF.Identidade.Application.Services.Interfaces;
+using EF.Identidade.Infra.Extensions;
+using EF.Infra.Commons.Extensions;
 using EF.WebApi.Commons.Identity;
 using FluentValidation.Results;
 using Microsoft.AspNetCore.Identity;
@@ -19,11 +21,11 @@ public class AcessoAppService : IAcessoAppService
 {
     private readonly IdentitySettings _identitySettings;
     private readonly IMediatorHandler _mediator;
-    private readonly SignInManager<IdentityUser> _signInManager;
-    private readonly UserManager<IdentityUser> _userManager;
+    private readonly SignInManager<ApplicationUser> _signInManager;
+    private readonly UserManager<ApplicationUser> _userManager;
 
-    public AcessoAppService(IMediatorHandler mediator, SignInManager<IdentityUser> signInManager,
-        UserManager<IdentityUser> userManager, IOptions<IdentitySettings> settings)
+    public AcessoAppService(IMediatorHandler mediator, SignInManager<ApplicationUser> signInManager,
+        UserManager<ApplicationUser> userManager, IOptions<IdentitySettings> settings)
     {
         _mediator = mediator;
         _signInManager = signInManager;
@@ -34,14 +36,15 @@ public class AcessoAppService : IAcessoAppService
     public async Task<OperationResult<RespostaTokenAcesso>> CriarUsuario(
         NovoUsuario novoUsuario)
     {
-        var identityUser = new IdentityUser
+        var applicationUser = new ApplicationUser
         {
             UserName = novoUsuario.Email,
             Email = novoUsuario.Email,
-            EmailConfirmed = true
+            EmailConfirmed = true,
+            Cpf = novoUsuario.Cpf
         };
 
-        var identityResult = await _userManager.CreateAsync(identityUser, novoUsuario.Senha);
+        var identityResult = await _userManager.CreateAsync(applicationUser, novoUsuario.Senha);
 
         if (identityResult.Succeeded)
         {
@@ -63,6 +66,10 @@ public class AcessoAppService : IAcessoAppService
         var claims = new List<Claim>
         {
             new(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
+            new(JwtRegisteredClaimNames.Nbf,
+                DateTime.UtcNow.ToUnixEpochDate().ToString()),
+            new(JwtRegisteredClaimNames.Iat,
+                DateTime.UtcNow.ToUnixEpochDate().ToString()),
             new("user_type", "anonymous"),
             new("session_id", Guid.NewGuid().ToString())
         };
@@ -88,7 +95,7 @@ public class AcessoAppService : IAcessoAppService
 
     private async Task<ValidationResult> RegistrarCliente(NovoUsuario novoUsuario)
     {
-        var identityUser = await _userManager.FindByEmailAsync(novoUsuario.Email);
+        var applicationUser = await _userManager.FindByEmailAsync(novoUsuario.Email);
 
         try
         {
@@ -100,13 +107,13 @@ public class AcessoAppService : IAcessoAppService
                 Sobrenome = novoUsuario.Sobrenome
             });
 
-            if (!result.IsValid()) await _userManager.DeleteAsync(identityUser);
+            if (!result.IsValid()) await _userManager.DeleteAsync(applicationUser);
 
             return result.ValidationResult;
         }
         catch (Exception)
         {
-            await _userManager.DeleteAsync(identityUser);
+            await _userManager.DeleteAsync(applicationUser);
             throw;
         }
     }
@@ -114,6 +121,7 @@ public class AcessoAppService : IAcessoAppService
     private async Task<RespostaTokenAcesso> GerarToken(string email)
     {
         var user = await _userManager.FindByEmailAsync(email);
+
         var claims = await _userManager.GetClaimsAsync(user);
 
         var identityClaims = await ObterClaimsUsuario(claims, user);
@@ -123,7 +131,7 @@ public class AcessoAppService : IAcessoAppService
     }
 
     private async Task<ClaimsIdentity> ObterClaimsUsuario(ICollection<Claim> claims,
-        IdentityUser user)
+        ApplicationUser user)
     {
         var userRoles = await _userManager.GetRolesAsync(user);
 
@@ -131,12 +139,13 @@ public class AcessoAppService : IAcessoAppService
         claims.Add(new Claim(JwtRegisteredClaimNames.Email, user.Email));
         claims.Add(new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()));
         claims.Add(new Claim(JwtRegisteredClaimNames.Nbf,
-            ToUnixEpochDate(DateTime.UtcNow).ToString()));
+            DateTime.UtcNow.ToUnixEpochDate().ToString()));
         claims.Add(new Claim(JwtRegisteredClaimNames.Iat,
-            ToUnixEpochDate(DateTime.UtcNow).ToString(),
+            DateTime.UtcNow.ToUnixEpochDate().ToString(),
             ClaimValueTypes.Integer64));
         claims.Add(new Claim("session_id", Guid.NewGuid().ToString()));
         claims.Add(new Claim("user_type", "authenticated"));
+        claims.Add(new Claim("user_cpf", user.Cpf));
 
         foreach (var userRole in userRoles) claims.Add(new Claim("role", userRole));
 
@@ -164,7 +173,7 @@ public class AcessoAppService : IAcessoAppService
     }
 
     private RespostaTokenAcesso ObterRespostaToken(string encodedToken,
-        IEnumerable<Claim> claims, IdentityUser? user = null)
+        IEnumerable<Claim> claims, ApplicationUser? user = null)
     {
         return new RespostaTokenAcesso
         {
@@ -176,12 +185,5 @@ public class AcessoAppService : IAcessoAppService
                 Claims = claims.Select(c => new UsuarioClaim { Type = c.Type, Value = c.Value })
             }
         };
-    }
-
-
-    private static long ToUnixEpochDate(DateTime date)
-    {
-        return (long)Math.Round((date.ToUniversalTime() - new DateTimeOffset(1970, 1, 1, 0, 0, 0, TimeSpan.Zero))
-            .TotalSeconds);
     }
 }

@@ -1,29 +1,32 @@
 using EF.Carrinho.Application.DTOs.Requests;
-using EF.Carrinho.Application.Ports;
 using EF.Carrinho.Application.Services.Interfaces;
 using EF.Carrinho.Domain.Models;
 using EF.Carrinho.Domain.Repository;
 using EF.Domain.Commons.Communication;
+using EF.Estoques.Application.Queries.Interfaces;
 
 namespace EF.Carrinho.Application.Services;
+
+// TODO: Remover
+public interface IProdutoQuery
+{
+    Task<Item> ObterItemPorProdutoId(Guid id);
+}
 
 public class CarrinhoManipulacaoService : BaseCarrinhoService, ICarrinhoManipulacaoService
 {
     private readonly ICarrinhoRepository _carrinhoRepository;
-    private readonly ICupomService _cupomService;
-    private readonly IEstoqueService _estoqueService;
-    private readonly IProdutoService _produtoService;
+    private readonly IEstoqueQuery _estoqueQuery;
+    private readonly IProdutoQuery _produtoQuery;
 
     public CarrinhoManipulacaoService(
         ICarrinhoRepository carrinhoRepository,
-        IProdutoService produtoService,
-        IEstoqueService estoqueService,
-        ICupomService cupomService) : base(carrinhoRepository)
+        IEstoqueQuery estoqueQuery,
+        IProdutoQuery produtoQuery) : base(carrinhoRepository)
     {
         _carrinhoRepository = carrinhoRepository;
-        _produtoService = produtoService;
-        _estoqueService = estoqueService;
-        _cupomService = cupomService;
+        _produtoQuery = produtoQuery;
+        _estoqueQuery = estoqueQuery;
     }
 
     public async Task<OperationResult> AdicionarItemCarrinho(AdicionarItemDto itemDto, CarrinhoSessaoDto carrinhoSessao)
@@ -94,8 +97,23 @@ public class CarrinhoManipulacaoService : BaseCarrinhoService, ICarrinhoManipula
     public async Task RemoverCarrinho(Guid carrinhoId)
     {
         var carrinho = await _carrinhoRepository.ObterPorId(carrinhoId);
-        _carrinhoRepository.Remover(carrinho);
-        await PersistirDados();
+
+        if (carrinho is not null)
+        {
+            _carrinhoRepository.Remover(carrinho);
+            await PersistirDados();
+        }
+    }
+
+    public async Task RemoverCarrinhoPorClienteId(Guid clienteId)
+    {
+        var carrinho = await _carrinhoRepository.ObterPorClienteId(clienteId);
+
+        if (carrinho is not null)
+        {
+            _carrinhoRepository.Remover(carrinho);
+            await PersistirDados();
+        }
     }
 
     private CarrinhoCliente CriarCarrinhoCliente(CarrinhoSessaoDto carrinhoSessao)
@@ -112,7 +130,7 @@ public class CarrinhoManipulacaoService : BaseCarrinhoService, ICarrinhoManipula
     private async Task<CarrinhoCliente> AdicionarItemCarrinhoNovo(AdicionarItemDto itemDto,
         CarrinhoSessaoDto carrinhoSessao)
     {
-        var item = await _produtoService.ObterItemPorProdutoId(itemDto.ProdutoId);
+        var item = await _produtoQuery.ObterItemPorProdutoId(itemDto.ProdutoId);
         item.AtualizarQuantidade(itemDto.Quantidade);
         var carrinho = CriarCarrinhoCliente(carrinhoSessao);
         carrinho.AdicionarItem(item);
@@ -133,7 +151,8 @@ public class CarrinhoManipulacaoService : BaseCarrinhoService, ICarrinhoManipula
         }
         else
         {
-            var itemNovo = await _produtoService.ObterItemPorProdutoId(itemDto.ProdutoId);
+            var itemNovo = await _produtoQuery.ObterItemPorProdutoId(itemDto.ProdutoId);
+            itemNovo.AtualizarQuantidade(itemDto.Quantidade);
             carrinho.AdicionarItem(itemNovo);
             _carrinhoRepository.AdicionarItem(itemNovo);
         }
@@ -143,12 +162,11 @@ public class CarrinhoManipulacaoService : BaseCarrinhoService, ICarrinhoManipula
 
     protected async Task<bool> ValidarEstoque(Item item)
     {
-        // TODO: Testar quando o estoque possuir dados
-        // if (item is null) throw new ArgumentNullException(nameof(item));
-        //
-        // var estoque = await _estoqueService.ObterEstoquePorProdutoId(item.ProdutoId);
-        //
-        // if (estoque is null || estoque.Quantidade < item.Quantidade) return false;
+        if (item is null) throw new ArgumentNullException(nameof(item));
+
+        var estoque = await _estoqueQuery.ObterEstoqueProduto(item.ProdutoId, CancellationToken.None);
+
+        if (estoque is null || estoque.Quantidade < item.Quantidade) return false;
 
         return true;
     }

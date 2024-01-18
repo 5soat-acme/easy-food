@@ -19,7 +19,7 @@ public class Pedido : Entity, IAggregateRoot
     public decimal ValorTotal { get; private set; }
     public Guid? CupomId { get; private set; }
     public DateTime DataCriacao { get; private set; }
-    public DateTime? DataUltimaAtualizacao { get; private set; }
+    public DateTime? DataAtualizacao { get; private set; }
 
     public IReadOnlyCollection<Item> Itens => _itens;
 
@@ -37,7 +37,7 @@ public class Pedido : Entity, IAggregateRoot
     {
         foreach (var item in _itens) item.CalcularValorFinal();
 
-        ValorTotal = _itens.Sum(i => i.ValorFinal);
+        ValorTotal = _itens.Sum(i => i.ValorFinal * i.Quantidade);
     }
 
     public void AssociarCpf(Cpf cpf)
@@ -56,5 +56,10 @@ public class Pedido : Entity, IAggregateRoot
         if (item is null) return;
 
         item.AplicarDesconto(desconto);
+    }
+
+    public void AssociarCliente(Guid clienteId)
+    {
+        ClienteId = clienteId;
     }
 }

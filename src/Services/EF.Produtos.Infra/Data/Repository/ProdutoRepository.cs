@@ -40,6 +40,11 @@ public sealed class ProdutoRepository : IProdutoRepository
         return await _dbContext.Produtos.SingleAsync(produto => produto.Id == produtoId, cancellationToken);
     }
 
+    public void Remover(Produto produto, CancellationToken cancellationToken)
+    {
+        _dbContext.Produtos.Remove(produto);
+    }
+
     public void Dispose()
     {
         _dbContext.Dispose();

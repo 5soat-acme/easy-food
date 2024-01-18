@@ -4,23 +4,20 @@ using MediatR;
 
 namespace EF.Produtos.Application.Commands;
 
-public class AtualizarProdutoCommandHandler : CommandHandler,
+public class BuscarProdutoCommandHandler : CommandHandler,
     IRequestHandler<AtualizarProdutoCommand, CommandResult>
 {
 
     private readonly IProdutoRepository _produtoRepository;
 
-    public AtualizarProdutoCommandHandler(IProdutoRepository produtoRepository)
+    public BuscarProdutoCommandHandler(IProdutoRepository produtoRepository)
     {
         _produtoRepository = produtoRepository;
     }
 
     public async Task<CommandResult> Handle(AtualizarProdutoCommand request, CancellationToken cancellationToken)
     {
-        var produto = await _produtoRepository.BuscarPorId(request.ProdutoId, cancellationToken);
-        // IMPLEMENTAR CASO O PRODUTO NÃO EXISTA
-        produto!.AlterarProduto(request.Nome, request.ValorUnitario, request.Categoria, request.Ativo);
-        _produtoRepository.Atualizar(produto, cancellationToken);
+        var produtos = await _produtoRepository.Buscar(request.Categoria, cancellationToken);
 
         var result = await PersistData(_produtoRepository.UnitOfWork);
         return CommandResult.Create(result);

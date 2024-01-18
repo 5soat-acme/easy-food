@@ -2,15 +2,11 @@
 using EF.Produtos.Domain.Models;
 using EF.Produtos.Domain.Repository;
 using MediatR;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace EF.Produtos.Application.Commands;
 
-internal class CriarProdutoCommandHandler : CommandHandler,
+public class CriarProdutoCommandHandler : CommandHandler,
     IRequestHandler<CriarProdutoCommand, CommandResult>
 {
 

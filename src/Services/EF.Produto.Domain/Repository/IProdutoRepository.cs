@@ -14,5 +14,6 @@ namespace EF.Produtos.Domain.Repository
         Task<IList<Produto>> Buscar(ProdutoCategoria? categoria, CancellationToken cancellationToken);
         Task<Produto> Criar(Produto produto, CancellationToken cancellationToken);
         Produto Atualizar(Produto produto, CancellationToken cancellationToken);
+        void Remover(Produto produto, CancellationToken cancellationToken);
     }
 }

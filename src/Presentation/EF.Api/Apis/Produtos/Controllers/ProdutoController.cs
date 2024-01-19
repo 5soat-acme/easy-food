@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace EF.Api.Apis.Produtos.Controllers;
 
-[Route("api/produto")]
+[Route("api/produtos")]
 public class ProdutoController : CustomControllerBase
 {
     private readonly IProdutoQuery _produtoQuery;

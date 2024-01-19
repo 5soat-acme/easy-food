@@ -17,3 +17,5 @@ No powershell, execute o seguinte comando na raiz do projeto:
 ```bash
 ./deploy/migrations.ps1
 ```
+
+https://www.postman.com/acme-dev/workspace/fiap-5soat/overview

@@ -27,7 +27,7 @@ public class ProdutoController : CustomControllerBase
     [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(IEnumerable<ProdutoDto>))]
     [Produces("application/json")]
     [HttpGet]
-    public async Task<IActionResult> Obter(ProdutoCategoria categoria)
+    public async Task<IActionResult> Obter([FromQuery] ProdutoCategoria categoria)
     {
         var pedidos = await _produtoQuery.Buscar(categoria);
         return pedidos is null ? NotFound() : Respond(pedidos);
@@ -45,7 +45,7 @@ public class ProdutoController : CustomControllerBase
         var result = await _mediator.Send(produto);
         return Respond(result);
     }
-    
+
     /// <summary>
     ///     Atualiza um produto
     /// </summary>
@@ -60,13 +60,13 @@ public class ProdutoController : CustomControllerBase
             AddError("O produto não corresponde ao informado");
             return Respond();
         }
-        
+
         if (!ModelState.IsValid) return Respond(ModelState);
-        
+
         var result = await _mediator.Send(produto);
         return Respond(result);
     }
-    
+
     /// <summary>
     ///     Remove um produto
     /// </summary>
@@ -77,12 +77,12 @@ public class ProdutoController : CustomControllerBase
     public async Task<IActionResult> Remover(Guid id)
     {
         if (!ModelState.IsValid) return Respond(ModelState);
-        
+
         var result = await _mediator.Send(new RemoverProdutoCommand
         {
             ProdutoId = id
         });
-        
+
         return Respond(result);
     }
 }

@@ -453,3 +453,5 @@ a
 1src/Services/EF.Produtos.Domain/Models/Produto.cs,7\d\7dcd16ea6f06b145e8d633090b366368cb746724
 v
 Fsrc/Presentation/EF.Api/Apis/Produtos/Controllers/ProdutoController.cs,3\3\33b40e0e80fb07750271ba586a017a302479475f
+‚
+Rsrc/Services/EF.Produtos.Application/Commands/Atualizar/AtualizarProdutoCommand.cs,d\b\dbacae92ee2d09c74fd3738e33535631de463669

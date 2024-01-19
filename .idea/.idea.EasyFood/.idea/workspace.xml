@@ -19,30 +19,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="61e4a515-7fae-49b6-801b-ebc481bfb9f9" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/issuestore/0/1/01f082c768afaf123555823ff946ab323d0fb05c" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/issuestore/0/1/01f082c768afaf123555823ff946ab323d0fb05c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/securityhotspotstore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/securityhotspotstore/index.pb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/EF.Carrinho.Application/Services/CarrinhoManipulacaoService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Carrinho.Application/Services/CarrinhoManipulacaoService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/EF.Carrinho.Domain/Models/CarrinhoCliente.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Carrinho.Domain/Models/CarrinhoCliente.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/EF.Carrinho.Infra/Adapters/Produtos/ProdutoAdapter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Carrinho.Infra/Adapters/Produtos/ProdutoAdapter.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/EF.Pedidos.Application/DTOs/Responses/PedidoDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Pedidos.Application/DTOs/Responses/PedidoDto.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/EF.Pedidos.Application/Mappings/DomainToDtoProfile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Pedidos.Application/Mappings/DomainToDtoProfile.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/EF.PreparoEntrega.Application/Queries/PreparoEntregaQuery.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.PreparoEntrega.Application/Queries/PreparoEntregaQuery.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/EF.Produtos.Application/Commands/AtualizarProdutoCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Produtos.Application/Commands/Atualizar/AtualizarProdutoCommand.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/EF.Produtos.Application/Commands/AtualizarProdutoCommandHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Produtos.Application/Commands/Atualizar/AtualizarProdutoCommandHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/EF.Produtos.Application/Commands/BuscarProdutoCommand.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/EF.Produtos.Application/Commands/BuscarProdutoCommandHandler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/EF.Produtos.Application/Commands/CriarProdutoCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Produtos.Application/Commands/Criar/CriarProdutoCommand.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/EF.Produtos.Application/Commands/CriarProdutoCommandHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Produtos.Application/Commands/Criar/CriarProdutoCommandHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/EF.Produtos.Application/Commands/RemoverProdutoCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Produtos.Application/Commands/Remover/RemoverProdutoCommand.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/EF.Produtos.Application/Commands/RemoverProdutoCommandHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Produtos.Application/Commands/Remover/RemoverProdutoCommandHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/EF.Produtos.Application/DTOs/Responses/ProdutoDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Produtos.Application/DTOs/Responses/ProdutoDto.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/EF.Produtos.Application/Queries/Interfaces/IProdutoQuery.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Produtos.Application/Queries/Interfaces/IProdutoQuery.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/EF.Produtos.Application/Queries/ProdutoQuery.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Produtos.Application/Queries/ProdutoQuery.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/EF.Produtos.Domain/Repository/IProdutoRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Produtos.Domain/Repository/IProdutoRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/EF.Produtos.Infra/Data/Repository/ProdutoRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Produtos.Infra/Data/Repository/ProdutoRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Shared/EF.WebApi.Commons/Users/UserApp.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Shared/EF.WebApi.Commons/Users/UserApp.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Presentation/EF.Api/Apis/Produtos/Controllers/ProdutoController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Presentation/EF.Api/Apis/Produtos/Controllers/ProdutoController.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -285,7 +262,7 @@
       <workItem from="1705156892897" duration="3302000" />
       <workItem from="1705259213672" duration="4960000" />
       <workItem from="1705429014097" duration="803000" />
-      <workItem from="1705678874018" duration="12376000" />
+      <workItem from="1705678874018" duration="12858000" />
     </task>
     <servers />
   </component>

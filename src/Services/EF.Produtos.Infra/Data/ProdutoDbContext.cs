@@ -18,7 +18,6 @@ public sealed class ProdutoDbContext : DbContext, IUnitOfWork
 
     public async Task<bool> Commit()
     {
-        // TODO: Aqui você pode percorrer os eventos de dominio e processa-los
         return await SaveChangesAsync() > 0;
     }
 

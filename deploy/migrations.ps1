@@ -6,7 +6,8 @@ $commands = @(
     "dotnet ef database update -p ./src/Services/EF.Estoques.Infra -s ./src/Presentation/EF.Api -c EstoqueDbContext",
     "dotnet ef database update -p ./src/Services/EF.Cupons.Infra -s ./src/Presentation/EF.Api -c CupomDbContext",
     "dotnet ef database update -p ./src/Services/EF.Pagamentos.Infra -s ./src/Presentation/EF.Api -c PagamentoDbContext",
-    "dotnet ef database update -p ./src/Services/EF.PreparoEntrega.Infra -s ./src/Presentation/EF.Api -c PreparoEntregaDbContext"
+    "dotnet ef database update -p ./src/Services/EF.PreparoEntrega.Infra -s ./src/Presentation/EF.Api -c PreparoEntregaDbContext",
+    "dotnet ef database update -p ./src/Services/EF.Produtos.Infra -s ./src/Presentation/EF.Api -c ProdutoDbContext"
 )
 
 $errorsList = @()

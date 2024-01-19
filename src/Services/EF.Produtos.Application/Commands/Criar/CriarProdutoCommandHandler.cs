@@ -24,7 +24,7 @@ internal class CriarProdutoCommandHandler : CommandHandler,
     {
         var produto = new Produto(request.Nome, request.ValorUnitario, request.Categoria, request.TempoPreparoEstimado,
             request.Descricao);
-        await _produtoRepository.Criar(produto, cancellationToken);
+        _produtoRepository.Criar(produto);
         var result = await PersistData(_produtoRepository.UnitOfWork);
         return CommandResult.Create(result, produto.Id);
     }

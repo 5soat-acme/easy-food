@@ -96,6 +96,12 @@ public class CarrinhoCliente : Entity, IAggregateRoot
 
     public void CalcularTempoPreparo()
     {
+        if (Itens.Count == 0)
+        {
+            TempoMedioPreparo = 0;
+            return;
+        }
+
         TempoMedioPreparo = Itens.Sum(i => i.TempoEstimadoPreparo) / Itens.Count;
     }
 }

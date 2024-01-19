@@ -1,3 +1,5 @@
+using EF.Produtos.Domain.Models;
+
 namespace EF.Produtos.Application.DTOs.Responses;
 
 public class ProdutoDto
@@ -7,4 +9,5 @@ public class ProdutoDto
     public string Descricao { get; set; }
     public decimal ValorUnitario { get; set; }
     public int TempoPreparoEstimado { get; set; }
+    public ProdutoCategoria Categoria { get; set; }
 }

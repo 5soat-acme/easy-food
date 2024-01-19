@@ -74,6 +74,7 @@ public class UserApp : IUserApp
     {
         if (!IsAuthenticated()) return string.Empty;
 
-        return _accessor.HttpContext?.User.GetUserEmail();
+        return _accessor.HttpContext.User.Claims.FirstOrDefault(c => c.Type.Equals("user_cpf"))
+            ?.Value;
     }
 }

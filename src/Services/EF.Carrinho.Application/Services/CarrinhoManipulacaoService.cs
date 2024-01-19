@@ -4,6 +4,7 @@ using EF.Carrinho.Application.Services.Interfaces;
 using EF.Carrinho.Domain.Models;
 using EF.Carrinho.Domain.Repository;
 using EF.Domain.Commons.Communication;
+using FluentValidation;
 
 namespace EF.Carrinho.Application.Services;
 
@@ -54,6 +55,8 @@ public class CarrinhoManipulacaoService : BaseCarrinhoService, ICarrinhoManipula
 
         carrinho.AtualizarQuantidadeItem(itemDto.ItemId, itemDto.Quantidade);
         var item = carrinho.ObterItemPorId(itemDto.ItemId);
+
+        if (item is null) throw new ValidationException("Item não existe");
 
         if (!await ValidarEstoque(item!)) return OperationResult.Failure("Produto sem estoque");
 
@@ -134,19 +137,20 @@ public class CarrinhoManipulacaoService : BaseCarrinhoService, ICarrinhoManipula
         AdicionarItemDto itemDto)
     {
         var produtoExiste = carrinho.ProdutoExiste(itemDto.ProdutoId);
-
+        
         if (produtoExiste)
         {
             var itemExistente = carrinho.ObterItemPorProdutoId(itemDto.ProdutoId);
-            itemExistente.AtualizarQuantidade(itemDto.Quantidade);
-            carrinho.AdicionarItem(itemExistente);
-            _carrinhoRepository.AtualizarItem(itemExistente);
+            var quantidade = itemExistente.Quantidade + itemDto.Quantidade;
+            carrinho.AtualizarQuantidadeItem(itemExistente.Id, quantidade);
+            var itemAtualizado = carrinho.ObterItemPorProdutoId(itemDto.ProdutoId);
+            _carrinhoRepository.AtualizarItem(itemAtualizado);
         }
         else
         {
             var itemNovo = await _produtoService.ObterItemPorProdutoId(itemDto.ProdutoId);
-            itemNovo.AtualizarQuantidade(itemDto.Quantidade);
             carrinho.AdicionarItem(itemNovo);
+            carrinho.AtualizarQuantidadeItem(itemNovo.Id, itemDto.Quantidade);
             _carrinhoRepository.AdicionarItem(itemNovo);
         }
 

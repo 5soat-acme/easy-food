@@ -18,7 +18,7 @@ public class ProdutoAdapter : IProdutoService
 
     public async Task<Item> ObterItemPorProdutoId(Guid id)
     {
-        var produto = await _produtoQuery.ObterPorId(id);
+        var produto = await _produtoQuery.BuscarPorId(id);
         return _mapper.Map<Item>(produto);
     }
 }

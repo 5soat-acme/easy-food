@@ -19,8 +19,8 @@ public static class DependencyInjectionConfig
         services.AddScoped<PagamentoServiceResolver>();
         
         // Domain
-        services.AddScoped<PagamentoPayPalService>();
-        
+        services.AddScoped<PagamentoMercadoPagoService>();
+
         // Infra - Data 
         services.AddScoped<IPagamentoRepository, PagamentoRepository>();
         services.AddDbContext<PagamentoDbContext>(options =>

@@ -20,8 +20,8 @@ public class PagamentoServiceResolver
     {
         switch (tipo)
         {
-            case Tipo.PayPal:
-                return _provider.GetRequiredService<PagamentoPayPalService>();
+            case Tipo.MercadoPago:
+                return _provider.GetRequiredService<PagamentoMercadoPagoService>();
             // TODO: Incluir demais tipos que vamos usar
             default:
                 throw new DomainException("Tipo de pagamento inválido");

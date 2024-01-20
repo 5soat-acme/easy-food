@@ -35,7 +35,7 @@ public sealed class CupomRepository : ICupomRepository
 
     public async Task<Cupom?> BuscarCupomVigente(string codigoCupom, CancellationToken cancellationToken)
     {
-        var dataAtual = DateTime.Now;
+        var dataAtual = DateTime.Now.ToUniversalTime();
         return await _dbContext.Cupons.Include(x => x.CupomProdutos)
             .Where(x => x.CodigoCupom == codigoCupom
                         && x.Status == CupomStatus.Ativo

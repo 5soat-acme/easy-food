@@ -29,7 +29,7 @@ public class CupomController : CustomControllerBase
     ///     Será retornada as informações do cupom caso ele esteja vigente.
     /// </remarks>
     /// <response code="200">Retorna as informações do cupom.</response>
-    [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(CupomProdutoDto))]
+    [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(CupomDto))]
     [Produces("application/json")]
     [HttpGet("{codigoCupom}")]
     public async Task<IActionResult> BuscarCupomProduto(string codigoCupom, CancellationToken cancellationToken)

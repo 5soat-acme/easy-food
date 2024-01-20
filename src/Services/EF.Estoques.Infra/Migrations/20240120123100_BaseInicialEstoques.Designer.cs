@@ -12,7 +12,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace EF.Estoques.Infra.Migrations
 {
     [DbContext(typeof(EstoqueDbContext))]
-    [Migration("20231212013633_BaseInicialEstoques")]
+    [Migration("20240120123100_BaseInicialEstoques")]
     partial class BaseInicialEstoques
     {
         /// <inheritdoc />
@@ -52,7 +52,7 @@ namespace EF.Estoques.Infra.Migrations
                         .HasColumnType("uuid");
 
                     b.Property<DateTime>("DataLancamento")
-                        .HasColumnType("timestamp without time zone");
+                        .HasColumnType("timestamp with time zone");
 
                     b.Property<Guid>("EstoqueId")
                         .HasColumnType("uuid");

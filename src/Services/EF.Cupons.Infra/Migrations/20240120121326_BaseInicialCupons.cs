@@ -16,8 +16,8 @@ namespace EF.Cupons.Infra.Migrations
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uuid", nullable: false),
-                    DataInicio = table.Column<DateTime>(type: "timestamp without time zone", nullable: false),
-                    DataFim = table.Column<DateTime>(type: "timestamp without time zone", nullable: false),
+                    DataInicio = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
+                    DataFim = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
                     CodigoCupom = table.Column<string>(type: "character varying(10)", maxLength: 10, nullable: false),
                     PorcentagemDesconto = table.Column<decimal>(type: "numeric", nullable: false),
                     Status = table.Column<int>(type: "integer", nullable: false)

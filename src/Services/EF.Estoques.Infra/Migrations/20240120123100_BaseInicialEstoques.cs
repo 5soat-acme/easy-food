@@ -33,7 +33,7 @@ namespace EF.Estoques.Infra.Migrations
                     Quantidade = table.Column<int>(type: "integer", nullable: false),
                     TipoMovimentacao = table.Column<int>(type: "integer", nullable: false),
                     OrigemMovimentacao = table.Column<int>(type: "integer", nullable: false),
-                    DataLancamento = table.Column<DateTime>(type: "timestamp without time zone", nullable: false),
+                    DataLancamento = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
                     EstoqueId = table.Column<Guid>(type: "uuid", nullable: false)
                 },
                 constraints: table =>

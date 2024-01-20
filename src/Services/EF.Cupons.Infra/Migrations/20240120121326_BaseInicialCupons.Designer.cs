@@ -12,7 +12,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace EF.Cupons.Infra.Migrations
 {
     [DbContext(typeof(CupomDbContext))]
-    [Migration("20231216113755_BaseInicialCupons")]
+    [Migration("20240120121326_BaseInicialCupons")]
     partial class BaseInicialCupons
     {
         /// <inheritdoc />
@@ -37,10 +37,10 @@ namespace EF.Cupons.Infra.Migrations
                         .HasColumnType("character varying(10)");
 
                     b.Property<DateTime>("DataFim")
-                        .HasColumnType("timestamp without time zone");
+                        .HasColumnType("timestamp with time zone");
 
                     b.Property<DateTime>("DataInicio")
-                        .HasColumnType("timestamp without time zone");
+                        .HasColumnType("timestamp with time zone");
 
                     b.Property<decimal>("PorcentagemDesconto")
                         .HasColumnType("numeric");

@@ -7,7 +7,9 @@ public class ProdutoToDomainProfile : Profile
 {
     public ProdutoToDomainProfile()
     {
-        CreateMap<EF.Produtos.Application.DTOs.Responses.ProdutoDto, Item?>().ConstructUsing((source, context) =>
+        CreateMap<EF.Produtos.Application.DTOs.Responses.ProdutoDto, Item?>()
+            .ForMember(x => x.Id, opt => opt.Ignore())
+            .ConstructUsing((source, context) =>
             source is null
                 ? null
                 : new Item(source.Id, source.Nome, source.ValorUnitario, source.TempoPreparoEstimado));

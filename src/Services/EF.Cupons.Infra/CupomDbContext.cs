@@ -3,6 +3,8 @@ using EF.Domain.Commons.Messages;
 using EF.Domain.Commons.Repository;
 using FluentValidation.Results;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.ChangeTracking;
+using Microsoft.EntityFrameworkCore.Internal;
 
 namespace EF.Cupons.Infra;
 
@@ -19,6 +21,7 @@ public sealed class CupomDbContext : DbContext, IUnitOfWork
 
     public async Task<bool> Commit()
     {
+        SetDates(ChangeTracker.Entries());
         return await SaveChangesAsync() > 0;
     }
 
@@ -33,5 +36,20 @@ public sealed class CupomDbContext : DbContext, IUnitOfWork
         modelBuilder.Ignore<ValidationResult>();
 
         base.OnModelCreating(modelBuilder);
+    }
+
+    private void SetDates(IEnumerable<EntityEntry> entries)
+    {
+        foreach (var entry in entries
+                     .Where(entry =>
+                         entry.Entity.GetType().GetProperty("DataInicio") != null &&
+                         entry.Entity.GetType().GetProperty("DataFim") != null))
+        {
+            var dtaInicio = (DateTime)entry.Property("DataInicio").CurrentValue!;
+            var dtaFim = (DateTime)entry.Property("DataFim").CurrentValue!;
+
+            entry.Property("DataInicio").CurrentValue = dtaInicio.ToUniversalTime();
+            entry.Property("DataFim").CurrentValue = dtaFim.ToUniversalTime();
+        }
     }
 }

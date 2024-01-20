@@ -60,7 +60,7 @@ public class Item : Entity
     public void CalcularValorFinal()
     {
         if (Desconto is not null)
-            ValorFinal = ValorUnitario - ValorUnitario * Desconto.Value;
+            ValorFinal = ValorUnitario - (ValorUnitario * Desconto.Value);
         else
             ValorFinal = ValorUnitario;
     }

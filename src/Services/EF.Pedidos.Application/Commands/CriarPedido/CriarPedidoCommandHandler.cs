@@ -108,7 +108,7 @@ public class CriarPedidoCommandHandler : CommandHandler,
         foreach (var item in pedido.Itens)
         {
             if (cupom.Produtos.Exists(produto => produto.ProdutoId == item.ProdutoId))
-                pedido.AplicarDescontoItem(item.Id, cupom.Desconto);
+                pedido.AplicarDescontoItem(item.Id, cupom.PorcentagemDesconto);
         }
 
         return pedido;

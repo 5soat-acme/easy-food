@@ -13,12 +13,10 @@ public class CupomMapping : IEntityTypeConfiguration<Cupom>
         builder.HasKey(c => c.Id);
 
         builder.Property(c => c.DataInicio)
-            .IsRequired()
-            .HasColumnType("timestamp without time zone");
+            .IsRequired();
 
         builder.Property(c => c.DataFim)
-            .IsRequired()
-            .HasColumnType("timestamp without time zone");
+            .IsRequired();
 
         builder.Property(c => c.CodigoCupom)
             .HasMaxLength(10)

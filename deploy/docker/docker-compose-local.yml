@@ -6,14 +6,15 @@ services:
     image: acme/easy-food-api:latest
     container_name: easy-food-api
     build:
-      context: ../src
-      dockerfile: ./EF.WebApi/Dockerfile
+      context: ../../
+      dockerfile: ./src/Presentation/EF.Api/Dockerfile
     restart: always
     environment:
       ASPNETCORE_ENVIRONMENT: Docker
       ASPNETCORE_URLS: https://+:443;http://+:80
     depends_on:
       - easy-food-db
+    command: ["./wait-db.sh", "db", "./migrations.sh"]
   
   easy-food-db:
     image: postgres:latest

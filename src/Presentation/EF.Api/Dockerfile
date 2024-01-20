@@ -5,10 +5,16 @@ EXPOSE 443
 
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /src
-COPY ["src/EF.Api/EF.Api.csproj", "src/EF.Api/"]
-RUN dotnet restore "src/EF.Api/EF.Api.csproj"
+
+COPY ["src/", "./src/"]
+#COPY ["deploy/migrations.sh", "./"]
+#COPY ["deploy/wait-db.sh", "./"]
+
+#RUN chmod +x migrations.sh wait-db.sh
+
+RUN dotnet restore "src/Presentation/EF.Api/EF.Api.csproj"
 COPY . .
-WORKDIR "/src/src/EF.Api"
+WORKDIR "/src/src/Presentation/EF.Api"
 RUN dotnet build "EF.Api.csproj" -c Release -o /app/build
 
 FROM build AS publish

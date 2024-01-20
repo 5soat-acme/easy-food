@@ -7,7 +7,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{1F253C40-620
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "deploy", "deploy", "{13ABF460-2024-4387-89C6-9DCE83BF78A6}"
 	ProjectSection(SolutionItems) = preProject
-		deploy\migrations.ps1 = deploy\migrations.ps1
+		deploy\migrations.sh = deploy\migrations.sh
+		deploy\wait-db.sh = deploy\wait-db.sh
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docker", "docker", "{09084241-ABFC-4AB6-933A-78E86D840DF2}"

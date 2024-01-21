@@ -4,6 +4,7 @@ using EF.Carrinho.Application.Services.Interfaces;
 using EF.Carrinho.Domain.Models;
 using EF.Carrinho.Domain.Repository;
 using EF.Domain.Commons.Communication;
+using EF.Domain.Commons.DomainObjects;
 using FluentValidation;
 
 namespace EF.Carrinho.Application.Services;
@@ -25,6 +26,9 @@ public class CarrinhoManipulacaoService : BaseCarrinhoService, ICarrinhoManipula
 
     public async Task<OperationResult> AdicionarItemCarrinho(AdicionarItemDto itemDto, CarrinhoSessaoDto carrinhoSessao)
     {
+        var produto = await _produtoService.ObterItemPorProdutoId(itemDto.ProdutoId);
+        if (produto is null) throw new DomainException("Produto inválido");
+
         var carrinho = await ObterCarrinho(carrinhoSessao);
 
         if (carrinho is null)

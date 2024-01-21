@@ -1,5 +1,7 @@
 using EF.Domain.Commons.Mediator;
+using EF.Domain.Commons.Messages;
 using EF.Produtos.Application.Commands;
+using EF.Produtos.Application.DTOs.Requests;
 using EF.Produtos.Application.DTOs.Responses;
 using EF.Produtos.Application.Queries.Interfaces;
 using EF.Produtos.Domain.Models;
@@ -37,12 +39,22 @@ public class ProdutoController : CustomControllerBase
     ///     Cadastra um produto
     /// </summary>
     /// <response code="200">Produto cadastrado.</response>
-    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(CommandResult))]
+    [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(ValidationProblemDetails))]
     [Produces("application/json")]
     [HttpPost]
-    public async Task<IActionResult> Criar(CriarProdutoCommand produto)
+    public async Task<IActionResult> Criar(CriarProdutoDto produto)
     {
-        var result = await _mediator.Send(produto);
+        var command = new CriarProdutoCommand
+        {
+            Nome = produto.Nome,
+            ValorUnitario = produto.ValorUnitario,
+            Categoria = produto.Categoria,
+            TempoPreparoEstimado = produto.TempoPreparoEstimado,
+            Descricao = produto.Descricao
+        };
+
+        var result = await _mediator.Send(command);
         return Respond(result);
     }
 
@@ -50,20 +62,26 @@ public class ProdutoController : CustomControllerBase
     ///     Atualiza um produto
     /// </summary>
     /// <response code="200">Produto cadastrado.</response>
-    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(CommandResult))]
+    [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(ValidationProblemDetails))]
     [Produces("application/json")]
     [HttpPut("{id}")]
-    public async Task<IActionResult> Atualizar(Guid id, AtualizarProdutoCommand produto)
+    public async Task<IActionResult> Atualizar(Guid id, AtualizarProdutoDto produto)
     {
-        if (id != produto.ProdutoId)
-        {
-            AddError("O produto não corresponde ao informado");
-            return Respond();
-        }
-
         if (!ModelState.IsValid) return Respond(ModelState);
 
-        var result = await _mediator.Send(produto);
+        var command = new AtualizarProdutoCommand
+        {
+            ProdutoId = id,
+            Nome = produto.Nome,
+            ValorUnitario = produto.ValorUnitario,
+            Categoria = produto.Categoria,
+            TempoPreparoEstimado = produto.TempoPreparoEstimado,
+            Descricao = produto.Descricao,
+            Ativo = produto.Ativo
+        };
+
+        var result = await _mediator.Send(command);
         return Respond(result);
     }
 
@@ -71,7 +89,8 @@ public class ProdutoController : CustomControllerBase
     ///     Remove um produto
     /// </summary>
     /// <response code="200">Produto removido.</response>
-    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(CommandResult))]
+    [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(ValidationProblemDetails))]
     [Produces("application/json")]
     [HttpDelete("{id}")]
     public async Task<IActionResult> Remover(Guid id)

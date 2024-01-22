@@ -21,14 +21,14 @@ public class AcessoAppService : IAcessoAppService
 {
     private readonly IdentitySettings _identitySettings;
     private readonly IMediatorHandler _mediator;
-    private readonly SignInManager<ApplicationUser> _signInManager;
+    // private readonly SignInManager<ApplicationUser> _signInManager;
     private readonly UserManager<ApplicationUser> _userManager;
 
     public AcessoAppService(IMediatorHandler mediator, SignInManager<ApplicationUser> signInManager,
         UserManager<ApplicationUser> userManager, IOptions<IdentitySettings> settings)
     {
         _mediator = mediator;
-        _signInManager = signInManager;
+        // _signInManager = signInManager;
         _userManager = userManager;
         _identitySettings = settings.Value;
     }
@@ -36,7 +36,7 @@ public class AcessoAppService : IAcessoAppService
     public async Task<OperationResult<RespostaTokenAcesso>> CriarUsuario(
         NovoUsuario novoUsuario)
     {
-        var applicationUser = new ApplicationUser
+        var newApplicationUser = new ApplicationUser
         {
             UserName = novoUsuario.Email,
             Email = novoUsuario.Email,
@@ -44,14 +44,15 @@ public class AcessoAppService : IAcessoAppService
             Cpf = novoUsuario.Cpf
         };
 
-        var identityResult = await _userManager.CreateAsync(applicationUser, novoUsuario.Senha);
+        var identityResult = await _userManager.CreateAsync(newApplicationUser);
 
         if (identityResult.Succeeded)
         {
             var result = await RegistrarCliente(novoUsuario);
             if (!result.IsValid) return OperationResult<RespostaTokenAcesso>.Failure(result);
-
-            return OperationResult<RespostaTokenAcesso>.Success(await GerarToken(novoUsuario.Email));
+            
+            var applicationUser = await _userManager.FindByEmailAsync(novoUsuario.Email);
+            return OperationResult<RespostaTokenAcesso>.Success(await GerarTokenUsuarioIdentificado(applicationUser));
         }
 
         var errors = new List<string>();
@@ -61,7 +62,16 @@ public class AcessoAppService : IAcessoAppService
         return OperationResult<RespostaTokenAcesso>.Failure(errors);
     }
 
-    public RespostaTokenAcesso GerarTokenAcessoNaoIdentificado(string? cpf = null)
+    public async Task<OperationResult<RespostaTokenAcesso>> IdentificarUsuarioRegistrado(UsuarioLogin usuario)
+    {
+        var applicationUser =  await _userManager.FindByEmailAsync(usuario.Email);
+
+        if (applicationUser is not null) return OperationResult<RespostaTokenAcesso>.Success(await GerarTokenUsuarioIdentificado(applicationUser));
+
+        return OperationResult<RespostaTokenAcesso>.Failure("Usuário incorreto");
+    }
+    
+    public RespostaTokenAcesso GerarTokenUsuarioNaoIdentificado(string? cpf = null)
     {
         var claims = new List<Claim>
         {
@@ -83,47 +93,9 @@ public class AcessoAppService : IAcessoAppService
         return ObterRespostaToken(encodedToken, claims);
     }
 
-    public async Task<OperationResult<RespostaTokenAcesso>> Autenticar(UsuarioLogin usuario)
+    private async Task<RespostaTokenAcesso> GerarTokenUsuarioIdentificado(ApplicationUser user)
     {
-        var result = await _signInManager.PasswordSignInAsync(usuario.Email, usuario.Senha,
-            false, true);
-
-        if (result.Succeeded) return OperationResult<RespostaTokenAcesso>.Success(await GerarToken(usuario.Email));
-
-        return OperationResult<RespostaTokenAcesso>.Failure("Usuário ou senha incorretos");
-    }
-
-    private async Task<ValidationResult> RegistrarCliente(NovoUsuario novoUsuario)
-    {
-        var applicationUser = await _userManager.FindByEmailAsync(novoUsuario.Email);
-
-        try
-        {
-            var result = await _mediator.Send(new CriarClienteCommand
-            {
-                Email = novoUsuario.Email,
-                Cpf = novoUsuario.Cpf,
-                PrimeiroNome = novoUsuario.Nome,
-                Sobrenome = novoUsuario.Sobrenome
-            });
-
-            if (!result.IsValid()) await _userManager.DeleteAsync(applicationUser);
-
-            return result.ValidationResult;
-        }
-        catch (Exception)
-        {
-            await _userManager.DeleteAsync(applicationUser);
-            throw;
-        }
-    }
-
-    private async Task<RespostaTokenAcesso> GerarToken(string email)
-    {
-        var user = await _userManager.FindByEmailAsync(email);
-
         var claims = await _userManager.GetClaimsAsync(user);
-
         var identityClaims = await ObterClaimsUsuario(claims, user);
         var encodedToken = CodificarToken(identityClaims);
 
@@ -143,8 +115,8 @@ public class AcessoAppService : IAcessoAppService
         claims.Add(new Claim(JwtRegisteredClaimNames.Iat,
             DateTime.UtcNow.ToUnixEpochDate().ToString(),
             ClaimValueTypes.Integer64));
+        claims.Add(new Claim("user_type", "registred"));
         claims.Add(new Claim("session_id", Guid.NewGuid().ToString()));
-        claims.Add(new Claim("user_type", "authenticated"));
         claims.Add(new Claim("user_cpf", user.Cpf));
 
         foreach (var userRole in userRoles) claims.Add(new Claim("role", userRole));
@@ -185,5 +157,30 @@ public class AcessoAppService : IAcessoAppService
                 Claims = claims.Select(c => new UsuarioClaim { Type = c.Type, Value = c.Value })
             }
         };
+    }
+    
+    private async Task<ValidationResult> RegistrarCliente(NovoUsuario novoUsuario)
+    {
+        var applicationUser = await _userManager.FindByEmailAsync(novoUsuario.Email);
+
+        try
+        {
+            var result = await _mediator.Send(new CriarClienteCommand
+            {
+                Email = novoUsuario.Email,
+                Cpf = novoUsuario.Cpf,
+                PrimeiroNome = novoUsuario.Nome,
+                Sobrenome = novoUsuario.Sobrenome
+            });
+
+            if (!result.IsValid()) await _userManager.DeleteAsync(applicationUser);
+
+            return result.ValidationResult;
+        }
+        catch (Exception)
+        {
+            await _userManager.DeleteAsync(applicationUser);
+            throw;
+        }
     }
 }

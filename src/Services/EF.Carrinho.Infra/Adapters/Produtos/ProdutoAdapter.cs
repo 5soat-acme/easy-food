@@ -7,8 +7,8 @@ namespace EF.Carrinho.Infra.Adapters.Produtos;
 
 public class ProdutoAdapter : IProdutoService
 {
-    private readonly IProdutoQuery _produtoQuery;
     private readonly IMapper _mapper;
+    private readonly IProdutoQuery _produtoQuery;
 
     public ProdutoAdapter(IProdutoQuery produtoQuery, IMapper mapper)
     {

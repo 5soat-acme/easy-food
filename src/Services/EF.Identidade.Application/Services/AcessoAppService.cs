@@ -4,6 +4,7 @@ using System.Text;
 using EF.Clientes.Application.Commands;
 using EF.Domain.Commons.Communication;
 using EF.Domain.Commons.Mediator;
+using EF.Domain.Commons.Utils;
 using EF.Identidade.Application.DTOs.Requests;
 using EF.Identidade.Application.DTOs.Responses;
 using EF.Identidade.Application.Services.Interfaces;
@@ -69,35 +70,9 @@ public class AcessoAppService : IAcessoAppService
             return await Identificar(applicationUser);
         }
 
-        if (usuario.Cpf is not null)
-        {
-            return await IdentificarPorCpf(usuario.Cpf);
-        }
+        if (usuario.Cpf is not null) return await IdentificarPorCpf(usuario.Cpf);
 
         return AcessarComUsuarioNaoRegistrado();
-    }
-
-    private async Task<OperationResult<RespostaTokenAcesso>> Identificar(ApplicationUser? applicationUser)
-    {
-        if (applicationUser is not null)
-            return OperationResult<RespostaTokenAcesso>.Success(await GerarTokenUsuarioIdentificado(applicationUser));
-
-        return OperationResult<RespostaTokenAcesso>.Failure("Usuário incorreto");
-    }
-
-    private async Task<OperationResult<RespostaTokenAcesso>> IdentificarPorCpf(string cpf)
-    {
-        var applicationUser = await _userManager.Users.FirstOrDefaultAsync(u => u.Cpf == cpf);
-        if (applicationUser is not null)
-            return await Identificar(applicationUser);
-        
-        return AcessarComUsuarioNaoRegistrado();
-    }
-
-    private OperationResult<RespostaTokenAcesso> AcessarComUsuarioNaoRegistrado()
-    {
-        var result = GerarTokenUsuarioNaoIdentificado();
-        return OperationResult<RespostaTokenAcesso>.Success(result);
     }
 
     public RespostaTokenAcesso GerarTokenUsuarioNaoIdentificado(string? cpf = null)
@@ -120,6 +95,30 @@ public class AcessoAppService : IAcessoAppService
 
         var encodedToken = CodificarToken(identityClaims);
         return ObterRespostaToken(encodedToken, claims);
+    }
+
+    private async Task<OperationResult<RespostaTokenAcesso>> Identificar(ApplicationUser? applicationUser)
+    {
+        if (applicationUser is not null)
+            return OperationResult<RespostaTokenAcesso>.Success(await GerarTokenUsuarioIdentificado(applicationUser));
+
+        return OperationResult<RespostaTokenAcesso>.Failure("Usuário incorreto");
+    }
+
+    private async Task<OperationResult<RespostaTokenAcesso>> IdentificarPorCpf(string cpf)
+    {
+        cpf = cpf.SomenteNumeros(cpf);
+        var applicationUser = await _userManager.Users.FirstOrDefaultAsync(u => u.Cpf == cpf);
+        if (applicationUser is not null)
+            return await Identificar(applicationUser);
+
+        return AcessarComUsuarioNaoRegistrado();
+    }
+
+    private OperationResult<RespostaTokenAcesso> AcessarComUsuarioNaoRegistrado()
+    {
+        var result = GerarTokenUsuarioNaoIdentificado();
+        return OperationResult<RespostaTokenAcesso>.Success(result);
     }
 
     private async Task<RespostaTokenAcesso> GerarTokenUsuarioIdentificado(ApplicationUser user)

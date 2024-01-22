@@ -7,15 +7,15 @@ namespace EF.Pedidos.Infra.Adapters.Cupons;
 
 public class CupomAdapter : ICupomService
 {
-    private readonly IMapper _mapper;
     private readonly ICupomQuery _cupomQuery;
+    private readonly IMapper _mapper;
 
     public CupomAdapter(IMapper mapper, ICupomQuery cupomQuery)
     {
         _mapper = mapper;
         _cupomQuery = cupomQuery;
     }
-    
+
     public async Task<CupomDto?> ObterCupomPorCodigo(string codigo)
     {
         var cupom = await _cupomQuery.ObterCupom(codigo);

@@ -11,7 +11,7 @@ public class TransacaoMapping : IEntityTypeConfiguration<Transacao>
         builder.ToTable("Transacoes");
 
         builder.HasKey(c => c.Id);
-        
+
         builder.HasOne(c => c.Pagamento)
             .WithMany(c => c.Transacoes);
     }

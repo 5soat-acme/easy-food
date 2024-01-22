@@ -13,4 +13,3 @@ public class AtualizarProdutoCommand : Command
     public int TempoPreparoEstimado { get; set; }
     public bool Ativo { get; set; }
 }
-

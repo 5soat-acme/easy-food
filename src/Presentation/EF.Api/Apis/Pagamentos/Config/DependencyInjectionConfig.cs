@@ -1,6 +1,5 @@
 using EF.Pagamentos.Application.Commands;
 using EF.Pagamentos.Application.Config;
-using EF.Pagamentos.Domain.Ports;
 using EF.Pagamentos.Domain.Repository;
 using EF.Pagamentos.Infra;
 using EF.Pagamentos.Infra.Data.Repository;
@@ -17,7 +16,7 @@ public static class DependencyInjectionConfig
 
         // Application - Config
         services.AddScoped<PagamentoServiceResolver>();
-        
+
         // Domain
         services.AddScoped<PagamentoMercadoPagoService>();
 

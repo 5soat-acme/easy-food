@@ -19,7 +19,8 @@ internal class AtualizarProdutoCommandHandler : CommandHandler,
     {
         var produto = await _produtoRepository.BuscarPorId(request.ProdutoId);
         if (produto is null) throw new ValidationException("Produto não existe");
-        produto.AlterarProduto(request.Nome, request.ValorUnitario, request.Categoria, request.Descricao, request.TempoPreparoEstimado, request.Ativo);
+        produto.AlterarProduto(request.Nome, request.ValorUnitario, request.Categoria, request.Descricao,
+            request.TempoPreparoEstimado, request.Ativo);
         _produtoRepository.Atualizar(produto);
         var result = await PersistData(_produtoRepository.UnitOfWork);
         return CommandResult.Create(result, produto.Id);

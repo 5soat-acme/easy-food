@@ -13,11 +13,11 @@ namespace EF.Pedidos.Application.Commands.CriarPedido;
 public class CriarPedidoCommandHandler : CommandHandler,
     IRequestHandler<CriarPedidoCommand, CommandResult>
 {
-    private readonly IPedidoRepository _pedidoRepository;
     private readonly ICupomService _cupomService;
     private readonly IEstoqueService _estoqueService;
-    private readonly IProdutoService _produtoService;
     private readonly IPagamentoService _pagamentoService;
+    private readonly IPedidoRepository _pedidoRepository;
+    private readonly IProdutoService _produtoService;
 
     public CriarPedidoCommandHandler(IPedidoRepository pedidoRepository,
         IEstoqueService estoqueService, ICupomService cupomService, IProdutoService produtoService,
@@ -106,10 +106,8 @@ public class CriarPedidoCommandHandler : CommandHandler,
         pedido.AssociarCupom(cupom.Id);
 
         foreach (var item in pedido.Itens)
-        {
             if (cupom.Produtos.Exists(produto => produto.ProdutoId == item.ProdutoId))
                 pedido.AplicarDescontoItem(item.Id, cupom.PorcentagemDesconto);
-        }
 
         return pedido;
     }

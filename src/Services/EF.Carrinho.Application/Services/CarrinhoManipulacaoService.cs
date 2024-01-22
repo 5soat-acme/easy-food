@@ -141,7 +141,7 @@ public class CarrinhoManipulacaoService : BaseCarrinhoService, ICarrinhoManipula
         AdicionarItemDto itemDto)
     {
         var produtoExiste = carrinho.ProdutoExiste(itemDto.ProdutoId);
-        
+
         if (produtoExiste)
         {
             var itemExistente = carrinho.ObterItemPorProdutoId(itemDto.ProdutoId);

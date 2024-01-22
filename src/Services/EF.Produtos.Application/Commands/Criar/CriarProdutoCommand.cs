@@ -11,4 +11,3 @@ public class CriarProdutoCommand : Command
     public int TempoPreparoEstimado { get; set; }
     public string Descricao { get; set; }
 }
-

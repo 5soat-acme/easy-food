@@ -30,7 +30,8 @@ public class IdentidadeController(IAcessoAppService appService) : CustomControll
     }
 
     /// <summary>
-    ///     Gera token de acesso para o cliente utilizar o sistema. O cliente pode optar se identificar por e-mail, CPF ou não se identificar.
+    ///     Gera token de acesso para o cliente utilizar o sistema. O cliente pode optar se identificar por e-mail, CPF ou não
+    ///     se identificar.
     /// </summary>
     /// <param name="usuario">O cliente pode optar se identificar por e-mail, CPF ou não se identificar</param>
     /// <response code="200">Acessao realizado com sucesso.</response>

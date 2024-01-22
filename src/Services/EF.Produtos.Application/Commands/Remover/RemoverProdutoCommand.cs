@@ -6,4 +6,3 @@ public class RemoverProdutoCommand : Command
 {
     public Guid ProdutoId { get; set; }
 }
-

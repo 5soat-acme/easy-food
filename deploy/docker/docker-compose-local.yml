@@ -14,7 +14,7 @@ services:
       ASPNETCORE_URLS: https://+:443;http://+:80
     depends_on:
       - easy-food-db
-    command: ["./wait-db.sh", "db", "./migrations.sh"]
+    command: [ "./wait-db.sh", "db", "./migrations.sh" ]
   
   easy-food-db:
     image: postgres:latest

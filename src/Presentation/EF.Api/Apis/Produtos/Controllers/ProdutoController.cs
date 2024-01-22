@@ -13,8 +13,8 @@ namespace EF.Api.Apis.Produtos.Controllers;
 [Route("api/produtos")]
 public class ProdutoController : CustomControllerBase
 {
-    private readonly IProdutoQuery _produtoQuery;
     private readonly IMediatorHandler _mediator;
+    private readonly IProdutoQuery _produtoQuery;
 
     public ProdutoController(IProdutoQuery produtoQuery, IMediatorHandler mediator)
     {

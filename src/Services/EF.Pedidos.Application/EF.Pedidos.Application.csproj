@@ -9,7 +9,7 @@
     <ItemGroup>
         <ProjectReference Include="..\..\Shared\EF.Domain.Commons\EF.Domain.Commons.csproj"/>
         <ProjectReference Include="..\EF.Pedidos.Domain\EF.Pedidos.Domain.csproj"/>
-        <ProjectReference Include="..\EF.Produtos.Application\EF.Produtos.Application.csproj" />
+        <ProjectReference Include="..\EF.Produtos.Application\EF.Produtos.Application.csproj"/>
     </ItemGroup>
 
     <ItemGroup>
@@ -20,10 +20,10 @@
 
     <ItemGroup>
         <Compile Remove="Ports\**"/>
-        <Compile Include="Ports\ICupomService.cs" />
-        <Compile Include="Ports\IEstoqueService.cs" />
-        <Compile Include="Ports\IPagamentoService.cs" />
-        <Compile Include="Ports\IProdutoService.cs" />
+        <Compile Include="Ports\ICupomService.cs"/>
+        <Compile Include="Ports\IEstoqueService.cs"/>
+        <Compile Include="Ports\IPagamentoService.cs"/>
+        <Compile Include="Ports\IProdutoService.cs"/>
     </ItemGroup>
 
     <ItemGroup>

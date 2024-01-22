@@ -1,4 +1,3 @@
-using EF.Domain.Commons.ValueObjects;
 using EF.Pedidos.Domain.Models;
 
 namespace EF.Pedidos.Application.DTOs.Responses;

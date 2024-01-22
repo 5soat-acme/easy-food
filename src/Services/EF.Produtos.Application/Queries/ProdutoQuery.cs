@@ -8,8 +8,8 @@ namespace EF.Produtos.Application.Queries;
 
 public class ProdutoQuery : IProdutoQuery
 {
-    private readonly IProdutoRepository _produtoRepository;
     private readonly IMapper _mapper;
+    private readonly IProdutoRepository _produtoRepository;
 
     public ProdutoQuery(IProdutoRepository produtoRepository, IMapper mapper)
     {

@@ -1,6 +1,7 @@
 ﻿using EF.Produtos.Domain.Models;
 
 namespace EF.Produtos.Application.DTOs.Requests;
+
 public record AtualizarProdutoDto
 {
     public string Nome { get; init; }

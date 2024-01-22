@@ -22,7 +22,8 @@ public class EstoqueQuery : IEstoqueQuery
         return _mapper.Map<EstoqueDto>(estoque);
     }
 
-    public async Task<bool> ValidarEstoque(Guid produtoId, int quantidade, CancellationToken cancellationToken = default)
+    public async Task<bool> ValidarEstoque(Guid produtoId, int quantidade,
+        CancellationToken cancellationToken = default)
     {
         var estoque = await _estoqueRepository.Buscar(produtoId, cancellationToken);
         return estoque?.Quantidade > quantidade;

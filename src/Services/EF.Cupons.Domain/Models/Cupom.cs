@@ -86,7 +86,8 @@ public class Cupom : Entity, IAggregateRoot
 
     private void ValidarPorcentagemDesconto(decimal porcentagemDesconto)
     {
-        if (porcentagemDesconto <= 0 || porcentagemDesconto > 0.99M) throw new DomainException("PorcentagemDesconto inválida");
+        if (porcentagemDesconto <= 0 || porcentagemDesconto > 0.99M)
+            throw new DomainException("PorcentagemDesconto inválida");
     }
 
     private void ValidarCupomStatus(CupomStatus status)

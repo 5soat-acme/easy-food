@@ -1,5 +1,5 @@
 using AutoMapper;
-using EF.Pedidos.Application.DTOs.Adapters;
+using EF.Produtos.Application.DTOs.Responses;
 
 namespace EF.Pedidos.Infra.Adapters.Produtos;
 
@@ -7,6 +7,6 @@ public class ProdutoToDomainProfile : Profile
 {
     public ProdutoToDomainProfile()
     {
-        CreateMap<EF.Produtos.Application.DTOs.Responses.ProdutoDto, ProdutoDto?>();
+        CreateMap<ProdutoDto, Application.DTOs.Adapters.ProdutoDto?>();
     }
 }

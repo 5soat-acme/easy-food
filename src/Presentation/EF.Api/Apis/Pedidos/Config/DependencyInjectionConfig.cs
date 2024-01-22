@@ -28,7 +28,7 @@ public static class DependencyInjectionConfig
         services.AddAutoMapper(typeof(DomainToDtoProfile));
         services.AddAutoMapper(typeof(CumpomToDomainProfile));
         services.AddAutoMapper(typeof(ProdutoToDomainProfile));
-        
+
         // Application - Ports & Adapters
         services.AddScoped<IEstoqueService, EstoqueAdapter>();
         services.AddScoped<ICupomService, CupomAdapter>();

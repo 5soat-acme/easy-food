@@ -12,7 +12,8 @@ public enum ProdutoCategoria
 
 public class Produto : Entity, IAggregateRoot
 {
-    public Produto(string nome, decimal valorUnitario, ProdutoCategoria categoria, int tempoPreparoEstimado, string descricao)
+    public Produto(string nome, decimal valorUnitario, ProdutoCategoria categoria, int tempoPreparoEstimado,
+        string descricao)
     {
         ValidarProduto(nome, valorUnitario, categoria, descricao, tempoPreparoEstimado);
 
@@ -31,7 +32,8 @@ public class Produto : Entity, IAggregateRoot
     public int TempoPreparoEstimado { get; private set; }
     public string Descricao { get; private set; }
 
-    public void ValidarProduto(string nome, decimal valorUnitario, ProdutoCategoria categoria, string descricao, int tempPreparoEstimado)
+    public void ValidarProduto(string nome, decimal valorUnitario, ProdutoCategoria categoria, string descricao,
+        int tempPreparoEstimado)
     {
         ValidarNome(nome);
         ValidarValorUnitario(valorUnitario);
@@ -40,7 +42,8 @@ public class Produto : Entity, IAggregateRoot
         ValidarTempoPreparoEstimado(tempPreparoEstimado);
     }
 
-    public void AlterarProduto(string nome, decimal valorUnitario, ProdutoCategoria categoria, string descricao, int tempoPreparoEstimado, bool ativo)
+    public void AlterarProduto(string nome, decimal valorUnitario, ProdutoCategoria categoria, string descricao,
+        int tempoPreparoEstimado, bool ativo)
     {
         AlterarNome(nome);
         AlterarValorUnitario(valorUnitario);
@@ -49,13 +52,9 @@ public class Produto : Entity, IAggregateRoot
         AlterarTempoPreparoEstimado(tempoPreparoEstimado);
 
         if (ativo)
-        {
             Ativar();
-        }
         else
-        {
             Desativar();
-        }
     }
 
     public void AlterarNome(string nome)

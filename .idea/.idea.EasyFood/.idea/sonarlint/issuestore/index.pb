@@ -441,3 +441,5 @@ D
 deploy/migrations.sh,f\2\f2e345c3b77f518eefe5e1d6b56fc7d15b87f9b0
 A
 deploy/wait-db.sh,7\d\7df7a37497d11613c439a318a2f75c67b260dc36
+u
+Esrc/Services/EF.Identidade.Application/DTOs/Requests/UsuarioAcesso.cs,1\d\1d26a00b70b9f85e697235b2d5d78a26c1a0a67f

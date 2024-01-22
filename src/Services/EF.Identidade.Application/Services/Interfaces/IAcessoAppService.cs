@@ -8,5 +8,5 @@ public interface IAcessoAppService
 {
     Task<OperationResult<RespostaTokenAcesso>> CriarUsuario(NovoUsuario novoUsuario);
     RespostaTokenAcesso GerarTokenUsuarioNaoIdentificado(string? cpf = null);
-    Task<OperationResult<RespostaTokenAcesso>> IdentificarUsuarioRegistrado(UsuarioLogin usuario);
+    Task<OperationResult<RespostaTokenAcesso>> Identificar(UsuarioAcesso usuario);
 }

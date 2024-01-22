@@ -12,6 +12,7 @@ using EF.Infra.Commons.Extensions;
 using EF.WebApi.Commons.Identity;
 using FluentValidation.Results;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 
@@ -21,14 +22,12 @@ public class AcessoAppService : IAcessoAppService
 {
     private readonly IdentitySettings _identitySettings;
     private readonly IMediatorHandler _mediator;
-    // private readonly SignInManager<ApplicationUser> _signInManager;
     private readonly UserManager<ApplicationUser> _userManager;
 
-    public AcessoAppService(IMediatorHandler mediator, SignInManager<ApplicationUser> signInManager,
-        UserManager<ApplicationUser> userManager, IOptions<IdentitySettings> settings)
+    public AcessoAppService(IMediatorHandler mediator, UserManager<ApplicationUser> userManager,
+        IOptions<IdentitySettings> settings)
     {
         _mediator = mediator;
-        // _signInManager = signInManager;
         _userManager = userManager;
         _identitySettings = settings.Value;
     }
@@ -50,7 +49,7 @@ public class AcessoAppService : IAcessoAppService
         {
             var result = await RegistrarCliente(novoUsuario);
             if (!result.IsValid) return OperationResult<RespostaTokenAcesso>.Failure(result);
-            
+
             var applicationUser = await _userManager.FindByEmailAsync(novoUsuario.Email);
             return OperationResult<RespostaTokenAcesso>.Success(await GerarTokenUsuarioIdentificado(applicationUser));
         }
@@ -62,15 +61,45 @@ public class AcessoAppService : IAcessoAppService
         return OperationResult<RespostaTokenAcesso>.Failure(errors);
     }
 
-    public async Task<OperationResult<RespostaTokenAcesso>> IdentificarUsuarioRegistrado(UsuarioLogin usuario)
+    public async Task<OperationResult<RespostaTokenAcesso>> Identificar(UsuarioAcesso usuario)
     {
-        var applicationUser =  await _userManager.FindByEmailAsync(usuario.Email);
+        if (usuario.Email is not null)
+        {
+            var applicationUser = await _userManager.FindByEmailAsync(usuario.Email);
+            return await Identificar(applicationUser);
+        }
 
-        if (applicationUser is not null) return OperationResult<RespostaTokenAcesso>.Success(await GerarTokenUsuarioIdentificado(applicationUser));
+        if (usuario.Cpf is not null)
+        {
+            return await IdentificarPorCpf(usuario.Cpf);
+        }
+
+        return AcessarComUsuarioNaoRegistrado();
+    }
+
+    private async Task<OperationResult<RespostaTokenAcesso>> Identificar(ApplicationUser? applicationUser)
+    {
+        if (applicationUser is not null)
+            return OperationResult<RespostaTokenAcesso>.Success(await GerarTokenUsuarioIdentificado(applicationUser));
 
         return OperationResult<RespostaTokenAcesso>.Failure("Usuário incorreto");
     }
-    
+
+    private async Task<OperationResult<RespostaTokenAcesso>> IdentificarPorCpf(string cpf)
+    {
+        var applicationUser = await _userManager.Users.FirstOrDefaultAsync(u => u.Cpf == cpf);
+        if (applicationUser is not null)
+            return await Identificar(applicationUser);
+        
+        return AcessarComUsuarioNaoRegistrado();
+    }
+
+    private OperationResult<RespostaTokenAcesso> AcessarComUsuarioNaoRegistrado()
+    {
+        var result = GerarTokenUsuarioNaoIdentificado();
+        return OperationResult<RespostaTokenAcesso>.Success(result);
+    }
+
     public RespostaTokenAcesso GerarTokenUsuarioNaoIdentificado(string? cpf = null)
     {
         var claims = new List<Claim>
@@ -158,7 +187,7 @@ public class AcessoAppService : IAcessoAppService
             }
         };
     }
-    
+
     private async Task<ValidationResult> RegistrarCliente(NovoUsuario novoUsuario)
     {
         var applicationUser = await _userManager.FindByEmailAsync(novoUsuario.Email);

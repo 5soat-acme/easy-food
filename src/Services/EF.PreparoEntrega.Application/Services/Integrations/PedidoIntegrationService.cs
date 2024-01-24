@@ -5,7 +5,7 @@ using MediatR;
 
 namespace EF.PreparoEntrega.Application.Services.Integrations;
 
-public class PedidoIntegrationService : INotificationHandler<PedidoCriadoEvent>
+public class PedidoIntegrationService : INotificationHandler<PagamentoProcessadoEvent>
 {
     private readonly IMediatorHandler _mediator;
 
@@ -14,7 +14,7 @@ public class PedidoIntegrationService : INotificationHandler<PedidoCriadoEvent>
         _mediator = mediator;
     }
 
-    public async Task Handle(PedidoCriadoEvent notification, CancellationToken cancellationToken)
+    public async Task Handle(PagamentoProcessadoEvent notification, CancellationToken cancellationToken)
     {
         await _mediator.Send(new CriarPedidoPreparoCommand
         {

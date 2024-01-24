@@ -9,7 +9,7 @@ public class Pedido : Entity, IAggregateRoot
 
     public Pedido()
     {
-        Status = Status.Recebido;
+        Status = Status.AguardandoPagamento;
         _itens = new List<Item>();
     }
 
@@ -61,5 +61,10 @@ public class Pedido : Entity, IAggregateRoot
     public void AssociarCliente(Guid clienteId)
     {
         ClienteId = clienteId;
+    }
+
+    public void ConfirmarPagamento()
+    {
+        Status = Status.Recebido;
     }
 }

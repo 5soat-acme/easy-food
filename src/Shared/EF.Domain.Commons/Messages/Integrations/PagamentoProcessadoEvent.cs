@@ -1,6 +1,6 @@
 namespace EF.Domain.Commons.Messages.Integrations;
 
-public class PedidoCriadoEvent : IntegrationEvent
+public class PagamentoProcessadoEvent : IntegrationEvent
 {
     public Guid SessionId { get; set; }
     public Guid? ClientId { get; set; }

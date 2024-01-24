@@ -18,7 +18,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="61e4a515-7fae-49b6-801b-ebc481bfb9f9" name="Changes" comment="" />
+    <list default="true" id="61e4a515-7fae-49b6-801b-ebc481bfb9f9" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/issuestore/d/c/dc4b2fa6ba7f3f6728a557f69e6f6e00d9009b24" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/issuestore/d/c/dc4b2fa6ba7f3f6728a557f69e6f6e00d9009b24" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/issuestore/f/6/f67cb3598b7b1d98308475aac2ec3e38cb007b45" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/issuestore/f/6/f67cb3598b7b1d98308475aac2ec3e38cb007b45" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/securityhotspotstore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/securityhotspotstore/index.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Presentation/EF.Api/Apis/Carrinho/Config/DependencyInjectionConfig.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Presentation/EF.Api/Apis/Carrinho/Config/DependencyInjectionConfig.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Presentation/EF.Api/Apis/Pedidos/Controllers/PedidoController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Presentation/EF.Api/Apis/Pedidos/Controllers/PedidoController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/EF.Carrinho.Application/Services/Integrations/CarrinhoIntegracaoService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Carrinho.Application/Services/Integrations/CarrinhoIntegracaoService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/EF.Pagamentos.Application/Config/PagamentoServiceResolver.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Pagamentos.Application/Config/PagamentoServiceResolver.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/EF.Pagamentos.Infra/Services/PagamentoCartaoCreditoService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Pagamentos.Infra/Services/PagamentoCartaoCreditoService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/EF.Pedidos.Application/Commands/CriarPedido/CriarPedidoCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Pedidos.Application/Commands/CriarPedido/CriarPedidoCommand.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/EF.Pedidos.Application/Commands/CriarPedido/CriarPedidoCommandHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Pedidos.Application/Commands/CriarPedido/CriarPedidoCommandHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/EF.Pedidos.Domain/Models/Pedido.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Pedidos.Domain/Models/Pedido.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/EF.Pedidos.Domain/Models/Status.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Pedidos.Domain/Models/Status.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/EF.PreparoEntrega.Application/Services/Integrations/PedidoIntegrationService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.PreparoEntrega.Application/Services/Integrations/PedidoIntegrationService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Shared/EF.Domain.Commons/Messages/Integrations/PedidoCriadoEvent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Shared/EF.Domain.Commons/Messages/Integrations/PagamentoProcessadoEvent.cs" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

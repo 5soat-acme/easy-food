@@ -1,6 +1,5 @@
 using EF.Domain.Commons.DomainObjects;
 using EF.Domain.Commons.Messages;
-using EF.Domain.Commons.Messages.Integrations;
 using EF.Domain.Commons.ValueObjects;
 using EF.Pedidos.Application.DTOs.Adapters;
 using EF.Pedidos.Application.Ports;
@@ -15,36 +14,27 @@ public class CriarPedidoCommandHandler : CommandHandler,
 {
     private readonly ICupomService _cupomService;
     private readonly IEstoqueService _estoqueService;
-    private readonly IPagamentoService _pagamentoService;
     private readonly IPedidoRepository _pedidoRepository;
     private readonly IProdutoService _produtoService;
 
     public CriarPedidoCommandHandler(IPedidoRepository pedidoRepository,
-        IEstoqueService estoqueService, ICupomService cupomService, IProdutoService produtoService,
-        IPagamentoService pagamentoService)
+        IEstoqueService estoqueService, ICupomService cupomService, IProdutoService produtoService)
     {
         _pedidoRepository = pedidoRepository;
         _estoqueService = estoqueService;
         _cupomService = cupomService;
         _produtoService = produtoService;
-        _pagamentoService = pagamentoService;
     }
 
     public async Task<CommandResult> Handle(CriarPedidoCommand request, CancellationToken cancellationToken)
     {
-        var produtos = await ObterProdutosPedido(request);
-
-        var pedido = MapearPedido(request, produtos);
+        var pedido = await MapearPedido(request);
 
         if (!string.IsNullOrEmpty(request.CodigoCupom)) pedido = await AplicarCupom(request.CodigoCupom, pedido);
 
         pedido.CalcularValorTotal();
 
-        if (!await ValidarPedido(pedido, request)) return CommandResult.Create(ValidationResult);
-
-        if (!await ProcessarPagamento(pedido, request.TipoPagamento)) return CommandResult.Create(ValidationResult);
-
-        pedido.AddEvent(CriarEvento(pedido, request, produtos));
+        if (!await ValidarPedido(pedido)) return CommandResult.Create(ValidationResult);
 
         _pedidoRepository.Criar(pedido);
 
@@ -52,30 +42,11 @@ public class CriarPedidoCommandHandler : CommandHandler,
 
         return CommandResult.Create(result, pedido.Id);
     }
+    
 
-    private async Task<bool> ProcessarPagamento(Pedido pedido, string tipoPagamento)
+    private async Task<Pedido> MapearPedido(CriarPedidoCommand request)
     {
-        var pagamento = new PagamentoDto
-        {
-            PedidoId = pedido.Id,
-            TipoPagamento = tipoPagamento,
-            Valor = pedido.ValorTotal,
-            Cpf = pedido.Cpf?.Numero
-        };
-
-        var result = await _pagamentoService.ProcessarPagamento(pagamento);
-
-        if (!result)
-        {
-            AddError("Erro ao processar pagamento");
-            return false;
-        }
-
-        return true;
-    }
-
-    private Pedido MapearPedido(CriarPedidoCommand request, List<ProdutoDto> produtos)
-    {
+        var produtos = await ObterProdutosPedido(request);
         var pedido = new Pedido();
 
         if (request.ClienteId.HasValue) pedido.AssociarCliente(request.ClienteId.Value);
@@ -112,11 +83,8 @@ public class CriarPedidoCommandHandler : CommandHandler,
         return pedido;
     }
 
-    private async Task<bool> ValidarPedido(Pedido pedido, CriarPedidoCommand request)
+    private async Task<bool> ValidarPedido(Pedido pedido)
     {
-        if (pedido.ValorTotal != request.ValorTotal)
-            AddError("O valor total do pedido não confere com o valor informado");
-
         foreach (var item in pedido.Itens)
             if (!await ValidarEstoque(item))
                 AddError("Estoque insuficiente", item.Id.ToString());
@@ -128,32 +96,7 @@ public class CriarPedidoCommandHandler : CommandHandler,
     {
         return await _estoqueService.VerificarEstoque(item.ProdutoId, item.Quantidade);
     }
-
-    private PedidoCriadoEvent CriarEvento(Pedido pedido, CriarPedidoCommand request, List<ProdutoDto> produtos)
-    {
-        List<PedidoCriadoEvent.ItemPedido> itens = new();
-
-        foreach (var item in pedido.Itens)
-        {
-            var produto = produtos.FirstOrDefault(p => p.Id == item.ProdutoId);
-            itens.Add(new PedidoCriadoEvent.ItemPedido
-            {
-                Quantidade = item.Quantidade,
-                ProdutoId = item.ProdutoId,
-                NomeProduto = produto!.Nome,
-                TempoPreparoEstimado = produto.TempoPreparoEstimado
-            });
-        }
-
-        return new PedidoCriadoEvent
-        {
-            AggregateId = pedido.Id,
-            ClientId = pedido.ClienteId,
-            SessionId = request.SessionId,
-            Itens = itens
-        };
-    }
-
+    
     private async Task<List<ProdutoDto>> ObterProdutosPedido(CriarPedidoCommand request)
     {
         List<ProdutoDto> produtos = new();

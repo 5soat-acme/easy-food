@@ -22,7 +22,7 @@ public static class DependencyInjectionConfig
         // Application - Services
         services.AddScoped<ICarrinhoConsultaService, CarrinhoConsultaService>();
         services.AddScoped<ICarrinhoManipulacaoService, CarrinhoManipulacaoService>();
-        services.AddScoped<INotificationHandler<PedidoCriadoEvent>, CarrinhoIntegracaoService>();
+        services.AddScoped<INotificationHandler<PagamentoProcessadoEvent>, CarrinhoIntegracaoService>();
 
         // Application - Mapping
         services.AddAutoMapper(typeof(DomainToDtoProfile));

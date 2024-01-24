@@ -1,4 +1,3 @@
 
-rcsharpsquid:S6602["N"Find" method should be used instead of the "FirstOrDefault" extension method.(ÎüúÓ8ñ«İ–Ğ1
-xcsharpsquid:S6602Œ"N"Find" method should be used instead of the "FirstOrDefault" extension method.(æ¡¹×ûÿÿÿÿ8ò«İ–Ğ1
-acsharpsquid:S3267l"8Loops should be simplified using the "Where" LINQ method(Ì²‰àùÿÿÿÿ8£ßû–Ğ1
+rcsharpsquid:S6602>"N"Find" method should be used instead of the "FirstOrDefault" extension method.(ÎüúÓ8¿»ŞÙÓ1
+acsharpsquid:S3267O"8Loops should be simplified using the "Where" LINQ method(Ì²‰àùÿÿÿÿ8À»ŞÙÓ1

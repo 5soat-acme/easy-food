@@ -22,7 +22,10 @@ public class PagamentoServiceResolver
         {
             case Tipo.MercadoPago:
                 return _provider.GetRequiredService<PagamentoMercadoPagoService>();
-            // TODO: Incluir demais tipos que vamos usar
+            case Tipo.Pix:
+                return _provider.GetRequiredService<PagamentoPixService>();
+            case Tipo.CartaoCredito:
+                return _provider.GetRequiredService<PagamentoCartaoCreditoService>();
             default:
                 throw new DomainException("Tipo de pagamento inválido");
         }

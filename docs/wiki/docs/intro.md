@@ -16,7 +16,7 @@ Para informações de como rodar a aplicação localmente, clique [aqui](https:/
 - [Luis Guilherme](https://github.com/Lguilhermeg)
 - [Pedro Barão](https://github.com/pedrobarao)
 - [Rafael Casadei](https://github.com/RafaCasadei)
-- [Rorigo Lima](https://github.com/Rodrigo1895)
+- [Rodrigo Lima](https://github.com/Rodrigo1895)
 
 # O problema :confused:
 

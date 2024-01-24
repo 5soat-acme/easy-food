@@ -98,12 +98,8 @@ const config = {
                 to: '/docs/modelo-estrategico/mapa-subdominios',
               },
               {
-                label: 'Linguiagem Ubíqua',
+                label: 'Linguagem Ubíqua',
                 to: '/docs/modelo-estrategico/linguagem-ubiqua',
-              },
-              {
-                label: 'Domain Storytteling',
-                to: '/docs/modelo-estrategico/domain-storytteling',
               },
               {
                 label: 'Event Storming',

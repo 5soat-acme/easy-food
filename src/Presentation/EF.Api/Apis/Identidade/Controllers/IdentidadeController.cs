@@ -40,7 +40,7 @@ public class IdentidadeController(IAcessoAppService appService) : CustomControll
     [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(ValidationProblemDetails))]
     [Produces("application/json")]
     [HttpPost("acessar")]
-    public async Task<IActionResult> Acessar(UsuarioAcesso usuario)
+    public async Task<IActionResult> Acessar(UsuarioAcesso? usuario = null)
     {
         if (!ModelState.IsValid) return Respond(ModelState);
 

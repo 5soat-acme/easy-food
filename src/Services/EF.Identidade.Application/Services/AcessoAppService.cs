@@ -5,6 +5,7 @@ using EF.Clientes.Application.Commands;
 using EF.Domain.Commons.Communication;
 using EF.Domain.Commons.Mediator;
 using EF.Domain.Commons.Utils;
+using EF.Domain.Commons.ValueObjects;
 using EF.Identidade.Application.DTOs.Requests;
 using EF.Identidade.Application.DTOs.Responses;
 using EF.Identidade.Application.Services.Interfaces;
@@ -36,12 +37,13 @@ public class AcessoAppService : IAcessoAppService
     public async Task<OperationResult<RespostaTokenAcesso>> CriarUsuario(
         NovoUsuario novoUsuario)
     {
+        var cpf = novoUsuario.Cpf.SomenteNumeros(novoUsuario.Cpf);
         var newApplicationUser = new ApplicationUser
         {
             UserName = novoUsuario.Email,
             Email = novoUsuario.Email,
             EmailConfirmed = true,
-            Cpf = novoUsuario.Cpf
+            Cpf = cpf
         };
 
         var identityResult = await _userManager.CreateAsync(newApplicationUser);
@@ -62,15 +64,15 @@ public class AcessoAppService : IAcessoAppService
         return OperationResult<RespostaTokenAcesso>.Failure(errors);
     }
 
-    public async Task<OperationResult<RespostaTokenAcesso>> Identificar(UsuarioAcesso usuario)
+    public async Task<OperationResult<RespostaTokenAcesso>> Identificar(UsuarioAcesso? usuario)
     {
-        if (usuario.Email is not null)
+        if (usuario?.Email is not null)
         {
             var applicationUser = await _userManager.FindByEmailAsync(usuario.Email);
             return await Identificar(applicationUser);
         }
 
-        if (usuario.Cpf is not null) return await IdentificarPorCpf(usuario.Cpf);
+        if (usuario?.Cpf is not null) return await IdentificarPorCpf(usuario.Cpf);
 
         return AcessarComUsuarioNaoRegistrado();
     }
@@ -102,17 +104,19 @@ public class AcessoAppService : IAcessoAppService
         if (applicationUser is not null)
             return OperationResult<RespostaTokenAcesso>.Success(await GerarTokenUsuarioIdentificado(applicationUser));
 
-        return OperationResult<RespostaTokenAcesso>.Failure("Usuário incorreto");
+        return OperationResult<RespostaTokenAcesso>.Failure("Usuário inválido");
     }
 
     private async Task<OperationResult<RespostaTokenAcesso>> IdentificarPorCpf(string cpf)
     {
+        if(!Cpf.Validar(cpf)) return OperationResult<RespostaTokenAcesso>.Failure("CPF inválido");
         cpf = cpf.SomenteNumeros(cpf);
+        
         var applicationUser = await _userManager.Users.FirstOrDefaultAsync(u => u.Cpf == cpf);
         if (applicationUser is not null)
             return await Identificar(applicationUser);
 
-        return AcessarComUsuarioNaoRegistrado();
+        return OperationResult<RespostaTokenAcesso>.Failure("Usuário inválido");
     }
 
     private OperationResult<RespostaTokenAcesso> AcessarComUsuarioNaoRegistrado()

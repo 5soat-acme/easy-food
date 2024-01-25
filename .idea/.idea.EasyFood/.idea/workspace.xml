@@ -19,8 +19,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="61e4a515-7fae-49b6-801b-ebc481bfb9f9" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/dataSources.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Presentation/EF.Api/Apis/Pedidos/Controllers/PedidoController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Presentation/EF.Api/Apis/Pedidos/Controllers/PedidoController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Presentation/EF.Api/Apis/Identidade/Controllers/IdentidadeController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Presentation/EF.Api/Apis/Identidade/Controllers/IdentidadeController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/EF.Identidade.Application/Services/AcessoAppService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Identidade.Application/Services/AcessoAppService.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -349,6 +351,23 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>
   <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/src/Services/EF.Identidade.Application/Services/AcessoAppService.cs</url>
+          <line>38</line>
+          <properties documentPath="C:\dev\fiap\easy-food\src\Services\EF.Identidade.Application\Services\AcessoAppService.cs" initialLine="38" containingFunctionPresentation="Method 'CriarUsuario'">
+            <startOffsets>
+              <option value="1352" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1353" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
     <pin-to-top-manager>
       <pinned-members>
         <PinnedItemInfo parentTag="Type#Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngineScope+ServiceProviderEngineScopeDebugView" memberName="Disposed" />

@@ -4,5 +4,5 @@ namespace EF.Pagamentos.Domain.Ports;
 
 public interface IPagamentoService
 {
-    Task<Transacao> AutorizarPagamento(Pagamento pagamento);
+    public Task<Transacao> AutorizarPagamento(Pagamento pagamento);
 }

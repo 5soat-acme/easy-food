@@ -11,6 +11,7 @@
         <ProjectReference Include="..\..\Shared\EF.Infra.Commons\EF.Infra.Commons.csproj"/>
         <ProjectReference Include="..\EF.Cupons.Application\EF.Cupons.Application.csproj"/>
         <ProjectReference Include="..\EF.Estoques.Application\EF.Estoques.Application.csproj"/>
+        <ProjectReference Include="..\EF.Pagamentos.Application\EF.Pagamentos.Application.csproj"/>
         <ProjectReference Include="..\EF.Pedidos.Application\EF.Pedidos.Application.csproj"/>
         <ProjectReference Include="..\EF.Pedidos.Domain\EF.Pedidos.Domain.csproj"/>
     </ItemGroup>
@@ -30,6 +31,8 @@
 
     <ItemGroup>
         <Compile Remove="Data\Migrations\PedidoDbContextModelSnapshot.cs"/>
+        <Compile Remove="Data\Migrations\20240111193846_BaseInicialPedidos.cs"/>
+        <Compile Remove="Data\Migrations\20240111193846_BaseInicialPedidos.Designer.cs"/>
     </ItemGroup>
 
 </Project>

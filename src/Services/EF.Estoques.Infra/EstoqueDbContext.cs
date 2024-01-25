@@ -3,6 +3,7 @@ using EF.Domain.Commons.Repository;
 using EF.Estoques.Domain.Models;
 using FluentValidation.Results;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.ChangeTracking;
 
 namespace EF.Estoques.Infra;
 
@@ -19,6 +20,7 @@ public sealed class EstoqueDbContext : DbContext, IUnitOfWork
 
     public async Task<bool> Commit()
     {
+        SetDates(ChangeTracker.Entries());
         return await SaveChangesAsync() > 0;
     }
 
@@ -33,5 +35,17 @@ public sealed class EstoqueDbContext : DbContext, IUnitOfWork
         modelBuilder.Ignore<ValidationResult>();
 
         base.OnModelCreating(modelBuilder);
+    }
+
+    private void SetDates(IEnumerable<EntityEntry> entries)
+    {
+        foreach (var entry in entries
+                     .Where(entry =>
+                         entry.Entity.GetType().GetProperty("DataLancamento") != null))
+        {
+            var dataLancamento = (DateTime)entry.Property("DataLancamento").CurrentValue!;
+
+            entry.Property("DataLancamento").CurrentValue = dataLancamento.ToUniversalTime();
+        }
     }
 }

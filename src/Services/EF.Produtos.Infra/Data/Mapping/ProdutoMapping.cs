@@ -1,5 +1,4 @@
 ﻿using EF.Produtos.Domain.Models;
-using EF.Domain.Commons.ValueObjects;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
@@ -22,11 +21,11 @@ public class ProdutoMapping : IEntityTypeConfiguration<Produto>
             .HasColumnType("money");
 
         builder.Property(p => p.Ativo)
-          .IsRequired()
-          .HasColumnType("bool");
+            .IsRequired()
+            .HasColumnType("bool");
 
         builder.Property(p => p.Categoria)
-        .IsRequired()
-        .HasColumnType("integer");
+            .IsRequired()
+            .HasColumnType("integer");
     }
 }

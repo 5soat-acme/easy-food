@@ -8,8 +8,6 @@ public class CriarPedidoCommand : Command
     [JsonIgnore] public Guid SessionId { get; set; }
     [JsonIgnore] public Guid? ClienteId { get; set; }
     [JsonIgnore] public string? ClienteCpf { get; set; }
-    public string MetodoPagamento { get; set; }
-    public decimal ValorTotal { get; set; }
     public string? CodigoCupom { get; set; }
     public List<ItemPedido> Itens { get; set; }
 

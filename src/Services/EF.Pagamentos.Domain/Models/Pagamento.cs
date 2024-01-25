@@ -24,7 +24,7 @@ public class Pagamento : Entity, IAggregateRoot
     public Guid PedidoId { get; private set; }
     public Tipo Tipo { get; private set; }
     public DateTime DataCriacao { get; private set; }
-    public DateTime DataAtualizacao { get; private set; }
+    public DateTime? DataAtualizacao { get; private set; }
     public decimal Valor { get; private set; }
     public IReadOnlyCollection<Transacao> Transacoes => _transacoes;
 

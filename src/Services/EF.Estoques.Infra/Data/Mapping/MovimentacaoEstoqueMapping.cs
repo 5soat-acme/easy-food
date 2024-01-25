@@ -18,8 +18,7 @@ public class MovimentacaoEstoqueMapping : IEntityTypeConfiguration<MovimentacaoE
             .IsRequired();
 
         builder.Property(c => c.DataLancamento)
-            .IsRequired()
-            .HasColumnType("timestamp without time zone");
+            .IsRequired();
 
         builder.Property(c => c.TipoMovimentacao)
             .IsRequired()

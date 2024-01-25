@@ -3,6 +3,5 @@
 public enum OrigemMovimentacaoEstoque
 {
     Compra = 0,
-    Venda = 1,
-    CancelamentoVenda = 2
+    Venda = 1
 }

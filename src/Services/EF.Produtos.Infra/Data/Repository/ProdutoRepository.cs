@@ -16,28 +16,31 @@ public sealed class ProdutoRepository : IProdutoRepository
 
     public IUnitOfWork UnitOfWork => _dbContext;
 
-    public async Task<Produto> Criar(Produto produto, CancellationToken cancellationToken)
+    public void Criar(Produto produto)
     {
-        var result = await _dbContext.Produtos.AddAsync(produto, cancellationToken);
-        return result.Entity;
+        _dbContext.Produtos.AddAsync(produto);
     }
 
-    public Produto Atualizar(Produto produto, CancellationToken cancellationToken)
+    public void Atualizar(Produto produto)
     {
-        var result =  _dbContext.Produtos.Update(produto);
-        return result.Entity;
+        _dbContext.Produtos.Update(produto);
     }
 
-    public async Task<IList<Produto>> Buscar(ProdutoCategoria? categoria, CancellationToken cancellationToken)
+    public async Task<IEnumerable<Produto>> Buscar(ProdutoCategoria? categoria)
     {
-       return await _dbContext.Produtos
+        return await _dbContext.Produtos
             .Where(produto => produto.Ativo && (categoria == null || produto.Categoria == categoria))
-            .ToListAsync(cancellationToken);
+            .ToListAsync();
     }
 
-    public async Task<Produto?> BuscarPorId(Guid produtoId, CancellationToken cancellationToken)
+    public async Task<Produto?> BuscarPorId(Guid produtoId)
     {
-        return await _dbContext.Produtos.SingleAsync(produto => produto.Id == produtoId, cancellationToken);
+        return await _dbContext.Produtos.FirstOrDefaultAsync(produto => produto.Id == produtoId);
+    }
+
+    public void Remover(Produto produto)
+    {
+        _dbContext.Produtos.Remove(produto);
     }
 
     public void Dispose()

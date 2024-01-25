@@ -67,7 +67,7 @@ public class PreparoController : CustomControllerBase
     }
 
     /// <summary>
-    ///     Sinaliza que o pedido está pronto para ser entregue (Status = Finalizado)
+    ///     Sinaliza que o pedido foi entregue (Status = Finalizado)
     /// </summary>
     /// <response code="200">Status do pedido alterado com sucesso.</response>
     [ProducesResponseType(StatusCodes.Status200OK)]

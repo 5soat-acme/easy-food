@@ -21,11 +21,11 @@
     </ItemGroup>
 
     <ItemGroup>
-        <Folder Include="Migrations\"/>
+        <Compile Remove="Data\Mapping\FormaPagamentoMapping.cs"/>
     </ItemGroup>
 
     <ItemGroup>
-        <Compile Remove="Data\Mapping\FormaPagamentoMapping.cs"/>
+        <Folder Include="Data\Migrations\"/>
     </ItemGroup>
 
 </Project>

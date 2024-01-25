@@ -10,6 +10,8 @@ public class Transacao : Entity
         Data = DateTime.Now.ToUniversalTime();
     }
 
-    public Guid PagamentoId { get; set; }
-    public DateTime Data { get; set; }
+    public Guid PagamentoId { get; private set; }
+    public DateTime Data { get; private set; }
+
+    public Pagamento Pagamento { get; private set; }
 }

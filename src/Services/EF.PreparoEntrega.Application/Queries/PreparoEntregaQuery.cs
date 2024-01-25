@@ -19,12 +19,14 @@ public class PreparoEntregaQuery : IPreparoEntregaQuery
     public async Task<IEnumerable<PedidoPreparoDto>> ObterPedidos()
     {
         var pedidos = await _pedidoRepository.ObterPedidosEmAberto();
-        return _mapper.Map<IEnumerable<PedidoPreparoDto>>(pedidos);
+        var result = _mapper.Map<IEnumerable<PedidoPreparoDto>>(pedidos);
+        return result.OrderBy(p => p.DataCriacao);
     }
 
     public async Task<IEnumerable<PedidoMonitorDto>?> ObterPedidosMonitor()
     {
         var pedidos = await _pedidoRepository.ObterPedidosEmAberto();
-        return _mapper.Map<IEnumerable<PedidoMonitorDto>>(pedidos);
+        var result = _mapper.Map<IEnumerable<PedidoMonitorDto>>(pedidos);
+        return result.OrderByDescending(p => p.Codigo);
     }
 }

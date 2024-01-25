@@ -8,7 +8,8 @@ public class DomainToDtoProfile : Profile
 {
     public DomainToDtoProfile()
     {
-        CreateMap<Pedido, PedidoDto>();
+        CreateMap<Pedido, PedidoDto>()
+            .ForMember(dest => dest.Cpf, opt => opt.MapFrom(src => src.Cpf.Numero));
         CreateMap<Item, ItemPedidoDto>();
     }
 }

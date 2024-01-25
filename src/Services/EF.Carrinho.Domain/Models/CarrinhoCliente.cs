@@ -13,6 +13,7 @@ public class CarrinhoCliente : Entity, IAggregateRoot
 
     public Guid? ClienteId { get; private set; }
     public decimal ValorTotal { get; private set; }
+    public int TempoMedioPreparo { get; private set; }
     public DateTime DataCriacao { get; private set; }
     public DateTime? DataAtualizacao { get; private set; }
     public IReadOnlyCollection<Item> Itens => _itens;
@@ -44,6 +45,7 @@ public class CarrinhoCliente : Entity, IAggregateRoot
 
         _itens.Add(item);
         CalcularValorTotal();
+        CalcularTempoPreparo();
     }
 
     public bool ProdutoExiste(Guid produtoId)
@@ -65,6 +67,7 @@ public class CarrinhoCliente : Entity, IAggregateRoot
     {
         _itens.Remove(item);
         CalcularValorTotal();
+        CalcularTempoPreparo();
     }
 
     public void CalcularValorTotal()
@@ -88,5 +91,17 @@ public class CarrinhoCliente : Entity, IAggregateRoot
         item.AtualizarQuantidade(quantidade);
 
         CalcularValorTotal();
+        CalcularTempoPreparo();
+    }
+
+    public void CalcularTempoPreparo()
+    {
+        if (Itens.Count == 0)
+        {
+            TempoMedioPreparo = 0;
+            return;
+        }
+
+        TempoMedioPreparo = Itens.Sum(i => i.TempoEstimadoPreparo) / Itens.Count;
     }
 }

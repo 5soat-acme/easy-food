@@ -12,10 +12,8 @@ public class PagamentoMapping : IEntityTypeConfiguration<Pagamento>
 
         builder.HasKey(c => c.Id);
 
-        builder.Property(c => c.PedidoId)
-            .IsRequired();
-
-        builder.Property(c => c.Valor)
-            .IsRequired();
+        builder.HasMany(c => c.Transacoes)
+            .WithOne(c => c.Pagamento)
+            .HasForeignKey(c => c.PagamentoId);
     }
 }

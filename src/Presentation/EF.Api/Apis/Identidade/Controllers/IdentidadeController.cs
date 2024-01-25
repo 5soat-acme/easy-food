@@ -10,7 +10,7 @@ namespace EF.Api.Apis.Identidade.Controllers;
 public class IdentidadeController(IAcessoAppService appService) : CustomControllerBase
 {
     /// <summary>
-    ///     Cria um novo usuário e associao ao cliente.
+    ///     Cria um novo usuário e associar ao cliente.
     /// </summary>
     /// <response code="200">Usuário criado com sucesso e token de acesso</response>
     /// <response code="400">A solicitação está malformada e não pode ser processada.</response>
@@ -18,7 +18,7 @@ public class IdentidadeController(IAcessoAppService appService) : CustomControll
     [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(ValidationProblemDetails))]
     [Produces("application/json")]
     [HttpPost]
-    public async Task<IActionResult> CriarUsuario(NovoUsuario novoUsuario)
+    public async Task<IActionResult> RegistrarUsuario(NovoUsuario novoUsuario)
     {
         if (!ModelState.IsValid) return Respond(ModelState);
 
@@ -30,50 +30,24 @@ public class IdentidadeController(IAcessoAppService appService) : CustomControll
     }
 
     /// <summary>
-    ///     Faz a autenticação do usuário e retorna um token de acesso.
+    ///     Gera token de acesso para o cliente utilizar o sistema. O cliente pode optar se identificar por e-mail, CPF ou não
+    ///     se identificar.
     /// </summary>
-    /// <response code="200">Usuário autenticado com sucesso e token de acesso.</response>
+    /// <param name="usuario">O cliente pode optar se identificar por e-mail, CPF ou não se identificar</param>
+    /// <response code="200">Acessao realizado com sucesso.</response>
     /// <response code="400">A solicitação está malformada e não pode ser processada.</response>
     [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(RespostaTokenAcesso))]
     [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(ValidationProblemDetails))]
     [Produces("application/json")]
-    [HttpPost("autenticar")]
-    public async Task<IActionResult> Login(UsuarioLogin usuario)
+    [HttpPost("acessar")]
+    public async Task<IActionResult> Acessar(UsuarioAcesso usuario)
     {
         if (!ModelState.IsValid) return Respond(ModelState);
 
-        var result = await appService.Autenticar(usuario);
+        var result = await appService.Identificar(usuario);
 
         if (!result.IsValid) AddErrors(result.Errors);
 
         return Respond(result.Data);
-    }
-
-    /// <summary>
-    ///     Gera um token de acesso para o usuário sem identificação (acesso anônimo).
-    /// </summary>
-    /// <remarks>
-    ///     <para>
-    ///         O cliente tem a opção de se identificar mediante a um cadastro ou não. Clientes que optarem por não se
-    ///         identificar, podem incluir o CPF para fins fiscais.
-    ///     </para>
-    ///     <para>
-    ///         Independente se o cliente se identificar ou não, o sistema necessita que o token seja gerado para que o pedido
-    ///         possa ser realizado.
-    ///     </para>
-    /// </remarks>
-    /// <param name="cpf">CPF do usuário (opicional)</param>
-    /// <response code="200">Retorna o token de acesso para o usuário anônimo.</response>
-    /// <response code="400">A solicitação está malformada e não pode ser processada.</response>
-    [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(RespostaTokenAcesso))]
-    [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(ValidationProblemDetails))]
-    [HttpPost("acessar-anonimo")]
-    public IActionResult AcessarSemIdentificacao(AcessoAnonimo? acessoAnonimo)
-    {
-        if (!ModelState.IsValid) return Respond(ModelState);
-
-        var result = appService.GerarTokenAcessoNaoIdentificado(acessoAnonimo?.Cpf);
-
-        return Respond(result);
     }
 }

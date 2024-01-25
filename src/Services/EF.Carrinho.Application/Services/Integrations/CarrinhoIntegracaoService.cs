@@ -4,7 +4,7 @@ using MediatR;
 
 namespace EF.Carrinho.Application.Services.Integrations;
 
-public class CarrinhoIntegracaoService : INotificationHandler<PedidoCriadoEvent>
+public class CarrinhoIntegracaoService : INotificationHandler<PagamentoProcessadoEvent>
 {
     private readonly ICarrinhoManipulacaoService _service;
 
@@ -13,7 +13,7 @@ public class CarrinhoIntegracaoService : INotificationHandler<PedidoCriadoEvent>
         _service = service;
     }
 
-    public async Task Handle(PedidoCriadoEvent notification, CancellationToken cancellationToken)
+    public async Task Handle(PagamentoProcessadoEvent notification, CancellationToken cancellationToken)
     {
         if (notification.ClientId.HasValue)
         {

@@ -49,7 +49,7 @@ namespace EF.Estoques.Infra.Migrations
                         .HasColumnType("uuid");
 
                     b.Property<DateTime>("DataLancamento")
-                        .HasColumnType("timestamp without time zone");
+                        .HasColumnType("timestamp with time zone");
 
                     b.Property<Guid>("EstoqueId")
                         .HasColumnType("uuid");

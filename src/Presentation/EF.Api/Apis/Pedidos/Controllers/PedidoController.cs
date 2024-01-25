@@ -52,19 +52,25 @@ public class PedidoController(IMediatorHandler mediator, IPedidoQuery pedidoQuer
 
         return Respond(new { pedidoId = result.AggregateId });
     }
-    
+
     /// <summary>
-    ///     Faz o processamento do pagamento do pedido.
+    ///     Faz a confirmação do pedido e processa o pagamento
     /// </summary>
-    /// <response code="200">Pagamento realizado com sucesso.</response>
+    /// <response code="200">Pedido confirmado com sucesso.</response>
     /// <response code="401">Não autorizado.</response>
     [ProducesResponseType(StatusCodes.Status204NoContent)]
     [ProducesResponseType(StatusCodes.Status401Unauthorized)]
     [Produces("application/json")]
     [Authorize]
-    [HttpPost]
-    public async Task<IActionResult> ProcessarPagamento(ProcessarPagamentoCommand command)
+    [HttpPost("{pedidoId}/confirmar")]
+    public async Task<IActionResult> ProcessarPagamento([FromRoute] Guid pedidoId, ProcessarPagamentoCommand command)
     {
+        if (pedidoId != command.PedidoId)
+        {
+            AddError("O pedido não corresponde ao informado");
+            return Respond();
+        }
+
         command.SessionId = userApp.GetSessionId();
         command.ClienteId = userApp.GetUserId();
         command.ClienteCpf = userApp.GetUserCpf();

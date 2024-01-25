@@ -19,22 +19,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="61e4a515-7fae-49b6-801b-ebc481bfb9f9" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/issuestore/d/c/dc4b2fa6ba7f3f6728a557f69e6f6e00d9009b24" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/issuestore/d/c/dc4b2fa6ba7f3f6728a557f69e6f6e00d9009b24" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/issuestore/f/6/f67cb3598b7b1d98308475aac2ec3e38cb007b45" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/issuestore/f/6/f67cb3598b7b1d98308475aac2ec3e38cb007b45" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/securityhotspotstore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/securityhotspotstore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Presentation/EF.Api/Apis/Carrinho/Config/DependencyInjectionConfig.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Presentation/EF.Api/Apis/Carrinho/Config/DependencyInjectionConfig.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Presentation/EF.Api/Apis/Pedidos/Controllers/PedidoController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Presentation/EF.Api/Apis/Pedidos/Controllers/PedidoController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/EF.Carrinho.Application/Services/Integrations/CarrinhoIntegracaoService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Carrinho.Application/Services/Integrations/CarrinhoIntegracaoService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/EF.Pagamentos.Application/Config/PagamentoServiceResolver.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Pagamentos.Application/Config/PagamentoServiceResolver.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/EF.Pagamentos.Infra/Services/PagamentoCartaoCreditoService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Pagamentos.Infra/Services/PagamentoCartaoCreditoService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/EF.Pedidos.Application/Commands/CriarPedido/CriarPedidoCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Pedidos.Application/Commands/CriarPedido/CriarPedidoCommand.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/EF.Pedidos.Application/Commands/CriarPedido/CriarPedidoCommandHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Pedidos.Application/Commands/CriarPedido/CriarPedidoCommandHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/EF.Pedidos.Domain/Models/Pedido.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Pedidos.Domain/Models/Pedido.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/EF.Pedidos.Domain/Models/Status.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Pedidos.Domain/Models/Status.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/EF.PreparoEntrega.Application/Services/Integrations/PedidoIntegrationService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.PreparoEntrega.Application/Services/Integrations/PedidoIntegrationService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Shared/EF.Domain.Commons/Messages/Integrations/PedidoCriadoEvent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Shared/EF.Domain.Commons/Messages/Integrations/PagamentoProcessadoEvent.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -120,58 +106,58 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;.NET Launch Settings Profile.EF.Api: http.executor&quot;: &quot;Debug&quot;,
-    &quot;.NET Launch Settings Profile.EF.Api: https.executor&quot;: &quot;Debug&quot;,
-    &quot;1bea6dd9-6f9b-4afc-9f56-c255980b80ea.executor&quot;: &quot;Debug&quot;,
-    &quot;358cc20c-bbd2-4173-b107-79bbfcbf32c4.executor&quot;: &quot;Debug&quot;,
-    &quot;HTTP Request.All in identidade.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.api-requests | #2.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.api-requests | Carrinho API:.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.carrinho-api | #1.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.carrinho-api | #2.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.carrinho-api | #3.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.carrinho-api | #4.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.carrinho-api | Adicionar item no carrinho.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.carrinho-api | Carrinho API:.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.carrinho-api | Fechar pedido a partir do carrinho do cliente.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.carrinho-api | Incluir item no carrinho.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.carrinho-api | Obter carrinho do cliente.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.carrinho-api | Obter resumo do carrinho do cliente.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.identidade | #1.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.identidade | #2.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.identidade | #3.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.identidade | #4.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.identidade-api | #2.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.identidade-api | Autenticar usuário.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.identidade-api | Cadastrar usuário.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.identidade-api | Identidade API:.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.pedidos-api | Obter o pedido por id ou ide de correlação.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;entrega&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;rest.client.default.execution.environment&quot;: &quot;dev&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;terminal&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    ".NET Launch Settings Profile.EF.Api: http.executor": "Debug",
+    ".NET Launch Settings Profile.EF.Api: https.executor": "Debug",
+    "1bea6dd9-6f9b-4afc-9f56-c255980b80ea.executor": "Debug",
+    "358cc20c-bbd2-4173-b107-79bbfcbf32c4.executor": "Debug",
+    "HTTP Request.All in identidade.executor": "Run",
+    "HTTP Request.api-requests | #2.executor": "Run",
+    "HTTP Request.api-requests | Carrinho API:.executor": "Run",
+    "HTTP Request.carrinho-api | #1.executor": "Run",
+    "HTTP Request.carrinho-api | #2.executor": "Run",
+    "HTTP Request.carrinho-api | #3.executor": "Run",
+    "HTTP Request.carrinho-api | #4.executor": "Run",
+    "HTTP Request.carrinho-api | Adicionar item no carrinho.executor": "Run",
+    "HTTP Request.carrinho-api | Carrinho API:.executor": "Run",
+    "HTTP Request.carrinho-api | Fechar pedido a partir do carrinho do cliente.executor": "Run",
+    "HTTP Request.carrinho-api | Incluir item no carrinho.executor": "Run",
+    "HTTP Request.carrinho-api | Obter carrinho do cliente.executor": "Run",
+    "HTTP Request.carrinho-api | Obter resumo do carrinho do cliente.executor": "Run",
+    "HTTP Request.identidade | #1.executor": "Run",
+    "HTTP Request.identidade | #2.executor": "Run",
+    "HTTP Request.identidade | #3.executor": "Run",
+    "HTTP Request.identidade | #4.executor": "Run",
+    "HTTP Request.identidade-api | #2.executor": "Run",
+    "HTTP Request.identidade-api | Autenticar usuário.executor": "Run",
+    "HTTP Request.identidade-api | Cadastrar usuário.executor": "Run",
+    "HTTP Request.identidade-api | Identidade API:.executor": "Run",
+    "HTTP Request.pedidos-api | Obter o pedido por id ou ide de correlação.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "entrega",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "rest.client.default.execution.environment": "dev",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;postgresql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql"
     ],
-    &quot;rider.external.source.directories&quot;: [
-      &quot;C:\\Users\\bmfpe\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\DecompilerCache&quot;,
-      &quot;C:\\Users\\bmfpe\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\SourcesCache&quot;,
-      &quot;C:\\Users\\bmfpe\\AppData\\Local\\Symbols\\src&quot;
+    "rider.external.source.directories": [
+      "C:\\Users\\bmfpe\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\DecompilerCache",
+      "C:\\Users\\bmfpe\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\SourcesCache",
+      "C:\\Users\\bmfpe\\AppData\\Local\\Symbols\\src"
     ]
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected=".NET Launch Settings Profile.EF.Api: https">
     <configuration name="EF.Api: http" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/src/Presentation/EF.Api/EF.Api.csproj" />
@@ -289,11 +275,71 @@
     <option featureType="com.intellij.fileTypeFactory" implementationName="*.ps1" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
+    <option name="OPEN_GENERIC_TABS">
+      <map>
+        <entry key="9d971552-1dca-4de0-8562-cafacdee5a33" value="TOOL_WINDOW" />
+      </map>
+    </option>
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="main" />
+                </option>
+              </RecentGroup>
+            </list>
+          </value>
+        </entry>
+        <entry key="User">
+          <value>
+            <list>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="*" />
+                </option>
+              </RecentGroup>
+            </list>
+          </value>
+        </entry>
+      </map>
+    </option>
     <option name="TAB_STATES">
       <map>
+        <entry key="9d971552-1dca-4de0-8562-cafacdee5a33">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="main" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="feat-carrinho" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>

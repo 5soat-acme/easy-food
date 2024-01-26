@@ -8,15 +8,14 @@ sidebar_position: 1
 
 ### **Subdomínios Principais** :compass:
 
-- **Gestão de Pedidos**: Responsável pela interface de autoatendimento, processamento de pedidos, acompanhamento do status do pedido e notificações ao cliente.
-- **Preparação e Entrega**: Gerencia a recepção de pedidos, a preparação de alimentos conforme as especificações do pedido, e a comunicação do status do pedido de volta ao sistema de atendimento.
+- **Gestão de Pedidos**: Responsável pela interface de autoatendimento, processamento de pedidos, acompanhamento do status do pedido e notificações ao cliente. Também gerencia a preparação de alimentos conforme as especificações do pedido.
 
 ### **Subdomínios de Suporte** :building_construction:
 
-- **Engajamento e Promoções**: Foca em campanhas de marketing, programas de fidelidade, e promoções para atrair e reter clientes.
+- **Engajamento e Promoções**: Foca em campanhas de marketing, programas de fidelidade, e promoções a partir de cupons para atrair e reter clientes.
 - **Logística de Suprimentos**: Abrange a compra de ingredientes e materiais, o controle de estoque e a previsão de necessidades com base na demanda.
 - **Gestão de Clientes**: Administra as contas dos clientes, incluindo dados pessoais, preferências, histórico de pedidos e autenticação.
-- **Gestão de Cardápio**: Cuida da criação, atualização e remoção de itens do cardápio, incluindo preços, descrições e imagens.
+- **Gestão de Produtos**: Cuida da criação, atualização e remoção de produtos, incluindo preços, descrições e demais informações.
 
 ### **Subdomínios Genéricos** :cloud:
 

@@ -24,5 +24,5 @@ jobs:
         run: npm install --frozen-lockfile
         working-directory: docs/wiki
       - name: Test build website
-        run: npm build
+        run: npm run build
         working-directory: docs/wiki

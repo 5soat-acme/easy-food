@@ -18,14 +18,8 @@ public static class SwaggerConfig
 
             c.AddServer(new OpenApiServer
             {
-                Url = "https://localhost:5002",
-                Description = "Localhost"
-            });
-
-            c.AddServer(new OpenApiServer
-            {
-                Url = "http://localhost:5003",
-                Description = "Localhost"
+                Url = "https://localhost:80",
+                Description = "easy-food"
             });
 
             c.SwaggerDoc("v1", new OpenApiInfo { Title = "Easy Food", Version = "v1" });

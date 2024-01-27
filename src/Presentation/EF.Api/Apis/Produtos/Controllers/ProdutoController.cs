@@ -29,7 +29,7 @@ public class ProdutoController : CustomControllerBase
     [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(IEnumerable<ProdutoDto>))]
     [Produces("application/json")]
     [HttpGet]
-    public async Task<IActionResult> Obter([FromQuery] ProdutoCategoria categoria)
+    public async Task<IActionResult> Obter([FromQuery] ProdutoCategoria? categoria)
     {
         var pedidos = await _produtoQuery.Buscar(categoria);
         return pedidos is null ? NotFound() : Respond(pedidos);

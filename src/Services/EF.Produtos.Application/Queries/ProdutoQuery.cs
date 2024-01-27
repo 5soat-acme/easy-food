@@ -23,7 +23,7 @@ public class ProdutoQuery : IProdutoQuery
         return _mapper.Map<ProdutoDto>(produto);
     }
 
-    public async Task<IEnumerable<ProdutoDto>> Buscar(ProdutoCategoria categoria)
+    public async Task<IEnumerable<ProdutoDto>> Buscar(ProdutoCategoria? categoria)
     {
         var produto = await _produtoRepository.Buscar(categoria);
         return _mapper.Map<IEnumerable<ProdutoDto>>(produto);

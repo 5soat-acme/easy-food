@@ -463,3 +463,11 @@ z
 Jsrc/Services/EF.Pagamentos.Infra/Services/PagamentoCartaoCreditoService.cs,5\6\56d6dc37affcde81c752cbf4633d4a4317942f71
 l
 <src/Presentation/EF.Api/Commons/Config/SchemaFilterConfig.cs,7\5\75ef2a6f738af5f543b5f01e5e58d21525df27f2
+J
+deploy/database/Dockerfile,5\4\54a51048b7961d18ae424b337d6c8e63050b7fc7
+H
+deploy/database/init.sql,c\d\cd39ff68dc7aecd07f152b6e31caaca32e8fb5bc
+j
+:src/Presentation/EF.Api/Commons/Config/MigrationsConfig.cs,a\5\a5330d2b9b2ec1606f211998cf5ebd1779dd5f49
+M
+deploy/database/migrations.sh,2\9\298bf5a991b56d209b34ac4a2f5e114013dd4e32

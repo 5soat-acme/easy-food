@@ -52,6 +52,8 @@ public static class ApiConfig
 
         app.UseMiddleware<ExceptionMiddleware>();
 
+        app.RunMigrations();
+
         return app;
     }
 }

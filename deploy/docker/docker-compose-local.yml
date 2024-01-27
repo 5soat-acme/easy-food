@@ -11,10 +11,9 @@ services:
     restart: always
     environment:
       ASPNETCORE_ENVIRONMENT: Docker
-      ASPNETCORE_URLS: https://+:443;http://+:80
+      ASPNETCORE_URLS: http://+:80
     depends_on:
       - easy-food-db
-    command: [ "./wait-db.sh", "db", "./migrations.sh" ]
   
   easy-food-db:
     image: postgres:latest
@@ -25,7 +24,8 @@ services:
     ports:
       - "5432:5432"
     volumes:
-      - postgres_data:/var/lib/postgresql/data
-
+      - pgdata:/var/lib/postgresql/data
+      - ../database/init.sql:/docker-entrypoint-initdb.d/init.sql
+      
 volumes:
-  postgres_data:
+  pgdata:

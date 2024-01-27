@@ -6,10 +6,6 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{1F253C40-620E-47A6-A85E-0F7EC1D33D3B}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "deploy", "deploy", "{13ABF460-2024-4387-89C6-9DCE83BF78A6}"
-	ProjectSection(SolutionItems) = preProject
-		deploy\migrations.sh = deploy\migrations.sh
-		deploy\wait-db.sh = deploy\wait-db.sh
-	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docker", "docker", "{09084241-ABFC-4AB6-933A-78E86D840DF2}"
 	ProjectSection(SolutionItems) = preProject
@@ -99,6 +95,12 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EF.PreparoEntrega.Domain", "src\Services\EF.PreparoEntrega.Domain\EF.PreparoEntrega.Domain.csproj", "{04938691-AE27-4885-A580-E05D8CFDF648}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EF.PreparoEntrega.Infra", "src\Services\EF.PreparoEntrega.Infra\EF.PreparoEntrega.Infra.csproj", "{EEB246A7-0692-4270-B355-F956C50D3986}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "database", "database", "{13BEECA4-7942-4A3A-8F81-41A4D3F73473}"
+	ProjectSection(SolutionItems) = preProject
+		deploy\database\init.sql = deploy\database\init.sql
+		deploy\database\migrations.sh = deploy\database\migrations.sh
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -274,6 +276,7 @@ Global
 		{4F521F64-A8DA-4CCB-B078-4DB8DC0B9F04} = {DDF62731-6121-4FF3-BE2C-642F4AE42223}
 		{04938691-AE27-4885-A580-E05D8CFDF648} = {DDF62731-6121-4FF3-BE2C-642F4AE42223}
 		{EEB246A7-0692-4270-B355-F956C50D3986} = {DDF62731-6121-4FF3-BE2C-642F4AE42223}
+		{13BEECA4-7942-4A3A-8F81-41A4D3F73473} = {13ABF460-2024-4387-89C6-9DCE83BF78A6}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {4EF48A17-2E1D-4950-95B3-8C7206DD4E91}

@@ -19,10 +19,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="61e4a515-7fae-49b6-801b-ebc481bfb9f9" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/dataSources.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/issuestore/3/0/30644d75e5d1e76ca29f21e0a6e4ecbcd5614540" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/issuestore/3/0/30644d75e5d1e76ca29f21e0a6e4ecbcd5614540" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/securityhotspotstore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/securityhotspotstore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Presentation/EF.Api/Commons/Config/SwaggerConfig.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Presentation/EF.Api/Commons/Config/SwaggerConfig.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EasyFood.sln" beforeDir="false" afterPath="$PROJECT_DIR$/EasyFood.sln" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy/docker/docker-compose-local.yml" beforeDir="false" afterPath="$PROJECT_DIR$/deploy/docker/docker-compose-local.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy/migrations.ps1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy/migrations.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy/wait-db.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Presentation/EF.Api/Commons/Config/ApiConfig.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Presentation/EF.Api/Commons/Config/ApiConfig.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Presentation/EF.Api/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/src/Presentation/EF.Api/Dockerfile" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -263,7 +271,7 @@
       <workItem from="1705259213672" duration="4960000" />
       <workItem from="1705429014097" duration="803000" />
       <workItem from="1705678874018" duration="12858000" />
-      <workItem from="1706348167579" duration="8757000" />
+      <workItem from="1706348167579" duration="16379000" />
     </task>
     <servers />
   </component>

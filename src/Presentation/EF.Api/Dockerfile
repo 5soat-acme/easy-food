@@ -1,19 +1,19 @@
 ﻿FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS base
 WORKDIR /app
 EXPOSE 80
-EXPOSE 443
 
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /src
 
 COPY ["src/", "./src/"]
-#COPY ["deploy/migrations.sh", "./"]
-#COPY ["deploy/wait-db.sh", "./"]
-
-#RUN chmod +x migrations.sh wait-db.sh
-
 RUN dotnet restore "src/Presentation/EF.Api/EF.Api.csproj"
-COPY . .
+
+#RUN dotnet tool install --global dotnet-ef
+#ENV PATH="${PATH}:/root/.dotnet/tools"
+#COPY ["deploy/database/migrations.sh", "./migrations.sh"]
+#RUN chmod +x ./migrations.sh
+#RUN ./migrations.sh
+
 WORKDIR "/src/src/Presentation/EF.Api"
 RUN dotnet build "EF.Api.csproj" -c Release -o /app/build
 

@@ -1,0 +1,239 @@
+-- -- ### PRODUTOS ###
+-- INSERT INTO "Produtos"("Id", "Nome", "ValorUnitario", "Ativo", "Categoria", "TempoPreparoEstimado",  "Descricao")
+-- VALUES ('0d04e964-ddbd-4109-9613-3bd9b02f8220', 'X-Burger', 11.5, True, 0, 10, 'X-Burger');
+-- INSERT INTO "Produtos"("Id", "Nome", "ValorUnitario", "Ativo", "Categoria", "TempoPreparoEstimado",  "Descricao")
+-- VALUES ('f54943be-81e0-43fa-8ea4-b3b494cc0637', 'X-Catupiry', 19, True, 0, 10, 'X-Catupiry');
+-- INSERT INTO "Produtos"("Id", "Nome", "ValorUnitario", "Ativo", "Categoria", "TempoPreparoEstimado",  "Descricao")
+-- VALUES ('83dae8c5-0148-4fe1-a558-792236927243', 'X-Salada', 14, True, 0, 10, 'X-Salada');
+-- INSERT INTO "Produtos"("Id", "Nome", "ValorUnitario", "Ativo", "Categoria", "TempoPreparoEstimado",  "Descricao")
+-- VALUES ('347dee54-1a3b-4e1a-bb90-a3c820cba482', 'X-Egg', 18, True, 0, 10, 'X-Egg');
+-- INSERT INTO "Produtos"("Id", "Nome", "ValorUnitario", "Ativo", "Categoria", "TempoPreparoEstimado",  "Descricao")
+-- VALUES ('ae4973f2-90fb-4499-8dd1-669ebc07294d', 'X-Milho', 18, True, 0, 10, 'X-Milho');
+-- INSERT INTO "Produtos"("Id", "Nome", "ValorUnitario", "Ativo", "Categoria", "TempoPreparoEstimado",  "Descricao")
+-- VALUES ('cadf6087-5d43-49c6-b47e-f597b6fc5422', 'X-Americano', 21.50, True, 0, 10, 'X-Americano');
+-- INSERT INTO "Produtos"("Id", "Nome", "ValorUnitario", "Ativo", "Categoria", "TempoPreparoEstimado",  "Descricao")
+-- VALUES ('6b8429e8-935a-4de7-8124-744ad9b1e967', 'X-Bacon', 23, True, 0, 10, 'X-Bacon');
+-- INSERT INTO "Produtos"("Id", "Nome", "ValorUnitario", "Ativo", "Categoria", "TempoPreparoEstimado",  "Descricao")
+-- VALUES ('e32afb66-2615-4cbe-aeb1-b79d9fd83755', 'X-Calabresa', 23, True, 0, 10, 'X-Calabresa');
+-- INSERT INTO "Produtos"("Id", "Nome", "ValorUnitario", "Ativo", "Categoria", "TempoPreparoEstimado",  "Descricao")
+-- VALUES ('707dcd56-699a-43dd-8cb1-8c439bff35e3', 'X-Tudo', 26.50, True, 0, 10, 'X-Tudo');
+-- INSERT INTO "Produtos"("Id", "Nome", "ValorUnitario", "Ativo", "Categoria", "TempoPreparoEstimado",  "Descricao")
+-- VALUES ('605ca744-20e4-40a1-b837-9cfb77ac3e3a', 'X-EasyFood', 30, True, 0, 10, 'X-EasyFood');
+-- INSERT INTO "Produtos"("Id", "Nome", "ValorUnitario", "Ativo", "Categoria", "TempoPreparoEstimado",  "Descricao")
+-- VALUES ('12d28111-f657-46fc-9ad7-c8797b3a75da', 'Anéis de Cebola', 10, True, 1, 10, 'Anéis de Cebola');
+-- INSERT INTO "Produtos"("Id", "Nome", "ValorUnitario", "Ativo", "Categoria", "TempoPreparoEstimado",  "Descricao")
+-- VALUES ('a10e899e-138b-4e23-a3cf-bebaa0eaa466', 'Batata frita', 6, True, 1, 10, 'Batata frita');
+-- INSERT INTO "Produtos"("Id", "Nome", "ValorUnitario", "Ativo", "Categoria", "TempoPreparoEstimado",  "Descricao")
+-- VALUES ('6c323e8c-00bd-4afc-b071-6146ae3b3ce7', 'Batata Com cheddar e bacon', 15, True, 1, 10, 'Batata Com cheddar e bacon');
+-- INSERT INTO "Produtos"("Id", "Nome", "ValorUnitario", "Ativo", "Categoria", "TempoPreparoEstimado",  "Descricao")
+-- VALUES ('e95b1860-5709-4894-b6fa-3c3b25eb44f2', 'Calabresa acebolada', 22, True, 1, 10, 'Calabresa acebolada');
+-- INSERT INTO "Produtos"("Id", "Nome", "ValorUnitario", "Ativo", "Categoria", "TempoPreparoEstimado",  "Descricao")
+-- VALUES ('078ddc1f-9e2e-4c04-916c-c4c562aeae60', 'Cola-Cola lata 350ml', 6.5, True, 2, 2, 'Cola-Cola lata 350ml');
+-- INSERT INTO "Produtos"("Id", "Nome", "ValorUnitario", "Ativo", "Categoria", "TempoPreparoEstimado",  "Descricao")
+-- VALUES ('f7799fcb-9dac-4b74-83ba-415ec27c7ddd', 'Cola-Cola zero lata 350ml', 6.5, True, 2, 2, 'Cola-Cola zero lata 350ml');
+-- INSERT INTO "Produtos"("Id", "Nome", "ValorUnitario", "Ativo", "Categoria", "TempoPreparoEstimado",  "Descricao")
+-- VALUES ('41a8972c-454f-4e1a-af1b-7b42f93cbc54', 'Fanta laranja lata 350ml', 6.5, True, 2, 2, 'Fanta laranja lata 350ml');
+-- INSERT INTO "Produtos"("Id", "Nome", "ValorUnitario", "Ativo", "Categoria", "TempoPreparoEstimado",  "Descricao")
+-- VALUES ('a61f2454-8eb9-427b-b7f5-42cb7039e1c8', 'Fanta uva lata 350ml', 6.5, True, 2, 2, 'Fanta uva lata 350ml');
+-- INSERT INTO "Produtos"("Id", "Nome", "ValorUnitario", "Ativo", "Categoria", "TempoPreparoEstimado",  "Descricao")
+-- VALUES ('1e9372a1-87de-4305-8e35-0ab3dfa6a28e', 'Guaraná Antarctica lata 350ml', 6.5, True, 2, 2, 'Guaraná Antarctica lata 350ml');
+-- INSERT INTO "Produtos"("Id", "Nome", "ValorUnitario", "Ativo", "Categoria", "TempoPreparoEstimado",  "Descricao")
+-- VALUES ('62c27fb5-12a7-4eaa-b7a9-ca292beca340', 'Água sem gás', 5, True, 2, 2, 'Água sem gás');
+-- INSERT INTO "Produtos"("Id", "Nome", "ValorUnitario", "Ativo", "Categoria", "TempoPreparoEstimado",  "Descricao")
+-- VALUES ('c472ff9a-08fa-4853-9b91-7ca8c461cbc8', 'Água com gás', 5, True, 2, 2, 'Água com gás');
+-- INSERT INTO "Produtos"("Id", "Nome", "ValorUnitario", "Ativo", "Categoria", "TempoPreparoEstimado",  "Descricao")
+-- VALUES ('b6e95412-6753-4308-ad9d-832d2def4922', 'Suco de laranja natural(copo)', 8, True, 2, 5, 'Suco de laranja natural(copo)');
+-- INSERT INTO "Produtos"("Id", "Nome", "ValorUnitario", "Ativo", "Categoria", "TempoPreparoEstimado",  "Descricao")
+-- VALUES ('b74f5b70-ee9c-4dd4-85e4-2318722965f8', 'Suco de maracujá natural(copo)', 8, True, 2, 5, 'Suco de maracujá natural(copo)');
+-- INSERT INTO "Produtos"("Id", "Nome", "ValorUnitario", "Ativo", "Categoria", "TempoPreparoEstimado",  "Descricao")
+-- VALUES ('268f16aa-5490-4566-8fbb-0b0ea0a82734', 'Suco de morango natural(copo)', 8.5, True, 2, 5, 'Suco de morango natural(copo)');
+-- INSERT INTO "Produtos"("Id", "Nome", "ValorUnitario", "Ativo", "Categoria", "TempoPreparoEstimado",  "Descricao")
+-- VALUES ('4ce3e03d-2168-4a46-b4ba-d7095f738411', 'Milkshake de morango', 10, True, 3, 5, 'Milkshake de morango');
+-- INSERT INTO "Produtos"("Id", "Nome", "ValorUnitario", "Ativo", "Categoria", "TempoPreparoEstimado",  "Descricao")
+-- VALUES ('65ef50e4-8f32-4641-83f6-11bb8822d084', 'Milkshake de chocolate', 10, True, 3, 5, 'Milkshake de chocolate');
+-- INSERT INTO "Produtos"("Id", "Nome", "ValorUnitario", "Ativo", "Categoria", "TempoPreparoEstimado",  "Descricao")
+-- VALUES ('e5325f29-738d-4a75-8159-9ba5e5c151e8', 'Milkshake de Óreo', 12, True, 3, 5, 'Milkshake de Óreo');
+-- INSERT INTO "Produtos"("Id", "Nome", "ValorUnitario", "Ativo", "Categoria", "TempoPreparoEstimado",  "Descricao")
+-- VALUES ('8be1b2e4-e97a-4912-bbcf-b915471e4070', 'Sorvete de creme', 5, True, 3, 5, 'Sorvete de creme');
+-- INSERT INTO "Produtos"("Id", "Nome", "ValorUnitario", "Ativo", "Categoria", "TempoPreparoEstimado",  "Descricao")
+-- VALUES ('c204e65d-2fbb-4ee9-b9c4-64e47c5891f0', 'Sorvete de chocolate', 5, True, 3, 5, 'Sorvete de chocolate');
+-- 
+-- -- ### ESTOQUE ###
+-- INSERT INTO "Estoques"("Id", "ProdutoId", "Quantidade")
+-- VALUES ('b298f28e-79e4-4a87-9662-c9769361e1ff', '0d04e964-ddbd-4109-9613-3bd9b02f8220', 20);
+-- INSERT INTO "MovimentacoesEstoque"("Id", "ProdutoId", "Quantidade", "TipoMovimentacao", "OrigemMovimentacao", "DataLancamento", "EstoqueId")
+-- VALUES ('e762b940-de4f-432e-a364-b65710992677', '0d04e964-ddbd-4109-9613-3bd9b02f8220', 20, 0, 0, current_timestamp, 'b298f28e-79e4-4a87-9662-c9769361e1ff');
+-- 
+-- INSERT INTO "Estoques"("Id", "ProdutoId", "Quantidade")
+-- VALUES ('ebd028df-7de2-4249-9126-2a855163b5fd', 'f54943be-81e0-43fa-8ea4-b3b494cc0637', 22);
+-- INSERT INTO "MovimentacoesEstoque"("Id", "ProdutoId", "Quantidade", "TipoMovimentacao", "OrigemMovimentacao", "DataLancamento", "EstoqueId")
+-- VALUES ('d89ceb4c-479d-4ad4-9d24-a4b2afa9e62f', 'f54943be-81e0-43fa-8ea4-b3b494cc0637', 22, 0, 0, current_timestamp, 'ebd028df-7de2-4249-9126-2a855163b5fd');
+-- 
+-- INSERT INTO "Estoques"("Id", "ProdutoId", "Quantidade")
+-- VALUES ('53734cc1-10a0-4f68-a9b0-b021d75564a0', '83dae8c5-0148-4fe1-a558-792236927243', 25);
+-- INSERT INTO "MovimentacoesEstoque"("Id", "ProdutoId", "Quantidade", "TipoMovimentacao", "OrigemMovimentacao", "DataLancamento", "EstoqueId")
+-- VALUES ('cc6b1543-0554-4172-9327-1bd5785922f0', '83dae8c5-0148-4fe1-a558-792236927243', 25, 0, 0, current_timestamp, '53734cc1-10a0-4f68-a9b0-b021d75564a0');
+-- 
+-- INSERT INTO "Estoques"("Id", "ProdutoId", "Quantidade")
+-- VALUES ('fd4485dd-9b86-4063-9597-40f10c1784e7', '347dee54-1a3b-4e1a-bb90-a3c820cba482', 30);
+-- INSERT INTO "MovimentacoesEstoque"("Id", "ProdutoId", "Quantidade", "TipoMovimentacao", "OrigemMovimentacao", "DataLancamento", "EstoqueId")
+-- VALUES ('e4d3c9bd-5cf7-43a4-983f-80f3d06c35ea', '347dee54-1a3b-4e1a-bb90-a3c820cba482', 30, 0, 0, current_timestamp, 'fd4485dd-9b86-4063-9597-40f10c1784e7');
+-- 
+-- INSERT INTO "Estoques"("Id", "ProdutoId", "Quantidade")
+-- VALUES ('2622bffe-e42a-402a-a68d-928dd0bfe36b', 'ae4973f2-90fb-4499-8dd1-669ebc07294d', 10);
+-- INSERT INTO "MovimentacoesEstoque"("Id", "ProdutoId", "Quantidade", "TipoMovimentacao", "OrigemMovimentacao", "DataLancamento", "EstoqueId")
+-- VALUES ('74f62dbf-2214-4d66-8c63-17dadde0c0e7', 'ae4973f2-90fb-4499-8dd1-669ebc07294d', 10, 0, 0, current_timestamp, '2622bffe-e42a-402a-a68d-928dd0bfe36b');
+-- 
+-- INSERT INTO "Estoques"("Id", "ProdutoId", "Quantidade")
+-- VALUES ('321ac86d-e9ca-4482-b45d-efa5b888ed3f', 'cadf6087-5d43-49c6-b47e-f597b6fc5422', 15);
+-- INSERT INTO "MovimentacoesEstoque"("Id", "ProdutoId", "Quantidade", "TipoMovimentacao", "OrigemMovimentacao", "DataLancamento", "EstoqueId")
+-- VALUES ('ee2e7ded-22c2-4790-8fa2-7e40667ee634', 'cadf6087-5d43-49c6-b47e-f597b6fc5422', 15, 0, 0, current_timestamp, '321ac86d-e9ca-4482-b45d-efa5b888ed3f');
+-- 
+-- INSERT INTO "Estoques"("Id", "ProdutoId", "Quantidade")
+-- VALUES ('db3db2cd-d830-47df-97eb-4a9f2894bb2a', '6b8429e8-935a-4de7-8124-744ad9b1e967', 30);
+-- INSERT INTO "MovimentacoesEstoque"("Id", "ProdutoId", "Quantidade", "TipoMovimentacao", "OrigemMovimentacao", "DataLancamento", "EstoqueId")
+-- VALUES ('e7a69abe-e578-4f31-b7ff-e57659413d52', '6b8429e8-935a-4de7-8124-744ad9b1e967', 30, 0, 0, current_timestamp, 'db3db2cd-d830-47df-97eb-4a9f2894bb2a');
+-- 
+-- INSERT INTO "Estoques"("Id", "ProdutoId", "Quantidade")
+-- VALUES ('35ab26a8-e462-4b64-9499-926cd0ad18c2', 'e32afb66-2615-4cbe-aeb1-b79d9fd83755', 30);
+-- INSERT INTO "MovimentacoesEstoque"("Id", "ProdutoId", "Quantidade", "TipoMovimentacao", "OrigemMovimentacao", "DataLancamento", "EstoqueId")
+-- VALUES ('a3283ade-ee19-4439-9a29-a2df840ba3e2', 'e32afb66-2615-4cbe-aeb1-b79d9fd83755', 30, 0, 0, current_timestamp, '35ab26a8-e462-4b64-9499-926cd0ad18c2');
+-- 
+-- INSERT INTO "Estoques"("Id", "ProdutoId", "Quantidade")
+-- VALUES ('946bd392-8fe4-42e9-a7b5-a712d5f671a0', '707dcd56-699a-43dd-8cb1-8c439bff35e3', 40);
+-- INSERT INTO "MovimentacoesEstoque"("Id", "ProdutoId", "Quantidade", "TipoMovimentacao", "OrigemMovimentacao", "DataLancamento", "EstoqueId")
+-- VALUES ('026e8ac4-a5bf-4f7f-afd4-93d8322384fa', '707dcd56-699a-43dd-8cb1-8c439bff35e3', 40, 0, 0, current_timestamp, '946bd392-8fe4-42e9-a7b5-a712d5f671a0');
+-- 
+-- INSERT INTO "Estoques"("Id", "ProdutoId", "Quantidade")
+-- VALUES ('2e40cd62-1b84-4d29-8b3e-d787de5046b5', '605ca744-20e4-40a1-b837-9cfb77ac3e3a', 60);
+-- INSERT INTO "MovimentacoesEstoque"("Id", "ProdutoId", "Quantidade", "TipoMovimentacao", "OrigemMovimentacao", "DataLancamento", "EstoqueId")
+-- VALUES ('e42d5185-8442-428a-8de7-e62c14927d44', '605ca744-20e4-40a1-b837-9cfb77ac3e3a', 60, 0, 0, current_timestamp, '2e40cd62-1b84-4d29-8b3e-d787de5046b5');
+-- 
+-- INSERT INTO "Estoques"("Id", "ProdutoId", "Quantidade")
+-- VALUES ('9a9e4c87-e16b-4d35-9b01-b4ea40c88f33', '12d28111-f657-46fc-9ad7-c8797b3a75da', 50);
+-- INSERT INTO "MovimentacoesEstoque"("Id", "ProdutoId", "Quantidade", "TipoMovimentacao", "OrigemMovimentacao", "DataLancamento", "EstoqueId")
+-- VALUES ('46c54fa3-d0e1-4c8a-a72f-a5f2e7ba7aba', '12d28111-f657-46fc-9ad7-c8797b3a75da', 50, 0, 0, current_timestamp, '9a9e4c87-e16b-4d35-9b01-b4ea40c88f33');
+-- 
+-- INSERT INTO "Estoques"("Id", "ProdutoId", "Quantidade")
+-- VALUES ('3cea4124-5a2d-42b5-88da-a57351ac07e5', 'a10e899e-138b-4e23-a3cf-bebaa0eaa466', 100);
+-- INSERT INTO "MovimentacoesEstoque"("Id", "ProdutoId", "Quantidade", "TipoMovimentacao", "OrigemMovimentacao", "DataLancamento", "EstoqueId")
+-- VALUES ('93316140-42fb-4bf3-97d4-2a649260aa58', 'a10e899e-138b-4e23-a3cf-bebaa0eaa466', 100, 0, 0, current_timestamp, '3cea4124-5a2d-42b5-88da-a57351ac07e5');
+-- 
+-- INSERT INTO "Estoques"("Id", "ProdutoId", "Quantidade")
+-- VALUES ('53eddc6f-9442-45bb-b8a9-0e8dd5b65e70', '6c323e8c-00bd-4afc-b071-6146ae3b3ce7', 80);
+-- INSERT INTO "MovimentacoesEstoque"("Id", "ProdutoId", "Quantidade", "TipoMovimentacao", "OrigemMovimentacao", "DataLancamento", "EstoqueId")
+-- VALUES ('8917da26-f052-4f04-9b5e-e8084fdc82f4', '6c323e8c-00bd-4afc-b071-6146ae3b3ce7', 80, 0, 0, current_timestamp, '53eddc6f-9442-45bb-b8a9-0e8dd5b65e70');
+-- 
+-- INSERT INTO "Estoques"("Id", "ProdutoId", "Quantidade")
+-- VALUES ('fbceb0c1-4b93-4415-a198-95d1892034c8', 'e95b1860-5709-4894-b6fa-3c3b25eb44f2', 20);
+-- INSERT INTO "MovimentacoesEstoque"("Id", "ProdutoId", "Quantidade", "TipoMovimentacao", "OrigemMovimentacao", "DataLancamento", "EstoqueId")
+-- VALUES ('96319408-4734-41e4-9179-872240f68f37', 'e95b1860-5709-4894-b6fa-3c3b25eb44f2', 20, 0, 0, current_timestamp, 'fbceb0c1-4b93-4415-a198-95d1892034c8');
+-- 
+-- INSERT INTO "Estoques"("Id", "ProdutoId", "Quantidade")
+-- VALUES ('7cf9811b-cc12-49e0-a8c4-daee7d215ff6', '078ddc1f-9e2e-4c04-916c-c4c562aeae60', 30);
+-- INSERT INTO "MovimentacoesEstoque"("Id", "ProdutoId", "Quantidade", "TipoMovimentacao", "OrigemMovimentacao", "DataLancamento", "EstoqueId")
+-- VALUES ('31995a99-c777-4e98-9e98-33c7dedfdc68', '078ddc1f-9e2e-4c04-916c-c4c562aeae60', 30, 0, 0, current_timestamp, '7cf9811b-cc12-49e0-a8c4-daee7d215ff6');
+-- 
+-- INSERT INTO "Estoques"("Id", "ProdutoId", "Quantidade")
+-- VALUES ('b7023ea8-7de2-4a5e-bc37-e2086ac2254a', 'f7799fcb-9dac-4b74-83ba-415ec27c7ddd', 35);
+-- INSERT INTO "MovimentacoesEstoque"("Id", "ProdutoId", "Quantidade", "TipoMovimentacao", "OrigemMovimentacao", "DataLancamento", "EstoqueId")
+-- VALUES ('c36067f3-86fe-4321-a69e-96411500854e', 'f7799fcb-9dac-4b74-83ba-415ec27c7ddd', 35, 0, 0, current_timestamp, 'b7023ea8-7de2-4a5e-bc37-e2086ac2254a');
+-- 
+-- INSERT INTO "Estoques"("Id", "ProdutoId", "Quantidade")
+-- VALUES ('4fe6c771-b980-467f-b932-be5cab2ef557', '41a8972c-454f-4e1a-af1b-7b42f93cbc54', 20);
+-- INSERT INTO "MovimentacoesEstoque"("Id", "ProdutoId", "Quantidade", "TipoMovimentacao", "OrigemMovimentacao", "DataLancamento", "EstoqueId")
+-- VALUES ('a58e78f5-4be6-4d6c-9601-de0ae5d30b52', '41a8972c-454f-4e1a-af1b-7b42f93cbc54', 20, 0, 0, current_timestamp, '4fe6c771-b980-467f-b932-be5cab2ef557');
+-- 
+-- INSERT INTO "Estoques"("Id", "ProdutoId", "Quantidade")
+-- VALUES ('57423602-e353-44d3-9361-db04c00373c1', 'a61f2454-8eb9-427b-b7f5-42cb7039e1c8', 22);
+-- INSERT INTO "MovimentacoesEstoque"("Id", "ProdutoId", "Quantidade", "TipoMovimentacao", "OrigemMovimentacao", "DataLancamento", "EstoqueId")
+-- VALUES ('8b1b347f-ed08-4187-8a73-9d5c04f95e43', 'a61f2454-8eb9-427b-b7f5-42cb7039e1c8', 22, 0, 0, current_timestamp, '57423602-e353-44d3-9361-db04c00373c1');
+-- 
+-- INSERT INTO "Estoques"("Id", "ProdutoId", "Quantidade")
+-- VALUES ('9893f555-2588-42fa-849f-d95b3290a0ab', '1e9372a1-87de-4305-8e35-0ab3dfa6a28e', 40);
+-- INSERT INTO "MovimentacoesEstoque"("Id", "ProdutoId", "Quantidade", "TipoMovimentacao", "OrigemMovimentacao", "DataLancamento", "EstoqueId")
+-- VALUES ('708cf87f-cafa-4d7e-a630-4b5528a91c2d', '1e9372a1-87de-4305-8e35-0ab3dfa6a28e', 40, 0, 0, current_timestamp, '9893f555-2588-42fa-849f-d95b3290a0ab');
+-- 
+-- INSERT INTO "Estoques"("Id", "ProdutoId", "Quantidade")
+-- VALUES ('3007a5e4-7a4b-4c69-982f-d28bab09732e', '62c27fb5-12a7-4eaa-b7a9-ca292beca340', 20);
+-- INSERT INTO "MovimentacoesEstoque"("Id", "ProdutoId", "Quantidade", "TipoMovimentacao", "OrigemMovimentacao", "DataLancamento", "EstoqueId")
+-- VALUES ('3f585276-bb04-4e0c-aa2e-17f0ac9e8002', '62c27fb5-12a7-4eaa-b7a9-ca292beca340', 20, 0, 0, current_timestamp, '3007a5e4-7a4b-4c69-982f-d28bab09732e');
+-- 
+-- INSERT INTO "Estoques"("Id", "ProdutoId", "Quantidade")
+-- VALUES ('96147ecd-8771-445b-9119-b11af07bf791', 'c472ff9a-08fa-4853-9b91-7ca8c461cbc8', 25);
+-- INSERT INTO "MovimentacoesEstoque"("Id", "ProdutoId", "Quantidade", "TipoMovimentacao", "OrigemMovimentacao", "DataLancamento", "EstoqueId")
+-- VALUES ('0ee01643-d7ba-48b9-92d9-14d35765872f', 'c472ff9a-08fa-4853-9b91-7ca8c461cbc8', 25, 0, 0, current_timestamp, '96147ecd-8771-445b-9119-b11af07bf791');
+-- 
+-- INSERT INTO "Estoques"("Id", "ProdutoId", "Quantidade")
+-- VALUES ('5c3ee709-8493-4026-9299-e96ff876c7a5', 'b6e95412-6753-4308-ad9d-832d2def4922', 50);
+-- INSERT INTO "MovimentacoesEstoque"("Id", "ProdutoId", "Quantidade", "TipoMovimentacao", "OrigemMovimentacao", "DataLancamento", "EstoqueId")
+-- VALUES ('4b9d2aff-3bca-4016-bbf1-827566fd1355', 'b6e95412-6753-4308-ad9d-832d2def4922', 50, 0, 0, current_timestamp, '5c3ee709-8493-4026-9299-e96ff876c7a5');
+-- 
+-- INSERT INTO "Estoques"("Id", "ProdutoId", "Quantidade")
+-- VALUES ('5d21d44c-3c9c-4e22-943d-0184676e4850', 'b74f5b70-ee9c-4dd4-85e4-2318722965f8', 40);
+-- INSERT INTO "MovimentacoesEstoque"("Id", "ProdutoId", "Quantidade", "TipoMovimentacao", "OrigemMovimentacao", "DataLancamento", "EstoqueId")
+-- VALUES ('4ee0c046-15ec-4737-95d3-0a746bd034d5', 'b74f5b70-ee9c-4dd4-85e4-2318722965f8', 40, 0, 0, current_timestamp, '5d21d44c-3c9c-4e22-943d-0184676e4850');
+-- 
+-- INSERT INTO "Estoques"("Id", "ProdutoId", "Quantidade")
+-- VALUES ('bfa5aff1-c671-42de-af0e-6d94ea25d635', '268f16aa-5490-4566-8fbb-0b0ea0a82734', 35);
+-- INSERT INTO "MovimentacoesEstoque"("Id", "ProdutoId", "Quantidade", "TipoMovimentacao", "OrigemMovimentacao", "DataLancamento", "EstoqueId")
+-- VALUES ('51ad52c6-e6a9-4871-a883-d21d0be12d43', '268f16aa-5490-4566-8fbb-0b0ea0a82734', 35, 0, 0, current_timestamp, 'bfa5aff1-c671-42de-af0e-6d94ea25d635');
+-- 
+-- INSERT INTO "Estoques"("Id", "ProdutoId", "Quantidade")
+-- VALUES ('e450ac4a-23a2-47a8-9164-81671d2a9ebc', '4ce3e03d-2168-4a46-b4ba-d7095f738411', 20);
+-- INSERT INTO "MovimentacoesEstoque"("Id", "ProdutoId", "Quantidade", "TipoMovimentacao", "OrigemMovimentacao", "DataLancamento", "EstoqueId")
+-- VALUES ('5f2f2bb9-1f4c-4070-9551-8429d7ea5a7f', '4ce3e03d-2168-4a46-b4ba-d7095f738411', 20, 0, 0, current_timestamp, 'e450ac4a-23a2-47a8-9164-81671d2a9ebc');
+-- 
+-- INSERT INTO "Estoques"("Id", "ProdutoId", "Quantidade")
+-- VALUES ('f2955983-9519-482b-a5f6-e6ed6d033e9c', '65ef50e4-8f32-4641-83f6-11bb8822d084', 20);
+-- INSERT INTO "MovimentacoesEstoque"("Id", "ProdutoId", "Quantidade", "TipoMovimentacao", "OrigemMovimentacao", "DataLancamento", "EstoqueId")
+-- VALUES ('0ff12967-d7b9-4811-9194-0e4745826a0f', '65ef50e4-8f32-4641-83f6-11bb8822d084', 20, 0, 0, current_timestamp, 'f2955983-9519-482b-a5f6-e6ed6d033e9c');
+-- 
+-- INSERT INTO "Estoques"("Id", "ProdutoId", "Quantidade")
+-- VALUES ('78ee4121-88b6-4816-a293-bee68f4156a6', 'e5325f29-738d-4a75-8159-9ba5e5c151e8', 20);
+-- INSERT INTO "MovimentacoesEstoque"("Id", "ProdutoId", "Quantidade", "TipoMovimentacao", "OrigemMovimentacao", "DataLancamento", "EstoqueId")
+-- VALUES ('fbb20d1e-ac95-457b-b655-a40176eb9bcf', 'e5325f29-738d-4a75-8159-9ba5e5c151e8', 20, 0, 0, current_timestamp, '78ee4121-88b6-4816-a293-bee68f4156a6');
+-- 
+-- INSERT INTO "Estoques"("Id", "ProdutoId", "Quantidade")
+-- VALUES ('af73d6e2-7390-452d-b6e6-710f3e7441b7', '8be1b2e4-e97a-4912-bbcf-b915471e4070', 20);
+-- INSERT INTO "MovimentacoesEstoque"("Id", "ProdutoId", "Quantidade", "TipoMovimentacao", "OrigemMovimentacao", "DataLancamento", "EstoqueId")
+-- VALUES ('cf1245b8-d0fd-48c9-bc4c-6df298b99b45', '8be1b2e4-e97a-4912-bbcf-b915471e4070', 20, 0, 0, current_timestamp, 'af73d6e2-7390-452d-b6e6-710f3e7441b7');
+-- 
+-- INSERT INTO "Estoques"("Id", "ProdutoId", "Quantidade")
+-- VALUES ('28b3d9ed-2973-4c05-ad45-ace93e351f86', 'c204e65d-2fbb-4ee9-b9c4-64e47c5891f0', 20);
+-- INSERT INTO "MovimentacoesEstoque"("Id", "ProdutoId", "Quantidade", "TipoMovimentacao", "OrigemMovimentacao", "DataLancamento", "EstoqueId")
+-- VALUES ('f961d508-2807-4252-868b-2925075f2b83', 'c204e65d-2fbb-4ee9-b9c4-64e47c5891f0', 20, 0, 0, current_timestamp, '28b3d9ed-2973-4c05-ad45-ace93e351f86');
+-- 
+-- -- ### CUPONS ###
+-- INSERT INTO "Cupons"("Id", "DataInicio", "DataFim", "CodigoCupom", "PorcentagemDesconto", "Status")
+-- VALUES ('0812685e-ec71-4123-b23b-12186f6bc955', '2024-01-27', '2024-02-06', 'easy10', 0.1, 1);
+-- INSERT INTO "CupomProdutos"("Id", "CupomId", "ProdutoId")
+-- VALUES ('86e20e4e-0904-43fc-8d08-70ecdc2b766e', '0812685e-ec71-4123-b23b-12186f6bc955', '0d04e964-ddbd-4109-9613-3bd9b02f8220');
+-- INSERT INTO "CupomProdutos"("Id", "CupomId", "ProdutoId")
+-- VALUES ('d31f5fdc-c4d2-4b02-a8b2-48cf471a699b', '0812685e-ec71-4123-b23b-12186f6bc955', '6b8429e8-935a-4de7-8124-744ad9b1e967');
+-- INSERT INTO "CupomProdutos"("Id", "CupomId", "ProdutoId")
+-- VALUES ('83c3eafc-39ca-43f3-b595-d5ec0c02fd2e', '0812685e-ec71-4123-b23b-12186f6bc955', '83dae8c5-0148-4fe1-a558-792236927243');
+-- INSERT INTO "Cupons"("Id", "DataInicio", "DataFim", "CodigoCupom", "PorcentagemDesconto", "Status")
+-- VALUES ('003ba0c9-e5e7-45ee-8d15-44f02df9a06a', '2024-01-27', '2024-02-01', 'easy15', 0.15, 1);
+-- INSERT INTO "CupomProdutos"("Id", "CupomId", "ProdutoId")
+-- VALUES ('65f79c48-51f3-40c4-bd0a-dbb7808ea777', '003ba0c9-e5e7-45ee-8d15-44f02df9a06a', 'f54943be-81e0-43fa-8ea4-b3b494cc0637');
+-- INSERT INTO "CupomProdutos"("Id", "CupomId", "ProdutoId")
+-- VALUES ('1b318ec3-85e8-4002-a0e3-67613aa43785', '003ba0c9-e5e7-45ee-8d15-44f02df9a06a', '83dae8c5-0148-4fe1-a558-792236927243');
+-- INSERT INTO "CupomProdutos"("Id", "CupomId", "ProdutoId")
+-- VALUES ('a520e318-6f2d-440e-87e4-db6a904e57c8', '003ba0c9-e5e7-45ee-8d15-44f02df9a06a', 'ae4973f2-90fb-4499-8dd1-669ebc07294d');
+-- INSERT INTO "CupomProdutos"("Id", "CupomId", "ProdutoId")
+-- VALUES ('baa7bd12-ecbd-4acb-a805-a0d7d50eba2b', '003ba0c9-e5e7-45ee-8d15-44f02df9a06a', '707dcd56-699a-43dd-8cb1-8c439bff35e3');
+-- INSERT INTO "CupomProdutos"("Id", "CupomId", "ProdutoId")
+-- VALUES ('cf60609b-e987-494c-a08f-201f3f2be26f', '003ba0c9-e5e7-45ee-8d15-44f02df9a06a', 'cadf6087-5d43-49c6-b47e-f597b6fc5422');
+-- INSERT INTO "CupomProdutos"("Id", "CupomId", "ProdutoId")
+-- VALUES ('762908a6-3ecc-4772-b89c-720899157103', '003ba0c9-e5e7-45ee-8d15-44f02df9a06a', '0d04e964-ddbd-4109-9613-3bd9b02f8220');
+-- INSERT INTO "Cupons"("Id", "DataInicio", "DataFim", "CodigoCupom", "PorcentagemDesconto", "Status")
+-- VALUES ('428b2dfe-b7dd-49f3-a161-7ceab23ae3ef', '2024-02-01', '2024-02-16', 'easy20', 0.2, 1);
+-- INSERT INTO "CupomProdutos"("Id", "CupomId", "ProdutoId")
+-- VALUES ('8e9e8e47-20b3-4bca-9498-3bb859731999', '428b2dfe-b7dd-49f3-a161-7ceab23ae3ef', '83dae8c5-0148-4fe1-a558-792236927243');
+-- INSERT INTO "CupomProdutos"("Id", "CupomId", "ProdutoId")
+-- VALUES ('667880e8-1a94-41df-9c77-7fb79d0b81c1', '428b2dfe-b7dd-49f3-a161-7ceab23ae3ef', '6b8429e8-935a-4de7-8124-744ad9b1e967');
+-- INSERT INTO "CupomProdutos"("Id", "CupomId", "ProdutoId")
+-- VALUES ('82376e95-9e6f-4987-a543-6c69c081c6b5', '428b2dfe-b7dd-49f3-a161-7ceab23ae3ef', 'f54943be-81e0-43fa-8ea4-b3b494cc0637');
+-- INSERT INTO "CupomProdutos"("Id", "CupomId", "ProdutoId")
+-- VALUES ('04e9719a-b910-423e-838b-73e5d8dfd7b3', '428b2dfe-b7dd-49f3-a161-7ceab23ae3ef', 'e32afb66-2615-4cbe-aeb1-b79d9fd83755');

@@ -12,11 +12,14 @@ services:
     environment:
       ASPNETCORE_ENVIRONMENT: Docker
       ASPNETCORE_URLS: http://+:80
+    ports:
+      - "8080:80"
     depends_on:
       - easy-food-db
   
   easy-food-db:
     image: postgres:latest
+    container_name: easy-food-db
     environment:
       POSTGRES_USER: acme
       POSTGRES_PASSWORD: acme

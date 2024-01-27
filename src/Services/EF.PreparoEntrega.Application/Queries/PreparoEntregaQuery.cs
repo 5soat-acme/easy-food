@@ -16,6 +16,13 @@ public class PreparoEntregaQuery : IPreparoEntregaQuery
         _mapper = mapper;
     }
 
+    public async Task<PedidoPreparoDto> ObterPedidoPorId(Guid id)
+    {
+        var pedido = await _pedidoRepository.ObterPedidoPorId(id);
+        var result = _mapper.Map<PedidoPreparoDto>(pedido);
+        return result;
+    }
+
     public async Task<IEnumerable<PedidoPreparoDto>> ObterPedidos()
     {
         var pedidos = await _pedidoRepository.ObterPedidosEmAberto();

@@ -22,6 +22,20 @@ public class PreparoController : CustomControllerBase
     }
 
     /// <summary>
+    ///     Obtém um pedido
+    /// </summary>
+    /// /// <param name="id">Id do pedido</param>
+    /// <response code="200">Dados do pedido.</response>t
+    [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(PedidoMonitorDto))]
+    [Produces("application/json")]
+    [HttpGet("{id}")]
+    public async Task<IActionResult> ObterPedido([FromRoute] Guid id)
+    {
+        var pedido = await _preparoEntregaQuery.ObterPedidoPorId(id);
+        return pedido is null ? NotFound() : Respond(pedido);
+    }
+
+    /// <summary>
     ///     Obtém os dados de pedidos para serem preparados.
     /// </summary>
     /// <response code="200">Pedidos a serem preparados.</response>

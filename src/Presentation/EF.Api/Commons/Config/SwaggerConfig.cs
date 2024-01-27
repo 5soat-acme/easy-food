@@ -18,7 +18,7 @@ public static class SwaggerConfig
 
             c.AddServer(new OpenApiServer
             {
-                Url = "http://localhost:80",
+                Url = "http://localhost:8080",
                 Description = "easy-food"
             });
 

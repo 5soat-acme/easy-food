@@ -109,9 +109,9 @@ public class AcessoAppService : IAcessoAppService
 
     private async Task<OperationResult<RespostaTokenAcesso>> IdentificarPorCpf(string cpf)
     {
-        if(!Cpf.Validar(cpf)) return OperationResult<RespostaTokenAcesso>.Failure("CPF inválido");
+        if (!Cpf.Validar(cpf)) return OperationResult<RespostaTokenAcesso>.Failure("CPF inválido");
         cpf = cpf.SomenteNumeros(cpf);
-        
+
         var applicationUser = await _userManager.Users.FirstOrDefaultAsync(u => u.Cpf == cpf);
         if (applicationUser is not null)
             return await Identificar(applicationUser);

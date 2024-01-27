@@ -25,8 +25,10 @@ public class PreparoController : CustomControllerBase
     /// <summary>
     ///     Obtém um pedido
     /// </summary>
-    /// /// <param name="id">Id do pedido</param>
-    /// <response code="200">Dados do pedido.</response>t
+    /// ///
+    /// <param name="id">Id do pedido</param>
+    /// <response code="200">Dados do pedido.</response>
+    /// t
     [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(PedidoMonitorDto))]
     [Produces("application/json")]
     [HttpGet("{id}")]

@@ -12,8 +12,8 @@ namespace EF.Pedidos.Application.Commands.ProcessarPagamento;
 public class ProcessarPagamentoCommandHandler : CommandHandler,
     IRequestHandler<ProcessarPagamentoCommand, CommandResult>
 {
-    private readonly IPedidoRepository _pedidoRepository;
     private readonly IPagamentoService _pagamentoService;
+    private readonly IPedidoRepository _pedidoRepository;
     private readonly IProdutoService _produtoService;
 
     public ProcessarPagamentoCommandHandler(IPedidoRepository pedidoRepository, IPagamentoService pagamentoService,
@@ -27,10 +27,7 @@ public class ProcessarPagamentoCommandHandler : CommandHandler,
     public async Task<CommandResult> Handle(ProcessarPagamentoCommand request, CancellationToken cancellationToken)
     {
         var pedido = await _pedidoRepository.ObterPorId(request.PedidoId);
-        if (pedido is null)
-        {
-            throw new DomainException("Pedido inv·lido");
-        }
+        if (pedido is null) throw new DomainException("Pedido inv√°lido");
 
         var pagamento = new PagamentoDto
         {

@@ -42,7 +42,7 @@ public class CriarPedidoCommandHandler : CommandHandler,
 
         return CommandResult.Create(result, pedido.Id);
     }
-    
+
 
     private async Task<Pedido> MapearPedido(CriarPedidoCommand request)
     {
@@ -96,7 +96,7 @@ public class CriarPedidoCommandHandler : CommandHandler,
     {
         return await _estoqueService.VerificarEstoque(item.ProdutoId, item.Quantidade);
     }
-    
+
     private async Task<List<ProdutoDto>> ObterProdutosPedido(CriarPedidoCommand request)
     {
         List<ProdutoDto> produtos = new();

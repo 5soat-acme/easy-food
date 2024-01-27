@@ -1,0 +1,49 @@
+name: Build and Push a Docker Image
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - 'fase-2-k8s'
+      
+jobs:
+  build_docker_image:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: recursive
+      - name: Output Run Number
+        run: echo run number ${{ github.run_number }}
+      - name: Set assembly minor version
+        run: sed -i "s/\(<AssemblyVersion>\([0-9]\+\.\)\{2\}\)\([0-9]\+\)/\1${{github.run_number}}/" ./Edge.Web/EF.Api.csproj    
+      - name: Prepare Docker metadata
+        id: meta
+        uses: docker/metadata-action@v5.3.0
+        with:
+          # list of Docker images to use as base name for tags
+          images: |
+            docker.io/rafaelcasadei89/easyfood
+          flavor: latest=true
+          # generate Docker tags based on the following events/attributes
+          tags: |
+            type=ref,event=pr
+            type=raw,value=created_{{date 'YYYYMMDD-HHmmss'}}	
+            type=raw,value=build_number_${{github.run_number}}	
+            type=raw,value=commit_{{branch}}_{{sha}}	
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+      - name: Login to GitHub Container Registry
+        uses: docker/login-action@v3
+        with:
+          registry: docker.io
+          username: rafaelcasadei89
+          password: Easy369!@
+      - name: Build and push the Docker Image for EF.Api project
+        uses: docker/build-push-action@v5.1.0
+        with:
+          context: .
+          file: ./Presentation/EF.Api
+          push: true
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}

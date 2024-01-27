@@ -1,3 +1,4 @@
+using EF.Domain.Commons.DomainObjects;
 using EF.Domain.Commons.Messages;
 using EF.Domain.Commons.Messages.Integrations;
 using EF.PreparoEntrega.Domain.Repository;
@@ -18,6 +19,10 @@ public class IniciarPreparoCommandHandler : CommandHandler,
     public async Task<CommandResult> Handle(IniciarPreparoCommand request, CancellationToken cancellationToken)
     {
         var pedido = await _pedidoRepository.ObterPedidoPorId(request.PedidoId);
+        if (pedido is null)
+        {
+            throw new DomainException("Pedido inválido");
+        }
 
         pedido.IniciarPreparo();
 

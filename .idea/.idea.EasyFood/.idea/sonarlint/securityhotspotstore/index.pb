@@ -461,3 +461,5 @@ y
 Isrc/Services/EF.Pagamentos.Infra/Services/PagmentoCartaoCreditoService.cs,4\8\489bce9fb6242a9d15e4d5ea52aa2348b1850397
 z
 Jsrc/Services/EF.Pagamentos.Infra/Services/PagamentoCartaoCreditoService.cs,5\6\56d6dc37affcde81c752cbf4633d4a4317942f71
+l
+<src/Presentation/EF.Api/Commons/Config/SchemaFilterConfig.cs,7\5\75ef2a6f738af5f543b5f01e5e58d21525df27f2

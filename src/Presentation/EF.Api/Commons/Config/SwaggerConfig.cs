@@ -1,4 +1,6 @@
 using System.Reflection;
+using EF.Domain.Commons.Messages;
+using EF.PreparoEntrega.Application.Commands.ConfirmarEntrega;
 using Microsoft.OpenApi.Models;
 
 namespace EF.Api.Commons.Config;
@@ -9,6 +11,8 @@ public static class SwaggerConfig
     {
         services.AddSwaggerGen(c =>
         {
+            c.SchemaFilter<SchemaFilterConfig>(typeof(Command), nameof(Command.AggregateId));
+            
             var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
             var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
             c.IncludeXmlComments(xmlPath);

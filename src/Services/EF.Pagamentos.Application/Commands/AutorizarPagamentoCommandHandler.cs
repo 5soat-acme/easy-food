@@ -1,4 +1,5 @@
-﻿using EF.Domain.Commons.Messages;
+﻿using EF.Domain.Commons.DomainObjects;
+using EF.Domain.Commons.Messages;
 using EF.Pagamentos.Application.Config;
 using EF.Pagamentos.Domain.Models;
 using EF.Pagamentos.Domain.Repository;
@@ -20,6 +21,8 @@ public class AutorizarPagamentoCommandHandler : CommandHandler,
 
     public async Task<CommandResult> Handle(AutorizarPagamentoCommand command, CancellationToken cancellationToken)
     {
+        if (!Enum.IsDefined(typeof(Tipo), command.TipoPagamento)) throw new DomainException("Tipo de Pagamento inválido");
+
         var tipoPagamento = Enum.Parse<Tipo>(command.TipoPagamento);
         var pagamentoService = _resolver.GetService(tipoPagamento);
         var transacao =

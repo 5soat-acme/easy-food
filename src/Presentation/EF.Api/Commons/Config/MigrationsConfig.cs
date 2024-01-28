@@ -50,7 +50,7 @@ public static class MigrationsConfig
         {
             Console.WriteLine(e.Message);
         }
-        
+
         return app;
     }
 }

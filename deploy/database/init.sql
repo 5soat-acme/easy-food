@@ -1,239 +1,834 @@
--- -- ### PRODUTOS ###
--- INSERT INTO "Produtos"("Id", "Nome", "ValorUnitario", "Ativo", "Categoria", "TempoPreparoEstimado",  "Descricao")
--- VALUES ('0d04e964-ddbd-4109-9613-3bd9b02f8220', 'X-Burger', 11.5, True, 0, 10, 'X-Burger');
--- INSERT INTO "Produtos"("Id", "Nome", "ValorUnitario", "Ativo", "Categoria", "TempoPreparoEstimado",  "Descricao")
--- VALUES ('f54943be-81e0-43fa-8ea4-b3b494cc0637', 'X-Catupiry', 19, True, 0, 10, 'X-Catupiry');
--- INSERT INTO "Produtos"("Id", "Nome", "ValorUnitario", "Ativo", "Categoria", "TempoPreparoEstimado",  "Descricao")
--- VALUES ('83dae8c5-0148-4fe1-a558-792236927243', 'X-Salada', 14, True, 0, 10, 'X-Salada');
--- INSERT INTO "Produtos"("Id", "Nome", "ValorUnitario", "Ativo", "Categoria", "TempoPreparoEstimado",  "Descricao")
--- VALUES ('347dee54-1a3b-4e1a-bb90-a3c820cba482', 'X-Egg', 18, True, 0, 10, 'X-Egg');
--- INSERT INTO "Produtos"("Id", "Nome", "ValorUnitario", "Ativo", "Categoria", "TempoPreparoEstimado",  "Descricao")
--- VALUES ('ae4973f2-90fb-4499-8dd1-669ebc07294d', 'X-Milho', 18, True, 0, 10, 'X-Milho');
--- INSERT INTO "Produtos"("Id", "Nome", "ValorUnitario", "Ativo", "Categoria", "TempoPreparoEstimado",  "Descricao")
--- VALUES ('cadf6087-5d43-49c6-b47e-f597b6fc5422', 'X-Americano', 21.50, True, 0, 10, 'X-Americano');
--- INSERT INTO "Produtos"("Id", "Nome", "ValorUnitario", "Ativo", "Categoria", "TempoPreparoEstimado",  "Descricao")
--- VALUES ('6b8429e8-935a-4de7-8124-744ad9b1e967', 'X-Bacon', 23, True, 0, 10, 'X-Bacon');
--- INSERT INTO "Produtos"("Id", "Nome", "ValorUnitario", "Ativo", "Categoria", "TempoPreparoEstimado",  "Descricao")
--- VALUES ('e32afb66-2615-4cbe-aeb1-b79d9fd83755', 'X-Calabresa', 23, True, 0, 10, 'X-Calabresa');
--- INSERT INTO "Produtos"("Id", "Nome", "ValorUnitario", "Ativo", "Categoria", "TempoPreparoEstimado",  "Descricao")
--- VALUES ('707dcd56-699a-43dd-8cb1-8c439bff35e3', 'X-Tudo', 26.50, True, 0, 10, 'X-Tudo');
--- INSERT INTO "Produtos"("Id", "Nome", "ValorUnitario", "Ativo", "Categoria", "TempoPreparoEstimado",  "Descricao")
--- VALUES ('605ca744-20e4-40a1-b837-9cfb77ac3e3a', 'X-EasyFood', 30, True, 0, 10, 'X-EasyFood');
--- INSERT INTO "Produtos"("Id", "Nome", "ValorUnitario", "Ativo", "Categoria", "TempoPreparoEstimado",  "Descricao")
--- VALUES ('12d28111-f657-46fc-9ad7-c8797b3a75da', 'Anéis de Cebola', 10, True, 1, 10, 'Anéis de Cebola');
--- INSERT INTO "Produtos"("Id", "Nome", "ValorUnitario", "Ativo", "Categoria", "TempoPreparoEstimado",  "Descricao")
--- VALUES ('a10e899e-138b-4e23-a3cf-bebaa0eaa466', 'Batata frita', 6, True, 1, 10, 'Batata frita');
--- INSERT INTO "Produtos"("Id", "Nome", "ValorUnitario", "Ativo", "Categoria", "TempoPreparoEstimado",  "Descricao")
--- VALUES ('6c323e8c-00bd-4afc-b071-6146ae3b3ce7', 'Batata Com cheddar e bacon', 15, True, 1, 10, 'Batata Com cheddar e bacon');
--- INSERT INTO "Produtos"("Id", "Nome", "ValorUnitario", "Ativo", "Categoria", "TempoPreparoEstimado",  "Descricao")
--- VALUES ('e95b1860-5709-4894-b6fa-3c3b25eb44f2', 'Calabresa acebolada', 22, True, 1, 10, 'Calabresa acebolada');
--- INSERT INTO "Produtos"("Id", "Nome", "ValorUnitario", "Ativo", "Categoria", "TempoPreparoEstimado",  "Descricao")
--- VALUES ('078ddc1f-9e2e-4c04-916c-c4c562aeae60', 'Cola-Cola lata 350ml', 6.5, True, 2, 2, 'Cola-Cola lata 350ml');
--- INSERT INTO "Produtos"("Id", "Nome", "ValorUnitario", "Ativo", "Categoria", "TempoPreparoEstimado",  "Descricao")
--- VALUES ('f7799fcb-9dac-4b74-83ba-415ec27c7ddd', 'Cola-Cola zero lata 350ml', 6.5, True, 2, 2, 'Cola-Cola zero lata 350ml');
--- INSERT INTO "Produtos"("Id", "Nome", "ValorUnitario", "Ativo", "Categoria", "TempoPreparoEstimado",  "Descricao")
--- VALUES ('41a8972c-454f-4e1a-af1b-7b42f93cbc54', 'Fanta laranja lata 350ml', 6.5, True, 2, 2, 'Fanta laranja lata 350ml');
--- INSERT INTO "Produtos"("Id", "Nome", "ValorUnitario", "Ativo", "Categoria", "TempoPreparoEstimado",  "Descricao")
--- VALUES ('a61f2454-8eb9-427b-b7f5-42cb7039e1c8', 'Fanta uva lata 350ml', 6.5, True, 2, 2, 'Fanta uva lata 350ml');
--- INSERT INTO "Produtos"("Id", "Nome", "ValorUnitario", "Ativo", "Categoria", "TempoPreparoEstimado",  "Descricao")
--- VALUES ('1e9372a1-87de-4305-8e35-0ab3dfa6a28e', 'Guaraná Antarctica lata 350ml', 6.5, True, 2, 2, 'Guaraná Antarctica lata 350ml');
--- INSERT INTO "Produtos"("Id", "Nome", "ValorUnitario", "Ativo", "Categoria", "TempoPreparoEstimado",  "Descricao")
--- VALUES ('62c27fb5-12a7-4eaa-b7a9-ca292beca340', 'Água sem gás', 5, True, 2, 2, 'Água sem gás');
--- INSERT INTO "Produtos"("Id", "Nome", "ValorUnitario", "Ativo", "Categoria", "TempoPreparoEstimado",  "Descricao")
--- VALUES ('c472ff9a-08fa-4853-9b91-7ca8c461cbc8', 'Água com gás', 5, True, 2, 2, 'Água com gás');
--- INSERT INTO "Produtos"("Id", "Nome", "ValorUnitario", "Ativo", "Categoria", "TempoPreparoEstimado",  "Descricao")
--- VALUES ('b6e95412-6753-4308-ad9d-832d2def4922', 'Suco de laranja natural(copo)', 8, True, 2, 5, 'Suco de laranja natural(copo)');
--- INSERT INTO "Produtos"("Id", "Nome", "ValorUnitario", "Ativo", "Categoria", "TempoPreparoEstimado",  "Descricao")
--- VALUES ('b74f5b70-ee9c-4dd4-85e4-2318722965f8', 'Suco de maracujá natural(copo)', 8, True, 2, 5, 'Suco de maracujá natural(copo)');
--- INSERT INTO "Produtos"("Id", "Nome", "ValorUnitario", "Ativo", "Categoria", "TempoPreparoEstimado",  "Descricao")
--- VALUES ('268f16aa-5490-4566-8fbb-0b0ea0a82734', 'Suco de morango natural(copo)', 8.5, True, 2, 5, 'Suco de morango natural(copo)');
--- INSERT INTO "Produtos"("Id", "Nome", "ValorUnitario", "Ativo", "Categoria", "TempoPreparoEstimado",  "Descricao")
--- VALUES ('4ce3e03d-2168-4a46-b4ba-d7095f738411', 'Milkshake de morango', 10, True, 3, 5, 'Milkshake de morango');
--- INSERT INTO "Produtos"("Id", "Nome", "ValorUnitario", "Ativo", "Categoria", "TempoPreparoEstimado",  "Descricao")
--- VALUES ('65ef50e4-8f32-4641-83f6-11bb8822d084', 'Milkshake de chocolate', 10, True, 3, 5, 'Milkshake de chocolate');
--- INSERT INTO "Produtos"("Id", "Nome", "ValorUnitario", "Ativo", "Categoria", "TempoPreparoEstimado",  "Descricao")
--- VALUES ('e5325f29-738d-4a75-8159-9ba5e5c151e8', 'Milkshake de Óreo', 12, True, 3, 5, 'Milkshake de Óreo');
--- INSERT INTO "Produtos"("Id", "Nome", "ValorUnitario", "Ativo", "Categoria", "TempoPreparoEstimado",  "Descricao")
--- VALUES ('8be1b2e4-e97a-4912-bbcf-b915471e4070', 'Sorvete de creme', 5, True, 3, 5, 'Sorvete de creme');
--- INSERT INTO "Produtos"("Id", "Nome", "ValorUnitario", "Ativo", "Categoria", "TempoPreparoEstimado",  "Descricao")
--- VALUES ('c204e65d-2fbb-4ee9-b9c4-64e47c5891f0', 'Sorvete de chocolate', 5, True, 3, 5, 'Sorvete de chocolate');
--- 
--- -- ### ESTOQUE ###
--- INSERT INTO "Estoques"("Id", "ProdutoId", "Quantidade")
--- VALUES ('b298f28e-79e4-4a87-9662-c9769361e1ff', '0d04e964-ddbd-4109-9613-3bd9b02f8220', 20);
--- INSERT INTO "MovimentacoesEstoque"("Id", "ProdutoId", "Quantidade", "TipoMovimentacao", "OrigemMovimentacao", "DataLancamento", "EstoqueId")
--- VALUES ('e762b940-de4f-432e-a364-b65710992677', '0d04e964-ddbd-4109-9613-3bd9b02f8220', 20, 0, 0, current_timestamp, 'b298f28e-79e4-4a87-9662-c9769361e1ff');
--- 
--- INSERT INTO "Estoques"("Id", "ProdutoId", "Quantidade")
--- VALUES ('ebd028df-7de2-4249-9126-2a855163b5fd', 'f54943be-81e0-43fa-8ea4-b3b494cc0637', 22);
--- INSERT INTO "MovimentacoesEstoque"("Id", "ProdutoId", "Quantidade", "TipoMovimentacao", "OrigemMovimentacao", "DataLancamento", "EstoqueId")
--- VALUES ('d89ceb4c-479d-4ad4-9d24-a4b2afa9e62f', 'f54943be-81e0-43fa-8ea4-b3b494cc0637', 22, 0, 0, current_timestamp, 'ebd028df-7de2-4249-9126-2a855163b5fd');
--- 
--- INSERT INTO "Estoques"("Id", "ProdutoId", "Quantidade")
--- VALUES ('53734cc1-10a0-4f68-a9b0-b021d75564a0', '83dae8c5-0148-4fe1-a558-792236927243', 25);
--- INSERT INTO "MovimentacoesEstoque"("Id", "ProdutoId", "Quantidade", "TipoMovimentacao", "OrigemMovimentacao", "DataLancamento", "EstoqueId")
--- VALUES ('cc6b1543-0554-4172-9327-1bd5785922f0', '83dae8c5-0148-4fe1-a558-792236927243', 25, 0, 0, current_timestamp, '53734cc1-10a0-4f68-a9b0-b021d75564a0');
--- 
--- INSERT INTO "Estoques"("Id", "ProdutoId", "Quantidade")
--- VALUES ('fd4485dd-9b86-4063-9597-40f10c1784e7', '347dee54-1a3b-4e1a-bb90-a3c820cba482', 30);
--- INSERT INTO "MovimentacoesEstoque"("Id", "ProdutoId", "Quantidade", "TipoMovimentacao", "OrigemMovimentacao", "DataLancamento", "EstoqueId")
--- VALUES ('e4d3c9bd-5cf7-43a4-983f-80f3d06c35ea', '347dee54-1a3b-4e1a-bb90-a3c820cba482', 30, 0, 0, current_timestamp, 'fd4485dd-9b86-4063-9597-40f10c1784e7');
--- 
--- INSERT INTO "Estoques"("Id", "ProdutoId", "Quantidade")
--- VALUES ('2622bffe-e42a-402a-a68d-928dd0bfe36b', 'ae4973f2-90fb-4499-8dd1-669ebc07294d', 10);
--- INSERT INTO "MovimentacoesEstoque"("Id", "ProdutoId", "Quantidade", "TipoMovimentacao", "OrigemMovimentacao", "DataLancamento", "EstoqueId")
--- VALUES ('74f62dbf-2214-4d66-8c63-17dadde0c0e7', 'ae4973f2-90fb-4499-8dd1-669ebc07294d', 10, 0, 0, current_timestamp, '2622bffe-e42a-402a-a68d-928dd0bfe36b');
--- 
--- INSERT INTO "Estoques"("Id", "ProdutoId", "Quantidade")
--- VALUES ('321ac86d-e9ca-4482-b45d-efa5b888ed3f', 'cadf6087-5d43-49c6-b47e-f597b6fc5422', 15);
--- INSERT INTO "MovimentacoesEstoque"("Id", "ProdutoId", "Quantidade", "TipoMovimentacao", "OrigemMovimentacao", "DataLancamento", "EstoqueId")
--- VALUES ('ee2e7ded-22c2-4790-8fa2-7e40667ee634', 'cadf6087-5d43-49c6-b47e-f597b6fc5422', 15, 0, 0, current_timestamp, '321ac86d-e9ca-4482-b45d-efa5b888ed3f');
--- 
--- INSERT INTO "Estoques"("Id", "ProdutoId", "Quantidade")
--- VALUES ('db3db2cd-d830-47df-97eb-4a9f2894bb2a', '6b8429e8-935a-4de7-8124-744ad9b1e967', 30);
--- INSERT INTO "MovimentacoesEstoque"("Id", "ProdutoId", "Quantidade", "TipoMovimentacao", "OrigemMovimentacao", "DataLancamento", "EstoqueId")
--- VALUES ('e7a69abe-e578-4f31-b7ff-e57659413d52', '6b8429e8-935a-4de7-8124-744ad9b1e967', 30, 0, 0, current_timestamp, 'db3db2cd-d830-47df-97eb-4a9f2894bb2a');
--- 
--- INSERT INTO "Estoques"("Id", "ProdutoId", "Quantidade")
--- VALUES ('35ab26a8-e462-4b64-9499-926cd0ad18c2', 'e32afb66-2615-4cbe-aeb1-b79d9fd83755', 30);
--- INSERT INTO "MovimentacoesEstoque"("Id", "ProdutoId", "Quantidade", "TipoMovimentacao", "OrigemMovimentacao", "DataLancamento", "EstoqueId")
--- VALUES ('a3283ade-ee19-4439-9a29-a2df840ba3e2', 'e32afb66-2615-4cbe-aeb1-b79d9fd83755', 30, 0, 0, current_timestamp, '35ab26a8-e462-4b64-9499-926cd0ad18c2');
--- 
--- INSERT INTO "Estoques"("Id", "ProdutoId", "Quantidade")
--- VALUES ('946bd392-8fe4-42e9-a7b5-a712d5f671a0', '707dcd56-699a-43dd-8cb1-8c439bff35e3', 40);
--- INSERT INTO "MovimentacoesEstoque"("Id", "ProdutoId", "Quantidade", "TipoMovimentacao", "OrigemMovimentacao", "DataLancamento", "EstoqueId")
--- VALUES ('026e8ac4-a5bf-4f7f-afd4-93d8322384fa', '707dcd56-699a-43dd-8cb1-8c439bff35e3', 40, 0, 0, current_timestamp, '946bd392-8fe4-42e9-a7b5-a712d5f671a0');
--- 
--- INSERT INTO "Estoques"("Id", "ProdutoId", "Quantidade")
--- VALUES ('2e40cd62-1b84-4d29-8b3e-d787de5046b5', '605ca744-20e4-40a1-b837-9cfb77ac3e3a', 60);
--- INSERT INTO "MovimentacoesEstoque"("Id", "ProdutoId", "Quantidade", "TipoMovimentacao", "OrigemMovimentacao", "DataLancamento", "EstoqueId")
--- VALUES ('e42d5185-8442-428a-8de7-e62c14927d44', '605ca744-20e4-40a1-b837-9cfb77ac3e3a', 60, 0, 0, current_timestamp, '2e40cd62-1b84-4d29-8b3e-d787de5046b5');
--- 
--- INSERT INTO "Estoques"("Id", "ProdutoId", "Quantidade")
--- VALUES ('9a9e4c87-e16b-4d35-9b01-b4ea40c88f33', '12d28111-f657-46fc-9ad7-c8797b3a75da', 50);
--- INSERT INTO "MovimentacoesEstoque"("Id", "ProdutoId", "Quantidade", "TipoMovimentacao", "OrigemMovimentacao", "DataLancamento", "EstoqueId")
--- VALUES ('46c54fa3-d0e1-4c8a-a72f-a5f2e7ba7aba', '12d28111-f657-46fc-9ad7-c8797b3a75da', 50, 0, 0, current_timestamp, '9a9e4c87-e16b-4d35-9b01-b4ea40c88f33');
--- 
--- INSERT INTO "Estoques"("Id", "ProdutoId", "Quantidade")
--- VALUES ('3cea4124-5a2d-42b5-88da-a57351ac07e5', 'a10e899e-138b-4e23-a3cf-bebaa0eaa466', 100);
--- INSERT INTO "MovimentacoesEstoque"("Id", "ProdutoId", "Quantidade", "TipoMovimentacao", "OrigemMovimentacao", "DataLancamento", "EstoqueId")
--- VALUES ('93316140-42fb-4bf3-97d4-2a649260aa58', 'a10e899e-138b-4e23-a3cf-bebaa0eaa466', 100, 0, 0, current_timestamp, '3cea4124-5a2d-42b5-88da-a57351ac07e5');
--- 
--- INSERT INTO "Estoques"("Id", "ProdutoId", "Quantidade")
--- VALUES ('53eddc6f-9442-45bb-b8a9-0e8dd5b65e70', '6c323e8c-00bd-4afc-b071-6146ae3b3ce7', 80);
--- INSERT INTO "MovimentacoesEstoque"("Id", "ProdutoId", "Quantidade", "TipoMovimentacao", "OrigemMovimentacao", "DataLancamento", "EstoqueId")
--- VALUES ('8917da26-f052-4f04-9b5e-e8084fdc82f4', '6c323e8c-00bd-4afc-b071-6146ae3b3ce7', 80, 0, 0, current_timestamp, '53eddc6f-9442-45bb-b8a9-0e8dd5b65e70');
--- 
--- INSERT INTO "Estoques"("Id", "ProdutoId", "Quantidade")
--- VALUES ('fbceb0c1-4b93-4415-a198-95d1892034c8', 'e95b1860-5709-4894-b6fa-3c3b25eb44f2', 20);
--- INSERT INTO "MovimentacoesEstoque"("Id", "ProdutoId", "Quantidade", "TipoMovimentacao", "OrigemMovimentacao", "DataLancamento", "EstoqueId")
--- VALUES ('96319408-4734-41e4-9179-872240f68f37', 'e95b1860-5709-4894-b6fa-3c3b25eb44f2', 20, 0, 0, current_timestamp, 'fbceb0c1-4b93-4415-a198-95d1892034c8');
--- 
--- INSERT INTO "Estoques"("Id", "ProdutoId", "Quantidade")
--- VALUES ('7cf9811b-cc12-49e0-a8c4-daee7d215ff6', '078ddc1f-9e2e-4c04-916c-c4c562aeae60', 30);
--- INSERT INTO "MovimentacoesEstoque"("Id", "ProdutoId", "Quantidade", "TipoMovimentacao", "OrigemMovimentacao", "DataLancamento", "EstoqueId")
--- VALUES ('31995a99-c777-4e98-9e98-33c7dedfdc68', '078ddc1f-9e2e-4c04-916c-c4c562aeae60', 30, 0, 0, current_timestamp, '7cf9811b-cc12-49e0-a8c4-daee7d215ff6');
--- 
--- INSERT INTO "Estoques"("Id", "ProdutoId", "Quantidade")
--- VALUES ('b7023ea8-7de2-4a5e-bc37-e2086ac2254a', 'f7799fcb-9dac-4b74-83ba-415ec27c7ddd', 35);
--- INSERT INTO "MovimentacoesEstoque"("Id", "ProdutoId", "Quantidade", "TipoMovimentacao", "OrigemMovimentacao", "DataLancamento", "EstoqueId")
--- VALUES ('c36067f3-86fe-4321-a69e-96411500854e', 'f7799fcb-9dac-4b74-83ba-415ec27c7ddd', 35, 0, 0, current_timestamp, 'b7023ea8-7de2-4a5e-bc37-e2086ac2254a');
--- 
--- INSERT INTO "Estoques"("Id", "ProdutoId", "Quantidade")
--- VALUES ('4fe6c771-b980-467f-b932-be5cab2ef557', '41a8972c-454f-4e1a-af1b-7b42f93cbc54', 20);
--- INSERT INTO "MovimentacoesEstoque"("Id", "ProdutoId", "Quantidade", "TipoMovimentacao", "OrigemMovimentacao", "DataLancamento", "EstoqueId")
--- VALUES ('a58e78f5-4be6-4d6c-9601-de0ae5d30b52', '41a8972c-454f-4e1a-af1b-7b42f93cbc54', 20, 0, 0, current_timestamp, '4fe6c771-b980-467f-b932-be5cab2ef557');
--- 
--- INSERT INTO "Estoques"("Id", "ProdutoId", "Quantidade")
--- VALUES ('57423602-e353-44d3-9361-db04c00373c1', 'a61f2454-8eb9-427b-b7f5-42cb7039e1c8', 22);
--- INSERT INTO "MovimentacoesEstoque"("Id", "ProdutoId", "Quantidade", "TipoMovimentacao", "OrigemMovimentacao", "DataLancamento", "EstoqueId")
--- VALUES ('8b1b347f-ed08-4187-8a73-9d5c04f95e43', 'a61f2454-8eb9-427b-b7f5-42cb7039e1c8', 22, 0, 0, current_timestamp, '57423602-e353-44d3-9361-db04c00373c1');
--- 
--- INSERT INTO "Estoques"("Id", "ProdutoId", "Quantidade")
--- VALUES ('9893f555-2588-42fa-849f-d95b3290a0ab', '1e9372a1-87de-4305-8e35-0ab3dfa6a28e', 40);
--- INSERT INTO "MovimentacoesEstoque"("Id", "ProdutoId", "Quantidade", "TipoMovimentacao", "OrigemMovimentacao", "DataLancamento", "EstoqueId")
--- VALUES ('708cf87f-cafa-4d7e-a630-4b5528a91c2d', '1e9372a1-87de-4305-8e35-0ab3dfa6a28e', 40, 0, 0, current_timestamp, '9893f555-2588-42fa-849f-d95b3290a0ab');
--- 
--- INSERT INTO "Estoques"("Id", "ProdutoId", "Quantidade")
--- VALUES ('3007a5e4-7a4b-4c69-982f-d28bab09732e', '62c27fb5-12a7-4eaa-b7a9-ca292beca340', 20);
--- INSERT INTO "MovimentacoesEstoque"("Id", "ProdutoId", "Quantidade", "TipoMovimentacao", "OrigemMovimentacao", "DataLancamento", "EstoqueId")
--- VALUES ('3f585276-bb04-4e0c-aa2e-17f0ac9e8002', '62c27fb5-12a7-4eaa-b7a9-ca292beca340', 20, 0, 0, current_timestamp, '3007a5e4-7a4b-4c69-982f-d28bab09732e');
--- 
--- INSERT INTO "Estoques"("Id", "ProdutoId", "Quantidade")
--- VALUES ('96147ecd-8771-445b-9119-b11af07bf791', 'c472ff9a-08fa-4853-9b91-7ca8c461cbc8', 25);
--- INSERT INTO "MovimentacoesEstoque"("Id", "ProdutoId", "Quantidade", "TipoMovimentacao", "OrigemMovimentacao", "DataLancamento", "EstoqueId")
--- VALUES ('0ee01643-d7ba-48b9-92d9-14d35765872f', 'c472ff9a-08fa-4853-9b91-7ca8c461cbc8', 25, 0, 0, current_timestamp, '96147ecd-8771-445b-9119-b11af07bf791');
--- 
--- INSERT INTO "Estoques"("Id", "ProdutoId", "Quantidade")
--- VALUES ('5c3ee709-8493-4026-9299-e96ff876c7a5', 'b6e95412-6753-4308-ad9d-832d2def4922', 50);
--- INSERT INTO "MovimentacoesEstoque"("Id", "ProdutoId", "Quantidade", "TipoMovimentacao", "OrigemMovimentacao", "DataLancamento", "EstoqueId")
--- VALUES ('4b9d2aff-3bca-4016-bbf1-827566fd1355', 'b6e95412-6753-4308-ad9d-832d2def4922', 50, 0, 0, current_timestamp, '5c3ee709-8493-4026-9299-e96ff876c7a5');
--- 
--- INSERT INTO "Estoques"("Id", "ProdutoId", "Quantidade")
--- VALUES ('5d21d44c-3c9c-4e22-943d-0184676e4850', 'b74f5b70-ee9c-4dd4-85e4-2318722965f8', 40);
--- INSERT INTO "MovimentacoesEstoque"("Id", "ProdutoId", "Quantidade", "TipoMovimentacao", "OrigemMovimentacao", "DataLancamento", "EstoqueId")
--- VALUES ('4ee0c046-15ec-4737-95d3-0a746bd034d5', 'b74f5b70-ee9c-4dd4-85e4-2318722965f8', 40, 0, 0, current_timestamp, '5d21d44c-3c9c-4e22-943d-0184676e4850');
--- 
--- INSERT INTO "Estoques"("Id", "ProdutoId", "Quantidade")
--- VALUES ('bfa5aff1-c671-42de-af0e-6d94ea25d635', '268f16aa-5490-4566-8fbb-0b0ea0a82734', 35);
--- INSERT INTO "MovimentacoesEstoque"("Id", "ProdutoId", "Quantidade", "TipoMovimentacao", "OrigemMovimentacao", "DataLancamento", "EstoqueId")
--- VALUES ('51ad52c6-e6a9-4871-a883-d21d0be12d43', '268f16aa-5490-4566-8fbb-0b0ea0a82734', 35, 0, 0, current_timestamp, 'bfa5aff1-c671-42de-af0e-6d94ea25d635');
--- 
--- INSERT INTO "Estoques"("Id", "ProdutoId", "Quantidade")
--- VALUES ('e450ac4a-23a2-47a8-9164-81671d2a9ebc', '4ce3e03d-2168-4a46-b4ba-d7095f738411', 20);
--- INSERT INTO "MovimentacoesEstoque"("Id", "ProdutoId", "Quantidade", "TipoMovimentacao", "OrigemMovimentacao", "DataLancamento", "EstoqueId")
--- VALUES ('5f2f2bb9-1f4c-4070-9551-8429d7ea5a7f', '4ce3e03d-2168-4a46-b4ba-d7095f738411', 20, 0, 0, current_timestamp, 'e450ac4a-23a2-47a8-9164-81671d2a9ebc');
--- 
--- INSERT INTO "Estoques"("Id", "ProdutoId", "Quantidade")
--- VALUES ('f2955983-9519-482b-a5f6-e6ed6d033e9c', '65ef50e4-8f32-4641-83f6-11bb8822d084', 20);
--- INSERT INTO "MovimentacoesEstoque"("Id", "ProdutoId", "Quantidade", "TipoMovimentacao", "OrigemMovimentacao", "DataLancamento", "EstoqueId")
--- VALUES ('0ff12967-d7b9-4811-9194-0e4745826a0f', '65ef50e4-8f32-4641-83f6-11bb8822d084', 20, 0, 0, current_timestamp, 'f2955983-9519-482b-a5f6-e6ed6d033e9c');
--- 
--- INSERT INTO "Estoques"("Id", "ProdutoId", "Quantidade")
--- VALUES ('78ee4121-88b6-4816-a293-bee68f4156a6', 'e5325f29-738d-4a75-8159-9ba5e5c151e8', 20);
--- INSERT INTO "MovimentacoesEstoque"("Id", "ProdutoId", "Quantidade", "TipoMovimentacao", "OrigemMovimentacao", "DataLancamento", "EstoqueId")
--- VALUES ('fbb20d1e-ac95-457b-b655-a40176eb9bcf', 'e5325f29-738d-4a75-8159-9ba5e5c151e8', 20, 0, 0, current_timestamp, '78ee4121-88b6-4816-a293-bee68f4156a6');
--- 
--- INSERT INTO "Estoques"("Id", "ProdutoId", "Quantidade")
--- VALUES ('af73d6e2-7390-452d-b6e6-710f3e7441b7', '8be1b2e4-e97a-4912-bbcf-b915471e4070', 20);
--- INSERT INTO "MovimentacoesEstoque"("Id", "ProdutoId", "Quantidade", "TipoMovimentacao", "OrigemMovimentacao", "DataLancamento", "EstoqueId")
--- VALUES ('cf1245b8-d0fd-48c9-bc4c-6df298b99b45', '8be1b2e4-e97a-4912-bbcf-b915471e4070', 20, 0, 0, current_timestamp, 'af73d6e2-7390-452d-b6e6-710f3e7441b7');
--- 
--- INSERT INTO "Estoques"("Id", "ProdutoId", "Quantidade")
--- VALUES ('28b3d9ed-2973-4c05-ad45-ace93e351f86', 'c204e65d-2fbb-4ee9-b9c4-64e47c5891f0', 20);
--- INSERT INTO "MovimentacoesEstoque"("Id", "ProdutoId", "Quantidade", "TipoMovimentacao", "OrigemMovimentacao", "DataLancamento", "EstoqueId")
--- VALUES ('f961d508-2807-4252-868b-2925075f2b83', 'c204e65d-2fbb-4ee9-b9c4-64e47c5891f0', 20, 0, 0, current_timestamp, '28b3d9ed-2973-4c05-ad45-ace93e351f86');
--- 
--- -- ### CUPONS ###
--- INSERT INTO "Cupons"("Id", "DataInicio", "DataFim", "CodigoCupom", "PorcentagemDesconto", "Status")
--- VALUES ('0812685e-ec71-4123-b23b-12186f6bc955', '2024-01-27', '2024-02-06', 'easy10', 0.1, 1);
--- INSERT INTO "CupomProdutos"("Id", "CupomId", "ProdutoId")
--- VALUES ('86e20e4e-0904-43fc-8d08-70ecdc2b766e', '0812685e-ec71-4123-b23b-12186f6bc955', '0d04e964-ddbd-4109-9613-3bd9b02f8220');
--- INSERT INTO "CupomProdutos"("Id", "CupomId", "ProdutoId")
--- VALUES ('d31f5fdc-c4d2-4b02-a8b2-48cf471a699b', '0812685e-ec71-4123-b23b-12186f6bc955', '6b8429e8-935a-4de7-8124-744ad9b1e967');
--- INSERT INTO "CupomProdutos"("Id", "CupomId", "ProdutoId")
--- VALUES ('83c3eafc-39ca-43f3-b595-d5ec0c02fd2e', '0812685e-ec71-4123-b23b-12186f6bc955', '83dae8c5-0148-4fe1-a558-792236927243');
--- INSERT INTO "Cupons"("Id", "DataInicio", "DataFim", "CodigoCupom", "PorcentagemDesconto", "Status")
--- VALUES ('003ba0c9-e5e7-45ee-8d15-44f02df9a06a', '2024-01-27', '2024-02-01', 'easy15', 0.15, 1);
--- INSERT INTO "CupomProdutos"("Id", "CupomId", "ProdutoId")
--- VALUES ('65f79c48-51f3-40c4-bd0a-dbb7808ea777', '003ba0c9-e5e7-45ee-8d15-44f02df9a06a', 'f54943be-81e0-43fa-8ea4-b3b494cc0637');
--- INSERT INTO "CupomProdutos"("Id", "CupomId", "ProdutoId")
--- VALUES ('1b318ec3-85e8-4002-a0e3-67613aa43785', '003ba0c9-e5e7-45ee-8d15-44f02df9a06a', '83dae8c5-0148-4fe1-a558-792236927243');
--- INSERT INTO "CupomProdutos"("Id", "CupomId", "ProdutoId")
--- VALUES ('a520e318-6f2d-440e-87e4-db6a904e57c8', '003ba0c9-e5e7-45ee-8d15-44f02df9a06a', 'ae4973f2-90fb-4499-8dd1-669ebc07294d');
--- INSERT INTO "CupomProdutos"("Id", "CupomId", "ProdutoId")
--- VALUES ('baa7bd12-ecbd-4acb-a805-a0d7d50eba2b', '003ba0c9-e5e7-45ee-8d15-44f02df9a06a', '707dcd56-699a-43dd-8cb1-8c439bff35e3');
--- INSERT INTO "CupomProdutos"("Id", "CupomId", "ProdutoId")
--- VALUES ('cf60609b-e987-494c-a08f-201f3f2be26f', '003ba0c9-e5e7-45ee-8d15-44f02df9a06a', 'cadf6087-5d43-49c6-b47e-f597b6fc5422');
--- INSERT INTO "CupomProdutos"("Id", "CupomId", "ProdutoId")
--- VALUES ('762908a6-3ecc-4772-b89c-720899157103', '003ba0c9-e5e7-45ee-8d15-44f02df9a06a', '0d04e964-ddbd-4109-9613-3bd9b02f8220');
--- INSERT INTO "Cupons"("Id", "DataInicio", "DataFim", "CodigoCupom", "PorcentagemDesconto", "Status")
--- VALUES ('428b2dfe-b7dd-49f3-a161-7ceab23ae3ef', '2024-02-01', '2024-02-16', 'easy20', 0.2, 1);
--- INSERT INTO "CupomProdutos"("Id", "CupomId", "ProdutoId")
--- VALUES ('8e9e8e47-20b3-4bca-9498-3bb859731999', '428b2dfe-b7dd-49f3-a161-7ceab23ae3ef', '83dae8c5-0148-4fe1-a558-792236927243');
--- INSERT INTO "CupomProdutos"("Id", "CupomId", "ProdutoId")
--- VALUES ('667880e8-1a94-41df-9c77-7fb79d0b81c1', '428b2dfe-b7dd-49f3-a161-7ceab23ae3ef', '6b8429e8-935a-4de7-8124-744ad9b1e967');
--- INSERT INTO "CupomProdutos"("Id", "CupomId", "ProdutoId")
--- VALUES ('82376e95-9e6f-4987-a543-6c69c081c6b5', '428b2dfe-b7dd-49f3-a161-7ceab23ae3ef', 'f54943be-81e0-43fa-8ea4-b3b494cc0637');
--- INSERT INTO "CupomProdutos"("Id", "CupomId", "ProdutoId")
--- VALUES ('04e9719a-b910-423e-838b-73e5d8dfd7b3', '428b2dfe-b7dd-49f3-a161-7ceab23ae3ef', 'e32afb66-2615-4cbe-aeb1-b79d9fd83755');
+-- ### TABELA DE CONTROLE DO EF ###
+CREATE TABLE IF NOT EXISTS "__EFMigrationsHistory" (
+    "MigrationId" character varying(150) NOT NULL,
+    "ProductVersion" character varying(32) NOT NULL,
+    CONSTRAINT "PK___EFMigrationsHistory" PRIMARY KEY ("MigrationId")
+);
+
+START TRANSACTION;
+
+-- ### IDENTIDADE ###
+DO $EF$
+BEGIN
+    IF NOT EXISTS(SELECT 1 FROM "__EFMigrationsHistory" WHERE "MigrationId" = '20240112124437_BaseInicialIdentidade') THEN
+    CREATE TABLE "AspNetRoles" (
+        "Id" text NOT NULL,
+        "Name" character varying(256),
+        "NormalizedName" character varying(256),
+        "ConcurrencyStamp" text,
+        CONSTRAINT "PK_AspNetRoles" PRIMARY KEY ("Id")
+    );
+    END IF;
+END $EF$;
+
+DO $EF$
+BEGIN
+    IF NOT EXISTS(SELECT 1 FROM "__EFMigrationsHistory" WHERE "MigrationId" = '20240112124437_BaseInicialIdentidade') THEN
+    CREATE TABLE "AspNetUsers" (
+        "Id" text NOT NULL,
+        "Cpf" text NOT NULL,
+        "UserName" character varying(256),
+        "NormalizedUserName" character varying(256),
+        "Email" character varying(256),
+        "NormalizedEmail" character varying(256),
+        "EmailConfirmed" boolean NOT NULL,
+        "PasswordHash" text,
+        "SecurityStamp" text,
+        "ConcurrencyStamp" text,
+        "PhoneNumber" text,
+        "PhoneNumberConfirmed" boolean NOT NULL,
+        "TwoFactorEnabled" boolean NOT NULL,
+        "LockoutEnd" timestamp with time zone,
+        "LockoutEnabled" boolean NOT NULL,
+        "AccessFailedCount" integer NOT NULL,
+        CONSTRAINT "PK_AspNetUsers" PRIMARY KEY ("Id")
+    );
+    END IF;
+END $EF$;
+
+DO $EF$
+BEGIN
+    IF NOT EXISTS(SELECT 1 FROM "__EFMigrationsHistory" WHERE "MigrationId" = '20240112124437_BaseInicialIdentidade') THEN
+    CREATE TABLE "AspNetRoleClaims" (
+        "Id" integer GENERATED BY DEFAULT AS IDENTITY,
+        "RoleId" text NOT NULL,
+        "ClaimType" text,
+        "ClaimValue" text,
+        CONSTRAINT "PK_AspNetRoleClaims" PRIMARY KEY ("Id"),
+        CONSTRAINT "FK_AspNetRoleClaims_AspNetRoles_RoleId" FOREIGN KEY ("RoleId") REFERENCES "AspNetRoles" ("Id") ON DELETE CASCADE
+    );
+    END IF;
+END $EF$;
+
+DO $EF$
+BEGIN
+    IF NOT EXISTS(SELECT 1 FROM "__EFMigrationsHistory" WHERE "MigrationId" = '20240112124437_BaseInicialIdentidade') THEN
+    CREATE TABLE "AspNetUserClaims" (
+        "Id" integer GENERATED BY DEFAULT AS IDENTITY,
+        "UserId" text NOT NULL,
+        "ClaimType" text,
+        "ClaimValue" text,
+        CONSTRAINT "PK_AspNetUserClaims" PRIMARY KEY ("Id"),
+        CONSTRAINT "FK_AspNetUserClaims_AspNetUsers_UserId" FOREIGN KEY ("UserId") REFERENCES "AspNetUsers" ("Id") ON DELETE CASCADE
+    );
+    END IF;
+END $EF$;
+
+DO $EF$
+BEGIN
+    IF NOT EXISTS(SELECT 1 FROM "__EFMigrationsHistory" WHERE "MigrationId" = '20240112124437_BaseInicialIdentidade') THEN
+    CREATE TABLE "AspNetUserLogins" (
+        "LoginProvider" character varying(128) NOT NULL,
+        "ProviderKey" character varying(128) NOT NULL,
+        "ProviderDisplayName" text,
+        "UserId" text NOT NULL,
+        CONSTRAINT "PK_AspNetUserLogins" PRIMARY KEY ("LoginProvider", "ProviderKey"),
+        CONSTRAINT "FK_AspNetUserLogins_AspNetUsers_UserId" FOREIGN KEY ("UserId") REFERENCES "AspNetUsers" ("Id") ON DELETE CASCADE
+    );
+    END IF;
+END $EF$;
+
+DO $EF$
+BEGIN
+    IF NOT EXISTS(SELECT 1 FROM "__EFMigrationsHistory" WHERE "MigrationId" = '20240112124437_BaseInicialIdentidade') THEN
+    CREATE TABLE "AspNetUserRoles" (
+        "UserId" text NOT NULL,
+        "RoleId" text NOT NULL,
+        CONSTRAINT "PK_AspNetUserRoles" PRIMARY KEY ("UserId", "RoleId"),
+        CONSTRAINT "FK_AspNetUserRoles_AspNetRoles_RoleId" FOREIGN KEY ("RoleId") REFERENCES "AspNetRoles" ("Id") ON DELETE CASCADE,
+        CONSTRAINT "FK_AspNetUserRoles_AspNetUsers_UserId" FOREIGN KEY ("UserId") REFERENCES "AspNetUsers" ("Id") ON DELETE CASCADE
+    );
+    END IF;
+END $EF$;
+
+DO $EF$
+BEGIN
+    IF NOT EXISTS(SELECT 1 FROM "__EFMigrationsHistory" WHERE "MigrationId" = '20240112124437_BaseInicialIdentidade') THEN
+    CREATE TABLE "AspNetUserTokens" (
+        "UserId" text NOT NULL,
+        "LoginProvider" character varying(128) NOT NULL,
+        "Name" character varying(128) NOT NULL,
+        "Value" text,
+        CONSTRAINT "PK_AspNetUserTokens" PRIMARY KEY ("UserId", "LoginProvider", "Name"),
+        CONSTRAINT "FK_AspNetUserTokens_AspNetUsers_UserId" FOREIGN KEY ("UserId") REFERENCES "AspNetUsers" ("Id") ON DELETE CASCADE
+    );
+    END IF;
+END $EF$;
+
+DO $EF$
+BEGIN
+    IF NOT EXISTS(SELECT 1 FROM "__EFMigrationsHistory" WHERE "MigrationId" = '20240112124437_BaseInicialIdentidade') THEN
+    CREATE INDEX "IX_AspNetRoleClaims_RoleId" ON "AspNetRoleClaims" ("RoleId");
+    END IF;
+END $EF$;
+
+DO $EF$
+BEGIN
+    IF NOT EXISTS(SELECT 1 FROM "__EFMigrationsHistory" WHERE "MigrationId" = '20240112124437_BaseInicialIdentidade') THEN
+    CREATE UNIQUE INDEX "RoleNameIndex" ON "AspNetRoles" ("NormalizedName");
+    END IF;
+END $EF$;
+
+DO $EF$
+BEGIN
+    IF NOT EXISTS(SELECT 1 FROM "__EFMigrationsHistory" WHERE "MigrationId" = '20240112124437_BaseInicialIdentidade') THEN
+    CREATE INDEX "IX_AspNetUserClaims_UserId" ON "AspNetUserClaims" ("UserId");
+    END IF;
+END $EF$;
+
+DO $EF$
+BEGIN
+    IF NOT EXISTS(SELECT 1 FROM "__EFMigrationsHistory" WHERE "MigrationId" = '20240112124437_BaseInicialIdentidade') THEN
+    CREATE INDEX "IX_AspNetUserLogins_UserId" ON "AspNetUserLogins" ("UserId");
+    END IF;
+END $EF$;
+
+DO $EF$
+BEGIN
+    IF NOT EXISTS(SELECT 1 FROM "__EFMigrationsHistory" WHERE "MigrationId" = '20240112124437_BaseInicialIdentidade') THEN
+    CREATE INDEX "IX_AspNetUserRoles_RoleId" ON "AspNetUserRoles" ("RoleId");
+    END IF;
+END $EF$;
+
+DO $EF$
+BEGIN
+    IF NOT EXISTS(SELECT 1 FROM "__EFMigrationsHistory" WHERE "MigrationId" = '20240112124437_BaseInicialIdentidade') THEN
+    CREATE INDEX "EmailIndex" ON "AspNetUsers" ("NormalizedEmail");
+    END IF;
+END $EF$;
+
+DO $EF$
+BEGIN
+    IF NOT EXISTS(SELECT 1 FROM "__EFMigrationsHistory" WHERE "MigrationId" = '20240112124437_BaseInicialIdentidade') THEN
+    CREATE UNIQUE INDEX "UserNameIndex" ON "AspNetUsers" ("NormalizedUserName");
+    END IF;
+END $EF$;
+
+DO $EF$
+BEGIN
+    IF NOT EXISTS(SELECT 1 FROM "__EFMigrationsHistory" WHERE "MigrationId" = '20240112124437_BaseInicialIdentidade') THEN
+    INSERT INTO "__EFMigrationsHistory" ("MigrationId", "ProductVersion")
+    VALUES ('20240112124437_BaseInicialIdentidade', '8.0.0');
+    END IF;
+END $EF$;
+COMMIT;
+
+
+-- ### CLIENTE ###
+DO $EF$
+BEGIN
+    IF NOT EXISTS(SELECT 1 FROM "__EFMigrationsHistory" WHERE "MigrationId" = '20231209110911_BaseInicialClientes') THEN
+    CREATE TABLE "Clientes" (
+        "Id" uuid NOT NULL,
+        "Cpf" varchar(11) NOT NULL,
+        "PrimeiroNome" varchar(200) NOT NULL,
+        "Sobrenome" varchar(200) NOT NULL,
+        "Email" varchar(254) NOT NULL,
+        CONSTRAINT "PK_Clientes" PRIMARY KEY ("Id")
+    );
+    END IF;
+END $EF$;
+
+DO $EF$
+BEGIN
+    IF NOT EXISTS(SELECT 1 FROM "__EFMigrationsHistory" WHERE "MigrationId" = '20231209110911_BaseInicialClientes') THEN
+    INSERT INTO "__EFMigrationsHistory" ("MigrationId", "ProductVersion")
+    VALUES ('20231209110911_BaseInicialClientes', '8.0.0');
+    END IF;
+END $EF$;
+COMMIT;
+
+
+-- ### PRODUTO ###
+DO $EF$
+BEGIN
+    IF NOT EXISTS(SELECT 1 FROM "__EFMigrationsHistory" WHERE "MigrationId" = '20240119154908_BaseInicialProdutos') THEN
+    CREATE TABLE "Produtos" (
+        "Id" uuid NOT NULL,
+        "Nome" varchar(100) NOT NULL,
+        "ValorUnitario" money NOT NULL,
+        "Ativo" bool NOT NULL,
+        "Categoria" integer NOT NULL,
+        "TempoPreparoEstimado" integer NOT NULL,
+        "Descricao" text NOT NULL,
+        CONSTRAINT "PK_Produtos" PRIMARY KEY ("Id")
+    );
+    END IF;
+END $EF$;
+
+DO $EF$
+BEGIN
+    IF NOT EXISTS(SELECT 1 FROM "__EFMigrationsHistory" WHERE "MigrationId" = '20240119154908_BaseInicialProdutos') THEN
+    INSERT INTO "__EFMigrationsHistory" ("MigrationId", "ProductVersion")
+    VALUES ('20240119154908_BaseInicialProdutos', '8.0.0');
+    END IF;
+END $EF$;
+COMMIT;
+
+
+-- ### CUPOM ###
+DO $EF$
+BEGIN
+    IF NOT EXISTS(SELECT 1 FROM "__EFMigrationsHistory" WHERE "MigrationId" = '20240120121326_BaseInicialCupons') THEN
+    CREATE TABLE "Cupons" (
+        "Id" uuid NOT NULL,
+        "DataInicio" timestamp with time zone NOT NULL,
+        "DataFim" timestamp with time zone NOT NULL,
+        "CodigoCupom" character varying(10) NOT NULL,
+        "PorcentagemDesconto" numeric NOT NULL,
+        "Status" integer NOT NULL,
+        CONSTRAINT "PK_Cupons" PRIMARY KEY ("Id")
+    );
+    END IF;
+END $EF$;
+
+DO $EF$
+BEGIN
+    IF NOT EXISTS(SELECT 1 FROM "__EFMigrationsHistory" WHERE "MigrationId" = '20240120121326_BaseInicialCupons') THEN
+    CREATE TABLE "CupomProdutos" (
+        "Id" uuid NOT NULL,
+        "CupomId" uuid NOT NULL,
+        "ProdutoId" uuid NOT NULL,
+        CONSTRAINT "PK_CupomProdutos" PRIMARY KEY ("Id"),
+        CONSTRAINT "FK_CupomProdutos_Cupons_CupomId" FOREIGN KEY ("CupomId") REFERENCES "Cupons" ("Id")
+    );
+    END IF;
+END $EF$;
+
+DO $EF$
+BEGIN
+    IF NOT EXISTS(SELECT 1 FROM "__EFMigrationsHistory" WHERE "MigrationId" = '20240120121326_BaseInicialCupons') THEN
+    CREATE INDEX "IX_CupomProdutos_CupomId" ON "CupomProdutos" ("CupomId");
+    END IF;
+END $EF$;
+
+DO $EF$
+BEGIN
+    IF NOT EXISTS(SELECT 1 FROM "__EFMigrationsHistory" WHERE "MigrationId" = '20240120121326_BaseInicialCupons') THEN
+    CREATE INDEX "IX_Cupons_CodigoCupom" ON "Cupons" ("CodigoCupom");
+    END IF;
+END $EF$;
+
+DO $EF$
+BEGIN
+    IF NOT EXISTS(SELECT 1 FROM "__EFMigrationsHistory" WHERE "MigrationId" = '20240120121326_BaseInicialCupons') THEN
+    INSERT INTO "__EFMigrationsHistory" ("MigrationId", "ProductVersion")
+    VALUES ('20240120121326_BaseInicialCupons', '8.0.0');
+    END IF;
+END $EF$;
+COMMIT;
+
+-- ### ESTOQUE ###
+DO $EF$
+BEGIN
+    IF NOT EXISTS(SELECT 1 FROM "__EFMigrationsHistory" WHERE "MigrationId" = '20240120123100_BaseInicialEstoques') THEN
+    CREATE TABLE "Estoques" (
+        "Id" uuid NOT NULL,
+        "ProdutoId" uuid NOT NULL,
+        "Quantidade" integer NOT NULL,
+        CONSTRAINT "PK_Estoques" PRIMARY KEY ("Id")
+    );
+    END IF;
+END $EF$;
+
+DO $EF$
+BEGIN
+    IF NOT EXISTS(SELECT 1 FROM "__EFMigrationsHistory" WHERE "MigrationId" = '20240120123100_BaseInicialEstoques') THEN
+    CREATE TABLE "MovimentacoesEstoque" (
+        "Id" uuid NOT NULL,
+        "ProdutoId" uuid NOT NULL,
+        "Quantidade" integer NOT NULL,
+        "TipoMovimentacao" integer NOT NULL,
+        "OrigemMovimentacao" integer NOT NULL,
+        "DataLancamento" timestamp with time zone NOT NULL,
+        "EstoqueId" uuid NOT NULL,
+        CONSTRAINT "PK_MovimentacoesEstoque" PRIMARY KEY ("Id"),
+        CONSTRAINT "FK_MovimentacoesEstoque_Estoques_EstoqueId" FOREIGN KEY ("EstoqueId") REFERENCES "Estoques" ("Id")
+    );
+    END IF;
+END $EF$;
+
+DO $EF$
+BEGIN
+    IF NOT EXISTS(SELECT 1 FROM "__EFMigrationsHistory" WHERE "MigrationId" = '20240120123100_BaseInicialEstoques') THEN
+    CREATE UNIQUE INDEX "IX_Estoques_ProdutoId" ON "Estoques" ("ProdutoId");
+    END IF;
+END $EF$;
+
+DO $EF$
+BEGIN
+    IF NOT EXISTS(SELECT 1 FROM "__EFMigrationsHistory" WHERE "MigrationId" = '20240120123100_BaseInicialEstoques') THEN
+    CREATE INDEX "IX_MovimentacoesEstoque_EstoqueId" ON "MovimentacoesEstoque" ("EstoqueId");
+    END IF;
+END $EF$;
+
+DO $EF$
+BEGIN
+    IF NOT EXISTS(SELECT 1 FROM "__EFMigrationsHistory" WHERE "MigrationId" = '20240120123100_BaseInicialEstoques') THEN
+    INSERT INTO "__EFMigrationsHistory" ("MigrationId", "ProductVersion")
+    VALUES ('20240120123100_BaseInicialEstoques', '8.0.0');
+    END IF;
+END $EF$;
+COMMIT;
+
+
+-- ### CARRINHO ###
+DO $EF$
+BEGIN
+    IF NOT EXISTS(SELECT 1 FROM "__EFMigrationsHistory" WHERE "MigrationId" = '20240113153837_BaseInicialCarrinho') THEN
+    CREATE TABLE "Carrinho" (
+        "Id" uuid NOT NULL,
+        "ClienteId" uuid,
+        "ValorTotal" numeric NOT NULL,
+        "TempoMedioPreparo" integer NOT NULL,
+        "DataCriacao" timestamp with time zone NOT NULL,
+        "DataAtualizacao" timestamp with time zone,
+        CONSTRAINT "PK_Carrinho" PRIMARY KEY ("Id")
+    );
+    END IF;
+END $EF$;
+
+DO $EF$
+BEGIN
+    IF NOT EXISTS(SELECT 1 FROM "__EFMigrationsHistory" WHERE "MigrationId" = '20240113153837_BaseInicialCarrinho') THEN
+    CREATE TABLE "ItensCarrinho" (
+        "Id" uuid NOT NULL,
+        "ValorUnitario" numeric NOT NULL,
+        "Quantidade" integer NOT NULL,
+        "ProdutoId" uuid NOT NULL,
+        "Nome" text NOT NULL,
+        "TempoEstimadoPreparo" integer NOT NULL,
+        "CarrinhoId" uuid NOT NULL,
+        CONSTRAINT "PK_ItensCarrinho" PRIMARY KEY ("Id"),
+        CONSTRAINT "FK_ItensCarrinho_Carrinho_CarrinhoId" FOREIGN KEY ("CarrinhoId") REFERENCES "Carrinho" ("Id") ON DELETE CASCADE
+    );
+    END IF;
+END $EF$;
+
+DO $EF$
+BEGIN
+    IF NOT EXISTS(SELECT 1 FROM "__EFMigrationsHistory" WHERE "MigrationId" = '20240113153837_BaseInicialCarrinho') THEN
+    CREATE INDEX "IDX_Cliente" ON "Carrinho" ("ClienteId");
+    END IF;
+END $EF$;
+
+DO $EF$
+BEGIN
+    IF NOT EXISTS(SELECT 1 FROM "__EFMigrationsHistory" WHERE "MigrationId" = '20240113153837_BaseInicialCarrinho') THEN
+    CREATE INDEX "IX_ItensCarrinho_CarrinhoId" ON "ItensCarrinho" ("CarrinhoId");
+    END IF;
+END $EF$;
+
+DO $EF$
+BEGIN
+    IF NOT EXISTS(SELECT 1 FROM "__EFMigrationsHistory" WHERE "MigrationId" = '20240113153837_BaseInicialCarrinho') THEN
+    INSERT INTO "__EFMigrationsHistory" ("MigrationId", "ProductVersion")
+    VALUES ('20240113153837_BaseInicialCarrinho', '8.0.0');
+    END IF;
+END $EF$;
+COMMIT;
+
+
+-- ### PEDIDO ###
+DO $EF$
+BEGIN
+    IF NOT EXISTS(SELECT 1 FROM "__EFMigrationsHistory" WHERE "MigrationId" = '20240113134414_BaseInicialPedidos') THEN
+    CREATE TABLE "Pedidos" (
+        "Id" uuid NOT NULL,
+        "ClienteId" uuid,
+        "Cpf" varchar(11),
+        "Status" integer NOT NULL,
+        "ValorTotal" numeric NOT NULL,
+        "CupomId" uuid,
+        "DataCriacao" timestamp with time zone NOT NULL,
+        "DataAtualizacao" timestamp with time zone,
+        CONSTRAINT "PK_Pedidos" PRIMARY KEY ("Id")
+    );
+    END IF;
+END $EF$;
+
+DO $EF$
+BEGIN
+    IF NOT EXISTS(SELECT 1 FROM "__EFMigrationsHistory" WHERE "MigrationId" = '20240113134414_BaseInicialPedidos') THEN
+    CREATE TABLE "ItensPedido" (
+        "Id" uuid NOT NULL,
+        "ValorUnitario" numeric NOT NULL,
+        "Desconto" numeric,
+        "ValorFinal" numeric NOT NULL,
+        "Quantidade" integer NOT NULL,
+        "ProdutoId" uuid NOT NULL,
+        "PedidoId" uuid NOT NULL,
+        CONSTRAINT "PK_ItensPedido" PRIMARY KEY ("Id"),
+        CONSTRAINT "FK_ItensPedido_Pedidos_PedidoId" FOREIGN KEY ("PedidoId") REFERENCES "Pedidos" ("Id")
+    );
+    END IF;
+END $EF$;
+
+DO $EF$
+BEGIN
+    IF NOT EXISTS(SELECT 1 FROM "__EFMigrationsHistory" WHERE "MigrationId" = '20240113134414_BaseInicialPedidos') THEN
+    CREATE INDEX "IX_ItensPedido_PedidoId" ON "ItensPedido" ("PedidoId");
+    END IF;
+END $EF$;
+
+DO $EF$
+BEGIN
+    IF NOT EXISTS(SELECT 1 FROM "__EFMigrationsHistory" WHERE "MigrationId" = '20240113134414_BaseInicialPedidos') THEN
+    INSERT INTO "__EFMigrationsHistory" ("MigrationId", "ProductVersion")
+    VALUES ('20240113134414_BaseInicialPedidos', '8.0.0');
+    END IF;
+END $EF$;
+COMMIT;
+
+
+-- ### PAGAMENTO ###
+DO $EF$
+BEGIN
+    IF NOT EXISTS(SELECT 1 FROM "__EFMigrationsHistory" WHERE "MigrationId" = '20240113150643_BaseInicialPagamentos') THEN
+    CREATE TABLE "Pagamentos" (
+        "Id" uuid NOT NULL,
+        "PedidoId" uuid NOT NULL,
+        "Tipo" integer NOT NULL,
+        "DataCriacao" timestamp with time zone NOT NULL,
+        "DataAtualizacao" timestamp with time zone,
+        "Valor" numeric NOT NULL,
+        CONSTRAINT "PK_Pagamentos" PRIMARY KEY ("Id")
+    );
+    END IF;
+END $EF$;
+
+DO $EF$
+BEGIN
+    IF NOT EXISTS(SELECT 1 FROM "__EFMigrationsHistory" WHERE "MigrationId" = '20240113150643_BaseInicialPagamentos') THEN
+    CREATE TABLE "Transacoes" (
+        "Id" uuid NOT NULL,
+        "PagamentoId" uuid NOT NULL,
+        "Data" timestamp with time zone NOT NULL,
+        CONSTRAINT "PK_Transacoes" PRIMARY KEY ("Id"),
+        CONSTRAINT "FK_Transacoes_Pagamentos_PagamentoId" FOREIGN KEY ("PagamentoId") REFERENCES "Pagamentos" ("Id")
+    );
+    END IF;
+END $EF$;
+
+DO $EF$
+BEGIN
+    IF NOT EXISTS(SELECT 1 FROM "__EFMigrationsHistory" WHERE "MigrationId" = '20240113150643_BaseInicialPagamentos') THEN
+    CREATE INDEX "IX_Transacoes_PagamentoId" ON "Transacoes" ("PagamentoId");
+    END IF;
+END $EF$;
+
+DO $EF$
+BEGIN
+    IF NOT EXISTS(SELECT 1 FROM "__EFMigrationsHistory" WHERE "MigrationId" = '20240113150643_BaseInicialPagamentos') THEN
+    INSERT INTO "__EFMigrationsHistory" ("MigrationId", "ProductVersion")
+    VALUES ('20240113150643_BaseInicialPagamentos', '8.0.0');
+    END IF;
+END $EF$;
+COMMIT;
+
+
+-- ### PREPARO E ENTREGA ###
+DO $EF$
+BEGIN
+    IF NOT EXISTS(SELECT 1 FROM "__EFMigrationsHistory" WHERE "MigrationId" = '20240112120823_BaseInicialPreparoEntrega') THEN
+    CREATE SEQUENCE "CodigoPedidoSequence" AS integer START WITH 1000 INCREMENT BY 1 NO MINVALUE NO MAXVALUE NO CYCLE;
+    END IF;
+END $EF$;
+
+DO $EF$
+BEGIN
+    IF NOT EXISTS(SELECT 1 FROM "__EFMigrationsHistory" WHERE "MigrationId" = '20240112120823_BaseInicialPreparoEntrega') THEN
+    CREATE TABLE "PedidosPreparoEntrega" (
+        "Id" uuid NOT NULL,
+        "PedidoCorrelacaoId" uuid NOT NULL,
+        "Codigo" integer NOT NULL,
+        "Status" integer NOT NULL,
+        "DataCriacao" timestamp with time zone NOT NULL,
+        "DataAtualizacao" timestamp with time zone,
+        CONSTRAINT "PK_PedidosPreparoEntrega" PRIMARY KEY ("Id")
+    );
+    END IF;
+END $EF$;
+
+DO $EF$
+BEGIN
+    IF NOT EXISTS(SELECT 1 FROM "__EFMigrationsHistory" WHERE "MigrationId" = '20240112120823_BaseInicialPreparoEntrega') THEN
+    CREATE TABLE "ItensPreparoEntrega" (
+        "Id" uuid NOT NULL,
+        "Quantidade" integer NOT NULL,
+        "ProdutoId" uuid NOT NULL,
+        "NomeProduto" text NOT NULL,
+        "TempoPreparoEstimado" integer NOT NULL,
+        "PedidoId" uuid NOT NULL,
+        CONSTRAINT "PK_ItensPreparoEntrega" PRIMARY KEY ("Id"),
+        CONSTRAINT "FK_ItensPreparoEntrega_PedidosPreparoEntrega_PedidoId" FOREIGN KEY ("PedidoId") REFERENCES "PedidosPreparoEntrega" ("Id")
+    );
+    END IF;
+END $EF$;
+
+DO $EF$
+BEGIN
+    IF NOT EXISTS(SELECT 1 FROM "__EFMigrationsHistory" WHERE "MigrationId" = '20240112120823_BaseInicialPreparoEntrega') THEN
+    CREATE INDEX "IX_ItensPreparoEntrega_PedidoId" ON "ItensPreparoEntrega" ("PedidoId");
+    END IF;
+END $EF$;
+
+DO $EF$
+BEGIN
+    IF NOT EXISTS(SELECT 1 FROM "__EFMigrationsHistory" WHERE "MigrationId" = '20240112120823_BaseInicialPreparoEntrega') THEN
+    CREATE INDEX "IDX_PreparoEntrega_PedidoCorrelacaoId" ON "PedidosPreparoEntrega" ("PedidoCorrelacaoId");
+    END IF;
+END $EF$;
+
+DO $EF$
+BEGIN
+    IF NOT EXISTS(SELECT 1 FROM "__EFMigrationsHistory" WHERE "MigrationId" = '20240112120823_BaseInicialPreparoEntrega') THEN
+    INSERT INTO "__EFMigrationsHistory" ("MigrationId", "ProductVersion")
+    VALUES ('20240112120823_BaseInicialPreparoEntrega', '8.0.0');
+    END IF;
+END $EF$;
+COMMIT;
+
+
+/*
+##########
+INSERÇÃO DE DADOS
+##########
+*/
+
+-- ### PRODUTOS ###
+INSERT INTO "Produtos"("Id", "Nome", "ValorUnitario", "Ativo", "Categoria", "TempoPreparoEstimado",  "Descricao")
+VALUES ('6e02169a-bf32-4e6b-bdd5-079e5eecdee0', 'X-Burger', 11.5, True, 0, 10, 'Pão, hambúrguer 150g, queijo');
+
+INSERT INTO "Produtos"("Id", "Nome", "ValorUnitario", "Ativo", "Categoria", "TempoPreparoEstimado",  "Descricao")
+VALUES ('8868a194-ea4f-4cbe-be59-430bd725cfe1', 'X-Catupiry', 19, True, 0, 10, 'Pão, hambúrguer 150g, catupiry, alface, tomate');
+
+INSERT INTO "Produtos"("Id", "Nome", "ValorUnitario", "Ativo", "Categoria", "TempoPreparoEstimado",  "Descricao")
+VALUES ('4c0b8687-0ffc-4628-9157-565ee3cb3986', 'X-Salada', 14, True, 0, 10, 'Pão, hambúrguer 150g, queijo, alface, tomate');
+
+INSERT INTO "Produtos"("Id", "Nome", "ValorUnitario", "Ativo", "Categoria", "TempoPreparoEstimado",  "Descricao")
+VALUES ('869f38db-cd29-40d1-bfc1-d5f933a3f53e', 'X-Egg', 18, True, 0, 10, 'Pão, hambúrguer 150g, queijo, ovo, alface, tomate');
+
+INSERT INTO "Produtos"("Id", "Nome", "ValorUnitario", "Ativo", "Categoria", "TempoPreparoEstimado",  "Descricao")
+VALUES ('7681f2e5-00df-4bd8-be17-0df54291b978', 'X-Milho', 18, True, 0, 10, 'Pão, hambúrguer 150g, queijo, milho, alface, tomate');
+
+INSERT INTO "Produtos"("Id", "Nome", "ValorUnitario", "Ativo", "Categoria", "TempoPreparoEstimado",  "Descricao")
+VALUES ('b6511523-73d8-4496-9c82-80f3567ae328', 'X-Americano', 21.50, True, 0, 10, 'Pão, hambúrguer 150g, queijo, ovo, milho, alface, tomate');
+
+INSERT INTO "Produtos"("Id", "Nome", "ValorUnitario", "Ativo", "Categoria", "TempoPreparoEstimado",  "Descricao")
+VALUES ('6f96ec3e-20ba-4842-b45d-e596ed812d3c', 'X-Bacon', 23, True, 0, 10, 'Pão, hambúrguer 150g, queijo, bacon, alface, tomate');
+
+INSERT INTO "Produtos"("Id", "Nome", "ValorUnitario", "Ativo", "Categoria", "TempoPreparoEstimado",  "Descricao")
+VALUES ('68552c00-853b-47b4-81aa-ad4eb92d9360', 'X-Calabresa', 23, True, 0, 10, 'Pão, hambúrguer 150g, queijo, calabresa, alface, tomate');
+
+INSERT INTO "Produtos"("Id", "Nome", "ValorUnitario", "Ativo", "Categoria", "TempoPreparoEstimado",  "Descricao")
+VALUES ('e5c14e37-8c26-4524-8445-a0f0c0650b6c', 'X-Tudo', 26.50, True, 0, 10, 'Pão, hambúrguer 150g, queijo, bacon, ovo, milho, alface, tomate');
+
+INSERT INTO "Produtos"("Id", "Nome", "ValorUnitario", "Ativo", "Categoria", "TempoPreparoEstimado",  "Descricao")
+VALUES ('45887e07-b7a8-4c16-baef-f722ef12fe16', 'X-EasyFood', 30, True, 0, 10, 'Pão, 2 hambúrgueres 150g, queijo, bacon, ovo, milho, alface, tomate, molho especial');
+
+INSERT INTO "Produtos"("Id", "Nome", "ValorUnitario", "Ativo", "Categoria", "TempoPreparoEstimado",  "Descricao")
+VALUES ('abd2a168-0115-4403-86bc-cd4937cabec2', 'Anéis de Cebola', 10, True, 1, 10, 'Anéis de Cebola');
+
+INSERT INTO "Produtos"("Id", "Nome", "ValorUnitario", "Ativo", "Categoria", "TempoPreparoEstimado",  "Descricao")
+VALUES ('ff6117af-2775-45bb-9b50-21c229238822', 'Batata frita', 6, True, 1, 10, 'Batata frita');
+
+INSERT INTO "Produtos"("Id", "Nome", "ValorUnitario", "Ativo", "Categoria", "TempoPreparoEstimado",  "Descricao")
+VALUES ('175f9ba8-179e-4cca-b105-10a94dff990e', 'Batata Com cheddar e bacon', 15, True, 1, 10, 'Batata Com cheddar e bacon');
+
+INSERT INTO "Produtos"("Id", "Nome", "ValorUnitario", "Ativo", "Categoria", "TempoPreparoEstimado",  "Descricao")
+VALUES ('1a803e69-f44d-4adf-b5a4-8673ba73a8e4', 'Calabresa acebolada', 22, True, 1, 10, 'Calabresa acebolada');
+
+INSERT INTO "Produtos"("Id", "Nome", "ValorUnitario", "Ativo", "Categoria", "TempoPreparoEstimado",  "Descricao")
+VALUES ('0ef9dd4a-2da5-4ceb-bad0-026164d406dc', 'Cola-Cola lata 350ml', 6.5, True, 2, 2, 'Cola-Cola lata 350ml');
+
+INSERT INTO "Produtos"("Id", "Nome", "ValorUnitario", "Ativo", "Categoria", "TempoPreparoEstimado",  "Descricao")
+VALUES ('30c07e56-d098-42ca-a777-42ff4cfd40dc', 'Cola-Cola zero lata 350ml', 6.5, True, 2, 2, 'Cola-Cola zero lata 350ml');
+
+INSERT INTO "Produtos"("Id", "Nome", "ValorUnitario", "Ativo", "Categoria", "TempoPreparoEstimado",  "Descricao")
+VALUES ('1603d200-3078-4708-8820-e65830165515', 'Fanta laranja lata 350ml', 6.5, True, 2, 2, 'Fanta laranja lata 350ml');
+
+INSERT INTO "Produtos"("Id", "Nome", "ValorUnitario", "Ativo", "Categoria", "TempoPreparoEstimado",  "Descricao")
+VALUES ('2c9677b3-fe61-4fc8-b130-91ca2bd043e3', 'Fanta uva lata 350ml', 6.5, True, 2, 2, 'Fanta uva lata 350ml');
+
+INSERT INTO "Produtos"("Id", "Nome", "ValorUnitario", "Ativo", "Categoria", "TempoPreparoEstimado",  "Descricao")
+VALUES ('32a13b97-ffcd-4fcc-96bf-3f33e98ac37f', 'Guaraná Antarctica lata 350ml', 6.5, True, 2, 2, 'Guaraná Antarctica lata 350ml');
+
+INSERT INTO "Produtos"("Id", "Nome", "ValorUnitario", "Ativo", "Categoria", "TempoPreparoEstimado",  "Descricao")
+VALUES ('6bd4a2e0-bfc2-4607-a427-bbe5cfe7f829', 'Água sem gás', 5, True, 2, 2, 'Água sem gás');
+
+INSERT INTO "Produtos"("Id", "Nome", "ValorUnitario", "Ativo", "Categoria", "TempoPreparoEstimado",  "Descricao")
+VALUES ('f37aed21-6c85-4d22-9b0c-7c398dd72db5', 'Água com gás', 5, True, 2, 2, 'Água com gás');
+
+INSERT INTO "Produtos"("Id", "Nome", "ValorUnitario", "Ativo", "Categoria", "TempoPreparoEstimado",  "Descricao")
+VALUES ('4064bfaf-908e-409a-a7d0-2614ddaf8b9f', 'Suco de laranja natural(copo)', 8, True, 2, 5, 'Suco de laranja natural(copo)');
+
+INSERT INTO "Produtos"("Id", "Nome", "ValorUnitario", "Ativo", "Categoria", "TempoPreparoEstimado",  "Descricao")
+VALUES ('246458fd-9dba-4e94-bf57-c48b558663e7', 'Suco de maracujá natural(copo)', 8, True, 2, 5, 'Suco de maracujá natural(copo)');
+
+INSERT INTO "Produtos"("Id", "Nome", "ValorUnitario", "Ativo", "Categoria", "TempoPreparoEstimado",  "Descricao")
+VALUES ('545cc297-594a-43d9-ae2d-1f0305eacd72', 'Suco de morango natural(copo)', 8.5, True, 2, 5, 'Suco de morango natural(copo)');
+
+INSERT INTO "Produtos"("Id", "Nome", "ValorUnitario", "Ativo", "Categoria", "TempoPreparoEstimado",  "Descricao")
+VALUES ('8e329a2d-0255-4e74-ab5f-8116827a7a22', 'Milkshake de morango', 10, True, 3, 5, 'Milkshake de morango');
+
+INSERT INTO "Produtos"("Id", "Nome", "ValorUnitario", "Ativo", "Categoria", "TempoPreparoEstimado",  "Descricao")
+VALUES ('d0d75c85-63cd-4a3f-910c-142db4451570', 'Milkshake de chocolate', 10, True, 3, 5, 'Milkshake de chocolate');
+
+INSERT INTO "Produtos"("Id", "Nome", "ValorUnitario", "Ativo", "Categoria", "TempoPreparoEstimado",  "Descricao")
+VALUES ('bc23ae6c-8a7d-4578-9841-5064a2ee3f00', 'Milkshake de Óreo', 12, True, 3, 5, 'Milkshake de Óreo');
+
+INSERT INTO "Produtos"("Id", "Nome", "ValorUnitario", "Ativo", "Categoria", "TempoPreparoEstimado",  "Descricao")
+VALUES ('7b5a598d-34f9-49a9-b519-d52a297a8ad4', 'Sorvete de creme', 5, True, 3, 5, 'Sorvete de creme');
+
+INSERT INTO "Produtos"("Id", "Nome", "ValorUnitario", "Ativo", "Categoria", "TempoPreparoEstimado",  "Descricao")
+VALUES ('3cbcc258-005f-4663-85c6-e236e9c61d7b', 'Sorvete de chocolate', 5, True, 3, 5, 'Sorvete de chocolate');
+
+
+
+-- ### ESTOQUE ###
+INSERT INTO "Estoques"("Id", "ProdutoId", "Quantidade")
+VALUES ('043e56ed-a284-4ea8-b6d7-2c0b2fdfa3cb', '6e02169a-bf32-4e6b-bdd5-079e5eecdee0', 20);
+INSERT INTO "MovimentacoesEstoque"("Id", "ProdutoId", "Quantidade", "TipoMovimentacao", "OrigemMovimentacao", "DataLancamento", "EstoqueId")
+VALUES ('576fecd7-5780-4727-a3a4-c69357d477bf', '6e02169a-bf32-4e6b-bdd5-079e5eecdee0', 20, 0, 0, current_timestamp, '043e56ed-a284-4ea8-b6d7-2c0b2fdfa3cb');
+
+INSERT INTO "Estoques"("Id", "ProdutoId", "Quantidade")
+VALUES ('5bf912b9-442f-4e54-8b1d-c19d1df0dec7', '8868a194-ea4f-4cbe-be59-430bd725cfe1', 22);
+INSERT INTO "MovimentacoesEstoque"("Id", "ProdutoId", "Quantidade", "TipoMovimentacao", "OrigemMovimentacao", "DataLancamento", "EstoqueId")
+VALUES ('69c18efb-1b20-404c-964f-6a9be1318d9a', '8868a194-ea4f-4cbe-be59-430bd725cfe1', 22, 0, 0, current_timestamp, '5bf912b9-442f-4e54-8b1d-c19d1df0dec7');
+
+INSERT INTO "Estoques"("Id", "ProdutoId", "Quantidade")
+VALUES ('c4322a0a-4b9d-4f05-9a1f-d8e0c09be35a', '4c0b8687-0ffc-4628-9157-565ee3cb3986', 25);
+INSERT INTO "MovimentacoesEstoque"("Id", "ProdutoId", "Quantidade", "TipoMovimentacao", "OrigemMovimentacao", "DataLancamento", "EstoqueId")
+VALUES ('7ecde999-7bff-4d0a-a569-63defee103e0', '4c0b8687-0ffc-4628-9157-565ee3cb3986', 25, 0, 0, current_timestamp, 'c4322a0a-4b9d-4f05-9a1f-d8e0c09be35a');
+
+INSERT INTO "Estoques"("Id", "ProdutoId", "Quantidade")
+VALUES ('5784a76b-5ed4-42dc-947b-e4404d1cd706', '869f38db-cd29-40d1-bfc1-d5f933a3f53e', 30);
+INSERT INTO "MovimentacoesEstoque"("Id", "ProdutoId", "Quantidade", "TipoMovimentacao", "OrigemMovimentacao", "DataLancamento", "EstoqueId")
+VALUES ('c15150c7-d98f-430f-8657-7401f4842c53', '869f38db-cd29-40d1-bfc1-d5f933a3f53e', 30, 0, 0, current_timestamp, '5784a76b-5ed4-42dc-947b-e4404d1cd706');
+
+INSERT INTO "Estoques"("Id", "ProdutoId", "Quantidade")
+VALUES ('6905c7ae-7f9b-4a03-b4dd-604787d1b363', '7681f2e5-00df-4bd8-be17-0df54291b978', 10);
+INSERT INTO "MovimentacoesEstoque"("Id", "ProdutoId", "Quantidade", "TipoMovimentacao", "OrigemMovimentacao", "DataLancamento", "EstoqueId")
+VALUES ('6c2de906-b292-4efe-b715-b5fb7a5d9371', '7681f2e5-00df-4bd8-be17-0df54291b978', 10, 0, 0, current_timestamp, '6905c7ae-7f9b-4a03-b4dd-604787d1b363');
+
+INSERT INTO "Estoques"("Id", "ProdutoId", "Quantidade")
+VALUES ('f1723de3-b8aa-4412-a9d7-a507122878f0', 'b6511523-73d8-4496-9c82-80f3567ae328', 15);
+INSERT INTO "MovimentacoesEstoque"("Id", "ProdutoId", "Quantidade", "TipoMovimentacao", "OrigemMovimentacao", "DataLancamento", "EstoqueId")
+VALUES ('a24c44c1-098b-4bfc-b69a-b59dfba65ec3', 'b6511523-73d8-4496-9c82-80f3567ae328', 15, 0, 0, current_timestamp, 'f1723de3-b8aa-4412-a9d7-a507122878f0');
+
+INSERT INTO "Estoques"("Id", "ProdutoId", "Quantidade")
+VALUES ('667f2437-6410-499c-89cb-d01216cfa1df', '6f96ec3e-20ba-4842-b45d-e596ed812d3c', 30);
+INSERT INTO "MovimentacoesEstoque"("Id", "ProdutoId", "Quantidade", "TipoMovimentacao", "OrigemMovimentacao", "DataLancamento", "EstoqueId")
+VALUES ('b6359a85-1f2b-451e-b7e5-5ec81db953b8', '6f96ec3e-20ba-4842-b45d-e596ed812d3c', 30, 0, 0, current_timestamp, '667f2437-6410-499c-89cb-d01216cfa1df');
+
+INSERT INTO "Estoques"("Id", "ProdutoId", "Quantidade")
+VALUES ('f7ada820-8469-4d35-b39e-b91ab6e4b53a', '68552c00-853b-47b4-81aa-ad4eb92d9360', 30);
+INSERT INTO "MovimentacoesEstoque"("Id", "ProdutoId", "Quantidade", "TipoMovimentacao", "OrigemMovimentacao", "DataLancamento", "EstoqueId")
+VALUES ('399635e1-7b99-4aca-a1fe-b39c49eb1585', '68552c00-853b-47b4-81aa-ad4eb92d9360', 30, 0, 0, current_timestamp, 'f7ada820-8469-4d35-b39e-b91ab6e4b53a');
+
+INSERT INTO "Estoques"("Id", "ProdutoId", "Quantidade")
+VALUES ('40224e54-7911-44ec-b1e7-5ce72c4535bf', 'e5c14e37-8c26-4524-8445-a0f0c0650b6c', 40);
+INSERT INTO "MovimentacoesEstoque"("Id", "ProdutoId", "Quantidade", "TipoMovimentacao", "OrigemMovimentacao", "DataLancamento", "EstoqueId")
+VALUES ('6939d9bf-f8bd-4c07-836c-141a75d1ac87', 'e5c14e37-8c26-4524-8445-a0f0c0650b6c', 40, 0, 0, current_timestamp, '40224e54-7911-44ec-b1e7-5ce72c4535bf');
+
+INSERT INTO "Estoques"("Id", "ProdutoId", "Quantidade")
+VALUES ('cf641628-8d4c-43ff-a740-399914234a67', '45887e07-b7a8-4c16-baef-f722ef12fe16', 60);
+INSERT INTO "MovimentacoesEstoque"("Id", "ProdutoId", "Quantidade", "TipoMovimentacao", "OrigemMovimentacao", "DataLancamento", "EstoqueId")
+VALUES ('e6403be3-9153-407c-939d-f3ad63054d7c', '45887e07-b7a8-4c16-baef-f722ef12fe16', 60, 0, 0, current_timestamp, 'cf641628-8d4c-43ff-a740-399914234a67');
+
+INSERT INTO "Estoques"("Id", "ProdutoId", "Quantidade")
+VALUES ('705d4e64-09a6-4a48-ad46-35ddc59fab4e', 'abd2a168-0115-4403-86bc-cd4937cabec2', 50);
+INSERT INTO "MovimentacoesEstoque"("Id", "ProdutoId", "Quantidade", "TipoMovimentacao", "OrigemMovimentacao", "DataLancamento", "EstoqueId")
+VALUES ('949d7fe8-372a-4855-b41c-a5f64aa97f80', 'abd2a168-0115-4403-86bc-cd4937cabec2', 50, 0, 0, current_timestamp, '705d4e64-09a6-4a48-ad46-35ddc59fab4e');
+
+INSERT INTO "Estoques"("Id", "ProdutoId", "Quantidade")
+VALUES ('a8d7a73c-077e-41b0-b136-7f3c8e463cce', 'ff6117af-2775-45bb-9b50-21c229238822', 100);
+INSERT INTO "MovimentacoesEstoque"("Id", "ProdutoId", "Quantidade", "TipoMovimentacao", "OrigemMovimentacao", "DataLancamento", "EstoqueId")
+VALUES ('912575d8-f30a-410c-a865-9835911c50d7', 'ff6117af-2775-45bb-9b50-21c229238822', 100, 0, 0, current_timestamp, 'a8d7a73c-077e-41b0-b136-7f3c8e463cce');
+
+INSERT INTO "Estoques"("Id", "ProdutoId", "Quantidade")
+VALUES ('0e229b6e-0dfd-4eda-b148-ccec26ae9813', '175f9ba8-179e-4cca-b105-10a94dff990e', 80);
+INSERT INTO "MovimentacoesEstoque"("Id", "ProdutoId", "Quantidade", "TipoMovimentacao", "OrigemMovimentacao", "DataLancamento", "EstoqueId")
+VALUES ('aa4a4db3-1806-45fe-915b-62f09cf1eae1', '175f9ba8-179e-4cca-b105-10a94dff990e', 80, 0, 0, current_timestamp, '0e229b6e-0dfd-4eda-b148-ccec26ae9813');
+
+INSERT INTO "Estoques"("Id", "ProdutoId", "Quantidade")
+VALUES ('e8675bc3-b659-4fd4-bd66-3ff973b07935', '1a803e69-f44d-4adf-b5a4-8673ba73a8e4', 20);
+INSERT INTO "MovimentacoesEstoque"("Id", "ProdutoId", "Quantidade", "TipoMovimentacao", "OrigemMovimentacao", "DataLancamento", "EstoqueId")
+VALUES ('c2915a7f-7418-4701-a3e2-c342bec83404', '1a803e69-f44d-4adf-b5a4-8673ba73a8e4', 20, 0, 0, current_timestamp, 'e8675bc3-b659-4fd4-bd66-3ff973b07935');
+
+INSERT INTO "Estoques"("Id", "ProdutoId", "Quantidade")
+VALUES ('344e108c-f8d1-4cb4-afc6-ea789d0b91cb', '0ef9dd4a-2da5-4ceb-bad0-026164d406dc', 30);
+INSERT INTO "MovimentacoesEstoque"("Id", "ProdutoId", "Quantidade", "TipoMovimentacao", "OrigemMovimentacao", "DataLancamento", "EstoqueId")
+VALUES ('3e8ed437-59db-48a4-b250-8268a1036348', '0ef9dd4a-2da5-4ceb-bad0-026164d406dc', 30, 0, 0, current_timestamp, '344e108c-f8d1-4cb4-afc6-ea789d0b91cb');
+
+INSERT INTO "Estoques"("Id", "ProdutoId", "Quantidade")
+VALUES ('4ca0fc28-ac89-4623-9d68-e66bbbb21b70', '30c07e56-d098-42ca-a777-42ff4cfd40dc', 35);
+INSERT INTO "MovimentacoesEstoque"("Id", "ProdutoId", "Quantidade", "TipoMovimentacao", "OrigemMovimentacao", "DataLancamento", "EstoqueId")
+VALUES ('27f7afc9-9c8b-47b2-8f78-fed4d7fa8fd6', '30c07e56-d098-42ca-a777-42ff4cfd40dc', 35, 0, 0, current_timestamp, '4ca0fc28-ac89-4623-9d68-e66bbbb21b70');
+
+INSERT INTO "Estoques"("Id", "ProdutoId", "Quantidade")
+VALUES ('94dea6e2-2d3f-4393-b67b-7e4ce2fa74a0', '1603d200-3078-4708-8820-e65830165515', 20);
+INSERT INTO "MovimentacoesEstoque"("Id", "ProdutoId", "Quantidade", "TipoMovimentacao", "OrigemMovimentacao", "DataLancamento", "EstoqueId")
+VALUES ('09b1f67a-3144-4cde-a30b-0c8700ffcdcb', '1603d200-3078-4708-8820-e65830165515', 20, 0, 0, current_timestamp, '94dea6e2-2d3f-4393-b67b-7e4ce2fa74a0');
+
+INSERT INTO "Estoques"("Id", "ProdutoId", "Quantidade")
+VALUES ('6b9e1f76-eae6-47bf-966c-5dbb88d7b1a0', '2c9677b3-fe61-4fc8-b130-91ca2bd043e3', 22);
+INSERT INTO "MovimentacoesEstoque"("Id", "ProdutoId", "Quantidade", "TipoMovimentacao", "OrigemMovimentacao", "DataLancamento", "EstoqueId")
+VALUES ('0500ac8f-5a47-46d4-a21f-a06dff1c7f14', '2c9677b3-fe61-4fc8-b130-91ca2bd043e3', 22, 0, 0, current_timestamp, '6b9e1f76-eae6-47bf-966c-5dbb88d7b1a0');
+
+INSERT INTO "Estoques"("Id", "ProdutoId", "Quantidade")
+VALUES ('352d10b2-d33f-4d64-9bde-9ccaa2bfa77b', '32a13b97-ffcd-4fcc-96bf-3f33e98ac37f', 40);
+INSERT INTO "MovimentacoesEstoque"("Id", "ProdutoId", "Quantidade", "TipoMovimentacao", "OrigemMovimentacao", "DataLancamento", "EstoqueId")
+VALUES ('0398cd30-86f2-4a1c-932b-a06b1b730cbf', '32a13b97-ffcd-4fcc-96bf-3f33e98ac37f', 40, 0, 0, current_timestamp, '352d10b2-d33f-4d64-9bde-9ccaa2bfa77b');
+
+INSERT INTO "Estoques"("Id", "ProdutoId", "Quantidade")
+VALUES ('ef12cd32-3175-4f26-aee4-e1b50301d121', '6bd4a2e0-bfc2-4607-a427-bbe5cfe7f829', 20);
+INSERT INTO "MovimentacoesEstoque"("Id", "ProdutoId", "Quantidade", "TipoMovimentacao", "OrigemMovimentacao", "DataLancamento", "EstoqueId")
+VALUES ('c645523b-2ba3-4888-9340-25c2377c888f', '6bd4a2e0-bfc2-4607-a427-bbe5cfe7f829', 20, 0, 0, current_timestamp, 'ef12cd32-3175-4f26-aee4-e1b50301d121');
+
+INSERT INTO "Estoques"("Id", "ProdutoId", "Quantidade")
+VALUES ('1d0673a4-a1db-4946-bd50-d94046f0dd45', 'f37aed21-6c85-4d22-9b0c-7c398dd72db5', 25);
+INSERT INTO "MovimentacoesEstoque"("Id", "ProdutoId", "Quantidade", "TipoMovimentacao", "OrigemMovimentacao", "DataLancamento", "EstoqueId")
+VALUES ('64cf59f3-012c-4b93-b194-bf12bd97a318', 'f37aed21-6c85-4d22-9b0c-7c398dd72db5', 25, 0, 0, current_timestamp, '1d0673a4-a1db-4946-bd50-d94046f0dd45');
+
+INSERT INTO "Estoques"("Id", "ProdutoId", "Quantidade")
+VALUES ('2ba95ef2-1201-45c8-96ea-a93e9749a87c', '4064bfaf-908e-409a-a7d0-2614ddaf8b9f', 50);
+INSERT INTO "MovimentacoesEstoque"("Id", "ProdutoId", "Quantidade", "TipoMovimentacao", "OrigemMovimentacao", "DataLancamento", "EstoqueId")
+VALUES ('1d047695-8729-4432-8d88-a45b778ae680', '4064bfaf-908e-409a-a7d0-2614ddaf8b9f', 50, 0, 0, current_timestamp, '2ba95ef2-1201-45c8-96ea-a93e9749a87c');
+
+INSERT INTO "Estoques"("Id", "ProdutoId", "Quantidade")
+VALUES ('3afa2190-c327-4abe-aef3-09b457244a4e', '246458fd-9dba-4e94-bf57-c48b558663e7', 40);
+INSERT INTO "MovimentacoesEstoque"("Id", "ProdutoId", "Quantidade", "TipoMovimentacao", "OrigemMovimentacao", "DataLancamento", "EstoqueId")
+VALUES ('e9151def-2110-4e2d-a5e9-6f2546a14b1a', '246458fd-9dba-4e94-bf57-c48b558663e7', 40, 0, 0, current_timestamp, '3afa2190-c327-4abe-aef3-09b457244a4e');
+
+INSERT INTO "Estoques"("Id", "ProdutoId", "Quantidade")
+VALUES ('78e08249-a9e2-4d6a-9844-235c758531b4', '545cc297-594a-43d9-ae2d-1f0305eacd72', 35);
+INSERT INTO "MovimentacoesEstoque"("Id", "ProdutoId", "Quantidade", "TipoMovimentacao", "OrigemMovimentacao", "DataLancamento", "EstoqueId")
+VALUES ('2de051e6-81c2-4d94-bae3-e71806c40106', '545cc297-594a-43d9-ae2d-1f0305eacd72', 35, 0, 0, current_timestamp, '78e08249-a9e2-4d6a-9844-235c758531b4');
+
+INSERT INTO "Estoques"("Id", "ProdutoId", "Quantidade")
+VALUES ('1f9cf8e6-7b0b-479e-825c-b3a4e7453b5d', '8e329a2d-0255-4e74-ab5f-8116827a7a22', 20);
+INSERT INTO "MovimentacoesEstoque"("Id", "ProdutoId", "Quantidade", "TipoMovimentacao", "OrigemMovimentacao", "DataLancamento", "EstoqueId")
+VALUES ('620a278b-6613-408a-a37d-cbcfafb015f5', '8e329a2d-0255-4e74-ab5f-8116827a7a22', 20, 0, 0, current_timestamp, '1f9cf8e6-7b0b-479e-825c-b3a4e7453b5d');
+
+INSERT INTO "Estoques"("Id", "ProdutoId", "Quantidade")
+VALUES ('ac30c5dd-ee73-4838-b35e-e2c85b759252', 'd0d75c85-63cd-4a3f-910c-142db4451570', 20);
+INSERT INTO "MovimentacoesEstoque"("Id", "ProdutoId", "Quantidade", "TipoMovimentacao", "OrigemMovimentacao", "DataLancamento", "EstoqueId")
+VALUES ('5576e304-1057-4ce1-88c5-41cda2bab162', 'd0d75c85-63cd-4a3f-910c-142db4451570', 20, 0, 0, current_timestamp, 'ac30c5dd-ee73-4838-b35e-e2c85b759252');
+
+INSERT INTO "Estoques"("Id", "ProdutoId", "Quantidade")
+VALUES ('e7112083-6d77-43e8-b431-e151c54d40c7', 'bc23ae6c-8a7d-4578-9841-5064a2ee3f00', 20);
+INSERT INTO "MovimentacoesEstoque"("Id", "ProdutoId", "Quantidade", "TipoMovimentacao", "OrigemMovimentacao", "DataLancamento", "EstoqueId")
+VALUES ('6aec1a55-bdde-49a4-8369-6a930eb4d6fd', 'bc23ae6c-8a7d-4578-9841-5064a2ee3f00', 20, 0, 0, current_timestamp, 'e7112083-6d77-43e8-b431-e151c54d40c7');
+
+INSERT INTO "Estoques"("Id", "ProdutoId", "Quantidade")
+VALUES ('fa106947-b5bd-4d07-aaff-3f8d1ff6a9f9', '7b5a598d-34f9-49a9-b519-d52a297a8ad4', 20);
+INSERT INTO "MovimentacoesEstoque"("Id", "ProdutoId", "Quantidade", "TipoMovimentacao", "OrigemMovimentacao", "DataLancamento", "EstoqueId")
+VALUES ('89a1502b-9766-4a6e-a257-6397cc61ed09', '7b5a598d-34f9-49a9-b519-d52a297a8ad4', 20, 0, 0, current_timestamp, 'fa106947-b5bd-4d07-aaff-3f8d1ff6a9f9');
+
+INSERT INTO "Estoques"("Id", "ProdutoId", "Quantidade")
+VALUES ('5456fee6-a334-40f2-a0b2-df33e9cabe63', '3cbcc258-005f-4663-85c6-e236e9c61d7b', 20);
+INSERT INTO "MovimentacoesEstoque"("Id", "ProdutoId", "Quantidade", "TipoMovimentacao", "OrigemMovimentacao", "DataLancamento", "EstoqueId")
+VALUES ('49dac569-f28f-4579-a068-22e9d9095e83', '3cbcc258-005f-4663-85c6-e236e9c61d7b', 20, 0, 0, current_timestamp, '5456fee6-a334-40f2-a0b2-df33e9cabe63');
+
+
+
+-- ### CUPONS ###
+INSERT INTO "Cupons"("Id", "DataInicio", "DataFim", "CodigoCupom", "PorcentagemDesconto", "Status")
+VALUES ('bc8bcb70-da19-4e65-bc81-3020706f5944', '2024-01-28', '2024-02-07', 'easy10', 0.1, 1);
+INSERT INTO "CupomProdutos"("Id", "CupomId", "ProdutoId")
+VALUES ('5388422c-ac94-40b4-9732-d82161f45bb9', 'bc8bcb70-da19-4e65-bc81-3020706f5944', 'e5c14e37-8c26-4524-8445-a0f0c0650b6c');
+INSERT INTO "CupomProdutos"("Id", "CupomId", "ProdutoId")
+VALUES ('ec9cad0a-1768-4e13-9fea-9892faf3f66a', 'bc8bcb70-da19-4e65-bc81-3020706f5944', '4c0b8687-0ffc-4628-9157-565ee3cb3986');
+INSERT INTO "CupomProdutos"("Id", "CupomId", "ProdutoId")
+VALUES ('81959f7c-8342-4beb-9249-6411f690d6dc', 'bc8bcb70-da19-4e65-bc81-3020706f5944', '869f38db-cd29-40d1-bfc1-d5f933a3f53e');
+
+INSERT INTO "Cupons"("Id", "DataInicio", "DataFim", "CodigoCupom", "PorcentagemDesconto", "Status")
+VALUES ('297e3c0d-860c-4a77-8fb6-fe87a83557a0', '2024-01-28', '2024-02-02', 'easy15', 0.15, 1);
+INSERT INTO "CupomProdutos"("Id", "CupomId", "ProdutoId")
+VALUES ('55caabe5-cb9d-4641-9f7b-d56bb5baa8d2', '297e3c0d-860c-4a77-8fb6-fe87a83557a0', 'e5c14e37-8c26-4524-8445-a0f0c0650b6c');
+INSERT INTO "CupomProdutos"("Id", "CupomId", "ProdutoId")
+VALUES ('a37353a9-34c2-44f1-81ea-2cee2360b4dd', '297e3c0d-860c-4a77-8fb6-fe87a83557a0', '869f38db-cd29-40d1-bfc1-d5f933a3f53e');
+INSERT INTO "CupomProdutos"("Id", "CupomId", "ProdutoId")
+VALUES ('f0ad33e9-c85b-4116-bb93-338f687b3fbc', '297e3c0d-860c-4a77-8fb6-fe87a83557a0', '7681f2e5-00df-4bd8-be17-0df54291b978');
+INSERT INTO "CupomProdutos"("Id", "CupomId", "ProdutoId")
+VALUES ('035330f5-9400-47e8-a7c6-46b78a5b1994', '297e3c0d-860c-4a77-8fb6-fe87a83557a0', 'b6511523-73d8-4496-9c82-80f3567ae328');
+INSERT INTO "CupomProdutos"("Id", "CupomId", "ProdutoId")
+VALUES ('7974e866-c666-46dc-a7b6-004a4996af8a', '297e3c0d-860c-4a77-8fb6-fe87a83557a0', '6e02169a-bf32-4e6b-bdd5-079e5eecdee0');
+INSERT INTO "CupomProdutos"("Id", "CupomId", "ProdutoId")
+VALUES ('75ef3da0-35b6-4ea7-9470-0a1328ed8e81', '297e3c0d-860c-4a77-8fb6-fe87a83557a0', '68552c00-853b-47b4-81aa-ad4eb92d9360');
+
+INSERT INTO "Cupons"("Id", "DataInicio", "DataFim", "CodigoCupom", "PorcentagemDesconto", "Status")
+VALUES ('a93b0335-3327-4f0a-b1b2-1bf0defacc56', '2024-02-02', '2024-02-17', 'easy20', 0.2, 1);
+INSERT INTO "CupomProdutos"("Id", "CupomId", "ProdutoId")
+VALUES ('2e458fd8-0d19-43fd-9f5d-aeb624929eda', 'a93b0335-3327-4f0a-b1b2-1bf0defacc56', '869f38db-cd29-40d1-bfc1-d5f933a3f53e');
+INSERT INTO "CupomProdutos"("Id", "CupomId", "ProdutoId")
+VALUES ('5dab716c-b958-453a-951b-ecfaa8fe0565', 'a93b0335-3327-4f0a-b1b2-1bf0defacc56', '7681f2e5-00df-4bd8-be17-0df54291b978');
+INSERT INTO "CupomProdutos"("Id", "CupomId", "ProdutoId")
+VALUES ('7b84b9ab-0ff8-4ceb-98bb-9611f01ee04c', 'a93b0335-3327-4f0a-b1b2-1bf0defacc56', '68552c00-853b-47b4-81aa-ad4eb92d9360');
+INSERT INTO "CupomProdutos"("Id", "CupomId", "ProdutoId")
+VALUES ('b28edc1c-3403-403c-9d77-2197967a0f18', 'a93b0335-3327-4f0a-b1b2-1bf0defacc56', '6e02169a-bf32-4e6b-bdd5-079e5eecdee0');
+
+
+COMMIT;

@@ -39,6 +39,24 @@ Na primeira fase do projeto, foi desenvolvido um monolito modular para fazer uma
 ![img_2.png](docs/img/img_2.png)
 
 # Como executar :rocket:
-Para depu
-## Pré-requisitos :clipboard:
+
+A seguir estão as instruções para executar o projeto localmente ou utilizando o Docker.
+
+## Docker :whale:
+### Pré-requisitos :clipboard:
+- **Docker:** É necessário que o Docker esteja instalado na máquina. Para instalar, siga as instruções do site oficial: https://docs.docker.com/get-docker/
+
+### Executando :running:
+
+Deixamos disponível um arquivo docker-compose.yml para facilitar a execução do projeto. Para executar, basta executar o comando abaixo na raiz do projeto no terminal do seu sistema operacional:
+
+```bash
+docker-compose -f docker-compose -f ./deploy/docker/docker-compose-local.yml up -d
+```
+
+O comando acima irá criar um container para a aplicação e outro para a base de dados. Além disso, o volume da base também será criado para que os dados sejam persistidos mesmo após a parada do container.
+A primeira vez que o volume for criado a criação das tabelas e a inserção dos dados iniciais será feita automaticamente. Caso queira recriar as tabelas e inserir novamente os dados, basta excluir o volume e executar o comando acima outra vez.
+
+## Localmente :computer:
+### Pré-requisitos :clipboard:
 Antes de tudo precisamos 

@@ -6,6 +6,20 @@ O projeto é parte do trabalho de conclusão do curso de Arquitetura de Software
 
 **Para maiores informações sobre o projeto, modelo estratatégico, entre outros, acesse a nossa [Wiki](https://5soat-acme.github.io/easy-food/docs/intro)**
 
+## Sumário
+1. [Tecnologias utilizadas :computer:](#Tecnologias-utilizadas-computer)
+2. [Arquitetura :triangular_ruler:](#Arquitetura-triangular_ruler)
+3. [Overview da arquitetura :mag:](#Overview-da-arquitetura-mag)
+4. [Como executar :rocket:](#Como-executar-rocket)
+    1. [Docker :whale:](#Docker-whale)
+        1. [Pré-requisitos :clipboard:](#Pré-requisitos-clipboard)
+        2. [Executando :running:](#Executando-running)
+    2. [Localmente :computer:](#Localmente-computer)
+        1. [Pré-requisitos :clipboard:](#Pré-requisitos-clipboard-1)
+        2. [Executando :running:](#Executando-running-1)
+5. [Como utilizar :bulb:](#Como-utilizar-bulb)
+    1. [Token :key:](#Token-key)
+
 # Tecnologias utilizadas :computer:
 
 - .NET 8.0

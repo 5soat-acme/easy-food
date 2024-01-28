@@ -28,6 +28,14 @@ public sealed class PedidoRepository : IPedidoRepository
             .FirstOrDefaultAsync(c => c.Id == id);
     }
 
+    public async Task<IEnumerable<Pedido>> ObterPedidos(StatusPreparo? status)
+    {
+        return await _context.Pedidos
+            .Include(c => c.Itens)
+            .Where(c => status == null || c.Status == status)
+            .ToListAsync();
+    }
+
     public async Task<IEnumerable<Pedido>> ObterPedidosEmAberto()
     {
         return await _context.Pedidos

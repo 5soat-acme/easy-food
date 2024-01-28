@@ -6,5 +6,5 @@ namespace EF.Produtos.Application.Queries.Interfaces;
 public interface IProdutoQuery
 {
     Task<ProdutoDto> BuscarPorId(Guid id);
-    Task<IEnumerable<ProdutoDto>> Buscar(ProdutoCategoria categoria);
+    Task<IEnumerable<ProdutoDto>> Buscar(ProdutoCategoria? categoria);
 }

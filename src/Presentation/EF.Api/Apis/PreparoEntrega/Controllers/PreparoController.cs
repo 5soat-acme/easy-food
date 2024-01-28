@@ -4,6 +4,7 @@ using EF.PreparoEntrega.Application.Commands.FinalizarPreparo;
 using EF.PreparoEntrega.Application.Commands.IniciarPreparo;
 using EF.PreparoEntrega.Application.DTOs.Responses;
 using EF.PreparoEntrega.Application.Queries.Interfaces;
+using EF.PreparoEntrega.Domain.Models;
 using EF.WebApi.Commons.Controllers;
 using Microsoft.AspNetCore.Mvc;
 
@@ -22,15 +23,31 @@ public class PreparoController : CustomControllerBase
     }
 
     /// <summary>
-    ///     Obtém os dados de pedidos para serem preparados.
+    ///     Obtém um pedido
     /// </summary>
-    /// <response code="200">Pedidos a serem preparados.</response>
+    /// ///
+    /// <param name="id">Id do pedido</param>
+    /// <response code="200">Dados do pedido.</response>
+    /// t
+    [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(PedidoMonitorDto))]
+    [Produces("application/json")]
+    [HttpGet("{id}")]
+    public async Task<IActionResult> ObterPedido([FromRoute] Guid id)
+    {
+        var pedido = await _preparoEntregaQuery.ObterPedidoPorId(id);
+        return pedido is null ? NotFound() : Respond(pedido);
+    }
+
+    /// <summary>
+    ///     Obtém os dados dos pedidos
+    /// </summary>
+    /// <response code="200">Dados dos Pedidos.</response>
     [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(IEnumerable<PedidoMonitorDto>))]
     [Produces("application/json")]
     [HttpGet]
-    public async Task<IActionResult> ObterPedidosPreparo()
+    public async Task<IActionResult> ObterPedidos([FromQuery] StatusPreparo? status)
     {
-        var pedidos = await _preparoEntregaQuery.ObterPedidos();
+        var pedidos = await _preparoEntregaQuery.ObterPedidos(status);
         return pedidos is null ? NotFound() : Respond(pedidos);
     }
 

@@ -1,6 +1,7 @@
 using AutoMapper;
 using EF.PreparoEntrega.Application.DTOs.Responses;
 using EF.PreparoEntrega.Application.Queries.Interfaces;
+using EF.PreparoEntrega.Domain.Models;
 using EF.PreparoEntrega.Domain.Repository;
 
 namespace EF.PreparoEntrega.Application.Queries;
@@ -16,9 +17,16 @@ public class PreparoEntregaQuery : IPreparoEntregaQuery
         _mapper = mapper;
     }
 
-    public async Task<IEnumerable<PedidoPreparoDto>> ObterPedidos()
+    public async Task<PedidoPreparoDto> ObterPedidoPorId(Guid id)
     {
-        var pedidos = await _pedidoRepository.ObterPedidosEmAberto();
+        var pedido = await _pedidoRepository.ObterPedidoPorId(id);
+        var result = _mapper.Map<PedidoPreparoDto>(pedido);
+        return result;
+    }
+
+    public async Task<IEnumerable<PedidoPreparoDto>> ObterPedidos(StatusPreparo? status)
+    {
+        var pedidos = await _pedidoRepository.ObterPedidos(status);
         var result = _mapper.Map<IEnumerable<PedidoPreparoDto>>(pedidos);
         return result.OrderBy(p => p.DataCriacao);
     }

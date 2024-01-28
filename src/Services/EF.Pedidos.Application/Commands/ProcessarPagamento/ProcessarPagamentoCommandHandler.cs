@@ -1,3 +1,4 @@
+using EF.Domain.Commons.DomainObjects;
 using EF.Domain.Commons.Messages;
 using EF.Domain.Commons.Messages.Integrations;
 using EF.Pedidos.Application.DTOs.Adapters;
@@ -11,8 +12,8 @@ namespace EF.Pedidos.Application.Commands.ProcessarPagamento;
 public class ProcessarPagamentoCommandHandler : CommandHandler,
     IRequestHandler<ProcessarPagamentoCommand, CommandResult>
 {
-    private readonly IPedidoRepository _pedidoRepository;
     private readonly IPagamentoService _pagamentoService;
+    private readonly IPedidoRepository _pedidoRepository;
     private readonly IProdutoService _produtoService;
 
     public ProcessarPagamentoCommandHandler(IPedidoRepository pedidoRepository, IPagamentoService pagamentoService,
@@ -26,6 +27,7 @@ public class ProcessarPagamentoCommandHandler : CommandHandler,
     public async Task<CommandResult> Handle(ProcessarPagamentoCommand request, CancellationToken cancellationToken)
     {
         var pedido = await _pedidoRepository.ObterPorId(request.PedidoId);
+        if (pedido is null) throw new DomainException("Pedido inválido");
 
         var pagamento = new PagamentoDto
         {

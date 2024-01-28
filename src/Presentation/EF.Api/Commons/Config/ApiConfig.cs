@@ -42,7 +42,7 @@ public static class ApiConfig
 
     public static WebApplication UseApiConfig(this WebApplication app)
     {
-        if (app.Environment.IsDevelopment()) app.UseSwaggerConfig();
+        app.UseSwaggerConfig();
 
         app.UseHttpsRedirection();
 
@@ -51,6 +51,8 @@ public static class ApiConfig
         app.UseIdentityConfig();
 
         app.UseMiddleware<ExceptionMiddleware>();
+
+        // app.RunMigrations();
 
         return app;
     }

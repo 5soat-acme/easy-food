@@ -1,0 +1,2690 @@
+{
+	"info": {
+		"_postman_id": "951bea9d-edeb-4f42-80fa-328d3c92b02a",
+		"name": "EasyFood",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "2587965"
+	},
+	"item": [
+		{
+			"name": "Identidade",
+			"item": [
+				{
+					"name": "Criar usuário",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"nome\": \"Lucas\",\r\n  \"sobrenome\": \"Fernandes Lima\",\r\n  \"cpf\": \"44035085880\",\r\n  \"email\": \"lucas.liima030@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/identidade",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"identidade"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Criar usuário",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"nome\": \"Lucas\",\r\n  \"sobrenome\": \"Fernandes Lima\",\r\n  \"cpf\": \"44035085880\",\r\n  \"email\": \"lucas.liima030@gmail.com\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/identidade",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"identidade"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 27 Jan 2024 12:40:32 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Kestrel"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJmNDQ0YjkzNi1kOTA4LTRhM2QtYTcwOS0wNmE5OWM4M2Q4ZDYiLCJlbWFpbCI6Imx1Y2FzLmxpaW1hMDMwQGdtYWlsLmNvbSIsImp0aSI6IjRiZjUzOTIzLWViYTktNDViYi1iMjY0LThhZmQxOTA5YTkxYSIsIm5iZiI6MTcwNjM1OTIzMiwiaWF0IjoxNzA2MzU5MjMyLCJ1c2VyX3R5cGUiOiJyZWdpc3RyZWQiLCJzZXNzaW9uX2lkIjoiODVhYjg4NDYtOGJjMi00NDY3LThiOTctMGRiY2FiYjkxNjc2IiwidXNlcl9jcGYiOiI0NDAzNTA4NTg4MCIsImV4cCI6MTcwNjM2NjQzMiwiaXNzIjoiRWFzeUZvb2QiLCJhdWQiOiJsb2NhbGhvc3Q6NTAwMiJ9.114iNZtOJmlbcQ2ffVSR-WWlgxVLUMH5dLQIsgDPrdE\",\n    \"expiresIn\": 7200,\n    \"user\": {\n        \"id\": \"f444b936-d908-4a3d-a709-06a99c83d8d6\",\n        \"claims\": [\n            {\n                \"value\": \"f444b936-d908-4a3d-a709-06a99c83d8d6\",\n                \"type\": \"sub\"\n            },\n            {\n                \"value\": \"lucas.liima030@gmail.com\",\n                \"type\": \"email\"\n            },\n            {\n                \"value\": \"4bf53923-eba9-45bb-b264-8afd1909a91a\",\n                \"type\": \"jti\"\n            },\n            {\n                \"value\": \"1706359233\",\n                \"type\": \"nbf\"\n            },\n            {\n                \"value\": \"1706359233\",\n                \"type\": \"iat\"\n            },\n            {\n                \"value\": \"registred\",\n                \"type\": \"user_type\"\n            },\n            {\n                \"value\": \"85ab8846-8bc2-4467-8b97-0dbcabb91676\",\n                \"type\": \"session_id\"\n            },\n            {\n                \"value\": \"44035085880\",\n                \"type\": \"user_cpf\"\n            }\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Identificar usuário - Email",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"lucas.liima030@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/identidade/acessar",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"identidade",
+								"acessar"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Identificar usuário - Email",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"lucas.liima030@gmail.com\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/identidade/acessar",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"identidade",
+										"acessar"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 27 Jan 2024 12:43:24 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Kestrel"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJmNDQ0YjkzNi1kOTA4LTRhM2QtYTcwOS0wNmE5OWM4M2Q4ZDYiLCJlbWFpbCI6Imx1Y2FzLmxpaW1hMDMwQGdtYWlsLmNvbSIsImp0aSI6IjI5ZDAwODE5LWVlOWYtNDhhMC1iODY0LWQzNTQyMzMxNzM0NiIsIm5iZiI6MTcwNjM1OTQwNSwiaWF0IjoxNzA2MzU5NDA1LCJ1c2VyX3R5cGUiOiJyZWdpc3RyZWQiLCJzZXNzaW9uX2lkIjoiYjdkMTZjYWYtNWE1Ny00NjgxLThhMjctMzVmYmUyNjY0MjVlIiwidXNlcl9jcGYiOiI0NDAzNTA4NTg4MCIsImV4cCI6MTcwNjM2NjYwNSwiaXNzIjoiRWFzeUZvb2QiLCJhdWQiOiJsb2NhbGhvc3Q6NTAwMiJ9.3169Rimo2hJT_v3I86J86Dul7X0wDu9b6ckrhJgUN20\",\n    \"expiresIn\": 7200,\n    \"user\": {\n        \"id\": \"f444b936-d908-4a3d-a709-06a99c83d8d6\",\n        \"claims\": [\n            {\n                \"value\": \"f444b936-d908-4a3d-a709-06a99c83d8d6\",\n                \"type\": \"sub\"\n            },\n            {\n                \"value\": \"lucas.liima030@gmail.com\",\n                \"type\": \"email\"\n            },\n            {\n                \"value\": \"29d00819-ee9f-48a0-b864-d35423317346\",\n                \"type\": \"jti\"\n            },\n            {\n                \"value\": \"1706359405\",\n                \"type\": \"nbf\"\n            },\n            {\n                \"value\": \"1706359405\",\n                \"type\": \"iat\"\n            },\n            {\n                \"value\": \"registred\",\n                \"type\": \"user_type\"\n            },\n            {\n                \"value\": \"b7d16caf-5a57-4681-8a27-35fbe266425e\",\n                \"type\": \"session_id\"\n            },\n            {\n                \"value\": \"44035085880\",\n                \"type\": \"user_cpf\"\n            }\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Identificar usuário - CPF",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"cpf\": \"44035085880\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/identidade/acessar",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"identidade",
+								"acessar"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Identificar usuário - CPF",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"cpf\": \"44035085880\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/identidade/acessar",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"identidade",
+										"acessar"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 27 Jan 2024 12:44:32 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Kestrel"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJmNDQ0YjkzNi1kOTA4LTRhM2QtYTcwOS0wNmE5OWM4M2Q4ZDYiLCJlbWFpbCI6Imx1Y2FzLmxpaW1hMDMwQGdtYWlsLmNvbSIsImp0aSI6IjEzMTEyMDgyLTcyNmUtNDNlNS1iMWZjLWFmMDQ4ZWFmMDAxYSIsIm5iZiI6MTcwNjM1OTQ3MiwiaWF0IjoxNzA2MzU5NDcyLCJ1c2VyX3R5cGUiOiJyZWdpc3RyZWQiLCJzZXNzaW9uX2lkIjoiNzMzOTA2OWItZDE1NC00MDM4LThkOGEtNzRlNDhkYmJjOTA2IiwidXNlcl9jcGYiOiI0NDAzNTA4NTg4MCIsImV4cCI6MTcwNjM2NjY3MiwiaXNzIjoiRWFzeUZvb2QiLCJhdWQiOiJsb2NhbGhvc3Q6NTAwMiJ9.VlCxEzkFp_JbSdOcjr477WdzZ-YQXPPT-_Ej4XdXY1E\",\n    \"expiresIn\": 7200,\n    \"user\": {\n        \"id\": \"f444b936-d908-4a3d-a709-06a99c83d8d6\",\n        \"claims\": [\n            {\n                \"value\": \"f444b936-d908-4a3d-a709-06a99c83d8d6\",\n                \"type\": \"sub\"\n            },\n            {\n                \"value\": \"lucas.liima030@gmail.com\",\n                \"type\": \"email\"\n            },\n            {\n                \"value\": \"13112082-726e-43e5-b1fc-af048eaf001a\",\n                \"type\": \"jti\"\n            },\n            {\n                \"value\": \"1706359473\",\n                \"type\": \"nbf\"\n            },\n            {\n                \"value\": \"1706359473\",\n                \"type\": \"iat\"\n            },\n            {\n                \"value\": \"registred\",\n                \"type\": \"user_type\"\n            },\n            {\n                \"value\": \"7339069b-d154-4038-8d8a-74e48dbbc906\",\n                \"type\": \"session_id\"\n            },\n            {\n                \"value\": \"44035085880\",\n                \"type\": \"user_cpf\"\n            }\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Acessar sem identificar usuário",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/identidade/acessar",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"identidade",
+								"acessar"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Acessar sem identificar usuário",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/identidade/acessar",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"identidade",
+										"acessar"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 27 Jan 2024 12:45:30 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Kestrel"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiIxMzgxMmVlMy01YWNlLTQyM2EtOTc2NS03Y2RiYzVlYTM0YzQiLCJuYmYiOjE3MDYzNTk1MzEsImlhdCI6MTcwNjM1OTUzMSwidXNlcl90eXBlIjoiYW5vbnltb3VzIiwic2Vzc2lvbl9pZCI6IjczYzI1YWIyLWExYzgtNGE2NS1hN2M4LWU5MzIwNzVjNDBhMSIsImV4cCI6MTcwNjM2NjczMSwiaXNzIjoiRWFzeUZvb2QiLCJhdWQiOiJsb2NhbGhvc3Q6NTAwMiJ9.psr3PZnjpYmMau-zI86HhUSSsebsEAkFSL5C1jjb3EM\",\n    \"expiresIn\": 7200,\n    \"user\": {\n        \"id\": null,\n        \"claims\": [\n            {\n                \"value\": \"13812ee3-5ace-423a-9765-7cdbc5ea34c4\",\n                \"type\": \"jti\"\n            },\n            {\n                \"value\": \"1706359532\",\n                \"type\": \"nbf\"\n            },\n            {\n                \"value\": \"1706359532\",\n                \"type\": \"iat\"\n            },\n            {\n                \"value\": \"anonymous\",\n                \"type\": \"user_type\"\n            },\n            {\n                \"value\": \"73c25ab2-a1c8-4a65-a7c8-e932075c40a1\",\n                \"type\": \"session_id\"\n            }\n        ]\n    }\n}"
+						}
+					]
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Produto",
+			"item": [
+				{
+					"name": "Criar - Lanche",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"X-Burguer\",\r\n    \"valorUnitario\": 20,\r\n    \"categoria\": \"Lanche\",\r\n    \"tempoPreparoEstimado\": 10,\r\n    \"descricao\": \"Suculento hambúrguer de 150g, alface crocante, tomate fresco e queijo cheddar derretido, cada mordida é uma explosão de sabores deliciosos. Tudo isso é servido em um pão brioche macio e levemente tostado, que completa perfeitamente essa combinação.\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/produtos",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"produtos"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Criar - Lanche",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"nome\": \"X-Burguer\",\r\n    \"valorUnitario\": 20,\r\n    \"categoria\": \"Lanche\",\r\n    \"tempoPreparoEstimado\": 10,\r\n    \"descricao\": \"Suculento hambúrguer de 150g, alface crocante, tomate fresco e queijo cheddar derretido, cada mordida é uma explosão de sabores deliciosos. Tudo isso é servido em um pão brioche macio e levemente tostado, que completa perfeitamente essa combinação.\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/produtos",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"produtos"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 27 Jan 2024 12:49:25 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Kestrel"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"validationResult\": {\n        \"isValid\": true,\n        \"errors\": [],\n        \"ruleSetsExecuted\": null\n    },\n    \"aggregateId\": \"8b40da5b-f3d1-4df3-9e4d-fa555ee638b2\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Criar - Bebida",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"Refrigerante\",\r\n    \"valorUnitario\": 6.9,\r\n    \"categoria\": \"Bebida\",\r\n    \"tempoPreparoEstimado\": 1,\r\n    \"descricao\": \"Nada melhor do que uma bebida gelada para acompanhar seu lanche.\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/produtos",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"produtos"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Criar - Bebida",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"nome\": \"Refrigerante\",\r\n    \"valorUnitario\": 6.9,\r\n    \"categoria\": \"Bebida\",\r\n    \"tempoPreparoEstimado\": 1,\r\n    \"descricao\": \"Nada melhor do que uma bebida gelada para acompanhar seu lanche.\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/produtos",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"produtos"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 27 Jan 2024 12:53:05 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Kestrel"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"validationResult\": {\n        \"isValid\": true,\n        \"errors\": [],\n        \"ruleSetsExecuted\": null\n    },\n    \"aggregateId\": \"b85b38ee-2aa3-4ad5-aacf-8e7dafedac9f\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Criar - Acompanhamento",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"Batata frita\",\r\n    \"valorUnitario\": 10,\r\n    \"categoria\": \"Acompanhamento\",\r\n    \"tempoPreparoEstimado\": 8,\r\n    \"descricao\": \"Deliciosa batata frita crocante.\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/produtos",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"produtos"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Criar - Acompanhamento",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"nome\": \"Batata frita\",\r\n    \"valorUnitario\": 10,\r\n    \"categoria\": \"Acompanhamento\",\r\n    \"tempoPreparoEstimado\": 8,\r\n    \"descricao\": \"Deliciosa batata frita crocante.\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/produtos",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"produtos"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 27 Jan 2024 12:54:44 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Kestrel"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"validationResult\": {\n        \"isValid\": true,\n        \"errors\": [],\n        \"ruleSetsExecuted\": null\n    },\n    \"aggregateId\": \"03d3259c-319b-490f-95da-1cd734461162\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Criar - Sobremesa",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"Petit Gâteau de Doce de Leite\",\r\n    \"valorUnitario\": 20,\r\n    \"categoria\": \"Sobremesa\",\r\n    \"tempoPreparoEstimado\": 5,\r\n    \"descricao\": \"Com sorvete artesanal de vanilla e calda de frutas vermelhas.\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/produtos",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"produtos"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Criar - Sobremesa",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"nome\": \"Petit Gâteau de Doce de Leite\",\r\n    \"valorUnitario\": 20,\r\n    \"categoria\": \"Sobremesa\",\r\n    \"tempoPreparoEstimado\": 5,\r\n    \"descricao\": \"Com sorvete artesanal de vanilla e calda de frutas vermelhas.\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/produtos",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"produtos"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 27 Jan 2024 12:56:41 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Kestrel"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"validationResult\": {\n        \"isValid\": true,\n        \"errors\": [],\n        \"ruleSetsExecuted\": null\n    },\n    \"aggregateId\": \"9687232e-afe3-483c-9106-c900d4cdf594\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Listar",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/produtos?categoria=lanche",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"produtos"
+							],
+							"query": [
+								{
+									"key": "categoria",
+									"value": "lanche"
+								},
+								{
+									"key": "categoria",
+									"value": "acompanhamento",
+									"disabled": true
+								},
+								{
+									"key": "categoria",
+									"value": "bebida",
+									"disabled": true
+								},
+								{
+									"key": "categoria",
+									"value": "sobremesa",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Listar - Lanche",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/produtos?categoria=lanche",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"produtos"
+									],
+									"query": [
+										{
+											"key": "categoria",
+											"value": "lanche"
+										},
+										{
+											"key": "categoria",
+											"value": "acompanhamento",
+											"disabled": true
+										},
+										{
+											"key": "categoria",
+											"value": "bebida",
+											"disabled": true
+										},
+										{
+											"key": "categoria",
+											"value": "sobremesa",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 27 Jan 2024 13:11:11 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Kestrel"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": \"8b40da5b-f3d1-4df3-9e4d-fa555ee638b2\",\n        \"nome\": \"X-Salada\",\n        \"descricao\": \"Suculento hambúrguer de 150g, alface crocante, tomate fresco e queijo cheddar derretido, cada mordida é uma explosão de sabores deliciosos. Tudo isso é servido em um pão brioche macio e levemente tostado, que completa perfeitamente essa combinação.\",\n        \"valorUnitario\": 20,\n        \"tempoPreparoEstimado\": 10,\n        \"categoria\": \"Lanche\"\n    },\n    {\n        \"id\": \"5ac40cd9-84b6-4e65-b65d-7ab6daf6e9bc\",\n        \"nome\": \"X-Bacon\",\n        \"descricao\": \"Suculento hambúrguer de 150g, queijo cheddar derretido e fatias suculentas de bacon . Tudo isso é servido em um pão brioche macio e levemente tostado, que completa perfeitamente essa combinação.\",\n        \"valorUnitario\": 25,\n        \"tempoPreparoEstimado\": 10,\n        \"categoria\": \"Lanche\"\n    }\n]"
+						},
+						{
+							"name": "Listar - Acompanhamento",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/produtos?categoria=acompanhamento",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"produtos"
+									],
+									"query": [
+										{
+											"key": "categoria",
+											"value": "lanche",
+											"disabled": true
+										},
+										{
+											"key": "categoria",
+											"value": "acompanhamento"
+										},
+										{
+											"key": "categoria",
+											"value": "bebida",
+											"disabled": true
+										},
+										{
+											"key": "categoria",
+											"value": "sobremesa",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 27 Jan 2024 13:06:43 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Kestrel"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": \"03d3259c-319b-490f-95da-1cd734461162\",\n        \"nome\": \"Batata frita\",\n        \"descricao\": \"Deliciosa batata frita crocante.\",\n        \"valorUnitario\": 10,\n        \"tempoPreparoEstimado\": 8,\n        \"categoria\": \"Acompanhamento\"\n    }\n]"
+						},
+						{
+							"name": "Listar - Bebida",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/produtos?categoria=bebida",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"produtos"
+									],
+									"query": [
+										{
+											"key": "categoria",
+											"value": "lanche",
+											"disabled": true
+										},
+										{
+											"key": "categoria",
+											"value": "acompanhamento",
+											"disabled": true
+										},
+										{
+											"key": "categoria",
+											"value": "bebida"
+										},
+										{
+											"key": "categoria",
+											"value": "sobremesa",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 27 Jan 2024 13:07:00 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Kestrel"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": \"b85b38ee-2aa3-4ad5-aacf-8e7dafedac9f\",\n        \"nome\": \"Refrigerante\",\n        \"descricao\": \"Nada melhor do que uma bebida gelada para acompanhar seu lanche.\",\n        \"valorUnitario\": 6.9,\n        \"tempoPreparoEstimado\": 1,\n        \"categoria\": \"Bebida\"\n    }\n]"
+						},
+						{
+							"name": "Listar - Sobremesa",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/produtos?categoria=sobremesa",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"produtos"
+									],
+									"query": [
+										{
+											"key": "categoria",
+											"value": "lanche",
+											"disabled": true
+										},
+										{
+											"key": "categoria",
+											"value": "acompanhamento",
+											"disabled": true
+										},
+										{
+											"key": "categoria",
+											"value": "bebida",
+											"disabled": true
+										},
+										{
+											"key": "categoria",
+											"value": "sobremesa"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 27 Jan 2024 13:07:08 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Kestrel"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": \"9687232e-afe3-483c-9106-c900d4cdf594\",\n        \"nome\": \"Petit Gâteau de Doce de Leite\",\n        \"descricao\": \"Com sorvete artesanal de vanilla e calda de frutas vermelhas.\",\n        \"valorUnitario\": 20,\n        \"tempoPreparoEstimado\": 7,\n        \"categoria\": \"Sobremesa\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Editar",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"X-Salada\",\r\n    \"valorUnitario\": 20,\r\n    \"categoria\": \"Lanche\",\r\n    \"tempoPreparoEstimado\": 10,\r\n    \"ativo\": true,\r\n    \"descricao\": \"Suculento hambúrguer de 150g, alface crocante, tomate fresco e queijo cheddar derretido, cada mordida é uma explosão de sabores deliciosos. Tudo isso é servido em um pão brioche macio e levemente tostado, que completa perfeitamente essa combinação.\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/produtos/8b40da5b-f3d1-4df3-9e4d-fa555ee638b2",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"produtos",
+								"8b40da5b-f3d1-4df3-9e4d-fa555ee638b2"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Editar",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"nome\": \"Petit Gâteau de Doce de Leite\",\r\n    \"valorUnitario\": 20,\r\n    \"categoria\": \"Sobremesa\",\r\n    \"tempoPreparoEstimado\": 7,\r\n    \"descricao\": \"Com sorvete artesanal de vanilla e calda de frutas vermelhas.\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/produtos/9687232e-afe3-483c-9106-c900d4cdf594",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"produtos",
+										"9687232e-afe3-483c-9106-c900d4cdf594"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 27 Jan 2024 13:03:41 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Kestrel"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"validationResult\": {\n        \"isValid\": true,\n        \"errors\": [],\n        \"ruleSetsExecuted\": null\n    },\n    \"aggregateId\": \"9687232e-afe3-483c-9106-c900d4cdf594\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Remover",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"X-Salada\",\r\n    \"valorUnitario\": 20,\r\n    \"categoria\": \"Lanche\",\r\n    \"tempoPreparoEstimado\": 10,\r\n    \"ativo\": true,\r\n    \"descricao\": \"Suculento hambúrguer de 150g, alface crocante, tomate fresco e queijo cheddar derretido, cada mordida é uma explosão de sabores deliciosos. Tudo isso é servido em um pão brioche macio e levemente tostado, que completa perfeitamente essa combinação.\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/produtos/d3e950b6-44f2-4fbb-8b37-ddf3888e749d",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"produtos",
+								"d3e950b6-44f2-4fbb-8b37-ddf3888e749d"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Remover",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"nome\": \"X-Salada\",\r\n    \"valorUnitario\": 20,\r\n    \"categoria\": \"Lanche\",\r\n    \"tempoPreparoEstimado\": 10,\r\n    \"ativo\": true,\r\n    \"descricao\": \"Suculento hambúrguer de 150g, alface crocante, tomate fresco e queijo cheddar derretido, cada mordida é uma explosão de sabores deliciosos. Tudo isso é servido em um pão brioche macio e levemente tostado, que completa perfeitamente essa combinação.\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/produtos/c38a2e5a-28ed-4bb5-aa59-8120047bbf5e",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"produtos",
+										"c38a2e5a-28ed-4bb5-aa59-8120047bbf5e"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 27 Jan 2024 13:12:45 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Kestrel"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"validationResult\": {\n        \"isValid\": true,\n        \"errors\": [],\n        \"ruleSetsExecuted\": null\n    },\n    \"aggregateId\": \"00000000-0000-0000-0000-000000000000\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Estoque",
+			"item": [
+				{
+					"name": "Atualizar estoque - Entrada",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"produtoId\": \"8b40da5b-f3d1-4df3-9e4d-fa555ee638b2\",\r\n    \"quantidade\": 10,\r\n    \"tipoMovimentacao\": \"Entrada\",\r\n    \"origemMovimentacao\": \"Compra\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/estoques",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"estoques"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "New Request",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"produtoId\": \"8b40da5b-f3d1-4df3-9e4d-fa555ee638b2\",\r\n    \"quantidade\": 10,\r\n    \"tipoMovimentacao\": \"Entrada\",\r\n    \"origemMovimentacao\": \"Compra\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/estoques",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"estoques"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 27 Jan 2024 13:16:15 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Kestrel"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"validationResult\": {\n        \"isValid\": true,\n        \"errors\": [],\n        \"ruleSetsExecuted\": null\n    },\n    \"aggregateId\": \"4f2e9a32-6e89-469e-b5c8-e9cb0720123a\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Atualizar estoque - Saída",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"produtoId\": \"8b40da5b-f3d1-4df3-9e4d-fa555ee638b2\",\r\n    \"quantidade\": 5,\r\n    \"tipoMovimentacao\": \"Saida\",\r\n    \"origemMovimentacao\": \"Venda\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/estoques",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"estoques"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Atualizar estoque - Saída",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"produtoId\": \"8b40da5b-f3d1-4df3-9e4d-fa555ee638b2\",\r\n    \"quantidade\": 5,\r\n    \"tipoMovimentacao\": \"Saida\",\r\n    \"origemMovimentacao\": \"Venda\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/estoques",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"estoques"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 27 Jan 2024 13:17:52 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Kestrel"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"validationResult\": {\n        \"isValid\": true,\n        \"errors\": [],\n        \"ruleSetsExecuted\": null\n    },\n    \"aggregateId\": \"4f2e9a32-6e89-469e-b5c8-e9cb0720123a\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Obter estoque",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/estoques/8b40da5b-f3d1-4df3-9e4d-fa555ee638b2",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"estoques",
+								"8b40da5b-f3d1-4df3-9e4d-fa555ee638b2"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Obter estoque",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/estoques/8b40da5b-f3d1-4df3-9e4d-fa555ee638b2",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"estoques",
+										"8b40da5b-f3d1-4df3-9e4d-fa555ee638b2"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 27 Jan 2024 13:18:46 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Kestrel"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"produtoId\": \"8b40da5b-f3d1-4df3-9e4d-fa555ee638b2\",\n    \"quantidade\": 5\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Cupom de Desconto",
+			"item": [
+				{
+					"name": "Criar",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"dataInicio\": \"2024-01-27T13:00:00.000Z\",\r\n  \"dataFim\": \"2024-02-27T13:00:00.000Z\",\r\n  \"codigoCupom\": \"DESCONTO25\",\r\n  \"porcentagemDesconto\": 0.25,\r\n  \"produtos\": [\r\n    {\r\n      \"produtoId\": \"8b40da5b-f3d1-4df3-9e4d-fa555ee638b2\"\r\n    },\r\n     {\r\n      \"produtoId\": \"5ac40cd9-84b6-4e65-b65d-7ab6daf6e9bc\"\r\n    }\r\n  ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/cupons",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"cupons"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Criar",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"dataInicio\": \"2024-01-27T13:22:29.737Z\",\r\n  \"dataFim\": \"2024-02-27T13:22:29.737Z\",\r\n  \"codigoCupom\": \"DESCONTO25\",\r\n  \"porcentagemDesconto\": 0.25,\r\n  \"produtos\": [\r\n    {\r\n      \"produtoId\": \"8b40da5b-f3d1-4df3-9e4d-fa555ee638b2\"\r\n    },\r\n     {\r\n      \"produtoId\": \"5ac40cd9-84b6-4e65-b65d-7ab6daf6e9bc\"\r\n    }\r\n  ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/cupons",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"cupons"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 27 Jan 2024 13:24:11 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Kestrel"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"validationResult\": {\n        \"isValid\": true,\n        \"errors\": [],\n        \"ruleSetsExecuted\": null\n    },\n    \"aggregateId\": \"69f92713-db2b-42b4-8e23-82ac794ca610\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Buscar cupom por código",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/cupons/DESCONTO20",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"cupons",
+								"DESCONTO20"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Buscar cupom por código",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/cupons/DESCONTO20",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"cupons",
+										"DESCONTO20"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 27 Jan 2024 13:31:56 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Kestrel"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"69f92713-db2b-42b4-8e23-82ac794ca610\",\n    \"dataInicio\": \"2024-01-27T13:00:00Z\",\n    \"dataFim\": \"2024-02-27T13:00:00Z\",\n    \"porcentagemDesconto\": 0.2,\n    \"produtos\": [\n        {\n            \"produtoId\": \"8b40da5b-f3d1-4df3-9e4d-fa555ee638b2\"\n        },\n        {\n            \"produtoId\": \"5ac40cd9-84b6-4e65-b65d-7ab6daf6e9bc\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Editar",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"dataInicio\": \"2024-01-27T13:00:00.00Z\",\r\n  \"dataFim\": \"2024-02-27T13:00:00.000Z\",\r\n  \"codigoCupom\": \"DESCONTO20\",\r\n  \"porcentagemDesconto\": 0.20\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/cupons/69f92713-db2b-42b4-8e23-82ac794ca610",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"cupons",
+								"69f92713-db2b-42b4-8e23-82ac794ca610"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Editar",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"dataInicio\": \"2024-01-27T13:00:00.00Z\",\r\n  \"dataFim\": \"2024-01-27T13:00:00.000Z\",\r\n  \"codigoCupom\": \"DESCONTO20\",\r\n  \"porcentagemDesconto\": 0.20\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/cupons/69f92713-db2b-42b4-8e23-82ac794ca610",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"cupons",
+										"69f92713-db2b-42b4-8e23-82ac794ca610"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 27 Jan 2024 13:29:18 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Kestrel"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"validationResult\": {\n        \"isValid\": true,\n        \"errors\": [],\n        \"ruleSetsExecuted\": null\n    },\n    \"aggregateId\": \"00000000-0000-0000-0000-000000000000\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Inativar",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"dataInicio\": \"2024-01-27T13:27:45.853Z\",\r\n  \"dataFim\": \"2024-01-27T13:27:45.853Z\",\r\n  \"codigoCupom\": \"string\",\r\n  \"porcentagemDesconto\": 0\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/cupons/inativar/69f92713-db2b-42b4-8e23-82ac794ca610",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"cupons",
+								"inativar",
+								"69f92713-db2b-42b4-8e23-82ac794ca610"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Inativar",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"dataInicio\": \"2024-01-27T13:27:45.853Z\",\r\n  \"dataFim\": \"2024-01-27T13:27:45.853Z\",\r\n  \"codigoCupom\": \"string\",\r\n  \"porcentagemDesconto\": 0\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/cupons/inativar/69f92713-db2b-42b4-8e23-82ac794ca610",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"cupons",
+										"inativar",
+										"69f92713-db2b-42b4-8e23-82ac794ca610"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 27 Jan 2024 13:32:54 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Kestrel"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"validationResult\": {\n        \"isValid\": true,\n        \"errors\": [],\n        \"ruleSetsExecuted\": null\n    },\n    \"aggregateId\": \"00000000-0000-0000-0000-000000000000\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Inserir produtos",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n    {\r\n        \"produtoId\": \"03d3259c-319b-490f-95da-1cd734461162\"\r\n    }\r\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/cupons/69f92713-db2b-42b4-8e23-82ac794ca610/inserir-produtos",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"cupons",
+								"69f92713-db2b-42b4-8e23-82ac794ca610",
+								"inserir-produtos"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Inserir produtos",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "[\r\n    {\r\n        \"produtoId\": \"03d3259c-319b-490f-95da-1cd734461162\"\r\n    }\r\n]",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/cupons/69f92713-db2b-42b4-8e23-82ac794ca610/inserir-produtos",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"cupons",
+										"69f92713-db2b-42b4-8e23-82ac794ca610",
+										"inserir-produtos"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 27 Jan 2024 13:34:41 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Kestrel"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"validationResult\": {\n        \"isValid\": true,\n        \"errors\": [],\n        \"ruleSetsExecuted\": null\n    },\n    \"aggregateId\": \"00000000-0000-0000-0000-000000000000\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Remover produtos",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n    {\r\n        \"produtoId\": \"03d3259c-319b-490f-95da-1cd734461162\"\r\n    }\r\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/cupons/69f92713-db2b-42b4-8e23-82ac794ca610/remover-produtos",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"cupons",
+								"69f92713-db2b-42b4-8e23-82ac794ca610",
+								"remover-produtos"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Remover produtos",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "[\r\n    {\r\n        \"produtoId\": \"03d3259c-319b-490f-95da-1cd734461162\"\r\n    }\r\n]",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/cupons/69f92713-db2b-42b4-8e23-82ac794ca610/remover-produtos",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"cupons",
+										"69f92713-db2b-42b4-8e23-82ac794ca610",
+										"remover-produtos"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 27 Jan 2024 13:35:26 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Kestrel"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"validationResult\": {\n        \"isValid\": true,\n        \"errors\": [],\n        \"ruleSetsExecuted\": null\n    },\n    \"aggregateId\": \"00000000-0000-0000-0000-000000000000\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Carrinho",
+			"item": [
+				{
+					"name": "Adicionar item no carrinho",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"produtoId\": \"9687232e-afe3-483c-9106-c900d4cdf594\",\r\n  \"quantidade\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/carrinho",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"carrinho"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Produto sem estoque",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"produtoId\": \"03d3259c-319b-490f-95da-1cd734461162\",\r\n  \"quantidade\": 1\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/carrinho",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"carrinho"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 27 Jan 2024 13:41:18 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Kestrel"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"title\": \"One or more validation errors occurred.\",\n    \"status\": 400,\n    \"errors\": {\n        \"Messages\": [\n            \"Produto sem estoque\"\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Atualizar quantidade de um produto",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"itemId\": \"db37db1a-d63b-4b4f-9722-04720b7b3e92\",\r\n  \"quantidade\": 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/carrinho/db37db1a-d63b-4b4f-9722-04720b7b3e92",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"carrinho",
+								"db37db1a-d63b-4b4f-9722-04720b7b3e92"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Produto sem estoque",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"itemId\": \"db37db1a-d63b-4b4f-9722-04720b7b3e92\",\r\n  \"quantidade\": 100\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/carrinho/db37db1a-d63b-4b4f-9722-04720b7b3e92",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"carrinho",
+										"db37db1a-d63b-4b4f-9722-04720b7b3e92"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 27 Jan 2024 13:50:13 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Kestrel"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"title\": \"One or more validation errors occurred.\",\n    \"status\": 400,\n    \"errors\": {\n        \"Messages\": [\n            \"Produto sem estoque\"\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Obter carrinho do cliente",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/carrinho",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"carrinho"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Obter carrinho",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/carrinho",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"carrinho"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 27 Jan 2024 13:50:50 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Kestrel"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"7339069b-d154-4038-8d8a-74e48dbbc906\",\n    \"clienteId\": \"f444b936-d908-4a3d-a709-06a99c83d8d6\",\n    \"valorTotal\": 81.9,\n    \"tempoMedioPreparo\": 6,\n    \"itens\": [\n        {\n            \"id\": \"e15c2ea3-26a2-4433-b31a-28bb96b50917\",\n            \"valorUnitario\": 25,\n            \"quantidade\": 1,\n            \"produtoId\": \"5ac40cd9-84b6-4e65-b65d-7ab6daf6e9bc\",\n            \"nome\": \"X-Bacon\",\n            \"tempoEstimadoPreparo\": 10\n        },\n        {\n            \"id\": \"2ad928f4-487e-4848-a978-a50dd3576ea0\",\n            \"valorUnitario\": 10,\n            \"quantidade\": 1,\n            \"produtoId\": \"03d3259c-319b-490f-95da-1cd734461162\",\n            \"nome\": \"Batata frita\",\n            \"tempoEstimadoPreparo\": 8\n        },\n        {\n            \"id\": \"3a99206a-fc67-4e41-99a2-88fc4e56c17f\",\n            \"valorUnitario\": 6.9,\n            \"quantidade\": 1,\n            \"produtoId\": \"b85b38ee-2aa3-4ad5-aacf-8e7dafedac9f\",\n            \"nome\": \"Refrigerante\",\n            \"tempoEstimadoPreparo\": 1\n        },\n        {\n            \"id\": \"db37db1a-d63b-4b4f-9722-04720b7b3e92\",\n            \"valorUnitario\": 20,\n            \"quantidade\": 2,\n            \"produtoId\": \"9687232e-afe3-483c-9106-c900d4cdf594\",\n            \"nome\": \"Petit Gâteau de Doce de Leite\",\n            \"tempoEstimadoPreparo\": 7\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Remover um item do carrinho",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/carrinho/db37db1a-d63b-4b4f-9722-04720b7b3e92",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"carrinho",
+								"db37db1a-d63b-4b4f-9722-04720b7b3e92"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Pedido",
+			"item": [
+				{
+					"name": "Criar pedido",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"codigoCupom\": \"DESCONTO20\",\r\n  \"itens\": [\r\n        {\r\n            \"quantidade\": 1,\r\n            \"produtoId\": \"5ac40cd9-84b6-4e65-b65d-7ab6daf6e9bc\"\r\n        },\r\n        {\r\n            \"quantidade\": 1,\r\n            \"produtoId\": \"03d3259c-319b-490f-95da-1cd734461162\"\r\n        },\r\n        {\r\n            \"quantidade\": 1,\r\n            \"produtoId\": \"b85b38ee-2aa3-4ad5-aacf-8e7dafedac9f\"\r\n        },\r\n        {\r\n            \"quantidade\": 1,\r\n            \"produtoId\": \"9687232e-afe3-483c-9106-c900d4cdf594\"\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/pedidos",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"pedidos"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Criar pedido",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"codigoCupom\": \"DESCONTO20\",\r\n  \"itens\": [\r\n        {\r\n            \"quantidade\": 1,\r\n            \"produtoId\": \"5ac40cd9-84b6-4e65-b65d-7ab6daf6e9bc\"\r\n        },\r\n        {\r\n            \"quantidade\": 1,\r\n            \"produtoId\": \"03d3259c-319b-490f-95da-1cd734461162\"\r\n        },\r\n        {\r\n            \"quantidade\": 1,\r\n            \"produtoId\": \"b85b38ee-2aa3-4ad5-aacf-8e7dafedac9f\"\r\n        },\r\n        {\r\n            \"quantidade\": 1,\r\n            \"produtoId\": \"9687232e-afe3-483c-9106-c900d4cdf594\"\r\n        }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/pedidos",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"pedidos"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 27 Jan 2024 14:11:37 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Kestrel"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"pedidoId\": \"6d5e9575-d8c4-4047-b249-84fae1261a01\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Buscar pedido",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/pedidos/ac15731e-a477-40ac-a5fc-16d02b3dfba6",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"pedidos",
+								"ac15731e-a477-40ac-a5fc-16d02b3dfba6"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Buscar pedido",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/pedidos/6d5e9575-d8c4-4047-b249-84fae1261a01",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"pedidos",
+										"6d5e9575-d8c4-4047-b249-84fae1261a01"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 27 Jan 2024 14:12:15 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Kestrel"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"6d5e9575-d8c4-4047-b249-84fae1261a01\",\n    \"clienteId\": \"f444b936-d908-4a3d-a709-06a99c83d8d6\",\n    \"cpf\": \"44035085880\",\n    \"status\": \"AguardandoPagamento\",\n    \"valorTotal\": 56.9,\n    \"dataCriacao\": \"2024-01-27T14:11:38.60572Z\",\n    \"dataUltimaAtualizacao\": null,\n    \"itens\": [\n        {\n            \"id\": \"01fe5e56-821a-4fde-b3d0-73e762c8e792\",\n            \"valorUnitario\": 20,\n            \"desconto\": null,\n            \"valorFinal\": 20,\n            \"quantidade\": 1,\n            \"produtoId\": \"9687232e-afe3-483c-9106-c900d4cdf594\"\n        },\n        {\n            \"id\": \"07b3af80-f8f8-42a3-b74a-be313711083d\",\n            \"valorUnitario\": 10,\n            \"desconto\": null,\n            \"valorFinal\": 10,\n            \"quantidade\": 1,\n            \"produtoId\": \"03d3259c-319b-490f-95da-1cd734461162\"\n        },\n        {\n            \"id\": \"9f1510f9-9557-405f-8536-704b0b816bad\",\n            \"valorUnitario\": 25,\n            \"desconto\": 0.2,\n            \"valorFinal\": 20,\n            \"quantidade\": 1,\n            \"produtoId\": \"5ac40cd9-84b6-4e65-b65d-7ab6daf6e9bc\"\n        },\n        {\n            \"id\": \"db9736ea-d4a7-443e-9fe1-9575a01acf8b\",\n            \"valorUnitario\": 6.9,\n            \"desconto\": null,\n            \"valorFinal\": 6.9,\n            \"quantidade\": 1,\n            \"produtoId\": \"b85b38ee-2aa3-4ad5-aacf-8e7dafedac9f\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Confirmar pedido",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"pedidoId\": \"ac15731e-a477-40ac-a5fc-16d02b3dfba6\",\r\n  \"tipoPagamento\": \"MercadoPago\",\r\n  \"valorTotal\": 56.9\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/pedidos/ac15731e-a477-40ac-a5fc-16d02b3dfba6/confirmar",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"pedidos",
+								"ac15731e-a477-40ac-a5fc-16d02b3dfba6",
+								"confirmar"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Pedido confirmado",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"pedidoId\": \"6d5e9575-d8c4-4047-b249-84fae1261a01\",\r\n  \"tipoPagamento\": \"MercadoPago\",\r\n  \"valorTotal\": 56.9\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/pedidos/6d5e9575-d8c4-4047-b249-84fae1261a01/confirmar",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"pedidos",
+										"6d5e9575-d8c4-4047-b249-84fae1261a01",
+										"confirmar"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 27 Jan 2024 14:19:58 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Kestrel"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"pedidoId\": \"6d5e9575-d8c4-4047-b249-84fae1261a01\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Preparo",
+			"item": [
+				{
+					"name": "Listar pedidos confirmados",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/preparo",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"preparo"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Lista de pedidos",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/preparo",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"preparo"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 27 Jan 2024 14:34:39 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Kestrel"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": \"b01e6420-e831-459f-8f57-d63f983026ef\",\n        \"codigo\": \"1000\",\n        \"dataCriacao\": \"2024-01-27T14:19:59.528395Z\",\n        \"status\": \"EmPreparacao\",\n        \"itens\": [\n            {\n                \"quantidade\": 1,\n                \"produtoId\": \"5ac40cd9-84b6-4e65-b65d-7ab6daf6e9bc\",\n                \"nomeProduto\": \"X-Bacon\",\n                \"tempoPreparoEstimado\": 10\n            },\n            {\n                \"quantidade\": 1,\n                \"produtoId\": \"b85b38ee-2aa3-4ad5-aacf-8e7dafedac9f\",\n                \"nomeProduto\": \"Refrigerante\",\n                \"tempoPreparoEstimado\": 1\n            },\n            {\n                \"quantidade\": 1,\n                \"produtoId\": \"03d3259c-319b-490f-95da-1cd734461162\",\n                \"nomeProduto\": \"Batata frita\",\n                \"tempoPreparoEstimado\": 8\n            },\n            {\n                \"quantidade\": 1,\n                \"produtoId\": \"9687232e-afe3-483c-9106-c900d4cdf594\",\n                \"nomeProduto\": \"Petit Gâteau de Doce de Leite\",\n                \"tempoPreparoEstimado\": 7\n            }\n        ]\n    },\n    {\n        \"id\": \"a2e4c27f-b1d0-47b6-beac-e9e8fa115c76\",\n        \"codigo\": \"1001\",\n        \"dataCriacao\": \"2024-01-27T14:21:15.611373Z\",\n        \"status\": \"EmPreparacao\",\n        \"itens\": [\n            {\n                \"quantidade\": 1,\n                \"produtoId\": \"9687232e-afe3-483c-9106-c900d4cdf594\",\n                \"nomeProduto\": \"Petit Gâteau de Doce de Leite\",\n                \"tempoPreparoEstimado\": 7\n            },\n            {\n                \"quantidade\": 1,\n                \"produtoId\": \"03d3259c-319b-490f-95da-1cd734461162\",\n                \"nomeProduto\": \"Batata frita\",\n                \"tempoPreparoEstimado\": 8\n            },\n            {\n                \"quantidade\": 1,\n                \"produtoId\": \"5ac40cd9-84b6-4e65-b65d-7ab6daf6e9bc\",\n                \"nomeProduto\": \"X-Bacon\",\n                \"tempoPreparoEstimado\": 10\n            },\n            {\n                \"quantidade\": 1,\n                \"produtoId\": \"b85b38ee-2aa3-4ad5-aacf-8e7dafedac9f\",\n                \"nomeProduto\": \"Refrigerante\",\n                \"tempoPreparoEstimado\": 1\n            }\n        ]\n    },\n    {\n        \"id\": \"e4cf8209-ddaa-457a-aea7-d5f43d9b7c24\",\n        \"codigo\": \"1002\",\n        \"dataCriacao\": \"2024-01-27T14:26:10.586782Z\",\n        \"status\": \"Recebido\",\n        \"itens\": [\n            {\n                \"quantidade\": 1,\n                \"produtoId\": \"b85b38ee-2aa3-4ad5-aacf-8e7dafedac9f\",\n                \"nomeProduto\": \"Refrigerante\",\n                \"tempoPreparoEstimado\": 1\n            },\n            {\n                \"quantidade\": 1,\n                \"produtoId\": \"9687232e-afe3-483c-9106-c900d4cdf594\",\n                \"nomeProduto\": \"Petit Gâteau de Doce de Leite\",\n                \"tempoPreparoEstimado\": 7\n            },\n            {\n                \"quantidade\": 1,\n                \"produtoId\": \"03d3259c-319b-490f-95da-1cd734461162\",\n                \"nomeProduto\": \"Batata frita\",\n                \"tempoPreparoEstimado\": 8\n            },\n            {\n                \"quantidade\": 1,\n                \"produtoId\": \"5ac40cd9-84b6-4e65-b65d-7ab6daf6e9bc\",\n                \"nomeProduto\": \"X-Bacon\",\n                \"tempoPreparoEstimado\": 10\n            }\n        ]\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Obter dados do pedido que esta em preparação",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/preparo/a2e4c27f-b1d0-47b6-beac-e9e8fa115c76",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"preparo",
+								"a2e4c27f-b1d0-47b6-beac-e9e8fa115c76"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Dados do pedido",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/preparo/a2e4c27f-b1d0-47b6-beac-e9e8fa115c76",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"preparo",
+										"a2e4c27f-b1d0-47b6-beac-e9e8fa115c76"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 27 Jan 2024 14:35:00 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Kestrel"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"a2e4c27f-b1d0-47b6-beac-e9e8fa115c76\",\n    \"codigo\": \"1001\",\n    \"dataCriacao\": \"2024-01-27T14:21:15.611373Z\",\n    \"status\": \"EmPreparacao\",\n    \"itens\": [\n        {\n            \"quantidade\": 1,\n            \"produtoId\": \"5ac40cd9-84b6-4e65-b65d-7ab6daf6e9bc\",\n            \"nomeProduto\": \"X-Bacon\",\n            \"tempoPreparoEstimado\": 10\n        },\n        {\n            \"quantidade\": 1,\n            \"produtoId\": \"b85b38ee-2aa3-4ad5-aacf-8e7dafedac9f\",\n            \"nomeProduto\": \"Refrigerante\",\n            \"tempoPreparoEstimado\": 1\n        },\n        {\n            \"quantidade\": 1,\n            \"produtoId\": \"03d3259c-319b-490f-95da-1cd734461162\",\n            \"nomeProduto\": \"Batata frita\",\n            \"tempoPreparoEstimado\": 8\n        },\n        {\n            \"quantidade\": 1,\n            \"produtoId\": \"9687232e-afe3-483c-9106-c900d4cdf594\",\n            \"nomeProduto\": \"Petit Gâteau de Doce de Leite\",\n            \"tempoPreparoEstimado\": 7\n        }\n    ]\n}"
+						},
+						{
+							"name": "Pedido não existe",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/preparo/6d5e9575-d8c4-4047-b249-84fae1261a01",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"preparo",
+										"6d5e9575-d8c4-4047-b249-84fae1261a01"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 27 Jan 2024 14:23:16 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Kestrel"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"type\": \"https://tools.ietf.org/html/rfc9110#section-15.5.5\",\n    \"title\": \"Not Found\",\n    \"status\": 404,\n    \"traceId\": \"00-76a5d4979e6e4c338843df28f7cfac39-99222a435e7c4d19-00\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Iniciar preparo de um pedido",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"pedidoId\": \"a2e4c27f-b1d0-47b6-beac-e9e8fa115c76\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/preparo/iniciar",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"preparo",
+								"iniciar"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Pedido inválido",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"pedidoId\": \"ac15731e-a477-40ac-a5fc-16d02b3dfba6\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/preparo/iniciar",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"preparo",
+										"iniciar"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 27 Jan 2024 14:36:33 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Kestrel"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"title\": \"One or more validation errors occurred.\",\n    \"errors\": {\n        \"Message\": [\n            \"Pedido inválido\"\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Finalizar preparo de um pedido",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"pedidoId\": \"b01e6420-e831-459f-8f57-d63f983026ef\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/preparo/finalizar",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"preparo",
+								"finalizar"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Pedido inválido",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"pedidoId\": \"ac15731e-a477-40ac-a5fc-16d02b3dfba6\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/preparo/iniciar",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"preparo",
+										"iniciar"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 27 Jan 2024 14:36:33 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Kestrel"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"title\": \"One or more validation errors occurred.\",\n    \"errors\": {\n        \"Message\": [\n            \"Pedido inválido\"\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Entregar pedido",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"pedidoId\": \"a2e4c27f-b1d0-47b6-beac-e9e8fa115c76\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/preparo/confirmar-entrega",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"preparo",
+								"confirmar-entrega"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Pedido inválido",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"pedidoId\": \"ac15731e-a477-40ac-a5fc-16d02b3dfba6\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/preparo/iniciar",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"preparo",
+										"iniciar"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 27 Jan 2024 14:36:33 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Kestrel"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"title\": \"One or more validation errors occurred.\",\n    \"errors\": {\n        \"Message\": [\n            \"Pedido inválido\"\n        ]\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Monitor",
+			"item": [
+				{
+					"name": "Listar pedidos não finalizados",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/monitor",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"monitor"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Listar pedidos não finalizados",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/monitor",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"monitor"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 27 Jan 2024 14:42:23 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Kestrel"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": \"b01e6420-e831-459f-8f57-d63f983026ef\",\n        \"codigo\": \"1000\",\n        \"status\": \"EmPreparacao\"\n    }\n]"
+						}
+					]
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJmNDQ0YjkzNi1kOTA4LTRhM2QtYTcwOS0wNmE5OWM4M2Q4ZDYiLCJlbWFpbCI6Imx1Y2FzLmxpaW1hMDMwQGdtYWlsLmNvbSIsImp0aSI6IjEzMTEyMDgyLTcyNmUtNDNlNS1iMWZjLWFmMDQ4ZWFmMDAxYSIsIm5iZiI6MTcwNjM1OTQ3MiwiaWF0IjoxNzA2MzU5NDcyLCJ1c2VyX3R5cGUiOiJyZWdpc3RyZWQiLCJzZXNzaW9uX2lkIjoiNzMzOTA2OWItZDE1NC00MDM4LThkOGEtNzRlNDhkYmJjOTA2IiwidXNlcl9jcGYiOiI0NDAzNTA4NTg4MCIsImV4cCI6MTcwNjM2NjY3MiwiaXNzIjoiRWFzeUZvb2QiLCJhdWQiOiJsb2NhbGhvc3Q6NTAwMiJ9.VlCxEzkFp_JbSdOcjr477WdzZ-YQXPPT-_Ej4XdXY1E",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": "http://localhost:5001/api",
+			"type": "string"
+		}
+	]
+}

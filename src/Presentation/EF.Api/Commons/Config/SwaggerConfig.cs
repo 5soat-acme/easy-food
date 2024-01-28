@@ -1,4 +1,5 @@
 using System.Reflection;
+using EF.Domain.Commons.Messages;
 using Microsoft.OpenApi.Models;
 
 namespace EF.Api.Commons.Config;
@@ -9,21 +10,17 @@ public static class SwaggerConfig
     {
         services.AddSwaggerGen(c =>
         {
+            c.SchemaFilter<SchemaFilterConfig>(typeof(Command), nameof(Command.AggregateId));
+
             var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
             var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
             c.IncludeXmlComments(xmlPath);
 
-            c.AddServer(new OpenApiServer
-            {
-                Url = "https://localhost:5002",
-                Description = "Localhost"
-            });
-
-            c.AddServer(new OpenApiServer
-            {
-                Url = "http://localhost:5003",
-                Description = "Localhost"
-            });
+            // c.AddServer(new OpenApiServer
+            // {
+            //     Url = "http://localhost:8080",
+            //     Description = "easy-food"
+            // });
 
             c.SwaggerDoc("v1", new OpenApiInfo { Title = "Easy Food", Version = "v1" });
 

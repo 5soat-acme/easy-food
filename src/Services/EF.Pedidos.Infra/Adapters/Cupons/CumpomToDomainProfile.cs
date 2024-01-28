@@ -1,6 +1,5 @@
 using AutoMapper;
 using EF.Cupons.Application.DTOs.Responses;
-using static EF.Pedidos.Application.DTOs.Adapters.CupomDto;
 using CupomProdutoDto = EF.Cupons.Application.DTOs.Responses.CupomProdutoDto;
 
 namespace EF.Pedidos.Infra.Adapters.Cupons;

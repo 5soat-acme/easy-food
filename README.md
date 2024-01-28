@@ -1,4 +1,4 @@
-# Intrdução :hamburger:
+# Introdução :hamburger:
 
 O Easy Food é um sistema de atendimento e gestão de pedidos para lanchonetes. O objetivo é melhorar a experiência do cliente, reduzindo erros de atendimento e otimizando a processo de realização e entrega de pedidos aos clientes.
 

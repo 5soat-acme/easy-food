@@ -44,7 +44,7 @@ A seguir estão as instruções para executar o projeto localmente ou utilizando
 
 ## Docker :whale:
 ### Pré-requisitos :clipboard:
-- **Docker:** É necessário que o Docker esteja instalado na máquina. Para instalar, siga as instruções do site oficial: https://docs.docker.com/get-docker/
+É necessário que o **Docker** esteja instalado na máquina. Para instalar, siga as instruções do site oficial: https://docs.docker.com/get-docker/
 
 ### Executando :running:
 
@@ -59,4 +59,9 @@ A primeira vez que o volume for criado a criação das tabelas e a inserção do
 
 ## Localmente :computer:
 ### Pré-requisitos :clipboard:
-Antes de tudo precisamos 
+Para executar localmente certifique-se de ter a sua IDE de preferência instalada, além do **.NET 8.0 SDK**. Para instalar o SDK, siga as instruções do site oficial **[aqui](https://dotnet.microsoft.com/pt-br/download/dotnet/8.0)**. Além disso, é necessário ter o **PostgreSQL** instalado na máquina ou em um container. Para instalar diretamente na sua máquina verifique a documentação **[aqui](https://www.postgresql.org/download/)**. Se preferir utilizar um container, verifique como fazer **[aqui](https://hub.docker.com/_/postgres)**.
+
+### Executando :running:
+Com o PostgreSQL instalado e configurado, crie um banco de dados com o nome `easyfood`. Para isso, você pode utilizar o **[pgAdmin](https://www.pgadmin.org/)** ou qualquer outra ferramenta de sua preferência. Após criar o banco de dados, execute o script de criação das tabelas e inserção dos dados iniciais que está disponível **[aqui](deploy/database/init.sql)**
+
+```bash

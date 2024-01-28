@@ -99,7 +99,6 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "database", "database", "{13BEECA4-7942-4A3A-8F81-41A4D3F73473}"
 	ProjectSection(SolutionItems) = preProject
 		deploy\database\init.sql = deploy\database\init.sql
-		deploy\database\migrations.sh = deploy\database\migrations.sh
 	EndProjectSection
 EndProject
 Global

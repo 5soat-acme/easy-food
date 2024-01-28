@@ -57,11 +57,19 @@ docker-compose -f docker-compose -f ./deploy/docker/docker-compose-local.yml up 
 O comando acima irá criar um container para a aplicação e outro para a base de dados. Além disso, o volume da base também será criado para que os dados sejam persistidos mesmo após a parada do container.
 A primeira vez que o volume for criado a criação das tabelas e a inserção dos dados iniciais será feita automaticamente. Caso queira recriar as tabelas e inserir novamente os dados, basta excluir o volume e executar o comando acima outra vez.
 
+Com a aplicação em execução, basta acessar a URL **[http://localhost:8080/swagger](http://localhost:8080/swagger)** para acessar a documentação da API.
+
 ## Localmente :computer:
 ### Pré-requisitos :clipboard:
 Para executar localmente certifique-se de ter a sua IDE de preferência instalada, além do **.NET 8.0 SDK**. Para instalar o SDK, siga as instruções do site oficial **[aqui](https://dotnet.microsoft.com/pt-br/download/dotnet/8.0)**. Além disso, é necessário ter o **PostgreSQL** instalado na máquina ou em um container. Para instalar diretamente na sua máquina verifique a documentação **[aqui](https://www.postgresql.org/download/)**. Se preferir utilizar um container, verifique como fazer **[aqui](https://hub.docker.com/_/postgres)**.
 
 ### Executando :running:
-Com o PostgreSQL instalado e configurado, crie um banco de dados com o nome `easyfood`. Para isso, você pode utilizar o **[pgAdmin](https://www.pgadmin.org/)** ou qualquer outra ferramenta de sua preferência. Após criar o banco de dados, execute o script de criação das tabelas e inserção dos dados iniciais que está disponível **[aqui](deploy/database/init.sql)**
+Com o PostgreSQL instalado e configurado, crie um banco de dados com o nome `easyfood`. Para isso, você pode utilizar o **[pgAdmin](https://www.pgadmin.org/)** ou qualquer outra ferramenta de sua preferência. Após criar o banco de dados, execute o script  **[init.sql](deploy/database/init.sql)** disponível na pasta **[./deploy/database](deploy/database)**. Esse script irá criar as tabelas e inserir os dados iniciais.
+Certifique-se de colocar a string de conexão correta no arquivo **[appsettings.json](src/Presentation/EF.Api/appsettings.json)**.
+Pronto! Agora é só executar a aplicação utilizando a sua IDE de preferência. A documentação estará disponível na URL **[http://localhost:[PORTA]/swagger](http://localhost:5002/swagger)**.
 
-```bash
+# Como utilizar :bulb:
+
+A documentação da API está disponível na URL **[http://localhost:[PORTA]/swagger](http://localhost:8080/swagger)**. Lá você encontrará todos os endpoints disponíveis, além de exemplos de como utilizar cada um deles.
+
+Para manter a associação de clientes com um carrinho estamos utilizando um **[Json Web Token (JWT)](https://jwt.io/)**. Para as requisições no contexto de pedidos e carrinhos, é necessário informar o token no header da requisição. Para isso, basta copiar o token gerado no endpoint de autenticação e incluir no header da requisição com a chave **Authorization** a palavra Bearer seguida do token gerado.

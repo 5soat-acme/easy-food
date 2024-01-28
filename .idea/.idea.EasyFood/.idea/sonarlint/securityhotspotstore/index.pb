@@ -447,5 +447,3 @@ H
 deploy/database/init.sql,c\d\cd39ff68dc7aecd07f152b6e31caaca32e8fb5bc
 j
 :src/Presentation/EF.Api/Commons/Config/MigrationsConfig.cs,a\5\a5330d2b9b2ec1606f211998cf5ebd1779dd5f49
-M
-deploy/database/migrations.sh,2\9\298bf5a991b56d209b34ac4a2f5e114013dd4e32

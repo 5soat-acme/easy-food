@@ -21,7 +21,8 @@ public class AutorizarPagamentoCommandHandler : CommandHandler,
 
     public async Task<CommandResult> Handle(AutorizarPagamentoCommand command, CancellationToken cancellationToken)
     {
-        if (!Enum.IsDefined(typeof(Tipo), command.TipoPagamento)) throw new DomainException("Tipo de Pagamento inválido");
+        if (!Enum.IsDefined(typeof(Tipo), command.TipoPagamento))
+            throw new DomainException("Tipo de Pagamento inválido");
 
         var tipoPagamento = Enum.Parse<Tipo>(command.TipoPagamento);
         var pagamentoService = _resolver.GetService(tipoPagamento);

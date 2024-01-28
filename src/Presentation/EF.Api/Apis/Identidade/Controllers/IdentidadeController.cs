@@ -35,11 +35,12 @@ public class IdentidadeController(IAcessoAppService appService) : CustomControll
     /// </summary>
     /// <remarks>
     ///     Este método realiza a autenticação do usuário e gera um token JWT (JSON Web Token) que deve ser usado em
-    ///     cabeçalhos de autenticação para futuras requisições. O token tem validade de 2 hora e pode ser configurado no appsettings.json.
-    ///     É importante garantir que o token seja armazenado de maneira segura no cliente para evitar vazamento de informações.
-    ///
-    ///     Para usuários sem ideintificação por e-mail ou CPF, o body da requisição deve ser vazio. Para as demais maneiras, segue o exemplo:
-    ///
+    ///     cabeçalhos de autenticação para futuras requisições. O token tem validade de 2 hora e pode ser configurado no
+    ///     appsettings.json.
+    ///     É importante garantir que o token seja armazenado de maneira segura no cliente para evitar vazamento de
+    ///     informações.
+    ///     Para usuários sem ideintificação por e-mail ou CPF, o body da requisição deve ser vazio. Para as demais maneiras,
+    ///     segue o exemplo:
     ///     Identificação por E-mail:
     ///     <code>
     ///         POST /api/identidade/acessar
@@ -47,7 +48,6 @@ public class IdentidadeController(IAcessoAppService appService) : CustomControll
     ///             "Email": "exemplo@email.com"
     ///         }
     ///     </code>
-    /// 
     ///     Identificação por CPF:
     ///     <code>
     ///         POST /api/identidade/acessar

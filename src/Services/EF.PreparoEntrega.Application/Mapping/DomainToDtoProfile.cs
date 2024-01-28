@@ -16,8 +16,8 @@ public class DomainToDtoProfile : Profile
 
     private string FormatTempoDecorrido(DateTime dataCriacao)
     {
-        DateTime agoraUtc = DateTime.UtcNow;
-        TimeSpan tempoDecorrido = agoraUtc - dataCriacao;
+        var agoraUtc = DateTime.UtcNow;
+        var tempoDecorrido = agoraUtc - dataCriacao;
         tempoDecorrido = tempoDecorrido.Duration();
         return $"{tempoDecorrido.Hours:D2}:{tempoDecorrido.Minutes:D2}:{tempoDecorrido.Seconds:D2}";
     }

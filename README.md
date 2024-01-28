@@ -15,7 +15,7 @@ O projeto é parte do trabalho de conclusão do curso de Arquitetura de Software
 - PostgreSQL
 - Docker
 
-# Arqiutetura :triangular_ruler:
+# Arquitetura :triangular_ruler:
 
 - Arquitetura Hexagonal
 - DDD - Domain Driven Design

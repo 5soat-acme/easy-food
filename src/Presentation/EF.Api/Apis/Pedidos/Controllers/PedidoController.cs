@@ -31,7 +31,7 @@ public class PedidoController(IMediatorHandler mediator, IPedidoQuery pedidoQuer
     }
 
     /// <summary>
-    ///     Faz o checkout do pedido.
+    ///     Faz o checkout do pedido. Esse processo efetiva o pedido que fica disponível para pagamento.
     /// </summary>
     /// <response code="200">Retorna o Id do pedido.</response>
     /// <response code="401">Não autorizado.</response>
@@ -54,7 +54,7 @@ public class PedidoController(IMediatorHandler mediator, IPedidoQuery pedidoQuer
     }
 
     /// <summary>
-    ///     Faz a confirmação do pedido e processa o pagamento
+    ///     Processa o pagamento e faz a confirmação do pedido.
     /// </summary>
     /// <response code="200">Pedido confirmado com sucesso.</response>
     /// <response code="401">Não autorizado.</response>

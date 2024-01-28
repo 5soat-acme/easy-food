@@ -66,10 +66,22 @@ Para executar localmente certifique-se de ter a sua IDE de preferência instalad
 ### Executando :running:
 Com o PostgreSQL instalado e configurado, crie um banco de dados com o nome `easyfood`. Para isso, você pode utilizar o **[pgAdmin](https://www.pgadmin.org/)** ou qualquer outra ferramenta de sua preferência. Após criar o banco de dados, execute o script  **[init.sql](deploy/database/init.sql)** disponível na pasta **[./deploy/database](deploy/database)**. Esse script irá criar as tabelas e inserir os dados iniciais.
 Certifique-se de colocar a string de conexão correta no arquivo **[appsettings.json](src/Presentation/EF.Api/appsettings.json)**.
-Pronto! Agora é só executar a aplicação utilizando a sua IDE de preferência. A documentação estará disponível na URL **[http://localhost:[PORTA]/swagger](http://localhost:5002/swagger)**.
+Pronto! Agora é só executar a aplicação utilizando a sua IDE de preferência. A documentação estará disponível na URL **[http://localhost:[PORTA]/swagger](http://localhost:5002/swagger) (substitua pela porta em que a aplicação está rodando)**.
 
 # Como utilizar :bulb:
 
-A documentação da API está disponível na URL **[http://localhost:[PORTA]/swagger](http://localhost:8080/swagger)**. Lá você encontrará todos os endpoints disponíveis, além de exemplos de como utilizar cada um deles.
+A documentação da API está disponível na URL **[http://localhost:[PORTA]/swagger](http://localhost:8080/swagger) (não esqueça de colocar a porta onde a aplicação está rodando)**. Lá você encontrará todos os endpoints disponíveis, além de exemplos de como utilizar cada um deles.
 
-Para manter a associação de clientes com um carrinho estamos utilizando um **[Json Web Token (JWT)](https://jwt.io/)**. Para as requisições no contexto de pedidos e carrinhos, é necessário informar o token no header da requisição. Para isso, basta copiar o token gerado no endpoint de autenticação e incluir no header da requisição com a chave **Authorization** a palavra Bearer seguida do token gerado.
+## Token :key:
+
+Para manter a associação de clientes com um carrinho estamos utilizando um **[Json Web Token (JWT)](https://jwt.io/)**. Para as requisições no contexto de **pedidos e carrinho**, é necessário informar o token no header da requisição. Para isso, basta copiar o token gerado no endpoint `[POST] /api/identidade/acessar` e incluir no header da requisição com a chave `Authorization` a palavra `Bearer` seguida do token gerado.
+Incluimos no swagger um botão para facilitar a inclusão do token no header. Basta clicar no botão **Authorize** e colar o token no campo **Value**. Após isso, basta clicar em **Authorize** e o token será incluído automaticamente no header de todas as requisições.
+
+![img_3.png](docs/img/img_3.png)
+![img_3.png](docs/img/img_4.png)
+
+O mesmo pode ser feito na requisição de cada endpoint:
+
+![img_5.png](docs/img/img_5.png)
+
+**Prono! Agora você já pode utilizar a API** :smile:

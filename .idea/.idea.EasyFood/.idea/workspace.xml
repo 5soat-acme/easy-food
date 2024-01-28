@@ -19,11 +19,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="61e4a515-7fae-49b6-801b-ebc481bfb9f9" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/issuestore/5/1/51b0e8ebe95e0ea2e4f3022887f195daa0b05611" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/issuestore/5/1/51b0e8ebe95e0ea2e4f3022887f195daa0b05611" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deploy/database/init.sql" beforeDir="false" afterPath="$PROJECT_DIR$/deploy/database/init.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/EF.PreparoEntrega.Application/DTOs/Responses/PedidoMonitorDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.PreparoEntrega.Application/DTOs/Responses/PedidoMonitorDto.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/EF.PreparoEntrega.Application/Mapping/DomainToDtoProfile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.PreparoEntrega.Application/Mapping/DomainToDtoProfile.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Presentation/EF.Api/Apis/Identidade/Controllers/IdentidadeController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Presentation/EF.Api/Apis/Identidade/Controllers/IdentidadeController.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -364,19 +362,6 @@
             </endOffsets>
           </properties>
           <option name="timeStamp" value="5" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/src/Services/EF.PreparoEntrega.Application/Mapping/DomainToDtoProfile.cs</url>
-          <line>17</line>
-          <properties documentPath="C:\dev\fiap\easy-food\src\Services\EF.PreparoEntrega.Application\Mapping\DomainToDtoProfile.cs" initialLine="17" containingFunctionPresentation="Method 'FormatTempoDecorrido'">
-            <startOffsets>
-              <option value="567" />
-            </startOffsets>
-            <endOffsets>
-              <option value="568" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="6" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -26,15 +26,19 @@ O projeto é parte do trabalho de conclusão do curso de Arquitetura de Software
 - CQS - Command Query Separation
 
 # Overview da arquitetura :mag:
-
-![img.png](docs/img/img.png) </br>
-![img_1.png](docs/img/img_1.png) </br>
-
 Na primeira fase do projeto, foi desenvolvido um monolito modular para fazer uma separação clara dos contextos delimitados mapeados na modelagem estratégica. Separamos a implementação em 3 pastas principais:
-- **Presentation:** É a camada de que expões os serviços da aplicação. É responsável por receber as requisições HTTP, fazer a validação dos dados de entrada, mapear os dados de entrada para os objetos de domínio, chamar os serviços de aplicação e retornar os dados de saída. 
+- **Presentation:** É a camada de que expões os serviços da aplicação. É responsável por receber as requisições HTTP, fazer a validação dos dados de entrada, mapear os dados de entrada para os objetos de domínio, chamar os serviços de aplicação e retornar os dados de saída.
 - **Services:** É onde stão implementados os serviços de aplicação. Dentro desta pasta dividimos em subpastas que representam os contextos delimitados. Cada subpasta contém as camadas do serviço, como **Application, Domain, Infra**, entre outras.
 - **Shared:** É aqui que compartilhamos o que é comum entre os diferentes módulos, inclusive os objetos de domíno e os serviços de infraestrutura que podem ser utilizados por mais de um contexto delimitado.
 
+### Estrutura
+![img.png](docs/img/img.png) </br>
+![img_1.png](docs/img/img_1.png) </br>
+
+### Overview
 ![img_2.png](docs/img/img_2.png)
 
 # Como executar :rocket:
+Para depu
+## Pré-requisitos :clipboard:
+Antes de tudo precisamos 

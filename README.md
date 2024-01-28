@@ -98,4 +98,4 @@ O mesmo pode ser feito na requisição de cada endpoint:
 
 ![img_5.png](docs/img/img_5.png)
 
-**Prono! Agora você já pode utilizar a API** :smile:
+**Pronto! Agora você já pode utilizar a API** :smile:

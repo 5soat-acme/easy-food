@@ -1,7 +1,6 @@
 name: Build and Push a Docker Image
 
 on:
-  workflow_dispatch:
   push:
     branches:
       - 'fase-2-k8s'

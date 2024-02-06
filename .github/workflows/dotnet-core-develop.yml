@@ -4,21 +4,6 @@ on:
   push:
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v4
-      with:
-        submodules: recursive
-    - name: Setup .NET
-      uses: actions/setup-dotnet@v4.0.0
-      with:
-        dotnet-version: 8.0.x
-    - name: Install dependencies
-      run: dotnet restore
-    - name: Build (Release)
-      run: dotnet build --configuration Release --no-restore
-
   build_docker_image:
     runs-on: ubuntu-latest
     steps:
@@ -35,12 +20,6 @@ jobs:
           images: |
             docker.io/rafaelcasadei89/easyfood
           flavor: latest=true
-          # generate Docker tags based on the following events/attributes
-          tags: |
-            type=ref,event=pr
-            type=raw,value=created_{{date 'YYYYMMDD-HHmmss'}}	
-            type=raw,value=build_number_${{github.run_number}}	
-            type=raw,value=commit_{{branch}}_{{sha}}	
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
       - name: Login to GitHub Container Registry

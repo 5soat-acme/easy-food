@@ -1,0 +1,31 @@
+name: .NET Core - Development
+
+on:
+  push:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+      with:
+        submodules: recursive
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v4.0.0
+      with:
+        dotnet-version: 8.0.x
+    - name: Install dependencies
+      run: dotnet restore
+    - name: Build (Release)
+      run: dotnet build --configuration Release --no-restore
+    - name: Test (Release)
+      run: dotnet test --configuration Release --no-build --verbosity normal --logger "trx"
+    - name: Tests Report
+      uses: phoenix-actions/test-reporting@v12
+      if: success() || failure()    # run this step even if previous step failed
+      with:
+        name: Tests report           
+        path: ./**/*.trx    
+        reporter: dotnet-trx
+        list-tests: 'failed'
+        list-suites: 'failed'

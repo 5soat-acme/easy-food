@@ -1,5 +1,5 @@
 using System.ComponentModel.DataAnnotations;
-using EF.Domain.Commons.ValueObjects;
+using EF.Core.Commons.ValueObjects;
 
 namespace EF.WebApi.Commons.ModelStateValidations;
 

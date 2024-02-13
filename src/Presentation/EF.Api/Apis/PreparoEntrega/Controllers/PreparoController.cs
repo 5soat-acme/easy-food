@@ -1,9 +1,6 @@
-using EF.Domain.Commons.Mediator;
-using EF.PreparoEntrega.Application.Commands.ConfirmarEntrega;
-using EF.PreparoEntrega.Application.Commands.FinalizarPreparo;
-using EF.PreparoEntrega.Application.Commands.IniciarPreparo;
+using EF.PreparoEntrega.Application.DTOs.Requests;
 using EF.PreparoEntrega.Application.DTOs.Responses;
-using EF.PreparoEntrega.Application.Queries.Interfaces;
+using EF.PreparoEntrega.Application.UseCases.Interfaces;
 using EF.PreparoEntrega.Domain.Models;
 using EF.WebApi.Commons.Controllers;
 using Microsoft.AspNetCore.Mvc;
@@ -13,13 +10,19 @@ namespace EF.Api.Apis.PreparoEntrega.Controllers;
 [Route("api/preparo")]
 public class PreparoController : CustomControllerBase
 {
-    private readonly IMediatorHandler _mediator;
-    private readonly IPreparoEntregaQuery _preparoEntregaQuery;
+    private readonly IConfirmarEntregaUseCase _confirmarEntregaUseCase;
+    private readonly IConsultarPedidoUseCase _consultarPedidoUseCase;
+    private readonly IFinalizarPreparoUseCase _finalizarPreparoUseCase;
+    private readonly IIniciarPreparoUseCase _iniciarPreparoUseCase;
 
-    public PreparoController(IMediatorHandler mediator, IPreparoEntregaQuery preparoEntregaQuery)
+    public PreparoController(IConsultarPedidoUseCase consultarPedidoUseCase,
+        IConfirmarEntregaUseCase confirmarEntregaUseCase, IFinalizarPreparoUseCase finalizarPreparoUseCase,
+        IIniciarPreparoUseCase iniciarPreparoUseCase)
     {
-        _mediator = mediator;
-        _preparoEntregaQuery = preparoEntregaQuery;
+        _consultarPedidoUseCase = consultarPedidoUseCase;
+        _confirmarEntregaUseCase = confirmarEntregaUseCase;
+        _finalizarPreparoUseCase = finalizarPreparoUseCase;
+        _iniciarPreparoUseCase = iniciarPreparoUseCase;
     }
 
     /// <summary>
@@ -34,7 +37,7 @@ public class PreparoController : CustomControllerBase
     [HttpGet("{id}")]
     public async Task<IActionResult> ObterPedido([FromRoute] Guid id)
     {
-        var pedido = await _preparoEntregaQuery.ObterPedidoPorId(id);
+        var pedido = await _consultarPedidoUseCase.ObterPedidoPorId(id);
         return pedido is null ? NotFound() : Respond(pedido);
     }
 
@@ -47,7 +50,7 @@ public class PreparoController : CustomControllerBase
     [HttpGet]
     public async Task<IActionResult> ObterPedidos([FromQuery] StatusPreparo? status)
     {
-        var pedidos = await _preparoEntregaQuery.ObterPedidos(status);
+        var pedidos = await _consultarPedidoUseCase.ObterPedidos(status);
         return pedidos is null ? NotFound() : Respond(pedidos);
     }
 
@@ -58,11 +61,10 @@ public class PreparoController : CustomControllerBase
     [ProducesResponseType(StatusCodes.Status200OK)]
     [Produces("application/json")]
     [HttpPost("iniciar")]
-    public async Task<IActionResult> IniciarPreparo(IniciarPreparoCommand command)
+    public async Task<IActionResult> IniciarPreparo(IniciarPreparoDto dto)
     {
-        var result = await _mediator.Send(command);
-
-        if (!result.IsValid()) return Respond(result.ValidationResult);
+        var result = await _iniciarPreparoUseCase.Handle(dto);
+        if (!result.IsValid) return Respond(result.GetErrorMessages());
 
         return Respond();
     }
@@ -74,11 +76,10 @@ public class PreparoController : CustomControllerBase
     [ProducesResponseType(StatusCodes.Status200OK)]
     [Produces("application/json")]
     [HttpPost("finalizar")]
-    public async Task<IActionResult> FinalizarPreparo(FinalizarPreparoCommand command)
+    public async Task<IActionResult> FinalizarPreparo(FinalizarPreparoDto dto)
     {
-        var result = await _mediator.Send(command);
-
-        if (!result.IsValid()) return Respond(result.ValidationResult);
+        var result = await _finalizarPreparoUseCase.Handle(dto);
+        if (!result.IsValid) return Respond(result.GetErrorMessages());
 
         return Respond();
     }
@@ -90,11 +91,10 @@ public class PreparoController : CustomControllerBase
     [ProducesResponseType(StatusCodes.Status200OK)]
     [Produces("application/json")]
     [HttpPost("confirmar-entrega")]
-    public async Task<IActionResult> ConfirmarEntrega(ConfirmarEntregaCommand command)
+    public async Task<IActionResult> ConfirmarEntrega(ConfirmarEntregaDto dto)
     {
-        var result = await _mediator.Send(command);
-
-        if (!result.IsValid()) return Respond(result.ValidationResult);
+        var result = await _confirmarEntregaUseCase.Handle(dto);
+        if (!result.IsValid) return Respond(result.GetErrorMessages());
 
         return Respond();
     }

@@ -1,4 +1,4 @@
-﻿using EF.Domain.Commons.Repository;
+﻿using EF.Core.Commons.Repository;
 using EF.Produtos.Domain.Models;
 using EF.Produtos.Domain.Repository;
 using Microsoft.EntityFrameworkCore;

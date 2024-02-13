@@ -1,6 +1,6 @@
-﻿using EF.Cupons.Domain.Models;
+﻿using EF.Core.Commons.Repository;
+using EF.Cupons.Domain.Models;
 using EF.Cupons.Domain.Repository;
-using EF.Domain.Commons.Repository;
 using Microsoft.EntityFrameworkCore;
 
 namespace EF.Cupons.Infra.Data.Repository;

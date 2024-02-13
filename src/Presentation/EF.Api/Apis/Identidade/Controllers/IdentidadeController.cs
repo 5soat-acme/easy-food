@@ -1,13 +1,13 @@
 using EF.Identidade.Application.DTOs.Requests;
 using EF.Identidade.Application.DTOs.Responses;
-using EF.Identidade.Application.Services.Interfaces;
+using EF.Identidade.Application.UseCases.Interfaces;
 using EF.WebApi.Commons.Controllers;
 using Microsoft.AspNetCore.Mvc;
 
 namespace EF.Api.Apis.Identidade.Controllers;
 
 [Route("api/identidade")]
-public class IdentidadeController(IAcessoAppService appService) : CustomControllerBase
+public class IdentidadeController(IAcessoUseCase useCase) : CustomControllerBase
 {
     /// <summary>
     ///     Cria um novo usuário e associa ao cliente.
@@ -22,9 +22,9 @@ public class IdentidadeController(IAcessoAppService appService) : CustomControll
     {
         if (!ModelState.IsValid) return Respond(ModelState);
 
-        var result = await appService.CriarUsuario(novoUsuario);
+        var result = await useCase.CriarUsuario(novoUsuario);
 
-        if (!result.IsValid) AddErrors(result.Errors);
+        if (!result.IsValid) AddErrors(result.GetErrorMessages());
 
         return Respond(result.Data);
     }
@@ -67,9 +67,9 @@ public class IdentidadeController(IAcessoAppService appService) : CustomControll
     {
         if (!ModelState.IsValid) return Respond(ModelState);
 
-        var result = await appService.Identificar(usuario);
+        var result = await useCase.Identificar(usuario);
 
-        if (!result.IsValid) AddErrors(result.Errors);
+        if (!result.IsValid) AddErrors(result.GetErrorMessages());
 
         return Respond(result.Data);
     }

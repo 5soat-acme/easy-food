@@ -1,7 +1,6 @@
 using EF.Clientes.Domain.Models;
-using EF.Domain.Commons.Messages;
-using EF.Domain.Commons.Repository;
-using FluentValidation.Results;
+using EF.Core.Commons.Messages;
+using EF.Core.Commons.Repository;
 using Microsoft.EntityFrameworkCore;
 
 namespace EF.Clientes.Infra.Data;
@@ -29,7 +28,6 @@ public sealed class ClienteDbContext : DbContext, IUnitOfWork
 
         modelBuilder.ApplyConfigurationsFromAssembly(typeof(ClienteDbContext).Assembly);
         modelBuilder.Ignore<Event>();
-        modelBuilder.Ignore<ValidationResult>();
 
         base.OnModelCreating(modelBuilder);
     }

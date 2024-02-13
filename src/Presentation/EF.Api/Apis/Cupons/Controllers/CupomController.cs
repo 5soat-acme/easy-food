@@ -1,9 +1,7 @@
-﻿using EF.Cupons.Application.Commands;
+﻿using EF.Core.Commons.Communication;
 using EF.Cupons.Application.DTOs.Requests;
 using EF.Cupons.Application.DTOs.Responses;
-using EF.Cupons.Application.Queries.Interfaces;
-using EF.Domain.Commons.Mediator;
-using EF.Domain.Commons.Messages;
+using EF.Cupons.Application.UseCases.Interfaces;
 using EF.WebApi.Commons.Controllers;
 using Microsoft.AspNetCore.Mvc;
 
@@ -12,14 +10,23 @@ namespace EF.Api.Apis.Cupons.Controllers;
 [Route("api/cupons")]
 public class CupomController : CustomControllerBase
 {
-    private readonly ICupomQuery _cupomQuery;
-    private readonly IMediatorHandler _mediator;
+    private readonly IAtualizarCupomUseCase _atualizarCupomUseCase;
+    private readonly IConsultarCupomUseCase _consultarCupomUseCase;
+    private readonly ICriarCupomUseCase _criarCupomUseCase;
+    private readonly IInativarCupomUseCase _inativarCupomUseCase;
+    private readonly IInserirProdutoUseCase _inserirProdutoUseCase;
+    private readonly IRemoverProdutoUseCase _removerProdutoUseCase;
 
-    public CupomController(IMediatorHandler mediator,
-        ICupomQuery cupomQuery)
+    public CupomController(IConsultarCupomUseCase consultarCupomUseCase, IAtualizarCupomUseCase atualizarCupomUseCase,
+        ICriarCupomUseCase criarCupomUseCase, IInativarCupomUseCase inativarCupomUseCase,
+        IInserirProdutoUseCase inserirProdutoUseCase, IRemoverProdutoUseCase removerProdutoUseCase)
     {
-        _mediator = mediator;
-        _cupomQuery = cupomQuery;
+        _consultarCupomUseCase = consultarCupomUseCase;
+        _atualizarCupomUseCase = atualizarCupomUseCase;
+        _criarCupomUseCase = criarCupomUseCase;
+        _inativarCupomUseCase = inativarCupomUseCase;
+        _inserirProdutoUseCase = inserirProdutoUseCase;
+        _removerProdutoUseCase = removerProdutoUseCase;
     }
 
     /// <summary>
@@ -34,7 +41,7 @@ public class CupomController : CustomControllerBase
     [HttpGet("{codigoCupom}")]
     public async Task<IActionResult> BuscarCupomProduto(string codigoCupom, CancellationToken cancellationToken)
     {
-        return Respond(await _cupomQuery.ObterCupom(codigoCupom, cancellationToken));
+        return Respond(await _consultarCupomUseCase.ObterCupom(codigoCupom, cancellationToken));
     }
 
     /// <summary>
@@ -42,14 +49,14 @@ public class CupomController : CustomControllerBase
     /// </summary>
     /// <response code="200">Indica que o cupom de desconto foi criado com sucesso.</response>
     /// <response code="400">A solicitação está malformada e não pode ser processada.</response>
-    [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(CommandResult))]
+    [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(OperationResult))]
     [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(ValidationProblemDetails))]
     [Produces("application/json")]
     [HttpPost]
     public async Task<IActionResult> CriarCupom([FromBody] CriarCupomDto dto,
         CancellationToken cancellationToken)
     {
-        var command = new CriarCupomCommand
+        var command = new CriarCupomDto
         {
             DataInicio = dto.DataInicio,
             DataFim = dto.DataFim,
@@ -58,7 +65,7 @@ public class CupomController : CustomControllerBase
             Produtos = dto.Produtos
         };
 
-        return Respond(await _mediator.Send(command, cancellationToken));
+        return Respond(await _criarCupomUseCase.Handle(command));
     }
 
     /// <summary>
@@ -66,23 +73,14 @@ public class CupomController : CustomControllerBase
     /// </summary>
     /// <response code="200">Indica que o cupom de desconto foi atualizado com sucesso.</response>
     /// <response code="400">A solicitação está malformada e não pode ser processada.</response>
-    [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(CommandResult))]
+    [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(OperationResult))]
     [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(ValidationProblemDetails))]
     [Produces("application/json")]
     [HttpPut("{cupomId}")]
-    public async Task<IActionResult> AtualizarCupom(Guid cupomId, [FromBody] AtualizarCupomDto dto,
-        CancellationToken cancellationToken)
+    public async Task<IActionResult> AtualizarCupom(Guid cupomId, [FromBody] AtualizarCupomDto dto)
     {
-        var command = new AtualizarCupomCommand
-        {
-            CupomId = cupomId,
-            DataInicio = dto.DataInicio,
-            DataFim = dto.DataFim,
-            CodigoCupom = dto.CodigoCupom,
-            PorcentagemDesconto = dto.PorcentagemDesconto
-        };
-
-        return Respond(await _mediator.Send(command, cancellationToken));
+        dto.CupomId = cupomId;
+        return Respond(await _atualizarCupomUseCase.Handle(dto));
     }
 
     /// <summary>
@@ -90,18 +88,13 @@ public class CupomController : CustomControllerBase
     /// </summary>
     /// <response code="200">Indica que o cupom de desconto foi inativado com sucesso.</response>
     /// <response code="400">A solicitação está malformada e não pode ser processada.</response>
-    [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(CommandResult))]
+    [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(OperationResult))]
     [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(ValidationProblemDetails))]
     [Produces("application/json")]
     [HttpPut("inativar/{cupomId}")]
-    public async Task<IActionResult> InativarCupom(Guid cupomId, CancellationToken cancellationToken)
+    public async Task<IActionResult> InativarCupom(Guid cupomId)
     {
-        var command = new InativarCupomCommand
-        {
-            CupomId = cupomId
-        };
-
-        return Respond(await _mediator.Send(command, cancellationToken));
+        return Respond(await _inativarCupomUseCase.Handle(cupomId));
     }
 
     /// <summary>
@@ -109,21 +102,20 @@ public class CupomController : CustomControllerBase
     /// </summary>
     /// <response code="200">Indica que os produtos foram removidos do cupom de desconto.</response>
     /// <response code="400">A solicitação está malformada e não pode ser processada.</response>
-    [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(CommandResult))]
+    [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(OperationResult))]
     [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(ValidationProblemDetails))]
     [Produces("application/json")]
     [HttpDelete("{cupomId}/remover-produtos")]
     public async Task<IActionResult> RemoverCupomProduto(Guid cupomId,
-        [FromBody] IList<AdicionarRemoverCupomProdutoDto> produtos,
-        CancellationToken cancellationToken)
+        [FromBody] IList<AdicionarRemoverCupomProdutoDto> produtos)
     {
-        var command = new RemoverProdutosCommand
+        var dto = new RemoverProdutoDto
         {
             CupomId = cupomId,
             Produtos = produtos.Select(x => x.ProdutoId).ToList()
         };
 
-        return Respond(await _mediator.Send(command, cancellationToken));
+        return Respond(await _removerProdutoUseCase.Handle(dto));
     }
 
     /// <summary>
@@ -131,7 +123,7 @@ public class CupomController : CustomControllerBase
     /// </summary>
     /// <response code="200">Indica que os produtos foram adicionados no cupom de desconto.</response>
     /// <response code="400">A solicitação está malformada e não pode ser processada.</response>
-    [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(CommandResult))]
+    [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(OperationResult))]
     [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(ValidationProblemDetails))]
     [Produces("application/json")]
     [HttpPut("{cupomId}/inserir-produtos")]
@@ -139,12 +131,12 @@ public class CupomController : CustomControllerBase
         [FromBody] IList<AdicionarRemoverCupomProdutoDto> produtos,
         CancellationToken cancellationToken)
     {
-        var command = new InserirProdutosCommand
+        var dto = new InserirProdutoDto
         {
             CupomId = cupomId,
             Produtos = produtos.Select(x => x.ProdutoId).ToList()
         };
 
-        return Respond(await _mediator.Send(command, cancellationToken));
+        return Respond(await _inserirProdutoUseCase.Handle(dto));
     }
 }

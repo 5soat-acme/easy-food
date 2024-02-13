@@ -1,7 +1,6 @@
-using EF.Estoques.Application.Commands;
 using EF.Estoques.Application.Mappings;
-using EF.Estoques.Application.Queries;
-using EF.Estoques.Application.Queries.Interfaces;
+using EF.Estoques.Application.UseCases;
+using EF.Estoques.Application.UseCases.Interfaces;
 using EF.Estoques.Domain.Repository;
 using EF.Estoques.Infra;
 using EF.Estoques.Infra.Data.Repository;
@@ -13,13 +12,12 @@ public static class DependencyInjectionConfig
 {
     public static void RegisterServicesEstoques(this IServiceCollection services, IConfiguration configuration)
     {
-        services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblyContaining<AtualizarEstoqueCommandHandler>());
-
         // Application - Mapping
         services.AddAutoMapper(typeof(EstoqueDomainToDtoProfile));
 
-        // Application - Queries
-        services.AddScoped<IEstoqueQuery, EstoqueQuery>();
+        // Application - Use Cases
+        services.AddScoped<IAtualizarEstoqueUseCase, AtualizarEstoqueUseCase>();
+        services.AddScoped<IConsultaEstoqueUseCase, ConsultaEstoqueUseCase>();
 
         // Infra - Data 
         services.AddScoped<IEstoqueRepository, EstoqueRepository>();

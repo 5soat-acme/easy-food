@@ -1,21 +1,19 @@
-using EF.Domain.Commons.Mediator;
-using EF.Domain.Commons.Messages;
-using EF.Domain.Commons.Repository;
+using EF.Core.Commons.Messages;
+using EF.Core.Commons.Repository;
 using EF.Infra.Commons.Data;
-using EF.Infra.Commons.Mediator;
+using EF.Infra.Commons.EventBus;
 using EF.Pedidos.Domain.Models;
-using FluentValidation.Results;
 using Microsoft.EntityFrameworkCore;
 
 namespace EF.Pedidos.Infra.Data;
 
 public sealed class PedidoDbContext : DbContext, IUnitOfWork
 {
-    private readonly IMediatorHandler _mediator;
+    private readonly IEventBus _bus;
 
-    public PedidoDbContext(DbContextOptions<PedidoDbContext> options, IMediatorHandler mediator) : base(options)
+    public PedidoDbContext(DbContextOptions<PedidoDbContext> options, IEventBus bus) : base(options)
     {
-        _mediator = mediator;
+        _bus = bus;
         ChangeTracker.QueryTrackingBehavior = QueryTrackingBehavior.NoTracking;
         ChangeTracker.AutoDetectChangesEnabled = false;
     }
@@ -26,7 +24,7 @@ public sealed class PedidoDbContext : DbContext, IUnitOfWork
     public async Task<bool> Commit()
     {
         DbContextExtension.SetDates(ChangeTracker.Entries());
-        await _mediator.PublishEvents(this);
+        await _bus.PublishEvents(this);
         return await SaveChangesAsync() > 0;
     }
 
@@ -38,7 +36,6 @@ public sealed class PedidoDbContext : DbContext, IUnitOfWork
 
         modelBuilder.ApplyConfigurationsFromAssembly(typeof(PedidoDbContext).Assembly);
         modelBuilder.Ignore<Event>();
-        modelBuilder.Ignore<ValidationResult>();
 
         base.OnModelCreating(modelBuilder);
     }

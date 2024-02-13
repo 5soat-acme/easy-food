@@ -1,8 +1,7 @@
-﻿using EF.Domain.Commons.Messages;
-using EF.Domain.Commons.Repository;
+﻿using EF.Core.Commons.Messages;
+using EF.Core.Commons.Repository;
 using EF.Infra.Commons.Data;
 using EF.Pagamentos.Domain.Models;
-using FluentValidation.Results;
 using Microsoft.EntityFrameworkCore;
 
 namespace EF.Pagamentos.Infra;
@@ -31,7 +30,6 @@ public sealed class PagamentoDbContext : DbContext, IUnitOfWork
 
         modelBuilder.ApplyConfigurationsFromAssembly(typeof(PagamentoDbContext).Assembly);
         modelBuilder.Ignore<Event>();
-        modelBuilder.Ignore<ValidationResult>();
 
         base.OnModelCreating(modelBuilder);
     }

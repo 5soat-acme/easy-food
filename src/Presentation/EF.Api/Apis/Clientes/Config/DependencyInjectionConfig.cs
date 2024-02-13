@@ -1,4 +1,5 @@
-using EF.Clientes.Application.Commands;
+using EF.Clientes.Application.UseCases;
+using EF.Clientes.Application.UseCases.Interfaces;
 using EF.Clientes.Domain.Repository;
 using EF.Clientes.Infra.Data;
 using EF.Clientes.Infra.Data.Repository;
@@ -11,9 +12,7 @@ public static class DependencyInjectionConfig
     public static IServiceCollection RegisterServicesClientes(this IServiceCollection services,
         IConfiguration configuration)
     {
-        services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblyContaining<CriarClienteCommandHandler>());
-
-        // Infra - Data
+        services.AddScoped<ICriarClienteUseCase, CriarClienteUseCase>();
         services.AddScoped<IClienteRepository, ClienteRepository>();
         services.AddDbContext<ClienteDbContext>(options =>
             options.UseNpgsql(configuration.GetConnectionString("DefaultConnection")));

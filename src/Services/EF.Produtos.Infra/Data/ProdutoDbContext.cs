@@ -1,7 +1,6 @@
-﻿using EF.Domain.Commons.Messages;
-using EF.Domain.Commons.Repository;
+﻿using EF.Core.Commons.Messages;
+using EF.Core.Commons.Repository;
 using EF.Produtos.Domain.Models;
-using FluentValidation.Results;
 using Microsoft.EntityFrameworkCore;
 
 namespace EF.Produtos.Infra.Data;
@@ -29,7 +28,6 @@ public sealed class ProdutoDbContext : DbContext, IUnitOfWork
 
         modelBuilder.ApplyConfigurationsFromAssembly(typeof(ProdutoDbContext).Assembly);
         modelBuilder.Ignore<Event>();
-        modelBuilder.Ignore<ValidationResult>();
 
         base.OnModelCreating(modelBuilder);
     }

@@ -1,6 +1,6 @@
 using EF.Carrinho.Application.DTOs.Requests;
 using EF.Carrinho.Application.DTOs.Responses;
-using EF.Carrinho.Application.Services.Interfaces;
+using EF.Carrinho.Application.UseCases.Interfaces;
 using EF.WebApi.Commons.Controllers;
 using EF.WebApi.Commons.Users;
 using Microsoft.AspNetCore.Authorization;
@@ -12,16 +12,22 @@ namespace EF.Api.Apis.Carrinho.Controllers;
 [Route("api/carrinho")]
 public class CarrinhoController : CustomControllerBase
 {
-    private readonly ICarrinhoConsultaService _carrinhoConsultaService;
-    private readonly ICarrinhoManipulacaoService _carrinhoManipulacaoService;
+    private readonly IAdicionarItemCarrinhoUseCase _adicionarItemCarrinhoUseCase;
+    private readonly IAtualizarItemCarrinhoUseCase _atualizarItemCarrinhoUseCase;
     private readonly CarrinhoSessaoDto _carrinhoSessao;
+    private readonly IConsultarCarrinhoUseCase _consultarCarrinhoUseCase;
+    private readonly IRemoverItemCarrinhoUseCase _removerItemCarrinhoUseCase;
 
-    public CarrinhoController(ICarrinhoConsultaService carrinhoConsultaService,
-        ICarrinhoManipulacaoService carrinhoManipulacaoService,
-        IUserApp userApp)
+    public CarrinhoController(IUserApp userApp,
+        IAdicionarItemCarrinhoUseCase adicionarItemCarrinhoUseCase,
+        IAtualizarItemCarrinhoUseCase atualizarItemCarrinhoUseCase,
+        IConsultarCarrinhoUseCase consultarCarrinhoUseCase,
+        IRemoverItemCarrinhoUseCase removerItemCarrinhoUseCase)
     {
-        _carrinhoConsultaService = carrinhoConsultaService;
-        _carrinhoManipulacaoService = carrinhoManipulacaoService;
+        _adicionarItemCarrinhoUseCase = adicionarItemCarrinhoUseCase;
+        _atualizarItemCarrinhoUseCase = atualizarItemCarrinhoUseCase;
+        _consultarCarrinhoUseCase = consultarCarrinhoUseCase;
+        _removerItemCarrinhoUseCase = removerItemCarrinhoUseCase;
         _carrinhoSessao = new CarrinhoSessaoDto
         {
             CarrinhoId = userApp.GetSessionId(),
@@ -46,7 +52,7 @@ public class CarrinhoController : CustomControllerBase
     [HttpGet]
     public async Task<IActionResult> ObterCarrinho()
     {
-        return Respond(await _carrinhoConsultaService.ConsultarCarrinho(_carrinhoSessao));
+        return Respond(await _consultarCarrinhoUseCase.ConsultarCarrinho(_carrinhoSessao));
     }
 
     /// <summary>
@@ -67,9 +73,9 @@ public class CarrinhoController : CustomControllerBase
     {
         if (!ModelState.IsValid) return Respond(ModelState);
 
-        var result = await _carrinhoManipulacaoService.AdicionarItemCarrinho(itemDto, _carrinhoSessao);
+        var result = await _adicionarItemCarrinhoUseCase.AdicionarItemCarrinho(itemDto, _carrinhoSessao);
 
-        if (!result.IsValid) AddErrors(result.Errors);
+        if (!result.IsValid) AddErrors(result.GetErrorMessages());
 
         return Respond();
     }
@@ -95,9 +101,9 @@ public class CarrinhoController : CustomControllerBase
 
         if (!ModelState.IsValid) return Respond(ModelState);
 
-        var result = await _carrinhoManipulacaoService.AtualizarItem(item, _carrinhoSessao);
+        var result = await _atualizarItemCarrinhoUseCase.AtualizarItem(item, _carrinhoSessao);
 
-        if (!result.IsValid) AddErrors(result.Errors);
+        if (!result.IsValid) AddErrors(result.GetErrorMessages());
 
         return Respond();
     }
@@ -117,7 +123,7 @@ public class CarrinhoController : CustomControllerBase
     {
         if (!ModelState.IsValid) return Respond(ModelState);
 
-        await _carrinhoManipulacaoService.RemoverItemCarrinho(itemId, _carrinhoSessao);
+        await _removerItemCarrinhoUseCase.RemoverItemCarrinho(itemId, _carrinhoSessao);
         return Respond();
     }
 }

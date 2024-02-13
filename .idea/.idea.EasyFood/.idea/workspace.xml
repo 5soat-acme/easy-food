@@ -19,9 +19,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="61e4a515-7fae-49b6-801b-ebc481bfb9f9" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/securityhotspotstore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/securityhotspotstore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Presentation/EF.Api/Apis/Identidade/Controllers/IdentidadeController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Presentation/EF.Api/Apis/Identidade/Controllers/IdentidadeController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Presentation/EF.Api/Commons/Config/ApiConfig.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Presentation/EF.Api/Commons/Config/ApiConfig.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/EF.Carrinho.Application/EF.Carrinho.Application.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Carrinho.Application/EF.Carrinho.Application.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/EF.Carrinho.Application/UseCases/AtualizarItemCarrinhoUseCase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Carrinho.Application/UseCases/AtualizarItemCarrinhoUseCase.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/EF.Carrinho.Infra/Data/CarrinhoDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Carrinho.Infra/Data/CarrinhoDbContext.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/EF.Clientes.Application/EF.Clientes.Application.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Clientes.Application/EF.Clientes.Application.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/EF.Clientes.Infra/Data/ClienteDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Clientes.Infra/Data/ClienteDbContext.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/EF.Cupons.Infra/CupomDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Cupons.Infra/CupomDbContext.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/EF.Estoques.Infra/EstoqueDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Estoques.Infra/EstoqueDbContext.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/EF.Identidade.Application/EF.Identidade.Application.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Identidade.Application/EF.Identidade.Application.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/EF.Pagamentos.Infra/PagamentoDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Pagamentos.Infra/PagamentoDbContext.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/EF.Pedidos.Application/EF.Pedidos.Application.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Pedidos.Application/EF.Pedidos.Application.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/EF.Pedidos.Infra/Data/PedidoDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Pedidos.Infra/Data/PedidoDbContext.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/EF.PreparoEntrega.Infra/Data/PreparoEntregaDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.PreparoEntrega.Infra/Data/PreparoEntregaDbContext.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/EF.Produtos.Infra/Data/ProdutoDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Produtos.Infra/Data/ProdutoDbContext.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Shared/EF.Core.Commons/EF.Core.Commons.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/src/Shared/EF.Core.Commons/EF.Core.Commons.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Shared/EF.Infra.Commons/Extensions/FluentValidationExtension.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Shared/EF.WebApi.Commons/Controllers/CustomControllerBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Shared/EF.WebApi.Commons/Controllers/CustomControllerBase.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Shared/EF.WebApi.Commons/EF.WebApi.Commons.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/src/Shared/EF.WebApi.Commons/EF.WebApi.Commons.csproj" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,7 +58,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="fase-2" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -50,24 +68,44 @@
     <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/aspnetcore/3f1acb59718cadf111a0a796681e3d3509bb3381/src/Identity/Extensions.Stores/src/IdentityUser.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/aspnetcore/3f1acb59718cadf111a0a796681e3d3509bb3381/src/Mvc/Mvc.Core/src/Infrastructure/ActionMethodExecutor.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/aspnetcore/3f1acb59718cadf111a0a796681e3d3509bb3381/src/Mvc/Mvc.Testing/src/WebApplicationFactory.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/aspnetcore/8e941eb42f819adb116b881195158b3887a70a1c/src/Mvc/Mvc.Core/src/Infrastructure/ActionMethodExecutor.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/5535e31a712343a63f5d7d796cd874e563e5ac14/src/libraries/Microsoft.Extensions.DependencyInjection.Abstractions/src/ServiceCollectionServiceExtensions.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/5535e31a712343a63f5d7d796cd874e563e5ac14/src/libraries/Microsoft.Extensions.DependencyInjection.Abstractions/src/ServiceProviderServiceExtensions.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/5535e31a712343a63f5d7d796cd874e563e5ac14/src/libraries/System.Net.Http/src/System/Net/Http/HttpClient.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/5535e31a712343a63f5d7d796cd874e563e5ac14/src/libraries/System.Private.CoreLib/src/System/Nullable.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/bf5e279d9239bfef5bb1b8d6212f1b971c434606/src/libraries/System.Private.CoreLib/src/System/Collections/Generic/List.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/bf5e279d9239bfef5bb1b8d6212f1b971c434606/src/libraries/System.Private.CoreLib/src/System/Threading/Tasks/Future.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/0c53ee5c91f047f387400d094b3581c4267420/ab/1f533040/EntityEntry.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/477b4e826ead4ecf86f19cf2ddbb4649c8f910/72/c2c8c4a6/EventHandler.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5abecb93434c4299acd01d522fdf8da2c9a910/10/7d89f307/List`1.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/d56bc9264e79412392b55aa7d1fcd10c1f918/2e/cc7eb0f7/HttpClientJsonExtensions.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/da0f21e5397b4b2baf9ca2a58ce42a50a8a0/b9/d37410c5/IStartupFilter.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/225dd19ef9e59a5b94de2bcd4b7b38cdca205bdfea4a7361ed03c5f79a36/INotification.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/2532c812356b7d5448418be580b9c7afbc61d9f577df866acfb87950ef277b/TestInvoker.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/3182ebe051d9b4bed148730ecd591e6f2d28d705821e6fbb3c16b51b51f15c7/Profile.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/33b74679e986749f1b285ec1155b90979e7aab172462ceef513f4b9257d174/Internet.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/3520bf5c151bbc5aed94ba6abea697eaaee2b96fe96341613fef02be1cc54/ValidationFailure.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/81ba5eacb2b39f2c24777638daf2a6bc0c319dbb19205eb344ee2419fa57b5/ForeachAwaitPublisher.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/8249d90ef6b06d1e79241139638c1a952ba6d87923a16d3fc10dff448b333/SchemaGenerator.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/8bb416a5d4877933636ae22013c47cc636987118e78a2cf94d52c71eeaa577/ValidationResult.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/b4cc99d93dd77df4bd96956b50aed7b8e18d994130e2d8a85c9cddb01391ef/NotificationHandlerWrapper.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/c8e8b4221b3e6285b11533e6eac1d3942d51ec9f40f23250156a7f4d51e6d62c/SwaggerGenOptionsExtensions.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/d4fd9eaa33d964b75f812ccbe33f4bf158a5dcbc2c08c95e5e8deec18bec4ee/Program.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/e7268004cea411c815a7ab3cb4144fbb696c52cfe11670e8ab0d8b26fa24/ServiceCollectionExtensions.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/f4bc324a395d24ed12db75b0a81536b642509aa14825bf114d9b7c934e2b/Mediator.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/dev/fiap/easy-food/src/Presentation/EF.Api/Commons/Config/EventBusConfig.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/Services/EF.Carrinho.Application/DTOs/Requests/AdicionarItemDto.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/Services/EF.Carrinho.Application/UseCases/AdicionarItemCarrinhoUseCase.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/Services/EF.Carrinho.Application/UseCases/AtualizarItemCarrinhoUseCase.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/Services/EF.Carrinho.Application/UseCases/Interfaces/IAdicionarItemCarrinhoUseCase.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/Services/EF.Carrinho.Application/UseCases/Interfaces/IAtualizarItemCarrinhoUseCase.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/Services/EF.Carrinho.Application/UseCases/Interfaces/IConsultarCarrinhoUseCase.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/Services/EF.Carrinho.Application/UseCases/Interfaces/IRemoverCarrinhoUseCase.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/Services/EF.Carrinho.Application/UseCases/Interfaces/IRemoverItemCarrinhoUseCase.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/Services/EF.Carrinho.Application/UseCases/RemoverCarrinhoUseCase.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/Services/EF.Carrinho.Application/UseCases/RemoverItemCarrinhoUseCase.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/Services/EF.Clientes.Infra/Data/Migrations/20231208143534_BaseInicialClientes.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/dev/fiap/easy-food/src/Shared/EF.Infra.Commons/EventBus/InMemoryEventBus.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="HttpClientSelectedEnvironments">
     <file url="jar://$APPLICATION_HOME_DIR$/plugins/restClient/lib/restClient.jar!/com/intellij/ws/rest/client/requests/collection/get-requests.http" environment="test" />
@@ -135,14 +173,14 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;entrega&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;refact-clen-arch&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;rest.client.default.execution.environment&quot;: &quot;dev&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
   &quot;keyToStringList&quot;: {
@@ -263,6 +301,12 @@
       <workItem from="1705429014097" duration="803000" />
       <workItem from="1705678874018" duration="12858000" />
       <workItem from="1706348167579" duration="21914000" />
+      <workItem from="1707392614827" duration="506000" />
+      <workItem from="1707393484062" duration="496000" />
+      <workItem from="1707394002054" duration="1553000" />
+      <workItem from="1707652958746" duration="7475000" />
+      <workItem from="1707732481574" duration="21643000" />
+      <workItem from="1707820331102" duration="5258000" />
     </task>
     <servers />
   </component>
@@ -272,6 +316,17 @@
   <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
   <component name="UnknownFeatures">
     <option featureType="com.intellij.fileTypeFactory" implementationName="*.ps1" />
+  </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ID_ORDER">
+      <list>
+        <option value="Default.Root" />
+        <option value="Default.Author" />
+        <option value="Default.Date" />
+        <option value="Default.Subject" />
+        <option value="Space.CommitStatus" />
+      </list>
+    </option>
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="OPEN_GENERIC_TABS">
@@ -348,23 +403,6 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/src/Services/EF.Identidade.Application/Services/AcessoAppService.cs</url>
-          <line>38</line>
-          <properties documentPath="C:\dev\fiap\easy-food\src\Services\EF.Identidade.Application\Services\AcessoAppService.cs" initialLine="38" containingFunctionPresentation="Method 'CriarUsuario'">
-            <startOffsets>
-              <option value="1352" />
-            </startOffsets>
-            <endOffsets>
-              <option value="1353" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
     <pin-to-top-manager>
       <pinned-members>
         <PinnedItemInfo parentTag="Type#Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngineScope+ServiceProviderEngineScopeDebugView" memberName="Disposed" />

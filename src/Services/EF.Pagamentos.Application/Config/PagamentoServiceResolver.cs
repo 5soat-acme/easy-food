@@ -1,4 +1,4 @@
-using EF.Domain.Commons.DomainObjects;
+using EF.Core.Commons.DomainObjects;
 using EF.Pagamentos.Domain.Models;
 using EF.Pagamentos.Domain.Ports;
 using EF.Pagamentos.Infra.Services;
@@ -8,7 +8,6 @@ namespace EF.Pagamentos.Application.Config;
 
 public class PagamentoServiceResolver
 {
-    // implement resolver
     private readonly IServiceProvider _provider;
 
     public PagamentoServiceResolver(IServiceProvider provider)

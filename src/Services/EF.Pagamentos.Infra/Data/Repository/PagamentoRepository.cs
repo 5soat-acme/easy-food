@@ -1,4 +1,4 @@
-﻿using EF.Domain.Commons.Repository;
+﻿using EF.Core.Commons.Repository;
 using EF.Pagamentos.Domain.Models;
 using EF.Pagamentos.Domain.Repository;
 
@@ -15,9 +15,9 @@ public sealed class PagamentoRepository : IPagamentoRepository
 
     public IUnitOfWork UnitOfWork => _dbContext;
 
-    public async Task<Pagamento> Criar(Pagamento pagamento, CancellationToken cancellationToken)
+    public async Task<Pagamento> Criar(Pagamento pagamento)
     {
-        await _dbContext.Pagamentos.AddAsync(pagamento, cancellationToken);
+        await _dbContext.Pagamentos.AddAsync(pagamento);
         return pagamento;
     }
 

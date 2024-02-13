@@ -1,22 +1,22 @@
-using EF.Domain.Commons.Mediator;
-using EF.Pagamentos.Application.Commands;
-using EF.Pedidos.Application.DTOs.Adapters;
-using EF.Pedidos.Application.Ports;
+using EF.Pagamentos.Application.DTOs.Requests;
+using EF.Pagamentos.Application.UseCases.Interfaces;
+using EF.Pedidos.Application.DTOs.Gateways;
+using EF.Pedidos.Application.Gateways;
 
 namespace EF.Pedidos.Infra.Adapters.Pagamentos;
 
 public class PagamentoAdapter : IPagamentoService
 {
-    private readonly IMediatorHandler _mediator;
+    private readonly IAutorizarPagamentoUseCase _autorizarPagamento;
 
-    public PagamentoAdapter(IMediatorHandler mediator)
+    public PagamentoAdapter(IAutorizarPagamentoUseCase autorizarPagamento)
     {
-        _mediator = mediator;
+        _autorizarPagamento = autorizarPagamento;
     }
 
     public async Task<bool> ProcessarPagamento(PagamentoDto pagamento)
     {
-        var result = await _mediator.Send(new AutorizarPagamentoCommand
+        var result = await _autorizarPagamento.Handle(new AutorizarPagamentoDto
         {
             PedidoId = pagamento.PedidoId,
             TipoPagamento = pagamento.TipoPagamento,
@@ -24,6 +24,6 @@ public class PagamentoAdapter : IPagamentoService
             Cpf = pagamento.Cpf
         });
 
-        return result.IsValid();
+        return result.IsValid;
     }
 }

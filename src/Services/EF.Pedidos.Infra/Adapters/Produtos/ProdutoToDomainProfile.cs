@@ -7,6 +7,6 @@ public class ProdutoToDomainProfile : Profile
 {
     public ProdutoToDomainProfile()
     {
-        CreateMap<ProdutoDto, Application.DTOs.Adapters.ProdutoDto?>();
+        CreateMap<ProdutoDto, Application.DTOs.Gateways.ProdutoDto?>();
     }
 }

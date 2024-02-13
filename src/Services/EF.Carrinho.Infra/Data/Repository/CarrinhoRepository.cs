@@ -1,6 +1,6 @@
 using EF.Carrinho.Domain.Models;
 using EF.Carrinho.Domain.Repository;
-using EF.Domain.Commons.Repository;
+using EF.Core.Commons.Repository;
 using Microsoft.EntityFrameworkCore;
 
 namespace EF.Carrinho.Infra.Data.Repository;

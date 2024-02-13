@@ -1,6 +1,6 @@
 using EF.Clientes.Domain.Models;
 using EF.Clientes.Domain.Repository;
-using EF.Domain.Commons.Repository;
+using EF.Core.Commons.Repository;
 
 namespace EF.Clientes.Infra.Data.Repository;
 

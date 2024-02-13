@@ -1,8 +1,6 @@
-using EF.Domain.Commons.Mediator;
-using EF.Pedidos.Application.Commands.CriarPedido;
-using EF.Pedidos.Application.Commands.ProcessarPagamento;
+using EF.Pedidos.Application.DTOs.Requests;
 using EF.Pedidos.Application.DTOs.Responses;
-using EF.Pedidos.Application.Queries.Interfaces;
+using EF.Pedidos.Application.UseCases.Interfaces;
 using EF.WebApi.Commons.Controllers;
 using EF.WebApi.Commons.Users;
 using Microsoft.AspNetCore.Authorization;
@@ -11,7 +9,11 @@ using Microsoft.AspNetCore.Mvc;
 namespace EF.Api.Apis.Pedidos.Controllers;
 
 [Route("api/pedidos")]
-public class PedidoController(IMediatorHandler mediator, IPedidoQuery pedidoQuery, IUserApp userApp)
+public class PedidoController(
+    IConsultarPedidoUseCase consultarPedidoUseCase,
+    ICriarPedidoUseCase criarPedidoUseCase,
+    IProcessarPagamentoUseCase processarPagamentoUseCase,
+    IUserApp userApp)
     : CustomControllerBase
 {
     /// <summary>
@@ -26,7 +28,7 @@ public class PedidoController(IMediatorHandler mediator, IPedidoQuery pedidoQuer
     [HttpGet("{id}")]
     public async Task<IActionResult> ObterPedido([FromRoute] Guid id)
     {
-        var pedido = await pedidoQuery.ObterPedidoPorId(id);
+        var pedido = await consultarPedidoUseCase.ObterPedidoPorId(id);
         return pedido is not null ? Respond(pedido) : NotFound();
     }
 
@@ -40,17 +42,17 @@ public class PedidoController(IMediatorHandler mediator, IPedidoQuery pedidoQuer
     [Produces("application/json")]
     [Authorize]
     [HttpPost]
-    public async Task<IActionResult> Checkout(CriarPedidoCommand command)
+    public async Task<IActionResult> Checkout(CriarPedidoDto dto)
     {
-        command.SessionId = userApp.GetSessionId();
-        command.ClienteId = userApp.GetUserId();
-        command.ClienteCpf = userApp.GetUserCpf();
+        dto.SessionId = userApp.GetSessionId();
+        dto.ClienteId = userApp.GetUserId();
+        dto.ClienteCpf = userApp.GetUserCpf();
 
-        var result = await mediator.Send(command);
+        var result = await criarPedidoUseCase.Handle(dto);
 
-        if (!result.IsValid()) return Respond(result.ValidationResult);
+        if (!result.IsValid) return Respond(result.GetErrorMessages());
 
-        return Respond(new { pedidoId = result.AggregateId });
+        return Respond(new { pedidoId = result.Data });
     }
 
     /// <summary>
@@ -63,22 +65,22 @@ public class PedidoController(IMediatorHandler mediator, IPedidoQuery pedidoQuer
     [Produces("application/json")]
     [Authorize]
     [HttpPost("{pedidoId}/confirmar")]
-    public async Task<IActionResult> ProcessarPagamento([FromRoute] Guid pedidoId, ProcessarPagamentoCommand command)
+    public async Task<IActionResult> ProcessarPagamento([FromRoute] Guid pedidoId, ProcessarPagamentoDto dto)
     {
-        if (pedidoId != command.PedidoId)
+        if (pedidoId != dto.PedidoId)
         {
             AddError("O pedido não corresponde ao informado");
             return Respond();
         }
 
-        command.SessionId = userApp.GetSessionId();
-        command.ClienteId = userApp.GetUserId();
-        command.ClienteCpf = userApp.GetUserCpf();
+        dto.SessionId = userApp.GetSessionId();
+        dto.ClienteId = userApp.GetUserId();
+        dto.ClienteCpf = userApp.GetUserCpf();
 
-        var result = await mediator.Send(command);
+        var result = await processarPagamentoUseCase.Handle(dto);
 
-        if (!result.IsValid()) return Respond(result.ValidationResult);
+        if (!result.IsValid) return Respond(result.GetErrorMessages());
 
-        return Respond(new { pedidoId = result.AggregateId });
+        return Respond(new { pedidoId = result.Data });
     }
 }

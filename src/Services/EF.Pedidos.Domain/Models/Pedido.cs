@@ -1,5 +1,5 @@
-using EF.Domain.Commons.DomainObjects;
-using EF.Domain.Commons.ValueObjects;
+using EF.Core.Commons.DomainObjects;
+using EF.Core.Commons.ValueObjects;
 
 namespace EF.Pedidos.Domain.Models;
 

@@ -1,5 +1,5 @@
 using EF.Clientes.Domain.Models;
-using EF.Domain.Commons.Repository;
+using EF.Core.Commons.Repository;
 
 namespace EF.Clientes.Domain.Repository;
 

@@ -1,24 +1,24 @@
 using AutoMapper;
-using EF.Carrinho.Application.Ports;
+using EF.Carrinho.Application.Gateways;
 using EF.Carrinho.Domain.Models;
-using EF.Produtos.Application.Queries.Interfaces;
+using EF.Produtos.Application.UseCases.Interfaces;
 
 namespace EF.Carrinho.Infra.Adapters.Produtos;
 
 public class ProdutoAdapter : IProdutoService
 {
+    private readonly IConsultarProdutoUseCase _consultarProdutoUseCase;
     private readonly IMapper _mapper;
-    private readonly IProdutoQuery _produtoQuery;
 
-    public ProdutoAdapter(IProdutoQuery produtoQuery, IMapper mapper)
+    public ProdutoAdapter(IConsultarProdutoUseCase consultarProdutoUseCase, IMapper mapper)
     {
-        _produtoQuery = produtoQuery;
+        _consultarProdutoUseCase = consultarProdutoUseCase;
         _mapper = mapper;
     }
 
     public async Task<Item> ObterItemPorProdutoId(Guid id)
     {
-        var produto = await _produtoQuery.BuscarPorId(id);
+        var produto = await _consultarProdutoUseCase.BuscarPorId(id);
         return _mapper.Map<Item>(produto);
     }
 }

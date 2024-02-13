@@ -1,4 +1,4 @@
-﻿using EF.Domain.Commons.DomainObjects;
+﻿using EF.Core.Commons.DomainObjects;
 
 namespace EF.Produtos.Domain.Models;
 

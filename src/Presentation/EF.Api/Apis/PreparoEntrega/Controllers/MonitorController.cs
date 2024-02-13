@@ -1,5 +1,5 @@
 using EF.PreparoEntrega.Application.DTOs.Responses;
-using EF.PreparoEntrega.Application.Queries.Interfaces;
+using EF.PreparoEntrega.Application.UseCases.Interfaces;
 using EF.WebApi.Commons.Controllers;
 using Microsoft.AspNetCore.Mvc;
 
@@ -8,11 +8,11 @@ namespace EF.Api.Apis.PreparoEntrega.Controllers;
 [Route("api/monitor")]
 public class MonitorController : CustomControllerBase
 {
-    private readonly IPreparoEntregaQuery _preparoEntregaQuery;
+    private readonly IConsultarPedidoUseCase _consultarPedidoUseCase;
 
-    public MonitorController(IPreparoEntregaQuery preparoEntregaQuery)
+    public MonitorController(IConsultarPedidoUseCase consultarPedidoUseCase)
     {
-        _preparoEntregaQuery = preparoEntregaQuery;
+        _consultarPedidoUseCase = consultarPedidoUseCase;
     }
 
     /// <summary>
@@ -24,7 +24,7 @@ public class MonitorController : CustomControllerBase
     [HttpGet]
     public async Task<IActionResult> ObterPedidos()
     {
-        var pedidos = await _preparoEntregaQuery.ObterPedidosMonitor();
+        var pedidos = await _consultarPedidoUseCase.ObterPedidosMonitor();
         return pedidos is null ? NotFound() : Respond(pedidos);
     }
 }

@@ -1,4 +1,4 @@
-using EF.Domain.Commons.Repository;
+using EF.Core.Commons.Repository;
 using EF.PreparoEntrega.Domain.Models;
 
 namespace EF.PreparoEntrega.Domain.Repository;

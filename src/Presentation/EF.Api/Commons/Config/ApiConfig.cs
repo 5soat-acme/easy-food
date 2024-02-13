@@ -9,7 +9,6 @@ using EF.Api.Apis.Pedidos.Config;
 using EF.Api.Apis.PreparoEntrega.Config;
 using EF.Api.Apis.Produtos.Config;
 using EF.Api.Commons.Extensions;
-using EF.Domain.Commons.Mediator;
 
 namespace EF.Api.Commons.Config;
 
@@ -22,9 +21,8 @@ public static class ApiConfig
         services.AddEndpointsApiExplorer();
         services.AddSwaggerConfig();
 
-        services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblyContaining<Program>());
+        services.AddEventBusConfig();
 
-        services.AddScoped<IMediatorHandler, MediatorHandler>();
         services.RegisterServicesIdentidade();
         services.RegisterServicesCarrinho(configuration);
         services.RegisterServicesPagamentos(configuration);
@@ -34,7 +32,6 @@ public static class ApiConfig
         services.RegisterServicesPedidos(configuration);
         services.RegisterServicesPreparoEntrega(configuration);
         services.RegisterServicesProdutos(configuration);
-
         services.AddIdentityConfig(configuration);
 
         return services;
@@ -52,7 +49,7 @@ public static class ApiConfig
 
         app.UseMiddleware<ExceptionMiddleware>();
 
-        // app.RunMigrations();
+        app.SubscribeEventHandlers();
 
         return app;
     }

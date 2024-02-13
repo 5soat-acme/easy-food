@@ -1,4 +1,4 @@
-using EF.Domain.Commons.ValueObjects;
+using EF.Core.Commons.ValueObjects;
 using EF.Pedidos.Domain.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;

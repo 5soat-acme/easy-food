@@ -8,7 +8,7 @@ public class CumpomToDomainProfile : Profile
 {
     public CumpomToDomainProfile()
     {
-        CreateMap<CupomDto, Application.DTOs.Adapters.CupomDto?>();
-        CreateMap<CupomProdutoDto, Application.DTOs.Adapters.CupomDto.CupomProdutoDto?>();
+        CreateMap<CupomDto, Application.DTOs.Gateways.CupomDto?>();
+        CreateMap<CupomProdutoDto, Application.DTOs.Gateways.CupomDto.CupomProdutoDto?>();
     }
 }

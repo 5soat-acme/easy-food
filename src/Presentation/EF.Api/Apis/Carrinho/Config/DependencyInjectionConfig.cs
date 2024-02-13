@@ -1,15 +1,12 @@
+using EF.Carrinho.Application.Gateways;
 using EF.Carrinho.Application.Mappings;
-using EF.Carrinho.Application.Ports;
-using EF.Carrinho.Application.Services;
-using EF.Carrinho.Application.Services.Integrations;
-using EF.Carrinho.Application.Services.Interfaces;
+using EF.Carrinho.Application.UseCases;
+using EF.Carrinho.Application.UseCases.Interfaces;
 using EF.Carrinho.Domain.Repository;
 using EF.Carrinho.Infra.Adapters.Estoque;
 using EF.Carrinho.Infra.Adapters.Produtos;
 using EF.Carrinho.Infra.Data;
 using EF.Carrinho.Infra.Data.Repository;
-using EF.Domain.Commons.Messages.Integrations;
-using MediatR;
 using Microsoft.EntityFrameworkCore;
 
 namespace EF.Api.Apis.Carrinho.Config;
@@ -19,16 +16,18 @@ public static class DependencyInjectionConfig
     public static IServiceCollection RegisterServicesCarrinho(this IServiceCollection services,
         IConfiguration configuration)
     {
-        // Application - Services
-        services.AddScoped<ICarrinhoConsultaService, CarrinhoConsultaService>();
-        services.AddScoped<ICarrinhoManipulacaoService, CarrinhoManipulacaoService>();
-        services.AddScoped<INotificationHandler<PagamentoProcessadoEvent>, CarrinhoIntegracaoService>();
+        // Application - Use Cases
+        services.AddScoped<IAdicionarItemCarrinhoUseCase, AdicionarItemCarrinhoUseCase>();
+        services.AddScoped<IAtualizarItemCarrinhoUseCase, AtualizarItemCarrinhoUseCase>();
+        services.AddScoped<IConsultarCarrinhoUseCase, ConsultarCarrinhoUseCase>();
+        services.AddScoped<IRemoverCarrinhoUseCase, RemoverCarrinhoUseCase>();
+        services.AddScoped<IRemoverItemCarrinhoUseCase, RemoverItemCarrinhoUseCase>();
 
         // Application - Mapping
         services.AddAutoMapper(typeof(DomainToDtoProfile));
         services.AddAutoMapper(typeof(ProdutoToDomainProfile));
 
-        // Application - Ports & Adapters
+        // Application - Gateways & Gateways
         services.AddScoped<IEstoqueService, EstoqueAdapter>();
         services.AddScoped<IProdutoService, ProdutoAdapter>();
 

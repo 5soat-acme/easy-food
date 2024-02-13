@@ -1,9 +1,7 @@
-﻿using EF.Domain.Commons.Mediator;
-using EF.Domain.Commons.Messages;
-using EF.Estoques.Application.Commands;
+﻿using EF.Core.Commons.Communication;
 using EF.Estoques.Application.DTOs.Requests;
 using EF.Estoques.Application.DTOs.Responses;
-using EF.Estoques.Application.Queries.Interfaces;
+using EF.Estoques.Application.UseCases.Interfaces;
 using EF.WebApi.Commons.Controllers;
 using Microsoft.AspNetCore.Mvc;
 
@@ -12,13 +10,14 @@ namespace EF.Api.Apis.Estoques.Controllers;
 [Route("api/estoques")]
 public class EstoqueController : CustomControllerBase
 {
-    private readonly IEstoqueQuery _estoqueQuery;
-    private readonly IMediatorHandler _mediator;
+    private readonly IAtualizarEstoqueUseCase _atualizarEstoqueUseCase;
+    private readonly IConsultaEstoqueUseCase _consultaEstoqueUseCase;
 
-    public EstoqueController(IMediatorHandler mediator, IEstoqueQuery estoqueQuery)
+    public EstoqueController(IConsultaEstoqueUseCase consultaEstoqueUseCase,
+        IAtualizarEstoqueUseCase atualizarEstoqueUseCase)
     {
-        _mediator = mediator;
-        _estoqueQuery = estoqueQuery;
+        _consultaEstoqueUseCase = consultaEstoqueUseCase;
+        _atualizarEstoqueUseCase = atualizarEstoqueUseCase;
     }
 
     /// <summary>
@@ -29,22 +28,14 @@ public class EstoqueController : CustomControllerBase
     /// </remarks>
     /// <response code="200">Indica que o estoque foi atualizado com sucesso.</response>
     /// <response code="400">A solicitação está malformada e não pode ser processada.</response>
-    [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(CommandResult))]
+    [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(OperationResult))]
     [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(ValidationProblemDetails))]
     [Produces("application/json")]
     [HttpPost]
     public async Task<IActionResult> AtualizarEstoque([FromBody] AtualizarEstoqueDto dto,
-        CancellationToken cancellationToken)
+        CancellationToken cancellationToken = default)
     {
-        var command = new AtualizarEstoqueCommand
-        {
-            ProdutoId = dto.ProdutoId,
-            Quantidade = dto.Quantidade,
-            TipoMovimentacao = dto.TipoMovimentacao,
-            OrigemMovimentacao = dto.OrigemMovimentacao
-        };
-
-        return Respond(await _mediator.Send(command, cancellationToken));
+        return Respond(await _atualizarEstoqueUseCase.Handle(dto));
     }
 
     /// <summary>
@@ -56,6 +47,6 @@ public class EstoqueController : CustomControllerBase
     [HttpGet("{produtoId}")]
     public async Task<IActionResult> BuscarEstoque([FromRoute] Guid produtoId, CancellationToken cancellationToken)
     {
-        return Respond(await _estoqueQuery.ObterEstoqueProduto(produtoId, cancellationToken));
+        return Respond(await _consultaEstoqueUseCase.ObterEstoqueProduto(produtoId, cancellationToken));
     }
 }

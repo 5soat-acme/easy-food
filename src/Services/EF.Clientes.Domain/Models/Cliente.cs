@@ -1,6 +1,6 @@
 using EF.Clientes.Domain.ValueObjects;
-using EF.Domain.Commons.DomainObjects;
-using EF.Domain.Commons.ValueObjects;
+using EF.Core.Commons.DomainObjects;
+using EF.Core.Commons.ValueObjects;
 
 namespace EF.Clientes.Domain.Models;
 

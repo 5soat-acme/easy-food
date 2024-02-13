@@ -1,7 +1,6 @@
-﻿using EF.Domain.Commons.Messages;
-using EF.Domain.Commons.Repository;
+﻿using EF.Core.Commons.Messages;
+using EF.Core.Commons.Repository;
 using EF.Estoques.Domain.Models;
-using FluentValidation.Results;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
 
@@ -32,7 +31,6 @@ public sealed class EstoqueDbContext : DbContext, IUnitOfWork
 
         modelBuilder.ApplyConfigurationsFromAssembly(typeof(EstoqueDbContext).Assembly);
         modelBuilder.Ignore<Event>();
-        modelBuilder.Ignore<ValidationResult>();
 
         base.OnModelCreating(modelBuilder);
     }

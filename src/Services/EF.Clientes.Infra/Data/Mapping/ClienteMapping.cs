@@ -1,5 +1,5 @@
 using EF.Clientes.Domain.Models;
-using EF.Domain.Commons.ValueObjects;
+using EF.Core.Commons.ValueObjects;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 

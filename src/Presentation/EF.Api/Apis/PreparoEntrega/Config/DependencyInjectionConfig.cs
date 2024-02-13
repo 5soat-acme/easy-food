@@ -1,7 +1,6 @@
 using EF.PreparoEntrega.Application.Mapping;
-using EF.PreparoEntrega.Application.Queries;
-using EF.PreparoEntrega.Application.Queries.Interfaces;
-using EF.PreparoEntrega.Application.Services.Integrations;
+using EF.PreparoEntrega.Application.UseCases;
+using EF.PreparoEntrega.Application.UseCases.Interfaces;
 using EF.PreparoEntrega.Domain.Repository;
 using EF.PreparoEntrega.Infra.Data;
 using EF.PreparoEntrega.Infra.Data.Repository;
@@ -14,10 +13,12 @@ public static class DependencyInjectionConfig
     public static IServiceCollection RegisterServicesPreparoEntrega(this IServiceCollection services,
         IConfiguration configuration)
     {
-        services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblyContaining<PedidoIntegrationService>());
-
-        // Application - Queries
-        services.AddScoped<IPreparoEntregaQuery, PreparoEntregaQuery>();
+        // Application - UseCases
+        services.AddScoped<IConfirmarEntregaUseCase, ConfirmarEntregaUseCase>();
+        services.AddScoped<IConsultarPedidoUseCase, ConsultarPedidoUseCase>();
+        services.AddScoped<ICriarPedidoUseCase, CriarPedidoUseCase>();
+        services.AddScoped<IFinalizarPreparoUseCase, FinalizarPreparoUseCase>();
+        services.AddScoped<IIniciarPreparoUseCase, IniciarPreparoUseCase>();
 
         // Application - Mapping
         services.AddAutoMapper(typeof(DomainToDtoProfile));

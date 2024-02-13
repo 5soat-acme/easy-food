@@ -1,7 +1,6 @@
-using EF.Cupons.Application.Commands;
 using EF.Cupons.Application.Mappings;
-using EF.Cupons.Application.Queries;
-using EF.Cupons.Application.Queries.Interfaces;
+using EF.Cupons.Application.UseCases;
+using EF.Cupons.Application.UseCases.Interfaces;
 using EF.Cupons.Domain.Repository;
 using EF.Cupons.Infra;
 using EF.Cupons.Infra.Data.Repository;
@@ -13,13 +12,16 @@ public static class DependencyInjectionConfig
 {
     public static void RegisterServicesCupons(this IServiceCollection services, IConfiguration configuration)
     {
-        services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblyContaining<CriarCupomCommandHandler>());
-
         // Application - Mapping
         services.AddAutoMapper(typeof(CupomDomainToDtoProfile));
 
-        // Application - Queries
-        services.AddScoped<ICupomQuery, CupomQuery>();
+        // Application - Use Cases
+        services.AddScoped<IAtualizarCupomUseCase, AtualizarCupomUseCase>();
+        services.AddScoped<IConsultarCupomUseCase, ConsultarCupomUseCase>();
+        services.AddScoped<ICriarCupomUseCase, CriarCupomUseCase>();
+        services.AddScoped<IInativarCupomUseCase, InativarCupomUseCase>();
+        services.AddScoped<IInserirProdutoUseCase, InserirProdutoUseCase>();
+        services.AddScoped<IRemoverProdutoUseCase, RemoverProdutoUseCase>();
 
         // Infra - Data 
         services.AddScoped<ICupomRepository, CupomRepository>();

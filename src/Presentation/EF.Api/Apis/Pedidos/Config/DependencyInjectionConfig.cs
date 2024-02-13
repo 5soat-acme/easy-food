@@ -1,8 +1,10 @@
+using EF.Core.Commons.Messages;
+using EF.Core.Commons.Messages.Integrations;
+using EF.Pedidos.Application.Events;
+using EF.Pedidos.Application.Gateways;
 using EF.Pedidos.Application.Mappings;
-using EF.Pedidos.Application.Ports;
-using EF.Pedidos.Application.Queries;
-using EF.Pedidos.Application.Queries.Interfaces;
-using EF.Pedidos.Application.Services.Integrations;
+using EF.Pedidos.Application.UseCases;
+using EF.Pedidos.Application.UseCases.Interfaces;
 using EF.Pedidos.Domain.Repository;
 using EF.Pedidos.Infra.Adapters.Cupons;
 using EF.Pedidos.Infra.Adapters.Estoque;
@@ -19,17 +21,23 @@ public static class DependencyInjectionConfig
     public static IServiceCollection RegisterServicesPedidos(this IServiceCollection services,
         IConfiguration configuration)
     {
-        services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblyContaining<PedidoIntegrationService>());
+        // Application - UseCases
+        services.AddScoped<IAtualizarPedidoUseCase, AtualizarPedidoUseCase>();
+        services.AddScoped<IConsultarPedidoUseCase, ConsultarPedidoUseCase>();
+        services.AddScoped<ICriarPedidoUseCase, CriarPedidoUseCase>();
+        services.AddScoped<IProcessarPagamentoUseCase, ProcessarPagamentoUseCase>();
 
-        // Application - Queries
-        services.AddScoped<IPedidoQuery, PedidoQuery>();
+        // Application - Events
+        services.AddScoped<IEventHandler<PreparoPedidoIniciadoEvent>, PedidoEventHandler>();
+        services.AddScoped<IEventHandler<PreparoPedidoFinalizadoEvent>, PedidoEventHandler>();
+        services.AddScoped<IEventHandler<EntregaRealizadaEvent>, PedidoEventHandler>();
 
         // Application - Mapping
         services.AddAutoMapper(typeof(DomainToDtoProfile));
         services.AddAutoMapper(typeof(CumpomToDomainProfile));
         services.AddAutoMapper(typeof(ProdutoToDomainProfile));
 
-        // Application - Ports & Adapters
+        // Application - Gateways & Gateways
         services.AddScoped<IEstoqueService, EstoqueAdapter>();
         services.AddScoped<ICupomService, CupomAdapter>();
         services.AddScoped<IProdutoService, ProdutoAdapter>();

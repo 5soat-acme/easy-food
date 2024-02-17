@@ -1,4 +1,3 @@
-using EF.Estoques.Application.Mappings;
 using EF.Estoques.Application.UseCases;
 using EF.Estoques.Application.UseCases.Interfaces;
 using EF.Estoques.Domain.Repository;
@@ -12,9 +11,6 @@ public static class DependencyInjectionConfig
 {
     public static void RegisterServicesEstoques(this IServiceCollection services, IConfiguration configuration)
     {
-        // Application - Mapping
-        services.AddAutoMapper(typeof(EstoqueDomainToDtoProfile));
-
         // Application - Use Cases
         services.AddScoped<IAtualizarEstoqueUseCase, AtualizarEstoqueUseCase>();
         services.AddScoped<IConsultaEstoqueUseCase, ConsultaEstoqueUseCase>();

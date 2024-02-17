@@ -1,5 +1,4 @@
 using EF.Carrinho.Application.Gateways;
-using EF.Carrinho.Application.Mappings;
 using EF.Carrinho.Application.UseCases;
 using EF.Carrinho.Application.UseCases.Interfaces;
 using EF.Carrinho.Domain.Repository;
@@ -22,10 +21,6 @@ public static class DependencyInjectionConfig
         services.AddScoped<IConsultarCarrinhoUseCase, ConsultarCarrinhoUseCase>();
         services.AddScoped<IRemoverCarrinhoUseCase, RemoverCarrinhoUseCase>();
         services.AddScoped<IRemoverItemCarrinhoUseCase, RemoverItemCarrinhoUseCase>();
-
-        // Application - Mapping
-        services.AddAutoMapper(typeof(DomainToDtoProfile));
-        services.AddAutoMapper(typeof(ProdutoToDomainProfile));
 
         // Application - Gateways & Gateways
         services.AddScoped<IEstoqueService, EstoqueAdapter>();

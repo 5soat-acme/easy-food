@@ -4,5 +4,5 @@ namespace EF.Pedidos.Application.Gateways;
 
 public interface IProdutoService
 {
-    Task<ProdutoDto> ObterPorId(Guid id);
+    Task<ProdutoDto?> ObterPorId(Guid id);
 }

@@ -12,8 +12,4 @@
         <ProjectReference Include="..\EF.Pedidos.Domain\EF.Pedidos.Domain.csproj"/>
         <ProjectReference Include="..\EF.Produtos.Application\EF.Produtos.Application.csproj"/>
     </ItemGroup>
-
-    <ItemGroup>
-        <PackageReference Include="AutoMapper" Version="12.0.1"/>
-    </ItemGroup>
 </Project>

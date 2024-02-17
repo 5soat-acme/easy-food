@@ -2,7 +2,6 @@ using EF.Core.Commons.Messages;
 using EF.Core.Commons.Messages.Integrations;
 using EF.Pedidos.Application.Events;
 using EF.Pedidos.Application.Gateways;
-using EF.Pedidos.Application.Mappings;
 using EF.Pedidos.Application.UseCases;
 using EF.Pedidos.Application.UseCases.Interfaces;
 using EF.Pedidos.Domain.Repository;
@@ -31,11 +30,6 @@ public static class DependencyInjectionConfig
         services.AddScoped<IEventHandler<PreparoPedidoIniciadoEvent>, PedidoEventHandler>();
         services.AddScoped<IEventHandler<PreparoPedidoFinalizadoEvent>, PedidoEventHandler>();
         services.AddScoped<IEventHandler<EntregaRealizadaEvent>, PedidoEventHandler>();
-
-        // Application - Mapping
-        services.AddAutoMapper(typeof(DomainToDtoProfile));
-        services.AddAutoMapper(typeof(CumpomToDomainProfile));
-        services.AddAutoMapper(typeof(ProdutoToDomainProfile));
 
         // Application - Gateways & Gateways
         services.AddScoped<IEstoqueService, EstoqueAdapter>();

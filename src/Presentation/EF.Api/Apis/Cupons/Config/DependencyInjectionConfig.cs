@@ -1,4 +1,3 @@
-using EF.Cupons.Application.Mappings;
 using EF.Cupons.Application.UseCases;
 using EF.Cupons.Application.UseCases.Interfaces;
 using EF.Cupons.Domain.Repository;
@@ -12,9 +11,6 @@ public static class DependencyInjectionConfig
 {
     public static void RegisterServicesCupons(this IServiceCollection services, IConfiguration configuration)
     {
-        // Application - Mapping
-        services.AddAutoMapper(typeof(CupomDomainToDtoProfile));
-
         // Application - Use Cases
         services.AddScoped<IAtualizarCupomUseCase, AtualizarCupomUseCase>();
         services.AddScoped<IConsultarCupomUseCase, ConsultarCupomUseCase>();

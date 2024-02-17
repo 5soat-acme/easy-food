@@ -19,27 +19,80 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="61e4a515-7fae-49b6-801b-ebc481bfb9f9" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Services/EF.Carrinho.Infra/Adapters/Produtos/ProdutoToDomainMapper.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Services/EF.Cupons.Application/Mappings/CupomDomainToDtoMapper.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/issuestore/0/6/0621c17688d2658370a2cccb4fe8795145a4a49b" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/issuestore/0/c/0cd07cb3461b971312fbf379e828f64216d08d7b" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/issuestore/1/1/1178f52a8e15c5270cf71dd1f0544a99857e9194" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/issuestore/1/1/118545837bdf80de6853ca6c49d12e0584fedd81" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/issuestore/1/b/1ba73ba8e197cbae9858978cff597cb9edce6b60" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/issuestore/2/e/2e66bcc2cb375d38406a2202d34bddee16c7f5dd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/issuestore/3/e/3ea85aabe4d63252005921a5297963deba78d471" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/issuestore/5/0/50b2ad56e58748f9825c266c26327b5754258137" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/issuestore/5/5/55c08d3e7a3d7c2b6651cf48e8cb15390c1a6877" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/issuestore/5/a/5ad9989b517aa2509999e0a8779c713be4169eac" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/issuestore/6/0/603685e9ffd0e925b0db766ccd04ea4ebe3598d9" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/issuestore/a/3/a356ac0ca273432c389dbc5967afabc43547ff43" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/issuestore/b/c/bc13fd8a38fa8e88420ffb1a889a31b2a7996d8b" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/issuestore/d/0/d013ff621607532e447b36d7379880161a8803e6" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/issuestore/d/f/df86a8a6abd199ac217c05920dfbcc7adc418205" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/issuestore/e/2/e26f0978e720254ad820c6606e62bafacb807cb5" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/issuestore/f/a/fa9d0813cb444f08b199a48f573962abf5de07cc" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/securityhotspotstore/0/6/0621c17688d2658370a2cccb4fe8795145a4a49b" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/securityhotspotstore/0/c/0cd07cb3461b971312fbf379e828f64216d08d7b" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/securityhotspotstore/1/1/1178f52a8e15c5270cf71dd1f0544a99857e9194" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/securityhotspotstore/1/1/118545837bdf80de6853ca6c49d12e0584fedd81" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/securityhotspotstore/1/b/1ba73ba8e197cbae9858978cff597cb9edce6b60" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/securityhotspotstore/2/e/2e66bcc2cb375d38406a2202d34bddee16c7f5dd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/securityhotspotstore/3/e/3ea85aabe4d63252005921a5297963deba78d471" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/securityhotspotstore/5/0/50b2ad56e58748f9825c266c26327b5754258137" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/securityhotspotstore/5/5/55c08d3e7a3d7c2b6651cf48e8cb15390c1a6877" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/securityhotspotstore/5/a/5ad9989b517aa2509999e0a8779c713be4169eac" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/securityhotspotstore/6/0/603685e9ffd0e925b0db766ccd04ea4ebe3598d9" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/securityhotspotstore/a/3/a356ac0ca273432c389dbc5967afabc43547ff43" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/securityhotspotstore/b/c/bc13fd8a38fa8e88420ffb1a889a31b2a7996d8b" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/securityhotspotstore/d/0/d013ff621607532e447b36d7379880161a8803e6" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/securityhotspotstore/d/f/df86a8a6abd199ac217c05920dfbcc7adc418205" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/securityhotspotstore/e/2/e26f0978e720254ad820c6606e62bafacb807cb5" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/securityhotspotstore/f/a/fa9d0813cb444f08b199a48f573962abf5de07cc" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/securityhotspotstore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/securityhotspotstore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Presentation/EF.Api/Commons/Config/ApiConfig.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Presentation/EF.Api/Commons/Config/ApiConfig.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Presentation/EF.Api/Apis/Carrinho/Config/DependencyInjectionConfig.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Presentation/EF.Api/Apis/Carrinho/Config/DependencyInjectionConfig.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Presentation/EF.Api/Apis/Cupons/Config/DependencyInjectionConfig.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Presentation/EF.Api/Apis/Cupons/Config/DependencyInjectionConfig.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Presentation/EF.Api/Apis/Estoques/Config/DependencyInjectionConfig.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Presentation/EF.Api/Apis/Estoques/Config/DependencyInjectionConfig.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Presentation/EF.Api/Apis/Pedidos/Config/DependencyInjectionConfig.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Presentation/EF.Api/Apis/Pedidos/Config/DependencyInjectionConfig.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Presentation/EF.Api/Apis/PreparoEntrega/Config/DependencyInjectionConfig.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Presentation/EF.Api/Apis/PreparoEntrega/Config/DependencyInjectionConfig.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Presentation/EF.Api/Apis/Produtos/Config/DependencyInjectionConfig.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Presentation/EF.Api/Apis/Produtos/Config/DependencyInjectionConfig.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Presentation/EF.Api/EF.Api.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/src/Presentation/EF.Api/EF.Api.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Services/EF.Carrinho.Application/EF.Carrinho.Application.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Carrinho.Application/EF.Carrinho.Application.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/EF.Carrinho.Application/UseCases/AtualizarItemCarrinhoUseCase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Carrinho.Application/UseCases/AtualizarItemCarrinhoUseCase.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/EF.Carrinho.Infra/Data/CarrinhoDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Carrinho.Infra/Data/CarrinhoDbContext.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/EF.Clientes.Application/EF.Clientes.Application.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Clientes.Application/EF.Clientes.Application.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/EF.Clientes.Infra/Data/ClienteDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Clientes.Infra/Data/ClienteDbContext.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/EF.Cupons.Infra/CupomDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Cupons.Infra/CupomDbContext.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/EF.Estoques.Infra/EstoqueDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Estoques.Infra/EstoqueDbContext.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/EF.Identidade.Application/EF.Identidade.Application.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Identidade.Application/EF.Identidade.Application.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/EF.Pagamentos.Infra/PagamentoDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Pagamentos.Infra/PagamentoDbContext.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/EF.Carrinho.Application/Mappings/DomainToDtoProfile.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/EF.Carrinho.Application/UseCases/ConsultarCarrinhoUseCase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Carrinho.Application/UseCases/ConsultarCarrinhoUseCase.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/EF.Carrinho.Infra/Adapters/Produtos/ProdutoAdapter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Carrinho.Infra/Adapters/Produtos/ProdutoAdapter.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/EF.Carrinho.Infra/Adapters/Produtos/ProdutoToDomainProfile.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/EF.Cupons.Application/EF.Cupons.Application.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Cupons.Application/EF.Cupons.Application.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/EF.Cupons.Application/Mappings/CupomDomainToDtoProfile.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/EF.Cupons.Application/UseCases/ConsultarCupomUseCase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Cupons.Application/UseCases/ConsultarCupomUseCase.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/EF.Estoques.Application/EF.Estoques.Application.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Estoques.Application/EF.Estoques.Application.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/EF.Estoques.Application/Mappings/EstoqueDomainToDtoProfile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Estoques.Application/Mappings/EstoqueDomainToDtoMapper.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/EF.Estoques.Application/UseCases/ConsultaEstoqueUseCase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Estoques.Application/UseCases/ConsultaEstoqueUseCase.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/EF.Pagamentos.Application/EF.Pagamentos.Application.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Pagamentos.Application/EF.Pagamentos.Application.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/EF.Pedidos.Application/DTOs/Responses/PedidoDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Pedidos.Application/DTOs/Responses/PedidoDto.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Services/EF.Pedidos.Application/EF.Pedidos.Application.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Pedidos.Application/EF.Pedidos.Application.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/EF.Pedidos.Infra/Data/PedidoDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Pedidos.Infra/Data/PedidoDbContext.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/EF.PreparoEntrega.Infra/Data/PreparoEntregaDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.PreparoEntrega.Infra/Data/PreparoEntregaDbContext.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/EF.Produtos.Infra/Data/ProdutoDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Produtos.Infra/Data/ProdutoDbContext.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Shared/EF.Core.Commons/EF.Core.Commons.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/src/Shared/EF.Core.Commons/EF.Core.Commons.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Shared/EF.Infra.Commons/Extensions/FluentValidationExtension.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Shared/EF.WebApi.Commons/Controllers/CustomControllerBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Shared/EF.WebApi.Commons/Controllers/CustomControllerBase.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Shared/EF.WebApi.Commons/EF.WebApi.Commons.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/src/Shared/EF.WebApi.Commons/EF.WebApi.Commons.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/EF.Pedidos.Application/Gateways/IProdutoService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Pedidos.Application/Gateways/IProdutoService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/EF.Pedidos.Application/Mappings/DomainToDtoProfile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Pedidos.Application/Mappings/DomainToDtoMapper.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/EF.Pedidos.Application/UseCases/ConsultarPedidoUseCase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Pedidos.Application/UseCases/ConsultarPedidoUseCase.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/EF.Pedidos.Infra/Adapters/Cupons/CumpomToDomainProfile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Pedidos.Infra/Adapters/Cupons/CumpomToDomainMapper.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/EF.Pedidos.Infra/Adapters/Cupons/CupomAdapter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Pedidos.Infra/Adapters/Cupons/CupomAdapter.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/EF.Pedidos.Infra/Adapters/Produtos/ProdutoAdapter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Pedidos.Infra/Adapters/Produtos/ProdutoAdapter.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/EF.Pedidos.Infra/Adapters/Produtos/ProdutoToDomainProfile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Pedidos.Infra/Adapters/Produtos/ProdutoToDomainMapper.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/EF.PreparoEntrega.Application/EF.PreparoEntrega.Application.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.PreparoEntrega.Application/EF.PreparoEntrega.Application.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/EF.PreparoEntrega.Application/Mapping/DomainToDtoProfile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.PreparoEntrega.Application/Mapping/DomainToDtoMapper.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/EF.PreparoEntrega.Application/UseCases/ConsultarPedidoUseCase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.PreparoEntrega.Application/UseCases/ConsultarPedidoUseCase.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/EF.Produtos.Application/EF.Produtos.Application.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Produtos.Application/EF.Produtos.Application.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/EF.Produtos.Application/Mappings/DomainToDtoProfile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Produtos.Application/Mappings/DomainToDtoMapper.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/EF.Produtos.Application/UseCases/ConsultarProdutoUseCase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Produtos.Application/UseCases/ConsultarProdutoUseCase.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/EF.Produtos.Application/UseCases/Interfaces/IConsultarProdutoUseCase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Produtos.Application/UseCases/Interfaces/IConsultarProdutoUseCase.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -142,58 +195,58 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;.NET Launch Settings Profile.EF.Api: http.executor&quot;: &quot;Debug&quot;,
-    &quot;.NET Launch Settings Profile.EF.Api: https.executor&quot;: &quot;Debug&quot;,
-    &quot;1bea6dd9-6f9b-4afc-9f56-c255980b80ea.executor&quot;: &quot;Debug&quot;,
-    &quot;358cc20c-bbd2-4173-b107-79bbfcbf32c4.executor&quot;: &quot;Debug&quot;,
-    &quot;HTTP Request.All in identidade.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.api-requests | #2.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.api-requests | Carrinho API:.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.carrinho-api | #1.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.carrinho-api | #2.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.carrinho-api | #3.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.carrinho-api | #4.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.carrinho-api | Adicionar item no carrinho.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.carrinho-api | Carrinho API:.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.carrinho-api | Fechar pedido a partir do carrinho do cliente.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.carrinho-api | Incluir item no carrinho.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.carrinho-api | Obter carrinho do cliente.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.carrinho-api | Obter resumo do carrinho do cliente.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.identidade | #1.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.identidade | #2.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.identidade | #3.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.identidade | #4.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.identidade-api | #2.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.identidade-api | Autenticar usuário.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.identidade-api | Cadastrar usuário.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.identidade-api | Identidade API:.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.pedidos-api | Obter o pedido por id ou ide de correlação.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;refact-clen-arch&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;rest.client.default.execution.environment&quot;: &quot;dev&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    ".NET Launch Settings Profile.EF.Api: http.executor": "Debug",
+    ".NET Launch Settings Profile.EF.Api: https.executor": "Debug",
+    "1bea6dd9-6f9b-4afc-9f56-c255980b80ea.executor": "Debug",
+    "358cc20c-bbd2-4173-b107-79bbfcbf32c4.executor": "Debug",
+    "HTTP Request.All in identidade.executor": "Run",
+    "HTTP Request.api-requests | #2.executor": "Run",
+    "HTTP Request.api-requests | Carrinho API:.executor": "Run",
+    "HTTP Request.carrinho-api | #1.executor": "Run",
+    "HTTP Request.carrinho-api | #2.executor": "Run",
+    "HTTP Request.carrinho-api | #3.executor": "Run",
+    "HTTP Request.carrinho-api | #4.executor": "Run",
+    "HTTP Request.carrinho-api | Adicionar item no carrinho.executor": "Run",
+    "HTTP Request.carrinho-api | Carrinho API:.executor": "Run",
+    "HTTP Request.carrinho-api | Fechar pedido a partir do carrinho do cliente.executor": "Run",
+    "HTTP Request.carrinho-api | Incluir item no carrinho.executor": "Run",
+    "HTTP Request.carrinho-api | Obter carrinho do cliente.executor": "Run",
+    "HTTP Request.carrinho-api | Obter resumo do carrinho do cliente.executor": "Run",
+    "HTTP Request.identidade | #1.executor": "Run",
+    "HTTP Request.identidade | #2.executor": "Run",
+    "HTTP Request.identidade | #3.executor": "Run",
+    "HTTP Request.identidade | #4.executor": "Run",
+    "HTTP Request.identidade-api | #2.executor": "Run",
+    "HTTP Request.identidade-api | Autenticar usuário.executor": "Run",
+    "HTTP Request.identidade-api | Cadastrar usuário.executor": "Run",
+    "HTTP Request.identidade-api | Identidade API:.executor": "Run",
+    "HTTP Request.pedidos-api | Obter o pedido por id ou ide de correlação.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "renove-automapper",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "rest.client.default.execution.environment": "dev",
+    "settings.editor.selected.configurable": "preferences.lookFeel",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;postgresql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql"
     ],
-    &quot;rider.external.source.directories&quot;: [
-      &quot;C:\\Users\\bmfpe\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\DecompilerCache&quot;,
-      &quot;C:\\Users\\bmfpe\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\SourcesCache&quot;,
-      &quot;C:\\Users\\bmfpe\\AppData\\Local\\Symbols\\src&quot;
+    "rider.external.source.directories": [
+      "C:\\Users\\bmfpe\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\DecompilerCache",
+      "C:\\Users\\bmfpe\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\SourcesCache",
+      "C:\\Users\\bmfpe\\AppData\\Local\\Symbols\\src"
     ]
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected=".NET Launch Settings Profile.EF.Api: https">
     <configuration name="EF.Api: http" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/src/Presentation/EF.Api/EF.Api.csproj" />
@@ -307,6 +360,8 @@
       <workItem from="1707652958746" duration="7475000" />
       <workItem from="1707732481574" duration="21643000" />
       <workItem from="1707820331102" duration="5258000" />
+      <workItem from="1708168487049" duration="116000" />
+      <workItem from="1708169235456" duration="6054000" />
     </task>
     <servers />
   </component>

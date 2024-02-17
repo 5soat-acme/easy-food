@@ -7,10 +7,6 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="AutoMapper" Version="12.0.1"/>
-    </ItemGroup>
-
-    <ItemGroup>
         <ProjectReference Include="..\..\Shared\EF.Infra.Commons\EF.Infra.Commons.csproj"/>
         <ProjectReference Include="..\EF.Estoques.Domain\EF.Estoques.Domain.csproj"/>
     </ItemGroup>

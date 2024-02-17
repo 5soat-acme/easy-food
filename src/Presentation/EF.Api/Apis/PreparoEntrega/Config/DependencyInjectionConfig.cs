@@ -1,4 +1,3 @@
-using EF.PreparoEntrega.Application.Mapping;
 using EF.PreparoEntrega.Application.UseCases;
 using EF.PreparoEntrega.Application.UseCases.Interfaces;
 using EF.PreparoEntrega.Domain.Repository;
@@ -19,9 +18,6 @@ public static class DependencyInjectionConfig
         services.AddScoped<ICriarPedidoUseCase, CriarPedidoUseCase>();
         services.AddScoped<IFinalizarPreparoUseCase, FinalizarPreparoUseCase>();
         services.AddScoped<IIniciarPreparoUseCase, IniciarPreparoUseCase>();
-
-        // Application - Mapping
-        services.AddAutoMapper(typeof(DomainToDtoProfile));
 
         // Infra - Data
         services.AddScoped<IPedidoRepository, PedidoRepository>();

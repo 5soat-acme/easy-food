@@ -13,6 +13,8 @@ public static class DomainToDtoMapper
         {
             Id = model.Id,
             ClienteId = model.ClienteId,
+            ValorTotal = model.ValorTotal,
+            TempoMedioPreparo = model.TempoMedioPreparo,
             Itens = model.Itens.Select(Map).ToList()
         };
     }
@@ -23,7 +25,10 @@ public static class DomainToDtoMapper
         {
             Id = model.Id,
             ProdutoId = model.ProdutoId,
-            Quantidade = model.Quantidade
+            Nome = model.Nome,
+            Quantidade = model.Quantidade,
+            ValorUnitario = model.ValorUnitario,
+            TempoEstimadoPreparo = model.TempoEstimadoPreparo
         };
     }
 }

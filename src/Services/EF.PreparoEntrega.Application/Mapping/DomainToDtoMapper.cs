@@ -21,8 +21,10 @@ public static class DomainToDtoMapper
         return models.Select(MapMonitor);
     }
 
-    public static PedidoPreparoDto Map(Pedido model)
+    public static PedidoPreparoDto? Map(Pedido? model)
     {
+        if (model is null) return null;
+
         return new PedidoPreparoDto
         {
             Id = model.Id,

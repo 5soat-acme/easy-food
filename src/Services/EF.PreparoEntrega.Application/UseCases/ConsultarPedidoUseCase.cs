@@ -15,7 +15,7 @@ public class ConsultarPedidoUseCase : IConsultarPedidoUseCase
         _pedidoRepository = pedidoRepository;
     }
 
-    public async Task<PedidoPreparoDto> ObterPedidoPorId(Guid id)
+    public async Task<PedidoPreparoDto?> ObterPedidoPorId(Guid id)
     {
         var pedido = await _pedidoRepository.ObterPedidoPorId(id);
         return DomainToDtoMapper.Map(pedido);

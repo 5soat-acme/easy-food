@@ -15,7 +15,8 @@ public static class DomainToDtoMapper
             Nome = produto.Nome,
             Descricao = produto.Descricao,
             ValorUnitario = produto.ValorUnitario,
-            TempoPreparoEstimado = produto.TempoPreparoEstimado
+            TempoPreparoEstimado = produto.TempoPreparoEstimado,
+            Categoria = produto.Categoria
         };
     }
 

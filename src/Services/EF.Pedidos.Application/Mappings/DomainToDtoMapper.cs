@@ -29,7 +29,10 @@ public static class DomainToDtoMapper
         {
             Id = model.Id,
             ProdutoId = model.ProdutoId,
-            Quantidade = model.Quantidade
+            Quantidade = model.Quantidade,
+            ValorUnitario = model.ValorUnitario,
+            Desconto = model.Desconto,
+            ValorFinal = model.ValorFinal
         };
     }
 }

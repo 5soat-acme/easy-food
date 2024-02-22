@@ -30,8 +30,6 @@ spec:
         image: 5soatacme/easy-food
         imagePullPolicy: IfNotPresent
         env:
-          - name: ASPNETCORE_ENVIRONMENT
-            value: Docker
           - name: ASPNETCORE_URLS
             value: http://+:80
         volumeMounts:

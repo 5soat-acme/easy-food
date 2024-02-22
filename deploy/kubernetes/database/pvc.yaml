@@ -1,7 +1,7 @@
 kind: PersistentVolumeClaim
 apiVersion: v1
 metadata:
-  name: easy-food-db-pv-claim
+  name: easy-food-db-pvc
   labels:
     app: easy-food-db
 spec:

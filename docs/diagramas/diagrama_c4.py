@@ -5,7 +5,7 @@ graph_attr = {
     "splines": "spline",
 }
 
-with Diagram("Easy Food - C4", filename="c4_diagram", outformat=["png"], show=False, direction="TB", graph_attr=graph_attr):
+with Diagram("Easy Food - C4", filename="diagrama_c4", outformat=["png"], show=False, direction="TB", graph_attr=graph_attr):
     customer = Person(
         name="Cliente do Easy Food", 
         description="Um cliente do Easy Food. Que possua ou não um cadastro."

@@ -5,7 +5,7 @@ from diagrams.aws.network import ElbNetworkLoadBalancer
 from diagrams.aws.network import InternetGateway, NATGateway
 from diagrams.aws.compute import EKS
 
-with Diagram("Easy Food - AWS", filename="aws_diagram", outformat=["png"], show=False):
+with Diagram("Easy Food - AWS", filename="diagrama_aws", outformat=["png"], show=False):
     with Cluster("Clients"):
         clients = [Client("client_1"),
                     Client("client_2"),

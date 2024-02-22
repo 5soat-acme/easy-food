@@ -1,7 +1,7 @@
 kind: PersistentVolume
 apiVersion: v1
 metadata:
-  name: easy-food-db-pv-volume
+  name: easy-food-db-pv
   labels:
     app: easy-food-db
 spec:

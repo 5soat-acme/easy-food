@@ -3,7 +3,7 @@ apiVersion: v1
 metadata:
   name: easy-food-api
 spec:
-  type: LoadBalancer
+  type: ClusterIP
   ports:
     - protocol: TCP
       name: http

@@ -131,15 +131,15 @@ kubectl apply -f .\service.yaml
 kubectl apply -f .\ingress.yaml
 ```
 
+### Como utilizar :bulb:
+
 Com o comando abaixo buscar o link do LoadBalancer criado pelo Ingress NGINX Controller. Substituir **nginx-ingress-sample** pelo nome do namespace informado ao criar o Ingress NGINX Controller.
 ```bash
 kubectl get service -n nginx-ingress-sample
 ```
 
-### Como utilizar :bulb:
-
 A URL de acesso será o conteúdo da coluna **EXTERNAL-IP** do serviço de tipo LoadBalancer.
-A documentação estará disponível em: EXTERNAL-IP/swagger
+A documentação estará disponível em: **EXTERNAL-IP/swagger**
 
 
 ## Token :key:

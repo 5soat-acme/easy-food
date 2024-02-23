@@ -14,11 +14,16 @@ O projeto é parte do trabalho de conclusão do curso de Arquitetura de Software
     1. [Docker :whale:](#Docker-whale)
         1. [Pré-requisitos :clipboard:](#Pré-requisitos-clipboard)
         2. [Executando :running:](#Executando-running)
+        3. [Como utilizar :bulb:](#Como-utilizar-bulb)
     2. [Localmente :computer:](#Localmente-computer)
         1. [Pré-requisitos :clipboard:](#Pré-requisitos-clipboard-1)
         2. [Executando :running:](#Executando-running-1)
-5. [Como utilizar :bulb:](#Como-utilizar-bulb)
-    1. [Token :key:](#Token-key)
+        3. [Como utilizar :bulb:](#Como-utilizar-bulb-1)
+    3. [AWS - EKS :cloud:](#AWS-EKS-cloud)
+        1. [Pré-requisitos :clipboard:](#Pré-requisitos-clipboard-2)
+        2. [Executando :running:](#Executando-running-2)
+        3. [Como utilizar :bulb:](#Como-utilizar-bulb-2)
+    4. [Token :key:](#Token-key)
 
 # Tecnologias utilizadas :computer:
 
@@ -45,11 +50,11 @@ Na primeira fase do projeto, foi desenvolvido um monolito modular para fazer uma
 - **Services:** É onde estão implementados os serviços de aplicação. Dentro desta pasta dividimos em subpastas que representam os contextos delimitados. Cada subpasta contém as camadas do serviço, como **Application, Domain, Infra**, entre outras.
 - **Shared:** É aqui que compartilhamos o que é comum entre os diferentes módulos, inclusive os objetos de domíno e os serviços de infraestrutura que podem ser utilizados por mais de um contexto delimitado.
 
-### Estrutura
+## Estrutura
 ![img.png](docs/img/img.png) </br>
 ![img_1.png](docs/img/img_1.png) </br>
 
-### Overview
+## Overview
 ![img_2.png](docs/img/img_2.png)
 
 # Como executar :rocket:

@@ -19,7 +19,7 @@ O projeto é parte do trabalho de conclusão do curso de Arquitetura de Software
         1. [Pré-requisitos :clipboard:](#Pré-requisitos-clipboard-1)
         2. [Executando :running:](#Executando-running-1)
         3. [Como utilizar :bulb:](#Como-utilizar-bulb-1)
-    3. [AWS - EKS :cloud:](#AWS-EKS-cloud)
+    3. [AWS - EKS :cloud:](#AWS---EKS-cloud)
         1. [Pré-requisitos :clipboard:](#Pré-requisitos-clipboard-2)
         2. [Executando :running:](#Executando-running-2)
         3. [Como utilizar :bulb:](#Como-utilizar-bulb-2)

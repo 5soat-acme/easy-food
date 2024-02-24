@@ -28,28 +28,28 @@ spec:
       nodeSelector:
         app: homolog
       containers:
-      - name: easy-food-api
-        image: easy-food-api:v00001
-        imagePullPolicy: IfNotPresent
-        volumeMounts:
-          - name: appsettings
-            mountPath: /app/appsettings.json
-            subPath: appsettings.json
-          - name: tz-config
-            mountPath: /etc/localtime
-        resources:
-          limits:
-            cpu: "240m"
-            memory: "400Mi"
-          requests:
-            cpu: "60m"
-            memory: "180Mi"
-        ports:
-          - containerPort: 80
-            protocol: TCP
-          - containerPort: 8080
-            protocol: TCP
-          - containerPort: 443
-            protocol: TCP
+        - name: easy-food-api
+          image: easy-food-api:v00001
+          imagePullPolicy: IfNotPresent
+          volumeMounts:
+            - name: appsettings
+              mountPath: /app/appsettings.json
+              subPath: appsettings.json
+            - name: tz-config
+              mountPath: /etc/localtime
+          resources:
+            limits:
+              cpu: "240m"
+              memory: "400Mi"
+            requests:
+              cpu: "60m"
+              memory: "180Mi"
+          ports:
+            - containerPort: 80
+              protocol: TCP
+            - containerPort: 8080
+              protocol: TCP
+            - containerPort: 443
+              protocol: TCP
       imagePullSecrets:
-      - name: regcred
+        - name: regcred

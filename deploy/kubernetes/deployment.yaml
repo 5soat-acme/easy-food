@@ -25,12 +25,13 @@ spec:
           hostPath:
             path: /usr/share/zoneinfo/America/Sao_Paulo
             type: File
-      nodeSelector:
-        app: homolog
       containers:
       - name: easy-food-api
-        image: easy-food-api:v00001
+        image: 5soatacme/easy-food
         imagePullPolicy: IfNotPresent
+        env:
+          - name: ASPNETCORE_URLS
+            value: http://+:80
         volumeMounts:
           - name: appsettings
             mountPath: /app/appsettings.json
@@ -46,10 +47,6 @@ spec:
             memory: "180Mi"
         ports:
           - containerPort: 80
-            protocol: TCP
-          - containerPort: 8080
-            protocol: TCP
-          - containerPort: 443
             protocol: TCP
       imagePullSecrets:
       - name: regcred

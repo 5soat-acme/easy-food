@@ -13,12 +13,14 @@ public class IntegrationTestsFixtureCollection : ICollectionFixture<IntegrationT
 public class IntegrationTestsFixture : IAsyncLifetime
 {
     private readonly ApiFactory _apiFactory;
+    private readonly DockerHelper _dockerHelper;
     public HttpClient Client;
     public RespostaTokenAcesso? RespostaTokenAcesso;
 
     public IntegrationTestsFixture()
     {
         _apiFactory = new ApiFactory();
+        _dockerHelper = new DockerHelper();
 
         Client = _apiFactory.CreateClient(new WebApplicationFactoryClientOptions
         {
@@ -28,16 +30,16 @@ public class IntegrationTestsFixture : IAsyncLifetime
         });
     }
 
-    public Task InitializeAsync()
+    public async Task InitializeAsync()
     {
-        return Task.CompletedTask;
+        await _dockerHelper.StartContainerAsync();
     }
 
-    public Task DisposeAsync()
+    public async Task DisposeAsync()
     {
+        await _dockerHelper.RemoveContainerAsync();
         _apiFactory.Dispose();
         Client.Dispose();
-        return Task.CompletedTask;
     }
 
     public async Task AcessarApi(UsuarioAcesso? usuarioAcesso = null, bool novoAcesso = false)

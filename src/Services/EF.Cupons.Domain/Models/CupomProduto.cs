@@ -4,7 +4,6 @@ namespace EF.Cupons.Domain.Models;
 
 public class CupomProduto : Entity
 {
-    // Necessário para o EF
     private CupomProduto()
     {
     }

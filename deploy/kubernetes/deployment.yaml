@@ -49,4 +49,4 @@ spec:
           - containerPort: 80
             protocol: TCP
       imagePullSecrets:
-      - name: regcred
+        - name: regcred

@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace EF.Api.Apis.Identidade.Controllers;
 
 [Route("api/identidade")]
-public class IdentidadeController(IAcessoUseCase useCase) : CustomControllerBase
+public class IdentidadeController(IIdentidadeUseCase useCase) : CustomControllerBase
 {
     /// <summary>
     ///     Cria um novo usuário e associa ao cliente.
@@ -67,7 +67,7 @@ public class IdentidadeController(IAcessoUseCase useCase) : CustomControllerBase
     {
         if (!ModelState.IsValid) return Respond(ModelState);
 
-        var result = await useCase.Identificar(usuario);
+        var result = await useCase.AcessarSistema(usuario);
 
         if (!result.IsValid) AddErrors(result.GetErrorMessages());
 

@@ -25,8 +25,8 @@ public class AdicionarItemCarrinhoUseCase : CarrinhoCommonUseCase, IAdicionarIte
 
     public async Task<OperationResult> AdicionarItemCarrinho(AdicionarItemDto itemDto, CarrinhoSessaoDto carrinhoSessao)
     {
-        var produto = await _produtoService.ObterItemPorProdutoId(itemDto.ProdutoId);
-        if (produto is null) throw new DomainException("Produto inválido");
+        var itemAdicionar = await _produtoService.ObterItemPorProdutoId(itemDto.ProdutoId);
+        if (itemAdicionar is null) throw new DomainException("Produto inválido");
 
         var carrinho = await _consultarCarrinhoUseCase.ObterCarrinho(carrinhoSessao);
 

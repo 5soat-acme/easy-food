@@ -1,7 +1,7 @@
 using Bogus;
 using EF.Carrinho.Application.DTOs.Requests;
 
-namespace EF.Commons.Test.Builders.Carrinho;
+namespace EF.Commons.Test.Builders.Carrinho.Dtos;
 
 public sealed class AdicionarItemDtoBuilder : Faker<AdicionarItemDto>
 {

@@ -19,10 +19,37 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="61e4a515-7fae-49b6-801b-ebc481bfb9f9" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/issuestore/4/3/436989c49800592e633c0419a90d1459d0599b59" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/issuestore/4/3/436989c49800592e633c0419a90d1459d0599b59" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/issuestore/0/d/0d4eb7018c56e6f8115bffe33c843995c7badd63" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/issuestore/0/d/0d4eb7018c56e6f8115bffe33c843995c7badd63" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/issuestore/1/9/19dff9a58bbc1d599b9ae93c84362e6e0a4fc8fd" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/issuestore/1/9/19dff9a58bbc1d599b9ae93c84362e6e0a4fc8fd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/issuestore/3/6/36a0b0c1554c971db9449b0ebf3d39e1452f6290" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/issuestore/3/6/36a0b0c1554c971db9449b0ebf3d39e1452f6290" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/issuestore/3/e/3ead214a3bbe9fc91dc94f2d642cba1dfa1237af" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/issuestore/5/3/5356d9783e7d102731647acbfd2f555154e5a536" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/issuestore/9/9/99face36abd9db8c9e7ebef96dae8d9fa33dbb08" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/securityhotspotstore/3/e/3ead214a3bbe9fc91dc94f2d642cba1dfa1237af" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/securityhotspotstore/5/3/5356d9783e7d102731647acbfd2f555154e5a536" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/securityhotspotstore/9/9/99face36abd9db8c9e7ebef96dae8d9fa33dbb08" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/securityhotspotstore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/securityhotspotstore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/EF.Api.Test/Config/DockerHelper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/test/EF.Api.Test/Config/DockerHelper.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EasyFood.sln" beforeDir="false" afterPath="$PROJECT_DIR$/EasyFood.sln" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Presentation/EF.Api/Apis/Identidade/Config/DependencyInjectionConfig.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Presentation/EF.Api/Apis/Identidade/Config/DependencyInjectionConfig.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Presentation/EF.Api/Apis/Identidade/Controllers/IdentidadeController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Presentation/EF.Api/Apis/Identidade/Controllers/IdentidadeController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Presentation/EF.Api/EF.Api.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/src/Presentation/EF.Api/EF.Api.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Presentation/EF.Api/appsettings.Development.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/Presentation/EF.Api/appsettings.Development.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/EF.Carrinho.Application/UseCases/AdicionarItemCarrinhoUseCase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Carrinho.Application/UseCases/AdicionarItemCarrinhoUseCase.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/EF.Carrinho.Domain/Models/Item.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Carrinho.Domain/Models/Item.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/EF.Cupons.Domain/Models/Cupom.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Cupons.Domain/Models/Cupom.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/EF.Cupons.Domain/Models/CupomProduto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Cupons.Domain/Models/CupomProduto.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/EF.Estoques.Domain/Models/Estoque.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Estoques.Domain/Models/Estoque.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/EF.Estoques.Domain/Models/MovimentacaoEstoque.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Estoques.Domain/Models/MovimentacaoEstoque.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/EF.Identidade.Application/EF.Identidade.Application.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Identidade.Application/EF.Identidade.Application.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/EF.Identidade.Application/UseCases/AcessoUseCase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Identidade.Application/UseCases/IdentidadeUseCase.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/EF.Identidade.Application/UseCases/Interfaces/IAcessoUseCase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Identidade.Application/UseCases/Interfaces/IIdentidadeUseCase.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/EF.Identidade.Infra/EF.Identidade.Infra.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Identidade.Infra/EF.Identidade.Infra.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test/EF.Api.Test/Config/IntegrationTestsFixture.cs" beforeDir="false" afterPath="$PROJECT_DIR$/test/EF.Api.Test/Config/IntegrationTestsFixture.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/EF.Api.Test/Controllers/CarrinhoControllerTest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/test/EF.Api.Test/Controllers/CarrinhoControllerTest.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/EF.Api.Test/EF.Api.Test.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/test/EF.Api.Test/EF.Api.Test.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/EF.Commons.Test/Builders/Carrinho/AdicionarItemDtoBuilder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/test/EF.Commons.Test/Builders/Carrinho/Dtos/AdicionarItemDtoBuilder.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,9 +76,11 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$USER_HOME$/.nuget/packages/microsoft.net.test.sdk/17.6.0/build/netcoreapp3.1/Microsoft.NET.Test.Sdk.Program.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/aspnetcore/3f1acb59718cadf111a0a796681e3d3509bb3381/src/Identity/Extensions.Stores/src/IdentityUser.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/bf5e279d9239bfef5bb1b8d6212f1b971c434606/src/libraries/System.Private.CoreLib/src/System/Reflection/MethodBaseInvoker.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/4f9e9c9706a6779d017618b3ec133ec2a19349632ff3515cc9bc2c7a6144d82/IContainerOperations.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/cdb18dde9bd1e7b52171c4d36bcc4aefe25b609d585ed8f43b4d8c4427dff/IImageOperations.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/5535e31a712343a63f5d7d796cd874e563e5ac14/src/libraries/System.Security.Claims/src/System/Security/Claims/Claim.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/5535e31a712343a63f5d7d796cd874e563e5ac14/src/libraries/System.Security.Claims/src/System/Security/Claims/ClaimsIdentity.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/a3dca850c863433684364c7f570ab27c25c600/33/c64b0a9d/Faker`1.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/955ec549fe664629353c3b5424b6ad6c7dfcec4ab59bae709ab962c228cf45/RuntimeType.CoreCLR.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/d882146b4f265f10bcbec2663fce248db9ffec5fa1aeaf76e32a11ba5eafcd6/MethodBaseInvoker.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/Services/EF.Carrinho.Application/DTOs/Requests/AdicionarItemDto.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/Services/EF.Carrinho.Application/UseCases/AdicionarItemCarrinhoUseCase.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/Services/EF.Carrinho.Application/UseCases/AtualizarItemCarrinhoUseCase.cs" root0="FORCE_HIGHLIGHTING" />
@@ -132,6 +161,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;dff6d86c-e5e8-4eee-9699-c43c7743dfd5.executor&quot;: &quot;Debug&quot;,
+    &quot;fb298e5c-f89f-44b8-aa99-613fa71471c3.executor&quot;: &quot;Debug&quot;,
     &quot;git-widget-placeholder&quot;: &quot;testes&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
@@ -271,6 +301,10 @@
       <workItem from="1708770178892" duration="2362000" />
       <workItem from="1708809460083" duration="409000" />
       <workItem from="1708809925396" duration="3977000" />
+      <workItem from="1709063849572" duration="6581000" />
+      <workItem from="1709078624724" duration="4745000" />
+      <workItem from="1709112037547" duration="10111000" />
+      <workItem from="1709294709983" duration="5141000" />
     </task>
     <servers />
   </component>
@@ -376,17 +410,30 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/test/EF.Api.Test/Config/DockerHelper.cs</url>
-          <line>49</line>
-          <properties documentPath="C:\dev\fiap\easy-food\test\EF.Api.Test\Config\DockerHelper.cs" initialLine="49" containingFunctionPresentation="Method 'StartContainerAsync'">
+          <url>file://$PROJECT_DIR$/test/EF.Api.Test/Controllers/CarrinhoControllerTest.cs</url>
+          <line>33</line>
+          <properties documentPath="D:\fiap\easy-food\test\EF.Api.Test\Controllers\CarrinhoControllerTest.cs" initialLine="31" containingFunctionPresentation="Method 'AdicionarItem_CarrinhoVazio_DeveRetornarSucesso'">
             <startOffsets>
-              <option value="1732" />
+              <option value="1069" />
             </startOffsets>
             <endOffsets>
-              <option value="1805" />
+              <option value="1070" />
             </endOffsets>
           </properties>
-          <option name="timeStamp" value="10" />
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/src/Services/EF.Carrinho.Application/UseCases/AdicionarItemCarrinhoUseCase.cs</url>
+          <line>26</line>
+          <properties documentPath="D:\fiap\easy-food\src\Services\EF.Carrinho.Application\UseCases\AdicionarItemCarrinhoUseCase.cs" initialLine="26" containingFunctionPresentation="Method 'AdicionarItemCarrinho'">
+            <startOffsets>
+              <option value="1144" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1145" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="15" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

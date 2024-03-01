@@ -6,7 +6,6 @@ public class Estoque : Entity, IAggregateRoot
 {
     private readonly List<MovimentacaoEstoque> _movimentacoes;
 
-    // Necessário para o EF
     private Estoque()
     {
         _movimentacoes = new List<MovimentacaoEstoque>();

@@ -4,8 +4,7 @@ namespace EF.Carrinho.Domain.Models;
 
 public class Item : Entity
 {
-    // Necessário para o Entity Framework
-    protected Item()
+    public Item()
     {
     }
 

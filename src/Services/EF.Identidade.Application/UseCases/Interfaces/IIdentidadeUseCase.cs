@@ -4,8 +4,8 @@ using EF.Identidade.Application.DTOs.Responses;
 
 namespace EF.Identidade.Application.UseCases.Interfaces;
 
-public interface IAcessoUseCase
+public interface IIdentidadeUseCase
 {
     Task<OperationResult<RespostaTokenAcesso>> CriarUsuario(NovoUsuario novoUsuario);
-    Task<OperationResult<RespostaTokenAcesso>> Identificar(UsuarioAcesso usuario);
+    Task<OperationResult<RespostaTokenAcesso>> AcessarSistema(UsuarioAcesso usuario);
 }

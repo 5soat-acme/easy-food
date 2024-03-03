@@ -513,3 +513,5 @@ m
 0src/Shared/EF.Core.Commons/ValueObjects/Email.cs,2\0\2059085355372b1ca87a51c34c0276fea0d28deb
 h
 8src/Services/EF.Identidade.Domain/Models/UsuarioClaim.cs,6\3\63ef11394947fc5031ce55cbd9ecf52ba21a873b
+{
+Ksrc/Presentation/EF.Api/Contexts/Carrinho/Controllers/CarrinhoController.cs,1\f\1f252161e952e0c123f54da494106ee993dd9a5a

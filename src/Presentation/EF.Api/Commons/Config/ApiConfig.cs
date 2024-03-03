@@ -1,14 +1,14 @@
 using System.Text.Json.Serialization;
-using EF.Api.Apis.Carrinho.Config;
-using EF.Api.Apis.Clientes.Config;
-using EF.Api.Apis.Cupons.Config;
-using EF.Api.Apis.Estoques.Config;
-using EF.Api.Apis.Identidade.Config;
-using EF.Api.Apis.Pagamentos.Config;
-using EF.Api.Apis.Pedidos.Config;
-using EF.Api.Apis.PreparoEntrega.Config;
-using EF.Api.Apis.Produtos.Config;
 using EF.Api.Commons.Extensions;
+using EF.Api.Contexts.Carrinho.Config;
+using EF.Api.Contexts.Clientes.Config;
+using EF.Api.Contexts.Cupons.Config;
+using EF.Api.Contexts.Estoques.Config;
+using EF.Api.Contexts.Identidade.Config;
+using EF.Api.Contexts.Pagamentos.Config;
+using EF.Api.Contexts.Pedidos.Config;
+using EF.Api.Contexts.PreparoEntrega.Config;
+using EF.Api.Contexts.Produtos.Config;
 
 namespace EF.Api.Commons.Config;
 

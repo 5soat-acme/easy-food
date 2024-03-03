@@ -12,7 +12,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docker", "docker", "{090842
 		deploy\docker\docker-compose-local.yml = deploy\docker\docker-compose-local.yml
 	EndProjectSection
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{467485EE-5951-4388-BE28-C9A08A150FE8}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presenter", "Presenter", "{467485EE-5951-4388-BE28-C9A08A150FE8}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{B790782A-FF16-4B8A-9993-23CC03C96503}"
 EndProject

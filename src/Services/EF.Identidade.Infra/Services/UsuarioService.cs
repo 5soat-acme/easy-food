@@ -44,31 +44,19 @@ public class UsuarioService : IUsuarioService
     public async Task<Usuario?> ObterUsuarioPorEmail(string email)
     {
         var applicationUser = await _userManager.FindByEmailAsync(email);
-        
+
         if (applicationUser is null) return null;
-        
-        return new Usuario(new Cpf(applicationUser.Cpf), new Email(applicationUser.Email!));;
+
+        return new Usuario(new Cpf(applicationUser.Cpf), new Email(applicationUser.Email!));
     }
 
     public async Task<Usuario?> ObterUsuarioPorCpf(string cpf)
     {
         var applicationUser = await _userManager.Users.FirstOrDefaultAsync(u => u.Cpf == cpf);
-        
-        if(applicationUser is null) return null;
-        
+
+        if (applicationUser is null) return null;
+
         return new Usuario(Guid.Parse(applicationUser.Id), new Cpf(applicationUser.Cpf),
             new Email(applicationUser.Email!));
     }
-
-// todo:
-    // private async Task<List<UsuarioClaim>> ObterUsuarioClaims(Guid id)
-    // {
-    //     var identityClaims = await _userManager.GetClaimsAsync(new ApplicationUser { Id = id.ToString() });
-    //     var identityRoles = await _userManager.GetRolesAsync(new ApplicationUser { Id = id.ToString() });
-    //
-    //     foreach (var userRole in identityRoles) identityClaims.Add(new Claim("role", userRole));
-    //
-    //     return identityClaims.Select(identityClaim => new UsuarioClaim(identityClaim.Type, identityClaim.Value))
-    //         .ToList();
-    // }
 }

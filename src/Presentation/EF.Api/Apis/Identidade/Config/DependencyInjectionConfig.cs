@@ -11,7 +11,7 @@ public static class DependencyInjectionConfig
     {
         // Application - UseCases
         services.AddScoped<IIdentidadeUseCase, IdentidadeUseCase>();
-        
+
         // Domain
         services.AddScoped<IUsuarioService, UsuarioService>();
         return services;

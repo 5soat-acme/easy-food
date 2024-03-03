@@ -9,5 +9,5 @@ spec:
       name: http
       port: 8080
       targetPort: 80
-  selector: 
+  selector:
     app: easy-food-api

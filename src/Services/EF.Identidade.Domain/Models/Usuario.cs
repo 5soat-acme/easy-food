@@ -9,8 +9,6 @@ public class Usuario : Entity, IAggregateRoot
     {
         Cpf = cpf;
         Email = email;
-        //todo:
-        // Claims = new List<UsuarioClaim>();
     }
 
     public Usuario(Guid id, Cpf cpf, Email email)
@@ -22,12 +20,4 @@ public class Usuario : Entity, IAggregateRoot
 
     public Cpf Cpf { get; private set; }
     public Email Email { get; private set; }
-    
-    //todo:
-    // public List<UsuarioClaim> Claims { get; private set; }
-    //
-    // public void AssociarClaim(UsuarioClaim claim)
-    // {
-    //     Claims.Add(claim);
-    // }
 }

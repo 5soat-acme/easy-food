@@ -17,7 +17,7 @@
             <PrivateAssets>all</PrivateAssets>
             <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
         </PackageReference>
-        <PackageReference Include="Microsoft.IdentityModel.JsonWebTokens" Version="7.0.3" />
+        <PackageReference Include="Microsoft.IdentityModel.JsonWebTokens" Version="7.0.3"/>
         <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="8.0.0"/>
     </ItemGroup>
 
@@ -28,8 +28,8 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\..\Shared\EF.Infra.Commons\EF.Infra.Commons.csproj" />
-      <ProjectReference Include="..\EF.Identidade.Domain\EF.Identidade.Domain.csproj" />
+        <ProjectReference Include="..\..\Shared\EF.Infra.Commons\EF.Infra.Commons.csproj"/>
+        <ProjectReference Include="..\EF.Identidade.Domain\EF.Identidade.Domain.csproj"/>
     </ItemGroup>
 
 </Project>

@@ -7,12 +7,12 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <Compile Remove="Class1.cs" />
+        <Compile Remove="Class1.cs"/>
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\..\Shared\EF.Core.Commons\EF.Core.Commons.csproj" />
-      <ProjectReference Include="..\EF.Clientes.Domain\EF.Clientes.Domain.csproj" />
+        <ProjectReference Include="..\..\Shared\EF.Core.Commons\EF.Core.Commons.csproj"/>
+        <ProjectReference Include="..\EF.Clientes.Domain\EF.Clientes.Domain.csproj"/>
     </ItemGroup>
 
 </Project>

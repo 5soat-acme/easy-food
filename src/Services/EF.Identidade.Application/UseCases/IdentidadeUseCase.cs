@@ -100,7 +100,7 @@ public class IdentidadeUseCase : IIdentidadeUseCase
             new(JwtRegisteredClaimNames.Nbf,
                 DateTime.UtcNow.ToUnixEpochDate().ToString()),
             new(JwtRegisteredClaimNames.Iat,
-                DateTime.UtcNow.ToUnixEpochDate().ToString()),
+                DateTime.UtcNow.ToUnixEpochDate().ToString())
         };
 
         var identityClaims = new ClaimsIdentity();
@@ -125,13 +125,13 @@ public class IdentidadeUseCase : IIdentidadeUseCase
     private RespostaTokenAcesso GerarTokenUsuarioIdentificado(Usuario usuario)
     {
         var tokenClaims = ObterTokenClaims();
-        
+
         tokenClaims.AddClaim(new Claim(JwtRegisteredClaimNames.Sub, usuario.Id.ToString()));
         tokenClaims.AddClaim(new Claim(JwtRegisteredClaimNames.Email, usuario.Email.Endereco));
         tokenClaims.AddClaim(new Claim("user_type", "registred"));
         tokenClaims.AddClaim(new Claim("session_id", Guid.NewGuid().ToString()));
         tokenClaims.AddClaim(new Claim("user_cpf", usuario.Cpf.Numero));
-        
+
         var encodedToken = CodificarToken(tokenClaims);
         return ObterRespostaToken(encodedToken, tokenClaims.Claims, usuario);
     }

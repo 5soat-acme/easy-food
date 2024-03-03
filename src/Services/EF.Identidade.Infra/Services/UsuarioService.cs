@@ -44,6 +44,7 @@ public class UsuarioService : IUsuarioService
     public async Task<Usuario?> ObterUsuarioPorEmail(string email)
     {
         var applicationUser = await _userManager.FindByEmailAsync(email);
+        
         if (applicationUser is null) return null;
         
         return new Usuario(new Cpf(applicationUser.Cpf), new Email(applicationUser.Email!));;
@@ -52,6 +53,8 @@ public class UsuarioService : IUsuarioService
     public async Task<Usuario?> ObterUsuarioPorCpf(string cpf)
     {
         var applicationUser = await _userManager.Users.FirstOrDefaultAsync(u => u.Cpf == cpf);
+        
+        if(applicationUser is null) return null;
         
         return new Usuario(Guid.Parse(applicationUser.Id), new Cpf(applicationUser.Cpf),
             new Email(applicationUser.Email!));

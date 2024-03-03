@@ -19,19 +19,30 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="61e4a515-7fae-49b6-801b-ebc481bfb9f9" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/EasyFood.sln" beforeDir="false" afterPath="$PROJECT_DIR$/EasyFood.sln" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/EF.Api.Test/Config/ApiFactory.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/EF.Api.Test/Config/DockerHelper.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/EF.Api.Test/Config/IntegrationTestsFixture.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/EF.Api.Test/Controllers/CarrinhoControllerTest.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/EF.Api.Test/EF.Api.Test.csproj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/EF.Api.Test/GlobalUsings.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/EF.Api.Test/UnitTest1.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/EF.Commons.Test/Builders/Carrinho/Dtos/AdicionarItemDtoBuilder.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/EF.Commons.Test/Builders/Carrinho/Models/ItemBuilder.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/EF.Commons.Test/EF.Commons.Test.csproj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/EF.Commons.Test/Extensions/HttpClientExtension.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/EF.Commons.Test/Helpers/ProdutoHelper.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/issuestore/0/d/0d4eb7018c56e6f8115bffe33c843995c7badd63" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/issuestore/1/4/1475a10f1f0f4d5800f7b0317d36e508281a2945" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/issuestore/3/6/36a0b0c1554c971db9449b0ebf3d39e1452f6290" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/issuestore/4/0/400e3bf3f221efe38014cee9aa0f9070f0a56aca" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/issuestore/4/3/436989c49800592e633c0419a90d1459d0599b59" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/issuestore/5/7/57cc3d894e91faabbb38187271f0ed730795ae59" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/issuestore/8/1/8143b07ec654681f3c7686a4c9a6fdf8ef12892d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/issuestore/9/d/9dc14ca1ded19ccec64ee09114164275f12286d2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/issuestore/a/e/aecd588a6b8ea16cab9b2fd32b8232afcc11bd59" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/issuestore/a/e/aecd588a6b8ea16cab9b2fd32b8232afcc11bd59" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/issuestore/d/b/dbc0ae268c719db8f1f22ac209ad2ab5f9c1d055" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/securityhotspotstore/0/d/0d4eb7018c56e6f8115bffe33c843995c7badd63" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/securityhotspotstore/1/4/1475a10f1f0f4d5800f7b0317d36e508281a2945" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/securityhotspotstore/3/6/36a0b0c1554c971db9449b0ebf3d39e1452f6290" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/securityhotspotstore/4/0/400e3bf3f221efe38014cee9aa0f9070f0a56aca" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/securityhotspotstore/4/3/436989c49800592e633c0419a90d1459d0599b59" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/securityhotspotstore/5/7/57cc3d894e91faabbb38187271f0ed730795ae59" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/securityhotspotstore/8/1/8143b07ec654681f3c7686a4c9a6fdf8ef12892d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/securityhotspotstore/9/d/9dc14ca1ded19ccec64ee09114164275f12286d2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/securityhotspotstore/d/b/dbc0ae268c719db8f1f22ac209ad2ab5f9c1d055" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/securityhotspotstore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/securityhotspotstore/index.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/EF.Identidade.Application/UseCases/IdentidadeUseCase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Identidade.Application/UseCases/IdentidadeUseCase.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/EF.Identidade.Infra/Services/UsuarioService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Identidade.Infra/Services/UsuarioService.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -111,60 +122,60 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    ".NET Launch Settings Profile.EF.Api: http.executor": "Debug",
-    ".NET Launch Settings Profile.EF.Api: https.executor": "Debug",
-    "1bea6dd9-6f9b-4afc-9f56-c255980b80ea.executor": "Debug",
-    "358cc20c-bbd2-4173-b107-79bbfcbf32c4.executor": "Debug",
-    "HTTP Request.All in identidade.executor": "Run",
-    "HTTP Request.api-requests | #2.executor": "Run",
-    "HTTP Request.api-requests | Carrinho API:.executor": "Run",
-    "HTTP Request.carrinho-api | #1.executor": "Run",
-    "HTTP Request.carrinho-api | #2.executor": "Run",
-    "HTTP Request.carrinho-api | #3.executor": "Run",
-    "HTTP Request.carrinho-api | #4.executor": "Run",
-    "HTTP Request.carrinho-api | Adicionar item no carrinho.executor": "Run",
-    "HTTP Request.carrinho-api | Carrinho API:.executor": "Run",
-    "HTTP Request.carrinho-api | Fechar pedido a partir do carrinho do cliente.executor": "Run",
-    "HTTP Request.carrinho-api | Incluir item no carrinho.executor": "Run",
-    "HTTP Request.carrinho-api | Obter carrinho do cliente.executor": "Run",
-    "HTTP Request.carrinho-api | Obter resumo do carrinho do cliente.executor": "Run",
-    "HTTP Request.identidade | #1.executor": "Run",
-    "HTTP Request.identidade | #2.executor": "Run",
-    "HTTP Request.identidade | #3.executor": "Run",
-    "HTTP Request.identidade | #4.executor": "Run",
-    "HTTP Request.identidade-api | #2.executor": "Run",
-    "HTTP Request.identidade-api | Autenticar usuário.executor": "Run",
-    "HTTP Request.identidade-api | Cadastrar usuário.executor": "Run",
-    "HTTP Request.identidade-api | Identidade API:.executor": "Run",
-    "HTTP Request.pedidos-api | Obter o pedido por id ou ide de correlação.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "dff6d86c-e5e8-4eee-9699-c43c7743dfd5.executor": "Debug",
-    "fb298e5c-f89f-44b8-aa99-613fa71471c3.executor": "Debug",
-    "git-widget-placeholder": "fix-identidade",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "rest.client.default.execution.environment": "dev",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;.NET Launch Settings Profile.EF.Api: http.executor&quot;: &quot;Debug&quot;,
+    &quot;.NET Launch Settings Profile.EF.Api: https.executor&quot;: &quot;Debug&quot;,
+    &quot;1bea6dd9-6f9b-4afc-9f56-c255980b80ea.executor&quot;: &quot;Debug&quot;,
+    &quot;358cc20c-bbd2-4173-b107-79bbfcbf32c4.executor&quot;: &quot;Debug&quot;,
+    &quot;HTTP Request.All in identidade.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.api-requests | #2.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.api-requests | Carrinho API:.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.carrinho-api | #1.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.carrinho-api | #2.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.carrinho-api | #3.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.carrinho-api | #4.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.carrinho-api | Adicionar item no carrinho.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.carrinho-api | Carrinho API:.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.carrinho-api | Fechar pedido a partir do carrinho do cliente.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.carrinho-api | Incluir item no carrinho.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.carrinho-api | Obter carrinho do cliente.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.carrinho-api | Obter resumo do carrinho do cliente.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.identidade | #1.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.identidade | #2.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.identidade | #3.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.identidade | #4.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.identidade-api | #2.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.identidade-api | Autenticar usuário.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.identidade-api | Cadastrar usuário.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.identidade-api | Identidade API:.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.pedidos-api | Obter o pedido por id ou ide de correlação.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;dff6d86c-e5e8-4eee-9699-c43c7743dfd5.executor&quot;: &quot;Debug&quot;,
+    &quot;fb298e5c-f89f-44b8-aa99-613fa71471c3.executor&quot;: &quot;Debug&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;fase-2&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;rest.client.default.execution.environment&quot;: &quot;dev&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "postgresql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;postgresql&quot;
     ],
-    "rider.external.source.directories": [
-      "C:\\Users\\bmfpe\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\DecompilerCache",
-      "C:\\Users\\bmfpe\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\SourcesCache",
-      "C:\\Users\\bmfpe\\AppData\\Local\\Symbols\\src"
+    &quot;rider.external.source.directories&quot;: [
+      &quot;C:\\Users\\bmfpe\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\DecompilerCache&quot;,
+      &quot;C:\\Users\\bmfpe\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\SourcesCache&quot;,
+      &quot;C:\\Users\\bmfpe\\AppData\\Local\\Symbols\\src&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected=".NET Launch Settings Profile.EF.Api: https">
     <configuration name="EF.Api: http" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/src/Presentation/EF.Api/EF.Api.csproj" />
@@ -286,7 +297,8 @@
       <workItem from="1709063849572" duration="6581000" />
       <workItem from="1709078624724" duration="4745000" />
       <workItem from="1709112037547" duration="10111000" />
-      <workItem from="1709294709983" duration="5551000" />
+      <workItem from="1709294709983" duration="6801000" />
+      <workItem from="1709467918873" duration="1326000" />
     </task>
     <servers />
   </component>
@@ -394,14 +406,7 @@
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/test/EF.Api.Test/Controllers/CarrinhoControllerTest.cs</url>
           <line>33</line>
-          <properties documentPath="D:\fiap\easy-food\test\EF.Api.Test\Controllers\CarrinhoControllerTest.cs" initialLine="31" containingFunctionPresentation="Method 'AdicionarItem_CarrinhoVazio_DeveRetornarSucesso'">
-            <startOffsets>
-              <option value="1069" />
-            </startOffsets>
-            <endOffsets>
-              <option value="1070" />
-            </endOffsets>
-          </properties>
+          <properties documentPath="D:\fiap\easy-food\test\EF.Api.Test\Controllers\CarrinhoControllerTest.cs" initialLine="31" containingFunctionPresentation="Method 'AdicionarItem_CarrinhoVazio_DeveRetornarSucesso'" />
           <option name="timeStamp" value="14" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
@@ -416,6 +421,45 @@
             </endOffsets>
           </properties>
           <option name="timeStamp" value="15" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/src/Services/EF.Identidade.Application/UseCases/IdentidadeUseCase.cs</url>
+          <line>56</line>
+          <properties documentPath="D:\fiap\easy-food\src\Services\EF.Identidade.Application\UseCases\IdentidadeUseCase.cs" initialLine="56" containingFunctionPresentation="Method 'AcessarSistema'">
+            <startOffsets>
+              <option value="2228" />
+            </startOffsets>
+            <endOffsets>
+              <option value="2229" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="16" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/src/Services/EF.Identidade.Application/UseCases/IdentidadeUseCase.cs</url>
+          <line>77</line>
+          <properties documentPath="D:\fiap\easy-food\src\Services\EF.Identidade.Application\UseCases\IdentidadeUseCase.cs" initialLine="77" containingFunctionPresentation="Method 'IdentificarPorCpf'">
+            <startOffsets>
+              <option value="2988" />
+            </startOffsets>
+            <endOffsets>
+              <option value="2989" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="17" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/src/Services/EF.Identidade.Infra/Services/UsuarioService.cs</url>
+          <line>53</line>
+          <properties documentPath="D:\fiap\easy-food\src\Services\EF.Identidade.Infra\Services\UsuarioService.cs" initialLine="52" containingFunctionPresentation="Method 'ObterUsuarioPorCpf'">
+            <startOffsets>
+              <option value="1617" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1618" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="18" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

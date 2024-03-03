@@ -83,12 +83,12 @@ public class IdentidadeUseCase : IIdentidadeUseCase
         if (usuario is not null)
             return Identificar(usuario);
 
-        return OperationResult<RespostaTokenAcesso>.Failure("Usuário inválido");
+        return AcessarComUsuarioNaoRegistrado(cpf);
     }
 
-    private OperationResult<RespostaTokenAcesso> AcessarComUsuarioNaoRegistrado()
+    private OperationResult<RespostaTokenAcesso> AcessarComUsuarioNaoRegistrado(string? cpf = null)
     {
-        var result = GerarTokenUsuarioNaoIdentificado();
+        var result = GerarTokenUsuarioNaoIdentificado(cpf);
         return OperationResult<RespostaTokenAcesso>.Success(result);
     }
 

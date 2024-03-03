@@ -19,41 +19,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="61e4a515-7fae-49b6-801b-ebc481bfb9f9" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/issuestore/0/6/06f310d4907cc86e80d3c02a56552b0d68b1b199" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/issuestore/0/6/06f310d4907cc86e80d3c02a56552b0d68b1b199" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/issuestore/3/c/3cf2e7a79d1fe659ce0d19582730189180532151" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/issuestore/3/c/3cf2e7a79d1fe659ce0d19582730189180532151" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/issuestore/8/1/817e3022469a4f697e31baa3379857d1469a2dbd" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/issuestore/8/1/817e3022469a4f697e31baa3379857d1469a2dbd" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/securityhotspotstore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/securityhotspotstore/index.pb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deploy/database/init.sql" beforeDir="false" afterPath="$PROJECT_DIR$/deploy/database/init.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Presentation/EF.Api/Commons/Config/EventBusConfig.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Presentation/EF.Api/Commons/Config/EventBusConfig.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Presentation/EF.Api/Contexts/Pagamentos/Config/DependencyInjectionConfig.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Presentation/EF.Api/Contexts/Pagamentos/Config/DependencyInjectionConfig.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Presentation/EF.Api/Commons/Config/ApiConfig.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Presentation/EF.Api/Commons/Config/ApiConfig.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Presentation/EF.Api/Contexts/Pagamentos/Controllers/PagamentoController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Presentation/EF.Api/Contexts/Pagamentos/Controllers/PagamentoController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Presentation/EF.Api/Contexts/Pedidos/Config/DependencyInjectionConfig.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Presentation/EF.Api/Contexts/Pedidos/Config/DependencyInjectionConfig.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Presentation/EF.Api/Contexts/Pedidos/Controllers/PedidoController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Presentation/EF.Api/Contexts/Pedidos/Controllers/PedidoController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/EF.Carrinho.Application/Events/CarrinhoEventHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Carrinho.Application/Events/CarrinhoEventHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/EF.Pagamentos.Application/Config/PagamentoServiceResolver.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Pagamentos.Application/Config/PagamentoServiceResolver.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/EF.Pagamentos.Application/DTOs/Requests/AutorizarPagamentoDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Pagamentos.Application/DTOs/Requests/AutorizarPagamentoDto.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/EF.Pagamentos.Application/UseCases/AutorizarPagamentoUseCase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Pagamentos.Application/UseCases/AutorizarPagamentoUseCase.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/EF.Pagamentos.Domain/Models/Pagamento.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Pagamentos.Domain/Models/Pagamento.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/EF.Pagamentos.Domain/Ports/IPagamentoService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Pagamentos.Domain/Services/IPagamentoService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/EF.Pagamentos.Domain/Repository/IPagamentoRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Pagamentos.Domain/Repository/IPagamentoRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/EF.Pagamentos.Infra/Data/Migrations/PagamentoDbContextModelSnapshot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Pagamentos.Infra/Data/Migrations/PagamentoDbContextModelSnapshot.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/EF.Pagamentos.Infra/Data/Repository/PagamentoRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Pagamentos.Infra/Data/Repository/PagamentoRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/EF.Pagamentos.Infra/PagamentoDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Pagamentos.Infra/PagamentoDbContext.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/EF.Pagamentos.Infra/Services/PagamentoCartaoCreditoService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Pagamentos.Infra/Services/PagamentoCartaoCreditoService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/EF.Pagamentos.Infra/Services/PagamentoMercadoPagoService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Pagamentos.Infra/Services/PagamentoMercadoPagoService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/EF.Pagamentos.Infra/Services/PagamentoPixService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Pagamentos.Infra/Services/PagamentoPixService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/EF.Pedidos.Application/DTOs/Requests/ProcessarPagamentoDto.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/EF.Pedidos.Application/Events/PedidoEventHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Pedidos.Application/Events/PedidoEventHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/EF.Pedidos.Application/Gateways/IPagamentoService.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/EF.Pedidos.Application/Mappings/DomainToDtoMapper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Pedidos.Application/Mappings/DomainToDtoMapper.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/EF.Pedidos.Application/UseCases/CriarPedidoUseCase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Pedidos.Application/UseCases/CriarPedidoUseCase.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/EF.Pedidos.Application/UseCases/Interfaces/IProcessarPagamentoUseCase.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/EF.Pedidos.Application/UseCases/ProcessarPagamentoUseCase.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/EF.Pedidos.Infra/Adapters/Pagamentos/PagamentoAdapter.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/EF.PreparoEntrega.Application/Events/PedidoEventHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.PreparoEntrega.Application/Events/PedidoEventHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Shared/EF.Core.Commons/Messages/Integrations/PagamentoProcessadoEvent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Shared/EF.Core.Commons/Messages/Integrations/PedidoRecebidoEvent.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Presentation/EF.Api/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/Presentation/EF.Api/appsettings.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -310,7 +280,7 @@
       <workItem from="1709078624724" duration="4745000" />
       <workItem from="1709112037547" duration="10111000" />
       <workItem from="1709294709983" duration="6801000" />
-      <workItem from="1709467918873" duration="29241000" />
+      <workItem from="1709467918873" duration="30769000" />
     </task>
     <servers />
   </component>
@@ -416,19 +386,6 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/src/Services/EF.PreparoEntrega.Application/Events/PedidoEventHandler.cs</url>
-          <line>18</line>
-          <properties documentPath="D:\fiap\easy-food\src\Services\EF.PreparoEntrega.Application\Events\PedidoEventHandler.cs" initialLine="18" containingFunctionPresentation="Method 'Handle'">
-            <startOffsets>
-              <option value="631" />
-            </startOffsets>
-            <endOffsets>
-              <option value="632" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="23" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/src/Services/EF.Carrinho.Application/Events/CarrinhoEventHandler.cs</url>
           <line>17</line>
           <properties documentPath="D:\fiap\easy-food\src\Services\EF.Carrinho.Application\Events\CarrinhoEventHandler.cs" initialLine="17" containingFunctionPresentation="Method 'Handle'">
@@ -442,19 +399,6 @@
           <option name="timeStamp" value="27" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/src/Services/EF.Pedidos.Application/UseCases/AtualizarPedidoUseCase.cs</url>
-          <line>18</line>
-          <properties documentPath="D:\fiap\easy-food\src\Services\EF.Pedidos.Application\UseCases\AtualizarPedidoUseCase.cs" initialLine="18" containingFunctionPresentation="Method 'Handle'">
-            <startOffsets>
-              <option value="600" />
-            </startOffsets>
-            <endOffsets>
-              <option value="601" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="34" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/src/Services/EF.Pedidos.Application/UseCases/ReceberPedidoUseCase.cs</url>
           <line>25</line>
           <properties documentPath="D:\fiap\easy-food\src\Services\EF.Pedidos.Application\UseCases\ReceberPedidoUseCase.cs" initialLine="25" containingFunctionPresentation="Method 'Handle'">
@@ -466,6 +410,32 @@
             </endOffsets>
           </properties>
           <option name="timeStamp" value="35" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/src/Presentation/EF.Api/Contexts/Pagamentos/Controllers/PagamentoController.cs</url>
+          <line>26</line>
+          <properties documentPath="D:\fiap\easy-food\src\Presentation\EF.Api\Contexts\Pagamentos\Controllers\PagamentoController.cs" initialLine="26" containingFunctionPresentation="Constructor 'PagamentoController'">
+            <startOffsets>
+              <option value="1150" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1151" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="36" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/src/Presentation/EF.Api/Contexts/Pagamentos/Controllers/PagamentoController.cs</url>
+          <line>83</line>
+          <properties documentPath="D:\fiap\easy-food\src\Presentation\EF.Api\Contexts\Pagamentos\Controllers\PagamentoController.cs" initialLine="83" containingFunctionPresentation="Method 'AutorizarPagamento'">
+            <startOffsets>
+              <option value="3502" />
+            </startOffsets>
+            <endOffsets>
+              <option value="3503" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="37" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

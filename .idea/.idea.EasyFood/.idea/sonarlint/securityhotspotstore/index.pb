@@ -587,3 +587,7 @@ b
 Psrc/Shared/EF.Core.Commons/Messages/Integrations/PreparoPedidoFinalizadoEvent.cs,d\1\d1e9f90651ec6770a8300caf135918a7343ecf81
 ~
 Nsrc/Shared/EF.Core.Commons/Messages/Integrations/PreparoPedidoIniciadoEvent.cs,f\9\f9061aede34d686ba4ba5ab3f38e882c733a4ef2
+
+Osrc/Presentation/EF.Api/Contexts/Identidade/Controllers/IdentidadeController.cs,a\6\a681193d3d4c2268cf2a1993471eb96a488c6a7c
+Å
+Qsrc/Presentation/EF.Api/Commons/Extensions/PagamentoAutorizacaoWebHookSettings.cs,3\3\3383742f947c46ae05fb2960487da81fa95495f1

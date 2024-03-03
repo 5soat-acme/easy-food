@@ -33,6 +33,8 @@ public static class ApiConfig
         services.RegisterServicesPreparoEntrega(configuration);
         services.RegisterServicesProdutos(configuration);
         services.AddIdentityConfig(configuration);
+        
+        services.Configure<PagamentoAutorizacaoWebHookSettings>(configuration.GetSection("PagamentoAutorizacaoWebHook"));
 
         return services;
     }

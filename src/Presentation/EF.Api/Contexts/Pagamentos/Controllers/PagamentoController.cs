@@ -1,9 +1,14 @@
-﻿using EF.Pagamentos.Application.DTOs.Requests;
+﻿using System.IdentityModel.Tokens.Jwt;
+using System.Text;
+using EF.Api.Commons.Extensions;
+using EF.Pagamentos.Application.DTOs.Requests;
 using EF.Pagamentos.Application.DTOs.Responses;
 using EF.Pagamentos.Application.UseCases.Interfaces;
 using EF.Pagamentos.Domain.Models;
 using EF.WebApi.Commons.Controllers;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Options;
+using Microsoft.IdentityModel.Tokens;
 
 namespace EF.Api.Contexts.Pagamentos.Controllers;
 
@@ -13,14 +18,17 @@ public class PagamentoController : CustomControllerBase
     private readonly IProcessarPagamentoUseCase _processarPagamentoUseCase;
     private readonly IAutorizarPagamentoUseCase _autorizarPagamentoUseCase;
     private readonly IConsultarPagamentoPedidoUseCase _consultarPagamentoPedidoUseCase;
+    private readonly PagamentoAutorizacaoWebHookSettings _settings;
 
     public PagamentoController(IProcessarPagamentoUseCase processarPagamentoUseCase,
         IAutorizarPagamentoUseCase autorizarPagamentoUseCase,
-        IConsultarPagamentoPedidoUseCase consultarPagamentoPedidoUseCase)
+        IConsultarPagamentoPedidoUseCase consultarPagamentoPedidoUseCase,
+        IOptions<PagamentoAutorizacaoWebHookSettings> options)
     {
         _processarPagamentoUseCase = processarPagamentoUseCase;
         _autorizarPagamentoUseCase = autorizarPagamentoUseCase;
         _consultarPagamentoPedidoUseCase = consultarPagamentoPedidoUseCase;
+        _settings = options.Value;
     }
 
     /// <summary>
@@ -33,6 +41,18 @@ public class PagamentoController : CustomControllerBase
     public ActionResult<MetodoPagamentoDto> ObterTiposPagamento()
     {
         return Ok(new MetodoPagamentoDto { MetodosPagamento = Enum.GetNames(typeof(Tipo)) });
+    }
+
+    /// <summary>
+    ///     Obtém o pagamento pelo id do pedido.
+    /// </summary>
+    /// <response code="20o">Dados do pagamento.</response>
+    [ProducesResponseType(StatusCodes.Status202Accepted)]
+    [Produces("application/json")]
+    [HttpGet]
+    public async Task<IActionResult> ObterPagamentoPorPedidoId([FromQuery] Guid pedidoId)
+    {
+        return Respond(await _consultarPagamentoPedidoUseCase.Handle(pedidoId));
     }
 
     /// <summary>
@@ -62,23 +82,14 @@ public class PagamentoController : CustomControllerBase
     [HttpPost("autorizar/webhook")]
     public async Task<IActionResult> AutorizarPagamento(AutorizarPagamentoDto autorizarPagamentoDto)
     {
+        var key = Request.Headers["Authorization"].ToString();
+
+        if (key != _settings.Key) return Unauthorized();
+
         var result = await _autorizarPagamentoUseCase.Handle(autorizarPagamentoDto);
 
         if (!result.IsValid) return Respond(result.GetErrorMessages());
 
         return Respond();
-    }
-
-    /// <summary>
-    ///     Obtém o pagamento pelo id do pedido.
-    /// </summary>
-    /// <response code="20o">Dados do pagamento.</response>
-    [ProducesResponseType(StatusCodes.Status202Accepted)]
-    [Produces("application/json")]
-    [HttpGet]
-    public async Task<IActionResult> ObterPagamentoPorPedidoId([FromQuery] Guid pedidoId)
-    {
-        
-        return Respond(await _consultarPagamentoPedidoUseCase.Handle(pedidoId));
     }
 }

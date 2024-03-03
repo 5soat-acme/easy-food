@@ -1,5 +1,6 @@
 using EF.Core.Commons.Communication;
 using EF.Core.Commons.DomainObjects;
+using EF.Core.Commons.Messages.Integrations;
 using EF.Core.Commons.UseCases;
 using EF.Core.Commons.ValueObjects;
 using EF.Pedidos.Application.DTOs.Gateways;
@@ -39,6 +40,12 @@ public class CriarPedidoUseCase : CommonUseCase, ICriarPedidoUseCase
         if (!await ValidarPedido(pedido)) return OperationResult<Guid>.Failure(ValidationResult);
 
         _pedidoRepository.Criar(pedido);
+        pedido.AddEvent(new PedidoCriadoEvent
+        {
+            AggregateId = pedido.Id,
+            SessionId = criarPedidoDto.SessionId,
+            ClienteId = criarPedidoDto.ClienteId
+        });
         await PersistData(_pedidoRepository.UnitOfWork);
 
         if (!ValidationResult.IsValid) return OperationResult<Guid>.Failure(ValidationResult);

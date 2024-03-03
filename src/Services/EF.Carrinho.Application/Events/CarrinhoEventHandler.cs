@@ -5,7 +5,7 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace EF.Carrinho.Application.Events;
 
-public class CarrinhoEventHandler : IEventHandler<PagamentoProcessadoEvent>
+public class CarrinhoEventHandler : IEventHandler<PedidoCriadoEvent>
 {
     private readonly IServiceScopeFactory _serviceScopeFactory;
 
@@ -14,14 +14,14 @@ public class CarrinhoEventHandler : IEventHandler<PagamentoProcessadoEvent>
         _serviceScopeFactory = serviceScopeFactory;
     }
 
-    public async Task Handle(PagamentoProcessadoEvent @event)
+    public async Task Handle(PedidoCriadoEvent @event)
     {
         using var scope = _serviceScopeFactory.CreateScope();
         var removerCarrinhoUseCase = scope.ServiceProvider.GetRequiredService<IRemoverCarrinhoUseCase>();
 
-        if (@event.ClientId.HasValue)
+        if (@event.ClienteId.HasValue)
         {
-            await removerCarrinhoUseCase.RemoverCarrinhoPorClienteId(@event.ClientId.Value);
+            await removerCarrinhoUseCase.RemoverCarrinhoPorClienteId(@event.ClienteId.Value);
             return;
         }
 

@@ -1,5 +1,6 @@
 using EF.Pedidos.Application.DTOs.Responses;
 using EF.Pedidos.Domain.Models;
+using Microsoft.EntityFrameworkCore.Metadata.Conventions;
 
 namespace EF.Pedidos.Application.Mappings;
 
@@ -11,6 +12,7 @@ public static class DomainToDtoMapper
 
         return new PedidoDto
         {
+            Id = model.Id,
             ClienteId = model.ClienteId,
             Cpf = model.Cpf?.Numero,
             Status = model.Status,

@@ -12,11 +12,18 @@ public static class EventBusConfig
     public static IServiceCollection AddEventBusConfig(this IServiceCollection services)
     {
         services.AddSingleton<IEventBus, InMemoryEventBus>();
-        services.AddScoped<IEventHandler<PagamentoProcessadoEvent>, CarrinhoEventHandler>();
-        services.AddScoped<IEventHandler<PagamentoProcessadoEvent>, PedidoEntregaEventHandler>();
+        
+        // Carrinho
+        services.AddScoped<IEventHandler<PedidoCriadoEvent>, CarrinhoEventHandler>();
+        
+        // Preparo entrega
+        services.AddScoped<IEventHandler<PedidoRecebidoEvent>, PedidoEntregaEventHandler>();
         services.AddScoped<IEventHandler<PreparoPedidoIniciadoEvent>, PedidoEventHandler>();
         services.AddScoped<IEventHandler<PreparoPedidoFinalizadoEvent>, PedidoEventHandler>();
         services.AddScoped<IEventHandler<EntregaRealizadaEvent>, PedidoEventHandler>();
+        
+        // Pagamentos
+        services.AddScoped<IEventHandler<PagamentoAutorizadoEvent>, PedidoEventHandler>();
 
         return services;
     }
@@ -27,8 +34,11 @@ public static class EventBusConfig
         var services = scope.ServiceProvider;
 
         var bus = services.GetRequiredService<IEventBus>();
+        
+        services.GetRequiredService<IEnumerable<IEventHandler<PedidoCriadoEvent>>>().ToList()
+            .ForEach(e => bus.Subscribe(e));
 
-        services.GetRequiredService<IEnumerable<IEventHandler<PagamentoProcessadoEvent>>>().ToList()
+        services.GetRequiredService<IEnumerable<IEventHandler<PedidoRecebidoEvent>>>().ToList()
             .ForEach(e => bus.Subscribe(e));
 
         services.GetRequiredService<IEnumerable<IEventHandler<PreparoPedidoIniciadoEvent>>>().ToList()
@@ -38,6 +48,9 @@ public static class EventBusConfig
             .ForEach(e => bus.Subscribe(e));
 
         services.GetRequiredService<IEnumerable<IEventHandler<EntregaRealizadaEvent>>>().ToList()
+            .ForEach(e => bus.Subscribe(e));
+        
+        services.GetRequiredService<IEnumerable<IEventHandler<PagamentoAutorizadoEvent>>>().ToList()
             .ForEach(e => bus.Subscribe(e));
 
         return app;

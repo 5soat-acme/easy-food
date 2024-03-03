@@ -17,7 +17,10 @@ public static class DependencyInjectionConfig
         services.AddScoped<PagamentoServiceResolver>();
 
         // Application - Use Cases
+        services.AddScoped<IProcessarPagamentoUseCase, ProcessarPagamentoUseCase>();
         services.AddScoped<IAutorizarPagamentoUseCase, AutorizarPagamentoUseCase>();
+        services.AddScoped<IConsultarPagamentoPedidoUseCase, ConsultarPagamentoPedidoUseCase>();
+
 
         // Domain
         services.AddScoped<PagamentoMercadoPagoService>();

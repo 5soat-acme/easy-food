@@ -8,7 +8,8 @@ using Microsoft.Extensions.DependencyInjection;
 namespace EF.Pedidos.Application.Events;
 
 public class PedidoEventHandler : IEventHandler<PreparoPedidoIniciadoEvent>,
-    IEventHandler<PreparoPedidoFinalizadoEvent>, IEventHandler<EntregaRealizadaEvent>
+    IEventHandler<PreparoPedidoFinalizadoEvent>, IEventHandler<EntregaRealizadaEvent>,
+    IEventHandler<PagamentoAutorizadoEvent>
 {
     private readonly IServiceScopeFactory _serviceScopeFactory;
 
@@ -50,6 +51,17 @@ public class PedidoEventHandler : IEventHandler<PreparoPedidoIniciadoEvent>,
         {
             PedidoId = notification.PedidoCorrelacaoId,
             Status = Status.EmPreparacao
+        });
+    }
+
+    public async Task Handle(PagamentoAutorizadoEvent notification)
+    {
+        using var scope = _serviceScopeFactory.CreateScope();
+        var atualizarPedidoUseCase = scope.ServiceProvider.GetRequiredService<IReceberPedidoUsecase>();
+
+        await atualizarPedidoUseCase.Handle(new ReceberPedidoDto
+        {
+            PedidoId = notification.PedidoId
         });
     }
 }

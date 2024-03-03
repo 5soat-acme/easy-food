@@ -12,7 +12,6 @@ namespace EF.Api.Contexts.Pedidos.Controllers;
 public class PedidoController(
     IConsultarPedidoUseCase consultarPedidoUseCase,
     ICriarPedidoUseCase criarPedidoUseCase,
-    IProcessarPagamentoUseCase processarPagamentoUseCase,
     IUserApp userApp)
     : CustomControllerBase
 {
@@ -41,7 +40,7 @@ public class PedidoController(
     [ProducesResponseType(StatusCodes.Status401Unauthorized)]
     [Produces("application/json")]
     [Authorize]
-    [HttpPost]
+    [HttpPost("checkout")]
     public async Task<IActionResult> Checkout(CriarPedidoDto dto)
     {
         dto.SessionId = userApp.GetSessionId();
@@ -49,35 +48,6 @@ public class PedidoController(
         dto.ClienteCpf = userApp.GetUserCpf();
 
         var result = await criarPedidoUseCase.Handle(dto);
-
-        if (!result.IsValid) return Respond(result.GetErrorMessages());
-
-        return Respond(new { pedidoId = result.Data });
-    }
-
-    /// <summary>
-    ///     Processa o pagamento e faz a confirmação do pedido.
-    /// </summary>
-    /// <response code="200">Pedido confirmado com sucesso.</response>
-    /// <response code="401">Não autorizado.</response>
-    [ProducesResponseType(StatusCodes.Status204NoContent)]
-    [ProducesResponseType(StatusCodes.Status401Unauthorized)]
-    [Produces("application/json")]
-    [Authorize]
-    [HttpPost("{pedidoId}/confirmar")]
-    public async Task<IActionResult> ProcessarPagamento([FromRoute] Guid pedidoId, ProcessarPagamentoDto dto)
-    {
-        if (pedidoId != dto.PedidoId)
-        {
-            AddError("O pedido não corresponde ao informado");
-            return Respond();
-        }
-
-        dto.SessionId = userApp.GetSessionId();
-        dto.ClienteId = userApp.GetUserId();
-        dto.ClienteCpf = userApp.GetUserCpf();
-
-        var result = await processarPagamentoUseCase.Handle(dto);
 
         if (!result.IsValid) return Respond(result.GetErrorMessages());
 

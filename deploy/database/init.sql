@@ -601,6 +601,12 @@ END IF;
 END $EF$;
 COMMIT;
 
+ALTER TABLE "Pagamentos" ADD "Status" integer NOT NULL DEFAULT 0;
+
+INSERT INTO "__EFMigrationsHistory" ("MigrationId", "ProductVersion")
+VALUES ('20240303195513_AdicionandoStatusPagamento', '8.0.0');
+COMMIT;
+
 
 -- ### PREPARO E ENTREGA ###
 DO

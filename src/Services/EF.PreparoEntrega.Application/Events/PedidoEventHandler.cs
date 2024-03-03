@@ -6,7 +6,7 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace EF.PreparoEntrega.Application.Events;
 
-public class PedidoEntregaEventHandler : IEventHandler<PagamentoProcessadoEvent>
+public class PedidoEntregaEventHandler : IEventHandler<PedidoRecebidoEvent>
 {
     private readonly IServiceScopeFactory _serviceScopeFactory;
 
@@ -15,7 +15,7 @@ public class PedidoEntregaEventHandler : IEventHandler<PagamentoProcessadoEvent>
         _serviceScopeFactory = serviceScopeFactory;
     }
 
-    public async Task Handle(PagamentoProcessadoEvent @event)
+    public async Task Handle(PedidoRecebidoEvent @event)
     {
         using var scope = _serviceScopeFactory.CreateScope();
         var criarPedidoUseCase = scope.ServiceProvider.GetRequiredService<ICriarPedidoUseCase>();

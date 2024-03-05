@@ -25,13 +25,13 @@ public class ConsultarPedidoUseCase : IConsultarPedidoUseCase
     {
         var pedidos = await _pedidoRepository.ObterPedidos(status);
         var result = DomainToDtoMapper.MapToList(pedidos);
-        return result.OrderBy(p => p.DataCriacao);
+        return result.OrderByDescending(p => p.Status).ThenBy(p => p.DataCriacao);
     }
 
     public async Task<IEnumerable<PedidoMonitorDto>?> ObterPedidosMonitor()
     {
         var pedidos = await _pedidoRepository.ObterPedidosEmAberto();
         var result = DomainToDtoMapper.MapToMonitorList(pedidos);
-        return result.OrderByDescending(p => p.Codigo);
+        return result.OrderByDescending(p => p.Status).ThenByDescending(p => p.Codigo);
     }
 }

@@ -12,7 +12,7 @@ O projeto é parte do trabalho de conclusão do curso de Arquitetura de Software
 3. [Overview da arquitetura :mag:](#Overview-da-arquitetura-mag)
     1. [Estrutura :hammer:](#Estrutura-hammer)
         1. [Clean-Architecture :o:](#Clean-Architecture-o)
-    2. [Diagramas da Arquitetura :bar_chart:](#Diagramas-da-Arquitetura-bar_char)
+    2. [Diagramas da Arquitetura :bar_chart:](#Diagramas-da-Arquitetura-bar_chart)
     3. [Overview :mag:](#Overview-mag)
 4. [Como executar :rocket:](#Como-executar-rocket)
     1. [Docker :whale:](#Docker-whale)

@@ -24,6 +24,8 @@ public static class DependencyInjectionConfig
 
         // Domain
         services.AddScoped<PagamentoMercadoPagoService>();
+        services.AddScoped<PagamentoPixService>();
+        services.AddScoped<PagamentoCartaoCreditoService>();
 
         // Infra - Data 
         services.AddScoped<IPagamentoRepository, PagamentoRepository>();

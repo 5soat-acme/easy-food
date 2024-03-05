@@ -10,6 +10,10 @@ O projeto é parte do trabalho de conclusão do curso de Arquitetura de Software
 1. [Tecnologias utilizadas :computer:](#Tecnologias-utilizadas-computer)
 2. [Arquitetura :triangular_ruler:](#Arquitetura-triangular_ruler)
 3. [Overview da arquitetura :mag:](#Overview-da-arquitetura-mag)
+    1. [Estrutura :hammer:](#Estrutura-hammer)
+        1. [Clean-Architecture :o:](#Clean-Architecture-o)
+    2. [Diagramas da Arquitetura :bar_chart:](#Diagramas-da-Arquitetura-bar_char)
+    3. [Overview :mag:](#Overview-mag)
 4. [Como executar :rocket:](#Como-executar-rocket)
     1. [Docker :whale:](#Docker-whale)
         1. [Pré-requisitos :clipboard:](#Pré-requisitos-clipboard)
@@ -24,6 +28,8 @@ O projeto é parte do trabalho de conclusão do curso de Arquitetura de Software
         2. [Executando :running:](#Executando-running-2)
         3. [Como utilizar :bulb:](#Como-utilizar-bulb-2)
     4. [Token :key:](#Token-key)
+        1. [Token Webhook :key:](#Token-Webhook-key)
+5. [Utilização dos Endpoints :arrow_forward:](#Utilização-dos-Endpoints-arrow_forward)
 
 # Tecnologias utilizadas :computer:
 
@@ -36,25 +42,39 @@ O projeto é parte do trabalho de conclusão do curso de Arquitetura de Software
 
 # Arquitetura :triangular_ruler:
 
-- Arquitetura Hexagonal
+- Clean Architecture
 - DDD - Domain Driven Design
 - Domain Events
 - Domain Validations
 - Repository Pattern
 - Unit Of Work Pattern
-- CQS - Command Query Separation
 
 # Overview da arquitetura :mag:
-Na primeira fase do projeto, foi desenvolvido um monolito modular para fazer uma separação clara dos contextos delimitados mapeados na modelagem estratégica. Separamos a implementação em 3 pastas principais:
-- **Presentation:** É a camada que expõe os serviços da aplicação. É responsável por receber as requisições HTTP, fazer a validação dos dados de entrada, mapear os dados de entrada para os objetos de domínio, chamar os serviços de aplicação e retornar os dados de saída.
+Foi desenvolvido um monolito modular para fazer uma separação clara dos contextos delimitados mapeados na modelagem estratégica. </br>
+O desenvolvimento separado em projetos de forma modular, foi pensado para ficar de uma forma clara e de acordo com o DDD, separando cada contexto em um projeto. Dessa maneira, fica clara a identificação dos contextos e facilita no desenvolvimento, podendo separar o desenvolvimento dos contextos entre os times, sem que haja conflitos. Separamos a implementação em 3 pastas principais:
+- **Presenter:** É a camada que expõe os serviços da aplicação. É responsável por receber as requisições HTTP, fazer a validação dos dados de entrada, mapear os dados de entrada para os objetos de domínio, chamar os serviços de aplicação e retornar os dados de saída.
 - **Services:** É onde estão implementados os serviços de aplicação. Dentro desta pasta dividimos em subpastas que representam os contextos delimitados. Cada subpasta contém as camadas do serviço, como **Application, Domain, Infra**, entre outras.
-- **Shared:** É aqui que compartilhamos o que é comum entre os diferentes módulos, inclusive os objetos de domíno e os serviços de infraestrutura que podem ser utilizados por mais de um contexto delimitado.
+- **Commons:** É aqui que compartilhamos o que é comum entre os diferentes módulos, inclusive os objetos de domíno e os serviços de infraestrutura que podem ser utilizados por mais de um contexto delimitado.
 
-## Estrutura
+## Estrutura :hammer:
 ![img.png](docs/img/img.png) </br>
 ![img_1.png](docs/img/img_1.png) </br>
 
-## Overview
+### Clean Architecture :o:
+![clean_architecture.jpg](docs/img/clean_architecture.jpg) </br>
+
+- **Services.*.Domain:** São os projetos referente a camada **Enterprise Business Rules** da Clean Architecture. São nesses projeto onde está o domínio da aplicação, com as regras de negócio e sem referência a nenhuma bliblioteca ou framework. Esta camada expõe interfaces que serão implementadas nas camadas externas, seguindo a regra de Inversão de Dependência.
+
+- **Services.*.Infra:** Nesses projetos fazemos do padrão Repository um Gateway da camada **Interface Adapters** da Clean Architecture, onde esses Repositories irão chamar um DBContext do ORM(Entity Framework). Nesse cenário, o ORM passa a ser a camada **Frameworks & Drivers** da Clean Architecture. Toda regra de acesso a dados fica na camada mais externa. Quando necessário mudar a forma de acesso a dados, basta implementar uma nova classe com base na interface e chamar uma nova implementação da camada **Frameworks & Drivers**.
+
+- **Services.*.Application:** São os projetos referente a camada **Application Business Rules** da Clean Architecture. São nesses projetos onde são implementados cada UseCase do sistema. Os UseCases recebem via injeção de depêndencia os Gateways(Repositories) e os utilizam de acordo com a regra de negócio necessária.
+
+- **Presenter:** São os Controllers da camada **Interface Adapters** da Clean Architecture. Esses Controllers são responsáveis por chamarem os UseCases passando via injeção de dependência toda dependência necessária, como por exemplo, os Gateways(Repositories). A instanciação desses Gateways são feitas utilizando a Injeção de Dependência já existente no framework do .NET. Nesse cenário a injeção de dependência do framework passa a ser a  camada **Frameworks & Drivers** da Clean Architecture.
+
+## Diagramas da Arquitetura :bar_chart:
+Para visualizar os diagramas da arquitetura, acesse nossa **[Wiki](https://5soat-acme.github.io/easy-food/docs/category/diagramas)**
+
+## Overview :mag:
 ![img_2.png](docs/img/img_2.png)
 
 # Como executar :rocket:
@@ -158,5 +178,13 @@ Incluimos no swagger um botão para facilitar a inclusão do token no header. Ba
 O mesmo pode ser feito na requisição de cada endpoint:
 
 ![img_5.png](docs/img/img_5.png)
+
+### Token Webhook :key:
+Para chamada do Webhook é necessário a utilização de um Token. O Token a ser utilizado é o informado no campo **Key** da tag **PagamentoAutorizacaoWebHook** do arquivo **appsettings.json**.
+O Token pré-configurado foi o **9E541194-61B4-44F6-BE2A-B1F08C24BB52**
+
+
+# Utilização dos Endpoints :arrow_forward:
+
 
 **Pronto! Agora você já pode utilizar a API** :smile:

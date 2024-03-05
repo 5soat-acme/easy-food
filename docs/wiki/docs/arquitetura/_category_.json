@@ -1,8 +1,8 @@
 {
-  "label": "Arquitetura - Diagramas",
+  "label": "Arquitetura",
   "position": 2,
   "link": {
     "type": "generated-index",
-    "description": "Arquitetura - Diagramas"
+    "description": "Arquitetura do sistema"
   }
 }

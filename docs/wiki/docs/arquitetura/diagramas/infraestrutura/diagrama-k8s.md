@@ -6,4 +6,4 @@ sidebar_position: 1
 
 Diagrama da arquitetura do K8S(Kubernetes).
 
-![](./../../../static/img/arquitetura/infraestrutura/diagrama_k8s.png)
+![](./../../../../static/img/arquitetura/diagramas/infraestrutura/diagrama_k8s.png)

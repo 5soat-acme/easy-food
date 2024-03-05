@@ -111,15 +111,15 @@ const config = {
               },
               {
                 label: 'Diagrama K8S',
-                to: '/docs/arquitetura/infraestrutura/diagrama-k8s',
+                to: '/docs/arquitetura/diagramas/infraestrutura/diagrama-k8s',
               },
               {
                 label: 'Diagrama AWS',
-                to: '/docs/arquitetura/infraestrutura/diagrama-aws',
+                to: '/docs/arquitetura/diagramas/infraestrutura/diagrama-aws',
               },
               {
                 label: 'Diagrama C4',
-                to: '/docs/arquitetura/solucao/diagrama-c4',
+                to: '/docs/arquitetura/diagramas/solucao/diagrama-c4',
               }
             ],
           },

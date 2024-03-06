@@ -13,7 +13,6 @@ O projeto é parte do trabalho de conclusão do curso de Arquitetura de Software
    2. [Estrutura do projeto :hammer:](#Estrutura-do-projeto-hammer)
    3. [Clean-Architecture :o:](#Clean-Architecture-o)
    4. [Diagramas da Arquitetura :bar_chart:](#Diagramas-da-Arquitetura-bar_chart)
-[//]: # (   5. [Overview :mag:]&#40;#Overview-mag&#41;)
 4. [Como executar :rocket:](#Como-executar-rocket)
     1. [Docker :whale:](#Docker-whale)
         1. [Pré-requisitos :clipboard:](#Pré-requisitos-clipboard)
@@ -84,9 +83,6 @@ Como dissemos anteriormente, optamos por desenvolver o projeto em um monolito mo
 ## Diagramas da Arquitetura :bar_chart:
 A documentação da arquitetura do projeto está centralizada na nossa wiki e pode ser verificada  aqui: **[Wiki](https://5soat-acme.github.io/easy-food/docs/category/diagramas)**
 
-[//]: # (## Overview :mag:)
-
-[//]: # (![img_2.png]&#40;docs/img/img_2.png&#41;)
 
 # Como executar :rocket:
 
@@ -233,8 +229,10 @@ Obtém o carrinho do cliente. Caso o cliente tenha se identificado no sistema, �
 3. Pode-se consultar os tipos de pagamentos disponíveis em: ``[GET] /api/pagamentos/tipos``
 
 ### Preparação e Entrega
-1. Pode-se consultar pedidos, filtrando por status em: ``[GET] /api/preparo``
-2. Pode-se consultar os pedidos que serão exibidos no monitor de acompanhamento em: ``[GET] /api/monitor``
+1. Pode-se consultar pedidos, filtrando por status em: ``[GET] /api/preparo`` </br>
+Este endpoint exibe todos os pedidos independente do status na seguinte ordem: Pronto > Em Preparação > Recebido > Finalizado. Também é possível filtrar por um status em específico.
+2. Pode-se consultar os pedidos que serão exibidos no monitor de acompanhamento em: ``[GET] /api/monitor`` </br>
+Este endpoint é utilizado na exibição dos pedidos em um monitor para visualização dos clientes. É exibido todos os pedidos, exceto os finalizados, na seguinte ordem: Pronto > Em Preparação > Recebido.
 3. Pode-se consultar um pedido específico em: ``[GET] /api/preparo/{id}``
 4. Pode-se iniciar o pedido em: ``[POST] /api/preparo/iniciar``
 5. Pode-se finalizar o pedido em: ``[POST] /api/preparo/finalizar``

@@ -37,6 +37,9 @@ namespace EF.Pagamentos.Infra.Data.Migrations
                     b.Property<Guid>("PedidoId")
                         .HasColumnType("uuid");
 
+                    b.Property<int>("Status")
+                        .HasColumnType("integer");
+
                     b.Property<int>("Tipo")
                         .HasColumnType("integer");
 

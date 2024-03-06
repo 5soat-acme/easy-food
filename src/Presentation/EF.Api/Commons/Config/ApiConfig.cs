@@ -1,15 +1,14 @@
 using System.Text.Json.Serialization;
-using EF.Api.Apis.Carrinho.Config;
-using EF.Api.Apis.Clientes.Config;
-using EF.Api.Apis.Cupons.Config;
-using EF.Api.Apis.Estoques.Config;
-using EF.Api.Apis.Identidade.Config;
-using EF.Api.Apis.Pagamentos.Config;
-using EF.Api.Apis.Pedidos.Config;
-using EF.Api.Apis.PreparoEntrega.Config;
-using EF.Api.Apis.Produtos.Config;
 using EF.Api.Commons.Extensions;
-using EF.Domain.Commons.Mediator;
+using EF.Api.Contexts.Carrinho.Config;
+using EF.Api.Contexts.Clientes.Config;
+using EF.Api.Contexts.Cupons.Config;
+using EF.Api.Contexts.Estoques.Config;
+using EF.Api.Contexts.Identidade.Config;
+using EF.Api.Contexts.Pagamentos.Config;
+using EF.Api.Contexts.Pedidos.Config;
+using EF.Api.Contexts.PreparoEntrega.Config;
+using EF.Api.Contexts.Produtos.Config;
 
 namespace EF.Api.Commons.Config;
 
@@ -22,9 +21,8 @@ public static class ApiConfig
         services.AddEndpointsApiExplorer();
         services.AddSwaggerConfig();
 
-        services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblyContaining<Program>());
+        services.AddEventBusConfig();
 
-        services.AddScoped<IMediatorHandler, MediatorHandler>();
         services.RegisterServicesIdentidade();
         services.RegisterServicesCarrinho(configuration);
         services.RegisterServicesPagamentos(configuration);
@@ -34,8 +32,9 @@ public static class ApiConfig
         services.RegisterServicesPedidos(configuration);
         services.RegisterServicesPreparoEntrega(configuration);
         services.RegisterServicesProdutos(configuration);
-
         services.AddIdentityConfig(configuration);
+        
+        services.Configure<PagamentoAutorizacaoWebHookSettings>(configuration.GetSection("PagamentoAutorizacaoWebHook"));
 
         return services;
     }
@@ -52,7 +51,7 @@ public static class ApiConfig
 
         app.UseMiddleware<ExceptionMiddleware>();
 
-        // app.RunMigrations();
+        app.SubscribeEventHandlers();
 
         return app;
     }

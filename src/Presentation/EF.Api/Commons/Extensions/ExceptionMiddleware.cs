@@ -1,5 +1,5 @@
 using System.Net;
-using EF.Domain.Commons.DomainObjects;
+using EF.Core.Commons.DomainObjects;
 using Microsoft.AspNetCore.Mvc;
 
 namespace EF.Api.Commons.Extensions;

@@ -1,16 +1,14 @@
 using EF.Carrinho.Domain.Models;
-using EF.Domain.Commons.Mediator;
-using EF.Domain.Commons.Messages;
-using EF.Domain.Commons.Repository;
+using EF.Core.Commons.Messages;
+using EF.Core.Commons.Repository;
 using EF.Infra.Commons.Data;
-using FluentValidation.Results;
 using Microsoft.EntityFrameworkCore;
 
 namespace EF.Carrinho.Infra.Data;
 
 public sealed class CarrinhoDbContext : DbContext, IUnitOfWork
 {
-    public CarrinhoDbContext(DbContextOptions<CarrinhoDbContext> options, IMediatorHandler mediator) : base(options)
+    public CarrinhoDbContext(DbContextOptions<CarrinhoDbContext> options) : base(options)
     {
         ChangeTracker.QueryTrackingBehavior = QueryTrackingBehavior.NoTracking;
         ChangeTracker.AutoDetectChangesEnabled = false;
@@ -29,7 +27,6 @@ public sealed class CarrinhoDbContext : DbContext, IUnitOfWork
     {
         modelBuilder.ApplyConfigurationsFromAssembly(typeof(CarrinhoDbContext).Assembly);
         modelBuilder.Ignore<Event>();
-        modelBuilder.Ignore<ValidationResult>();
 
         foreach (var relationship in modelBuilder.Model.GetEntityTypes()
                      .SelectMany(e => e.GetForeignKeys()))

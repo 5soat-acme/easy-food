@@ -1,24 +1,21 @@
-using AutoMapper;
-using EF.Cupons.Application.Queries.Interfaces;
-using EF.Pedidos.Application.DTOs.Adapters;
-using EF.Pedidos.Application.Ports;
+using EF.Cupons.Application.UseCases.Interfaces;
+using EF.Pedidos.Application.DTOs.Gateways;
+using EF.Pedidos.Application.Gateways;
 
 namespace EF.Pedidos.Infra.Adapters.Cupons;
 
 public class CupomAdapter : ICupomService
 {
-    private readonly ICupomQuery _cupomQuery;
-    private readonly IMapper _mapper;
+    private readonly IConsultarCupomUseCase _consultarCupomUseCase;
 
-    public CupomAdapter(IMapper mapper, ICupomQuery cupomQuery)
+    public CupomAdapter(IConsultarCupomUseCase consultarCupomUseCase)
     {
-        _mapper = mapper;
-        _cupomQuery = cupomQuery;
+        _consultarCupomUseCase = consultarCupomUseCase;
     }
 
     public async Task<CupomDto?> ObterCupomPorCodigo(string codigo)
     {
-        var cupom = await _cupomQuery.ObterCupom(codigo);
-        return _mapper.Map<CupomDto>(cupom);
+        var cupom = await _consultarCupomUseCase.ObterCupom(codigo);
+        return CumpomToDomainMapper.Map(cupom);
     }
 }

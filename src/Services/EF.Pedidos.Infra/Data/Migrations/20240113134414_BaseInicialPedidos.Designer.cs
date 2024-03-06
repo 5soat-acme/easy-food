@@ -97,7 +97,7 @@ namespace EF.Pedidos.Infra.Data.Migrations
 
             modelBuilder.Entity("EF.Pedidos.Domain.Models.Pedido", b =>
                 {
-                    b.OwnsOne("EF.Domain.Commons.ValueObjects.Cpf", "Cpf", b1 =>
+                    b.OwnsOne("EF.Core.Commons.ValueObjects.Cpf", "Cpf", b1 =>
                         {
                             b1.Property<Guid>("PedidoId")
                                 .HasColumnType("uuid");

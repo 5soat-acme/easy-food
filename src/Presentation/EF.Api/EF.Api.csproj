@@ -9,13 +9,13 @@
         <UserSecretsId>1884b85e-25f6-4d91-a0ef-e073fbddc3ba</UserSecretsId>
         <GenerateDocumentationFile>true</GenerateDocumentationFile>
         <NoWarn>$(NoWarn);1591</NoWarn>
+        <PreserveCompilationContext>true</PreserveCompilationContext>
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.1"/>
-        <PackageReference Include="MediatR" Version="12.2.0"/>
         <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="8.0.0"/>
         <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="8.0.0"/>
+        <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="8.0.2"/>
         <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="8.0.0"/>
         <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.0"/>
         <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="8.0.0"/>
@@ -25,6 +25,9 @@
     <ItemGroup>
         <Content Include="..\..\.dockerignore">
             <Link>.dockerignore</Link>
+        </Content>
+        <Content Update="appsettings.Development.json">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
         </Content>
     </ItemGroup>
 
@@ -42,7 +45,7 @@
         <ProjectReference Include="..\..\Services\EF.PreparoEntrega.Application\EF.PreparoEntrega.Application.csproj"/>
         <ProjectReference Include="..\..\Services\EF.PreparoEntrega.Infra\EF.PreparoEntrega.Infra.csproj"/>
         <ProjectReference Include="..\..\Services\EF.Produtos.Infra\EF.Produtos.Infra.csproj"/>
-        <ProjectReference Include="..\..\Shared\EF.Domain.Commons\EF.Domain.Commons.csproj"/>
+        <ProjectReference Include="..\..\Shared\EF.Core.Commons\EF.Core.Commons.csproj"/>
         <ProjectReference Include="..\..\Shared\EF.WebApi.Commons\EF.WebApi.Commons.csproj"/>
         <ProjectReference Include="..\..\Services\EF.Estoques.Application\EF.Estoques.Application.csproj"/>
         <ProjectReference Include="..\..\Services\EF.Estoques.Infra\EF.Estoques.Infra.csproj"/>

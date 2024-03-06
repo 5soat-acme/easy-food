@@ -1,22 +1,20 @@
-using EF.Domain.Commons.Mediator;
-using EF.Domain.Commons.Messages;
-using EF.Domain.Commons.Repository;
+using EF.Core.Commons.Messages;
+using EF.Core.Commons.Repository;
 using EF.Infra.Commons.Data;
-using EF.Infra.Commons.Mediator;
+using EF.Infra.Commons.EventBus;
 using EF.PreparoEntrega.Domain.Models;
-using FluentValidation.Results;
 using Microsoft.EntityFrameworkCore;
 
 namespace EF.PreparoEntrega.Infra.Data;
 
 public sealed class PreparoEntregaDbContext : DbContext, IUnitOfWork
 {
-    private readonly IMediatorHandler _mediator;
+    private readonly IEventBus _bus;
 
-    public PreparoEntregaDbContext(DbContextOptions<PreparoEntregaDbContext> options, IMediatorHandler mediator) :
+    public PreparoEntregaDbContext(DbContextOptions<PreparoEntregaDbContext> options, IEventBus bus) :
         base(options)
     {
-        _mediator = mediator;
+        _bus = bus;
         ChangeTracker.QueryTrackingBehavior = QueryTrackingBehavior.NoTracking;
         ChangeTracker.AutoDetectChangesEnabled = false;
     }
@@ -27,7 +25,7 @@ public sealed class PreparoEntregaDbContext : DbContext, IUnitOfWork
     public async Task<bool> Commit()
     {
         DbContextExtension.SetDates(ChangeTracker.Entries());
-        await _mediator.PublishEvents(this);
+        await _bus.PublishEvents(this);
         return await SaveChangesAsync() > 0;
     }
 
@@ -39,7 +37,6 @@ public sealed class PreparoEntregaDbContext : DbContext, IUnitOfWork
 
         modelBuilder.ApplyConfigurationsFromAssembly(typeof(PreparoEntregaDbContext).Assembly);
         modelBuilder.Ignore<Event>();
-        modelBuilder.Ignore<ValidationResult>();
 
         modelBuilder.HasSequence<int>("CodigoPedidoSequence").StartsAt(1000).IncrementsBy(1);
 

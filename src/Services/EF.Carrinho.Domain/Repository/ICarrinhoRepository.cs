@@ -1,5 +1,5 @@
 using EF.Carrinho.Domain.Models;
-using EF.Domain.Commons.Repository;
+using EF.Core.Commons.Repository;
 
 namespace EF.Carrinho.Domain.Repository;
 

@@ -1,7 +1,6 @@
-﻿using EF.Cupons.Domain.Models;
-using EF.Domain.Commons.Messages;
-using EF.Domain.Commons.Repository;
-using FluentValidation.Results;
+﻿using EF.Core.Commons.Messages;
+using EF.Core.Commons.Repository;
+using EF.Cupons.Domain.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
 
@@ -32,7 +31,6 @@ public sealed class CupomDbContext : DbContext, IUnitOfWork
 
         modelBuilder.ApplyConfigurationsFromAssembly(typeof(CupomDbContext).Assembly);
         modelBuilder.Ignore<Event>();
-        modelBuilder.Ignore<ValidationResult>();
 
         base.OnModelCreating(modelBuilder);
     }

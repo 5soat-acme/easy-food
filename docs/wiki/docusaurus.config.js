@@ -109,6 +109,18 @@ const config = {
                 label: 'Mapa de Contextos',
                 to: '/docs/modelo-estrategico/mapa-contextos',
               },
+              {
+                label: 'Diagrama K8S',
+                to: '/docs/arquitetura/diagramas/infraestrutura/diagrama-k8s',
+              },
+              {
+                label: 'Diagrama AWS',
+                to: '/docs/arquitetura/diagramas/infraestrutura/diagrama-aws',
+              },
+              {
+                label: 'Diagrama C4',
+                to: '/docs/arquitetura/diagramas/solucao/diagrama-c4',
+              }
             ],
           },
           {

@@ -1,4 +1,4 @@
-﻿using EF.Domain.Commons.DomainObjects;
+﻿using EF.Core.Commons.DomainObjects;
 
 namespace EF.Cupons.Domain.Models;
 
@@ -6,7 +6,6 @@ public class Cupom : Entity, IAggregateRoot
 {
     private readonly List<CupomProduto> _cupomProdutos;
 
-    // Necessário para o EF
     private Cupom()
     {
         _cupomProdutos = new List<CupomProduto>();

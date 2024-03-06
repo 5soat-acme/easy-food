@@ -1,11 +1,10 @@
-using EF.Domain.Commons.DomainObjects;
+using EF.Core.Commons.DomainObjects;
 
 namespace EF.Carrinho.Domain.Models;
 
 public class Item : Entity
 {
-    // Necessário para o Entity Framework
-    protected Item()
+    public Item()
     {
     }
 

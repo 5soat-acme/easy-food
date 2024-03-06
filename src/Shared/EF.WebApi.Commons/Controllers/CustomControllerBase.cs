@@ -1,5 +1,4 @@
 using System.Collections.ObjectModel;
-using FluentValidation.Results;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 
@@ -28,10 +27,9 @@ public abstract class CustomControllerBase : ControllerBase
         return Respond();
     }
 
-    protected IActionResult Respond(ValidationResult validationResult)
+    protected IActionResult Respond(ReadOnlyCollection<string> errors)
     {
-        foreach (var erro in validationResult.Errors) AddError(erro.ErrorMessage);
-
+        AddErrors(errors);
         return Respond();
     }
 

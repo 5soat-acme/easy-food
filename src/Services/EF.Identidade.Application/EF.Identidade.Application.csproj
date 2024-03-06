@@ -7,15 +7,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="FluentValidation" Version="11.9.0"/>
-        <PackageReference Include="MediatR" Version="12.2.0"/>
-        <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="8.0.0"/>
-        <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="8.0.0"/>
-        <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.0"/>
-    </ItemGroup>
-
-    <ItemGroup>
-        <ProjectReference Include="..\..\Shared\EF.Domain.Commons\EF.Domain.Commons.csproj"/>
+        <ProjectReference Include="..\..\Shared\EF.Core.Commons\EF.Core.Commons.csproj"/>
         <ProjectReference Include="..\..\Shared\EF.Infra.Commons\EF.Infra.Commons.csproj"/>
         <ProjectReference Include="..\..\Shared\EF.WebApi.Commons\EF.WebApi.Commons.csproj"/>
         <ProjectReference Include="..\EF.Clientes.Application\EF.Clientes.Application.csproj"/>

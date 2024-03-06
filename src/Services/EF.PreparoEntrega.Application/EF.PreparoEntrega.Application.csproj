@@ -7,17 +7,9 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\..\Shared\EF.Domain.Commons\EF.Domain.Commons.csproj"/>
+        <ProjectReference Include="..\..\Shared\EF.Core.Commons\EF.Core.Commons.csproj"/>
+        <ProjectReference Include="..\..\Shared\EF.Infra.Commons\EF.Infra.Commons.csproj"/>
         <ProjectReference Include="..\EF.PreparoEntrega.Domain\EF.PreparoEntrega.Domain.csproj"/>
-    </ItemGroup>
-
-    <ItemGroup>
-        <PackageReference Include="AutoMapper" Version="12.0.1"/>
-        <PackageReference Include="MediatR" Version="12.2.0"/>
-    </ItemGroup>
-
-    <ItemGroup>
-        <Folder Include="Commands\CriarPedido\"/>
     </ItemGroup>
 
 </Project>

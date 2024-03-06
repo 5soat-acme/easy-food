@@ -1,10 +1,9 @@
-﻿using EF.Domain.Commons.DomainObjects;
+﻿using EF.Core.Commons.DomainObjects;
 
 namespace EF.Estoques.Domain.Models;
 
 public class MovimentacaoEstoque : Entity
 {
-    // Necessário para o EF
     private MovimentacaoEstoque()
     {
     }

@@ -1,4 +1,4 @@
-﻿using EF.Domain.Commons.DomainObjects;
+﻿using EF.Core.Commons.DomainObjects;
 
 namespace EF.Estoques.Domain.Models;
 
@@ -6,7 +6,6 @@ public class Estoque : Entity, IAggregateRoot
 {
     private readonly List<MovimentacaoEstoque> _movimentacoes;
 
-    // Necessário para o EF
     private Estoque()
     {
         _movimentacoes = new List<MovimentacaoEstoque>();

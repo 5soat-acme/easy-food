@@ -12,11 +12,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docker", "docker", "{090842
 		deploy\docker\docker-compose-local.yml = deploy\docker\docker-compose-local.yml
 	EndProjectSection
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{467485EE-5951-4388-BE28-C9A08A150FE8}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presenter", "Presenter", "{467485EE-5951-4388-BE28-C9A08A150FE8}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{B790782A-FF16-4B8A-9993-23CC03C96503}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared", "Shared", "{ADA9D63D-AF53-4AAD-9A3C-49C95B373A36}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Commons", "Commons", "{ADA9D63D-AF53-4AAD-9A3C-49C95B373A36}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Pedidos", "Pedidos", "{36477809-6123-4CB4-960C-9A58495A178F}"
 EndProject
@@ -34,7 +34,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Pagamentos", "Pagamentos", 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Produtos", "Produtos", "{B362D413-4175-4F96-BFA0-E4B072965787}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EF.Domain.Commons", "src\Shared\EF.Domain.Commons\EF.Domain.Commons.csproj", "{782DB0E3-9CF5-49C8-BA7D-7691C66A647A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EF.Core.Commons", "src\Shared\EF.Core.Commons\EF.Core.Commons.csproj", "{782DB0E3-9CF5-49C8-BA7D-7691C66A647A}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EF.WebApi.Commons", "src\Shared\EF.WebApi.Commons\EF.WebApi.Commons.csproj", "{D603325F-219B-48D5-ACC3-B84EB95F4AA5}"
 EndProject
@@ -70,9 +70,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EF.Cupons.Infra", "src\Serv
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EF.Produtos.Domain", "src\Services\EF.Produtos.Domain\EF.Produtos.Domain.csproj", "{09E1B1A6-5879-4C12-8D0E-AFA5BA13036B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EF.Produtos.Infra", "src\Services\EF.Produtos.Infra\EF.Produtos.Infra.csproj", "{927AAFA1-681F-4C89-90EB-B587B193FCDC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EF.Produtos.Infra", "src\Services\EF.Produtos.Infra\EF.Produtos.Infra.csproj", "{927AAFA1-681F-4C89-90EB-B587B193FCDC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EF.Produtos.Application", "src\Services\EF.Produtos.Application\EF.Produtos.Application.csproj", "{5E542E9D-523D-49D5-AB70-E76840838BC3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EF.Produtos.Application", "src\Services\EF.Produtos.Application\EF.Produtos.Application.csproj", "{5E542E9D-523D-49D5-AB70-E76840838BC3}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EF.Carrinho.Application", "src\Services\EF.Carrinho.Application\EF.Carrinho.Application.csproj", "{EF0C94E3-FC1F-4A92-BDAD-7CB875FFD861}"
 EndProject
@@ -82,24 +82,35 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EF.Carrinho.Domain", "src\S
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EF.Infra.Commons", "src\Shared\EF.Infra.Commons\EF.Infra.Commons.csproj", "{807825CE-FDF9-4BA6-8D4B-5BC22648D672}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EF.Pagamentos.Domain", "src\Services\EF.Pagamentos.Domain\EF.Pagamentos.Domain.csproj", "{2A18EFDE-9B27-4805-BD2A-020CBD9B636F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EF.Pagamentos.Domain", "src\Services\EF.Pagamentos.Domain\EF.Pagamentos.Domain.csproj", "{2A18EFDE-9B27-4805-BD2A-020CBD9B636F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EF.Pagamentos.Infra", "src\Services\EF.Pagamentos.Infra\EF.Pagamentos.Infra.csproj", "{3FE31438-D93C-43D3-A276-AEB07CF4C03C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EF.Pagamentos.Infra", "src\Services\EF.Pagamentos.Infra\EF.Pagamentos.Infra.csproj", "{3FE31438-D93C-43D3-A276-AEB07CF4C03C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EF.Pagamentos.Application", "src\Services\EF.Pagamentos.Application\EF.Pagamentos.Application.csproj", "{97D97DDD-837D-44B2-9AFB-CCDA5785D918}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EF.Pagamentos.Application", "src\Services\EF.Pagamentos.Application\EF.Pagamentos.Application.csproj", "{97D97DDD-837D-44B2-9AFB-CCDA5785D918}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PreparoEntrega", "PreparoEntrega", "{DDF62731-6121-4FF3-BE2C-642F4AE42223}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EF.PreparoEntrega.Application", "src\Services\EF.PreparoEntrega.Application\EF.PreparoEntrega.Application.csproj", "{4F521F64-A8DA-4CCB-B078-4DB8DC0B9F04}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EF.PreparoEntrega.Application", "src\Services\EF.PreparoEntrega.Application\EF.PreparoEntrega.Application.csproj", "{4F521F64-A8DA-4CCB-B078-4DB8DC0B9F04}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EF.PreparoEntrega.Domain", "src\Services\EF.PreparoEntrega.Domain\EF.PreparoEntrega.Domain.csproj", "{04938691-AE27-4885-A580-E05D8CFDF648}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EF.PreparoEntrega.Domain", "src\Services\EF.PreparoEntrega.Domain\EF.PreparoEntrega.Domain.csproj", "{04938691-AE27-4885-A580-E05D8CFDF648}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EF.PreparoEntrega.Infra", "src\Services\EF.PreparoEntrega.Infra\EF.PreparoEntrega.Infra.csproj", "{EEB246A7-0692-4270-B355-F956C50D3986}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EF.PreparoEntrega.Infra", "src\Services\EF.PreparoEntrega.Infra\EF.PreparoEntrega.Infra.csproj", "{EEB246A7-0692-4270-B355-F956C50D3986}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "database", "database", "{13BEECA4-7942-4A3A-8F81-41A4D3F73473}"
 	ProjectSection(SolutionItems) = preProject
 		deploy\database\init.sql = deploy\database\init.sql
 	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "kubernetes", "kubernetes", "{07F0F38F-49A7-41E2-AE84-6C4C3F23959B}"
+	ProjectSection(SolutionItems) = preProject
+		deploy\kubernetes\deployment.yaml = deploy\kubernetes\deployment.yaml
+		deploy\kubernetes\hpa.yaml = deploy\kubernetes\hpa.yaml
+		deploy\kubernetes\ingress.yaml = deploy\kubernetes\ingress.yaml
+		deploy\kubernetes\secret.yaml = deploy\kubernetes\secret.yaml
+		deploy\kubernetes\service.yaml = deploy\kubernetes\service.yaml
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EF.Identidade.Domain", "src\Services\EF.Identidade.Domain\EF.Identidade.Domain.csproj", "{BD5AA210-8A3E-43AF-8662-08AA989F404F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -227,6 +238,10 @@ Global
 		{EEB246A7-0692-4270-B355-F956C50D3986}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EEB246A7-0692-4270-B355-F956C50D3986}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EEB246A7-0692-4270-B355-F956C50D3986}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BD5AA210-8A3E-43AF-8662-08AA989F404F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD5AA210-8A3E-43AF-8662-08AA989F404F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BD5AA210-8A3E-43AF-8662-08AA989F404F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BD5AA210-8A3E-43AF-8662-08AA989F404F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -276,6 +291,8 @@ Global
 		{04938691-AE27-4885-A580-E05D8CFDF648} = {DDF62731-6121-4FF3-BE2C-642F4AE42223}
 		{EEB246A7-0692-4270-B355-F956C50D3986} = {DDF62731-6121-4FF3-BE2C-642F4AE42223}
 		{13BEECA4-7942-4A3A-8F81-41A4D3F73473} = {13ABF460-2024-4387-89C6-9DCE83BF78A6}
+		{07F0F38F-49A7-41E2-AE84-6C4C3F23959B} = {13ABF460-2024-4387-89C6-9DCE83BF78A6}
+		{BD5AA210-8A3E-43AF-8662-08AA989F404F} = {581A0187-3844-4F3E-90D8-ED96DC6E381B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {4EF48A17-2E1D-4950-95B3-8C7206DD4E91}

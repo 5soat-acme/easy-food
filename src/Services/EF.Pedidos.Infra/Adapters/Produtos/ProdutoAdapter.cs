@@ -1,24 +1,21 @@
-using AutoMapper;
-using EF.Pedidos.Application.DTOs.Adapters;
-using EF.Pedidos.Application.Ports;
-using EF.Produtos.Application.Queries.Interfaces;
+using EF.Pedidos.Application.DTOs.Gateways;
+using EF.Pedidos.Application.Gateways;
+using EF.Produtos.Application.UseCases.Interfaces;
 
 namespace EF.Pedidos.Infra.Adapters.Produtos;
 
 public class ProdutoAdapter : IProdutoService
 {
-    private readonly IMapper _mapper;
-    private readonly IProdutoQuery _produtoQuery;
+    private readonly IConsultarProdutoUseCase _consultarProdutoUseCase;
 
-    public ProdutoAdapter(IProdutoQuery produtoQuery, IMapper mapper)
+    public ProdutoAdapter(IConsultarProdutoUseCase consultarProdutoUseCase)
     {
-        _produtoQuery = produtoQuery;
-        _mapper = mapper;
+        _consultarProdutoUseCase = consultarProdutoUseCase;
     }
 
-    public async Task<ProdutoDto> ObterPorId(Guid id)
+    public async Task<ProdutoDto?> ObterPorId(Guid id)
     {
-        var produto = await _produtoQuery.BuscarPorId(id);
-        return _mapper.Map<ProdutoDto>(produto);
+        var produto = await _consultarProdutoUseCase.BuscarPorId(id);
+        return ProdutoToDomainMapper.Map(produto);
     }
 }

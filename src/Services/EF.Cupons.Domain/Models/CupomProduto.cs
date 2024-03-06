@@ -1,10 +1,9 @@
-﻿using EF.Domain.Commons.DomainObjects;
+﻿using EF.Core.Commons.DomainObjects;
 
 namespace EF.Cupons.Domain.Models;
 
 public class CupomProduto : Entity
 {
-    // Necessário para o EF
     private CupomProduto()
     {
     }

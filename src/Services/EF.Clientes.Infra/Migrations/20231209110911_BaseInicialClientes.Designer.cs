@@ -61,7 +61,7 @@ namespace EF.Clientes.Infra.Migrations
                                 .HasForeignKey("ClienteId");
                         });
 
-                    b.OwnsOne("EF.Domain.Commons.ValueObjects.Cpf", "Cpf", b1 =>
+                    b.OwnsOne("EF.Core.Commons.ValueObjects.Cpf", "Cpf", b1 =>
                         {
                             b1.Property<Guid>("ClienteId")
                                 .HasColumnType("uuid");
@@ -80,7 +80,7 @@ namespace EF.Clientes.Infra.Migrations
                                 .HasForeignKey("ClienteId");
                         });
 
-                    b.OwnsOne("EF.Domain.Commons.ValueObjects.Email", "Email", b1 =>
+                    b.OwnsOne("EF.Core.Commons.ValueObjects.Email", "Email", b1 =>
                         {
                             b1.Property<Guid>("ClienteId")
                                 .HasColumnType("uuid");

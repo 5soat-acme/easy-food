@@ -10,6 +10,10 @@ O projeto é parte do trabalho de conclusão do curso de Arquitetura de Software
 1. [Tecnologias utilizadas :computer:](#Tecnologias-utilizadas-computer)
 2. [Arquitetura :triangular_ruler:](#Arquitetura-triangular_ruler)
 3. [Overview da arquitetura :mag:](#Overview-da-arquitetura-mag)
+    1. [Estrutura :hammer:](#Estrutura-hammer)
+        1. [Clean-Architecture :o:](#Clean-Architecture-o)
+    2. [Diagramas da Arquitetura :bar_chart:](#Diagramas-da-Arquitetura-bar_chart)
+    3. [Overview :mag:](#Overview-mag)
 4. [Como executar :rocket:](#Como-executar-rocket)
     1. [Docker :whale:](#Docker-whale)
         1. [Pré-requisitos :clipboard:](#Pré-requisitos-clipboard)
@@ -24,6 +28,16 @@ O projeto é parte do trabalho de conclusão do curso de Arquitetura de Software
         2. [Executando :running:](#Executando-running-2)
         3. [Como utilizar :bulb:](#Como-utilizar-bulb-2)
     4. [Token :key:](#Token-key)
+        1. [Token Webhook :key:](#Token-Webhook-key)
+5. [Utilização dos Endpoints :arrow_forward:](#Utilização-dos-Endpoints-arrow_forward)
+    1. [Identificação](#Identificação)
+    2. [Gestão de Produtos](#Gestão-de-Produtos)
+    3. [Carrinho](#Carrinho)
+    4. [Pedido](#Pedido)
+    5. [Pagamento](#Pagamento)
+    6. [Preparação e Entrega](#Preparação-e-Entrega)
+    7. [Gestão de Estoque](#Gestão-de-Estoque)
+    8. [Cupom](#Cupom)
 
 # Tecnologias utilizadas :computer:
 
@@ -36,25 +50,39 @@ O projeto é parte do trabalho de conclusão do curso de Arquitetura de Software
 
 # Arquitetura :triangular_ruler:
 
-- Arquitetura Hexagonal
+- Clean Architecture
 - DDD - Domain Driven Design
 - Domain Events
 - Domain Validations
 - Repository Pattern
 - Unit Of Work Pattern
-- CQS - Command Query Separation
 
 # Overview da arquitetura :mag:
-Na primeira fase do projeto, foi desenvolvido um monolito modular para fazer uma separação clara dos contextos delimitados mapeados na modelagem estratégica. Separamos a implementação em 3 pastas principais:
-- **Presentation:** É a camada que expõe os serviços da aplicação. É responsável por receber as requisições HTTP, fazer a validação dos dados de entrada, mapear os dados de entrada para os objetos de domínio, chamar os serviços de aplicação e retornar os dados de saída.
+Foi desenvolvido um monolito modular para fazer uma separação clara dos contextos delimitados mapeados na modelagem estratégica. </br>
+O desenvolvimento separado em projetos de forma modular, foi pensado para ficar de uma forma clara e de acordo com o DDD, separando cada contexto em um projeto. Dessa maneira, fica clara a identificação dos contextos e facilita no desenvolvimento, podendo separar o desenvolvimento dos contextos entre os times, sem que haja conflitos. Separamos a implementação em 3 pastas principais:
+- **Presenter:** É a camada que expõe os serviços da aplicação. É responsável por receber as requisições HTTP, fazer a validação dos dados de entrada, mapear os dados de entrada para os objetos de domínio, chamar os serviços de aplicação e retornar os dados de saída.
 - **Services:** É onde estão implementados os serviços de aplicação. Dentro desta pasta dividimos em subpastas que representam os contextos delimitados. Cada subpasta contém as camadas do serviço, como **Application, Domain, Infra**, entre outras.
-- **Shared:** É aqui que compartilhamos o que é comum entre os diferentes módulos, inclusive os objetos de domíno e os serviços de infraestrutura que podem ser utilizados por mais de um contexto delimitado.
+- **Commons:** É aqui que compartilhamos o que é comum entre os diferentes módulos, inclusive os objetos de domíno e os serviços de infraestrutura que podem ser utilizados por mais de um contexto delimitado.
 
-## Estrutura
+## Estrutura :hammer:
 ![img.png](docs/img/img.png) </br>
 ![img_1.png](docs/img/img_1.png) </br>
 
-## Overview
+### Clean Architecture :o:
+![clean_architecture.jpg](docs/img/clean_architecture.jpg) </br>
+
+- **Services.*.Domain:** São os projetos referente a camada **Enterprise Business Rules** da Clean Architecture. São nesses projeto onde está o domínio da aplicação, com as regras de negócio e sem referência a nenhuma bliblioteca ou framework. Esta camada expõe interfaces que serão implementadas nas camadas externas, seguindo a regra de Inversão de Dependência.
+
+- **Services.*.Infra:** Nesses projetos fazemos do padrão Repository um Gateway da camada **Interface Adapters** da Clean Architecture, onde esses Repositories irão chamar um DBContext do ORM(Entity Framework). Nesse cenário, o ORM passa a ser a camada **Frameworks & Drivers** da Clean Architecture. Toda regra de acesso a dados fica na camada mais externa. Quando necessário mudar a forma de acesso a dados, basta implementar uma nova classe com base na interface e chamar uma nova implementação da camada **Frameworks & Drivers**.
+
+- **Services.*.Application:** São os projetos referente a camada **Application Business Rules** da Clean Architecture. São nesses projetos onde são implementados cada UseCase do sistema. Os UseCases recebem via injeção de depêndencia os Gateways(Repositories) e os utilizam de acordo com a regra de negócio necessária.
+
+- **Presenter:** São os Controllers da camada **Interface Adapters** da Clean Architecture. Esses Controllers são responsáveis por chamarem os UseCases passando via injeção de dependência toda dependência necessária, como por exemplo, os Gateways(Repositories). A instanciação desses Gateways são feitas utilizando a Injeção de Dependência já existente no framework do .NET. Nesse cenário a injeção de dependência do framework passa a ser a  camada **Frameworks & Drivers** da Clean Architecture.
+
+## Diagramas da Arquitetura :bar_chart:
+Para visualizar os diagramas da arquitetura, acesse nossa **[Wiki](https://5soat-acme.github.io/easy-food/docs/category/diagramas)**
+
+## Overview :mag:
 ![img_2.png](docs/img/img_2.png)
 
 # Como executar :rocket:
@@ -158,5 +186,72 @@ Incluimos no swagger um botão para facilitar a inclusão do token no header. Ba
 O mesmo pode ser feito na requisição de cada endpoint:
 
 ![img_5.png](docs/img/img_5.png)
+
+### Token Webhook :key:
+Para chamada do Webhook é necessário a utilização de um Token. O Token a ser utilizado é o informado no campo **Key** da tag **PagamentoAutorizacaoWebHook** do arquivo **appsettings.json**.
+O Token pré-configurado foi o **9E541194-61B4-44F6-BE2A-B1F08C24BB52**
+
+
+# Utilização dos Endpoints :arrow_forward:
+
+### Identificação
+1. O Cliente pode efetuar um cadastro em: ``[POST] /api/identidade``
+2. O Cliente pode acessar o sistema com ou sem cadastro em: ``[POST] /api/identidade/acessar`` </br>
+Este método realiza a autenticação do usuário e gera um token JWT (JSON Web Token) que deve ser usado em cabeçalhos de autenticação para futuras requisições. O token tem validade de 2 horas e pode ser configurado no appsettings.json. É importante garantir que o token seja armazenado de maneira segura no cliente para evitar vazamento de informações.
+Para usuários sem identificação por e-mail ou CPF, o body da requisição deve ser vazio.
+Para as demais maneiras, segue o exemplo: </br>
+**Identificação por E-mail:** </br>
+``POST /api/identidade/acessar { "Email": "exemplo@email.com" }`` \
+**Identificação por CPF:** </br>
+``POST /api/identidade/acessar { "Cpf": "01234567891" }``
+
+### Gestão de Produtos
+1. Pode-se consultar o cardápio dividido por categoria em: ``[GET] /api/produtos`` </br>
+Essa consulta é utilizada para a demonstração do cardápio e para a gestão de produtos.
+2. Pode-se cadastrar um produto em: ``[POST] /api/produtos``
+3. Pode-se atualizar um produto em: ``[PUT] /api/produtos/{id}``
+4. Pode-se remover um produto em: ``[DELETE] /api/produtos/{id}``
+
+### Carrinho
+1. Pode-se adicionar um item ao carrinho em: ``[POST] /api/carrinho``
+2. Pode-se atualizar um item no carrinho em: ``[PUT] /api/carrinho/{itemId}``
+3. Pode-se remover um item no carrinho em: ``[DELETE] /api/carrinho/{itemId}``
+4. Pode-se consultar um carrinho em: ``[GET] /api/carrinho`` </br>
+Obtém o carrinho do cliente. Caso o cliente tenha se identificado no sistema, é verificado se o mesmo possui um carrinho em aberto. Para clientes não identificados, é criado um carrinho temporário associado ao token gerado para o usuário anônimo. Esse endpoint é utilizado para exibir os dados na tela de carrinho e o resumo do pedido antes da confirmação.
+
+### Pedido
+1. Pode-se efetuar o checkout do pedido em: ``[POST] /api/pedidos/checkout``
+2. Pode-se consultar o pedido em: ``[GET] /api/pedidos/{id}``
+
+### Pagamento
+1. Pode-se efetuar o pagamento em: ``[POST] /api/pagamentos``
+2. Pode-se autorizar o pagamento via webhook em: ``[POST] /api/pagamentos/autorizar/webhook``
+3. Pode-se consultar o pagamento de um pedido em: ``[GET] /api/pagamentos``
+3. Pode-se consultar os tipos de pagamentos disponíveis em: ``[GET] /api/pagamentos/tipos``
+
+### Preparação e Entrega
+1. Pode-se consultar pedidos, filtrando por status em: ``[GET] /api/preparo``
+2. Pode-se consultar os pedidos que serão exibidos no monitor de acompanhamento em: ``[GET] /api/monitor``
+3. Pode-se consultar um pedido específico em: ``[GET] /api/preparo/{id}``
+4. Pode-se iniciar o pedido em: ``[POST] /api/preparo/iniciar``
+5. Pode-se finalizar o pedido em: ``[POST] /api/preparo/finalizar``
+6. Pode-se confirmar entrega do pedido em: ``[POST] /api/preparo/confirmar-entrega`` </br>
+**Preparação e Entrega** é um contexto diferente de **Pedido**. Dessa forma a atualização do status do pedido é feito no contexto de **Preparação e Entrega** com o **id** do pedido da **Preparação e Entrega**. O status no contexto de **Pedido** é atualizado de forma automática.
+
+### Gestão de Estoque
+1. Pode-se consultar o estoque de um produto em: ``[GET] /api/estoques/{produtoId}``
+2. Pode-se adicionar ou remover quantidade em estoque do produto em em: ``[POST] /api/estoques`` </br>
+O sistema já faz a baixa de estoque de forma automática na criação do pedido, não sendo necessário chamar o endpoint para fazer a baixa. Esse endpoint pode ser utilizado para dar entrada no estoque de um produto.
+
+### Cupom
+1. Pode-se consultar um cupom vigente em: ``[GET] /api/cupons/{codigoCupom}``
+2. Pode-se criar um cupom em: ``[POST] /api/cupons``
+3. Pode-se atualizar um cupom em: ``[PUT] /api/cupons/{cupomId}``
+4. Pode-se inativar um cupom em: ``[PUT] /api/cupons/inativar/{cupomId}``
+5. Pode-se remover produtos do cupom em: ``[DELETE] /api/cupons/{cupomId}/remover-produtos``
+6. Pode-se inserir produtos ao cupom em: ``[PUT] /api/cupons/{cupomId}/inserir-produtos``
+
+</br>
+</br>
 
 **Pronto! Agora você já pode utilizar a API** :smile:

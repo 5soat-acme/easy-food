@@ -6,4 +6,4 @@ sidebar_position: 1
 
 Diagrama da arquitetura do software - negócio.
 
-![](./../../../static/img/arquitetura/solucao/diagrama_c4.png)
+![](./../../../../static/img/arquitetura/diagramas/solucao/diagrama_c4.png)

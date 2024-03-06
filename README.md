@@ -9,11 +9,11 @@ O projeto é parte do trabalho de conclusão do curso de Arquitetura de Software
 ## Sumário
 1. [Tecnologias utilizadas :computer:](#Tecnologias-utilizadas-computer)
 2. [Arquitetura :triangular_ruler:](#Arquitetura-triangular_ruler)
-3. [Overview da arquitetura :mag:](#Overview-da-arquitetura-mag)
-    1. [Estrutura :hammer:](#Estrutura-hammer)
-        1. [Clean-Architecture :o:](#Clean-Architecture-o)
-    2. [Diagramas da Arquitetura :bar_chart:](#Diagramas-da-Arquitetura-bar_chart)
-    3. [Overview :mag:](#Overview-mag)
+   1. [Introdução :mag:](#Introdução-mag)
+   2. [Estrutura do projeto :hammer:](#Estrutura-do-projeto-hammer)
+   3. [Clean-Architecture :o:](#Clean-Architecture-o)
+   4. [Diagramas da Arquitetura :bar_chart:](#Diagramas-da-Arquitetura-bar_chart)
+[//]: # (   5. [Overview :mag:]&#40;#Overview-mag&#41;)
 4. [Como executar :rocket:](#Como-executar-rocket)
     1. [Docker :whale:](#Docker-whale)
         1. [Pré-requisitos :clipboard:](#Pré-requisitos-clipboard)
@@ -49,7 +49,7 @@ O projeto é parte do trabalho de conclusão do curso de Arquitetura de Software
 - Docker
 
 # Arquitetura :triangular_ruler:
-
+## Patterns utilizados
 - Clean Architecture
 - DDD - Domain Driven Design
 - Domain Events
@@ -57,18 +57,18 @@ O projeto é parte do trabalho de conclusão do curso de Arquitetura de Software
 - Repository Pattern
 - Unit Of Work Pattern
 
-# Overview da arquitetura :mag:
+## Introdução :mag:
 Foi desenvolvido um monolito modular para fazer uma separação clara dos contextos delimitados mapeados na modelagem estratégica. </br>
 O desenvolvimento separado em projetos de forma modular, foi pensado para ficar de uma forma clara e de acordo com o DDD, separando cada contexto em um projeto. Dessa maneira, fica clara a identificação dos contextos e facilita no desenvolvimento, podendo separar o desenvolvimento dos contextos entre os times, sem que haja conflitos. Separamos a implementação em 3 pastas principais:
 - **Presenter:** É a camada que expõe os serviços da aplicação. É responsável por receber as requisições HTTP, fazer a validação dos dados de entrada, mapear os dados de entrada para os objetos de domínio, chamar os serviços de aplicação e retornar os dados de saída.
 - **Services:** É onde estão implementados os serviços de aplicação. Dentro desta pasta dividimos em subpastas que representam os contextos delimitados. Cada subpasta contém as camadas do serviço, como **Application, Domain, Infra**, entre outras.
 - **Commons:** É aqui que compartilhamos o que é comum entre os diferentes módulos, inclusive os objetos de domíno e os serviços de infraestrutura que podem ser utilizados por mais de um contexto delimitado.
 
-## Estrutura :hammer:
+## Estrutura do projeto :hammer:
 ![img.png](docs/img/img.png) </br>
 ![img_1.png](docs/img/img_1.png) </br>
 
-### Clean Architecture :o:
+## Clean Architecture :o:
 ![clean_architecture.jpg](docs/img/clean_architecture.jpg) </br>
 
 - **Services.*.Domain:** São os projetos referente a camada **Enterprise Business Rules** da Clean Architecture. São nesses projeto onde está o domínio da aplicação, com as regras de negócio e sem referência a nenhuma bliblioteca ou framework. Esta camada expõe interfaces que serão implementadas nas camadas externas, seguindo a regra de Inversão de Dependência.
@@ -80,10 +80,11 @@ O desenvolvimento separado em projetos de forma modular, foi pensado para ficar 
 - **Presenter:** São os Controllers da camada **Interface Adapters** da Clean Architecture. Esses Controllers são responsáveis por chamarem os UseCases passando via injeção de dependência toda dependência necessária, como por exemplo, os Gateways(Repositories). A instanciação desses Gateways são feitas utilizando a Injeção de Dependência já existente no framework do .NET. Nesse cenário a injeção de dependência do framework passa a ser a  camada **Frameworks & Drivers** da Clean Architecture.
 
 ## Diagramas da Arquitetura :bar_chart:
-Para visualizar os diagramas da arquitetura, acesse nossa **[Wiki](https://5soat-acme.github.io/easy-food/docs/category/diagramas)**
+A documentação da arquitetura do projeto está centralizada na nossa wiki e pode ser verificada  aqui: **[Wiki](https://5soat-acme.github.io/easy-food/docs/category/diagramas)**
 
-## Overview :mag:
-![img_2.png](docs/img/img_2.png)
+[//]: # (## Overview :mag:)
+
+[//]: # (![img_2.png]&#40;docs/img/img_2.png&#41;)
 
 # Como executar :rocket:
 

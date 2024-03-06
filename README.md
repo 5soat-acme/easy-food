@@ -195,8 +195,8 @@ O Token pré-configurado foi o **9E541194-61B4-44F6-BE2A-B1F08C24BB52**
 # Utilização dos Endpoints :arrow_forward:
 
 ### Identificação
-1. O Cliente pode efetuar um cadastro em: **[POST] /api/identidade**
-2. O Cliente pode acessar o sistema com ou sem cadastro em: **[POST] /api/identidade/acessar** </br>
+1. O Cliente pode efetuar um cadastro em: ``[POST] /api/identidade``
+2. O Cliente pode acessar o sistema com ou sem cadastro em: ``[POST] /api/identidade/acessar`` </br>
 Este método realiza a autenticação do usuário e gera um token JWT (JSON Web Token) que deve ser usado em cabeçalhos de autenticação para futuras requisições. O token tem validade de 2 horas e pode ser configurado no appsettings.json. É importante garantir que o token seja armazenado de maneira segura no cliente para evitar vazamento de informações.
 Para usuários sem identificação por e-mail ou CPF, o body da requisição deve ser vazio.
 Para as demais maneiras, segue o exemplo: </br>
@@ -206,50 +206,50 @@ Para as demais maneiras, segue o exemplo: </br>
 ``POST /api/identidade/acessar { "Cpf": "01234567891" }``
 
 ### Gestão de Produtos
-1. Pode-se consultar o cardápio dividido por categoria em: **[GET] /api/produtos** </br>
+1. Pode-se consultar o cardápio dividido por categoria em: ``[GET] /api/produtos`` </br>
 Essa consulta é utilizada para a demonstração do cardápio e para a gestão de produtos.
-2. Pode-se cadastrar um produto em: **[POST] /api/produtos**
-3. Pode-se atualizar um produto em: **[PUT] /api/produtos/{id}**
-4. Pode-se remover um produto em: **[DELETE] /api/produtos/{id}**
+2. Pode-se cadastrar um produto em: ``[POST] /api/produtos``
+3. Pode-se atualizar um produto em: ``[PUT] /api/produtos/{id}``
+4. Pode-se remover um produto em: ``[DELETE] /api/produtos/{id}``
 
 ### Carrinho
-1. Pode-se adicionar um item ao carrinho em: **[POST] /api/carrinho**
-2. Pode-se atualizar um item no carrinho em: **[PUT] /api/carrinho/{itemId}**
-3. Pode-se remover um item no carrinho em: **[DELETE] /api/carrinho/{itemId}**
-4. Pode-se consultar um carrinho em: **[GET] /api/carrinho** </br>
+1. Pode-se adicionar um item ao carrinho em: ``[POST] /api/carrinho``
+2. Pode-se atualizar um item no carrinho em: ``[PUT] /api/carrinho/{itemId}``
+3. Pode-se remover um item no carrinho em: ``[DELETE] /api/carrinho/{itemId}``
+4. Pode-se consultar um carrinho em: ``[GET] /api/carrinho`` </br>
 Obtém o carrinho do cliente. Caso o cliente tenha se identificado no sistema, é verificado se o mesmo possui um carrinho em aberto. Para clientes não identificados, é criado um carrinho temporário associado ao token gerado para o usuário anônimo. Esse endpoint é utilizado para exibir os dados na tela de carrinho e o resumo do pedido antes da confirmação.
 
 ### Pedido
-1. Pode-se efetuar o checkout do pedido em: **[POST] /api/pedidos/checkout**
-2. Pode-se consultar o pedido em: **[GET] /api/pedidos/{id}**
+1. Pode-se efetuar o checkout do pedido em: ``[POST] /api/pedidos/checkout``
+2. Pode-se consultar o pedido em: ``[GET] /api/pedidos/{id}``
 
 ### Pagamento
-1. Pode-se efetuar o pagamento em: **[POST] /api/pagamentos**
-2. Pode-se autorizar o pagamento via webhook em: **[POST] /api/pagamentos/autorizar/webhook**
-3. Pode-se consultar o pagamento de um pedido em: **[GET] /api/pagamentos**
-3. Pode-se consultar os tipos de pagamentos disponíveis em: **[GET] /api/pagamentos/tipos**
+1. Pode-se efetuar o pagamento em: ``[POST] /api/pagamentos``
+2. Pode-se autorizar o pagamento via webhook em: ``[POST] /api/pagamentos/autorizar/webhook``
+3. Pode-se consultar o pagamento de um pedido em: ``[GET] /api/pagamentos``
+3. Pode-se consultar os tipos de pagamentos disponíveis em: ``[GET] /api/pagamentos/tipos``
 
 ### Preparação e Entrega
-1. Pode-se consultar pedidos, filtrando por status em: **[GET] /api/preparo**
-2. Pode-se consultar os pedidos que serão exibidos no monitor de acompanhamento em: **[GET] /api/monitor**
-3. Pode-se consultar um pedido específico em: **[GET] /api/preparo/{id}**
-4. Pode-se iniciar o pedido em: **[POST] /api/preparo/iniciar**
-5. Pode-se finalizar o pedido em: **[POST] /api/preparo/finalizar**
-6. Pode-se confirmar entrega do pedido em: **[POST] /api/preparo/confirmar-entrega** </br>
+1. Pode-se consultar pedidos, filtrando por status em: ``[GET] /api/preparo``
+2. Pode-se consultar os pedidos que serão exibidos no monitor de acompanhamento em: ``[GET] /api/monitor``
+3. Pode-se consultar um pedido específico em: ``[GET] /api/preparo/{id}``
+4. Pode-se iniciar o pedido em: ``[POST] /api/preparo/iniciar``
+5. Pode-se finalizar o pedido em: ``[POST] /api/preparo/finalizar``
+6. Pode-se confirmar entrega do pedido em: ``[POST] /api/preparo/confirmar-entrega`` </br>
 **Preparação e Entrega** é um contexto diferente de **Pedido**. Dessa forma a atualização do status do pedido é feito no contexto de **Preparação e Entrega** com o **id** do pedido da **Preparação e Entrega**. O status no contexto de **Pedido** é atualizado de forma automática.
 
 ### Gestão de Estoque
-1. Pode-se consultar o estoque de um produto em: **[GET] /api/estoques/{produtoId}**
-2. Pode-se adicionar ou remover quantidade em estoque do produto em em: **[POST] /api/estoques**</br>
+1. Pode-se consultar o estoque de um produto em: ``[GET] /api/estoques/{produtoId}``
+2. Pode-se adicionar ou remover quantidade em estoque do produto em em: ``[POST] /api/estoques`` </br>
 O sistema já faz a baixa de estoque de forma automática na criação do pedido, não sendo necessário chamar o endpoint para fazer a baixa. Esse endpoint pode ser utilizado para dar entrada no estoque de um produto.
 
 ### Cupom
-1. Pode-se consultar um cupom vigente em: **[GET] /api/cupons/{codigoCupom}**
-2. Pode-se criar um cupom em: **[POST] /api/cupons**
-3. Pode-se atualizar um cupom em: **[PUT] /api/cupons/{cupomId}**
-4. Pode-se inativar um cupom em: **[PUT] /api/cupons/inativar/{cupomId}**
-5. Pode-se remover produtos do cupom em: **[DELETE] /api/cupons/{cupomId}/remover-produtos**
-6. Pode-se inserir produtos ao cupom em: **[PUT] /api/cupons/{cupomId}/inserir-produtos**
+1. Pode-se consultar um cupom vigente em: ``[GET] /api/cupons/{codigoCupom}``
+2. Pode-se criar um cupom em: ``[POST] /api/cupons``
+3. Pode-se atualizar um cupom em: ``[PUT] /api/cupons/{cupomId}``
+4. Pode-se inativar um cupom em: ``[PUT] /api/cupons/inativar/{cupomId}``
+5. Pode-se remover produtos do cupom em: ``[DELETE] /api/cupons/{cupomId}/remover-produtos``
+6. Pode-se inserir produtos ao cupom em: ``[PUT] /api/cupons/{cupomId}/inserir-produtos``
 
 </br>
 </br>

@@ -1,9 +1,9 @@
 {
 	"info": {
-		"_postman_id": "951bea9d-edeb-4f42-80fa-328d3c92b02a",
+		"_postman_id": "bd449a0d-5178-40b6-a1ec-90464ca4feed",
 		"name": "EasyFood",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "2587965"
+		"_exporter_id": "1979558"
 	},
 	"item": [
 		{
@@ -19,7 +19,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"nome\": \"Lucas\",\r\n  \"sobrenome\": \"Fernandes Lima\",\r\n  \"cpf\": \"44035085880\",\r\n  \"email\": \"lucas.liima030@gmail.com\"\r\n}",
+							"raw": "{\r\n  \"nome\": \"John\",\r\n  \"sobrenome\": \"Doe\",\r\n  \"cpf\": \"34555284062\",\r\n  \"email\": \"john.doe@email.com\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -44,7 +44,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n  \"nome\": \"Lucas\",\r\n  \"sobrenome\": \"Fernandes Lima\",\r\n  \"cpf\": \"44035085880\",\r\n  \"email\": \"lucas.liima030@gmail.com\"\r\n}",
+									"raw": "{\r\n  \"nome\": \"John\",\r\n  \"sobrenome\": \"Doe\",\r\n  \"cpf\": \"34555284062\",\r\n  \"email\": \"john.doe@email.com\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -71,7 +71,7 @@
 								},
 								{
 									"key": "Date",
-									"value": "Sat, 27 Jan 2024 12:40:32 GMT"
+									"value": "Mon, 26 Feb 2024 12:34:32 GMT"
 								},
 								{
 									"key": "Server",
@@ -83,7 +83,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJmNDQ0YjkzNi1kOTA4LTRhM2QtYTcwOS0wNmE5OWM4M2Q4ZDYiLCJlbWFpbCI6Imx1Y2FzLmxpaW1hMDMwQGdtYWlsLmNvbSIsImp0aSI6IjRiZjUzOTIzLWViYTktNDViYi1iMjY0LThhZmQxOTA5YTkxYSIsIm5iZiI6MTcwNjM1OTIzMiwiaWF0IjoxNzA2MzU5MjMyLCJ1c2VyX3R5cGUiOiJyZWdpc3RyZWQiLCJzZXNzaW9uX2lkIjoiODVhYjg4NDYtOGJjMi00NDY3LThiOTctMGRiY2FiYjkxNjc2IiwidXNlcl9jcGYiOiI0NDAzNTA4NTg4MCIsImV4cCI6MTcwNjM2NjQzMiwiaXNzIjoiRWFzeUZvb2QiLCJhdWQiOiJsb2NhbGhvc3Q6NTAwMiJ9.114iNZtOJmlbcQ2ffVSR-WWlgxVLUMH5dLQIsgDPrdE\",\n    \"expiresIn\": 7200,\n    \"user\": {\n        \"id\": \"f444b936-d908-4a3d-a709-06a99c83d8d6\",\n        \"claims\": [\n            {\n                \"value\": \"f444b936-d908-4a3d-a709-06a99c83d8d6\",\n                \"type\": \"sub\"\n            },\n            {\n                \"value\": \"lucas.liima030@gmail.com\",\n                \"type\": \"email\"\n            },\n            {\n                \"value\": \"4bf53923-eba9-45bb-b264-8afd1909a91a\",\n                \"type\": \"jti\"\n            },\n            {\n                \"value\": \"1706359233\",\n                \"type\": \"nbf\"\n            },\n            {\n                \"value\": \"1706359233\",\n                \"type\": \"iat\"\n            },\n            {\n                \"value\": \"registred\",\n                \"type\": \"user_type\"\n            },\n            {\n                \"value\": \"85ab8846-8bc2-4467-8b97-0dbcabb91676\",\n                \"type\": \"session_id\"\n            },\n            {\n                \"value\": \"44035085880\",\n                \"type\": \"user_cpf\"\n            }\n        ]\n    }\n}"
+							"body": "{\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIwOTVkYjU4Ny00MGIyLTQyMjYtYmU1Ni1iYmQxYjIxM2RkMWMiLCJlbWFpbCI6ImpvaG4uZG9lQGVtYWlsLmNvbSIsImp0aSI6IjkxYmQyNGQxLWJhMmYtNDBiMS1iYWI4LTg4MTViNjEzNzM5ZSIsIm5iZiI6MTcwODk1MDg3MywiaWF0IjoxNzA4OTUwODczLCJ1c2VyX3R5cGUiOiJyZWdpc3RyZWQiLCJzZXNzaW9uX2lkIjoiY2ZhNTgwYTgtMzA3Yi00YmQ4LTgwNWEtNmQ0N2RiZGZmYTA1IiwidXNlcl9jcGYiOiIzNDU1NTI4NDA2MiIsImV4cCI6MTcwODk1ODA3MywiaXNzIjoiRWFzeUZvb2QiLCJhdWQiOiJsb2NhbGhvc3QifQ.o20qy-ZW7c6A-Ld7oVRewKUmImX76SdjHQwzFnzK3A4\",\n    \"expiresIn\": 7200,\n    \"user\": {\n        \"id\": \"095db587-40b2-4226-be56-bbd1b213dd1c\",\n        \"claims\": [\n            {\n                \"value\": \"095db587-40b2-4226-be56-bbd1b213dd1c\",\n                \"type\": \"sub\"\n            },\n            {\n                \"value\": \"john.doe@email.com\",\n                \"type\": \"email\"\n            },\n            {\n                \"value\": \"91bd24d1-ba2f-40b1-bab8-8815b613739e\",\n                \"type\": \"jti\"\n            },\n            {\n                \"value\": \"1708950873\",\n                \"type\": \"nbf\"\n            },\n            {\n                \"value\": \"1708950873\",\n                \"type\": \"iat\"\n            },\n            {\n                \"value\": \"registred\",\n                \"type\": \"user_type\"\n            },\n            {\n                \"value\": \"cfa580a8-307b-4bd8-805a-6d47dbdffa05\",\n                \"type\": \"session_id\"\n            },\n            {\n                \"value\": \"34555284062\",\n                \"type\": \"user_cpf\"\n            }\n        ]\n    }\n}"
 						}
 					]
 				},
@@ -94,7 +94,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"email\": \"lucas.liima030@gmail.com\"\r\n}",
+							"raw": "{\r\n    \"email\": \"john.doe@email.com\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -120,7 +120,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"email\": \"lucas.liima030@gmail.com\"\r\n}",
+									"raw": "{\r\n    \"email\": \"john.doe@email.com\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -148,7 +148,7 @@
 								},
 								{
 									"key": "Date",
-									"value": "Sat, 27 Jan 2024 12:43:24 GMT"
+									"value": "Mon, 26 Feb 2024 12:35:36 GMT"
 								},
 								{
 									"key": "Server",
@@ -160,7 +160,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJmNDQ0YjkzNi1kOTA4LTRhM2QtYTcwOS0wNmE5OWM4M2Q4ZDYiLCJlbWFpbCI6Imx1Y2FzLmxpaW1hMDMwQGdtYWlsLmNvbSIsImp0aSI6IjI5ZDAwODE5LWVlOWYtNDhhMC1iODY0LWQzNTQyMzMxNzM0NiIsIm5iZiI6MTcwNjM1OTQwNSwiaWF0IjoxNzA2MzU5NDA1LCJ1c2VyX3R5cGUiOiJyZWdpc3RyZWQiLCJzZXNzaW9uX2lkIjoiYjdkMTZjYWYtNWE1Ny00NjgxLThhMjctMzVmYmUyNjY0MjVlIiwidXNlcl9jcGYiOiI0NDAzNTA4NTg4MCIsImV4cCI6MTcwNjM2NjYwNSwiaXNzIjoiRWFzeUZvb2QiLCJhdWQiOiJsb2NhbGhvc3Q6NTAwMiJ9.3169Rimo2hJT_v3I86J86Dul7X0wDu9b6ckrhJgUN20\",\n    \"expiresIn\": 7200,\n    \"user\": {\n        \"id\": \"f444b936-d908-4a3d-a709-06a99c83d8d6\",\n        \"claims\": [\n            {\n                \"value\": \"f444b936-d908-4a3d-a709-06a99c83d8d6\",\n                \"type\": \"sub\"\n            },\n            {\n                \"value\": \"lucas.liima030@gmail.com\",\n                \"type\": \"email\"\n            },\n            {\n                \"value\": \"29d00819-ee9f-48a0-b864-d35423317346\",\n                \"type\": \"jti\"\n            },\n            {\n                \"value\": \"1706359405\",\n                \"type\": \"nbf\"\n            },\n            {\n                \"value\": \"1706359405\",\n                \"type\": \"iat\"\n            },\n            {\n                \"value\": \"registred\",\n                \"type\": \"user_type\"\n            },\n            {\n                \"value\": \"b7d16caf-5a57-4681-8a27-35fbe266425e\",\n                \"type\": \"session_id\"\n            },\n            {\n                \"value\": \"44035085880\",\n                \"type\": \"user_cpf\"\n            }\n        ]\n    }\n}"
+							"body": "{\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIwOTVkYjU4Ny00MGIyLTQyMjYtYmU1Ni1iYmQxYjIxM2RkMWMiLCJlbWFpbCI6ImpvaG4uZG9lQGVtYWlsLmNvbSIsImp0aSI6ImUxZDNlMjc1LTg4YTAtNDdkOS04Y2IzLTE4MDhlMjFhOWQ1NCIsIm5iZiI6MTcwODk1MDkzNiwiaWF0IjoxNzA4OTUwOTM2LCJ1c2VyX3R5cGUiOiJyZWdpc3RyZWQiLCJzZXNzaW9uX2lkIjoiYjM0YTI5NjctZjc5Ny00MGQyLWI0MDItYjgyNDUyNzQ4YWYwIiwidXNlcl9jcGYiOiIzNDU1NTI4NDA2MiIsImV4cCI6MTcwODk1ODEzNiwiaXNzIjoiRWFzeUZvb2QiLCJhdWQiOiJsb2NhbGhvc3QifQ.gOYx8-Yn-7Vc-_hxQMyOzYP_QU9WSXeI63p8OGqYNJQ\",\n    \"expiresIn\": 7200,\n    \"user\": {\n        \"id\": \"095db587-40b2-4226-be56-bbd1b213dd1c\",\n        \"claims\": [\n            {\n                \"value\": \"095db587-40b2-4226-be56-bbd1b213dd1c\",\n                \"type\": \"sub\"\n            },\n            {\n                \"value\": \"john.doe@email.com\",\n                \"type\": \"email\"\n            },\n            {\n                \"value\": \"e1d3e275-88a0-47d9-8cb3-1808e21a9d54\",\n                \"type\": \"jti\"\n            },\n            {\n                \"value\": \"1708950937\",\n                \"type\": \"nbf\"\n            },\n            {\n                \"value\": \"1708950937\",\n                \"type\": \"iat\"\n            },\n            {\n                \"value\": \"registred\",\n                \"type\": \"user_type\"\n            },\n            {\n                \"value\": \"b34a2967-f797-40d2-b402-b82452748af0\",\n                \"type\": \"session_id\"\n            },\n            {\n                \"value\": \"34555284062\",\n                \"type\": \"user_cpf\"\n            }\n        ]\n    }\n}"
 						}
 					]
 				},
@@ -171,7 +171,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"cpf\": \"44035085880\"\r\n}",
+							"raw": "{\r\n    \"cpf\": \"34555284062\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -197,7 +197,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"cpf\": \"44035085880\"\r\n}",
+									"raw": "{\r\n    \"cpf\": \"34555284062\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -225,7 +225,7 @@
 								},
 								{
 									"key": "Date",
-									"value": "Sat, 27 Jan 2024 12:44:32 GMT"
+									"value": "Mon, 26 Feb 2024 12:36:28 GMT"
 								},
 								{
 									"key": "Server",
@@ -237,7 +237,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJmNDQ0YjkzNi1kOTA4LTRhM2QtYTcwOS0wNmE5OWM4M2Q4ZDYiLCJlbWFpbCI6Imx1Y2FzLmxpaW1hMDMwQGdtYWlsLmNvbSIsImp0aSI6IjEzMTEyMDgyLTcyNmUtNDNlNS1iMWZjLWFmMDQ4ZWFmMDAxYSIsIm5iZiI6MTcwNjM1OTQ3MiwiaWF0IjoxNzA2MzU5NDcyLCJ1c2VyX3R5cGUiOiJyZWdpc3RyZWQiLCJzZXNzaW9uX2lkIjoiNzMzOTA2OWItZDE1NC00MDM4LThkOGEtNzRlNDhkYmJjOTA2IiwidXNlcl9jcGYiOiI0NDAzNTA4NTg4MCIsImV4cCI6MTcwNjM2NjY3MiwiaXNzIjoiRWFzeUZvb2QiLCJhdWQiOiJsb2NhbGhvc3Q6NTAwMiJ9.VlCxEzkFp_JbSdOcjr477WdzZ-YQXPPT-_Ej4XdXY1E\",\n    \"expiresIn\": 7200,\n    \"user\": {\n        \"id\": \"f444b936-d908-4a3d-a709-06a99c83d8d6\",\n        \"claims\": [\n            {\n                \"value\": \"f444b936-d908-4a3d-a709-06a99c83d8d6\",\n                \"type\": \"sub\"\n            },\n            {\n                \"value\": \"lucas.liima030@gmail.com\",\n                \"type\": \"email\"\n            },\n            {\n                \"value\": \"13112082-726e-43e5-b1fc-af048eaf001a\",\n                \"type\": \"jti\"\n            },\n            {\n                \"value\": \"1706359473\",\n                \"type\": \"nbf\"\n            },\n            {\n                \"value\": \"1706359473\",\n                \"type\": \"iat\"\n            },\n            {\n                \"value\": \"registred\",\n                \"type\": \"user_type\"\n            },\n            {\n                \"value\": \"7339069b-d154-4038-8d8a-74e48dbbc906\",\n                \"type\": \"session_id\"\n            },\n            {\n                \"value\": \"44035085880\",\n                \"type\": \"user_cpf\"\n            }\n        ]\n    }\n}"
+							"body": "{\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIwOTVkYjU4Ny00MGIyLTQyMjYtYmU1Ni1iYmQxYjIxM2RkMWMiLCJlbWFpbCI6ImpvaG4uZG9lQGVtYWlsLmNvbSIsImp0aSI6ImY4ZTEzMjYyLWY1NzUtNGQ0MC1iMGY3LThlMDQ4N2RlYmI5YSIsIm5iZiI6MTcwODk1MDk4OSwiaWF0IjoxNzA4OTUwOTg5LCJ1c2VyX3R5cGUiOiJyZWdpc3RyZWQiLCJzZXNzaW9uX2lkIjoiZTMyZjU1MGEtYWUxYy00ZjAxLWEzNWQtNTUyNjMzNDIwNTYzIiwidXNlcl9jcGYiOiIzNDU1NTI4NDA2MiIsImV4cCI6MTcwODk1ODE4OSwiaXNzIjoiRWFzeUZvb2QiLCJhdWQiOiJsb2NhbGhvc3QifQ.W6QMRE8I2g-UUxKdP8zD5oFV4KYjGHEPVZ9jMexsEAw\",\n    \"expiresIn\": 7200,\n    \"user\": {\n        \"id\": \"095db587-40b2-4226-be56-bbd1b213dd1c\",\n        \"claims\": [\n            {\n                \"value\": \"095db587-40b2-4226-be56-bbd1b213dd1c\",\n                \"type\": \"sub\"\n            },\n            {\n                \"value\": \"john.doe@email.com\",\n                \"type\": \"email\"\n            },\n            {\n                \"value\": \"f8e13262-f575-4d40-b0f7-8e0487debb9a\",\n                \"type\": \"jti\"\n            },\n            {\n                \"value\": \"1708950990\",\n                \"type\": \"nbf\"\n            },\n            {\n                \"value\": \"1708950990\",\n                \"type\": \"iat\"\n            },\n            {\n                \"value\": \"registred\",\n                \"type\": \"user_type\"\n            },\n            {\n                \"value\": \"e32f550a-ae1c-4f01-a35d-552633420563\",\n                \"type\": \"session_id\"\n            },\n            {\n                \"value\": \"34555284062\",\n                \"type\": \"user_cpf\"\n            }\n        ]\n    }\n}"
 						}
 					]
 				},
@@ -937,13 +937,13 @@
 							}
 						},
 						"url": {
-							"raw": "{{url}}/produtos/8b40da5b-f3d1-4df3-9e4d-fa555ee638b2",
+							"raw": "{{url}}/produtos/08671f4c-4724-495c-90c6-ba16c8adfcdd",
 							"host": [
 								"{{url}}"
 							],
 							"path": [
 								"produtos",
-								"8b40da5b-f3d1-4df3-9e4d-fa555ee638b2"
+								"08671f4c-4724-495c-90c6-ba16c8adfcdd"
 							]
 						}
 					},
@@ -1014,13 +1014,13 @@
 							}
 						},
 						"url": {
-							"raw": "{{url}}/produtos/d3e950b6-44f2-4fbb-8b37-ddf3888e749d",
+							"raw": "{{url}}/produtos/08671f4c-4724-495c-90c6-ba16c8adfcdd",
 							"host": [
 								"{{url}}"
 							],
 							"path": [
 								"produtos",
-								"d3e950b6-44f2-4fbb-8b37-ddf3888e749d"
+								"08671f4c-4724-495c-90c6-ba16c8adfcdd"
 							]
 						}
 					},
@@ -1088,7 +1088,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"produtoId\": \"8b40da5b-f3d1-4df3-9e4d-fa555ee638b2\",\r\n    \"quantidade\": 10,\r\n    \"tipoMovimentacao\": \"Entrada\",\r\n    \"origemMovimentacao\": \"Compra\"\r\n}",
+							"raw": "{\r\n    \"produtoId\": \"7db1a8b3-ddc6-49f4-80ef-93c3c58e9207\",\r\n    \"quantidade\": 10,\r\n    \"tipoMovimentacao\": \"Entrada\",\r\n    \"origemMovimentacao\": \"Compra\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1163,7 +1163,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"produtoId\": \"8b40da5b-f3d1-4df3-9e4d-fa555ee638b2\",\r\n    \"quantidade\": 5,\r\n    \"tipoMovimentacao\": \"Saida\",\r\n    \"origemMovimentacao\": \"Venda\"\r\n}",
+							"raw": "{\r\n    \"produtoId\": \"7db1a8b3-ddc6-49f4-80ef-93c3c58e9207\",\r\n    \"quantidade\": 5,\r\n    \"tipoMovimentacao\": \"Saida\",\r\n    \"origemMovimentacao\": \"Venda\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1237,13 +1237,13 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{url}}/estoques/8b40da5b-f3d1-4df3-9e4d-fa555ee638b2",
+							"raw": "{{url}}/estoques/7db1a8b3-ddc6-49f4-80ef-93c3c58e9207",
 							"host": [
 								"{{url}}"
 							],
 							"path": [
 								"estoques",
-								"8b40da5b-f3d1-4df3-9e4d-fa555ee638b2"
+								"7db1a8b3-ddc6-49f4-80ef-93c3c58e9207"
 							]
 						}
 					},
@@ -1302,7 +1302,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"dataInicio\": \"2024-01-27T13:00:00.000Z\",\r\n  \"dataFim\": \"2024-02-27T13:00:00.000Z\",\r\n  \"codigoCupom\": \"DESCONTO25\",\r\n  \"porcentagemDesconto\": 0.25,\r\n  \"produtos\": [\r\n    {\r\n      \"produtoId\": \"8b40da5b-f3d1-4df3-9e4d-fa555ee638b2\"\r\n    },\r\n     {\r\n      \"produtoId\": \"5ac40cd9-84b6-4e65-b65d-7ab6daf6e9bc\"\r\n    }\r\n  ]\r\n}",
+							"raw": "{\r\n  \"dataInicio\": \"2024-02-27T13:00:00.000Z\",\r\n  \"dataFim\": \"2024-03-27T13:00:00.000Z\",\r\n  \"codigoCupom\": \"DESCONTO75\",\r\n  \"porcentagemDesconto\": 0.25,\r\n  \"produtos\": [\r\n    {\r\n      \"produtoId\": \"8b40da5b-f3d1-4df3-9e4d-fa555ee638b2\"\r\n    },\r\n     {\r\n      \"produtoId\": \"5ac40cd9-84b6-4e65-b65d-7ab6daf6e9bc\"\r\n    }\r\n  ]\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1327,7 +1327,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n  \"dataInicio\": \"2024-01-27T13:22:29.737Z\",\r\n  \"dataFim\": \"2024-02-27T13:22:29.737Z\",\r\n  \"codigoCupom\": \"DESCONTO25\",\r\n  \"porcentagemDesconto\": 0.25,\r\n  \"produtos\": [\r\n    {\r\n      \"produtoId\": \"8b40da5b-f3d1-4df3-9e4d-fa555ee638b2\"\r\n    },\r\n     {\r\n      \"produtoId\": \"5ac40cd9-84b6-4e65-b65d-7ab6daf6e9bc\"\r\n    }\r\n  ]\r\n}",
+									"raw": "{\r\n  \"dataInicio\": \"2024-03-09T13:22:29.737Z\",\r\n  \"dataFim\": \"2024-03-15T13:22:29.737Z\",\r\n  \"codigoCupom\": \"DESCONTO25\",\r\n  \"porcentagemDesconto\": 0.25,\r\n  \"produtos\": [\r\n    {\r\n      \"produtoId\": \"6e02169a-bf32-4e6b-bdd5-079e5eecdee0\"\r\n    }\r\n  ]\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -1376,13 +1376,13 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{url}}/cupons/DESCONTO20",
+							"raw": "{{url}}/cupons/DESCONTO80",
 							"host": [
 								"{{url}}"
 							],
 							"path": [
 								"cupons",
-								"DESCONTO20"
+								"DESCONTO80"
 							]
 						}
 					},
@@ -1393,13 +1393,13 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{url}}/cupons/DESCONTO20",
+									"raw": "{{url}}/cupons/DESCONTO25",
 									"host": [
 										"{{url}}"
 									],
 									"path": [
 										"cupons",
-										"DESCONTO20"
+										"DESCONTO25"
 									]
 								}
 							},
@@ -1436,7 +1436,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"dataInicio\": \"2024-01-27T13:00:00.00Z\",\r\n  \"dataFim\": \"2024-02-27T13:00:00.000Z\",\r\n  \"codigoCupom\": \"DESCONTO20\",\r\n  \"porcentagemDesconto\": 0.20\r\n}",
+							"raw": "{\r\n  \"dataInicio\": \"2024-02-26T12:00:00.00Z\",\r\n  \"dataFim\": \"2024-03-27T13:00:00.000Z\",\r\n  \"codigoCupom\": \"DESCONTO80\",\r\n  \"porcentagemDesconto\": 0.80\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1444,13 +1444,13 @@
 							}
 						},
 						"url": {
-							"raw": "{{url}}/cupons/69f92713-db2b-42b4-8e23-82ac794ca610",
+							"raw": "{{url}}/cupons/a6edf801-1d9c-4da2-8f32-42607df4cb56",
 							"host": [
 								"{{url}}"
 							],
 							"path": [
 								"cupons",
-								"69f92713-db2b-42b4-8e23-82ac794ca610"
+								"a6edf801-1d9c-4da2-8f32-42607df4cb56"
 							]
 						}
 					},
@@ -1521,14 +1521,14 @@
 							}
 						},
 						"url": {
-							"raw": "{{url}}/cupons/inativar/69f92713-db2b-42b4-8e23-82ac794ca610",
+							"raw": "{{url}}/cupons/inativar/520b7a8b-bd94-477c-b670-6d8ef6814ad8",
 							"host": [
 								"{{url}}"
 							],
 							"path": [
 								"cupons",
 								"inativar",
-								"69f92713-db2b-42b4-8e23-82ac794ca610"
+								"520b7a8b-bd94-477c-b670-6d8ef6814ad8"
 							]
 						}
 					},
@@ -1600,13 +1600,13 @@
 							}
 						},
 						"url": {
-							"raw": "{{url}}/cupons/69f92713-db2b-42b4-8e23-82ac794ca610/inserir-produtos",
+							"raw": "{{url}}/cupons/a6edf801-1d9c-4da2-8f32-42607df4cb56/inserir-produtos",
 							"host": [
 								"{{url}}"
 							],
 							"path": [
 								"cupons",
-								"69f92713-db2b-42b4-8e23-82ac794ca610",
+								"a6edf801-1d9c-4da2-8f32-42607df4cb56",
 								"inserir-produtos"
 							]
 						}
@@ -1679,13 +1679,13 @@
 							}
 						},
 						"url": {
-							"raw": "{{url}}/cupons/69f92713-db2b-42b4-8e23-82ac794ca610/remover-produtos",
+							"raw": "{{url}}/cupons/a6edf801-1d9c-4da2-8f32-42607df4cb56/remover-produtos",
 							"host": [
 								"{{url}}"
 							],
 							"path": [
 								"cupons",
-								"69f92713-db2b-42b4-8e23-82ac794ca610",
+								"a6edf801-1d9c-4da2-8f32-42607df4cb56",
 								"remover-produtos"
 							]
 						}
@@ -1755,7 +1755,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"produtoId\": \"9687232e-afe3-483c-9106-c900d4cdf594\",\r\n  \"quantidade\": 1\r\n}",
+							"raw": "{\r\n  \"produtoId\": \"5ac40cd9-84b6-4e65-b65d-7ab6daf6e9bc\",\r\n  \"quantidade\": 1\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1830,7 +1830,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"itemId\": \"db37db1a-d63b-4b4f-9722-04720b7b3e92\",\r\n  \"quantidade\": 2\r\n}",
+							"raw": "{\r\n  \"itemId\": \"9687232e-afe3-483c-9106-c900d4cdf594\",\r\n  \"quantidade\": 2\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1838,13 +1838,13 @@
 							}
 						},
 						"url": {
-							"raw": "{{url}}/carrinho/db37db1a-d63b-4b4f-9722-04720b7b3e92",
+							"raw": "{{url}}/carrinho/9687232e-afe3-483c-9106-c900d4cdf594",
 							"host": [
 								"{{url}}"
 							],
 							"path": [
 								"carrinho",
-								"db37db1a-d63b-4b4f-9722-04720b7b3e92"
+								"9687232e-afe3-483c-9106-c900d4cdf594"
 							]
 						}
 					},
@@ -1963,13 +1963,13 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "{{url}}/carrinho/db37db1a-d63b-4b4f-9722-04720b7b3e92",
+							"raw": "{{url}}/carrinho/06bed300-a561-44e8-937f-a4d4c683a2b7",
 							"host": [
 								"{{url}}"
 							],
 							"path": [
 								"carrinho",
-								"db37db1a-d63b-4b4f-9722-04720b7b3e92"
+								"06bed300-a561-44e8-937f-a4d4c683a2b7"
 							]
 						}
 					},
@@ -1987,7 +1987,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"codigoCupom\": \"DESCONTO20\",\r\n  \"itens\": [\r\n        {\r\n            \"quantidade\": 1,\r\n            \"produtoId\": \"5ac40cd9-84b6-4e65-b65d-7ab6daf6e9bc\"\r\n        },\r\n        {\r\n            \"quantidade\": 1,\r\n            \"produtoId\": \"03d3259c-319b-490f-95da-1cd734461162\"\r\n        },\r\n        {\r\n            \"quantidade\": 1,\r\n            \"produtoId\": \"b85b38ee-2aa3-4ad5-aacf-8e7dafedac9f\"\r\n        },\r\n        {\r\n            \"quantidade\": 1,\r\n            \"produtoId\": \"9687232e-afe3-483c-9106-c900d4cdf594\"\r\n        }\r\n    ]\r\n}",
+							"raw": "{\r\n  \"codigoCupom\": \"\",\r\n  \"itens\": [\r\n        {\r\n            \"quantidade\": 1,\r\n            \"produtoId\": \"6e02169a-bf32-4e6b-bdd5-079e5eecdee0\"\r\n        }\r\n    ]\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1995,12 +1995,13 @@
 							}
 						},
 						"url": {
-							"raw": "{{url}}/pedidos",
+							"raw": "{{url}}/pedidos/checkout",
 							"host": [
 								"{{url}}"
 							],
 							"path": [
-								"pedidos"
+								"pedidos",
+								"checkout"
 							]
 						}
 					},
@@ -2012,7 +2013,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n  \"codigoCupom\": \"DESCONTO20\",\r\n  \"itens\": [\r\n        {\r\n            \"quantidade\": 1,\r\n            \"produtoId\": \"5ac40cd9-84b6-4e65-b65d-7ab6daf6e9bc\"\r\n        },\r\n        {\r\n            \"quantidade\": 1,\r\n            \"produtoId\": \"03d3259c-319b-490f-95da-1cd734461162\"\r\n        },\r\n        {\r\n            \"quantidade\": 1,\r\n            \"produtoId\": \"b85b38ee-2aa3-4ad5-aacf-8e7dafedac9f\"\r\n        },\r\n        {\r\n            \"quantidade\": 1,\r\n            \"produtoId\": \"9687232e-afe3-483c-9106-c900d4cdf594\"\r\n        }\r\n    ]\r\n}",
+									"raw": "{\r\n  \"codigoCupom\": \"\",\r\n  \"itens\": [\r\n        {\r\n            \"quantidade\": 1,\r\n            \"produtoId\": \"6e02169a-bf32-4e6b-bdd5-079e5eecdee0\"\r\n        }\r\n    ]\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -2020,12 +2021,13 @@
 									}
 								},
 								"url": {
-									"raw": "{{url}}/pedidos",
+									"raw": "{{url}}/pedidos/checkout",
 									"host": [
 										"{{url}}"
 									],
 									"path": [
-										"pedidos"
+										"pedidos",
+										"checkout"
 									]
 								}
 							},
@@ -2061,13 +2063,13 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{url}}/pedidos/ac15731e-a477-40ac-a5fc-16d02b3dfba6",
+							"raw": "{{url}}/pedidos/b18a6e87-2ca5-45ef-9465-cfb0fa13a3ab",
 							"host": [
 								"{{url}}"
 							],
 							"path": [
 								"pedidos",
-								"ac15731e-a477-40ac-a5fc-16d02b3dfba6"
+								"b18a6e87-2ca5-45ef-9465-cfb0fa13a3ab"
 							]
 						}
 					},
@@ -2078,13 +2080,13 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{url}}/pedidos/6d5e9575-d8c4-4047-b249-84fae1261a01",
+									"raw": "{{url}}/pedidos/ef078bf0-de5a-444b-a115-895d5229474e",
 									"host": [
 										"{{url}}"
 									],
 									"path": [
 										"pedidos",
-										"6d5e9575-d8c4-4047-b249-84fae1261a01"
+										"ef078bf0-de5a-444b-a115-895d5229474e"
 									]
 								}
 							},
@@ -2113,57 +2115,42 @@
 							"body": "{\n    \"id\": \"6d5e9575-d8c4-4047-b249-84fae1261a01\",\n    \"clienteId\": \"f444b936-d908-4a3d-a709-06a99c83d8d6\",\n    \"cpf\": \"44035085880\",\n    \"status\": \"AguardandoPagamento\",\n    \"valorTotal\": 56.9,\n    \"dataCriacao\": \"2024-01-27T14:11:38.60572Z\",\n    \"dataUltimaAtualizacao\": null,\n    \"itens\": [\n        {\n            \"id\": \"01fe5e56-821a-4fde-b3d0-73e762c8e792\",\n            \"valorUnitario\": 20,\n            \"desconto\": null,\n            \"valorFinal\": 20,\n            \"quantidade\": 1,\n            \"produtoId\": \"9687232e-afe3-483c-9106-c900d4cdf594\"\n        },\n        {\n            \"id\": \"07b3af80-f8f8-42a3-b74a-be313711083d\",\n            \"valorUnitario\": 10,\n            \"desconto\": null,\n            \"valorFinal\": 10,\n            \"quantidade\": 1,\n            \"produtoId\": \"03d3259c-319b-490f-95da-1cd734461162\"\n        },\n        {\n            \"id\": \"9f1510f9-9557-405f-8536-704b0b816bad\",\n            \"valorUnitario\": 25,\n            \"desconto\": 0.2,\n            \"valorFinal\": 20,\n            \"quantidade\": 1,\n            \"produtoId\": \"5ac40cd9-84b6-4e65-b65d-7ab6daf6e9bc\"\n        },\n        {\n            \"id\": \"db9736ea-d4a7-443e-9fe1-9575a01acf8b\",\n            \"valorUnitario\": 6.9,\n            \"desconto\": null,\n            \"valorFinal\": 6.9,\n            \"quantidade\": 1,\n            \"produtoId\": \"b85b38ee-2aa3-4ad5-aacf-8e7dafedac9f\"\n        }\n    ]\n}"
 						}
 					]
-				},
+				}
+			]
+		},
+		{
+			"name": "Pagamento",
+			"item": [
 				{
-					"name": "Confirmar pedido",
+					"name": "Buscar tipos de pagamento",
 					"request": {
-						"method": "POST",
+						"method": "GET",
 						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n  \"pedidoId\": \"ac15731e-a477-40ac-a5fc-16d02b3dfba6\",\r\n  \"tipoPagamento\": \"MercadoPago\",\r\n  \"valorTotal\": 56.9\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
 						"url": {
-							"raw": "{{url}}/pedidos/ac15731e-a477-40ac-a5fc-16d02b3dfba6/confirmar",
+							"raw": "{{url}}/pagamentos/tipos",
 							"host": [
 								"{{url}}"
 							],
 							"path": [
-								"pedidos",
-								"ac15731e-a477-40ac-a5fc-16d02b3dfba6",
-								"confirmar"
+								"pagamentos",
+								"tipos"
 							]
 						}
 					},
 					"response": [
 						{
-							"name": "Pedido confirmado",
+							"name": "Tipos de pagamento",
 							"originalRequest": {
-								"method": "POST",
+								"method": "GET",
 								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n  \"pedidoId\": \"6d5e9575-d8c4-4047-b249-84fae1261a01\",\r\n  \"tipoPagamento\": \"MercadoPago\",\r\n  \"valorTotal\": 56.9\r\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
 								"url": {
-									"raw": "{{url}}/pedidos/6d5e9575-d8c4-4047-b249-84fae1261a01/confirmar",
+									"raw": "{{url}}/pagamentos/tipos",
 									"host": [
 										"{{url}}"
 									],
 									"path": [
-										"pedidos",
-										"6d5e9575-d8c4-4047-b249-84fae1261a01",
-										"confirmar"
+										"pagamentos",
+										"tipos"
 									]
 								}
 							},
@@ -2177,7 +2164,7 @@
 								},
 								{
 									"key": "Date",
-									"value": "Sat, 27 Jan 2024 14:19:58 GMT"
+									"value": "Mon, 26 Feb 2024 12:51:36 GMT"
 								},
 								{
 									"key": "Server",
@@ -2189,7 +2176,195 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"pedidoId\": \"6d5e9575-d8c4-4047-b249-84fae1261a01\"\n}"
+							"body": "{\n    \"metodosPagamento\": [\n        \"MercadoPago\",\n        \"CartaoCredito\",\n        \"Pix\"\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Buscar Pagamento",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/pagamentos?pedidoId=ef078bf0-de5a-444b-a115-895d5229474e",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"pagamentos"
+							],
+							"query": [
+								{
+									"key": "pedidoId",
+									"value": "ef078bf0-de5a-444b-a115-895d5229474e"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Buscar Pagamento",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/pagamentos?pedidoId=ef078bf0-de5a-444b-a115-895d5229474e",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"pagamentos"
+									],
+									"query": [
+										{
+											"key": "pedidoId",
+											"value": "ef078bf0-de5a-444b-a115-895d5229474e"
+										}
+									]
+								}
+							},
+							"_postman_previewlanguage": "Text",
+							"header": [],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "Processar Pagamento",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"pedidoId\": \"ef078bf0-de5a-444b-a115-895d5229474e\",\r\n  \"tipoPagamento\": \"MercadoPago\",\r\n  \"valorTotal\": 11.5\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/pagamentos",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"pagamentos"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Processar Pagamento",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"pedidoId\": \"ef078bf0-de5a-444b-a115-895d5229474e\",\r\n  \"tipoPagamento\": \"MercadoPago\",\r\n  \"valorTotal\": 11.5\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/pagamentos",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"pagamentos"
+									]
+								}
+							},
+							"_postman_previewlanguage": "Text",
+							"header": [],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "Autorizar Pagamento - Webhook",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "9E541194-61B4-44F6-BE2A-B1F08C24BB52",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"pagamentoId\": \"904afbd7-b24f-48e4-8a4e-13345c51bc77\",\r\n  \"autorizado\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/pagamentos/autorizar/webhook",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"pagamentos",
+								"autorizar",
+								"webhook"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Autorizar Pagamento - Webhook",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "9E541194-61B4-44F6-BE2A-B1F08C24BB52",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"pagamentoId\": \"904afbd7-b24f-48e4-8a4e-13345c51bc77\",\r\n  \"autorizado\": true\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/pagamentos/autorizar/webhook",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"pagamentos",
+										"autorizar",
+										"webhook"
+									]
+								}
+							},
+							"_postman_previewlanguage": "Text",
+							"header": [],
+							"cookie": [],
+							"body": ""
 						}
 					]
 				}
@@ -2278,13 +2453,13 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{url}}/preparo/a2e4c27f-b1d0-47b6-beac-e9e8fa115c76",
+									"raw": "{{url}}/preparo/0b4de6c1-3f29-44cd-91b6-b0f2fe2cea87",
 									"host": [
 										"{{url}}"
 									],
 									"path": [
 										"preparo",
-										"a2e4c27f-b1d0-47b6-beac-e9e8fa115c76"
+										"0b4de6c1-3f29-44cd-91b6-b0f2fe2cea87"
 									]
 								}
 							},
@@ -2381,13 +2556,13 @@
 					},
 					"response": [
 						{
-							"name": "Pedido inválido",
+							"name": "Iniciar preparo",
 							"originalRequest": {
 								"method": "POST",
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"pedidoId\": \"ac15731e-a477-40ac-a5fc-16d02b3dfba6\"\r\n}",
+									"raw": "{\r\n    \"pedidoId\": \"0b4de6c1-3f29-44cd-91b6-b0f2fe2cea87\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -2458,13 +2633,13 @@
 					},
 					"response": [
 						{
-							"name": "Pedido inválido",
+							"name": "Finalizar preparo",
 							"originalRequest": {
 								"method": "POST",
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"pedidoId\": \"ac15731e-a477-40ac-a5fc-16d02b3dfba6\"\r\n}",
+									"raw": "{\r\n    \"pedidoId\": \"0b4de6c1-3f29-44cd-91b6-b0f2fe2cea87\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -2472,13 +2647,13 @@
 									}
 								},
 								"url": {
-									"raw": "{{url}}/preparo/iniciar",
+									"raw": "{{url}}/preparo/finalizar",
 									"host": [
 										"{{url}}"
 									],
 									"path": [
 										"preparo",
-										"iniciar"
+										"finalizar"
 									]
 								}
 							},
@@ -2535,7 +2710,7 @@
 					},
 					"response": [
 						{
-							"name": "Pedido inválido",
+							"name": "Confirmar entrega",
 							"originalRequest": {
 								"method": "POST",
 								"header": [],
@@ -2549,13 +2724,13 @@
 									}
 								},
 								"url": {
-									"raw": "{{url}}/preparo/iniciar",
+									"raw": "{{url}}/preparo/confirmar-entrega",
 									"host": [
 										"{{url}}"
 									],
 									"path": [
 										"preparo",
-										"iniciar"
+										"confirmar-entrega"
 									]
 								}
 							},
@@ -2655,7 +2830,7 @@
 		"bearer": [
 			{
 				"key": "token",
-				"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJmNDQ0YjkzNi1kOTA4LTRhM2QtYTcwOS0wNmE5OWM4M2Q4ZDYiLCJlbWFpbCI6Imx1Y2FzLmxpaW1hMDMwQGdtYWlsLmNvbSIsImp0aSI6IjEzMTEyMDgyLTcyNmUtNDNlNS1iMWZjLWFmMDQ4ZWFmMDAxYSIsIm5iZiI6MTcwNjM1OTQ3MiwiaWF0IjoxNzA2MzU5NDcyLCJ1c2VyX3R5cGUiOiJyZWdpc3RyZWQiLCJzZXNzaW9uX2lkIjoiNzMzOTA2OWItZDE1NC00MDM4LThkOGEtNzRlNDhkYmJjOTA2IiwidXNlcl9jcGYiOiI0NDAzNTA4NTg4MCIsImV4cCI6MTcwNjM2NjY3MiwiaXNzIjoiRWFzeUZvb2QiLCJhdWQiOiJsb2NhbGhvc3Q6NTAwMiJ9.VlCxEzkFp_JbSdOcjr477WdzZ-YQXPPT-_Ej4XdXY1E",
+				"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIwOTVkYjU4Ny00MGIyLTQyMjYtYmU1Ni1iYmQxYjIxM2RkMWMiLCJlbWFpbCI6ImpvaG4uZG9lQGVtYWlsLmNvbSIsImp0aSI6ImUxZDNlMjc1LTg4YTAtNDdkOS04Y2IzLTE4MDhlMjFhOWQ1NCIsIm5iZiI6MTcwODk1MDkzNiwiaWF0IjoxNzA4OTUwOTM2LCJ1c2VyX3R5cGUiOiJyZWdpc3RyZWQiLCJzZXNzaW9uX2lkIjoiYjM0YTI5NjctZjc5Ny00MGQyLWI0MDItYjgyNDUyNzQ4YWYwIiwidXNlcl9jcGYiOiIzNDU1NTI4NDA2MiIsImV4cCI6MTcwODk1ODEzNiwiaXNzIjoiRWFzeUZvb2QiLCJhdWQiOiJsb2NhbGhvc3QifQ.gOYx8-Yn-7Vc-_hxQMyOzYP_QU9WSXeI63p8OGqYNJQ",
 				"type": "string"
 			}
 		]
@@ -2683,7 +2858,7 @@
 	"variable": [
 		{
 			"key": "url",
-			"value": "http://localhost:5001/api",
+			"value": "http://aaab35243dd2d47ef8723d0856c34e43-150573740.us-east-1.elb.amazonaws.com/api",
 			"type": "string"
 		}
 	]

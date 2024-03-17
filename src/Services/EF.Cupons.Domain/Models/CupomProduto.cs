@@ -19,7 +19,7 @@ public class CupomProduto : Entity
 
     public Guid CupomId { get; private set; }
     public Guid ProdutoId { get; private set; }
-    public Cupom Cupom { get; private set; }
+    public Cupom Cupom { get; }
 
     private bool ValidarCupom(Guid cupomId)
     {

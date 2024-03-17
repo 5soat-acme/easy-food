@@ -37,8 +37,9 @@ public class ConsultarPedidoUseCase : IConsultarPedidoUseCase
 
     private int OrderByPedidoStatus(StatusPreparo status)
     {
-        StatusPreparo[] ordem = [StatusPreparo.Pronto, StatusPreparo.EmPreparacao, StatusPreparo.Recebido, StatusPreparo.Finalizado];
-        int index = Array.IndexOf(ordem, status);
+        StatusPreparo[] ordem =
+            [StatusPreparo.Pronto, StatusPreparo.EmPreparacao, StatusPreparo.Recebido, StatusPreparo.Finalizado];
+        var index = Array.IndexOf(ordem, status);
         if (index == -1) return int.MaxValue;
         return index;
     }

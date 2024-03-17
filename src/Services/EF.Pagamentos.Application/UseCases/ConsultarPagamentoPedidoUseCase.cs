@@ -20,14 +20,12 @@ public class ConsultarPagamentoPedidoUseCase : CommonUseCase, IConsultarPagament
         var pagamento = await _pagamentoRepository.ObterPorPedidoId(pedidoId);
 
         if (pagamento is not null)
-        {
             result = new PagamentoPedidoDto
             {
                 Id = pagamento.Id,
                 PedidoId = pagamento.PedidoId,
                 Status = pagamento.Status
             };
-        }
 
         return result;
     }

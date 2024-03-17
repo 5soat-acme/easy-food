@@ -16,8 +16,8 @@ public class Pedido : Entity, IAggregateRoot
     public Guid PedidoCorrelacaoId { get; private set; }
     public int Codigo { get; private set; }
     public StatusPreparo Status { get; private set; }
-    public DateTime DataCriacao { get; private set; }
-    public DateTime? DataAtualizacao { get; private set; }
+    public DateTime DataCriacao { get; }
+    public DateTime? DataAtualizacao { get; }
     public IReadOnlyCollection<Item> Itens => _itens;
 
     public void IniciarPreparo()

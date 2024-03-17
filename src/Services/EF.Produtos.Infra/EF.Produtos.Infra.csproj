@@ -16,7 +16,7 @@
     </ItemGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\..\Shared\EF.Core.Commons\EF.Core.Commons.csproj"/>
+        <ProjectReference Include="..\..\Commons\EF.Core.Commons\EF.Core.Commons.csproj"/>
         <ProjectReference Include="..\EF.Produtos.Domain\EF.Produtos.Domain.csproj"/>
     </ItemGroup>
 

@@ -18,8 +18,8 @@ public class Pedido : Entity, IAggregateRoot
     public Status Status { get; private set; }
     public decimal ValorTotal { get; private set; }
     public Guid? CupomId { get; private set; }
-    public DateTime DataCriacao { get; private set; }
-    public DateTime? DataAtualizacao { get; private set; }
+    public DateTime DataCriacao { get; }
+    public DateTime? DataAtualizacao { get; }
 
     public IReadOnlyCollection<Item> Itens => _itens;
 

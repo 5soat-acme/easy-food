@@ -30,6 +30,17 @@ public class PedidoEventHandler : IEventHandler<PreparoPedidoIniciadoEvent>,
         });
     }
 
+    public async Task Handle(PagamentoAutorizadoEvent notification)
+    {
+        using var scope = _serviceScopeFactory.CreateScope();
+        var atualizarPedidoUseCase = scope.ServiceProvider.GetRequiredService<IReceberPedidoUsecase>();
+
+        await atualizarPedidoUseCase.Handle(new ReceberPedidoDto
+        {
+            PedidoId = notification.PedidoId
+        });
+    }
+
     public async Task Handle(PreparoPedidoFinalizadoEvent notification)
     {
         using var scope = _serviceScopeFactory.CreateScope();
@@ -51,17 +62,6 @@ public class PedidoEventHandler : IEventHandler<PreparoPedidoIniciadoEvent>,
         {
             PedidoId = notification.PedidoCorrelacaoId,
             Status = Status.EmPreparacao
-        });
-    }
-
-    public async Task Handle(PagamentoAutorizadoEvent notification)
-    {
-        using var scope = _serviceScopeFactory.CreateScope();
-        var atualizarPedidoUseCase = scope.ServiceProvider.GetRequiredService<IReceberPedidoUsecase>();
-
-        await atualizarPedidoUseCase.Handle(new ReceberPedidoDto
-        {
-            PedidoId = notification.PedidoId
         });
     }
 }

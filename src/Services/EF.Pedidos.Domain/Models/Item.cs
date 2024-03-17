@@ -21,13 +21,13 @@ public class Item : Entity
         Quantidade = quantidade;
     }
 
-    public decimal ValorUnitario { get; private set; }
+    public decimal ValorUnitario { get; }
     public decimal? Desconto { get; private set; }
     public decimal ValorFinal { get; private set; }
     public int Quantidade { get; private set; }
     public Guid ProdutoId { get; private set; }
-    public Guid PedidoId { get; private set; }
-    public Pedido Pedido { get; private set; }
+    public Guid PedidoId { get; }
+    public Pedido Pedido { get; }
 
     public bool ValidarProduto(Guid produtoId)
     {

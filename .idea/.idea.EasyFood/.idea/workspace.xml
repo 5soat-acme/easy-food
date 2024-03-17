@@ -13,17 +13,108 @@
     <projectFile profileName="https">src/EF.Identity.Api/EF.Identity.Api.csproj</projectFile>
     <projectFile profileName="http">src/Presentation/EF.Api/EF.Api.csproj</projectFile>
     <projectFile profileName="https">src/Presentation/EF.Api/EF.Api.csproj</projectFile>
+    <projectFile>src/Presenter/EF.Api/EF.Api.csproj</projectFile>
   </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="61e4a515-7fae-49b6-801b-ebc481bfb9f9" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/securityhotspotstore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/sonarlint/securityhotspotstore/index.pb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Presentation/EF.Api/Commons/Config/ApiConfig.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Presentation/EF.Api/Commons/Config/ApiConfig.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Presentation/EF.Api/Contexts/Pagamentos/Controllers/PagamentoController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Presentation/EF.Api/Contexts/Pagamentos/Controllers/PagamentoController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Presentation/EF.Api/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/Presentation/EF.Api/appsettings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.EasyFood/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EasyFood.sln" beforeDir="false" afterPath="$PROJECT_DIR$/EasyFood.sln" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Presentation/EF.Api/Commons/Config/ApiConfig.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Presentation/EF.Api/Commons/Config/EventBusConfig.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Presentation/EF.Api/Commons/Config/MigrationsConfig.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Presentation/EF.Api/Commons/Config/SchemaFilterConfig.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Presentation/EF.Api/Commons/Config/SwaggerConfig.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Presentation/EF.Api/Commons/Extensions/ExceptionMiddleware.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Presentation/EF.Api/Commons/Extensions/PagamentoAutorizacaoWebHookSettings.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Presentation/EF.Api/Contexts/Carrinho/Config/DependencyInjectionConfig.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Presentation/EF.Api/Contexts/Carrinho/Controllers/CarrinhoController.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Presentation/EF.Api/Contexts/Clientes/Config/DependencyInjectionConfig.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Presentation/EF.Api/Contexts/Cupons/Config/DependencyInjectionConfig.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Presentation/EF.Api/Contexts/Cupons/Controllers/CupomController.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Presentation/EF.Api/Contexts/Estoques/Config/DependencyInjectionConfig.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Presentation/EF.Api/Contexts/Estoques/Controllers/EstoqueController.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Presentation/EF.Api/Contexts/Identidade/Config/DependencyInjectionConfig.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Presentation/EF.Api/Contexts/Identidade/Config/IdentityConfig.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Presentation/EF.Api/Contexts/Identidade/Controllers/IdentidadeController.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Presentation/EF.Api/Contexts/Pagamentos/Config/DependencyInjectionConfig.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Presentation/EF.Api/Contexts/Pagamentos/Controllers/PagamentoController.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Presentation/EF.Api/Contexts/Pedidos/Config/DependencyInjectionConfig.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Presentation/EF.Api/Contexts/Pedidos/Controllers/PedidoController.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Presentation/EF.Api/Contexts/PreparoEntrega/Config/DependencyInjectionConfig.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Presentation/EF.Api/Contexts/PreparoEntrega/Controllers/MonitorController.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Presentation/EF.Api/Contexts/PreparoEntrega/Controllers/PreparoController.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Presentation/EF.Api/Contexts/Produtos/Config/DependencyInjectionConfig.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Presentation/EF.Api/Contexts/Produtos/Controllers/ProdutoController.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Presentation/EF.Api/Dockerfile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Presentation/EF.Api/EF.Api.csproj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Presentation/EF.Api/Program.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Presentation/EF.Api/Properties/launchSettings.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Presentation/EF.Api/appsettings.Development.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Presentation/EF.Api/appsettings.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/EF.Carrinho.Application/EF.Carrinho.Application.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Carrinho.Application/EF.Carrinho.Application.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/EF.Carrinho.Domain/EF.Carrinho.Domain.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Carrinho.Domain/EF.Carrinho.Domain.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/EF.Carrinho.Infra/EF.Carrinho.Infra.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Carrinho.Infra/EF.Carrinho.Infra.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/EF.Clientes.Application/EF.Clientes.Application.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Clientes.Application/EF.Clientes.Application.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/EF.Clientes.Domain/EF.Clientes.Domain.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Clientes.Domain/EF.Clientes.Domain.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/EF.Clientes.Infra/EF.Clientes.Infra.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Clientes.Infra/EF.Clientes.Infra.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/EF.Cupons.Domain/EF.Cupons.Domain.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Cupons.Domain/EF.Cupons.Domain.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/EF.Estoques.Application/EF.Estoques.Application.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Estoques.Application/EF.Estoques.Application.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/EF.Estoques.Domain/EF.Estoques.Domain.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Estoques.Domain/EF.Estoques.Domain.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/EF.Identidade.Application/EF.Identidade.Application.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Identidade.Application/EF.Identidade.Application.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/EF.Identidade.Domain/EF.Identidade.Domain.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Identidade.Domain/EF.Identidade.Domain.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/EF.Identidade.Infra/EF.Identidade.Infra.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Identidade.Infra/EF.Identidade.Infra.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/EF.Pagamentos.Domain/EF.Pagamentos.Domain.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Pagamentos.Domain/EF.Pagamentos.Domain.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/EF.Pagamentos.Infra/EF.Pagamentos.Infra.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Pagamentos.Infra/EF.Pagamentos.Infra.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/EF.Pedidos.Application/EF.Pedidos.Application.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Pedidos.Application/EF.Pedidos.Application.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/EF.Pedidos.Domain/EF.Pedidos.Domain.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Pedidos.Domain/EF.Pedidos.Domain.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/EF.Pedidos.Infra/EF.Pedidos.Infra.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Pedidos.Infra/EF.Pedidos.Infra.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/EF.PreparoEntrega.Application/EF.PreparoEntrega.Application.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.PreparoEntrega.Application/EF.PreparoEntrega.Application.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/EF.PreparoEntrega.Domain/EF.PreparoEntrega.Domain.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.PreparoEntrega.Domain/EF.PreparoEntrega.Domain.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/EF.PreparoEntrega.Infra/EF.PreparoEntrega.Infra.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.PreparoEntrega.Infra/EF.PreparoEntrega.Infra.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/EF.Produtos.Domain/EF.Produtos.Domain.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Produtos.Domain/EF.Produtos.Domain.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/EF.Produtos.Infra/EF.Produtos.Infra.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EF.Produtos.Infra/EF.Produtos.Infra.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Shared/EF.Core.Commons/Communication/Failure.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Shared/EF.Core.Commons/Communication/OperationResult.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Shared/EF.Core.Commons/Communication/OperationResultWithData.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Shared/EF.Core.Commons/Communication/ValidationResult.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Shared/EF.Core.Commons/DomainObjects/DomainException.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Shared/EF.Core.Commons/DomainObjects/Entity.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Shared/EF.Core.Commons/DomainObjects/IAggregateRoot.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Shared/EF.Core.Commons/EF.Core.Commons.csproj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Shared/EF.Core.Commons/Messages/Event.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Shared/EF.Core.Commons/Messages/IEventHandler.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Shared/EF.Core.Commons/Messages/Integrations/EntregaRealizadaEvent.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Shared/EF.Core.Commons/Messages/Integrations/IntegrationEvent.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Shared/EF.Core.Commons/Messages/Integrations/PagamentoAutorizadoEvent.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Shared/EF.Core.Commons/Messages/Integrations/PedidoCriadoEvent.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Shared/EF.Core.Commons/Messages/Integrations/PedidoRecebidoEvent.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Shared/EF.Core.Commons/Messages/Integrations/PreparoPedidoFinalizadoEvent.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Shared/EF.Core.Commons/Messages/Integrations/PreparoPedidoIniciadoEvent.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Shared/EF.Core.Commons/Messages/Message.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Shared/EF.Core.Commons/Repository/IRepository.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Shared/EF.Core.Commons/Repository/IUnitOfWork.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Shared/EF.Core.Commons/UseCases/CommonUseCase.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Shared/EF.Core.Commons/Utils/StringUtils.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Shared/EF.Core.Commons/ValueObjects/Cpf.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Shared/EF.Core.Commons/ValueObjects/Email.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Shared/EF.Infra.Commons/Data/DbContextExtension.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Shared/EF.Infra.Commons/EF.Infra.Commons.csproj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Shared/EF.Infra.Commons/EventBus/EventBusExtension.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Shared/EF.Infra.Commons/EventBus/IEventBus.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Shared/EF.Infra.Commons/EventBus/InMemoryEventBus.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Shared/EF.Infra.Commons/Extensions/DateTimeExtension.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Shared/EF.WebApi.Commons/Controllers/CustomControllerBase.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Shared/EF.WebApi.Commons/EF.WebApi.Commons.csproj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Shared/EF.WebApi.Commons/Identity/IdentitySettings.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Shared/EF.WebApi.Commons/Identity/JwtConfig.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Shared/EF.WebApi.Commons/ModelStateValidations/CpfValidationAttribute.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Shared/EF.WebApi.Commons/ModelStateValidations/NonEmptyGuidAttribute.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Shared/EF.WebApi.Commons/Users/ClaimsPrincipalExtensions.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Shared/EF.WebApi.Commons/Users/IUserApp.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Shared/EF.WebApi.Commons/Users/UserApp.cs" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -104,61 +195,79 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;.NET Launch Settings Profile.EF.Api: http.executor&quot;: &quot;Debug&quot;,
-    &quot;.NET Launch Settings Profile.EF.Api: https.executor&quot;: &quot;Debug&quot;,
-    &quot;1bea6dd9-6f9b-4afc-9f56-c255980b80ea.executor&quot;: &quot;Debug&quot;,
-    &quot;358cc20c-bbd2-4173-b107-79bbfcbf32c4.executor&quot;: &quot;Debug&quot;,
-    &quot;HTTP Request.All in identidade.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.api-requests | #2.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.api-requests | Carrinho API:.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.carrinho-api | #1.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.carrinho-api | #2.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.carrinho-api | #3.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.carrinho-api | #4.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.carrinho-api | Adicionar item no carrinho.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.carrinho-api | Carrinho API:.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.carrinho-api | Fechar pedido a partir do carrinho do cliente.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.carrinho-api | Incluir item no carrinho.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.carrinho-api | Obter carrinho do cliente.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.carrinho-api | Obter resumo do carrinho do cliente.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.identidade | #1.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.identidade | #2.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.identidade | #3.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.identidade | #4.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.identidade-api | #2.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.identidade-api | Autenticar usuário.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.identidade-api | Cadastrar usuário.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.identidade-api | Identidade API:.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.pedidos-api | Obter o pedido por id ou ide de correlação.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;dff6d86c-e5e8-4eee-9699-c43c7743dfd5.executor&quot;: &quot;Debug&quot;,
-    &quot;fb298e5c-f89f-44b8-aa99-613fa71471c3.executor&quot;: &quot;Debug&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;fase-2&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;rest.client.default.execution.environment&quot;: &quot;dev&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    ".NET Launch Settings Profile.EF.Api: http.executor": "Debug",
+    ".NET Launch Settings Profile.EF.Api: https.executor": "Debug",
+    "1bea6dd9-6f9b-4afc-9f56-c255980b80ea.executor": "Debug",
+    "358cc20c-bbd2-4173-b107-79bbfcbf32c4.executor": "Debug",
+    "HTTP Request.All in identidade.executor": "Run",
+    "HTTP Request.api-requests | #2.executor": "Run",
+    "HTTP Request.api-requests | Carrinho API:.executor": "Run",
+    "HTTP Request.carrinho-api | #1.executor": "Run",
+    "HTTP Request.carrinho-api | #2.executor": "Run",
+    "HTTP Request.carrinho-api | #3.executor": "Run",
+    "HTTP Request.carrinho-api | #4.executor": "Run",
+    "HTTP Request.carrinho-api | Adicionar item no carrinho.executor": "Run",
+    "HTTP Request.carrinho-api | Carrinho API:.executor": "Run",
+    "HTTP Request.carrinho-api | Fechar pedido a partir do carrinho do cliente.executor": "Run",
+    "HTTP Request.carrinho-api | Incluir item no carrinho.executor": "Run",
+    "HTTP Request.carrinho-api | Obter carrinho do cliente.executor": "Run",
+    "HTTP Request.carrinho-api | Obter resumo do carrinho do cliente.executor": "Run",
+    "HTTP Request.identidade | #1.executor": "Run",
+    "HTTP Request.identidade | #2.executor": "Run",
+    "HTTP Request.identidade | #3.executor": "Run",
+    "HTTP Request.identidade | #4.executor": "Run",
+    "HTTP Request.identidade-api | #2.executor": "Run",
+    "HTTP Request.identidade-api | Autenticar usuário.executor": "Run",
+    "HTTP Request.identidade-api | Cadastrar usuário.executor": "Run",
+    "HTTP Request.identidade-api | Identidade API:.executor": "Run",
+    "HTTP Request.pedidos-api | Obter o pedido por id ou ide de correlação.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "dff6d86c-e5e8-4eee-9699-c43c7743dfd5.executor": "Debug",
+    "fb298e5c-f89f-44b8-aa99-613fa71471c3.executor": "Debug",
+    "git-widget-placeholder": "main",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "rest.client.default.execution.environment": "dev",
+    "settings.editor.selected.configurable": "preferences.keymap",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;postgresql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql"
     ],
-    &quot;rider.external.source.directories&quot;: [
-      &quot;C:\\Users\\bmfpe\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\DecompilerCache&quot;,
-      &quot;C:\\Users\\bmfpe\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\SourcesCache&quot;,
-      &quot;C:\\Users\\bmfpe\\AppData\\Local\\Symbols\\src&quot;
+    "rider.external.source.directories": [
+      "C:\\Users\\bmfpe\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\DecompilerCache",
+      "C:\\Users\\bmfpe\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\SourcesCache",
+      "C:\\Users\\bmfpe\\AppData\\Local\\Symbols\\src"
     ]
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected=".NET Launch Settings Profile.EF.Api: https">
+    <configuration name="EF.Api" type="DotNetProject" factoryName=".NET Project">
+      <option name="EXE_PATH" value="" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <option name="USE_MONO" value="0" />
+      <option name="RUNTIME_ARGUMENTS" value="" />
+      <option name="PROJECT_PATH" value="$PROJECT_DIR$/src/Presenter/EF.Api/EF.Api.csproj" />
+      <option name="PROJECT_EXE_PATH_TRACKING" value="1" />
+      <option name="PROJECT_ARGUMENTS_TRACKING" value="1" />
+      <option name="PROJECT_WORKING_DIRECTORY_TRACKING" value="1" />
+      <option name="PROJECT_KIND" value="DotNetCore" />
+      <option name="PROJECT_TFM" value="" />
+      <method v="2">
+        <option name="Build" />
+      </method>
+    </configuration>
     <configuration name="EF.Api: http" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/src/Presentation/EF.Api/EF.Api.csproj" />
       <option name="LAUNCH_PROFILE_TFM" value="net8.0" />
@@ -199,6 +308,7 @@
     <list>
       <item itemvalue=".NET Launch Settings Profile.EF.Api: http" />
       <item itemvalue=".NET Launch Settings Profile.EF.Api: https" />
+      <item itemvalue=".NET Project.EF.Api" />
     </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -281,6 +391,9 @@
       <workItem from="1709112037547" duration="10111000" />
       <workItem from="1709294709983" duration="6801000" />
       <workItem from="1709467918873" duration="30769000" />
+      <workItem from="1710331251533" duration="549000" />
+      <workItem from="1710331859913" duration="158000" />
+      <workItem from="1710675464161" duration="1259000" />
     </task>
     <servers />
   </component>
@@ -388,53 +501,25 @@
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/src/Services/EF.Carrinho.Application/Events/CarrinhoEventHandler.cs</url>
           <line>17</line>
-          <properties documentPath="D:\fiap\easy-food\src\Services\EF.Carrinho.Application\Events\CarrinhoEventHandler.cs" initialLine="17" containingFunctionPresentation="Method 'Handle'">
-            <startOffsets>
-              <option value="554" />
-            </startOffsets>
-            <endOffsets>
-              <option value="555" />
-            </endOffsets>
-          </properties>
+          <properties documentPath="D:\fiap\easy-food\src\Services\EF.Carrinho.Application\Events\CarrinhoEventHandler.cs" initialLine="17" containingFunctionPresentation="Method 'Handle'" />
           <option name="timeStamp" value="27" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/src/Services/EF.Pedidos.Application/UseCases/ReceberPedidoUseCase.cs</url>
           <line>25</line>
-          <properties documentPath="D:\fiap\easy-food\src\Services\EF.Pedidos.Application\UseCases\ReceberPedidoUseCase.cs" initialLine="25" containingFunctionPresentation="Method 'Handle'">
-            <startOffsets>
-              <option value="921" />
-            </startOffsets>
-            <endOffsets>
-              <option value="922" />
-            </endOffsets>
-          </properties>
+          <properties documentPath="D:\fiap\easy-food\src\Services\EF.Pedidos.Application\UseCases\ReceberPedidoUseCase.cs" initialLine="25" containingFunctionPresentation="Method 'Handle'" />
           <option name="timeStamp" value="35" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/src/Presentation/EF.Api/Contexts/Pagamentos/Controllers/PagamentoController.cs</url>
           <line>26</line>
-          <properties documentPath="D:\fiap\easy-food\src\Presentation\EF.Api\Contexts\Pagamentos\Controllers\PagamentoController.cs" initialLine="26" containingFunctionPresentation="Constructor 'PagamentoController'">
-            <startOffsets>
-              <option value="1150" />
-            </startOffsets>
-            <endOffsets>
-              <option value="1151" />
-            </endOffsets>
-          </properties>
+          <properties documentPath="D:\fiap\easy-food\src\Presentation\EF.Api\Contexts\Pagamentos\Controllers\PagamentoController.cs" initialLine="26" containingFunctionPresentation="Constructor 'PagamentoController'" />
           <option name="timeStamp" value="36" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/src/Presentation/EF.Api/Contexts/Pagamentos/Controllers/PagamentoController.cs</url>
           <line>83</line>
-          <properties documentPath="D:\fiap\easy-food\src\Presentation\EF.Api\Contexts\Pagamentos\Controllers\PagamentoController.cs" initialLine="83" containingFunctionPresentation="Method 'AutorizarPagamento'">
-            <startOffsets>
-              <option value="3502" />
-            </startOffsets>
-            <endOffsets>
-              <option value="3503" />
-            </endOffsets>
-          </properties>
+          <properties documentPath="D:\fiap\easy-food\src\Presentation\EF.Api\Contexts\Pagamentos\Controllers\PagamentoController.cs" initialLine="83" containingFunctionPresentation="Method 'AutorizarPagamento'" />
           <option name="timeStamp" value="37" />
         </line-breakpoint>
       </breakpoints>

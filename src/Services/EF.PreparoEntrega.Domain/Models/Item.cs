@@ -16,6 +16,6 @@ public class Item : Entity
     public Guid ProdutoId { get; private set; }
     public string NomeProduto { get; private set; }
     public int TempoPreparoEstimado { get; private set; }
-    public Guid PedidoId { get; private set; }
-    public Pedido Pedido { get; private set; }
+    public Guid PedidoId { get; }
+    public Pedido Pedido { get; }
 }

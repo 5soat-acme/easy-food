@@ -31,7 +31,7 @@ public class MovimentacaoEstoque : Entity
     public OrigemMovimentacaoEstoque OrigemMovimentacao { get; private set; }
     public DateTime DataLancamento { get; private set; }
     public Guid EstoqueId { get; private set; }
-    public Estoque Estoque { get; private set; }
+    public Estoque Estoque { get; }
 
     private bool ValidarEstoque(Guid estoqueId)
     {

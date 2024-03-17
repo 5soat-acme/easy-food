@@ -11,7 +11,7 @@
     </ItemGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\..\Shared\EF.Infra.Commons\EF.Infra.Commons.csproj"/>
+        <ProjectReference Include="..\..\Commons\EF.Infra.Commons\EF.Infra.Commons.csproj"/>
         <ProjectReference Include="..\EF.PreparoEntrega.Domain\EF.PreparoEntrega.Domain.csproj"/>
     </ItemGroup>
 

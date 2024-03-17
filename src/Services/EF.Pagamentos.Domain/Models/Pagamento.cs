@@ -4,7 +4,7 @@ namespace EF.Pagamentos.Domain.Models;
 
 public class Pagamento : Entity, IAggregateRoot
 {
-    private List<Transacao> _transacoes;
+    private readonly List<Transacao> _transacoes;
 
     private Pagamento()
     {
@@ -19,13 +19,13 @@ public class Pagamento : Entity, IAggregateRoot
         Tipo = tipo;
         Valor = valor;
         _transacoes = new List<Transacao>();
-        Status = Models.Status.Pendente;
+        Status = Status.Pendente;
     }
 
     public Guid PedidoId { get; private set; }
     public Tipo Tipo { get; private set; }
-    public DateTime DataCriacao { get; private set; }
-    public DateTime? DataAtualizacao { get; private set; }
+    public DateTime DataCriacao { get; }
+    public DateTime? DataAtualizacao { get; }
     public decimal Valor { get; private set; }
     public Status Status { get; private set; }
     public IReadOnlyCollection<Transacao> Transacoes => _transacoes;

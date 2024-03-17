@@ -7,8 +7,8 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\..\Shared\EF.Core.Commons\EF.Core.Commons.csproj"/>
-        <ProjectReference Include="..\..\Shared\EF.Infra.Commons\EF.Infra.Commons.csproj"/>
+        <ProjectReference Include="..\..\Commons\EF.Core.Commons\EF.Core.Commons.csproj"/>
+        <ProjectReference Include="..\..\Commons\EF.Infra.Commons\EF.Infra.Commons.csproj"/>
         <ProjectReference Include="..\EF.Pedidos.Domain\EF.Pedidos.Domain.csproj"/>
         <ProjectReference Include="..\EF.Produtos.Application\EF.Produtos.Application.csproj"/>
     </ItemGroup>

@@ -1,6 +1,5 @@
 using EF.Pedidos.Application.DTOs.Responses;
 using EF.Pedidos.Domain.Models;
-using Microsoft.EntityFrameworkCore.Metadata.Conventions;
 
 namespace EF.Pedidos.Application.Mappings;
 

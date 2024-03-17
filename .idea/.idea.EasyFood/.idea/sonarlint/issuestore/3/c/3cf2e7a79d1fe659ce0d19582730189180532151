@@ -1,4 +1,0 @@
-
-rcsharpsquid:S6602G"N"Find" method should be used instead of the "FirstOrDefault" extension method.(ÎüúÓ8å¼… Ù1
-acsharpsquid:S3267X"8Loops should be simplified using the "Where" LINQ method(Ì²‰àùÿÿÿÿ8¢‡‚ Ù1
-pcsharpsquid:S1172m"MRemove this parameter 'criarPedidoDto', whose value is ignored in the method.(ÙÑ£S8ÅÉ¨à1

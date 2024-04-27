@@ -124,50 +124,24 @@ Agora é só executar a aplicação utilizando a sua IDE de preferência. A docu
 
 ## AWS - EKS :cloud:
 ### Pré-requisitos :clipboard:
-- Instalar o Helm: **[Documentação](https://helm.sh/docs/intro/install/)**
-
-- Utilizando um modelo CloudFormation, criar uma VPC na AWS para o EKS: 
-**[Documentação](https://docs.aws.amazon.com/pt_br/eks/latest/userguide/creating-a-vpc.html)**
-
-    - Modelo CloudFormation utilizado: https://s3.us-west-2.amazonaws.com/amazon-eks/cloudformation/2020-10-29/amazon-eks-vpc-private-subnets.yaml
-
-- Criar um cluster EKS: **[Documentação](https://docs.aws.amazon.com/pt_br/eks/latest/userguide/getting-started-console.html)**
-
-- Criar um grupo de nós no cluster: **[Documentação](https://docs.aws.amazon.com/pt_br/eks/latest/userguide/create-managed-node-group.html)**
-
-- Configurar Ingress NGINX Controller no cluster: **[Documentação](https://docs.aws.amazon.com/pt_br/AmazonCloudWatch/latest/monitoring/ContainerInsights-Prometheus-Sample-Workloads-nginx.html)**
+- Para o correto funcionamento do workflow é necessário configurar as seguintes secrets no repositório, de acordo com a conta da AWS Academy e da conta do Docker Hub:
+    - AWS_ACCESS_KEY_ID
+    - AWS_SECRET_ACCESS_KEY
+    - AWS_SESSION_TOKEN
+    - DOCKERHUB_TOKEN
+- Ter a infraestrutura do repositório  **[easy-food-infra](https://github.com/5soat-acme/easy-food-infra)** já criada.
 
 ### Executando :running:
-No PowerShell entrar na pasta **easy-food\deploy\kubernetes** do projeto para executar todos os próximos passos.
+- O repositório conta com um workflow disparado quando houver **push** na branch **main**. O workflow é utilizado para: 
+    - Criar a imagem da API e publicar no **[Docker Hub](https://hub.docker.com/r/5soatacme/easy-food)**.
+    - Executar **rollout restart** no deployment do cluster EKS criado pelo repositório **[easy-food-infra](https://github.com/5soat-acme/easy-food-infra)**.
 
-Executar os seguintes comandos para criar o volume para o banco de dados:
-
-```bash
-kubectl apply -f .\database/pv.yaml
-kubectl apply -f .\database/pvc.yaml
-```
-
-Através do **Helm**, fazer deploy do banco de dados PostgreSQL:
-
-```bash
-helm install easy-food-db oci://registry-1.docker.io/bitnamicharts/postgresql -f .\database\helm_db_values.yaml
-```
-
-Executar os seguintes comandos para configuração e deploy da API.
-
-```bash
-kubectl apply -f .\secret.yaml
-kubectl apply -f .\hpa.yaml
-kubectl apply -f .\deployment.yaml
-kubectl apply -f .\service.yaml
-kubectl apply -f .\ingress.yaml
-```
 
 ### Como utilizar :bulb:
 
-Com o comando abaixo buscar o link do LoadBalancer criado pelo Ingress NGINX Controller. Substituir **nginx-ingress-sample** pelo nome do namespace informado ao criar o Ingress NGINX Controller.
+Com o comando abaixo buscar o link do LoadBalancer criado pelo Ingress NGINX Controller.
 ```bash
-kubectl get service -n nginx-ingress-sample
+kubectl get service -n nginx-ingress
 ```
 
 A URL de acesso será o conteúdo da coluna **EXTERNAL-IP** do serviço de tipo LoadBalancer.

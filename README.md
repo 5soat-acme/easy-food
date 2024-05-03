@@ -129,18 +129,26 @@ Agora é só executar a aplicação utilizando a sua IDE de preferência. A docu
     - AWS_SECRET_ACCESS_KEY
     - AWS_SESSION_TOKEN
     - DOCKERHUB_TOKEN
-- Ter a infraestrutura do repositório  **[easy-food-infra](https://github.com/5soat-acme/easy-food-infra)** já criada.
+- Ter a infraestrutura dos seguintes repositórios já criadas:
+    - [easy-food-infra](https://github.com/5soat-acme/easy-food-infra)
+    - [easy-food-infra-database](https://github.com/5soat-acme/easy-food-infra-database)
+    - [easy-food-lambda](https://github.com/5soat-acme/easy-food-lambda)
 
 ### Executando :running:
 - O repositório conta com um workflow disparado quando houver **push** na branch **main**. O workflow é utilizado para: 
     - Criar a imagem da API e publicar no **[Docker Hub](https://hub.docker.com/r/5soatacme/easy-food)**.
-    - Executar **rollout restart** no deployment do cluster EKS criado pelo repositório **[easy-food-infra](https://github.com/5soat-acme/easy-food-infra)**.
+    - Executar ```rollout restart``` no deployment do cluster EKS criado pelo repositório **[easy-food-infra](https://github.com/5soat-acme/easy-food-infra)**.
 
 
 ### Como utilizar :bulb:
 
-Com o comando abaixo buscar o link do LoadBalancer criado pelo Ingress NGINX Controller.
-```bash
+Após toda a infraestrutura criada:
+- Configurar **kubeconfig** com o comando
+```
+aws eks update-kubeconfig --region us-east-1 --name easy-food
+```
+- Com o comando abaixo buscar o link do LoadBalancer criado pelo Ingress NGINX Controller.
+```
 kubectl get service -n nginx-ingress
 ```
 
@@ -150,7 +158,10 @@ A documentação estará disponível em: **EXTERNAL-IP/swagger**
 
 ## Token :key:
 
-Para manter a associação de clientes com um carrinho estamos utilizando um **[Json Web Token (JWT)](https://jwt.io/)**. Para as requisições no contexto de **pedidos e carrinho**, é necessário informar o token no header da requisição. Para isso, basta copiar o token gerado no endpoint `[POST] /api/identidade/acessar` e incluir no header da requisição com a chave `Authorization` a palavra `Bearer` seguida do token gerado.
+Para manter a associação de clientes com um carrinho estamos utilizando um **[Json Web Token (JWT)](https://jwt.io/)**. Para as requisições no contexto de **pedidos e carrinho**, é necessário informar o token no header da requisição. Para isso, basta copiar o token gerado pelo Cognito ao efetuar login de um usuário cadastrado e incluir o token no header da requisição com a chave `Authorization` e a palavra `Bearer` seguida do token gerado. Exemplos de utilização do Cognito estão no repositório  **[easy-food-lambda](https://github.com/5soat-acme/easy-food-lambda)**. <br>
+Caso queira efetuar o pedido sem possuir um cadastro, basta utilizar o endpoint ``[GET] /api/identidade/acessar`` para recuperar um token sem necessidade de cadastro.
+
+
 Incluimos no swagger um botão para facilitar a inclusão do token no header. Basta clicar no botão **Authorize** e colar o token no campo **Value**. Após isso, basta clicar em **Authorize** e o token será incluído automaticamente no header de todas as requisições.
 
 ![img_3.png](docs/img/img_3.png)
@@ -168,15 +179,8 @@ O Token pré-configurado foi o **9E541194-61B4-44F6-BE2A-B1F08C24BB52**
 # Utilização dos Endpoints :arrow_forward:
 
 ### Identificação
-1. O Cliente pode efetuar um cadastro em: ``[POST] /api/identidade``
-2. O Cliente pode acessar o sistema com ou sem cadastro em: ``[POST] /api/identidade/acessar`` </br>
-Este método realiza a autenticação do usuário e gera um token JWT (JSON Web Token) que deve ser usado em cabeçalhos de autenticação para futuras requisições. O token tem validade de 2 horas e pode ser configurado no appsettings.json. É importante garantir que o token seja armazenado de maneira segura no cliente para evitar vazamento de informações.
-Para usuários sem identificação por e-mail ou CPF, o body da requisição deve ser vazio.
-Para as demais maneiras, segue o exemplo: </br>
-**Identificação por E-mail:** </br>
-``POST /api/identidade/acessar { "Email": "exemplo@email.com" }`` \
-**Identificação por CPF:** </br>
-``POST /api/identidade/acessar { "Cpf": "01234567891" }``
+2. O Cliente pode acessar o sistema sem cadastro em: ``[GET] /api/identidade/acessar`` </br>
+Este gera um token JWT (JSON Web Token) que deve ser usado em cabeçalhos de autenticação para futuras requisições.
 
 ### Gestão de Produtos
 1. Pode-se consultar o cardápio dividido por categoria em: ``[GET] /api/produtos`` </br>

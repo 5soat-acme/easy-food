@@ -28,6 +28,8 @@ public static class JwtConfig
         {
             bearerOptions.RequireHttpsMetadata = true;
             bearerOptions.SaveToken = true;
+            bearerOptions.Authority = identitySettings.Issuer;
+            bearerOptions.Audience = identitySettings.ValidIn;
             bearerOptions.TokenValidationParameters = new TokenValidationParameters
             {
                 ValidateIssuerSigningKey = true,
@@ -35,7 +37,8 @@ public static class JwtConfig
                 ValidateIssuer = true,
                 ValidateAudience = true,
                 ValidAudience = identitySettings.ValidIn,
-                ValidIssuer = identitySettings.Issuer
+                ValidIssuer = identitySettings.Issuer,
+                ValidateLifetime = true
             };
         });
     }

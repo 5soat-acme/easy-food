@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "bd449a0d-5178-40b6-a1ec-90464ca4feed",
+		"_postman_id": "5f61bb57-8c4c-4a9a-b5d4-8c3f268a7141",
 		"name": "EasyFood",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "1979558"
@@ -19,7 +19,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"nome\": \"John\",\r\n  \"sobrenome\": \"Doe\",\r\n  \"cpf\": \"34555284062\",\r\n  \"email\": \"john.doe@email.com\"\r\n}",
+							"raw": "{\r\n  \"name\": \"Usuário 1\",\r\n  \"cpf\": \"01926200020\",\r\n  \"password\": \"Senha123_\",\r\n  \"email\": \"teste@example.com\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -27,12 +27,12 @@
 							}
 						},
 						"url": {
-							"raw": "{{url}}/identidade",
+							"raw": "{{url_cognito}}/create-user",
 							"host": [
-								"{{url}}"
+								"{{url_cognito}}"
 							],
 							"path": [
-								"identidade"
+								"create-user"
 							]
 						}
 					},
@@ -44,7 +44,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n  \"nome\": \"John\",\r\n  \"sobrenome\": \"Doe\",\r\n  \"cpf\": \"34555284062\",\r\n  \"email\": \"john.doe@email.com\"\r\n}",
+									"raw": "{\r\n  \"name\": \"Usuário 1\",\r\n  \"cpf\": \"01926200020\",\r\n  \"password\": \"Senha123_\",\r\n  \"email\": \"teste@example.com\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -52,49 +52,30 @@
 									}
 								},
 								"url": {
-									"raw": "{{url}}/identidade",
+									"raw": "{{url_cognito}}/create-user",
 									"host": [
-										"{{url}}"
+										"{{url_cognito}}"
 									],
 									"path": [
-										"identidade"
+										"create-user"
 									]
 								}
 							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Content-Type",
-									"value": "application/json; charset=utf-8"
-								},
-								{
-									"key": "Date",
-									"value": "Mon, 26 Feb 2024 12:34:32 GMT"
-								},
-								{
-									"key": "Server",
-									"value": "Kestrel"
-								},
-								{
-									"key": "Transfer-Encoding",
-									"value": "chunked"
-								}
-							],
+							"_postman_previewlanguage": null,
+							"header": null,
 							"cookie": [],
-							"body": "{\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIwOTVkYjU4Ny00MGIyLTQyMjYtYmU1Ni1iYmQxYjIxM2RkMWMiLCJlbWFpbCI6ImpvaG4uZG9lQGVtYWlsLmNvbSIsImp0aSI6IjkxYmQyNGQxLWJhMmYtNDBiMS1iYWI4LTg4MTViNjEzNzM5ZSIsIm5iZiI6MTcwODk1MDg3MywiaWF0IjoxNzA4OTUwODczLCJ1c2VyX3R5cGUiOiJyZWdpc3RyZWQiLCJzZXNzaW9uX2lkIjoiY2ZhNTgwYTgtMzA3Yi00YmQ4LTgwNWEtNmQ0N2RiZGZmYTA1IiwidXNlcl9jcGYiOiIzNDU1NTI4NDA2MiIsImV4cCI6MTcwODk1ODA3MywiaXNzIjoiRWFzeUZvb2QiLCJhdWQiOiJsb2NhbGhvc3QifQ.o20qy-ZW7c6A-Ld7oVRewKUmImX76SdjHQwzFnzK3A4\",\n    \"expiresIn\": 7200,\n    \"user\": {\n        \"id\": \"095db587-40b2-4226-be56-bbd1b213dd1c\",\n        \"claims\": [\n            {\n                \"value\": \"095db587-40b2-4226-be56-bbd1b213dd1c\",\n                \"type\": \"sub\"\n            },\n            {\n                \"value\": \"john.doe@email.com\",\n                \"type\": \"email\"\n            },\n            {\n                \"value\": \"91bd24d1-ba2f-40b1-bab8-8815b613739e\",\n                \"type\": \"jti\"\n            },\n            {\n                \"value\": \"1708950873\",\n                \"type\": \"nbf\"\n            },\n            {\n                \"value\": \"1708950873\",\n                \"type\": \"iat\"\n            },\n            {\n                \"value\": \"registred\",\n                \"type\": \"user_type\"\n            },\n            {\n                \"value\": \"cfa580a8-307b-4bd8-805a-6d47dbdffa05\",\n                \"type\": \"session_id\"\n            },\n            {\n                \"value\": \"34555284062\",\n                \"type\": \"user_cpf\"\n            }\n        ]\n    }\n}"
+							"body": null
 						}
 					]
 				},
 				{
-					"name": "Identificar usuário - Email",
+					"name": "Acessar pelo Cognito",
 					"request": {
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"email\": \"john.doe@email.com\"\r\n}",
+							"raw": "{\r\n  \"cpf\": \"01926200020\",\r\n  \"password\": \"Senha123_\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -102,25 +83,24 @@
 							}
 						},
 						"url": {
-							"raw": "{{url}}/identidade/acessar",
+							"raw": "{{url_cognito}}/auth",
 							"host": [
-								"{{url}}"
+								"{{url_cognito}}"
 							],
 							"path": [
-								"identidade",
-								"acessar"
+								"auth"
 							]
 						}
 					},
 					"response": [
 						{
-							"name": "Identificar usuário - Email",
+							"name": "Acessar pelo Cognito",
 							"originalRequest": {
 								"method": "POST",
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"email\": \"john.doe@email.com\"\r\n}",
+									"raw": "{\r\n  \"cpf\": \"01926200020\",\r\n  \"password\": \"Senha123_\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -128,133 +108,27 @@
 									}
 								},
 								"url": {
-									"raw": "{{url}}/identidade/acessar",
+									"raw": "{{url_cognito}}/auth",
 									"host": [
-										"{{url}}"
+										"{{url_cognito}}"
 									],
 									"path": [
-										"identidade",
-										"acessar"
+										"auth"
 									]
 								}
 							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Content-Type",
-									"value": "application/json; charset=utf-8"
-								},
-								{
-									"key": "Date",
-									"value": "Mon, 26 Feb 2024 12:35:36 GMT"
-								},
-								{
-									"key": "Server",
-									"value": "Kestrel"
-								},
-								{
-									"key": "Transfer-Encoding",
-									"value": "chunked"
-								}
-							],
+							"_postman_previewlanguage": null,
+							"header": null,
 							"cookie": [],
-							"body": "{\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIwOTVkYjU4Ny00MGIyLTQyMjYtYmU1Ni1iYmQxYjIxM2RkMWMiLCJlbWFpbCI6ImpvaG4uZG9lQGVtYWlsLmNvbSIsImp0aSI6ImUxZDNlMjc1LTg4YTAtNDdkOS04Y2IzLTE4MDhlMjFhOWQ1NCIsIm5iZiI6MTcwODk1MDkzNiwiaWF0IjoxNzA4OTUwOTM2LCJ1c2VyX3R5cGUiOiJyZWdpc3RyZWQiLCJzZXNzaW9uX2lkIjoiYjM0YTI5NjctZjc5Ny00MGQyLWI0MDItYjgyNDUyNzQ4YWYwIiwidXNlcl9jcGYiOiIzNDU1NTI4NDA2MiIsImV4cCI6MTcwODk1ODEzNiwiaXNzIjoiRWFzeUZvb2QiLCJhdWQiOiJsb2NhbGhvc3QifQ.gOYx8-Yn-7Vc-_hxQMyOzYP_QU9WSXeI63p8OGqYNJQ\",\n    \"expiresIn\": 7200,\n    \"user\": {\n        \"id\": \"095db587-40b2-4226-be56-bbd1b213dd1c\",\n        \"claims\": [\n            {\n                \"value\": \"095db587-40b2-4226-be56-bbd1b213dd1c\",\n                \"type\": \"sub\"\n            },\n            {\n                \"value\": \"john.doe@email.com\",\n                \"type\": \"email\"\n            },\n            {\n                \"value\": \"e1d3e275-88a0-47d9-8cb3-1808e21a9d54\",\n                \"type\": \"jti\"\n            },\n            {\n                \"value\": \"1708950937\",\n                \"type\": \"nbf\"\n            },\n            {\n                \"value\": \"1708950937\",\n                \"type\": \"iat\"\n            },\n            {\n                \"value\": \"registred\",\n                \"type\": \"user_type\"\n            },\n            {\n                \"value\": \"b34a2967-f797-40d2-b402-b82452748af0\",\n                \"type\": \"session_id\"\n            },\n            {\n                \"value\": \"34555284062\",\n                \"type\": \"user_cpf\"\n            }\n        ]\n    }\n}"
-						}
-					]
-				},
-				{
-					"name": "Identificar usuário - CPF",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"cpf\": \"34555284062\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{url}}/identidade/acessar",
-							"host": [
-								"{{url}}"
-							],
-							"path": [
-								"identidade",
-								"acessar"
-							]
-						}
-					},
-					"response": [
-						{
-							"name": "Identificar usuário - CPF",
-							"originalRequest": {
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n    \"cpf\": \"34555284062\"\r\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "{{url}}/identidade/acessar",
-									"host": [
-										"{{url}}"
-									],
-									"path": [
-										"identidade",
-										"acessar"
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Content-Type",
-									"value": "application/json; charset=utf-8"
-								},
-								{
-									"key": "Date",
-									"value": "Mon, 26 Feb 2024 12:36:28 GMT"
-								},
-								{
-									"key": "Server",
-									"value": "Kestrel"
-								},
-								{
-									"key": "Transfer-Encoding",
-									"value": "chunked"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIwOTVkYjU4Ny00MGIyLTQyMjYtYmU1Ni1iYmQxYjIxM2RkMWMiLCJlbWFpbCI6ImpvaG4uZG9lQGVtYWlsLmNvbSIsImp0aSI6ImY4ZTEzMjYyLWY1NzUtNGQ0MC1iMGY3LThlMDQ4N2RlYmI5YSIsIm5iZiI6MTcwODk1MDk4OSwiaWF0IjoxNzA4OTUwOTg5LCJ1c2VyX3R5cGUiOiJyZWdpc3RyZWQiLCJzZXNzaW9uX2lkIjoiZTMyZjU1MGEtYWUxYy00ZjAxLWEzNWQtNTUyNjMzNDIwNTYzIiwidXNlcl9jcGYiOiIzNDU1NTI4NDA2MiIsImV4cCI6MTcwODk1ODE4OSwiaXNzIjoiRWFzeUZvb2QiLCJhdWQiOiJsb2NhbGhvc3QifQ.W6QMRE8I2g-UUxKdP8zD5oFV4KYjGHEPVZ9jMexsEAw\",\n    \"expiresIn\": 7200,\n    \"user\": {\n        \"id\": \"095db587-40b2-4226-be56-bbd1b213dd1c\",\n        \"claims\": [\n            {\n                \"value\": \"095db587-40b2-4226-be56-bbd1b213dd1c\",\n                \"type\": \"sub\"\n            },\n            {\n                \"value\": \"john.doe@email.com\",\n                \"type\": \"email\"\n            },\n            {\n                \"value\": \"f8e13262-f575-4d40-b0f7-8e0487debb9a\",\n                \"type\": \"jti\"\n            },\n            {\n                \"value\": \"1708950990\",\n                \"type\": \"nbf\"\n            },\n            {\n                \"value\": \"1708950990\",\n                \"type\": \"iat\"\n            },\n            {\n                \"value\": \"registred\",\n                \"type\": \"user_type\"\n            },\n            {\n                \"value\": \"e32f550a-ae1c-4f01-a35d-552633420563\",\n                \"type\": \"session_id\"\n            },\n            {\n                \"value\": \"34555284062\",\n                \"type\": \"user_cpf\"\n            }\n        ]\n    }\n}"
+							"body": null
 						}
 					]
 				},
 				{
 					"name": "Acessar sem identificar usuário",
 					"request": {
-						"method": "POST",
+						"method": "GET",
 						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
 						"url": {
 							"raw": "{{url}}/identidade/acessar",
 							"host": [
@@ -270,17 +144,8 @@
 						{
 							"name": "Acessar sem identificar usuário",
 							"originalRequest": {
-								"method": "POST",
+								"method": "GET",
 								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
 								"url": {
 									"raw": "{{url}}/identidade/acessar",
 									"host": [
@@ -2267,15 +2132,6 @@
 										"type": "text"
 									}
 								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n  \"pedidoId\": \"ef078bf0-de5a-444b-a115-895d5229474e\",\r\n  \"tipoPagamento\": \"MercadoPago\",\r\n  \"valorTotal\": 11.5\r\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
 								"url": {
 									"raw": "{{url}}/pagamentos",
 									"host": [
@@ -2858,7 +2714,12 @@
 	"variable": [
 		{
 			"key": "url",
-			"value": "http://aaab35243dd2d47ef8723d0856c34e43-150573740.us-east-1.elb.amazonaws.com/api",
+			"value": "http://localhost:5001/api",
+			"type": "string"
+		},
+		{
+			"key": "url_cognito",
+			"value": "https://qfcr7ympk8.execute-api.us-east-1.amazonaws.com",
 			"type": "string"
 		}
 	]

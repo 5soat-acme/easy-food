@@ -1,4 +1,0 @@
-
-wcsharpsquid:S6602M"N"Find" method should be used instead of the "FirstOrDefault" extension method.(æ¡¹×ûÿÿÿÿ8ÞŸˆ Ù1
-`csharpsquid:S1172F"<Remove this unused method parameter 'processarPagamentoDto'.(ô¤™ü8Åß«à1
-¦csharpsquid:S1939"'CommonUseCase' implements 'IProcessarPagamentoUseCase' so 'IProcessarPagamentoUseCase' can be removed from the inheritance list.(èŠáË8Çƒÿªà1

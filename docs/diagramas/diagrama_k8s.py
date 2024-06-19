@@ -20,28 +20,44 @@ with Diagram("Easy Food - K8S", filename="diagrama_k8s", outformat=["png"], show
         with Cluster("K8S"):
             ## API
             ingress = Ing("easy-food-api-ingress")
-            svc_api = SVC("easy-food-api-clusterip")
+            svc_api_pedido = SVC("svc-pedido-clusterip")
+            svc_api_pagamento = SVC("svc-pagamento-clusterip")
+            svc_api_preparoentrega = SVC("svc-preparoentrega-clusterip")
 
-            with Cluster("Node API"):
-                pods_api = [Pod("easy-food-api-1"),
-                        Pod("easy-food-api-2")]
+            with Cluster("Node API Pedido"):
+                pods_api_pedido = [Pod("api-pedido-1"),
+                        Pod("api-pedido-2")]
                 
-                pod_db = Pod("easy-food-db")
+            with Cluster("Node API Pagamento"):
+                pods_api_pagamento = [Pod("api-pagamento-1"),
+                        Pod("api-pagamento-2")]
                 
-            replicaSet_api = ReplicaSet("easy-food-api-rs")
-            deployment_api = Secret("easy-food-api-secrets") - Deployment("easy-food-api-deploy")
-            hpa_api = HPA("easy-food-api-hpa")
+            with Cluster("Node API Preparo/Entrega"):
+                pods_api_preparoentrega = [Pod("api-preparoentrega-1"),
+                        Pod("api-preparoentrega-2")]
+                
+            replicaSet_pedido = ReplicaSet("rs-pedido")
+            replicaSet_pagamento = ReplicaSet("rs-pagamento")
+            replicaSet_preparoentrega = ReplicaSet("rs-preparoentrega")
+            ##deployment_api = Secret("easy-food-api-secrets") - Deployment("easy-food-api-deploy")
+            deployment_pedido = Secret("secrets-pedido") - Deployment("deploy-pedido")
+            deployment_pagamento = Secret("secrets-pagamento") - Deployment("deploy-pagamento")
+            deployment_preparoentrega = Secret("secrets-preparoentrega") - Deployment("deploy-preparoentrega")
+            hpa_pedido = HPA("hpa-pedido")
+            hpa_pagamento = HPA("hpa-pagamento")
+            hpa_preparoentrega = HPA("hpa-preparoentrega")
+            secret_aws = Secret("secrets-aws")
 
-            svc_db =  SVC("easy-food-db-clusterip")
-            statefulSet = StatefulSet("easy-food-db-stateful")
-            pvc = PVC("easy-food-db-pvc")
-            pv = PV("easy-food-db-pv")
-            storageClass = StorageClass("easy-food-db-sc")
-            helm = Helm("helm-postgresql")
 
+    clients >> ingress_controller >> ingress
+    ingress >> svc_api_pedido
+    ingress >> svc_api_pagamento
+    ingress >> svc_api_preparoentrega
 
-    clients >> ingress_controller >> ingress >> svc_api >> pods_api << replicaSet_api << deployment_api << hpa_api
-    pods_api >> svc_db >> pod_db >> pvc << pv << storageClass
-    pod_db - statefulSet - pvc
-    helm >> statefulSet
-    helm >> svc_db
+    secret_aws - deployment_pedido
+    secret_aws - deployment_pagamento
+    secret_aws - deployment_preparoentrega
+    
+    svc_api_pedido >> pods_api_pedido << replicaSet_pedido << deployment_pedido << hpa_pedido
+    svc_api_pagamento >> pods_api_pagamento << replicaSet_pagamento << deployment_pagamento << hpa_pagamento
+    svc_api_preparoentrega >> pods_api_preparoentrega << replicaSet_preparoentrega << deployment_preparoentrega << hpa_preparoentrega

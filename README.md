@@ -4,8 +4,20 @@ O Easy Food é um sistema de atendimento e gestão de pedidos para lanchonetes. 
 
 O projeto é parte do trabalho de conclusão do curso de Arquitetura de Software da FIAP o intuito é aplicar os conceitos aprendidos durante o curso, como Domain Driven Design, arquitetura de microsserviços, design de APIs, DevOps, etc.
 
-**Para maiores informações sobre o projeto, modelo estratatégico, entre outros, acesse a nossa [Wiki](https://5soat-acme.github.io/easy-food/docs/intro)**
+**Para maiores informações sobre o projeto, modelo estratatégico, entre outros, acesse a nossa [Wiki de Documentação](https://5soat-acme.github.io/easy-food/docs/intro)**
 
+# Repositórios
+Este repositório visa concentrar a documentação do projeto. Os projetos de microsserviços e de criação de infraestrutura estão presentes nos repositórios listados abaixo:
+- Microsserviços
+    - [easy-food-pedido](https://github.com/5soat-acme/easy-food-pedido)
+    - [easy-food-pagamento](https://github.com/5soat-acme/easy-food-pagamento)
+    - [easy-food-preparoentrega](https://github.com/5soat-acme/easy-food-preparoentrega)
+- Infraestrutura K8S e Mensageria
+    - [easy-food-infra](https://github.com/5soat-acme/easy-food-infra)
+- Infraestrutura de Banco de Dados
+    - [easy-food-infra-database](https://github.com/5soat-acme/easy-food-infra-database)
+- Infraestrutura de recursos Lambda
+    - [easy-food-lambda](https://github.com/5soat-acme/easy-food-lambda)
 
 # Tecnologias utilizadas :computer:
 - .NET 8.0

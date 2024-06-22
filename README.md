@@ -98,7 +98,7 @@ Cada serviço possui o seu core e sua camada de infraestrutura.
 ![diagrama_microsservicos.png](docs/diagramas/diagrama_microsservicos.png)
 
 
-# Como executar - AWS:rocket:
+# Como executar - AWS :rocket:
 A seguir estão as instruções para executar o projeto
 
 ## Pré-requisitos :clipboard:
@@ -114,7 +114,7 @@ A seguir estão as instruções para executar o projeto
     - [easy-food-infra](https://github.com/5soat-acme/easy-food-infra)
     - [easy-food-infra-database](https://github.com/5soat-acme/easy-food-infra-database)
     - [easy-food-lambda](https://github.com/5soat-acme/easy-food-lambda)
-- Os repositórios dos microsserviços possuem workflow para atualização da imagem no DockerHub e automatização co SonarCloud
+- Os repositórios dos microsserviços possuem workflow para atualização da imagem no DockerHub e automatização com SonarCloud
     - [easy-food-pedido](https://github.com/5soat-acme/easy-food-pedido)
     - [easy-food-pagamento](https://github.com/5soat-acme/easy-food-pagamento)
     - [easy-food-preparoentrega](https://github.com/5soat-acme/easy-food-preparoentrega)

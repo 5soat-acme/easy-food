@@ -6,6 +6,7 @@ from diagrams.aws.compute import EKS
 from diagrams.aws.compute import Lambda
 from diagrams.aws.security import Cognito
 from diagrams.aws.database import Aurora, Dynamodb
+from diagrams.aws.integration import SQS
 
 with Diagram("Easy Food - AWS", filename="diagrama_aws", outformat=["png"], show=False):
     with Cluster("Clients"):
@@ -34,6 +35,7 @@ with Diagram("Easy Food - AWS", filename="diagrama_aws", outformat=["png"], show
         aurora_postgresql_preparoentrega = Aurora("aurora-postgresql-preparoentrega")
         dynamodb_pagamento = Dynamodb("dynamodb-pagamento")
 
+        sqs = SQS("event-queue")
     
     clients >> load_balancer >> nodes
     internet_gateway - nat_gateway
@@ -41,6 +43,7 @@ with Diagram("Easy Food - AWS", filename="diagrama_aws", outformat=["png"], show
     nodes >> aurora_postgresql_pedido
     nodes >> aurora_postgresql_preparoentrega
     nodes >> dynamodb_pagamento
+    nodes - sqs
 
     clients >> api_gateway
     api_gateway >> create_user_lambda >> cognito

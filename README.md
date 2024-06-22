@@ -16,13 +16,22 @@ Este repositório visa concentrar a documentação do projeto. Os projetos de mi
     - [easy-food-infra](https://github.com/5soat-acme/easy-food-infra)
 - Infraestrutura de Banco de Dados
     - [easy-food-infra-database](https://github.com/5soat-acme/easy-food-infra-database)
-- Infraestrutura de recursos Lambda
+- Infraestrutura de recursos Lambda integrados com Cognito e utilizando API Gateway para acesso
     - [easy-food-lambda](https://github.com/5soat-acme/easy-food-lambda)
 
 # Tecnologias utilizadas :computer:
 - .NET 8.0
   - ASP.NET Web API
   - Entity Framework Core
+  - Testes
+    - XUnit
+    - Moq
+    - AutoFixture
+    - AutoFixture.AutoMoq
+    - FluentAssertions
+    - SpecFlow (BDD)
+    - Microsoft.AspNetCore.Mvc.Testing
+    - Coverlet
 - PostgreSQL
 - Docker
 - Kubernetes
@@ -34,7 +43,7 @@ Este repositório visa concentrar a documentação do projeto. Os projetos de mi
   - SQS
   - Cognito
   - Lambda (utilizando Python)
-  - API Gateway  
+  - API Gateway
 
 # Arquitetura :triangular_ruler:
 ## Patterns utilizados
@@ -46,6 +55,8 @@ Este repositório visa concentrar a documentação do projeto. Os projetos de mi
 - Repository Pattern
 - Unit Of Work Pattern
 - Mensageria (AWS SQS)
+- Testes unitários
+- Testes BDD
 
 ## Introdução :mag:
 Foi desenvolvida uma aplicação em microsserviços para fazer uma separação clara dos contextos delimitados mapeados na modelagem estratégica. </br>
@@ -57,7 +68,7 @@ O desenvolvimento foi pensado para ficar de uma forma clara e de acordo com o DD
 ## Estrutura do projeto :hammer:
 Todos os 3 microsserviços seguem o mesmo padrão, para a explicação pegamos como base o microsserviço de **Pagamento**.
 
-![img.png](docs/img/img_estrutura_projeto.png) </br>
+![img_estrutura_projeto.png](docs/img/img_estrutura_projeto.png) </br>
 
 ## Clean Architecture :o:
 ![clean_architecture.jpg](docs/img/clean_architecture.jpg) </br>
@@ -75,13 +86,16 @@ Cada serviço possui o seu core e sua camada de infraestrutura.
 ## Diagramas da Arquitetura :bar_chart:
 
 ### AWS
-![img_3.png](docs/diagramas/diagrama_aws.png)
+![diagrama_aws.png](docs/diagramas/diagrama_aws.png)
 
 ### K8S
-![img_3.png](docs/diagramas/diagrama_k8s.png)
+![diagrama_k8s.png](docs/diagramas/diagrama_k8s.png)
 
 ### C4 - Nível 2
-![img_3.png](docs/diagramas/diagrama_c4.png)
+![diagrama_c4.png](docs/diagramas/diagrama_c4.png)
+
+### Mirosserviços
+![diagrama_microsservicos.png](docs/diagramas/diagrama_microsservicos.png)
 
 
 # Como executar - AWS:rocket:
@@ -121,7 +135,7 @@ A URL de acesso será o conteúdo da coluna **EXTERNAL-IP** do serviço de tipo 
 A documentação estará disponível em: 
  - EXTERNAL-IP/pedido/swagger
  - EXTERNAL-IP/pagamento/swagger
- - EXTERNAL-IP/pedidoentrega/swagger
+ - EXTERNAL-IP/preparoentrega/swagger
 
 
 ## Token :key:
@@ -132,12 +146,12 @@ Caso queira efetuar o pedido sem possuir um cadastro, basta utilizar o endpoint 
 
 Incluimos no swagger um botão para facilitar a inclusão do token no header. Basta clicar no botão **Authorize** e colar o token no campo **Value**. Após isso, basta clicar em **Authorize** e o token será incluído automaticamente no header de todas as requisições.
 
-![img_3.png](docs/img/img_token1.png)
-![img_3.png](docs/img/img_token2.png)
+![img_token1.png](docs/img/img_token1.png)
+![img_token2.png](docs/img/img_token2.png)
 
 O mesmo pode ser feito na requisição de cada endpoint:
 
-![img_5.png](docs/img/img_token3.png)
+![img_token3.png](docs/img/img_token3.png)
 
 ### Token Webhook :key:
 Para chamada do Webhook é necessário a utilização de um Token. O Token a ser utilizado é o informado no campo **Key** da tag **PagamentoAutorizacaoWebHook** do arquivo **appsettings.json**.

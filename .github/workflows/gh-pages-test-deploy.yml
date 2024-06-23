@@ -6,10 +6,10 @@ on:
     branches:
       - main
     paths:
-      - 'docs/**'
+      - 'docs/wiki/**'
   pull_request:
     paths:
-      - 'docs/**'
+      - 'docs/wiki/**'
 
 jobs:
   test-deploy:

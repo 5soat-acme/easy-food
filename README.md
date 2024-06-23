@@ -100,7 +100,7 @@ Cada serviço possui o seu core e sua camada de infraestrutura.
 ### C4 - Nível 2
 ![diagrama_c4.png](docs/diagramas/diagrama_c4.png)
 
-### Mirosserviços
+### Microsserviços
 ![diagrama_microsservicos.png](docs/diagramas/diagrama_microsservicos.png)
 
 

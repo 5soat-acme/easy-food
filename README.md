@@ -37,6 +37,7 @@ Este repositório visa concentrar a documentação do projeto. Os projetos de mi
 - Kubernetes
 - Helm
 - AWS
+  - VPC
   - EKS
   - RDS Aurora PostgreSQL
   - DynamoBD
@@ -61,12 +62,12 @@ Este repositório visa concentrar a documentação do projeto. Os projetos de mi
 ## Introdução :mag:
 Foi desenvolvida uma aplicação em microsserviços para fazer uma separação clara dos contextos delimitados mapeados na modelagem estratégica. </br>
 O desenvolvimento foi pensado para ficar de uma forma clara e de acordo com o DDD, separando cada contexto em um projeto. Dessa maneira, fica clara a identificação dos contextos e facilita no desenvolvimento, podendo separar o desenvolvimento dos contextos entre os times, sem que haja conflitos. Separamos a implementação em 3 pastas principais:
-- **Presenter:** É a camada que expõe os serviços da aplicação. É responsável por receber as requisições HTTP, validar os dados de entrada, injetar as dependências necessárias para a camada de aplicação e retornar para o solicitante os dados de saída.
-- **Services:** São os serviços da aplicação separados por contextos delimitados. Cada contexto delimitado possui o seu core (camadas de aplicação e domínio) e infra.
-- **Commons:** É aqui que compartilhamos o que é comum entre os diferentes módulos, inclusive os objetos de domíno e os serviços de infraestrutura que podem ser utilizados por mais de um contexto delimitado.
+- `Presenter:` É a camada que expõe os serviços da aplicação. É responsável por receber as requisições HTTP, validar os dados de entrada, injetar as dependências necessárias para a camada de aplicação e retornar para o solicitante os dados de saída.
+- `Services:` São os serviços da aplicação separados por contextos delimitados. Cada contexto delimitado possui o seu core (camadas de aplicação e domínio) e infra.
+- `Commons:` É aqui que compartilhamos o que é comum entre os diferentes módulos, inclusive os objetos de domíno e os serviços de infraestrutura que podem ser utilizados por mais de um contexto delimitado.
 
 ## Estrutura do projeto :hammer:
-Todos os 3 microsserviços seguem o mesmo padrão, para a explicação pegamos como base o microsserviço de **Pagamento**.
+Todos os 3 microsserviços seguem o mesmo padrão. Para a explicação, apresentamos como base o microsserviço de **Pagamento**.
 
 ![img_estrutura_projeto.png](docs/img/img_estrutura_projeto.png) </br>
 
@@ -75,13 +76,18 @@ Todos os 3 microsserviços seguem o mesmo padrão, para a explicação pegamos c
 
 Cada serviço possui o seu core e sua camada de infraestrutura.
 
-- **Services.*.Domain:** São os projetos referente a camada **Enterprise Business Rules** da Clean Architecture. São nesses projeto onde está o domínio da aplicação, com as regras de negócio e sem referência a nenhuma bliblioteca ou framework. Esta camada expõe interfaces que serão implementadas nas camadas externas, seguindo a regra de Inversão de Dependência.
+- `src`
+    - `Services.*.Domain:` São os projetos referente a camada **Enterprise Business Rules** da Clean Architecture. São nesses projeto onde está o domínio da aplicação, com as regras de negócio e sem referência a nenhuma bliblioteca ou framework. Esta camada expõe interfaces que serão implementadas nas camadas externas, seguindo a regra de Inversão de Dependência.
 
-- **Services.*.Infra:** Nesses projetos fazemos do padrão Repository um Gateway da camada **Interface Adapters** da Clean Architecture, onde esses Repositories irão chamar um DBContext do ORM(Entity Framework). Nesse cenário, o ORM passa a ser a camada **Frameworks & Drivers** da Clean Architecture. Toda regra de acesso a dados fica na camada mais externa. Quando necessário mudar a forma de acesso a dados, basta implementar uma nova classe com base na interface e chamar uma nova implementação da camada **Frameworks & Drivers**.
+    - `Services.*.Infra:` Nesses projetos fazemos do padrão Repository um Gateway da camada **Interface Adapters** da Clean Architecture, onde esses Repositories irão chamar um DBContext do ORM(Entity Framework). Nesse cenário, o ORM passa a ser a camada **Frameworks & Drivers** da Clean Architecture. Toda regra de acesso a dados fica na camada mais externa. Quando necessário mudar a forma de acesso a dados, basta implementar uma nova classe com base na interface e chamar uma nova implementação da camada **Frameworks & Drivers**.
 
-- **Services.*.Application:** São os projetos referente a camada **Application Business Rules** da Clean Architecture. São nesses projetos onde são implementados cada UseCase do sistema. Os UseCases recebem via injeção de depêndencia os Gateways(Repositories) e os utilizam de acordo com a regra de negócio necessária.
+    - `Services.*.Application:` São os projetos referente a camada **Application Business Rules** da Clean Architecture. São nesses projetos onde são implementados cada UseCase do sistema. Os UseCases recebem via injeção de depêndencia os Gateways(Repositories) e os utilizam de acordo com a regra de negócio necessária.
 
-- **Presenter:** São os Controllers da camada **Interface Adapters** da Clean Architecture. Esses Controllers são responsáveis por chamarem os UseCases passando via injeção de dependência toda dependência necessária, como por exemplo, os Gateways(Repositories). A instanciação desses Gateways são feitas utilizando a Injeção de Dependência já existente no framework do .NET. Nesse cenário a injeção de dependência do framework passa a ser a  camada **Frameworks & Drivers** da Clean Architecture.
+    - `Presenter:` São os Controllers da camada **Interface Adapters** da Clean Architecture. Esses Controllers são responsáveis por chamarem os UseCases passando via injeção de dependência toda dependência necessária, como por exemplo, os Gateways(Repositories). A instanciação desses Gateways são feitas utilizando a Injeção de Dependência já existente no framework do .NET. Nesse cenário a injeção de dependência do framework passa a ser a  camada **Frameworks & Drivers** da Clean Architecture.
+
+- `test`
+    - `BDD:` Projetos com a implementação de testes BDD a partir da biblioteca SpecFlow, utilizando a linguagem Gherkin.
+    - `Unit:` Projetos com a implementação de testes unitários.
 
 ## Diagramas da Arquitetura :bar_chart:
 

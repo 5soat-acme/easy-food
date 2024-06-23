@@ -2,12 +2,9 @@ name: Test GitHub Pages deployment
 
 on:
   workflow_dispatch:
-  push:
+  pull_request:
     branches:
       - main
-    paths:
-      - 'docs/wiki/**'
-  pull_request:
     paths:
       - 'docs/wiki/**'
 

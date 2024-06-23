@@ -121,6 +121,11 @@ const config = {
                 label: 'Diagrama C4',
                 to: '/docs/arquitetura/diagramas/solucao/diagrama-c4',
               }
+              ,
+              {
+                label: 'Diagrama Microsserviços',
+                to: '/docs/arquitetura/diagramas/microsservicos/diagrama-microsservicos',
+              }
             ],
           },
           {

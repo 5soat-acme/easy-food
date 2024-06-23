@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "5f61bb57-8c4c-4a9a-b5d4-8c3f268a7141",
+		"_postman_id": "b6b92ebe-4f4a-4eec-8bcb-a37c5e747b7a",
 		"name": "EasyFood",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "1979558"
@@ -61,10 +61,10 @@
 									]
 								}
 							},
-							"_postman_previewlanguage": null,
-							"header": null,
+							"_postman_previewlanguage": "Text",
+							"header": [],
 							"cookie": [],
-							"body": null
+							"body": ""
 						}
 					]
 				},
@@ -117,10 +117,10 @@
 									]
 								}
 							},
-							"_postman_previewlanguage": null,
-							"header": null,
+							"_postman_previewlanguage": "Text",
+							"header": [],
 							"cookie": [],
-							"body": null
+							"body": ""
 						}
 					]
 				},
@@ -130,9 +130,9 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{url}}/identidade/acessar",
+							"raw": "{{url_pedido}}/identidade/acessar",
 							"host": [
-								"{{url}}"
+								"{{url_pedido}}"
 							],
 							"path": [
 								"identidade",
@@ -147,9 +147,9 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{url}}/identidade/acessar",
+									"raw": "{{url_pedido}}/identidade/acessar",
 									"host": [
-										"{{url}}"
+										"{{url_pedido}}"
 									],
 									"path": [
 										"identidade",
@@ -223,9 +223,9 @@
 							}
 						},
 						"url": {
-							"raw": "{{url}}/produtos",
+							"raw": "{{url_pedido}}/produtos",
 							"host": [
-								"{{url}}"
+								"{{url_pedido}}"
 							],
 							"path": [
 								"produtos"
@@ -248,9 +248,9 @@
 									}
 								},
 								"url": {
-									"raw": "{{url}}/produtos",
+									"raw": "{{url_pedido}}/produtos",
 									"host": [
-										"{{url}}"
+										"{{url_pedido}}"
 									],
 									"path": [
 										"produtos"
@@ -298,9 +298,9 @@
 							}
 						},
 						"url": {
-							"raw": "{{url}}/produtos",
+							"raw": "{{url_pedido}}/produtos",
 							"host": [
-								"{{url}}"
+								"{{url_pedido}}"
 							],
 							"path": [
 								"produtos"
@@ -323,9 +323,9 @@
 									}
 								},
 								"url": {
-									"raw": "{{url}}/produtos",
+									"raw": "{{url_pedido}}/produtos",
 									"host": [
-										"{{url}}"
+										"{{url_pedido}}"
 									],
 									"path": [
 										"produtos"
@@ -373,9 +373,9 @@
 							}
 						},
 						"url": {
-							"raw": "{{url}}/produtos",
+							"raw": "{{url_pedido}}/produtos",
 							"host": [
-								"{{url}}"
+								"{{url_pedido}}"
 							],
 							"path": [
 								"produtos"
@@ -398,9 +398,9 @@
 									}
 								},
 								"url": {
-									"raw": "{{url}}/produtos",
+									"raw": "{{url_pedido}}/produtos",
 									"host": [
-										"{{url}}"
+										"{{url_pedido}}"
 									],
 									"path": [
 										"produtos"
@@ -448,9 +448,9 @@
 							}
 						},
 						"url": {
-							"raw": "{{url}}/produtos",
+							"raw": "{{url_pedido}}/produtos",
 							"host": [
-								"{{url}}"
+								"{{url_pedido}}"
 							],
 							"path": [
 								"produtos"
@@ -473,9 +473,9 @@
 									}
 								},
 								"url": {
-									"raw": "{{url}}/produtos",
+									"raw": "{{url_pedido}}/produtos",
 									"host": [
-										"{{url}}"
+										"{{url_pedido}}"
 									],
 									"path": [
 										"produtos"
@@ -514,9 +514,9 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{url}}/produtos?categoria=lanche",
+							"raw": "{{url_pedido}}/produtos?categoria=lanche",
 							"host": [
-								"{{url}}"
+								"{{url_pedido}}"
 							],
 							"path": [
 								"produtos"
@@ -551,9 +551,9 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{url}}/produtos?categoria=lanche",
+									"raw": "{{url_pedido}}/produtos?categoria=lanche",
 									"host": [
-										"{{url}}"
+										"{{url_pedido}}"
 									],
 									"path": [
 										"produtos"
@@ -611,9 +611,9 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{url}}/produtos?categoria=acompanhamento",
+									"raw": "{{url_pedido}}/produtos?categoria=acompanhamento",
 									"host": [
-										"{{url}}"
+										"{{url_pedido}}"
 									],
 									"path": [
 										"produtos"
@@ -671,9 +671,9 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{url}}/produtos?categoria=bebida",
+									"raw": "{{url_pedido}}/produtos?categoria=bebida",
 									"host": [
-										"{{url}}"
+										"{{url_pedido}}"
 									],
 									"path": [
 										"produtos"
@@ -731,9 +731,9 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{url}}/produtos?categoria=sobremesa",
+									"raw": "{{url_pedido}}/produtos?categoria=sobremesa",
 									"host": [
-										"{{url}}"
+										"{{url_pedido}}"
 									],
 									"path": [
 										"produtos"
@@ -802,9 +802,9 @@
 							}
 						},
 						"url": {
-							"raw": "{{url}}/produtos/08671f4c-4724-495c-90c6-ba16c8adfcdd",
+							"raw": "{{url_pedido}}/produtos/08671f4c-4724-495c-90c6-ba16c8adfcdd",
 							"host": [
-								"{{url}}"
+								"{{url_pedido}}"
 							],
 							"path": [
 								"produtos",
@@ -828,9 +828,9 @@
 									}
 								},
 								"url": {
-									"raw": "{{url}}/produtos/9687232e-afe3-483c-9106-c900d4cdf594",
+									"raw": "{{url_pedido}}/produtos/9687232e-afe3-483c-9106-c900d4cdf594",
 									"host": [
-										"{{url}}"
+										"{{url_pedido}}"
 									],
 									"path": [
 										"produtos",
@@ -879,9 +879,9 @@
 							}
 						},
 						"url": {
-							"raw": "{{url}}/produtos/08671f4c-4724-495c-90c6-ba16c8adfcdd",
+							"raw": "{{url_pedido}}/produtos/08671f4c-4724-495c-90c6-ba16c8adfcdd",
 							"host": [
-								"{{url}}"
+								"{{url_pedido}}"
 							],
 							"path": [
 								"produtos",
@@ -905,9 +905,9 @@
 									}
 								},
 								"url": {
-									"raw": "{{url}}/produtos/c38a2e5a-28ed-4bb5-aa59-8120047bbf5e",
+									"raw": "{{url_pedido}}/produtos/c38a2e5a-28ed-4bb5-aa59-8120047bbf5e",
 									"host": [
-										"{{url}}"
+										"{{url_pedido}}"
 									],
 									"path": [
 										"produtos",
@@ -961,9 +961,9 @@
 							}
 						},
 						"url": {
-							"raw": "{{url}}/estoques",
+							"raw": "{{url_pedido}}/estoques",
 							"host": [
-								"{{url}}"
+								"{{url_pedido}}"
 							],
 							"path": [
 								"estoques"
@@ -972,7 +972,7 @@
 					},
 					"response": [
 						{
-							"name": "New Request",
+							"name": "Atualizar estoque - Entrada",
 							"originalRequest": {
 								"method": "POST",
 								"header": [],
@@ -986,9 +986,9 @@
 									}
 								},
 								"url": {
-									"raw": "{{url}}/estoques",
+									"raw": "{{url_pedido}}/estoques",
 									"host": [
-										"{{url}}"
+										"{{url_pedido}}"
 									],
 									"path": [
 										"estoques"
@@ -1036,9 +1036,9 @@
 							}
 						},
 						"url": {
-							"raw": "{{url}}/estoques",
+							"raw": "{{url_pedido}}/estoques",
 							"host": [
-								"{{url}}"
+								"{{url_pedido}}"
 							],
 							"path": [
 								"estoques"
@@ -1061,9 +1061,9 @@
 									}
 								},
 								"url": {
-									"raw": "{{url}}/estoques",
+									"raw": "{{url_pedido}}/estoques",
 									"host": [
-										"{{url}}"
+										"{{url_pedido}}"
 									],
 									"path": [
 										"estoques"
@@ -1102,9 +1102,9 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{url}}/estoques/7db1a8b3-ddc6-49f4-80ef-93c3c58e9207",
+							"raw": "{{url_pedido}}/estoques/7db1a8b3-ddc6-49f4-80ef-93c3c58e9207",
 							"host": [
-								"{{url}}"
+								"{{url_pedido}}"
 							],
 							"path": [
 								"estoques",
@@ -1119,9 +1119,9 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{url}}/estoques/8b40da5b-f3d1-4df3-9e4d-fa555ee638b2",
+									"raw": "{{url_pedido}}/estoques/8b40da5b-f3d1-4df3-9e4d-fa555ee638b2",
 									"host": [
-										"{{url}}"
+										"{{url_pedido}}"
 									],
 									"path": [
 										"estoques",
@@ -1175,9 +1175,9 @@
 							}
 						},
 						"url": {
-							"raw": "{{url}}/cupons",
+							"raw": "{{url_pedido}}/cupons",
 							"host": [
-								"{{url}}"
+								"{{url_pedido}}"
 							],
 							"path": [
 								"cupons"
@@ -1200,9 +1200,9 @@
 									}
 								},
 								"url": {
-									"raw": "{{url}}/cupons",
+									"raw": "{{url_pedido}}/cupons",
 									"host": [
-										"{{url}}"
+										"{{url_pedido}}"
 									],
 									"path": [
 										"cupons"
@@ -1241,9 +1241,9 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{url}}/cupons/DESCONTO80",
+							"raw": "{{url_pedido}}/cupons/DESCONTO80",
 							"host": [
-								"{{url}}"
+								"{{url_pedido}}"
 							],
 							"path": [
 								"cupons",
@@ -1258,9 +1258,9 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{url}}/cupons/DESCONTO25",
+									"raw": "{{url_pedido}/cupons/DESCONTO25",
 									"host": [
-										"{{url}}"
+										"{{url_pedido}"
 									],
 									"path": [
 										"cupons",
@@ -1309,9 +1309,9 @@
 							}
 						},
 						"url": {
-							"raw": "{{url}}/cupons/a6edf801-1d9c-4da2-8f32-42607df4cb56",
+							"raw": "{{url_pedido}}/cupons/a6edf801-1d9c-4da2-8f32-42607df4cb56",
 							"host": [
-								"{{url}}"
+								"{{url_pedido}}"
 							],
 							"path": [
 								"cupons",
@@ -1335,9 +1335,9 @@
 									}
 								},
 								"url": {
-									"raw": "{{url}}/cupons/69f92713-db2b-42b4-8e23-82ac794ca610",
+									"raw": "{{url_pedido}}/cupons/69f92713-db2b-42b4-8e23-82ac794ca610",
 									"host": [
-										"{{url}}"
+										"{{url_pedido}}"
 									],
 									"path": [
 										"cupons",
@@ -1386,9 +1386,9 @@
 							}
 						},
 						"url": {
-							"raw": "{{url}}/cupons/inativar/520b7a8b-bd94-477c-b670-6d8ef6814ad8",
+							"raw": "{{url_pedido}}/cupons/inativar/520b7a8b-bd94-477c-b670-6d8ef6814ad8",
 							"host": [
-								"{{url}}"
+								"{{url_pedido}}"
 							],
 							"path": [
 								"cupons",
@@ -1413,9 +1413,9 @@
 									}
 								},
 								"url": {
-									"raw": "{{url}}/cupons/inativar/69f92713-db2b-42b4-8e23-82ac794ca610",
+									"raw": "{{url_pedido}}/cupons/inativar/69f92713-db2b-42b4-8e23-82ac794ca610",
 									"host": [
-										"{{url}}"
+										"{{url_pedido}}"
 									],
 									"path": [
 										"cupons",
@@ -1465,9 +1465,9 @@
 							}
 						},
 						"url": {
-							"raw": "{{url}}/cupons/a6edf801-1d9c-4da2-8f32-42607df4cb56/inserir-produtos",
+							"raw": "{{url_pedido}}/cupons/a6edf801-1d9c-4da2-8f32-42607df4cb56/inserir-produtos",
 							"host": [
-								"{{url}}"
+								"{{url_pedido}}"
 							],
 							"path": [
 								"cupons",
@@ -1492,9 +1492,9 @@
 									}
 								},
 								"url": {
-									"raw": "{{url}}/cupons/69f92713-db2b-42b4-8e23-82ac794ca610/inserir-produtos",
+									"raw": "{{url_pedido}}/cupons/69f92713-db2b-42b4-8e23-82ac794ca610/inserir-produtos",
 									"host": [
-										"{{url}}"
+										"{{url_pedido}}"
 									],
 									"path": [
 										"cupons",
@@ -1544,9 +1544,9 @@
 							}
 						},
 						"url": {
-							"raw": "{{url}}/cupons/a6edf801-1d9c-4da2-8f32-42607df4cb56/remover-produtos",
+							"raw": "{{url_pedido}}/cupons/a6edf801-1d9c-4da2-8f32-42607df4cb56/remover-produtos",
 							"host": [
-								"{{url}}"
+								"{{url_pedido}}"
 							],
 							"path": [
 								"cupons",
@@ -1571,9 +1571,9 @@
 									}
 								},
 								"url": {
-									"raw": "{{url}}/cupons/69f92713-db2b-42b4-8e23-82ac794ca610/remover-produtos",
+									"raw": "{{url_pedido}}/cupons/69f92713-db2b-42b4-8e23-82ac794ca610/remover-produtos",
 									"host": [
-										"{{url}}"
+										"{{url_pedido}}"
 									],
 									"path": [
 										"cupons",
@@ -1628,9 +1628,9 @@
 							}
 						},
 						"url": {
-							"raw": "{{url}}/carrinho",
+							"raw": "{{url_pedido}}/carrinho",
 							"host": [
-								"{{url}}"
+								"{{url_pedido}}"
 							],
 							"path": [
 								"carrinho"
@@ -1653,9 +1653,9 @@
 									}
 								},
 								"url": {
-									"raw": "{{url}}/carrinho",
+									"raw": "{{url_pedido}}/carrinho",
 									"host": [
-										"{{url}}"
+										"{{url_pedido}}"
 									],
 									"path": [
 										"carrinho"
@@ -1703,9 +1703,9 @@
 							}
 						},
 						"url": {
-							"raw": "{{url}}/carrinho/9687232e-afe3-483c-9106-c900d4cdf594",
+							"raw": "{{url_pedido}}/carrinho/9687232e-afe3-483c-9106-c900d4cdf594",
 							"host": [
-								"{{url}}"
+								"{{url_pedido}}"
 							],
 							"path": [
 								"carrinho",
@@ -1729,9 +1729,9 @@
 									}
 								},
 								"url": {
-									"raw": "{{url}}/carrinho/db37db1a-d63b-4b4f-9722-04720b7b3e92",
+									"raw": "{{url_pedido}}/carrinho/db37db1a-d63b-4b4f-9722-04720b7b3e92",
 									"host": [
-										"{{url}}"
+										"{{url_pedido}}"
 									],
 									"path": [
 										"carrinho",
@@ -1771,9 +1771,9 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{url}}/carrinho",
+							"raw": "{{url_pedido}}/carrinho",
 							"host": [
-								"{{url}}"
+								"{{url_pedido}}"
 							],
 							"path": [
 								"carrinho"
@@ -1787,9 +1787,9 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{url}}/carrinho",
+									"raw": "{{url_pedido}}/carrinho",
 									"host": [
-										"{{url}}"
+										"{{url_pedido}}"
 									],
 									"path": [
 										"carrinho"
@@ -1828,9 +1828,9 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "{{url}}/carrinho/06bed300-a561-44e8-937f-a4d4c683a2b7",
+							"raw": "{{url_pedido}}/carrinho/06bed300-a561-44e8-937f-a4d4c683a2b7",
 							"host": [
-								"{{url}}"
+								"{{url_pedido}}"
 							],
 							"path": [
 								"carrinho",
@@ -1860,9 +1860,9 @@
 							}
 						},
 						"url": {
-							"raw": "{{url}}/pedidos/checkout",
+							"raw": "{{url_pedido}}/pedidos/checkout",
 							"host": [
-								"{{url}}"
+								"{{url_pedido}}"
 							],
 							"path": [
 								"pedidos",
@@ -1886,9 +1886,9 @@
 									}
 								},
 								"url": {
-									"raw": "{{url}}/pedidos/checkout",
+									"raw": "{{url_pedido}}/pedidos/checkout",
 									"host": [
-										"{{url}}"
+										"{{url_pedido}}"
 									],
 									"path": [
 										"pedidos",
@@ -1928,9 +1928,9 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{url}}/pedidos/b18a6e87-2ca5-45ef-9465-cfb0fa13a3ab",
+							"raw": "{{url_pedido}}/pedidos/b18a6e87-2ca5-45ef-9465-cfb0fa13a3ab",
 							"host": [
-								"{{url}}"
+								"{{url_pedido}}"
 							],
 							"path": [
 								"pedidos",
@@ -1945,9 +1945,9 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{url}}/pedidos/ef078bf0-de5a-444b-a115-895d5229474e",
+									"raw": "{{url_pedido}}/pedidos/ef078bf0-de5a-444b-a115-895d5229474e",
 									"host": [
-										"{{url}}"
+										"{{url_pedido}}"
 									],
 									"path": [
 										"pedidos",
@@ -1992,9 +1992,9 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{url}}/pagamentos/tipos",
+							"raw": "{{url_pagamento}}/pagamentos/tipos",
 							"host": [
-								"{{url}}"
+								"{{url_pagamento}}"
 							],
 							"path": [
 								"pagamentos",
@@ -2009,9 +2009,9 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{url}}/pagamentos/tipos",
+									"raw": "{{url_pagamento}}/pagamentos/tipos",
 									"host": [
-										"{{url}}"
+										"{{url_pagamento}}"
 									],
 									"path": [
 										"pagamentos",
@@ -2051,9 +2051,9 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{url}}/pagamentos?pedidoId=ef078bf0-de5a-444b-a115-895d5229474e",
+							"raw": "{{url_pagamento}}/pagamentos?pedidoId=ef078bf0-de5a-444b-a115-895d5229474e",
 							"host": [
-								"{{url}}"
+								"{{url_pagamento}}"
 							],
 							"path": [
 								"pagamentos"
@@ -2073,9 +2073,9 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{url}}/pagamentos?pedidoId=ef078bf0-de5a-444b-a115-895d5229474e",
+									"raw": "{{url_pagamento}}/pagamentos?pedidoId=ef078bf0-de5a-444b-a115-895d5229474e",
 									"host": [
-										"{{url}}"
+										"{{url_pagamento}}"
 									],
 									"path": [
 										"pagamentos"
@@ -2110,9 +2110,9 @@
 							}
 						},
 						"url": {
-							"raw": "{{url}}/pagamentos",
+							"raw": "{{url_pagamento}}/pagamentos",
 							"host": [
-								"{{url}}"
+								"{{url_pagamento}}"
 							],
 							"path": [
 								"pagamentos"
@@ -2133,9 +2133,9 @@
 									}
 								],
 								"url": {
-									"raw": "{{url}}/pagamentos",
+									"raw": "{{url_pagamento}}/pagamentos",
 									"host": [
-										"{{url}}"
+										"{{url_pagamento}}"
 									],
 									"path": [
 										"pagamentos"
@@ -2173,9 +2173,9 @@
 							}
 						},
 						"url": {
-							"raw": "{{url}}/pagamentos/autorizar/webhook",
+							"raw": "{{url_pagamento}}/pagamentos/autorizar/webhook",
 							"host": [
-								"{{url}}"
+								"{{url_pagamento}}"
 							],
 							"path": [
 								"pagamentos",
@@ -2206,9 +2206,9 @@
 									}
 								},
 								"url": {
-									"raw": "{{url}}/pagamentos/autorizar/webhook",
+									"raw": "{{url_pagamento}}/pagamentos/autorizar/webhook",
 									"host": [
-										"{{url}}"
+										"{{url_pagamento}}"
 									],
 									"path": [
 										"pagamentos",
@@ -2235,9 +2235,9 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{url}}/preparo",
+							"raw": "{{url_preparoentrega}}/preparo",
 							"host": [
-								"{{url}}"
+								"{{url_preparoentrega}}"
 							],
 							"path": [
 								"preparo"
@@ -2251,9 +2251,9 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{url}}/preparo",
+									"raw": "{{url_preparoentrega}}/preparo",
 									"host": [
-										"{{url}}"
+										"{{url_preparoentrega}}"
 									],
 									"path": [
 										"preparo"
@@ -2292,9 +2292,9 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{url}}/preparo/a2e4c27f-b1d0-47b6-beac-e9e8fa115c76",
+							"raw": "{{url_preparoentrega}}/preparo/a2e4c27f-b1d0-47b6-beac-e9e8fa115c76",
 							"host": [
-								"{{url}}"
+								"{{url_preparoentrega}}"
 							],
 							"path": [
 								"preparo",
@@ -2309,9 +2309,9 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{url}}/preparo/0b4de6c1-3f29-44cd-91b6-b0f2fe2cea87",
+									"raw": "{{url_preparoentrega}}/preparo/0b4de6c1-3f29-44cd-91b6-b0f2fe2cea87",
 									"host": [
-										"{{url}}"
+										"{{url_preparoentrega}}"
 									],
 									"path": [
 										"preparo",
@@ -2349,9 +2349,9 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{url}}/preparo/6d5e9575-d8c4-4047-b249-84fae1261a01",
+									"raw": "{{url_preparoentrega}}/preparo/6d5e9575-d8c4-4047-b249-84fae1261a01",
 									"host": [
-										"{{url}}"
+										"{{url_preparoentrega}}"
 									],
 									"path": [
 										"preparo",
@@ -2400,9 +2400,9 @@
 							}
 						},
 						"url": {
-							"raw": "{{url}}/preparo/iniciar",
+							"raw": "{{url_preparoentrega}}/preparo/iniciar",
 							"host": [
-								"{{url}}"
+								"{{url_preparoentrega}}"
 							],
 							"path": [
 								"preparo",
@@ -2426,9 +2426,9 @@
 									}
 								},
 								"url": {
-									"raw": "{{url}}/preparo/iniciar",
+									"raw": "{{url_preparoentrega}}/preparo/iniciar",
 									"host": [
-										"{{url}}"
+										"{{url_preparoentrega}}"
 									],
 									"path": [
 										"preparo",
@@ -2477,9 +2477,9 @@
 							}
 						},
 						"url": {
-							"raw": "{{url}}/preparo/finalizar",
+							"raw": "{{url_preparoentrega}}/preparo/finalizar",
 							"host": [
-								"{{url}}"
+								"{{url_preparoentrega}}"
 							],
 							"path": [
 								"preparo",
@@ -2503,9 +2503,9 @@
 									}
 								},
 								"url": {
-									"raw": "{{url}}/preparo/finalizar",
+									"raw": "{{url_preparoentrega}}/preparo/finalizar",
 									"host": [
-										"{{url}}"
+										"{{url_preparoentrega}}"
 									],
 									"path": [
 										"preparo",
@@ -2554,9 +2554,9 @@
 							}
 						},
 						"url": {
-							"raw": "{{url}}/preparo/confirmar-entrega",
+							"raw": "{{url_preparoentrega}}/preparo/confirmar-entrega",
 							"host": [
-								"{{url}}"
+								"{{url_preparoentrega}}"
 							],
 							"path": [
 								"preparo",
@@ -2580,9 +2580,9 @@
 									}
 								},
 								"url": {
-									"raw": "{{url}}/preparo/confirmar-entrega",
+									"raw": "{{url_preparoentrega}}/preparo/confirmar-entrega",
 									"host": [
-										"{{url}}"
+										"{{url_preparoentrega}}"
 									],
 									"path": [
 										"preparo",
@@ -2627,9 +2627,9 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{url}}/monitor",
+							"raw": "{{url_preparoentrega}}/monitor",
 							"host": [
-								"{{url}}"
+								"{{url_preparoentrega}}"
 							],
 							"path": [
 								"monitor"
@@ -2643,9 +2643,9 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{url}}/monitor",
+									"raw": "{{url_preparoentrega}}/monitor",
 									"host": [
-										"{{url}}"
+										"{{url_preparoentrega}}"
 									],
 									"path": [
 										"monitor"
@@ -2713,8 +2713,18 @@
 	],
 	"variable": [
 		{
-			"key": "url",
-			"value": "http://localhost:5001/api",
+			"key": "url_pedido",
+			"value": "http://localhost:5001/pedido/api",
+			"type": "string"
+		},
+		{
+			"key": "url_pagamento",
+			"value": "http://localhost:5001/pagamento/api",
+			"type": "string"
+		},
+		{
+			"key": "url_preparoentrega",
+			"value": "http://localhost:5001/preparoentrega/api",
 			"type": "string"
 		},
 		{

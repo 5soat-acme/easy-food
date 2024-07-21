@@ -103,6 +103,16 @@ Cada serviço possui o seu core e sua camada de infraestrutura.
 ### Microsserviços
 ![diagrama_microsservicos.png](docs/diagramas/diagrama_microsservicos.png)
 
+#### SAGA
+![diagrama_microsservicos.png](docs/diagramas/diagrama_microsservicos_saga.png)
+
+#### SAGA Compensatório
+![diagrama_microsservicos.png](docs/diagramas/diagrama_microsservicos_saga_compensatorio.png)
+
+#### SAGA Coreografado
+Foi utilizado o padrão SAGA Coreografado por conta de sua simplicidade de implementação em casos que possuem poucos fluxos(caminho feliz e compensatório), que é o caso de nossa aplicação. </br>
+Além disso, nesse cenário o sistema não para de funcionar como um todo caso o orquestrador parar de funcionar. Então decidimos pelo coreografado por ser um caso mais simples de implementação para o contexto da nossa aplicação.
+
 
 # Como executar - AWS :rocket:
 A seguir estão as instruções para executar o projeto
@@ -146,7 +156,7 @@ A documentação estará disponível em:
 
 ## Token :key:
 
-Para manter a associação de clientes com um carrinho estamos utilizando um **[Json Web Token (JWT)](https://jwt.io/)**. Para as requisições no contexto de **pedidos e carrinho**, é necessário informar o token no header da requisição. Para isso, basta copiar o token gerado pelo Cognito ao efetuar login de um usuário cadastrado e incluir o token no header da requisição com a chave `Authorization` e a palavra `Bearer` seguida do token gerado. Exemplos de utilização do Cognito estão no repositório  **[easy-food-lambda](https://github.com/5soat-acme/easy-food-lambda)**. <br>
+Para manter a associação de clientes com um carrinho estamos utilizando um **[Json Web Token (JWT)](https://jwt.io/)**. Para as requisições no contexto de **pedidos e carrinho**, é necessário informar o token no header da requisição. Para isso, basta copiar o token gerado pelo Cognito ao efetuar login de um usuário cadastrado e incluir o token no header da requisição com a chave `Authorization` e a palavra `Bearer` seguida do token gerado. Exemplos de utilização do Cognito estão no repositório  **[easy-food-lambda](https://github.com/5soat-acme/easy-food-lambda)**. </br>
 Caso queira efetuar o pedido sem possuir um cadastro, basta utilizar o endpoint ``[GET] /api/identidade/acessar`` para recuperar um token sem necessidade de cadastro.
 
 
@@ -167,8 +177,9 @@ O Token pré-configurado foi o **9E541194-61B4-44F6-BE2A-B1F08C24BB52**
 # Utilização dos Endpoints :arrow_forward:
 
 ### Identificação
-2. O Cliente pode acessar o sistema sem cadastro em: ``[GET] pedido/api/identidade/acessar`` </br>
+1. O Cliente pode acessar o sistema sem cadastro em: ``[GET] pedido/api/identidade/acessar`` </br>
 Este gera um token JWT (JSON Web Token) que deve ser usado em cabeçalhos de autenticação para futuras requisições.
+2. O cliente pode solicitar a exclusão do dados(LGPD) em: ``[POST] pedido/api/identidade/solicitar-exclusao``
 
 ### Gestão de Produtos
 1. Pode-se consultar o cardápio dividido por categoria em: ``[GET] pedido/api/produtos`` </br>

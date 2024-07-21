@@ -40,7 +40,7 @@ Este repositório visa concentrar a documentação do projeto. Os projetos de mi
   - VPC
   - EKS
   - RDS Aurora PostgreSQL
-  - DynamoBD
+  - DynamoDB
   - SQS
   - Cognito
   - Lambda (utilizando Python)

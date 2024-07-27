@@ -113,6 +113,23 @@ Cada serviço possui o seu core e sua camada de infraestrutura.
 Foi utilizado o padrão SAGA Coreografado por conta de sua simplicidade de implementação em casos que possuem poucos fluxos(caminho feliz e compensatório), que é o caso de nossa aplicação. </br>
 Além disso, nesse cenário o sistema não para de funcionar como um todo caso o orquestrador parar de funcionar. Então decidimos pelo coreografado por ser um caso mais simples de implementação para o contexto da nossa aplicação.
 
+# OWASP ZAP :mag:
+Foi utilizada a ferramenta [OWASP ZAP](https://www.zaproxy.org/) para procurar vulnerabilidades nos seguintes endpoints:
+- ``[GET] pedido/api/produtos``
+- ``[POST] pedido/api/pedidos/checkout``
+- ``[POST] pagamento/api/pagamentos/autorizar/webhook``
+
+Foi encontrada e corrigida a vulnerabilidade do tipo ``X-Content-Type-Options Header Missing``. Essa vulnerabilidade refere-se à ausência do cabeçalho HTTP ``X-Content-Type-Options`` nas respostas do servidor. Esse cabeçalho, quando configurado com o valor ``nosniff``, instrui os navegadores a não realizar uma tentativa de adivinhar(sniff) o tipo de conteúdo de um recurso com base no seu conteúdo, mas sim a confiar no tipo MIME especificado no cabeçalho Content-Type.
+
+Quando esse cabeçalho está ausente, os navegadores podem tentar adivinhar o tipo de conteúdo, o que pode levar a problemas de segurança, como ataques de Cross-Site Scripting (XSS). Configurar o ``X-Content-Type-Options`` como ``nosniff`` ajuda a mitigar esses riscos, garantindo que os navegadores tratem o conteúdo de acordo com o tipo MIME especificado.
+
+**Relatórios:**
+- [Relatório antes da correção](docs/owasp_zap_proxy/relatorios/antes_correcao.pdf) </br>
+- [Relatório após a correção](docs/owasp_zap_proxy/relatorios/apos_correcao.pdf)
+
+
+# Relatório de impacto dos dados pessoais (RIPD) - LGPD :spiral_notepad:
+
 
 # Como executar - AWS :rocket:
 A seguir estão as instruções para executar o projeto
@@ -200,9 +217,8 @@ Obtém o carrinho do cliente. Caso o cliente tenha se identificado no sistema, �
 2. Pode-se consultar o pedido em: ``[GET] pedido/api/pedidos/{id}``
 
 ### Pagamento
-1. Pode-se efetuar o pagamento em: ``[POST] pagamento/api/pagamentos``
-2. Pode-se autorizar o pagamento via webhook em: ``[POST] pagamento/api/pagamentos/autorizar/webhook``
-3. Pode-se consultar o pagamento de um pedido em: ``[GET] pagamento/api/pagamentos``
+1. Pode-se autorizar o pagamento via webhook em: ``[POST] pagamento/api/pagamentos/autorizar/webhook``
+2. Pode-se consultar o pagamento de um pedido em: ``[GET] pagamento/api/pagamentos``
 3. Pode-se consultar os tipos de pagamentos disponíveis em: ``[GET] pagamento/api/pagamentos/tipos``
 
 ### Preparação e Entrega

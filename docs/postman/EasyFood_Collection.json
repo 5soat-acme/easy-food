@@ -182,6 +182,64 @@
 							"body": "{\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiIxMzgxMmVlMy01YWNlLTQyM2EtOTc2NS03Y2RiYzVlYTM0YzQiLCJuYmYiOjE3MDYzNTk1MzEsImlhdCI6MTcwNjM1OTUzMSwidXNlcl90eXBlIjoiYW5vbnltb3VzIiwic2Vzc2lvbl9pZCI6IjczYzI1YWIyLWExYzgtNGE2NS1hN2M4LWU5MzIwNzVjNDBhMSIsImV4cCI6MTcwNjM2NjczMSwiaXNzIjoiRWFzeUZvb2QiLCJhdWQiOiJsb2NhbGhvc3Q6NTAwMiJ9.psr3PZnjpYmMau-zI86HhUSSsebsEAkFSL5C1jjb3EM\",\n    \"expiresIn\": 7200,\n    \"user\": {\n        \"id\": null,\n        \"claims\": [\n            {\n                \"value\": \"13812ee3-5ace-423a-9765-7cdbc5ea34c4\",\n                \"type\": \"jti\"\n            },\n            {\n                \"value\": \"1706359532\",\n                \"type\": \"nbf\"\n            },\n            {\n                \"value\": \"1706359532\",\n                \"type\": \"iat\"\n            },\n            {\n                \"value\": \"anonymous\",\n                \"type\": \"user_type\"\n            },\n            {\n                \"value\": \"73c25ab2-a1c8-4a65-a7c8-e932075c40a1\",\n                \"type\": \"session_id\"\n            }\n        ]\n    }\n}"
 						}
 					]
+				},
+				{
+					"name": "Solicitar Exclusão - LPGD",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"nome\": \"Cliente 1\",\r\n  \"rua\": \"Rua 1\",\r\n  \"numero\": 1,\r\n  \"bairro\": \"Bairro 1\",\r\n  \"complemento\": \"\",\r\n  \"cidade\": \"São Paulo\",\r\n  \"estado\": \"SP \",\r\n  \"cep\": \"11111-111\",\r\n  \"numeroTelefone\": \"(11)11111-1111\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url_pedido}}/identidade/solicitar-exclusao",
+							"host": [
+								"{{url_pedido}}"
+							],
+							"path": [
+								"identidade",
+								"solicitar-exclusao"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Solicitar Exclusão - LPGD",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"nome\": \"Cliente 1\",\r\n  \"rua\": \"Rua 1\",\r\n  \"numero\": 1,\r\n  \"bairro\": \"Bairro 1\",\r\n  \"complemento\": \"\",\r\n  \"cidade\": \"São Paulo\",\r\n  \"estado\": \"SP \",\r\n  \"cep\": \"11111-111\",\r\n  \"numeroTelefone\": \"(11)11111-1111\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url_pedido}}/identidade/solicitar-exclusao",
+									"host": [
+										"{{url_pedido}}"
+									],
+									"path": [
+										"identidade",
+										"solicitar-exclusao"
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						}
+					]
 				}
 			],
 			"event": [
@@ -2127,8 +2185,8 @@
 								"header": [
 									{
 										"key": "Content-Type",
-										"name": "Content-Type",
 										"value": "application/json",
+										"name": "Content-Type",
 										"type": "text"
 									}
 								],
@@ -2729,7 +2787,7 @@
 		},
 		{
 			"key": "url_cognito",
-			"value": "https://qfcr7ympk8.execute-api.us-east-1.amazonaws.com",
+			"value": "https://l6k4l3qvoe.execute-api.us-east-1.amazonaws.com",
 			"type": "string"
 		}
 	]

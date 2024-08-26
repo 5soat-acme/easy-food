@@ -40,7 +40,7 @@ Este repositório visa concentrar a documentação do projeto. Os projetos de mi
   - VPC
   - EKS
   - RDS Aurora PostgreSQL
-  - DynamoBD
+  - DynamoDB
   - SQS
   - Cognito
   - Lambda (utilizando Python)
@@ -103,6 +103,33 @@ Cada serviço possui o seu core e sua camada de infraestrutura.
 ### Microsserviços
 ![diagrama_microsservicos.png](docs/diagramas/diagrama_microsservicos.png)
 
+#### SAGA
+![diagrama_microsservicos.png](docs/diagramas/diagrama_microsservicos_saga.png)
+
+#### SAGA Compensatório
+![diagrama_microsservicos.png](docs/diagramas/diagrama_microsservicos_saga_compensatorio.png)
+
+#### SAGA Coreografado
+Foi utilizado o padrão SAGA Coreografado por conta de sua simplicidade de implementação em casos que possuem poucos fluxos(caminho feliz e compensatório), que é o caso de nossa aplicação. </br>
+Além disso, nesse cenário o sistema não para de funcionar como um todo caso o orquestrador parar de funcionar. Então decidimos pelo coreografado por ser um caso mais simples de implementação para o contexto da nossa aplicação.
+
+# OWASP ZAP :mag:
+Foi utilizada a ferramenta [OWASP ZAP](https://www.zaproxy.org/) para procurar vulnerabilidades nos seguintes endpoints:
+- ``[GET] pedido/api/produtos``
+- ``[POST] pedido/api/pedidos/checkout``
+- ``[POST] pagamento/api/pagamentos/autorizar/webhook``
+
+Foi encontrada e corrigida a vulnerabilidade do tipo ``X-Content-Type-Options Header Missing``. Essa vulnerabilidade refere-se à ausência do cabeçalho HTTP ``X-Content-Type-Options`` nas respostas do servidor. Esse cabeçalho, quando configurado com o valor ``nosniff``, instrui os navegadores a não realizar uma tentativa de adivinhar(sniff) o tipo de conteúdo de um recurso com base no seu conteúdo, mas sim a confiar no tipo MIME especificado no cabeçalho Content-Type.
+
+Quando esse cabeçalho está ausente, os navegadores podem tentar adivinhar o tipo de conteúdo, o que pode levar a problemas de segurança, como ataques de Cross-Site Scripting (XSS). Configurar o ``X-Content-Type-Options`` como ``nosniff`` ajuda a mitigar esses riscos, garantindo que os navegadores tratem o conteúdo de acordo com o tipo MIME especificado.
+
+**Relatórios:**
+- [Relatório antes da correção](docs/owasp_zap_proxy/relatorios/antes_correcao.pdf) </br>
+- [Relatório após a correção](docs/owasp_zap_proxy/relatorios/apos_correcao.pdf)
+
+
+# Relatório de impacto dos dados pessoais (RIPD) - LGPD :spiral_notepad:
+
 
 # Como executar - AWS :rocket:
 A seguir estão as instruções para executar o projeto
@@ -146,7 +173,7 @@ A documentação estará disponível em:
 
 ## Token :key:
 
-Para manter a associação de clientes com um carrinho estamos utilizando um **[Json Web Token (JWT)](https://jwt.io/)**. Para as requisições no contexto de **pedidos e carrinho**, é necessário informar o token no header da requisição. Para isso, basta copiar o token gerado pelo Cognito ao efetuar login de um usuário cadastrado e incluir o token no header da requisição com a chave `Authorization` e a palavra `Bearer` seguida do token gerado. Exemplos de utilização do Cognito estão no repositório  **[easy-food-lambda](https://github.com/5soat-acme/easy-food-lambda)**. <br>
+Para manter a associação de clientes com um carrinho estamos utilizando um **[Json Web Token (JWT)](https://jwt.io/)**. Para as requisições no contexto de **pedidos e carrinho**, é necessário informar o token no header da requisição. Para isso, basta copiar o token gerado pelo Cognito ao efetuar login de um usuário cadastrado e incluir o token no header da requisição com a chave `Authorization` e a palavra `Bearer` seguida do token gerado. Exemplos de utilização do Cognito estão no repositório  **[easy-food-lambda](https://github.com/5soat-acme/easy-food-lambda)**. </br>
 Caso queira efetuar o pedido sem possuir um cadastro, basta utilizar o endpoint ``[GET] /api/identidade/acessar`` para recuperar um token sem necessidade de cadastro.
 
 
@@ -167,8 +194,9 @@ O Token pré-configurado foi o **9E541194-61B4-44F6-BE2A-B1F08C24BB52**
 # Utilização dos Endpoints :arrow_forward:
 
 ### Identificação
-2. O Cliente pode acessar o sistema sem cadastro em: ``[GET] pedido/api/identidade/acessar`` </br>
+1. O Cliente pode acessar o sistema sem cadastro em: ``[GET] pedido/api/identidade/acessar`` </br>
 Este gera um token JWT (JSON Web Token) que deve ser usado em cabeçalhos de autenticação para futuras requisições.
+2. O cliente pode solicitar a exclusão do dados(LGPD) em: ``[POST] pedido/api/identidade/solicitar-exclusao``
 
 ### Gestão de Produtos
 1. Pode-se consultar o cardápio dividido por categoria em: ``[GET] pedido/api/produtos`` </br>
@@ -189,9 +217,8 @@ Obtém o carrinho do cliente. Caso o cliente tenha se identificado no sistema, �
 2. Pode-se consultar o pedido em: ``[GET] pedido/api/pedidos/{id}``
 
 ### Pagamento
-1. Pode-se efetuar o pagamento em: ``[POST] pagamento/api/pagamentos``
-2. Pode-se autorizar o pagamento via webhook em: ``[POST] pagamento/api/pagamentos/autorizar/webhook``
-3. Pode-se consultar o pagamento de um pedido em: ``[GET] pagamento/api/pagamentos``
+1. Pode-se autorizar o pagamento via webhook em: ``[POST] pagamento/api/pagamentos/autorizar/webhook``
+2. Pode-se consultar o pagamento de um pedido em: ``[GET] pagamento/api/pagamentos``
 3. Pode-se consultar os tipos de pagamentos disponíveis em: ``[GET] pagamento/api/pagamentos/tipos``
 
 ### Preparação e Entrega

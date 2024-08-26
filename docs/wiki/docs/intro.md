@@ -6,9 +6,9 @@ sidebar_position: 1
 
 O Easy Food é um sistema de atendimento e gestão de pedidos para lanchonetes. O objetivo é melhorar a experiência do cliente, reduzindo erros de atendimento e otimizando a processo de realização e entrega de pedidos aos clientes.
 
-O projeto é parte do trabalho de conclusão do curso de Arquitetura de Software da FIAP o intuito é aplicar os conceitos aprendidos durante o curso, como Domain Driven Design, arquitetura de microsserviços, design de APIs, DevOps, etc.
+O projeto é parte do trabalho de conclusão do curso de Arquitetura de Software da FIAP. O intuito é aplicar os conceitos aprendidos durante o curso, como Domain Driven Design, arquitetura de microsserviços, design de APIs, DevOps, etc.
 
-Para informações de como rodar a aplicação localmente, clique [aqui](https://github.com/5soat-acme/easy-food).
+Para mais informações sobre o projeto, clique [aqui](https://github.com/5soat-acme/easy-food).
 
 # Autores :man_technologist:
 

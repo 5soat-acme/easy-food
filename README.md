@@ -128,8 +128,9 @@ Quando esse cabeçalho está ausente, os navegadores podem tentar adivinhar o ti
 - [Relatório após a correção](docs/owasp_zap_proxy/relatorios/apos_correcao.pdf)
 
 
-# Relatório de impacto dos dados pessoais (RIPD) - LGPD :spiral_notepad:
-
+# LGPD :spiral_notepad:
+- [Relatório de impacto dos dados pessoais (RIPD)](docs/ripd).
+- O cliente pode solicitar a exclusão do dados(LGPD) em: ``[POST] pedido/api/identidade/solicitar-exclusao``
 
 # Como executar - AWS :rocket:
 A seguir estão as instruções para executar o projeto
